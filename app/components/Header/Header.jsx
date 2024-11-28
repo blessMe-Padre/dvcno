@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.css";
+
 import City from "../Location/Location";
+import VdsButton from "../Vds/VdsButton";
 
 export default function Header() {
     return (
@@ -24,6 +26,7 @@ export default function Header() {
 
                 <div className={styles.item_row}>
                     <City />
+                    <VdsButton />
                 </div>
             </div>
         </div>

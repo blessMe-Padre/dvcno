@@ -10,12 +10,7 @@ export default function City() {
                 width={16}
                 height={21}
             />
-
-            <select className={styles.select}>
-                <option value="">Владивосток</option>
-                <option value="">Находка</option>
-                <option value="">Партизанск</option>
-            </select>
+            <p className={styles.city}>Владивосток</p>
         </div>
     )
 }
