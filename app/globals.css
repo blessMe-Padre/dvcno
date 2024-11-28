@@ -4,6 +4,7 @@
 
   --color-purple: #433c8c;
   --color-green: #29a55c;
+  --color-gray: #aab2c9;
 
   --font-family: "Montserrat", sans-serif;
   --second-family: "Bebas Neue", sans-serif;
@@ -65,4 +66,19 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* Глобальные утилитарные классы */
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
 }

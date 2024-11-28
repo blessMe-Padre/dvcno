@@ -8,6 +8,7 @@ import City from "../Location/Location";
 import VdsButton from "../Vds/VdsButton";
 import Language from "../Language/Language";
 import VdsPanel from "../VdsPanel/VdsPanel";
+import SocialIcon from "../Socilal-icon/SocialIcon";
 
 
 export default function Header() {
@@ -34,6 +35,25 @@ export default function Header() {
                     <City />
                     <VdsButton />
                     <Language />
+
+                    <div className="flex gap-10">
+                        <SocialIcon
+                            color="gray"
+                            href="https://t.me/dvcno_ru"
+                            icon="/icons/telegram.svg"
+                            width="19"
+                            height="17"
+                            alt="Телеграм"
+                        />
+                        <SocialIcon
+                            color="purple"
+                            href="#"
+                            icon="/icons/vk.svg"
+                            width="23"
+                            height="14"
+                            alt="Вконтакте"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

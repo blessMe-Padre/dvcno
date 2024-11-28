@@ -1,1 +1,10 @@
-.select {}
+.select {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 18px;
+    color: #aab2c9;
+    text-transform: uppercase;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
