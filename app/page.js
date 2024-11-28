@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       <main>
         <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
-        main lorem25
+        main lorem25 wwwww
       </main>
       <footer className={styles.footer}>
         <Image

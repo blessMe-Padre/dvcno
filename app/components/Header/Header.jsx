@@ -17,6 +17,8 @@ export default function Header() {
                             height={86}
                         />
                     </Link>
+
+
                     <p className={styles.p}>Дальневосточный центр непрерывного образования</p>
                 </div>
 
