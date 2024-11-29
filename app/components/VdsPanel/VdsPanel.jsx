@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./vdspanel.module.css";
 
-export default function VdsPanel() {
+export default function VdsPanel({ setPanel, setPanelBtn }) {
     // Повторное произношение текста
     function speachtxt(txt) {
         speechSynthesis.speak(new SpeechSynthesisUtterance(txt));
@@ -73,11 +73,64 @@ export default function VdsPanel() {
                 image.parentNode.insertBefore(div, image.nextSibling);
             }
         });
+    }
 
+    const addImages = () => {
+        speachtxt("изображения включены");
+
+        const images = document.querySelectorAll('.dsv-image');
+        images.forEach(image => {
+            image.style.display = 'block';
+        });
+
+        const imageDivs = document.querySelectorAll('.dsv-image-div');
+        imageDivs.forEach(div => {
+            div.remove();
+        });
+    }
+
+    const addFilter = () => {
+        const images = document.querySelectorAll('.dsv-image');
+        images.forEach(image => {
+            image.classList.toggle(styles.filter);
+
+            if (image.classList.contains(styles.filter)) {
+                speachtxt("изображения чёрно белые");
+            } else {
+                speachtxt("изображения цветные");
+            }
+        });
+    }
+
+
+    // Кнопки закрыть панель и обычная версия сайта
+    const resetAll = () => {
+        speachtxt("обычная версия сайта");
+
+        const images = document.querySelectorAll('.dsv-image');
+        images.forEach(image => {
+            image.style.display = 'block';
+            image.classList.remove(styles.filter);
+        });
+
+        const imageDivs = document.querySelectorAll('.dsv-image-div');
+        imageDivs.forEach(div => {
+            div.remove();
+        });
+
+        document.body.classList.remove(
+            styles.theme_white,
+            styles.theme_black,
+            styles.theme_blue,
+            styles.theme_yellow,
+            styles.theme_green
+        );
+        setPanel(false);
+        setPanelBtn(true)
     }
 
     return (
-        <div className={styles.dsv_panel}>
+        <div className={`${styles.dsv_panel} dsv_panel`}>
             <div>
                 <p className={styles.p}>Размер шрифта</p>
                 <div>
@@ -123,7 +176,10 @@ export default function VdsPanel() {
             <div>
                 <p className={styles.p}>Изображения</p>
                 <div>
-                    <button className={styles.button}>
+                    <button
+                        className={styles.button}
+                        onClick={addImages}
+                    >
                         <Image src="/icons/image.svg" alt="" width={20} height={20} />
                     </button>
                     <button
@@ -132,7 +188,10 @@ export default function VdsPanel() {
                     >
                         <Image src="/icons/minus-circle.svg" alt="" width={20} height={20} />
                     </button>
-                    <button className={styles.button}>
+                    <button
+                        className={styles.button}
+                        onClick={addFilter}
+                    >
                         <Image src="/icons/adjust.svg" alt="" width={20} height={20} />
                     </button>
 
@@ -141,11 +200,12 @@ export default function VdsPanel() {
 
             <div>
                 <p className={styles.p}>Настройки</p>
-                <div>
-                    <button id="btn-close-panel">
-                        Обычная версия сайта
-                    </button>
-                </div>
+                <button
+                    className={styles.btn_close}
+                    onClick={resetAll}
+                >
+                    Обычная версия сайта
+                </button>
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 'use client'
+import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -12,11 +13,16 @@ import SocialIcon from "../Socilal-icon/SocialIcon";
 
 
 export default function Header() {
+    const [panel, setPanel] = useState(false);
+    const [panelBtn, setPanelBtn] = useState(true);
+
     const currentLanguage = localStorage.getItem('language') || 'ru';
 
     return (
         <div className={styles.header}>
-            <VdsPanel />
+
+            {panel && <VdsPanel setPanel={setPanel} setPanelBtn={setPanelBtn} />}
+
             <div className={styles.row}>
                 <div className={styles.item_row}>
                     <Link href="/" aria-label="Главная">
@@ -33,7 +39,10 @@ export default function Header() {
 
                 <div className={styles.item_row}>
                     <City />
-                    <VdsButton />
+                    {panelBtn && <VdsButton
+                        setPanel={setPanel}
+                        setPanelBtn={setPanelBtn}
+                    />}
                     <Language />
 
                     <div className="flex gap-10">
