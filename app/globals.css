@@ -9,6 +9,15 @@
   --font-family: "Montserrat", sans-serif;
   --second-family: "Bebas Neue", sans-serif;
   --third-family: "Sriracha Cyrillic", sans-serif;
+
+  --black: #000000;
+  --white: #ffffff;
+  --blue: #063462;
+  --light-blue: #9dd1ff;
+  --yellow: #4d4b43;
+  --light-yellow: #f7f3d6;
+  --green: #3b2716;
+  --light-green: #a9e44d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,7 +54,7 @@ a {
 
 .container {
   max-width: 1480px;
-  padding: 20px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 

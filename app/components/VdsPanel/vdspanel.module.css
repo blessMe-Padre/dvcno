@@ -1,14 +1,74 @@
-.button {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--color-green);
+.dsv_panel {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #29a55c;
-    border-radius: 6px;
-    padding: 6px 20px;
-    background-color: transparent;
+    gap: 20px;
+    background-color: var(--background-color);
+    padding: 30px;
+}
+
+.p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.button {
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
+}
+
+.theme_white {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.theme_black {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.theme_blue {
+    background-color: var(--light-blue);
+    color: var(--blue);
+}
+
+.theme_yellow {
+    background-color: var(--light-yellow);
+    color: var(--yellow);
+}
+
+.theme_green {
+    background-color: var(--light-green);
+    color: var(--green);
+}
+
+.color_1 {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.color_2 {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.color_3 {
+    background-color: var(--light-blue);
+    color: var(--blue);
+}
+
+.color_4 {
+    background-color: var(--light-yellow);
+    color: var(--yellow);
+}
+
+.color_5 {
+    background-color: var(--light-green);
+    color: var(--green);
+}
+
+.filter {
+    filter: grayscale(100%);
 }
