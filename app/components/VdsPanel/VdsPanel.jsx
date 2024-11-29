@@ -102,7 +102,6 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
         });
     }
 
-
     // Кнопки закрыть панель и обычная версия сайта
     const resetAll = () => {
         speachtxt("обычная версия сайта");

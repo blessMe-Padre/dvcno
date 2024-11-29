@@ -10,6 +10,7 @@ import VdsButton from "../Vds/VdsButton";
 import Language from "../Language/Language";
 import VdsPanel from "../VdsPanel/VdsPanel";
 import SocialIcon from "../Socilal-icon/SocialIcon";
+import CatalogButton from "../Catalog-button/CatalogButton";
 
 
 export default function Header() {
@@ -64,6 +65,10 @@ export default function Header() {
                         />
                     </div>
                 </div>
+            </div>
+
+            <div className={styles.row}>
+                <CatalogButton />
             </div>
         </div>
     )
