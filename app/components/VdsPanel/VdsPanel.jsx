@@ -133,7 +133,7 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
         <div className={`${styles.dsv_panel} dsv_panel`}>
             <div>
                 <p className={styles.p}>Размер шрифта</p>
-                <div>
+                <div className="flex gap-10">
                     <button
                         className={styles.button}
                         onClick={fontDecrease}
@@ -149,7 +149,7 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
 
             <div>
                 <p className={styles.p}>Цвета сайта</p>
-                <div>
+                <div className="flex gap-10">
                     <button
                         className={`${styles.button} ${styles.color_1}`}
                         onClick={changeThemeWhite}
