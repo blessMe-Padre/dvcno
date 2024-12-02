@@ -1,1 +1,36 @@
-.popup {}
+.popup {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 4px;
+    z-index: 1;
+    width: 650px;
+    box-shadow: 20px 20px 30px 0 rgba(25, 24, 48, 0.2);
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3 ease;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.link {
+    cursor: pointer;
+}
+
+
+.active {
+    opacity: 1;
+    visibility: visible;
+}

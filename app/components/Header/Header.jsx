@@ -12,6 +12,7 @@ import VdsPanel from "../VdsPanel/VdsPanel";
 import SocialIcon from "../Socilal-icon/SocialIcon";
 import CatalogButton from "../Catalog-button/CatalogButton";
 import PopupMenu from "../Popup-menu/PopupMenu";
+import Menu from "../Menu/Menu";
 
 
 export default function Header() {
@@ -19,7 +20,7 @@ export default function Header() {
     const [panelBtn, setPanelBtn] = useState(true);
     const [opened, setOpened] = useState(false);
 
-    const currentLanguage = localStorage.getItem('language') || 'ru';
+    // const currentLanguage = localStorage.getItem('language') || 'ru';
 
     return (
         <div className={styles.header}>
@@ -75,10 +76,13 @@ export default function Header() {
                         onClick={() => { setOpened(!opened) }}
                         opened={opened}
                     />
-
-                    <PopupMenu />
-
+                    <PopupMenu opened={opened} />
                 </div>
+
+                <div>
+                    <Menu />
+                </div>
+
             </div>
         </div>
     )

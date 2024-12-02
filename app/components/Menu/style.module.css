@@ -1,0 +1,16 @@
+.popup {}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    gap: 30px;
+}
+
+.sublist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
