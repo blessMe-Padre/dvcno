@@ -9,25 +9,21 @@ export default function Menu() {
     console.log(menuData);
 
     return (
-        <div>
-            <ul className={styles.list}>
-                {menuData.map((item, index) => (
-                    <li key={index}>
-                        <div href={item.link}>
-                            {item.title}
-                            <ul className={styles.sublist}>
-                                {item.submenu.map((subItem, index) => (
-                                    <li key={index}>
-                                        <Link href={subItem.link}>
-                                            {subItem.title}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <ul className={styles.list}>
+            {menuData.map((item, index) => (
+                <li key={index} className={styles.menuTitle}>
+                    <a href="#">{item.title}</a>
+                    <ul className={styles.sublist}>
+                        {item.submenu.map((subItem, index) => (
+                            <li key={index}>
+                                <Link href={subItem.link}>
+                                    {subItem.title}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </li>
+            ))}
+        </ul>
     )
 }
