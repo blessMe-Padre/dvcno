@@ -9,8 +9,42 @@
     gap: 30px;
 }
 
+.menuTitle {
+    position: relative;
+    padding: 10px 0;
+}
+
+.menuTitle:hover {
+    color: red;
+}
+
 .sublist {
-    list-style-type: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    z-index: 5;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    opacity: 0;
+    visibility: hidden;
+    text-transform: lowercase;
+}
+
+.menuTitle:hover>.sublist {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 1;
+    visibility: visible;
+    background-color: #fff;
+    color: #000;
 }
