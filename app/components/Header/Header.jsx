@@ -11,11 +11,13 @@ import Language from "../Language/Language";
 import VdsPanel from "../VdsPanel/VdsPanel";
 import SocialIcon from "../Socilal-icon/SocialIcon";
 import CatalogButton from "../Catalog-button/CatalogButton";
+import PopupMenu from "../Popup-menu/PopupMenu";
 
 
 export default function Header() {
     const [panel, setPanel] = useState(false);
     const [panelBtn, setPanelBtn] = useState(true);
+    const [opened, setOpened] = useState(false);
 
     const currentLanguage = localStorage.getItem('language') || 'ru';
 
@@ -68,7 +70,15 @@ export default function Header() {
             </div>
 
             <div className={styles.row}>
-                <CatalogButton />
+                <div className="relative">
+                    <CatalogButton
+                        onClick={() => { setOpened(!opened) }}
+                        opened={opened}
+                    />
+
+                    <PopupMenu />
+
+                </div>
             </div>
         </div>
     )

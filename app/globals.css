@@ -84,6 +84,10 @@ a {
   align-items: center;
 }
 
+.relative {
+  position: relative;
+}
+
 .gap-10 {
   gap: 10px;
 }
