@@ -14,7 +14,7 @@ export default function CatalogButton() {
     return (
         <button
             aria-label={opened ? 'Закрыть меню' : 'Открыть меню'}
-            className={`${opened ? styles.button + ' ' + styles.active : styles.button}`}
+            className={`${styles.button} ${opened ? styles.active : ''}`}
             onClick={handleClick}
         >
             <Image
