@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "./components/Header/Header";
 import Link from "next/link";
+import { Footer } from "./components/Footer/Footer";
 
 
 export const metadata = {
@@ -30,15 +31,8 @@ export default function Home() {
         <p>Дальневосточный центр непрерывного образования</p>
         <p>Дальневосточный центр непрерывного образования</p>
       </main>
-      <footer className={styles.footer}>
-        <Image
-          aria-hidden
-          src="/file.svg"
-          alt="File icon"
-          width={16}
-          height={16}
-        />
-      </footer>
+     
+      <Footer />
     </div>
   );
 }
