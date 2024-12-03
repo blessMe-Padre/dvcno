@@ -9,9 +9,9 @@ export default function Popup({ active, setActive }) {
     // const [opened, setOpened] = useState();
 
     return (
-        <div className={`${styles.popup} ${active ? styles.popupActive : styles.popupNone}`} onClick={() => setActive(false)}>
-            <div className={styles.popup__body} onClick={e => e.stopPropagation()}>
-                <div className={styles.popup__content}>
+        <div className={`${styles.popup} ${active ? styles.popupActive : styles.popupNone}`} onClick={() => {setActive(false)}}>
+            <div className={styles.popup__body}>
+                <div className={styles.popup__content} onClick={e => e.stopPropagation()}>
                     <p>У вас есть вопросы?</p>
                     <p>
                         Задайте их нашим специалистам
