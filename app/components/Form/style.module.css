@@ -1,0 +1,78 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.125rem, 1.661rem + 2.321vw, 3.75rem);
+    color: var(--black);
+    font-weight: 700;
+}
+
+.form__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+    font-size: clamp(0.875rem, 0.768rem + 0.536vw, 1.25rem);
+    text-align: start;
+    font-weight: 600;
+}
+
+.form__label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.75rem, 0.679rem + 0.357vw, 1rem);
+    color: #757F99;
+    text-align: start;
+    font-weight: 400;
+}
+
+.wrapper__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrapper__rows > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.form__btn__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+    
+    gap: 20px;
+
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 700;
+
+    color: var(--black);
+    background-color: var(--orange);
+    
+    border-radius: 6px;
+    border: none;
+
+}
+
+.form__input {
+    background-color: var(--white);
+    border-radius: 6px;
+    border: none;
+    height: 100%;
+    min-height: 40px;
+    max-height: 40px;
+}
+
+
+.form__policy {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
