@@ -13,7 +13,8 @@ import SocialIcon from "../Socilal-icon/SocialIcon";
 import CatalogButton from "../Catalog-button/CatalogButton";
 import PopupMenu from "../Popup-menu/PopupMenu";
 import Menu from "../Menu/Menu";
-
+import Popup from "../Popup/Popup";
+import PopupBtn from "../Popup-btn/PopupBtn";
 
 export default function Header() {
     const [panel, setPanel] = useState(false);
@@ -22,6 +23,12 @@ export default function Header() {
 
     // const currentLanguage = localStorage.getItem('language') || 'ru';
 
+
+
+    const [popupActive, setPopupActive] = useState(false);
+
+    
+    
     return (
         <div className={styles.header}>
 
@@ -82,6 +89,17 @@ export default function Header() {
                 <div>
                     <Menu />
                 </div>
+                
+                {/* <PopupBtn title="Задать вопрос" /> */}
+                
+                <button
+                    onClick={() => setPopupActive(true)}
+                    >
+                    Задать вопрос
+                </button>
+
+                <Popup active={popupActive} setActive={setPopupActive} />
+
 
             </div>
         </div>
