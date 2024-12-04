@@ -24,7 +24,10 @@ export default function Popup({ active, setActive }) {
         >
             <div className={styles.popup__body}>
                 
-                <div className={styles.popup__content} onClick={e => e.stopPropagation()}>
+                <div 
+                    className={styles.popup__content} 
+                    onClick={e => e.stopPropagation()}
+                >
 
                     <button 
                         className={styles.popup__close} 
