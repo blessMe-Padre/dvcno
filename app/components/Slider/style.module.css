@@ -3,3 +3,7 @@
     position: relative;
     overflow: hidden;
 }
+
+.slider {
+    width: 100%;
+}
