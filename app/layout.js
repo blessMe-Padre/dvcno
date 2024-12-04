@@ -8,14 +8,19 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+const BebasNeue = localFont({
+  src: "./fonts/BebasNeue.ttf",
+  variable: '--second-family',
   weight: "100 900",
 });
 
@@ -27,7 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
-      <body className={`${montserrat.className}`}>
+      <body className={`${montserrat.className} ${BebasNeue.variable}`}>
         <div className="container">
           {children}
         </div>

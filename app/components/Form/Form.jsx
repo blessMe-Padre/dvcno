@@ -37,62 +37,58 @@ export const Form = () => {
             action=""
             onSubmit={handleSubmit(onSubmit)}
         >
-            <div>
-                <p className={styles.form__title}>У вас есть вопросы?</p>
-                <p className={styles.form__subtitle}>Задайте их нашим специалистам</p>
+            <p className={styles.form__title}>У вас есть вопросы?</p>
+            <p className={styles.form__subtitle}>Задайте их нашим специалистам</p>
+
+            <label className={styles.form__label}>ФИО</label>
+            <div className={styles.input_wrapper}>
+                <input
+                    {...register('name', { required: { value: true, message: 'Заполните имя' } })}
+                    error={errors.name}
+                    className={`${styles.form__input} ${errors.name ? styles.error : ''}`}
+                    type='text'
+                />
+                <div className={styles.input_text_error}>{errors['name'] && errors['name'].message}</div>
+            </div>
+            <div className={styles.input_wrapper}>
+                <label className={styles.form__label}>Электронная почта / номер телефона</label>
+                <input
+                    {...register('contact-data', { required: { value: true, message: 'Заполните почту/телефон' } })}
+                    error={errors.name}
+                    className={`${styles.form__input} ${errors['contact-data'] ? styles.error : ''}`}
+                    type='text'
+                />
+                <div className={styles.input_text_error}>{errors['contact-data'] && errors['contact-data'].message}</div>
+            </div>
+            <div className={styles.input_wrapper}>
+                <label className={styles.form__label}>Ваш запрос</label>
+                <textarea
+                    {...register('description')}
+                    className={styles.form__textarea}
+                    type='text' placeholder=''
+                />
             </div>
 
-            <div className={styles.wrapper__rows}>
-                <div>
-                    <label className={styles.form__label}>ФИО</label>
-                    <input
-                        {...register('name', { required: { value: true, message: 'Заполните имя' } })}
-                        error={errors.name}
-                        className={styles.form__input}
-                        type='text'
-                        placeholder=''
-                    />
-                    <div>{errors['name'] && errors['name'].message}</div>
-                </div>
-                <div>
-                    <label className={styles.form__label}>Электронная почта / номер телефона</label>
-                    <input
-                        {...register('contact-data', { required: { value: true, message: 'Заполните почту/телефон' } })}
-                        error={errors.name}
-                        className={styles.form__input}
-                        type='text'
-                        placeholder='' />
-                    <div>{errors['contact-data'] && errors['contact-data'].message}</div>
-                </div>
-                <div>
-                    <label className={styles.form__label}>Ваш запрос</label>
-                    <textarea
-                        {...register('description')}
-                        className={styles.form__input}
-                        type='text' placeholder=''
-                    />
-                </div>
-                <div>
-                    <button className={styles.form__btn__submit}>
-                        <p>Задать вопрос</p>
+            <button className={styles.form__btn__submit}>
+                <p>Задать вопрос</p>
 
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
 
-                    </button>
-                </div>
+            </button>
 
-                <div className={styles.form__policy}>
-                    <input type="checkbox"
-                        {...register('policy', { required: { value: true, message: 'Необходимо согласиться' } })}
-                        error={errors.name}
-                    />
-                    <div>{errors['policy'] && errors['policy'].message}</div>
-                    <p>Пользуясь нашими услугами, вы подтверждаете, что прочитали
-                        и полностью согласны с этим документом: Пользовательское Соглашение</p>
-                </div >
-            </div>
+
+            <div className={styles.form__policy}>
+                <input type="checkbox"
+                    className={`${styles.checkbox} ${errors['policy'] ? styles.checkbox_error : ''}`}
+                    {...register('policy', { required: { value: true, message: 'Необходимо согласиться' } })}
+                    error={errors.name}
+                />
+                <p className={styles.policy_text}>Пользуясь нашими услугами, вы подтверждаете, что прочитали
+                    и полностью согласны с этим документом: <a href="#"> Пользовательское Соглашение</a></p>
+                <div className={styles.policy_error}>{errors['policy'] && errors['policy'].message}</div>
+            </div >
         </form>
     )
 }
