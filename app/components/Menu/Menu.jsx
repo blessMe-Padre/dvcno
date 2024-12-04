@@ -6,8 +6,6 @@ import Link from "next/link";
 
 export default function Menu() {
 
-    console.log(menuData);
-
     return (
         <ul className={styles.list}>
             {menuData.map((item, index) => (
