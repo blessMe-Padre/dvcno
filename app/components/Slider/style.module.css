@@ -1,0 +1,9 @@
+.section__swiper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+}
