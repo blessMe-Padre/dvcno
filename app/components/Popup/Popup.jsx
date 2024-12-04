@@ -25,7 +25,7 @@ export default function Popup({ active, setActive }) {
                         </svg>
                     </button>
 
-                    <Form />
+                    <Form setActive={setActive} />
                 </div>
             </div>
         </div>
