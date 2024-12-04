@@ -22,6 +22,7 @@ export const Form = ({ setActive }) => {
                 const data = await response.json();
                 setIsSuccess(true);
                 isSending(false);
+                setError(undefined)
                 // setActive(false)
                 reset();
                 console.log('Ответ сервера:', data);
@@ -78,6 +79,11 @@ export const Form = ({ setActive }) => {
             {isSuccess &&
                 <div className={styles.success}>
                     Ваша форма успешно отправлена
+                </div>
+            }
+            {error &&
+                <div className={styles.send_error}>
+                    {error}
                 </div>
             }
 

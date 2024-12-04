@@ -163,6 +163,15 @@
     text-align: center;
 }
 
+.send_error {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: red;
+    color: var(--white);
+    border-radius: 6px;
+    text-align: center;
+}
+
 
 
 
