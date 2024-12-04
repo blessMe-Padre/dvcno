@@ -9,11 +9,27 @@ export default function Popup({ active, setActive }) {
 
     // const [opened, setOpened] = useState();
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Escape' || event.key === 'Esc') {
+            setActive(false);
+        }
+    }
+  
     return (
-        <div className={`${styles.popup} ${active ? styles.popupActive : styles.popupNone}`} onClick={() => { setActive(false) }}>
-            <div className={styles.popup__body}>
 
-                <div className={styles.popup__content} onClick={e => e.stopPropagation()}>
+        <div 
+            className={`${styles.popup} ${active ? styles.popupActive : styles.popupNone}`}
+            onClick={() => { setActive(false) }}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+        >
+            <div className={styles.popup__body}>
+                
+                <div 
+                    className={styles.popup__content} 
+                    onClick={e => e.stopPropagation()}
+                >
+
 
                     <button
                         className={styles.popup__close}

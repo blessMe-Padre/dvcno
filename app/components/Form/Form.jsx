@@ -87,8 +87,10 @@ export const Form = ({ setActive }) => {
                 </div>
             }
 
+
             <button className={styles.form__btn__submit}>
                 <p>Задать вопрос</p>
+
 
                 {!sending &&
                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
