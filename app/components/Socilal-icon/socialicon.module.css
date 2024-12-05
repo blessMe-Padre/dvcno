@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all var(--anim-function);
 }
 
 .gray {
@@ -13,4 +14,20 @@
 
 .purple {
     background-color: var(--color-purple);
+}
+
+.gray_hover:hover {
+    background-color: var(--color-purple);
+}
+
+.gray_hover:active {
+    background-color: var(--light-blue);
+}
+
+.purple_hover:hover {
+    background-color: var(--light-blue);
+}
+
+.purple_hover:active {
+    background-color: var(--yellow);
 }

@@ -4,6 +4,7 @@ import styles from './style.module.css';
 import 'swiper/css';
 
 export default function Slider() {
+
     return (
         <section>
             <Swiper
