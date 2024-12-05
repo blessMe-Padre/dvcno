@@ -1,10 +1,25 @@
-import Image from "next/image";
-import styles from "./style.module.css";
-
-import { menuData } from "@/mock-data/menu-data";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import styles from "./style.module.css";
+import getMenu from '../../hooks/getMenu';
+import getPopupMenu from '../../hooks/getPopupMenu';
 
 export default function Menu() {
+    const [menuData, setMenuData] = useState([]);
+    // const [menuPopupData, setMenuPopupData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const menu = await getMenu();
+            // const popupMenu = await getPopupMenu();
+            setMenuData(menu);
+            // setMenuPopupData(popupMenu);
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <ul className={styles.list}>
