@@ -6,7 +6,6 @@ import { Footer } from "./components/Footer/Footer";
 
 import Slider from "./components/Slider/Slider";
 
-
 export const metadata = {
   title: "ДВЦНО | Главная",
   description: "Дальневосточный центр непрерывного образования",
