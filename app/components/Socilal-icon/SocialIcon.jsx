@@ -20,6 +20,7 @@ export default function SocialIcon({ color, href, icon, alt, width, height }) {
     return (
         <Link
             href={href}
+            target="_blank"
             className={`${styles.link} ${addClass} `}>
             <Image
                 aria-hidden

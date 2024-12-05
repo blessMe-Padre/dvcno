@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./style.module.css";
 
-import getPopupMenu from '../../hooks/getPopupMenu';
+import getPopupMenu from '../../utils/getPopupMenu';
 import Link from "next/link";
 
 export default function PopupMenu({ opened }) {
