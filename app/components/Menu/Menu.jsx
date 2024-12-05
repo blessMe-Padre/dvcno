@@ -17,20 +17,26 @@ export default function Menu() {
                             {item.title}
                         </span>
 
-                        <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.5 1L5.85897 5L11.5 1" stroke-linecap="round" />
-                        </svg>
-
+                        {item.submenu && item.submenu.length > 0 && (
+                            <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 1L5.85897 5L11.5 1" strokeLinecap="round" />
+                            </svg>
+                        )}
                     </a>
-                    <ul className={styles.sublist}>
-                        {item.submenu.map((subItem, index) => (
-                            <li key={index}>
-                                <Link href={subItem.link}>
-                                    {subItem.title}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+
+                    {item.submenu && item.submenu.length > 0 && (
+                        <ul className={styles.sublist}>
+                            {item.submenu.map((subItem, index) => (
+                                <li className={styles.sublist_item} key={index}>
+                                    <Link
+                                        className={styles.sub_link}
+                                        href={subItem.link}>
+                                        {subItem.title}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </li>
             ))}
         </ul>
