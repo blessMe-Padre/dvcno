@@ -15,11 +15,13 @@ import PopupMenu from "../Popup-menu/PopupMenu";
 import Menu from "../Menu/Menu";
 import Popup from "../Popup/Popup";
 import PopupBtn from "../Popup-btn/PopupBtn";
+import Search from "../Search/Search";
 
 export default function Header() {
     const [panel, setPanel] = useState(false);
     const [panelBtn, setPanelBtn] = useState(true);
     const [opened, setOpened] = useState(false);
+    const [searchOpened, setSearchOpened] = useState(false);
 
     // const currentLanguage = localStorage.getItem('language') || 'ru';
 
@@ -88,15 +90,48 @@ export default function Header() {
                     <Menu />
                 </div>
 
-                <div className="relative flex">
-                    <button
+                <div className="relative flex gap-15">
+                    <button className={styles.modal_button}
                         onClick={() => setPopupActive(true)}
                     >
                         Задать вопрос
                     </button>
+
+                    <button
+                        className={styles.search_button}
+                        onClick={() => setSearchOpened(!searchOpened)}
+                    >
+                        {!searchOpened ?
+                            < Image
+                                src="/icons/search.svg"
+                                alt="Поиск"
+                                width={20}
+                                height={20}
+                            />
+                            :
+                            < Image
+                                src="/icons/close.svg"
+                                alt="Поиск"
+                                width={20}
+                                height={20}
+                            />
+                        }
+                    </button>
+                    <button
+                        className={`${styles.account_button} disabled`}
+                    >
+                        <Image
+                            src="/icons/account.svg"
+                            alt="Поиск"
+                            width={20}
+                            height={20}
+                        />
+                    </button>
                 </div>
                 <Popup active={popupActive} setActive={setPopupActive} />
             </div>
+
+            {searchOpened && <Search />}
         </div>
     )
 }
