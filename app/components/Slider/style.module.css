@@ -36,8 +36,9 @@
 
 
 .slider__list {
+
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     list-style: disc;
 
@@ -93,6 +94,16 @@
     position: relative;
     z-index: 1;
     padding: 60px 90px;
+}
+
+.sliderBg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .slider__img__pattern {
