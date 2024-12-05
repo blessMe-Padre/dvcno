@@ -27,8 +27,8 @@ export default function Header() {
 
     const [popupActive, setPopupActive] = useState(false);
 
-    
-    
+
+
     return (
         <div className={styles.header}>
 
@@ -54,7 +54,6 @@ export default function Header() {
                         setPanel={setPanel}
                         setPanelBtn={setPanelBtn}
                     />}
-                    <Language />
 
                     <div className="flex gap-10">
                         <SocialIcon
@@ -74,33 +73,29 @@ export default function Header() {
                             alt="Вконтакте"
                         />
                     </div>
+
+                    <Language />
                 </div>
             </div>
 
             <div className={styles.row}>
-                <div className="relative">
+                <div className="relative flex gap-20">
                     <CatalogButton
                         onClick={() => { setOpened(!opened) }}
                         opened={opened}
                     />
                     <PopupMenu opened={opened} />
-                </div>
-
-                <div>
                     <Menu />
                 </div>
-                
-                {/* <PopupBtn title="Задать вопрос" /> */}
-                
-                <button
-                    onClick={() => setPopupActive(true)}
+
+                <div className="relative flex">
+                    <button
+                        onClick={() => setPopupActive(true)}
                     >
-                    Задать вопрос
-                </button>
-
+                        Задать вопрос
+                    </button>
+                </div>
                 <Popup active={popupActive} setActive={setPopupActive} />
-
-
             </div>
         </div>
     )

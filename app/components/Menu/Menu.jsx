@@ -10,7 +10,18 @@ export default function Menu() {
         <ul className={styles.list}>
             {menuData.map((item, index) => (
                 <li key={index} className={styles.menuTitle}>
-                    <a href="#">{item.title}</a>
+                    <a
+                        className={styles.link}
+                        href="#">
+                        <span>
+                            {item.title}
+                        </span>
+
+                        <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.5 1L5.85897 5L11.5 1" stroke-linecap="round" />
+                        </svg>
+
+                    </a>
                     <ul className={styles.sublist}>
                         {item.submenu.map((subItem, index) => (
                             <li key={index}>

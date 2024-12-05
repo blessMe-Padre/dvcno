@@ -9,13 +9,24 @@
     gap: 30px;
 }
 
-.menuTitle {
+.link {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--link-color);
     position: relative;
-    padding: 10px 0;
+    padding: 10px 30px 10px 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.menuTitle:hover {
-    color: red;
+.menuTitle {
+    position: relative;
+}
+
+.menuTitle svg {
+    stroke: var(--default-color);
 }
 
 .sublist {
