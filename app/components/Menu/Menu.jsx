@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./style.module.css";
-import getMenu from '../../hooks/getMenu';
-import getPopupMenu from '../../hooks/getPopupMenu';
+import getMenu from '../../utils/getMenu';
+import getPopupMenu from '../../utils/getPopupMenu';
 
 export default function Menu() {
     const [menuData, setMenuData] = useState([]);
