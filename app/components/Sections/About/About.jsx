@@ -1,20 +1,10 @@
-'use client'
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./style.module.css";
 import Card from "../../Cards/Card/Card";
 import getEduPages from '../../../utils/getEduPages';
 
-export default function About() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await getEduPages();
-            setData(data);
-        };
-        fetchData();
-    }, []);
+export default async function About() {
+    const data = await getEduPages();
 
     return (
         <section className={styles.section}>
@@ -31,16 +21,20 @@ export default function About() {
             </div>
 
             <ul className={styles.list}>
-                {data.map((item) => (
-                    <li key={item.id}>
-                        <Card
-                            image={item.image}
-                            description={item.description}
-                            link={item.link}
-                        />
 
-                    </li>
-                ))}
+                {data && data.length > 0 ? (
+                    data.map((item) => (
+                        <li key={item.id}>
+                            <Card
+                                image={item.image}
+                                description={item.description}
+                                link={item.link}
+                            />
+                        </li>
+                    ))
+                ) : (
+                    <p className="span-error-message">Данные отсутствуют.</p>
+                )}
             </ul>
 
         </section>
