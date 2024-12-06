@@ -15,7 +15,7 @@ export default function Card({ image, link, description, }) {
                 />
             </div>
             <Link href={link} className={styles.card_footer}>
-                <div className="flex flex-0">
+                <div className={styles.card_link_wrapper}>
                     <p className={styles.text}>{description}</p>
                     <div className={styles.link}>
                         <Image
