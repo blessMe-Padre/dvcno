@@ -38,11 +38,14 @@
 .slider__list {
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     list-style: disc;
 
     max-width: 50%;
+}
+
+.add_class {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .slider__list li {
@@ -52,7 +55,9 @@
 
 }
 
-.slider__btn__more {
+.slider__link {
+    width: max-content;
+
     font-family: var(--font-family);
     font-size: clamp(0.875rem, 0.804rem + 0.357vw, 1.125rem);
     display: flex;
@@ -76,16 +81,16 @@
     min-width: 330px;
 }
 
-.slider__btn__more:hover {
+.slider__link:hover {
     color: var(--white);
     background-color: var(--green);
 }
 
-.slider__btn__more > svg path {
+.slider__link > svg path {
     transition: 0.7s ease-in-out;
 }
 
-.slider__btn__more:hover > svg path{
+.slider__link:hover > svg path{
     stroke: var(--white);
 }
 
@@ -93,6 +98,9 @@
 .slider__wrapper__content {
     position: relative;
     z-index: 1;
+
+    min-height: 680px;
+
     padding: 60px 90px;
 }
 
