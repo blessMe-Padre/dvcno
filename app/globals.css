@@ -12,6 +12,7 @@
   --third-family: "Sriracha Cyrillic", sans-serif;
 
   --black: #191830;
+  --black-toggle: #191830;
   --dark-blue: #282646;
   --white: #FFFFFF;
   --gray: #EBEEF8;
@@ -33,6 +34,7 @@
     --background-color: #171717;
     --default-color: #ededed;
     --link-color: #ededed;
+    --black-toggle: #f2f2f2;
   }
 }
 
@@ -58,6 +60,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 .container {
