@@ -14,12 +14,25 @@ import Award4 from '../../../public/awards/award4.png';
 import 'swiper/css/navigation';
 // import required modules
 import { Navigation } from 'swiper/modules';
-import { useEffect } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 import SimpleGallery from '../SimpleGallery/SimpleGallery';
 
 
 export default function Awards () {
+
+    const sliderRef = useRef(null);
+
+    const handlePrev = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slidePrev();
+    }, []);
+
+    const handleNext = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slideNext();
+    }, []);
+  
     return (
         <section className={styles.section_awards}>
             <div className={styles.awards_wrapper}>
@@ -32,13 +45,13 @@ export default function Awards () {
 
                 <div className={styles.awards_btn_slider}>
                     
-                    <button className={styles.btn_prev}>
+                    <button className={styles.btn_prev} onClick={handlePrev}>
                         <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.5036 1.30371L1.24147 10.5656M1.24147 10.5656L10.3718 19.6959M1.24147 10.5656L22.7598 10.5656" stroke="#433C8C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </button>
                     
-                    <button className={styles.btn_next}>
+                    <button className={styles.btn_next} onClick={handleNext}>
                         <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.4964 1.30371L22.7585 10.5656M22.7585 10.5656L13.6282 19.6959M22.7585 10.5656L1.24023 10.5656" stroke="#433C8C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
@@ -49,6 +62,7 @@ export default function Awards () {
 
             <div className={styles.awards_content}>
                     <SimpleGallery
+                        sliderRef={sliderRef}
                         galleryID="my-test-gallery"
                         images={[
                             {

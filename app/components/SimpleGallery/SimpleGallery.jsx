@@ -9,7 +9,7 @@ import styles from './style.module.css'
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-export default function SimpleGallery(props) {
+export default function SimpleGallery(props, sliderRef) {
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({
       gallery: '#' + props.galleryID,
@@ -24,24 +24,13 @@ export default function SimpleGallery(props) {
     };
   }, []);
 
-
-    const sliderRef = useRef(null);
-
-    const handlePrev = useCallback(() => {
-      if (!sliderRef.current) return;
-      sliderRef.current.swiper.slidePrev();
-    }, []);
-
-    const handleNext = useCallback(() => {
-      if (!sliderRef.current) return;
-      sliderRef.current.swiper.slideNext();
-    }, []);
-
-
-
+  console.log(sliderRef);
   return (
     
-    <Swiper  
+
+
+    <Swiper 
+        ref={sliderRef}
         navigation={{
           prevEl: '.btn_prev',
           nextEl: '.btn_next',
