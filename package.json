@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "baguettebox.js": "^1.12.0",
     "next": "15.0.3",
-    "swiper": "^11.1.15",
+    "photoswipe": "^5.4.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.53.2"
+    "react-hook-form": "^7.53.2",
+    "swiper": "^11.1.15"
   }
 }

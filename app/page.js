@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Footer } from "./components/Footer/Footer";
 
 import Slider from "./components/Slider/Slider";
+import Awards from './components/Awards/Awards';
+
 
 
 export const metadata = {
@@ -20,6 +22,7 @@ export default function Home() {
         <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
         
         <Slider />
+        <Awards />
       </main>
 
       <Footer />
