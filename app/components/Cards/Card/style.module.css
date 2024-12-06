@@ -25,12 +25,15 @@
     line-height: 1.3;
     color: var(--black);
     border-radius: 20px;
-    padding: 20px 30px;
+    padding: 30px 30px;
     backdrop-filter: blur(50px);
-    background: var(--white);
+    background-color: var(--white);
+    transition: background-color var(--anim-function),
+        color var(--anim-function);
 }
 
 .link {
+    position: relative;
     border-radius: 25px;
     background-color: var(--violet);
     box-shadow: 5px 5px 15px 0 #bfc5db;
@@ -39,4 +42,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+}
+
+.link:before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -40px;
+    width: 50px;
+    height: 23px;
+    background-image: url('./../../../../public/decor/image-2.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.link_img {
+    transition: transform var(--anim-function);
+}
+
+.card_footer:hover {
+    background-color: var(--yellow);
+}
+
+.card_footer:hover .link_img {
+    transform: rotate(45deg);
+}
+
+.card_footer:active {
+    background-color: var(--green);
+    color: var(--white);
 }

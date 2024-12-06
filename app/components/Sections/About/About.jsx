@@ -1,8 +1,21 @@
+'use client'
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./style.module.css";
 import Card from "../../Cards/Card/Card";
+import getEduPages from '../../../utils/getEduPages';
 
 export default function About() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await getEduPages();
+            setData(data);
+        };
+        fetchData();
+    }, []);
+
     return (
         <section className={styles.section}>
             <div className={styles.title_wrapper}>
@@ -18,15 +31,16 @@ export default function About() {
             </div>
 
             <ul className={styles.list}>
-                <li>
-                    <Card />
-                </li>
-                <li>
-                    <Card />
-                </li>
-                <li>
-                    <Card />
-                </li>
+                {data.map((item) => (
+                    <li key={item.id}>
+                        <Card
+                            image={item.image}
+                            description={item.description}
+                            link={item.link}
+                        />
+
+                    </li>
+                ))}
             </ul>
 
         </section>
