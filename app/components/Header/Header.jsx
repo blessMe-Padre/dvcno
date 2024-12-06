@@ -45,6 +45,7 @@ export default function Header() {
                             alt="Логотип"
                             width={86}
                             height={86}
+                            className={styles.header_logo}
                         />
                     </Link>
                     <p className={styles.p}>Дальневосточный центр непрерывного образования</p>
@@ -57,7 +58,7 @@ export default function Header() {
                         setPanelBtn={setPanelBtn}
                     />}
 
-                    <div className="flex gap-10">
+                    <div className={styles.header_social_wrapper}>
                         <SocialIcon
                             color="gray"
                             href="https://t.me/dvcno_ru"
@@ -90,7 +91,7 @@ export default function Header() {
                     <Menu />
                 </div>
 
-                <div className="relative flex gap-15">
+                <div className="relative flex gap-15 flex-0">
                     <button className={styles.modal_button}
                         onClick={() => setPopupActive(true)}
                     >

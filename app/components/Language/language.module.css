@@ -8,3 +8,9 @@
     background-color: transparent;
     cursor: pointer;
 }
+
+@media (max-width: 560px) {
+    .select {
+        font-size: 14px;
+    }
+}
