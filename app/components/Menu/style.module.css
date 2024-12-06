@@ -1,13 +1,9 @@
-.popup {}
-
 .list {
     list-style-type: none;
     padding: 0;
     margin: 0;
-
     display: flex;
     gap: 30px;
-
     position: relative;
 }
 
@@ -85,4 +81,18 @@
     visibility: visible;
     background-color: #fff;
     color: #000;
+}
+
+
+@media (max-width: 1320px) {
+    .list {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 928px) {
+    .list {
+        display: none;
+    }
 }

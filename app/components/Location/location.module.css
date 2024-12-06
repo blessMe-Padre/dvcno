@@ -12,3 +12,9 @@
     border: none;
     background-color: transparent;
 }
+
+@media (max-width: 560px) {
+    .location {
+        display: none;
+    }
+}
