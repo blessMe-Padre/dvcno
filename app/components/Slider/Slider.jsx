@@ -7,7 +7,11 @@ import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
 
+import { Pagination } from 'swiper/modules';
+
+
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 import sliderBgBig from '../../../public/main-sliders/sliders-bg-1.png'
 import sliderBgMedium from '../../../public/main-sliders/sliders-bg-m-1.png'
@@ -72,14 +76,13 @@ export default function Slider() {
     }, []);
 
 
-
-    console.log(mainSlidersData)
-
     return (
         <section
             className={styles.section__swiper}
             >
             <Swiper
+                pagination={true} 
+                modules={[Pagination]}
                 spaceBetween={50}
                 slidesPerView={1}
                 >
