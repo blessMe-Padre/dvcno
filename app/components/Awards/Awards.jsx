@@ -18,6 +18,8 @@ import { useEffect, useRef, useCallback } from 'react';
 
 import SimpleGallery from '../SimpleGallery/SimpleGallery';
 
+import { awards } from '@/mock-data/awards';
+
 
 export default function Awards () {
 
@@ -43,69 +45,14 @@ export default function Awards () {
                     </svg>
                 </div>
 
-                <div className={styles.awards_btn_slider}>
-                    
-                    <button className={styles.btn_prev} onClick={handlePrev}>
-                        <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.5036 1.30371L1.24147 10.5656M1.24147 10.5656L10.3718 19.6959M1.24147 10.5656L22.7598 10.5656" stroke="#433C8C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                    </button>
-                    
-                    <button className={styles.btn_next} onClick={handleNext}>
-                        <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.4964 1.30371L22.7585 10.5656M22.7585 10.5656L13.6282 19.6959M22.7585 10.5656L1.24023 10.5656" stroke="#433C8C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                    </button>
-
-                </div>
+                
             </div>
 
             <div className={styles.awards_content}>
                     <SimpleGallery
                         sliderRef={sliderRef}
                         galleryID="my-test-gallery"
-                        images={[
-                            {
-                            largeURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-                            thumbnailURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg',
-                            width: 1669,
-                            height: 2500,
-                            },
-                            {
-                            largeURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg',
-                            thumbnailURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg',
-                            width: 2500,
-                            height: 1666,
-                            },
-                            {
-                            largeURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg',
-                            thumbnailURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg',
-                            width: 2500,
-                            height: 1666,
-                            },
-                            {
-                            largeURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg',
-                            thumbnailURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg',
-                            width: 2500,
-                            height: 1666,
-                            },
-                            {
-                            largeURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg',
-                            thumbnailURL:
-                                'https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg',
-                            width: 2500,
-                            height: 1666,
-                            },
-                        ]}
+                        images={awards}
                     />
                     
             </div>

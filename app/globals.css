@@ -99,3 +99,8 @@ a {
 .gap-20 {
   gap: 20px;
 }
+
+
+.swiper {
+  position: static !important;
+}

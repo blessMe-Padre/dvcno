@@ -1,19 +1,24 @@
 'use client'
 
 import React, { useEffect } from 'react';
+
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
+
 import styles from './style.module.css'
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperNavButtons } from '../SwiperNavButtons/SwiperNavButtons';
+import { Navigation } from 'swiper/modules'
 
 import 'swiper/css';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-export default function SimpleGallery(props, sliderRef) {
+export default function SimpleGallery(props) {
+  
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({
       gallery: '#' + props.galleryID,
-      children: 'a',
+      children: '.swiper .swiper-slide a',
       pswpModule: () => import('photoswipe'),
     });
     lightbox.init();
@@ -24,51 +29,34 @@ export default function SimpleGallery(props, sliderRef) {
     };
   }, []);
 
-  console.log(sliderRef);
   return (
     
-
-
-    <Swiper 
-        ref={sliderRef}
-        navigation={{
-          prevEl: '.btn_prev',
-          nextEl: '.btn_next',
-        }}       
-        spaceBetween={40}
-        slidesPerView={4} 
-        breakpoints={{
-          // when window width is >= 640px
-          640: {
-            width: 640,
-            slidesPerView: 1,
-          },
-          // when window width is >= 768px
-          768: {
-            width: 768,
-            slidesPerView: 2,
-          },
-        }}
-    >   
-        
-        <div className="pswp-gallery" id={props.galleryID}>
-        {props.images.map((image, index) => (
-            <SwiperSlide key={index}>
-                
-                <a
-                    href={image.largeURL}
-                    data-pswp-width={image.width}
-                    data-pswp-height={image.height}
-                    key={props.galleryID + '-' + index}
-                    target='_blank'
-                    rel="noreferrer"
-                    className={styles.img_wrapper}
-                >
-                <img src={image.thumbnailURL} alt="" />
-                </a>
-            </SwiperSlide>
-        ))}
-        </div>
-    </Swiper>
+    <div className='pswp-gallery' id={props.galleryID}>
+        <Swiper 
+            modules={[Navigation]}      
+            spaceBetween={40}
+            slidesPerView={4} 
+            
+        >   
+            <div className="pswp-gallery" id={props.galleryID}>
+            {props.images.map((image, index) => (
+                <SwiperSlide key={index}>
+                    <a
+                      href={image.largeURL}
+                      data-pswp-width={image.width}
+                      data-pswp-height={image.height}
+                      key={props.galleryID + '-' + index}
+                      target='_blank'
+                      rel="noreferrer"
+                      className={styles.img_wrapper}
+                    >
+                      <img src={image.thumbnailURL} alt="" />
+                    </a>
+                </SwiperSlide>
+            ))}
+            </div>
+            <SwiperNavButtons />
+        </Swiper>
+      </div>
   );
 }
