@@ -5,7 +5,9 @@ import Link from "next/link";
 import { Footer } from "./components/Footer/Footer";
 
 import Slider from "./components/Slider/Slider";
-import About from "./components/Sections/About/About";
+import Awards from './components/Awards/Awards';
+
+
 
 export const metadata = {
   title: "ДВЦНО | Главная",
@@ -33,9 +35,11 @@ export default function Home() {
         <p>Дальневосточный центр непрерывного образования</p>
         <p>Дальневосточный центр непрерывного образования</p> */}
 
-        {/* <Slider /> */}
         <About />
 
+
+        <Slider />
+        <Awards />
       </main>
 
       <Footer />
