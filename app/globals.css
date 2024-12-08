@@ -114,6 +114,11 @@ ul {
   gap: 20px;
 }
 
+
 .flex-0 {
   flex: 0 0 auto;
+}
+
+.swiper {
+  position: static !important;
 }

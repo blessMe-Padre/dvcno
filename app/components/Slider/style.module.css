@@ -5,5 +5,129 @@
 }
 
 .slider {
+    position: relative;
     width: 100%;
+}
+
+.slider__title { 
+    max-width: 70%;
+    color: var(--white);
+    font-family: var(--second-family);
+    font-size: clamp(2.25rem, 1.286rem + 4.821vw, 5.625rem);
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-bottom: 30px;
+
+}
+
+.slider__desc {
+    color: var(--white);
+    font-family: var(--font-family);
+    font-weight: 400;
+    
+    margin-bottom: 40px;
+
+    max-width: 50%;
+
+    font-size: clamp(0.875rem, 0.804rem + 0.357vw, 1.125rem);
+}
+
+
+.slider__list {
+
+    display: grid;
+    gap: 20px;
+    list-style: disc;
+
+    max-width: 50%;
+}
+
+.add_class {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.slider__list li {
+    font-size: clamp(0.75rem, 0.607rem + 0.714vw, 1.25rem);
+    font-family: var(--font-family);
+    font-weight: 600;
+
+}
+
+.slider__link {
+    width: max-content;
+
+    font-family: var(--font-family);
+    font-size: clamp(0.875rem, 0.804rem + 0.357vw, 1.125rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    color: var(--black);
+    
+    font-weight: 700;
+    background-color: var(--orange);
+
+    text-align: center;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 6px;
+
+    transition: 0.7s ease-in-out;
+
+    margin-top: 40px;
+    min-width: 330px;
+}
+
+.slider__link:hover {
+    color: var(--white);
+    background-color: var(--green);
+}
+
+.slider__link > svg path {
+    transition: 0.7s ease-in-out;
+}
+
+.slider__link:hover > svg path{
+    stroke: var(--white);
+}
+
+
+.slider__wrapper__content {
+    position: relative;
+    z-index: 1;
+
+    min-height: 680px;
+
+    padding: 60px 90px;
+}
+
+.sliderBg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.slider__img__pattern {
+    max-height: clamp(20rem, 13.214rem + 33.929vw, 43.75rem);
+    max-width:clamp(18.75rem, 9.107rem + 48.214vw, 52.5rem);}
+
+@media screen and (max-width: 769px) {
+    .slider__wrapper__content {
+        padding: 30px 30px;
+    }
+
+    .slider__title, .slider__desc, .slider__list {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
 }
