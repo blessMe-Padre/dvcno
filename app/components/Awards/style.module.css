@@ -1,0 +1,29 @@
+.section_awards {
+    position: relative;
+}
+
+.awards_title_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.awards_title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(2.25rem, 1.286rem + 4.821vw, 5.625rem);
+    text-transform: uppercase;
+    line-height: 130%;
+}
+
+.awards_content {
+    margin-top: 40px;
+}
+
+.awards_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
