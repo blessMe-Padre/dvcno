@@ -1,12 +1,16 @@
 .section_awards {
     position: relative;
+    padding: 70px 0;
 }
 
 .awards_title_wrapper {
     display: flex;
     align-items: center;
     gap: 20px;
-    
+}
+
+.awards_inner {
+    position: relative;
 }
 
 .awards_title {
@@ -15,6 +19,7 @@
     font-size: clamp(2.25rem, 1.286rem + 4.821vw, 5.625rem);
     text-transform: uppercase;
     line-height: 130%;
+    color: var(--black);
 }
 
 .awards_content {
@@ -26,4 +31,3 @@
     justify-content: space-between;
     align-items: center;
 }
-

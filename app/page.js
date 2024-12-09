@@ -8,6 +8,7 @@ import Slider from "./components/Slider/Slider";
 import Awards from './components/Awards/Awards';
 import About from "./components/Sections/About/About";
 import Why from "./components/Sections/Why/Why";
+import Events from "./components/Sections/Events/Events";
 
 
 
@@ -42,14 +43,12 @@ export default function Home() {
 
           {/* <Slider /> */}
           {/* <About /> */}
-          {/* <Awards /> */}
         </div>
-        <div className="gray-wrapper">
+        {/* <div className="gray-wrapper">
           <Why />
-        </div>
-        <div className="container">
-          wwwwww
-        </div>
+          <Awards />
+        </div> */}
+        <Events />
       </main>
 
       <Footer />
