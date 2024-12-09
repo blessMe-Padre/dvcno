@@ -17,21 +17,19 @@ import sliderBgBig from '../../../public/main-sliders/sliders-bg-1.png'
 import sliderBgMedium from '../../../public/main-sliders/sliders-bg-m-1.png'
 import sliderBgSmall from '../../../public/main-sliders/sliders-bg-s-1.png'
 
-import { mainSlidersData } from '../../../mock-data/sliders' 
+import { mainSlidersData } from '../../../mock-data/sliders'
 
 
 
 export default function Slider() {
 
-<<<<<<< HEAD
-=======
     const [sliderBg, setSliderBg] = useState();
 
-    
+
     const getALlSliders = async () => {
         try {
             const response = await fetch('../../mock-data/sliders.js');
-            
+
             // if (response.ok) {
             //     const mainSlidersData = response.data;
             // }
@@ -62,13 +60,13 @@ export default function Slider() {
             // }
 
             const imageUrls = mainSlidersData.map((slider) => {
-            const imageObj = slider.images[0];
-            const imageUrl = imageObj ? (imageObj.sliderBgBig || imageObj.sliderBgMedium || imageObj.sliderBgSmall || null) : null;
-            setSliderBg(imageUrl);
+                const imageObj = slider.images[0];
+                const imageUrl = imageObj ? (imageObj.sliderBgBig || imageObj.sliderBgMedium || imageObj.sliderBgSmall || null) : null;
+                setSliderBg(imageUrl);
                 console.log(imageUrl, sliderBgBig)
 
 
-        });
+            });
         }
 
         window.addEventListener('resize', handleResize);
@@ -78,26 +76,25 @@ export default function Slider() {
     }, []);
 
 
->>>>>>> 6b6d607bce6ef4be2b79d6749146352e8fe90aee
     return (
         <section
             className={styles.section__swiper}
-            >
+        >
             <Swiper
-                pagination={true} 
+                pagination={true}
                 modules={[Pagination]}
                 spaceBetween={50}
                 slidesPerView={1}
-                >
+            >
                 {
-                
-                    mainSlidersData && 
 
-                        mainSlidersData.map((item, index) => {
-                            return (
+                    mainSlidersData &&
+
+                    mainSlidersData.map((item, index) => {
+                        return (
                             // ПОДОГНАТЬ ВСЕ СЛАЙДЕРЫ ПОД ОДИН РАЗМЕР
                             <SwiperSlide key={index}>
-                                <Image 
+                                <Image
                                     src={sliderBgBig}
                                     width='100%'
                                     height='100%'
@@ -106,10 +103,10 @@ export default function Slider() {
 
                                 />
                                 <div
-                                    className={styles.slider} 
-                                    >
+                                    className={styles.slider}
+                                >
                                     <div className={styles.slider__wrapper__content}>
-                                            
+
                                         <h2 className={styles.slider__title}>
                                             {item.title}
                                         </h2>
@@ -121,7 +118,7 @@ export default function Slider() {
                                         {item.listItems && item.listItems.length > 0 && (
                                             <ul className={`${styles.slider__list} ${item.listItems.length > 3 ? styles.add_class : ''}`}>
                                                 {item.listItems.map((element, idx) => (
-                                                <li key={idx}>{element}</li>
+                                                    <li key={idx}>{element}</li>
                                                 ))}
                                             </ul>
                                         )}
@@ -132,7 +129,7 @@ export default function Slider() {
                                                 <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </Link>
-                                       
+
                                     </div>
 
                                 </div>
@@ -140,8 +137,8 @@ export default function Slider() {
                         )
                     })
                 }
-                
-                
+
+
             </Swiper>
         </section>
     );
