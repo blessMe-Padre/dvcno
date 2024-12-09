@@ -55,7 +55,7 @@
 }
 
 .main_img_mobile {
-    display: none;
+    display: none !important;
 }
 
 .subtile {
