@@ -1,14 +1,18 @@
 'use client'
 import { useEffect, useState } from "react";
+import { useRef } from 'react';
+
 import Image from "next/image";
 import styles from "./style.module.css";
 import Card from "../../Cards/Card/Card";
 import getEduPages from '../../../utils/getEduPages';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, A11y } from 'swiper/modules';
+import { Navigation } from 'swiper/modules'
+import { SwiperNavButtons } from "../../SwiperNavButtons/SwiperNavButtons";
 import 'swiper/css';
 import 'swiper/css/navigation';
+
 
 export default function About() {
     const [data, setData] = useState([]);
@@ -40,28 +44,30 @@ export default function About() {
             </div>
             <div>
                 {isMobile ? (
-
-                    <Swiper
-                        spaceBetween={20}
-                        slidesPerView={1}
-                        modules={[Navigation]}
-                        // loop={true}
-                        navigation
-                    >
-                        {data && data.length > 0 ? (
-                            data.map((item) => (
-                                <SwiperSlide key={item.id}>
-                                    <Card
-                                        image={item.image}
-                                        description={item.description}
-                                        link={item.link}
-                                    />
-                                </SwiperSlide>
-                            ))
-                        ) : (
-                            <p className="span-error-message">Данные отсутствуют.</p>
-                        )}
-                    </Swiper>
+                    <>
+                        <Swiper
+                            spaceBetween={20}
+                            slidesPerView={1}
+                            modules={[Navigation]}
+                        >
+                            {data && data.length > 0 ? (
+                                data.map((item) => (
+                                    <SwiperSlide key={item.id}>
+                                        <Card
+                                            image={item.image}
+                                            description={item.description}
+                                            link={item.link}
+                                        />
+                                    </SwiperSlide>
+                                ))
+                            ) : (
+                                <p className="span-error-message">Данные отсутствуют.</p>
+                            )}
+                            <SwiperNavButtons
+                                addClass={'buttons_bottom'}
+                            />
+                        </Swiper>
+                    </>
                 ) : (
                     <ul className={styles.list}>
                         {data && data.length > 0 ? (

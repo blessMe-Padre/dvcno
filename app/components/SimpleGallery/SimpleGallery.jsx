@@ -14,7 +14,7 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css';
 
 export default function SimpleGallery(props) {
-  
+
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({
       gallery: '#' + props.galleryID,
@@ -30,33 +30,33 @@ export default function SimpleGallery(props) {
   }, []);
 
   return (
-    
+
     <div className='pswp-gallery' id={props.galleryID}>
-        <Swiper 
-            modules={[Navigation]}      
-            spaceBetween={40}
-            slidesPerView={4} 
-            
-        >   
-            <div className="pswp-gallery" id={props.galleryID}>
-            {props.images.map((image, index) => (
-                <SwiperSlide key={index}>
-                    <a
-                      href={image.largeURL}
-                      data-pswp-width={image.width}
-                      data-pswp-height={image.height}
-                      key={props.galleryID + '-' + index}
-                      target='_blank'
-                      rel="noreferrer"
-                      className={styles.img_wrapper}
-                    >
-                      <img src={image.thumbnailURL} alt="" />
-                    </a>
-                </SwiperSlide>
-            ))}
-            </div>
-            <SwiperNavButtons />
-        </Swiper>
-      </div>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={40}
+        slidesPerView={4}
+
+      >
+        <div className="pswp-gallery" id={props.galleryID}>
+          {props.images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <a
+                href={image.largeURL}
+                data-pswp-width={image.width}
+                data-pswp-height={image.height}
+                key={props.galleryID + '-' + index}
+                target='_blank'
+                rel="noreferrer"
+                className={styles.img_wrapper}
+              >
+                <img src={image.thumbnailURL} alt="" />
+              </a>
+            </SwiperSlide>
+          ))}
+        </div>
+        <SwiperNavButtons />
+      </Swiper>
+    </div>
   );
 }

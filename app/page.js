@@ -6,6 +6,7 @@ import { Footer } from "./components/Footer/Footer";
 
 import Slider from "./components/Slider/Slider";
 import Awards from './components/Awards/Awards';
+import About from "./components/Sections/About/About";
 
 
 
@@ -35,10 +36,8 @@ export default function Home() {
         <p>Дальневосточный центр непрерывного образования</p>
         <p>Дальневосточный центр непрерывного образования</p> */}
 
+        {/* <Slider /> */}
         <About />
-
-
-        <Slider />
         <Awards />
       </main>
 

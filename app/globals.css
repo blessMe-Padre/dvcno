@@ -122,3 +122,12 @@ ul {
 .swiper {
   position: static !important;
 }
+
+.swiper-wrapper {
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  height: auto !important;
+}

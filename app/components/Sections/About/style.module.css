@@ -1,5 +1,6 @@
 .section {
     padding: 60px 0;
+    position: relative;
 }
 
 .title_wrapper {
@@ -53,4 +54,7 @@
         font-size: 36px;
     }
 
+    .section {
+        padding: 60px 0 120px;
+    }
 }

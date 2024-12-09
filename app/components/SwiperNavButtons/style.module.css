@@ -41,3 +41,12 @@
     align-items: center;
     gap: 10px;
 }
+
+.buttons_bottom {
+    position: absolute;
+    top: auto;
+    bottom: 30px;
+    right: 50%;
+    margin: 0 auto;
+    transform: translateX(50%);
+}
