@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import styles from "./vdspanel.module.css";
+import { useState } from "react";
 
 export default function VdsPanel({ setPanel, setPanelBtn }) {
+    const [filter, setFilter] = useState(false);
+
     // Повторное произношение текста
     function speachtxt(txt) {
         speechSynthesis.speak(new SpeechSynthesisUtterance(txt));
@@ -90,15 +93,17 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
     }
 
     const addFilter = () => {
+
+        if (!filter) {
+            setFilter(true);
+            speachtxt("изображения чёрно белые");
+        } else {
+            setFilter(false);
+            speachtxt("изображения цветные");
+        }
         const images = document.querySelectorAll('.dsv-image');
         images.forEach(image => {
             image.classList.toggle(styles.filter);
-
-            if (image.classList.contains(styles.filter)) {
-                speachtxt("изображения чёрно белые");
-            } else {
-                speachtxt("изображения цветные");
-            }
         });
     }
 
