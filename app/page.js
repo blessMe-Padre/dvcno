@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer/Footer";
 import Slider from "./components/Slider/Slider";
 import Awards from './components/Awards/Awards';
 import About from "./components/Sections/About/About";
+import Why from "./components/Sections/Why/Why";
 
 
 
@@ -18,10 +19,13 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <Header />
+      <div className="container">
+        <Header />
+      </div>
       <main>
         <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
-        {/* <Image
+        <div className="container">
+          {/* <Image
           aria-hidden
           src="/content/image-1.png"
           alt="Изображение"
@@ -36,9 +40,16 @@ export default function Home() {
         <p>Дальневосточный центр непрерывного образования</p>
         <p>Дальневосточный центр непрерывного образования</p> */}
 
-        {/* <Slider /> */}
-        <About />
-        <Awards />
+          {/* <Slider /> */}
+          {/* <About /> */}
+          {/* <Awards /> */}
+        </div>
+        <div className="gray-wrapper">
+          <Why />
+        </div>
+        <div className="container">
+          wwwwww
+        </div>
       </main>
 
       <Footer />

@@ -16,6 +16,7 @@
   --dark-blue: #282646;
   --white: #FFFFFF;
   --gray: #EBEEF8;
+  --dark-gray: #e4e8f5;
   --light-blue: #37A4DA;
   --yellow: #FCCC05;
   --green: #29A55C;
@@ -130,4 +131,9 @@ ul {
 
 .swiper-slide {
   height: auto !important;
+}
+
+.gray-wrapper {
+  background-color: var(--dark-gray);
+  border-radius: 60px;
 }
