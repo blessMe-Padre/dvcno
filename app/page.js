@@ -6,9 +6,9 @@ import { Footer } from "./components/Footer/Footer";
 
 import Slider from "./components/Slider/Slider";
 import Awards from './components/Awards/Awards';
-import About from "./components/Sections/About/About";
-import Why from "./components/Sections/Why/Why";
-import Events from "./components/Sections/Events/Events";
+import About from "./sections/About/About";
+import Why from "./sections/Why/Why";
+import Events from "./sections/Events/Events";
 
 
 
@@ -45,8 +45,9 @@ export default function Home() {
           {/* <About /> */}
         </div>
         <div className="gray-wrapper">
-          <Why />
-          <Awards />
+
+          {/* <Why /> */}
+          {/* <Awards /> */}
         </div>
         <Events />
       </main>
