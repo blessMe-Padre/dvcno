@@ -44,10 +44,10 @@ export default function Home() {
           {/* <Slider /> */}
           {/* <About /> */}
         </div>
-        {/* <div className="gray-wrapper">
+        <div className="gray-wrapper">
           <Why />
           <Awards />
-        </div> */}
+        </div>
         <Events />
       </main>
 
