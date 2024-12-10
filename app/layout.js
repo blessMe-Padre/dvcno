@@ -6,6 +6,7 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
   style: ['normal'],
   display: 'swap',
+  subsets: ['cyrillic', 'cyrillic-ext'],
 });
 
 // const geistSans = localFont({
