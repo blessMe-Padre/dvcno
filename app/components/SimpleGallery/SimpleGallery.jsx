@@ -15,7 +15,7 @@ import 'swiper/css';
 
 export default function SimpleGallery(props) {
 
-  console.log(props)
+  // console.log(props)
 
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({
@@ -38,6 +38,15 @@ export default function SimpleGallery(props) {
         modules={[Navigation]}
         spaceBetween={40}
         slidesPerView={4}
+        loop='true'
+        breakpoints={{
+          320: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+        }}
 
       >
         <div className="pswp-gallery" id={props.galleryID}>
