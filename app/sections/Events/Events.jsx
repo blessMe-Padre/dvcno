@@ -8,13 +8,15 @@ import { Navigation } from 'swiper/modules'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { SwiperNavButtons } from "../../SwiperNavButtons/SwiperNavButtons";
-import EventCard from "../../Cards/Event-Card/EventCard";
+
+import EventCard from "./../../components/Cards/Event-Card/EventCard";
+import { SwiperNavButtons } from "../../components/SwiperNavButtons/SwiperNavButtons";
 
 export default function Events() {
     return (
         <section className={styles.section}>
             <div className="container">
+                <h2 className={styles.title}>События</h2>
                 <Swiper
                     spaceBetween={20}
                     slidesPerView={2}

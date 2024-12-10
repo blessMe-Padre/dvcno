@@ -20,7 +20,7 @@
     left: 0;
     width: 245px;
     height: 16px;
-    background-image: url('./../../../../public/decor/image-3.svg');
+    background-image: url('../../../public/decor/image-3.svg');
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -74,7 +74,7 @@
 
 .item:nth-child(1) {
     background-color: var(--violet);
-    background-image: url('../../../../public/why/bg-1.svg');
+    background-image: url('../../../public/why/bg-1.svg');
 }
 
 .item:nth-child(2) {
@@ -85,17 +85,17 @@
 
 .item:nth-child(3) {
     background-color: var(--green);
-    background-image: url('../../../../public/why/bg-2.svg');
+    background-image: url('../../../public/why/bg-2.svg');
 }
 
 .item:nth-child(4) {
     background-color: var(--light-blue);
-    background-image: url('../../../../public/why/bg-3.svg');
+    background-image: url('../../../public/why/bg-3.svg');
 }
 
 .item:nth-child(5) {
     background-color: var(--purple);
-    background-image: url('../../../../public/why/bg-4.svg');
+    background-image: url('../../../public/why/bg-4.svg');
 }
 
 @media (max-width: 1023px) {
