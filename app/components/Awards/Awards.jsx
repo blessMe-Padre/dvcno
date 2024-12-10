@@ -10,9 +10,13 @@ import getAwards from '@/app/utils/getAwards';
 
 import { useEffect, useState } from 'react';
 
+
+import { awards } from '@/mock-data/awards';
+
+
 export default function Awards() {
 
-    const { data, setData } = useState([]);
+    const [data, setData] = useState();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -42,11 +46,21 @@ export default function Awards() {
                     </div>
 
                     <div className={styles.awards_content}>
-                        <SimpleGallery
-                            galleryID="my-test-gallery"
-                            images={data}
-                        />
+                        {data && data.length > 0 ? (
+                             <SimpleGallery
+                                galleryID="my-test-gallery"
+                                images={data}
+                            />
 
+                            )
+
+                            : (
+                                <div style={{ color: '#333'}}>
+                                    Данные не пришли
+                                </div>
+                            )
+                        }
+                       
                     </div>
                 </div>
             </div>
