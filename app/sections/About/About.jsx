@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import styles from "./style.module.css";
-import Card from "../../Cards/Card/Card";
-import getEduPages from '../../../utils/getEduPages';
+import Card from "./../../components/Cards/Card/Card";
+import getEduPages from '../../utils/getEduPages';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
-import { SwiperNavButtons } from "../../SwiperNavButtons/SwiperNavButtons";
+import { SwiperNavButtons } from "../../components/SwiperNavButtons/SwiperNavButtons";
 import 'swiper/css';
 import 'swiper/css/navigation';
 

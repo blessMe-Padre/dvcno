@@ -28,6 +28,7 @@ export default function Slider() {
 
     }, []);
 
+
     useEffect(() => {
         if (data && data.length > 0) {
             function handleResize() {
@@ -101,6 +102,7 @@ export default function Slider() {
                                             </Link>
 
                                         </div>
+
 
                                     </div>
                                 </SwiperSlide>
