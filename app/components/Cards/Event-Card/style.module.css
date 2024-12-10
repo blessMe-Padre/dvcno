@@ -4,6 +4,8 @@
     border-radius: 30px;
     height: 100%;
     color: var(--black);
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -61,7 +63,7 @@
     font-size: clamp(1rem, 0.857rem + 0.298vw, 1.125rem);
     line-height: 1.44444;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    flex: 1;
 }
 
 .description {
@@ -76,4 +78,12 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    flex: 1;
 }
