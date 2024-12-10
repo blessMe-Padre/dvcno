@@ -41,7 +41,7 @@ export default function Home() {
         <p>Дальневосточный центр непрерывного образования</p>
         <p>Дальневосточный центр непрерывного образования</p> */}
 
-          {/* <Slider /> */}
+          <Slider />
           {/* <About /> */}
         </div>
         <div className="gray-wrapper">
