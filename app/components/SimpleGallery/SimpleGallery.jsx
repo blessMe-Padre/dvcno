@@ -59,7 +59,7 @@ export default function SimpleGallery(props) {
                 key={props.galleryID + '-' + index}
                 target='_blank'
                 rel="noreferrer"
-                className={styles.img_wrapper}
+                className={`${styles.img_wrapper} dsv-image`}
               >
                 <div className={styles.div_img_shadow}>
                     <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
