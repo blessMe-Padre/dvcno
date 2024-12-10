@@ -2,24 +2,36 @@ import Image from "next/image";
 import styles from "./style.module.css";
 import Link from "next/link";
 
-export default function EventCard() {
+export default function EventCard(
+    {
+        title,
+        description,
+        thumbnail,
+        date,
+        month,
+        year,
+        week,
+        hour,
+        minute
+    }
+) {
     return (
         <div className={styles.card}>
             <header className={styles.header}>
                 <div className="flex">
-                    <div className={styles.day}>18</div>
+                    <div className={styles.day}>{date}</div>
                     <div>
-                        <p>Января 2023</p>
-                        <p className={styles.week_day}>Сб</p>
+                        <p>{month} {year}</p>
+                        <p className={styles.week_day}>{week}</p>
                     </div>
                 </div>
 
-                <div className={styles.header_tag}>Начало в 11:00</div>
+                <div className={styles.header_tag}>Начало в {hour}:{minute}</div>
             </header>
 
             <div className={styles.image_wrapper}>
                 <Image
-                    src="/events/image.jpg"
+                    src={thumbnail ? thumbnail : '/placeholder/placeholder.png'}
                     alt="Фото мероприятия"
                     width={605}
                     height={300}
@@ -27,10 +39,10 @@ export default function EventCard() {
                 />
             </div>
 
-            <h3 className={styles.title}>Всероссийский форум молодых предпринимателей</h3>
-
-            <p className={styles.description}>Федеральное агентство по делам молодежи (Росмолодёжь) совместно
-                с департаментом по делам молодёжи...</p>
+            <div className={styles.footer}>
+                <h3 className={styles.title}>{title}</h3>
+                <p className={styles.description}>{description}</p>
+            </div>
 
 
 
