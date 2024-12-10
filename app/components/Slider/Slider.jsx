@@ -28,15 +28,15 @@ export default function Slider() {
 
     const getALlSliders = async () => {
         try {
-            const response = await fetch('../../mock-data/sliders.js');
+            // const response = await fetch('../../mock-data/sliders.js');
 
             // if (response.ok) {
             //     const mainSlidersData = response.data;
             // }
 
-            return response.data;
+            // return response.data;
         } catch (error) {
-            console.error(`Error`, error);
+            // console.error(`Error`, error);
             // throw error;
         }
     };
@@ -99,7 +99,7 @@ export default function Slider() {
                                     width='100%'
                                     height='100%'
                                     alt='slider_bg'
-                                    className={styles.sliderBg}
+                                    className={`${styles.sliderBg} dsv-image`}
 
                                 />
                                 <div
