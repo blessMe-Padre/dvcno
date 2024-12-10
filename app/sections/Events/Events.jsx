@@ -24,9 +24,6 @@ export default function Events() {
         fetchData();
     }, []);
 
-    console.log(events);
-
-
     return (
         <section className={styles.section}>
             <div className="container">
@@ -36,11 +33,20 @@ export default function Events() {
                         spaceBetween={20}
                         slidesPerView={2}
                         modules={[Navigation]}
+                        loop={true}
+                        breakpoints={{
+                            320: {
+                                slidesPerView: 1,
+                            },
+                            769: {
+                                slidesPerView: 2,
+                            },
+                        }}
                     >
                         {events && events.length > 0 ? (
                             events.map((item) => (
                                 <SwiperSlide key={item.id}>
-                                    <Link href='2222'>
+                                    <Link href={` /pages/event/${item.slug}`}>
                                         <EventCard
                                             title={item.title}
                                             key={item.aid}

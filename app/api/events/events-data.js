@@ -190,7 +190,7 @@ export const eventsData = {
             "status": "active",
             "date_from": null,
             "date_to": null,
-            "slug": "interaktivnaya-lekciya",
+            "slug": "interaktivnaya-lekciya-2",
             "created_at": null,
             "updated_at": null
         },
@@ -254,7 +254,7 @@ export const eventsData = {
             "status": "active",
             "date_from": null,
             "date_to": null,
-            "slug": "interaktivnaya-lekciya",
+            "slug": "interaktivnaya-lekciya-3",
             "created_at": null,
             "updated_at": null
         }
