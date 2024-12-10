@@ -1,39 +1,34 @@
 "use client"
 import 'swiper/css';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from "./style.module.css";
 
-import Image from 'next/image';
-
-import Award1 from '../../../public/awards/award1.png';
-import Award2 from '../../../public/awards/award2.png';
-import Award3 from '../../../public/awards/award3.png';
-import Award4 from '../../../public/awards/award4.png';
-
 import 'swiper/css/navigation';
-// import required modules
-import { Navigation } from 'swiper/modules';
-import { useEffect, useRef, useCallback } from 'react';
-
 import SimpleGallery from '../SimpleGallery/SimpleGallery';
+
+import getAwards from '@/app/utils/getAwards';
+
+import { useEffect, useState } from 'react';
+
 
 import { awards } from '@/mock-data/awards';
 
 
 export default function Awards() {
 
-    const sliderRef = useRef(null);
+    const [data, setData] = useState();
 
-    const handlePrev = useCallback(() => {
-        if (!sliderRef.current) return;
-        sliderRef.current.swiper.slidePrev();
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await getAwards();
+            setData(result);
+        };
+
+        fetchData();
+
     }, []);
 
-    const handleNext = useCallback(() => {
-        if (!sliderRef.current) return;
-        sliderRef.current.swiper.slideNext();
-    }, []);
+    console.log(data)
 
     return (
         <section className={styles.section_awards}>
@@ -51,12 +46,21 @@ export default function Awards() {
                     </div>
 
                     <div className={styles.awards_content}>
-                        <SimpleGallery
-                            sliderRef={sliderRef}
-                            galleryID="my-test-gallery"
-                            images={awards}
-                        />
+                        {data && data.length > 0 ? (
+                             <SimpleGallery
+                                galleryID="my-test-gallery"
+                                images={data}
+                            />
 
+                            )
+
+                            : (
+                                <div style={{ color: '#333'}}>
+                                    Данные не пришли
+                                </div>
+                            )
+                        }
+                       
                     </div>
                 </div>
             </div>

@@ -45,6 +45,7 @@ export default function Home() {
           {/* <About /> */}
         </div>
         <div className="gray-wrapper">
+
           {/* <Why /> */}
           {/* <Awards /> */}
         </div>

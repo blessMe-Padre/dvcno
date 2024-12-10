@@ -15,6 +15,8 @@ import 'swiper/css';
 
 export default function SimpleGallery(props) {
 
+  // console.log(props)
+
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({
       gallery: '#' + props.galleryID,
@@ -36,6 +38,15 @@ export default function SimpleGallery(props) {
         modules={[Navigation]}
         spaceBetween={40}
         slidesPerView={4}
+        loop='true'
+        breakpoints={{
+          320: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+        }}
 
       >
         <div className="pswp-gallery" id={props.galleryID}>
@@ -48,8 +59,15 @@ export default function SimpleGallery(props) {
                 key={props.galleryID + '-' + index}
                 target='_blank'
                 rel="noreferrer"
-                className={styles.img_wrapper}
+                className={`${styles.img_wrapper} dsv-image`}
               >
+                <div className={styles.div_img_shadow}>
+                    <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.73609 16.98V0.0199986H10.2561V16.98H7.73609ZM0.296094 9.7V7.34H17.6961V9.7H0.296094Z" fill="white"/>
+                    </svg>
+
+                </div>
+                
                 <img src={image.thumbnailURL} alt="" />
               </a>
             </SwiperSlide>
