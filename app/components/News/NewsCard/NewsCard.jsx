@@ -24,17 +24,7 @@ export const NewsCard = ({ data }) => {
                         loop={true}
                         autoplay={true}
                         fadeEffect={true}
-                        breakpoints={{
-                            320: {
-                                slidesPerView: 1,
-                            },
-                            769: {
-                                slidesPerView: 2,
-                            },
-                            1024: {
-                                slidesPerView: 3,
-                            },
-                        }}
+                       
                     >
                         {data.images.map((image, index) => (
                             <SwiperSlide key={index}>
