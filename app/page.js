@@ -10,6 +10,8 @@ import About from "./sections/About/About";
 import Why from "./sections/Why/Why";
 import Events from "./sections/Events/Events";
 
+import {Contacts} from "./sections/Contacts/Contacts";
+
 import { News } from "./sections/News/News";
 
 
@@ -53,6 +55,8 @@ export default function Home() {
         </div>
           <News /> 
         <Events />
+
+        <Contacts />
 
       </main>
 
