@@ -5,9 +5,6 @@
     max-height: 600px;
 }
 
-.card__img {
-    border-radius: 60px;
-}
 
 .card__content {
     padding: 30px 0 20px 0;
@@ -51,3 +48,8 @@
     width: 100%;
 }
 
+
+.image {
+    object-fit: cover;
+    border-radius: 30px;
+}

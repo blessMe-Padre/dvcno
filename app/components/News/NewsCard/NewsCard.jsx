@@ -31,10 +31,11 @@ export const NewsCard = ({ data }) => {
                                 {console.log(image.slide)}
                                 {image.slide && ( 
                                 <Image 
-                                    src={image.slide ? image.slide : []} 
+                                    src={image.slide ? image.slide : '/placeholder/placeholder.png'}
                                     width={350}
                                     height={300}
-                                    objectFit='contain'
+                                    className={styles.image}
+                                    alt='news_img'
                                 /> 
                                 )}
                                 {!image.slide && <p>Image not available</p>}  {}

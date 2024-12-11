@@ -2,9 +2,9 @@ export const newsData = [
     {
         id: 2,
         images: [
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
         ],
         title: 'Всероссийский форум молодых предпринимателей',
         subtitle: 'Делимся опытом',
@@ -15,9 +15,9 @@ export const newsData = [
     {
         id: 2,
         images: [
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
         ],
         title: 'Всероссийский форум молодых предпринимателей',
         subtitle: 'Делимся опытом',
@@ -28,9 +28,9 @@ export const newsData = [
     {
         id: 2,
         images: [
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
         ],
         title: 'Всероссийский форум молодых предпринимателей',
         subtitle: 'Делимся опытом',
@@ -41,9 +41,9 @@ export const newsData = [
     {
         id: 2,
         images: [
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
         ],
         title: 'Всероссийский форум молодых предпринимателей',
         subtitle: 'Делимся опытом',
@@ -54,9 +54,9 @@ export const newsData = [
     {
         id: 2,
         images: [
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
-           { slide : '/public/news/news_slider.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
+           { slide : '/news/news_slide.png'},
         ],
         title: 'Всероссийский форум молодых предпринимателей',
         subtitle: 'Делимся опытом',

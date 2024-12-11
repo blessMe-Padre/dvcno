@@ -52,7 +52,7 @@ export default function Home() {
           {/* <Awards /> */}
         </div>
           <News /> 
-        {/* <Events /> */}
+        <Events />
 
       </main>
 
