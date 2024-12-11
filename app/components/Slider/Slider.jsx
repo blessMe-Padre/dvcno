@@ -56,8 +56,6 @@ export default function Slider() {
                             <div>Loading...</div>
                         )
                 }
-
-
             </Swiper>
         </section>
     );
