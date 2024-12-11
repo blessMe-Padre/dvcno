@@ -17,14 +17,13 @@ export const NewsCard = ({ data }) => {
             <div className={styles.card}>
                 <div className={styles.card_img}>
                     <Swiper
-                       pagination={true}
+                        pagination={true}
                         modules={[Pagination]}
                         spaceBetween={50}
                         slidesPerView={1}
                         loop={true}
+                        
                         autoplay={true}
-                        fadeEffect={true}
-                       
                     >
                         {data.images.map((image, index) => (
                             <SwiperSlide key={index}>
