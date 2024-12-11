@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
-import 'swiper/css/pagination';
+// import 'swiper/css/pagination';
 
 import Image from 'next/image';
 
@@ -22,20 +22,20 @@ export const NewsCard = ({ data }) => {
                         spaceBetween={50}
                         slidesPerView={1}
                         loop={true}
-                        
                         autoplay={true}
+                        speed={1500}
+                        className='custom_wrapper'
                     >
                         {data.images.map((image, index) => (
                             <SwiperSlide key={index}>
-                                {console.log(image.slide)}
                                 {image.slide && ( 
-                                <Image 
-                                    src={image.slide ? image.slide : '/placeholder/placeholder.png'}
-                                    width={350}
-                                    height={300}
-                                    className={styles.image}
-                                    alt='news_img'
-                                /> 
+                                    <Image 
+                                        src={image.slide ? image.slide : '/placeholder/placeholder.png'}
+                                        width={350}
+                                        height={300}
+                                        className={styles.image}
+                                        alt='news_img'
+                                    /> 
                                 )}
                                 {!image.slide && <p>Image not available</p>}  {}
                             </SwiperSlide>

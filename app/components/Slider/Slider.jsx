@@ -36,6 +36,7 @@ export default function Slider() {
                 modules={[Pagination]}
                 spaceBetween={50}
                 slidesPerView={1}
+                speed={1500}
             >
                 
                 {data && data.length > 0 ? (
