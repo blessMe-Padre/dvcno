@@ -53,3 +53,17 @@
     background-position: center center;
 }
 
+
+.swiper_news .swiper-slide-active {
+    transform: scale(1.5) !important;
+}
+
+.swiper-slide-active .container {
+    transform: scale(1.2);
+    transition: transform .2s ease;
+}
+
+.swiper-slide .container {
+    transform: scale(1);
+    transition: transform .2s ease;
+}
