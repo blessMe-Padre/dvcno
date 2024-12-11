@@ -62,7 +62,7 @@ export const eventsData = {
             "status": "active",
             "date_from": "2023-01-18 11:00:00",
             "date_to": null,
-            "slug": "vserossiyskiy-forum-molodih-predprinimateley",
+            "slug": "vserossiyskiy-forum-molodih-predprinimateley-1",
             "created_at": null,
             "updated_at": null
         },
