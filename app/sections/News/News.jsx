@@ -55,6 +55,7 @@ export const News = () => {
                             centeredSlides='true'
                             centeredSlidesBounds="true"
                             className={styles.swiper_news}
+                            speed={1500}
                             breakpoints={{
                                 320: {
                                     slidesPerView: 1,
