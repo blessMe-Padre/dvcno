@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import styles from './style.module.css';
 
+import placeholder from '../../../public/placeholder/placeholder.png';
 
 export const HeroSection = ({ item }) => {
 
@@ -37,7 +38,7 @@ export const HeroSection = ({ item }) => {
     return (
         <>
             <Image
-                src={sliderBg}
+                src={sliderBg ? sliderBg : placeholder}
                 width={2500}
                 height={1400}
                 alt='slider_bg'
