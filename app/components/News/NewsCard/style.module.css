@@ -1,0 +1,53 @@
+.card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 60px;
+    max-height: 600px;
+}
+
+.card__img {
+    border-radius: 60px;
+}
+
+.card__content {
+    padding: 30px 0 20px 0;
+}
+
+.title {
+
+    color: var(--black);
+    font-size: clamp(0.875rem, 0.804rem + 0.357vw, 1.125rem);
+    padding: 0 0 30px 0;
+    font-weight: 700;
+}
+.date_and_subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-start;
+    gap: 10px;
+    
+    padding-bottom: 20px;
+
+    color: #757F99;
+}
+
+.content {
+    color: var(--black);
+    font-size: clamp(0.875rem, 0.804rem + 0.357vw, 1.125rem);
+    line-height: 1.5;
+
+    overflow: hidden;
+    line-height: 25px; /* каждая строка будет по высоте 25px, чтобы я точно мог установить высоту блока (это чисто визуально, ни на что не влияет) */
+    text-align: justify;
+
+    /* а вот это как раз и дает результат "..." в многострочном тексте */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
+}
+
+.card_img {
+    max-height: 290px;
+    width: 100%;
+}
+
