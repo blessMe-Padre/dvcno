@@ -25,7 +25,6 @@ export const Form = ({ setActive }) => {
                 setError(undefined)
                 // setActive(false)
                 reset();
-                console.log('Ответ сервера:', data);
             } else {
                 isSending(false);
                 setError('Что-то пошло не так');

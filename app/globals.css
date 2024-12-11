@@ -137,3 +137,11 @@ ul {
   background-color: var(--dark-gray);
   border-radius: 60px;
 }
+
+.custom_wrapper .swiper-pagination {
+  bottom: 277px !important;
+}
+
+.custom_wrapper .swiper-pagination .swiper-pagination-bullet {
+  background-color: var(--white) !important;
+}
