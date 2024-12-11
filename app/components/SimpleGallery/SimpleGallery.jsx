@@ -15,7 +15,6 @@ import 'swiper/css';
 
 export default function SimpleGallery(props) {
 
-  // console.log(props)
 
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({

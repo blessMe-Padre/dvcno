@@ -1,0 +1,69 @@
+.violet_bg {
+    background-color: var(--violet);
+    border-radius: 60px;
+}
+
+.section {
+    position: relative;
+    padding: 60px 0;
+}
+
+.news_dekor {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+.wrapper {
+    padding: 120px 90px;
+}
+
+.title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(2.5rem, -1.071rem + 7.44vw, 5.625rem);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 245px;
+    height: 16px;
+    background-image: url('../../../public/decor/news.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 22%;
+    width: 69px;
+    height: 100px;
+    background-image: url('../../../public/decor/news_2.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.swiper_news .swiper-slide-active {
+    transform: scale(1.5) !important;
+}
+
+.swiper-slide-active .container {
+    transform: scale(1.2);
+    transition: transform .2s ease;
+}
+
+.swiper-slide .container {
+    transform: scale(1);
+    transition: transform .2s ease;
+}

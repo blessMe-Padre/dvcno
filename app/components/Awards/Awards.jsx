@@ -28,8 +28,6 @@ export default function Awards() {
 
     }, []);
 
-    console.log(data)
-
     return (
         <section className={styles.section_awards}>
             <div className="container">
