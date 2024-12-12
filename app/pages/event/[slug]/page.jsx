@@ -28,13 +28,34 @@ export default async function EventPage({ params }) {
     );
 }
 
+// export async function generateStaticParams() {
+//     const posts = await fetch('http://localhost:3000/api/events').then((res) => res.json());
+//     const res = posts.data.map((post) => ({
+//         slug: post.slug,
+//     }))
+//     console.log(res);
+
+//     return res;
+// }
+
+
 export async function generateStaticParams() {
-    const posts = await fetch('http://localhost:3000/api/events').then((res) => res.json());
-    const res = posts.data.map((post) => ({
-        slug: post.slug,
-    }))
-    console.log(res);
+  try {
+    const postsResponse = await fetch('http://localhost:3000/api/events');
+    if (!postsResponse.ok) {
+      throw new Error(`HTTP error! status: ${postsResponse.status}`);
+    }
 
-    return res;
+    const posts = await postsResponse.json(); 
+    if (!posts.data) {
+        throw new Error("API response does not contain data property"); 
+    }
+    const slugs = posts.data.map((post) => ({ slug: post.slug })); 
+
+    console.log(slugs);
+    return slugs;
+  } catch (error) {
+    console.error('Ошибка получения данных:', error); 
+    return []; 
+  }
 }
-
