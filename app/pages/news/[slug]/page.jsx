@@ -27,14 +27,14 @@ export default async function EventPage({ params }) {
     );
 }
 
-export async function generateStaticParams() {
-    const posts = await fetch('http://localhost:3000/api/news').then((res) => res.json());
-    console.log(posts)
-    const res = posts.map((post) => ({
-        slug: post.title,
-    }))
-    console.log(res);
+// export async function generateStaticParams() {
+//     const posts = await fetch('http://localhost:3000/api/news').then((res) => res.json());
+//     console.log(posts)
+//     const res = posts.map((post) => ({
+//         slug: post.title,
+//     }))
+//     console.log(res);
 
-    return res;
-}
+//     return res;
+// }
 
