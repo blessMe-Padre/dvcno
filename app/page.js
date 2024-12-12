@@ -10,7 +10,7 @@ import About from "./sections/About/About";
 import Why from "./sections/Why/Why";
 import Events from "./sections/Events/Events";
 
-import {Contacts} from "./sections/Contacts/Contacts";
+import { Contacts } from "./sections/Contacts/Contacts";
 
 import { News } from "./sections/News/News";
 
@@ -45,7 +45,8 @@ export default function Home() {
         <p>Дальневосточный центр непрерывного образования</p>
         <p>Дальневосточный центр непрерывного образования</p> */}
 
-          <Slider />
+          {/* <Slider /> */}
+
           {/* <About /> */}
         </div>
         <div className="gray-wrapper">
@@ -53,14 +54,14 @@ export default function Home() {
           <Why />
           {/* <Awards /> */}
         </div>
-          <News /> 
+        {/* <News />  */}
         <Events />
 
-        <Contacts />
+        {/* <Contacts /> */}
 
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
