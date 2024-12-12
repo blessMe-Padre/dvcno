@@ -52,7 +52,6 @@ export async function generateStaticParams() {
     }
     const slugs = posts.data.map((post) => ({ slug: post.slug })); 
 
-    console.log(slugs);
     return slugs;
   } catch (error) {
     console.error('Ошибка получения данных:', error); 
