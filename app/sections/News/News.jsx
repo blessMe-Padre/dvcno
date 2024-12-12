@@ -10,13 +10,14 @@ import { useState, useEffect } from 'react';
 import getNews from '../../utils/getNews';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { NewsCard } from '../../components/News/NewsCard/NewsCard';
+import { NewsCard } from '../../components/News/NewsCard';
 
 import { SwiperNavButtons } from '@/app/components/SwiperNavButtons/SwiperNavButtons';
 import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Link from 'next/link';
 
 export const News = () => {
     const [ data, setData ] = useState([]);
@@ -72,9 +73,13 @@ export const News = () => {
                             {data && data.length > 0 ? (
                                 data.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <NewsCard
-                                            data={item}
-                                        />
+                                        <Link
+                                            href={`/pages/news/${item.title}`}
+                                        >
+                                            <NewsCard
+                                                data={item}
+                                                />
+                                        </Link>
                                     </SwiperSlide>
                                 ))
                             ) : (
