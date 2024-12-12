@@ -10,16 +10,78 @@
 }
 
 .tabs_btn {
+    font-family: var(--font-family);
     color: var(--black);
     background-color: var(--gray);
+    border: none;
     border-radius: 20px;
     padding: 14px 20px;
 
     font-weight: 600;
     transition: all 0.6s ease-in-out;
+
+    min-width: 170px;
+
 }
 
 .active {
     color: var(--violet);
     color: var(--white);
+}
+
+
+.title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(2.25rem, 1.286rem + 4.821vw, 5.625rem);
+    text-transform: uppercase;
+    line-height: 130%;
+    color: var(--black);
+    margin-top: 20px;
+
+}
+
+.map_wrapper {
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    grid-gap: 10px; 
+}
+
+
+.map_content {
+    padding: 30px;
+    background-color: var(--dark-gray);
+    border-radius: 30px;
+}
+
+.info {
+    font-family: var(--font-family);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin-bottom: 10px;
+
+    color: var(--black);
+}
+
+
+.info > p {
+    font-weight: 600;
+}
+
+
+.header_social_wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .tabs_wrapper {
+        flex-wrap: wrap;
+    }
+    .map_wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
