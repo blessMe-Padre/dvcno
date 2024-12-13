@@ -4,3 +4,4 @@
 4. 404
 5. metadata для динамических страниц
 6. 404 для событий
+7. https://realfavicongenerator.net/ favicon
