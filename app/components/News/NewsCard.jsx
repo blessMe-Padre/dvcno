@@ -31,8 +31,9 @@ export const NewsCard = ({ data }) => {
                                 {image.slide && ( 
                                     <Image 
                                         src={image.slide ? image.slide : '/placeholder/placeholder.png'}
-                                        width={350}
+                                        width={500}
                                         height={300}
+                                        objectFit='contain'
                                         className={styles.image}
                                         alt='news_img'
                                     /> 
