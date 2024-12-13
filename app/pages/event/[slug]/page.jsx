@@ -2,19 +2,27 @@ import Image from "next/image";
 import getEventsBySlug from '@/app/utils/getEventBySlug';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
+import LinkButton from '@/app/components/Link/LinkButton';
 import styles from "./style.module.css";
 
 // На данный момент страницы генерируются по SSR
 // https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 // https://www.youtube.com/watch?v=2svgA1O4fO0&ab_channel=ITMATEPK
 
-export const metadata = {
-  title: "Событие",
-  description: "Описание события",
-};
+// or Dynamic metadata
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const page = await getEventsBySlug(slug);
+
+  return {
+    title: page.title,
+    description: page.description,
+  }
+}
 export default async function EventPage({ params }) {
   const { slug } = await params;
   const page = await getEventsBySlug(slug);
+  const sanitizedContent = page.content || '';
 
   if (!page) {
     notFound();
@@ -23,8 +31,11 @@ export default async function EventPage({ params }) {
   return (
     <div className='container'>
       <Breadcrumbs title={page.title} />
+
       <h1 className={styles.title}>{page.title}</h1>
-      <div>
+
+      <header className={styles.header}>
+
         <div className="flex gap-10">
           <Image
             src={'/icons/calendar.svg'}
@@ -38,7 +49,49 @@ export default async function EventPage({ params }) {
             <p className={styles.week_day}>{page.date_event.day_D[0]}</p>
           </div>
         </div>
+
+        <div className={styles.item}>
+          <Image
+            src={'/icons/clock.svg'}
+            alt={"время"}
+            width={25}
+            height={25}
+          />
+          <div className={styles.tag}>Начало в {page.date_event.time_H}:{page.date_event.time_i}</div>
+        </div>
+
+        <div className={styles.item}>
+          <Image
+            src={'/icons/clock.svg'}
+            alt={"время"}
+            width={25}
+            height={25}
+          />
+          <div className={styles.tag}>{page.address}</div>
+        </div>
+
+        <LinkButton
+          color={'green'}
+          href={page.link_to_map}
+          text={'Посмотреть на карте'}
+        />
+      </header>
+
+      <div className={styles.image_wrapper}>
+        <Image
+          src={page.thumbnail ? page.thumbnail : '/placeholder/placeholder.png'}
+          alt={page.title}
+          width={1460}
+          height={723}
+          className={styles.image}
+        />
       </div>
+
+      <div
+        className={styles.content}
+        dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+      ></div>
+
     </div>
   );
 }
