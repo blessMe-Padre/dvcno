@@ -9,7 +9,7 @@ export default function Breadcrumbs({ title }) {
                 Главная
             </Link>
             <span className={styles.separator}></span>
-            <span>{title}</span>
+            <span className={styles.text}>{title}</span>
         </nav>
     )
 }

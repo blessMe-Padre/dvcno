@@ -88,3 +88,32 @@
     justify-content: space-between;
     flex: 1;
 }
+
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+    }
+
+    .header {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 30px;
+        flex-direction: column;
+    }
+
+    .description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.625;
+        color: #191830;
+
+        line-height: 21px;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden
+    }
+
+}

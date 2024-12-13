@@ -146,3 +146,23 @@ ul {
 .custom_wrapper .swiper-pagination .swiper-pagination-bullet {
   background-color: var(--white) !important;
 }
+
+@media (max-width: 768px) {
+  .swiper-mobile .swiper_nav_btns {
+    top: 0;
+  }
+}
+
+@media (max-width: 460px) {
+
+  .swiper-mobile {
+    padding-bottom: 70px !important;
+  }
+
+  .swiper-mobile .swiper_nav_btns {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-25%);
+  }
+}

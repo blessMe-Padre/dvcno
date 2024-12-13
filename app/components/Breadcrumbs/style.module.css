@@ -11,4 +11,20 @@
     height: 5px;
     border-radius: 100%;
     background-color: var(--default-color);
+    flex: 0 0 auto;
+}
+
+.text {
+    line-height: 21px;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden
+}
+
+@media (max-width: 530px) {
+    .nav {
+        font-size: 12px;
+    }
 }
