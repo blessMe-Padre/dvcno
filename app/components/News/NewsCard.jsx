@@ -34,7 +34,8 @@ export const NewsCard = ({ data }) => {
                                         width={500}
                                         height={300}
                                         objectFit='contain'
-                                        className={styles.image}
+                                        className={`${styles.image} dsv-image`}
+                                        style={{ background: 'gray'}}
                                         alt='news_img'
                                     /> 
                                 )}
