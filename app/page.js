@@ -11,6 +11,7 @@ import Events from "./sections/Events/Events";
 import { Contacts } from "./sections/Contacts/Contacts";
 
 import { News } from "./sections/News/News";
+import Gallery from "./sections/Gallery/Gallery";
 
 
 
@@ -50,7 +51,9 @@ export default function Home() {
         {/* <Awards /> */}
       </div>
       {/* <News />  */}
-      <Events />
+      {/* <Events /> */}
+
+      <Gallery />
 
       {/* <Contacts /> */}
 
