@@ -54,7 +54,7 @@ export default function Home() {
           <Why />
           {/* <Awards /> */}
         </div>
-        {/* <News />  */}
+        <News /> 
         <Events />
 
         {/* <Contacts /> */}

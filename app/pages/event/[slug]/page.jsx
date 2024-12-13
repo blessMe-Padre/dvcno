@@ -1,5 +1,4 @@
 import getEventsBySlug from '@/app/utils/getEventBySlug';
-import getAllEventSlugs from '@/app/utils/getAllEventSlugs';
 import { notFound } from 'next/navigation';
 
 // На данный момент страницы генерируются по SSR
@@ -15,6 +14,10 @@ export default async function EventPage({ params }) {
     const { slug } = await params;
     const page = await getEventsBySlug(slug);
 
+
+    console.log(page)
+
+        
     if (!page) {
         // notFound();
     }
