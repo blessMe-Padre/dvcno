@@ -9,7 +9,6 @@ import styles from "./style.module.css";
 // https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 // https://www.youtube.com/watch?v=2svgA1O4fO0&ab_channel=ITMATEPK
 
-// or Dynamic metadata
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const page = await getEventsBySlug(slug);
@@ -36,7 +35,7 @@ export default async function EventPage({ params }) {
 
       <header className={styles.header}>
 
-        <div className="flex gap-10">
+        <div className={styles.data_wrapper}>
           <Image
             src={'/icons/calendar.svg'}
             alt={"дата"}
