@@ -1,8 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Header from "./components/Header/Header";
 import Link from "next/link";
-import { Footer } from "./components/Footer/Footer";
 
 import Slider from "./components/Slider/Slider";
 import Awards from './components/Awards/Awards';
@@ -23,14 +21,11 @@ export const metadata = {
 export default function Home() {
 
   return (
-    <div className={styles.page}>
+    <>
+
+      <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
       <div className="container">
-        <Header />
-      </div>
-      <main>
-        <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
-        <div className="container">
-          {/* <Image
+        {/* <Image
           aria-hidden
           src="/content/image-1.png"
           alt="Изображение"
@@ -45,23 +40,21 @@ export default function Home() {
         <p>Дальневосточный центр непрерывного образования</p>
         <p>Дальневосточный центр непрерывного образования</p> */}
 
-          {/* <Slider /> */}
+        {/* <Slider /> */}
 
-          {/* <About /> */}
-        </div>
-        <div className="gray-wrapper">
+        {/* <About /> */}
+      </div>
+      <div className="gray-wrapper">
 
-          <Why />
-          {/* <Awards /> */}
-        </div>
-        {/* <News />  */}
-        <Events />
+        <Why />
+        {/* <Awards /> */}
+      </div>
+      {/* <News />  */}
+      <Events />
 
-        {/* <Contacts /> */}
+      {/* <Contacts /> */}
 
-      </main>
 
-      {/* <Footer /> */}
-    </div>
+    </>
   );
 }

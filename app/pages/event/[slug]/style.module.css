@@ -1,0 +1,15 @@
+.day {
+    font-weight: 600;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: var(--violet);
+    padding-right: 10px;
+    line-height: 0.7;
+    border-right: 1px solid var(--violet);
+}
+
+.week_day {
+    font-size: 17px;
+    color: #757f99;
+    opacity: 0.5;
+}
