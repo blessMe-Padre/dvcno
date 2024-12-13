@@ -4,7 +4,6 @@
 
 .tabs_wrapper {
     display: flex;
-    justify-content: space-between;
     gap: 16px;
     margin-bottom: 40px;
 }
@@ -25,7 +24,7 @@
 }
 
 .active {
-    color: var(--violet);
+    background-color: var(--violet);
     color: var(--white);
 }
 
@@ -41,6 +40,10 @@
 
 }
 
+.active {
+    display: block;
+}
+
 .map_wrapper {
     display: grid;
     grid-template-columns: 3fr 6fr;
@@ -49,9 +52,22 @@
 
 
 .map_content {
+    position: relative;
     padding: 30px;
     background-color: var(--dark-gray);
     border-radius: 30px;
+}
+
+.map_content::before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    right: -100px;
+    width: 245px;
+    height: 50px;
+    background-image: url('../../../public/decor/contact-dekor.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .info {
