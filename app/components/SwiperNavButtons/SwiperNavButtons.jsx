@@ -5,7 +5,7 @@ export const SwiperNavButtons = ({ addClass }) => {
     const swiper = useSwiper();
 
     return (
-        <div className={`${styles.swiper_nav_btns} ${addClass ? styles[addClass] : ''
+        <div className={`${styles.swiper_nav_btns} ${addClass} ${addClass ? styles[addClass] : ''
             }`}>
             <button className={styles.btn_prev} onClick={() => swiper.slidePrev()}>
                 <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
