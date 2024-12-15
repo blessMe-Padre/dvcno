@@ -23,6 +23,7 @@ export default async function EventPage({ params }) {
   const page = await getEventsBySlug(slug);
   const sanitizedContent = page.content || '';
 
+
   if (!page) {
     notFound();
   }

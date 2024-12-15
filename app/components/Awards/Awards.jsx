@@ -11,7 +11,6 @@ import getAwards from '@/app/utils/getAwards';
 import { useEffect, useState } from 'react';
 
 
-import { awards } from '@/mock-data/awards';
 
 
 export default function Awards() {

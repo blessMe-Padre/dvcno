@@ -1,67 +1,37 @@
 "use client"
 import styles from './style.module.css';
-import { useState, useEffect } from 'react';
-
-import placeholder from '../../../public/placeholder/placeholder.png';
-
-import Image from 'next/image';
-
+import { useState } from 'react';
 
 import SocialIcon from '@/app/components/Socilal-icon/SocialIcon';
+import { TabContent } from '@/app/components/Tab/TabContent';
 export const Contacts = () => {
 
-    const [tab, setTab] = useState();
+    const [ active, setActive ] = useState(null);
 
-    const handleChange = (e) => { 
-        return e
-    }
+    const openTab = e => setActive(+e.target.dataset.index);
+
+    const items = [
+        {title: 'АНПОО «ДВЦНО', content: '1', link: <iframe src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A965ea98ec7bd1fa8d2bcfd7a20a401ff991b535b100c6827c2363bf32b1cf478&amp;lang=ru_RU&amp;scroll=true" width={1000} height={400}></iframe> },
+        {title: 'НШДС «КЕП»', content: '2', link: '' } ,
+        {title: 'НОШДС «ВШ»', content: '3', link: '' },
+        {title: 'МЛШ', content: '4', link: '' },
+        {title: 'ШОД', content: '5', link: '' },
+        {title: 'АК', content: '6', link: '' },
+        {title: 'ФОК «Лига спорта»', content: '7', link: ''}
+    ];
+
 
     return (
         <section className={styles.section}>
             <div className='container'>
                 <ul className={styles.tabs_wrapper}>
-                    <button 
-                        className={styles.tabs_btn}
-                        onChange={() => handleChange()}
-                    >
-                            АНПОО «ДВЦНО
-                    </button>
-                    <button 
-                        className={styles.tabs_btn}
-                        onChange={() => handleChange()}
-                    >
-                            НШДС «КЕП»
-                    </button>
-                    <button 
-                        className={styles.tabs_btn}
-                        onChange={() => handleChange()}
-                    >
-                            НОШДС «ВШ»
-                    </button>
-                    <button 
-                        className={styles.tabs_btn}
-                        onChange={() => handleChange()}
-                    >
-                            МЛШ
-                    </button>
-                    <button 
-                        className={styles.tabs_btn}
-                        onChange={() => handleChange()}
-                    >
-                            ШОД
-                    </button>
-                    <button 
-                        className={styles.tabs_btn}
-                        onChange={() => handleChange()}
-                    >
-                            АК
-                    </button>
-                    <button 
-                        className={styles.tabs_btn}
-                        onChange={() => handleChange()}
-                    >
-                            ФОК «Лига спорта»
-                    </button>
+                     {items.map((n, i) => (
+                        <button
+                            className={`${styles.tabs_btn} ${i === active ? `${styles.active}` : ''}`}
+                            onClick={openTab}
+                            data-index={i}
+                        >{n.title}</button>
+                    ))}
                 </ul>
 
                 <div className={styles.map_wrapper}>
@@ -77,7 +47,7 @@ export const Contacts = () => {
 
                         <div className={styles.info}>
                             <p>Телефон</p>
-                            <a href='tel:+7423261-47-548'>8 (423) 261-47-548</a>, <a href='tel:+742326147378'> 8 (423) 261-47-378</a>, <a href='tel:+74232614738'>8 (423) 261-47-38</a>
+                            8 (423) 261-47-548, 8 (423) 261-47-378, 8 (423) 261-47-38
                         </div>
 
                         <div className={styles.info}>
@@ -110,15 +80,10 @@ export const Contacts = () => {
                         </div>
                     </div>
 
-                    <div className={styles.map}>
-                        <Image 
-                            src={placeholder}
-                            width={1000}
-                            height={400}
-                            objectFit='contain'
-                        
-                        />
+                    <div className={`${styles.map} active`}>
+                        {items[active] && <TabContent {...items[active]} />}
                     </div>
+
                 </div>
             </div>
         </section>
