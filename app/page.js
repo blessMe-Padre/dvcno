@@ -53,9 +53,18 @@ export default function Home() {
       {/* <News />  */}
       {/* <Events /> */}
 
+
+          <Why />
+          {/* <Awards /> */}
+        <News /> 
+        <Events />
+
+        <Contacts />
+
       <Gallery />
 
       {/* <Contacts /> */}
+
 
 
     </>

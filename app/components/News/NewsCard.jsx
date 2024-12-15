@@ -31,9 +31,11 @@ export const NewsCard = ({ data }) => {
                                 {image.slide && ( 
                                     <Image 
                                         src={image.slide ? image.slide : '/placeholder/placeholder.png'}
-                                        width={350}
+                                        width={500}
                                         height={300}
-                                        className={styles.image}
+                                        objectFit='contain'
+                                        className={`${styles.image} dsv-image`}
+                                        style={{ background: 'gray'}}
                                         alt='news_img'
                                     /> 
                                 )}

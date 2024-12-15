@@ -20,17 +20,20 @@ import 'swiper/css/navigation';
 import Link from 'next/link';
 
 export const News = () => {
-    const [ data, setData ] = useState([]);
+    const [ news, setNews ] = useState();
 
     useEffect(() => {
         const fetchData = async () => {
-            const news = await getNews();
-            setData(news);
+            const data = await getNews();
+            setNews(data);
         };
 
         fetchData();
 
     }, []);
+
+
+    console.log(news)
 
     return (
         <div className={styles.violet_bg}>
@@ -41,8 +44,9 @@ export const News = () => {
                     objectFit="cover"
                     className={styles.news_dekor}
                 />
+                <div className='container'>
 
-                <div className={`${styles.wrapper} container`}>
+                <div className={`${styles.wrapper} `}>
                     <div className='relative'>
 
                         <h2 className={styles.title}>
@@ -68,14 +72,13 @@ export const News = () => {
                                     slidesPerView: 3,
                                 },
                             }}
-                        >
-                            {console.log(data)}
-                            {data && data.length > 0 ? (
-                                data.map((item, index) => (
+                            >
+                            {news && news.length > 0 ? (
+                                news.map((item, index) => (
                                     <SwiperSlide key={index}>
                                         <Link
-                                            href={`/pages/news/${item.title}`}
-                                        >
+                                            href={`/pages/news/${item.slug}`}
+                                            >
                                             <NewsCard
                                                 data={item}
                                                 />
@@ -84,10 +87,11 @@ export const News = () => {
                                 ))
                             ) : (
                                 <p className="span-error-message">Данные отсутствуют.</p>
-                        )}
+                            )}
                             <SwiperNavButtons />
                         </Swiper>
                     </div>
+                            </div>
                 </div>
             </section>
         </div>
