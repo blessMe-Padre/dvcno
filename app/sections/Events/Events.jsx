@@ -38,10 +38,11 @@ export default function Events() {
                             320: {
                                 slidesPerView: 1,
                             },
-                            769: {
+                            768: {
                                 slidesPerView: 2,
                             },
                         }}
+                        className="swiper-mobile"
                     >
                         {events && events.length > 0 ? (
                             events.map((item) => (
@@ -67,7 +68,7 @@ export default function Events() {
                             <p className="span-error-message">Данные отсутствуют.</p>
                         )}
 
-                        <SwiperNavButtons />
+                        <SwiperNavButtons addClass="swiper_nav_btns" />
                     </Swiper>
                 </div>
             </div>
