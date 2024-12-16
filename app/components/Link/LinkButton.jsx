@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./style.module.css";
 import Link from "next/link";
 
-export default function SocialIcon({ color, href, text }) {
+export default function LinkButton({ color, href, text }) {
     let addClass;
     switch (color) {
         case 'green':

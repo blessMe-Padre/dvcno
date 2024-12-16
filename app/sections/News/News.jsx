@@ -18,8 +18,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Link from 'next/link';
-
-export const News = () => {
+const News = () => {
     const [ news, setNews ] = useState();
 
     useEffect(() => {
@@ -94,3 +93,5 @@ export const News = () => {
         </div>
     )
 }
+
+export default News;
