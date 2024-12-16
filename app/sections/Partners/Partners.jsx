@@ -5,7 +5,7 @@ import styles from './style.module.css';
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { SwiperNavButtons } from '@/app/components/SwiperNavButtons/SwiperNavButtons';
+import { SwiperNavButtons } from '../../components';
 import { Navigation } from 'swiper/modules';
 
 import Image from 'next/image';
@@ -14,7 +14,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 
-export const Partners = () => {
+const Partners = () => {
 
     const [partners, setPartners] = useState([]);
 
@@ -37,7 +37,7 @@ export const Partners = () => {
                         <h2 className={styles.title}>
                             Наши партнеры
                         </h2>
-        
+
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={3}
@@ -57,12 +57,12 @@ export const Partners = () => {
                                     slidesPerView: 4,
                                 },
                             }}
-                            >
+                        >
                             {partners.data && partners.data.length > 0 ? (
                                 partners.data.map((item, index) => (
                                     <SwiperSlide key={index}>
                                         <div className={styles.partners_img}>
-                                            
+
                                             <Image
                                                 src={item.image}
                                                 width={200}
@@ -85,3 +85,5 @@ export const Partners = () => {
 
     )
 }
+
+export default Partners;

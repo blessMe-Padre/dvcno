@@ -2,8 +2,7 @@ import localFont from "next/font/local";
 import { Montserrat } from 'next/font/google';
 import "./globals.css";
 
-import Header from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
+import { Footer, Header } from "./components";
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],

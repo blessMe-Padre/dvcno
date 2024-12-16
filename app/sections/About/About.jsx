@@ -8,7 +8,7 @@ import getEduPages from '../../utils/getEduPages';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
-import { SwiperNavButtons } from "../../components/SwiperNavButtons/SwiperNavButtons";
+import { SwiperNavButtons } from "../../components";
 import 'swiper/css';
 import 'swiper/css/navigation';
 

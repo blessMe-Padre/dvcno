@@ -11,7 +11,7 @@ import 'swiper/css';
 import Image from 'next/image';
 
 
-export const NewsCard = ({ data }) => {
+const NewsCard = ({ data }) => {
     return (
         <div className={styles.container}>
             <div className={styles.card}>
@@ -28,21 +28,21 @@ export const NewsCard = ({ data }) => {
                     >
                         {data.images.map((image, index) => (
                             <SwiperSlide key={index}>
-                                {image.slide && ( 
-                                    <Image 
+                                {image.slide && (
+                                    <Image
                                         src={image.slide ? image.slide : '/placeholder/placeholder.png'}
                                         width={500}
                                         height={300}
                                         objectFit='contain'
                                         className={`${styles.image} dsv-image`}
-                                        style={{ background: 'gray'}}
+                                        style={{ background: 'gray' }}
                                         alt='news_img'
-                                    /> 
+                                    />
                                 )}
-                                {!image.slide && <p>Image not available</p>}  {}
+                                {!image.slide && <p>Image not available</p>}  { }
                             </SwiperSlide>
-                            ))}
-                            
+                        ))}
+
                     </Swiper>
                 </div>
                 <div className={styles.card__content}>
@@ -67,3 +67,5 @@ export const NewsCard = ({ data }) => {
         </div>
     )
 }
+
+export default NewsCard;
