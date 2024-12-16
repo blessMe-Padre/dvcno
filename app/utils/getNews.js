@@ -7,7 +7,6 @@ const getNews = async () => {
             throw new Error(`Ошибка HTTP: ${res.status}`);
         }
         const result = await res.json();
-        console.log(result)
         return result.data;
     } catch (error) {
         console.error("Ошибка при загрузке:", error);

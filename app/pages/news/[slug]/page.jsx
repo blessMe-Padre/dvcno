@@ -7,11 +7,9 @@ export const metadata = {
 export default async function NewsPage({ params }) {
     const { slug } = await params;
     const page = await getNewsBySlug(slug);
-
-    console.log(page)
     
     if (!page) {
-        // notFound();
+        notFound();
     }
 
     return (
