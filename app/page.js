@@ -13,12 +13,11 @@ import { Contacts } from "./sections/Contacts/Contacts";
 import { News } from "./sections/News/News";
 import Gallery from "./sections/Gallery/Gallery";
 
-
-
 export const metadata = {
   title: "ДВЦНО | Главная",
   description: "Дальневосточный центр непрерывного образования",
 };
+
 export default function Home() {
 
   return (
@@ -41,31 +40,21 @@ export default function Home() {
         <p>Дальневосточный центр непрерывного образования</p>
         <p>Дальневосточный центр непрерывного образования</p> */}
 
-        {/* <Slider /> */}
+        <Slider />
 
-        {/* <About /> */}
+        <About />
       </div>
+
       <div className="gray-wrapper">
-
-        {/* <Why /> */}
-        {/* <Awards /> */}
+        <Why />
+        <Awards />
       </div>
-      {/* <News />  */}
-      {/* <Events /> */}
 
-
-          <Why />
-          {/* <Awards /> */}
-        <News /> 
-        <Events />
-
-        <Contacts />
-
+      <News />
+      <Events />
+      <News />
       <Gallery />
-
-      {/* <Contacts /> */}
-
-
+      <Contacts />
 
     </>
   );

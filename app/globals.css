@@ -166,3 +166,18 @@ ul {
     transform: translateX(-25%);
   }
 }
+
+.title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: clamp(2.5rem, -1.071rem + 7.44vi, 5.625rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--black-toggle);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+}
