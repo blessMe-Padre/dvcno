@@ -61,10 +61,10 @@
 .map_content::before {
     content: '';
     position: absolute;
-    top: 150px;
+    top: 0px;
     right: -100px;
     width: 245px;
-    height: 50px;
+    height: 100%;
     background-image: url('../../../public/decor/contact-dekor.svg');
     background-repeat: no-repeat;
     background-position: center center;

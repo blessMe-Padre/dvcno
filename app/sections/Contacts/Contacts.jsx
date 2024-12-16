@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 import SocialIcon from '@/app/components/Socilal-icon/SocialIcon';
 import { TabContent } from '@/app/components/Tab/TabContent';
-export const Contacts = () => {
+
+const Contacts = () => {
 
     const [ active, setActive ] = useState(null);
 
@@ -91,3 +92,6 @@ export const Contacts = () => {
         </section>
     )
 }
+
+
+export default Contacts;
