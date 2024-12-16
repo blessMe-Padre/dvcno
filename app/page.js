@@ -12,6 +12,7 @@ import { Contacts } from "./sections/Contacts/Contacts";
 
 import { News } from "./sections/News/News";
 import Gallery from "./sections/Gallery/Gallery";
+import { Partners } from "./sections/Partners/Partners";
 
 
 
@@ -54,14 +55,15 @@ export default function Home() {
       {/* <Events /> */}
 
 
-          <Why />
+          {/* <Why /> */}
           {/* <Awards /> */}
-        <News /> 
+        {/* <News />  */}
         <Events />
 
-        <Contacts />
+        {/* <Contacts /> */}
 
-      <Gallery />
+      <Partners />
+      {/* <Gallery /> */}
 
       {/* <Contacts /> */}
 
