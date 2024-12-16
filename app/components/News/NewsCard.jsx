@@ -61,7 +61,7 @@ export const NewsCard = ({ data }) => {
 
                     <p className={styles.content}>{data.content}</p>
 
-                    <a href={data.link} target="_blank">Read More</a>
+                    {/* <a href={data.link} target="_blank">Read More</a> */}
                 </div>
             </div>
         </div>

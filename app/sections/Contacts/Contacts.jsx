@@ -4,17 +4,20 @@ import { useState } from 'react';
 
 import SocialIcon from '@/app/components/Socilal-icon/SocialIcon';
 import { TabContent } from '@/app/components/Tab/TabContent';
-export const Contacts = () => {
+
+const Contacts = () => {
 
     const [ active, setActive ] = useState(null);
 
     const openTab = e => setActive(+e.target.dataset.index);
 
     const items = [
-        {title: 'АНПОО «ДВЦНО', content: '1', link: <iframe src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A965ea98ec7bd1fa8d2bcfd7a20a401ff991b535b100c6827c2363bf32b1cf478&amp;lang=ru_RU&amp;scroll=true" width={1000} height={400}></iframe> },
-        {title: 'НШДС «КЕП»', content: '2', link: '' } ,
-        {title: 'НОШДС «ВШ»', content: '3', link: '' },
-        {title: 'МЛШ', content: '4', link: '' },
+        {title: 'АНПОО «ДВЦНО', content: '1', link: 'https://yandex.ru/map-widget/v1/?display-text=%D0%B4%D0%B2%D1%86%D0%BD%D0%BE&ll=131.886795%2C43.122249&mode=search&oid=1230785050&ol=biz&sll=131.886795%2C43.122249&sspn=0.061626%2C0.025118&text=%D0%B4%D0%B2%D1%86%D0%BD%D0%BE&z=15' },
+        {
+            title: 'НШДС «КЕП»', content: '2', link: 'https://yandex.ru/map-widget/v1/?display-text=%D0%B4%D0%B2%D1%86%D0%BD%D0%BE&ll=131.886795%2C43.122249&mode=search&oid=1230785050&ol=biz&sll=131.886795%2C43.122249&sspn=0.061626%2C0.025118&text=%D0%B4%D0%B2%D1%86%D0%BD%D0%BE&z=15'
+        },
+        {title: 'НОШДС «ВШ»', content: '3', link: "https://yandex.ru/map-widget/v1/?display-text=%D0%B4%D0%B2%D1%86%D0%BD%D0%BE&ll=131.886795%2C43.122249&mode=search&oid=1230785050&ol=biz&sll=131.886795%2C43.122249&sspn=0.061626%2C0.025118&text=%D0%B4%D0%B2%D1%86%D0%BD%D0%BE&z=15" },
+        {title: 'МЛШ', content: '4', link: 'https://yandex.ru/map-widget/v1/?display-text=%D0%B4%D0%B2%D1%86%D0%BD%D0%BE&ll=131.886795%2C43.122249&mode=search&oid=1230785050&ol=biz&sll=131.886795%2C43.122249&sspn=0.061626%2C0.025118&text=%D0%B4%D0%B2%D1%86%D0%BD%D0%BE&z=15' },
         {title: 'ШОД', content: '5', link: '' },
         {title: 'АК', content: '6', link: '' },
         {title: 'ФОК «Лига спорта»', content: '7', link: ''}
@@ -89,3 +92,6 @@ export const Contacts = () => {
         </section>
     )
 }
+
+
+export default Contacts;
