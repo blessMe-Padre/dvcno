@@ -41,7 +41,6 @@ export default function Slider() {
                 
                 {data && data.length > 0 ? (
                     data.map((item, index) => {
-                            {console.log(item)}
                             return (
                                 // ПОДОГНАТЬ ВСЕ СЛАЙДЕРЫ ПОД ОДИН РАЗМЕР
                                 <SwiperSlide key={index}>
