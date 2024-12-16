@@ -28,8 +28,6 @@ export const Partners = () => {
 
     }, []);
 
-    {console.log(partners)}
-
     return (
         <section className={styles.section}>
             <div className='container'>
