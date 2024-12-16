@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { SwiperNavButtons } from "../../components/SwiperNavButtons/SwiperNavButtons";
+import { SwiperNavButtons } from "../../components";
 import Link from "next/link";
 
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
@@ -100,4 +100,4 @@ function Gallery() {
     )
 }
 
-export default Gallery
+export default Gallery;

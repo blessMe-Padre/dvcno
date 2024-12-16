@@ -10,7 +10,7 @@ import Link from "next/link";
 
 import { useEffect, useState } from 'react';
 
-export const Footer = () => {
+const Footer = () => {
 
     const [popupActive, setPopupActive] = useState(false);
 
@@ -26,7 +26,7 @@ export const Footer = () => {
     }, []);
 
 
-    
+
     return (
         <footer className={styles.footer}>
             <div className={`${styles.footer_content} container`}>
@@ -63,7 +63,7 @@ export const Footer = () => {
                         </button>
 
                         <Popup active={popupActive} setActive={setPopupActive} />
-                        
+
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@ export const Footer = () => {
                             <p>г. Владивосток, ул. Гоголя, 41,</p>
                         </div>
                         <div>
-                            <p style={{ color:'#FFB236', textDecoration: 'underline'}}>Посмореть на карте</p>
+                            <p style={{ color: '#FFB236', textDecoration: 'underline' }}>Посмореть на карте</p>
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@ export const Footer = () => {
                         </p>
                     </div>
 
-                    
+
                     <div className={styles.bottom_content}>
                         <Link href="/">
                             Политика конфиденциальности
@@ -115,10 +115,12 @@ export const Footer = () => {
 
                         <Link href="/">
                             Пользовательское соглашения
-                        </Link>        
+                        </Link>
                     </div>
                 </div>
-            </div>                
+            </div>
         </footer>
     )
 }
+
+export default Footer;

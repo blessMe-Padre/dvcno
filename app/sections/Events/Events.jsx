@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import EventCard from "./../../components/Cards/Event-Card/EventCard";
-import { SwiperNavButtons } from "../../components/SwiperNavButtons/SwiperNavButtons";
+import { SwiperNavButtons } from "../../components";
 import getEvents from "@/app/utils/getEvents";
 import Link from "next/link";
 

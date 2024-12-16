@@ -1,5 +1,5 @@
 'use client'
-export { default as Awards } from './Awards/Awards'; 
+export { default as Awards } from './Awards/Awards';
 export { default as Breadcrumbs } from './Breadcrumbs/breadcrumbs';
 export { default as Card } from './Cards/Card/Card';
 export { default as CatalogButton } from './Catalog-button/CatalogButton';

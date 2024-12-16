@@ -1,7 +1,7 @@
 import { useSwiper } from "swiper/react";
 import styles from './style.module.css'
 
-export const SwiperNavButtons = ({ addClass }) => {
+const SwiperNavButtons = ({ addClass }) => {
     const swiper = useSwiper();
 
     return (
@@ -22,3 +22,6 @@ export const SwiperNavButtons = ({ addClass }) => {
         </div>
     )
 }
+
+export default SwiperNavButtons;
+
