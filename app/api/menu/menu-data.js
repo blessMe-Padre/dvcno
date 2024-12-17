@@ -55,7 +55,7 @@ export const menuData = [
     },
     {
         title: "Обучение",
-        link: "#",
+        link: "pages/education",
         submenu: [
             {
                 title: "Дошкольное образование",

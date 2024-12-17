@@ -11,7 +11,7 @@ export default function Card({ image, link, description, }) {
                     alt="фото"
                     width={410}
                     height={195}
-                    className={styles.img}
+                    className={`${styles.img} dsv-image`}
                 />
             </div>
             <Link href={link} className={styles.card_footer} target="_blank">

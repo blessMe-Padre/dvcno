@@ -1,4 +1,4 @@
-import { educationPages } from "@/app/api/edu-pages/edu-pages-data";
+import { educationPages } from "@/app/api/education/edu-pages-data";
 
 export async function GET() {
     const res = educationPages;

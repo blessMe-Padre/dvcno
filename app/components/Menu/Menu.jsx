@@ -23,7 +23,7 @@ export default function Menu() {
                 <li key={index} className={styles.menuTitle}>
                     <a
                         className={styles.link}
-                        href="#">
+                        href={item.link}>
                         <span>
                             {item.title}
                         </span>

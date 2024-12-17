@@ -48,10 +48,10 @@ body {
 }
 
 .footer-sticky {
-    display: flex;
-    flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vh; */
 }
 
 body {
@@ -178,7 +178,7 @@ ul {
 .title {
   font-family: var(--second-family);
   font-weight: 700;
-  font-size: clamp(2.5rem, -1.071rem + 7.44vi, 5.625rem);
+  font-size: clamp(2.5em, -1.071em + 7.44vi, 5.625em);
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--black-toggle);
@@ -186,6 +186,6 @@ ul {
 
 @media (max-width: 768px) {
   .title {
-    font-size: 36px;
+    font-size: 2.25em;
   }
 }

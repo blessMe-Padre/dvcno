@@ -10,9 +10,7 @@ export const metadata = {
 };
 
 export default async function Page() {
-    const education = "education";
     const data = await fetchData('education');
-    console.log(data);
 
     return (
         <div className="container">
@@ -27,7 +25,7 @@ export default async function Page() {
                             <Card
                                 image={item.image}
                                 description={item.description}
-                                link={item.link}
+                                link={`education/${item.slug}`}
                             />
                         </li>
                     ))

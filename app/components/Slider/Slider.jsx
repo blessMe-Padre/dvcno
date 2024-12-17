@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './style.module.css';
 
 
-import { HeroSection } from '../Hero/HeroSection';
+import { HeroSection } from '../../sections/Hero/HeroSection';
 
 import { useState, useEffect } from 'react';
 
@@ -38,20 +38,20 @@ export default function Slider() {
                 slidesPerView={1}
                 speed={1500}
             >
-                
+
                 {data && data.length > 0 ? (
                     data.map((item, index) => {
-                            return (
-                                // ПОДОГНАТЬ ВСЕ СЛАЙДЕРЫ ПОД ОДИН РАЗМЕР
-                                <SwiperSlide key={index}>
-                                    <HeroSection item={item} />
-                                </SwiperSlide>
-                            )
-                        })
-                    )
-                        : (
-                            <div>Loading...</div>
+                        return (
+                            // ПОДОГНАТЬ ВСЕ СЛАЙДЕРЫ ПОД ОДИН РАЗМЕР
+                            <SwiperSlide key={index}>
+                                <HeroSection item={item} />
+                            </SwiperSlide>
                         )
+                    })
+                )
+                    : (
+                        <div>Loading...</div>
+                    )
                 }
             </Swiper>
         </section>
