@@ -40,7 +40,10 @@ export default function SimpleGallery(props) {
         loop='true'
         breakpoints={{
           320: {
-            slidesPerView: 2,
+            slidesPerView: 1,
+          },
+          480: {
+            slidePrevView: 2
           },
           768: {
             slidesPerView: 4,
