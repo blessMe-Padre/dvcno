@@ -67,3 +67,10 @@
     transform: scale(1);
     transition: transform .2s ease;
 }
+
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        padding: 0px 0;
+    }
+}

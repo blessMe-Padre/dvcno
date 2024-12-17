@@ -12,6 +12,8 @@
 .slider__title { 
     max-width: 70%;
     color: var(--white);
+    mix-blend-mode: difference;
+    
     font-family: var(--second-family);
     font-size: clamp(2.25rem, 1.286rem + 4.821vw, 5.625rem);
     font-weight: 700;
@@ -46,6 +48,23 @@
 
 .add_class {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.add_class li {
+    font-size: clamp(0.75rem, 0.482rem + 0.714vw, 1.125rem) !important;
+}
+
+.add_class_desc {
+    margin-bottom: 20px;
+}
+
+.add_class_title {
+    margin-bottom: 0;
+}
+
+.add_class_link {
+    margin-top: 20px !important;
 }
 
 .slider__list li {
@@ -107,6 +126,7 @@
 .sliderBg {
     position: absolute;
     height: 100%;
+    /* max-height: 680px; */
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -129,5 +149,7 @@
 }
 
 @media screen and (max-width: 480px) {
-
+    .slider__link {
+        min-width: 215px;
+    }
 }

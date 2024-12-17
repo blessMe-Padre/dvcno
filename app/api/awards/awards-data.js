@@ -1,35 +1,35 @@
 export const awardsData = [
     {
         largeURL:
-            'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+            '/awards/award1.png',
         thumbnailURL:
-            'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg',
-        width: 1669,
-        height: 2500,
+            '/awards/award1.png',
+        width: 1440,
+        height: 1800,
     },
     {
         largeURL:
-            'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+            '/awards/award2.png',
         thumbnailURL:
-            'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg',
-        width: 1669,
-        height: 2500,
+            '/awards/award2.png',
+        width: 1440,
+        height: 1800,
     },
     {
         largeURL:
-            'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+            '/awards/award3.png',
         thumbnailURL:
-            'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg',
-        width: 1669,
-        height: 2500,
+            '/awards/award3.png',
+        width: 1440,
+        height: 1800,
     },
     {
         largeURL:
-            'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+            '/awards/award4.png',
         thumbnailURL:
-            'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg',
-        width: 1669,
-        height: 2500,
+            '/awards/award4.png',
+        width: 1440,
+        height: 1800,
     },
 
 ]
