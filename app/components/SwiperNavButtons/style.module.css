@@ -1,11 +1,16 @@
 .swiper_nav_btns button {
-    transition: all 0.7s ease-in-out;
+    transition: all var(--anim-function);
 }
 
 .swiper_nav_btns button:hover {
     background-color: var(--violet);
     color: var(--white);
     cursor: pointer;
+}
+
+
+.swiper_nav_btns button path {
+    transition: all var(--anim-function);
 }
 
 .swiper_nav_btns button:hover path {
