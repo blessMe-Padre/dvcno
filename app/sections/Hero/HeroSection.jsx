@@ -9,8 +9,6 @@ import styles from './style.module.css';
 import placeholder from '../../../public/placeholder/placeholder.png';
 
 export const HeroSection = ({ item }) => {
-
-
     const [sliderBg, setSliderBg] = useState(null)
 
     useEffect(() => {
@@ -31,9 +29,9 @@ export const HeroSection = ({ item }) => {
             handleResize()
             return () => window.removeEventListener('resize', handleResize);
         }
-     }, [item]);
-    
-    
+    }, [item]);
+
+
 
     return (
         <>
@@ -43,8 +41,8 @@ export const HeroSection = ({ item }) => {
                 height={1400}
                 alt='slider_bg'
                 className={`${styles.sliderBg} dsv-image`}
-                
-                />
+
+            />
             <div className={styles.slider}>
 
                 <div className={styles.slider__wrapper__content}>
@@ -74,6 +72,6 @@ export const HeroSection = ({ item }) => {
 
                 </div>
             </div>
-    </>
+        </>
     )
 }

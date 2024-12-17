@@ -158,7 +158,9 @@
     }
 
     .main_img_mobile {
-        display: block;
+        display: block !important;
         width: 100%;
+        object-fit: cover;
+        border-radius: 30px;
     }
 }
