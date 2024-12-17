@@ -16,3 +16,9 @@
     color: var(--black-toggle);
     margin-bottom: 40px;
 }
+
+@media screen and (max-width: 480px) {
+    .title {
+        margin-bottom: 25px;
+    }
+}
