@@ -3,9 +3,13 @@
 }
 
 .swiper_nav_btns button:hover {
-    background-color: red;
-    color: var(--black);
+    background-color: var(--violet);
+    color: var(--white);
     cursor: pointer;
+}
+
+.swiper_nav_btns button:hover path {
+    stroke: var(--white);
 }
 
 .swiper_nav_btns button:active {

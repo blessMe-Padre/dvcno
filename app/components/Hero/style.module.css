@@ -126,7 +126,7 @@
 .sliderBg {
     position: absolute;
     height: 100%;
-    max-height: 680px;
+    /* max-height: 680px; */
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
