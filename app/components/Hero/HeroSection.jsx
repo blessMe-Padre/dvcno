@@ -44,33 +44,35 @@ export const HeroSection = ({ item }) => {
                 alt='slider_bg'
                 className={`${styles.sliderBg} dsv-image`}
                 
-                />
+            />
             <div className={styles.slider}>
 
                 <div className={styles.slider__wrapper__content}>
 
-                    <h2 className={styles.slider__title}>
-                        {item.title}
-                    </h2>
-
-                    <p className={styles.slider__desc}>
-                        {item.description}
-                    </p>
-
                     {item.listItems && item.listItems.length > 0 && (
-                        <ul className={`${styles.slider__list} ${item.listItems.length > 3 ? styles.add_class : ''}`}>
-                            {item.listItems.map((element, idx) => (
-                                <li key={idx}>{element}</li>
-                            ))}
-                        </ul>
-                    )}
+                        <>
+                            <h2 className={`${styles.slider__title} ${item.listItems.length > 3 ? styles.add_class_title : ''}`}>
+                                {item.title}
+                            </h2>
 
-                    <Link href={item.link} className={styles.slider__link}>
-                        <p>Узнать подробнее</p>
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </Link>
+                            <p className={`${styles.slider__desc} ${item.listItems.length > 3 ? styles.add_class_desc : ''}`}>
+                                {item.description}
+                            </p>
+
+                            <ul className={`${styles.slider__list} ${item.listItems.length > 3 ? styles.add_class : ''}`}>
+                                {item.listItems.map((element, idx) => (
+                                    <li key={idx}>{element}</li>
+                                ))}
+                            </ul>
+
+                            <Link href={item.link} className={`${styles.slider__link} ${item.listItems.length > 3 ? styles.add_class_link : ''}`}>
+                                <p>Узнать подробнее</p>
+                                <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </Link>
+                        </>
+                    )}
 
                 </div>
             </div>
