@@ -21,4 +21,5 @@ export { default as SwiperNavButtons } from './SwiperNavButtons/SwiperNavButtons
 export { default as TabContent } from './Tab/TabContent';
 export { default as VdsButton } from './Vds/VdsButton';
 export { default as VdsPanel } from './VdsPanel/VdsPanel';
+export { default as DivisionCard } from './Cards/Division-Card/Division-Card';
 

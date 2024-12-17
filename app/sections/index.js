@@ -6,3 +6,4 @@ export { default as Gallery } from './Gallery/Gallery';
 export { default as News } from './News/News';
 export { default as Partners } from './Partners/Partners';
 export { default as Why } from './Why/Why';
+export { default as Division } from './Division/Division';
