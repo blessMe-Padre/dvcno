@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SwiperNavButtons } from '../../components';
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 import Image from 'next/image';
 
@@ -41,9 +41,7 @@ const Partners = () => {
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={3}
-                            modules={[Navigation]}
-                            centeredSlides='true'
-                            centeredSlidesBounds="true"
+                            modules={[Navigation, Autoplay]}
                             className={styles.swiper_news}
                             speed={1500}
                             breakpoints={{

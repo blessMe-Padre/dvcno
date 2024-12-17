@@ -29,7 +29,7 @@ export default function Slider() {
 
     return (
         <section
-            className={styles.section__swiper}
+            className={`${styles.section__swiper} main_slider`}
         >
             <Swiper
                 pagination={true}

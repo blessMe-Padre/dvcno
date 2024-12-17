@@ -1,13 +1,11 @@
 "use client"
 import styles from './style.module.css';
-import { useState } from 'react';
-
-import SocialIcon from '@/app/components/Socilal-icon/SocialIcon';
-import { TabContent } from '../../components';
+import { useState, useEffect } from 'react';
+import { TabContent, SocialIcon } from '../../components';
 
 const Contacts = () => {
 
-    const [active, setActive] = useState(null);
+    const [active, setActive] = useState(0);
 
     const openTab = e => setActive(+e.target.dataset.index);
 
