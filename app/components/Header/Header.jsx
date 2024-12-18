@@ -16,6 +16,7 @@ import Menu from "../Menu/Menu";
 import Popup from "../Popup/Popup";
 import PopupBtn from "../Popup-btn/PopupBtn";
 import Search from "../Search/Search";
+import { motion } from 'framer-motion';
 
 
 export default function Header() {
@@ -23,15 +24,25 @@ export default function Header() {
     const [panelBtn, setPanelBtn] = useState(true);
     const [opened, setOpened] = useState(false);
     const [searchOpened, setSearchOpened] = useState(false);
-
-    // const currentLanguage = localStorage.getItem('language') || 'ru';
-
-
-
     const [popupActive, setPopupActive] = useState(false);
 
+    const variants = {
+        visible: {
+            opacity: 1,
+            height: 'auto',
+            transition: {
+                when: 'beforeChildren',
+                staggerChildren: 0.1
+            }
+        },
+        hidden: {
+            opacity: 0,
+            height: 0,
+        },
+    }
 
 
+    // const currentLanguage = localStorage.getItem('language') || 'ru';
     return (
         <div className={styles.header}>
 
@@ -133,7 +144,16 @@ export default function Header() {
                 <Popup active={popupActive} setActive={setPopupActive} />
             </div>
 
-            {searchOpened && <Search />}
+            <motion.div
+                layout
+                variants={variants}
+                initial={'hidden'}
+                animate={searchOpened ? 'visible' : 'hidden'}
+                className="overflow-hidden"
+            >
+                <Search />
+            </motion.div>
+
         </div>
     )
 }
