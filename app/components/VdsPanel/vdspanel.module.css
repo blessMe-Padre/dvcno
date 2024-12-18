@@ -1,8 +1,21 @@
 .dsv_panel {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     background-color: var(--background-color);
     padding: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media (max-width: 560px) {
+    .dsv_panel {
+        gap: 10px;
+        padding: 0;
+        font-size: 14px;
+        padding-bottom: 30px;
+    }
+
 }
 
 .p {
@@ -17,6 +30,11 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .theme_white {
@@ -76,4 +94,8 @@
 .btn_close {
     padding: 10px 20px;
     cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 600;
+
 }
