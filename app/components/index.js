@@ -5,7 +5,6 @@ export { default as Card } from './Cards/Card/Card';
 export { default as CatalogButton } from './Catalog-button/CatalogButton';
 export { default as Footer } from './Footer/Footer';
 export { default as Header } from './Header/Header';
-export { default as HeroSection } from './Menu/Menu';
 export { default as Language } from './Language/Language';
 export { default as SocialIcon } from './Socilal-icon/SocialIcon'
 export { default as Menu } from './Menu/Menu';
@@ -15,11 +14,10 @@ export { default as PopupBtn } from './Popup-btn/PopupBtn';
 export { default as PopupMenu } from './Popup-menu/PopupMenu';
 export { default as Search } from './Search/Search';
 export { default as SimpleGallery } from './SimpleGallery/SimpleGallery';
-export { default as Slider } from './Slider/Slider';
-// export { default as SocialIcon } from './Socilal-icon/SocialIcon';
 export { default as SwiperNavButtons } from './SwiperNavButtons/SwiperNavButtons';
 export { default as TabContent } from './Tab/TabContent';
 export { default as VdsButton } from './Vds/VdsButton';
 export { default as VdsPanel } from './VdsPanel/VdsPanel';
 export { default as DivisionCard } from './Cards/Division-Card/Division-Card';
+export { default as SlideMain } from './Hero/SlideMain';
 
