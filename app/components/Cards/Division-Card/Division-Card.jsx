@@ -4,9 +4,25 @@ import Image from "next/image";
 import styles from "./style.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import { motion, stagger } from 'framer-motion';
 
 export default function DivisionCard() {
     const [isOpen, setIsOpen] = useState(false);
+
+    const variants = {
+        visible: {
+            opacity: 1,
+            height: 'auto',
+            transition: {
+                when: 'beforeChildren',
+                staggerChildren: 0.1
+            }
+        },
+        hidden: {
+            opacity: 0,
+            height: 0,
+        },
+    }
 
     return (
         <div className={styles.card}>
@@ -73,9 +89,22 @@ export default function DivisionCard() {
                     </div>
 
                     <div className={styles.spoiler_wrapper}>
-                        <div className={`${styles.spoiler_text} ${isOpen ? styles.is_active : ''}`}>
+                        <motion.div
+                            layout
+                            variants={variants}
+                            initial={'hidden'}
+                            animate={isOpen ? 'visible' : 'hidden'}
+                            className={`${styles.spoiler_text}`}>
+
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
-                        </div>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
+                        </motion.div>
                         <div
                             onClick={() => setIsOpen(!isOpen)}
                             className={styles.spoiler_link}
