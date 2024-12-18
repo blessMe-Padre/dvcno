@@ -1,0 +1,108 @@
+.section {
+    position: relative;
+}
+
+.title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.wrapper_links {
+    display: flex;
+    gap: 10px;
+}
+
+.link {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--gray);
+    font-weight: 700;
+    font-size: clamp(1em, 0.25vw + 0.9rem, 1.25em);
+    text-align: center;
+    padding: 10px;
+
+    border-radius: 30px;
+
+    color: var(--black);
+
+    transition: all var(--anim-function);
+}
+
+.link:hover {
+    background-color: var(--violet);
+}
+
+.link:hover {
+    color: var(--white);
+}
+
+.link:active {
+    background-color: var(--light-blue);
+}
+
+.link svg path {
+    transition: stroke var(--anim-function);
+}
+
+.link:active svg path {
+    stroke: var(--white);
+}
+
+.link:hover .svg {
+    transform: rotate(45deg);
+}
+
+.svg {
+    transition: transform var(--anim-function);
+}
+
+.info {
+    background-image: url('../../../public/about_center/bg.png');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: cover;
+    width: 100%;
+    height: max-content;
+    margin-top: 40px;
+
+    padding: 60px 90px;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 0.25vw + 0.95rem, 1.25rem);
+    color: var(--white);
+    font-weight: 700;
+
+}
+
+.company_name {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--white);
+    font-size: clamp(1rem, 0.25vw + 0.95rem, 1.25rem);
+    font-weight: 700;
+}
+
+.list_item {
+    margin: 20px 0;
+}
+
+.company_desc {
+    font-size: clamp(0.875rem, 0.125vw + 0.85rem, 1rem);
+    font-weight: 400;
+    color: var(--white);
+
+    margin: 10px 0;
+}
+
