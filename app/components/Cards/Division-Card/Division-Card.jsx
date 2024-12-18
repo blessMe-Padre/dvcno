@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./style.module.css";
 import Link from "next/link";
 import { useState } from "react";
-import { motion, stagger } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function DivisionCard() {
     const [isOpen, setIsOpen] = useState(false);
