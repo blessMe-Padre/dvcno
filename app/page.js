@@ -46,7 +46,7 @@ export default function Home() {
       <Events />
       <News />
       <Gallery />
-      <Contacts />
+      {/* <Contacts /> */}
       <Partners />
     </>
   );
