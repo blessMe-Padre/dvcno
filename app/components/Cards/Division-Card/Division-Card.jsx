@@ -1,8 +1,13 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./style.module.css";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function DivisionCard() {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className={styles.card}>
             <div className={styles.image_wrapper}>
@@ -66,8 +71,29 @@ export default function DivisionCard() {
                             </svg>
                         </a>
                     </div>
+
+                    <div className={styles.spoiler_wrapper}>
+                        <div className={`${styles.spoiler_text} ${isOpen ? styles.is_active : ''}`}>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
+                        </div>
+                        <div
+                            onClick={() => setIsOpen(!isOpen)}
+                            className={styles.spoiler_link}
+                        >
+                            <span>
+                                {isOpen ? 'Скрыть' : 'Читать описание'}
+                            </span>
+                            <Image
+                                src="/icons/arrow-down.svg"
+                                alt="world"
+                                width={17}
+                                height={10}
+                                className={`${styles.spoiler_arrow} ${isOpen ? styles.spoiler_arrow_up : ''}`}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
