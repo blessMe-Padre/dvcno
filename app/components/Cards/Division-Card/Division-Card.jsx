@@ -48,10 +48,22 @@ export default function DivisionCard() {
                         </a>
                     </div>
 
-                    <div>
-                        <a href="">
+                    <div className={styles.link_button_wrapper}>
+                        <a href="" className={styles.link_button}>
                             <span>Перейти на сайт</span>
-
+                            <Image
+                                src="/icons/link-arrow-white.svg"
+                                alt="world"
+                                width={22}
+                                height={22}
+                                className={`${styles.icon_image}`}
+                            />
+                        </a>
+                        <a href="" className={`${styles.link_button} ${styles.link_button_white}`}>
+                            <span>Посмотреть на карте</span>
+                            <svg width="23" height="23" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.55605 1.43907L16.6545 1.43888M16.6545 1.43888L16.6545 14.3511M16.6545 1.43888L1.4388 16.6546" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
                         </a>
                     </div>
                 </div>
