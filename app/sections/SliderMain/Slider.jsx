@@ -3,8 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './style.module.css';
 
 
-import { HeroSection } from '../../sections/Hero/HeroSection';
-
+import { SlideMain } from '../../components';
 import { useState, useEffect } from 'react';
 
 import { Pagination } from 'swiper/modules';
@@ -44,7 +43,7 @@ export default function Slider() {
                         return (
                             // ПОДОГНАТЬ ВСЕ СЛАЙДЕРЫ ПОД ОДИН РАЗМЕР
                             <SwiperSlide key={index}>
-                                <HeroSection item={item} />
+                                <SlideMain item={item} />
                             </SwiperSlide>
                         )
                     })
