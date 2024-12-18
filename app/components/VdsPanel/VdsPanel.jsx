@@ -9,6 +9,7 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
 
     // Повторное произношение текста
     function speachtxt(txt) {
+        speechSynthesis.cancel();
         speechSynthesis.speak(new SpeechSynthesisUtterance(txt));
     }
 
@@ -179,7 +180,7 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
 
             <div>
                 <p className={styles.p}>Изображения</p>
-                <div>
+                <div className="flex gap-10">
                     <button
                         className={styles.button}
                         onClick={addImages}

@@ -29,6 +29,10 @@
 
   /* animation function */
   --anim-function: 0.3s ease;
+
+  /* Переменные для плагина */
+  --light-yellow: #F7F3D6;
+  --light-green: #3B2716;
 }
 
 @media (prefers-color-scheme: dark) {
