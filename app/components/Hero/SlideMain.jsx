@@ -8,7 +8,7 @@ import styles from './style.module.css';
 
 import placeholder from '../../../public/placeholder/placeholder.png';
 
-export const HeroSection = ({ item }) => {
+const SlideMain = ({ item }) => {
     const [sliderBg, setSliderBg] = useState(null)
 
     useEffect(() => {
@@ -77,3 +77,5 @@ export const HeroSection = ({ item }) => {
         </>
     )
 }
+
+export default SlideMain;

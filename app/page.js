@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 
-import { Slider, Awards } from "./components";
-import { About, Events, News, Partners, Why, Gallery, Contacts } from "./sections";
+import { Awards, SlideMain } from "./components";
+import { Slider, About, Events, News, Partners, Why, Gallery } from "./sections";
 
 export const metadata = {
   title: "ДВЦНО | Главная",
@@ -15,7 +15,6 @@ export default function Home() {
 
       <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
       <div className="container">
-
 
         {/* <Slider /> */}
 
