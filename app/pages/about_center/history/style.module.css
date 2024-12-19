@@ -1,0 +1,100 @@
+.section {
+    position: relative;
+}
+
+.section:nth-child(2) {
+    padding: 120px 0;
+}
+
+.title {
+    width: 100%;
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+
+    text-align: center;
+}
+
+.title_wrapper {
+    max-width: 770px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.decor {
+    position: absolute;
+    top: 40%;
+    left: 0%;
+}
+
+section.list {
+    width: 100%;
+    min-height: 2300px;
+    position: relative;
+    padding: 30px 0;
+    margin-bottom: 0;
+    font-family: "Palatino"; 
+}
+
+section.list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: var(--gray);
+    z-index: 1;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.list_wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.list_content {
+    border: 1px solid #ccc;
+    height: 400px;
+    /* width: 400px; */
+}
+
+.list_content_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.list_content_year {
+    background-color: var(--light-blue);
+    color: var(--white);
+    text-transform: uppercase;
+
+    font-size: clamp(1.875rem, 2.083vw + 1.875rem, 4.375rem);
+    font-family: var(--second-family);
+
+    font-weight: 700;
+
+    max-width: 260px;
+    padding: 10px;
+
+    border-radius: 20px;
+}
+
+.list_content_desc {
+    font-family: var(--font-family);
+    font-size: clamp(0.875rem, 0.208vw + 0.875rem, 1.125rem);
+    color: var(--white);
+}
+
+.history_list {
+    
+}
