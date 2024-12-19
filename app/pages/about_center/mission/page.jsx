@@ -3,7 +3,8 @@ import { Breadcrumbs } from '@/app/components';
 
 import missionBg2 from '@/public/about_center/mission-bg-2.png';
 import missionBg3 from '@/public/about_center/mission-bg-2-m.png';
-import missionBgSmall from '@/public/about_center/mission-bg-2-small.png'
+import missionBgSmall from '@/public/about_center/mission-bg-2-small.png';
+import pattern2 from '@/public/about_center/pattern_2.png';
 
 import decor from '@/public/about_center/decor_mission.svg';
 import icon from '@/public/about_center/icon.svg';
@@ -15,10 +16,47 @@ export const metadata = {
     description: "Дальневосточный центр непрерывного образования",
 }
 
+const data = [
+    {
+        'title': 'Свобода творческого мышления',
+        'image': '/about_center/add_1.png'
+    },
+    {
+        'title': 'Поддержка научных исследований',
+        'image': '/about_center/add_2.svg'
+    },
+    {
+        'title': 'Хранение духовного наследия России',
+        'image': '/about_center/add_3.svg'
+    },
+    {
+        'title': 'Уважение личности как взрослого, так и ребенка',
+        'image': '/about_center/add_4.svg'
+    },
+    {
+        'title': 'Профессионализм',
+        'image': '/about_center/add_5.svg'
+    },
+    {
+        'title': 'Корпоративный дух дружелюбия',
+        'image': '/about_center/add_6.svg'
+    },
+    {
+        'title': 'Здоровый образ жизни',
+        'image': '/about_center/add_7.svg'
+    },
+    {
+        'title': 'Стремление к новому',
+        'image': '/about_center/add_8.svg'
+    },
+]
+
+
 export default function Page() { 
 
     return (
-        <section className={styles.section}>
+        <>
+            <section className={styles.section}>
             <div className={`${styles.bg} container relative`}>
                 <Breadcrumbs title={"Миссия"} />
 
@@ -91,6 +129,42 @@ export default function Page() {
                         
                 </div>
             </div>
-        </section>
+            </section>
+
+            <section className={styles.section}>
+                <div className='container'>
+                    <h2 className={styles.title}>ЦЕННОСТИ АНПОО ДВЦНО </h2>
+
+                    <ul className={styles.add_list}>
+                        {data.map((item, index) => {
+                            return (
+                                <li key={index}
+                                    className={styles.item}>
+                                    
+                                    <Image 
+                                        src={pattern2}
+                                        width={100}
+                                        height={100}
+                                        alt='pattern2'
+                                        className={styles.pattern2}
+                                    />
+                                    
+                                    <div className={styles.item_content}>
+
+                                        <Image
+                                            src={item.image}
+                                            width={60}
+                                            height={60}
+                                            alt='logo'
+                                        />
+                                        <p className={styles.item_title}>{item.title}</p>
+                                    </div>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+            </section>
+        </>
     )
 }
