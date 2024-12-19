@@ -60,6 +60,21 @@
     margin-bottom: 20px;
 }
 
+.list {
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 1.25em;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 20px;
+    list-style: disc;
+}
+
+.list li {
+    margin-bottom: 10px;
+}
+
 .image {
     border-radius: 30px;
     width: 100%;
@@ -95,7 +110,11 @@
 
 @media (max-width: 560px) {
     .text {
-        font-size: 14px;
+        font-size: 0.75em;
+    }
+
+    .list {
+        font-size: 0.75em;
     }
 
     .image_wrapper {
