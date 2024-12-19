@@ -4,23 +4,23 @@ import { Division } from '@/app/sections';
 import { Breadcrumbs, SlideMain } from '@/app/components';
 
 const data = {
-    title: "Основное общее образование в ДВЦНО",
+    title: "Среднее общее образование в ДВЦНО",
     images: [
         {
-            sliderBgBig: '/education/hero-bg-3-l.png',
+            sliderBgBig: '/education/hero-bg-4-l.png',
 
         },
         {
-            sliderBgMedium: '/education/hero-bg-3-m.png',
+            sliderBgMedium: '/education/hero-bg-4-m.png',
 
         },
         {
-            sliderBgSmall: '/education/hero-bg-3-s.png',
+            sliderBgSmall: '/education/hero-bg-4-s.png',
 
         }
     ],
 
-    description: "Это второй уровень образования, цель которого - становление и формирование личности обучающегося, развитие его склонностей и интересов",
+    description: "Это третий, завершающий уровень, направленный на подготовку школьников к получению высшего  или среднего профессионального образования",
     listItems: [
         'Международная лингвистическая школа',
         'Академический колледж (АК)',
@@ -85,12 +85,12 @@ export default function doshkolnoeObrazovanie() {
                 </section>
             </div>
 
-            <section className={`${styles.section} ${styles.section_green}`}>
+            <section className={`${styles.section}`}>
                 <div className='container'>
                     <div className={styles.row}>
                         <div>
                             <h2 className={styles.title}>Отделение Лицейских классов
-                                <span className={`${styles.sticker} ${styles.sticker_new}`}>5-9 классов</span>
+                                <span className={`${styles.sticker} ${styles.sticker_new}`}>10-11 классов</span>
                             </h2>
                             <ul className={styles.list}>
                                 <li>основное общее образование.</li>
