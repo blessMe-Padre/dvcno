@@ -6,20 +6,21 @@ import styles from './style.module.css';
 
 
 export const metadata = {
-    title: "Новости",
-    description: "Описание новости",
+  title: "Новости",
+  description: "Описание новости",
 };
 
 export default async function NewsPage({ params }) {
-    const { slug } = await params;
-    const page = await getNewsBySlug(slug);
-    const sanitizedContent = page.content || '';
-      
-    if (!page) {
-        notFound();
-    }
 
-   
+  const { slug } = await params;
+  const page = await getNewsBySlug(slug);
+
+  const sanitizedContent = page.content || '';
+  if (!page) {
+    notFound();
+  }
+
+
   return (
     <div className='container'>
       <Breadcrumbs title={page.title} />
@@ -81,15 +82,15 @@ export async function generateStaticParams() {
       throw new Error(`HTTP error! status: ${postsResponse.status}`);
     }
 
-    const posts = await postsResponse.json(); 
+    const posts = await postsResponse.json();
     if (!posts.data) {
-        throw new Error("API response does not contain data property"); 
+      throw new Error("API response does not contain data property");
     }
-    const slugs = posts.data.map((post) => ({ slug: post.slug })); 
+    const slugs = posts.data.map((post) => ({ slug: post.slug }));
 
     return slugs;
   } catch (error) {
-    console.error('Ошибка получения данных:', error); 
-    return []; 
+    console.error('Ошибка получения данных:', error);
+    return [];
   }
 }
