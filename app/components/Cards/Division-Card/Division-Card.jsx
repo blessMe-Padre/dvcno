@@ -6,7 +6,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from 'framer-motion';
 
-export default function DivisionCard() {
+export default function DivisionCard({ divisionData }) {
+    const sanitizedContent = divisionData.description || '';
+
     const [isOpen, setIsOpen] = useState(false);
 
     const variants = {
@@ -29,7 +31,7 @@ export default function DivisionCard() {
             <div className={styles.image_wrapper}>
                 <Image
                     aria-hidden
-                    src="/division/image-1.jpg"
+                    src={divisionData.image}
                     alt="Изображение"
                     width={706}
                     height={432}
@@ -37,13 +39,13 @@ export default function DivisionCard() {
                 />
             </div>
             <div className={styles.info}>
-                <h3 className={styles.title}>Начальная общеобразовательная школа-детский сад «Восточная школа»</h3>
-                <p className={styles.address}>Приморский край, г. Владивосток, ул. Десятая д.10</p>
-                <p className={styles.week}> 8:30 - 18:00 (5-дневная учебная неделя)</p>
+                <h3 className={styles.title}>{divisionData.title}</h3>
+                <p className={styles.address}>{divisionData.address}</p>
+                <p className={styles.week}>{divisionData.week}</p>
 
                 <div>
                     <div className={styles.link_wrapper}>
-                        <a href="#" className={styles.link}>
+                        <a href={`https://${divisionData.site}`} className={styles.link} target="_blank">
                             <div className={`${styles.icon_wrapper}`}>
                                 <Image
                                     src="/icons/wold.svg"
@@ -53,9 +55,9 @@ export default function DivisionCard() {
                                     className={`${styles.icon_image}`}
                                 />
                             </div>
-                            <span>vostok.vvsu.ru</span>
+                            <span>{divisionData.site}</span>
                         </a>
-                        <a href="tel:+74242404185" className={styles.link}>
+                        <a href={`tel:${divisionData.phone_robot}`} className={styles.link}>
                             <div className={`${styles.icon_wrapper}`}>
                                 <Image
                                     src="/icons/phone.svg"
@@ -65,12 +67,12 @@ export default function DivisionCard() {
                                     className={`${styles.icon_image}`}
                                 />
                             </div>
-                            <span>240-41-85</span>
+                            <span>{divisionData.phone}</span>
                         </a>
                     </div>
 
                     <div className={styles.link_button_wrapper}>
-                        <a href="" className={styles.link_button}>
+                        <a href={`https://${divisionData.site}`} className={styles.link_button}>
                             <span>Перейти на сайт</span>
                             <Image
                                 src="/icons/link-arrow-white.svg"
@@ -80,7 +82,7 @@ export default function DivisionCard() {
                                 className={`${styles.icon_image}`}
                             />
                         </a>
-                        <a href="" className={`${styles.link_button} ${styles.link_button_white}`}>
+                        <a href={divisionData.map_link} className={`${styles.link_button} ${styles.link_button_white}`}>
                             <span>Посмотреть на карте</span>
                             <svg width="23" height="23" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.55605 1.43907L16.6545 1.43888M16.6545 1.43888L16.6545 14.3511M16.6545 1.43888L1.4388 16.6546" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -95,10 +97,9 @@ export default function DivisionCard() {
                             initial={'hidden'}
                             animate={isOpen ? 'visible' : 'hidden'}
                             className={`${styles.spoiler_text}`}>
-
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!</p>
-
+                            <div
+                                dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+                            ></div>
                         </motion.div>
                         <div
                             onClick={() => setIsOpen(!isOpen)}
