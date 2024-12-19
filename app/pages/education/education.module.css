@@ -7,6 +7,11 @@
     background-position: top right;
 }
 
+.section_green {
+    background-color: var(--green);
+    background-image: url('../../../public/education/decor-2.svg');
+}
+
 .hero_section {
     position: relative;
     margin-bottom: 120px;
@@ -51,6 +56,11 @@
     transform: rotate(8deg);
 }
 
+.sticker.sticker_new {
+    top: 0px;
+    right: 0px;
+}
+
 .text {
     font-weight: 400;
     font-size: 1.25em;
@@ -83,6 +93,12 @@
 }
 
 @media (max-width: 1023px) {
+    .sticker.sticker_new {
+        position: absolute;
+        top: -10px;
+        right: -40px;
+    }
+
     .row {
         grid-template-columns: 1fr;
         gap: 40px;
