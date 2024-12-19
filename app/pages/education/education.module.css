@@ -2,6 +2,14 @@
     background-color: var(--violet);
     border-radius: 60px;
     padding: 120px 0;
+    background-image: url('../../../public/education/decor.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.hero_section {
+    position: relative;
+    margin-bottom: 120px;
 }
 
 .row {

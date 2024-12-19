@@ -9,7 +9,7 @@ import styles from './style.module.css';
 import placeholder from '../../../public/placeholder/placeholder.png';
 
 const SlideMain = ({ item }) => {
-    const [sliderBg, setSliderBg] = useState(null)
+    const [sliderBg, setSliderBg] = useState(null);
 
     useEffect(() => {
         if (item) {
@@ -30,8 +30,6 @@ const SlideMain = ({ item }) => {
             return () => window.removeEventListener('resize', handleResize);
         }
     }, [item]);
-
-
 
     return (
         <>
