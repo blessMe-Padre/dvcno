@@ -1,10 +1,68 @@
 import Image from 'next/image';
 import styles from '../education.module.css';
 import { Division } from '@/app/sections';
+import { SlideMain } from '@/app/components';
+
+const data = {
+    title: "Дошкольное образование в ДВЦНО",
+    images: [
+        {
+            sliderBgBig: '/education/hero-bg-1-l.png',
+
+        },
+        {
+            sliderBgMedium: '/education/hero-bg-1-m.png',
+
+        },
+        {
+            sliderBgSmall: '/education/hero-bg-1-s.png',
+
+        }
+    ],
+
+    description: "Это воспитание, развитие и обучение, присмотр и оздоровление детей от 1,5 лет до 7 лет",
+    listItems: [
+        'НШДС «Классическая европейская прогимназия»',
+        'Начальная общеобразовательная школа-детский сад "Восточная школа" ',
+    ],
+    textPattern: 'Здесь создают творцов будущего',
+    link: "#",
+}
+
+const divisionData = [
+    {
+        image: '/division/image-1.jpg',
+        title: 'Начальная общеобразовательная школа-детский сад «Восточная школа»',
+        address: 'Приморский край, г. Владивосток, ул. Десятая д.10',
+        week: '8:30 - 18:00 (5-дневная учебная неделя)',
+        site: 'vostok.vvsu.ru',
+        phone_robot: '+74232404185',
+        phone: '240-41-85',
+        map_link: 'https://yandex.ru/maps/-/CHET5OYs',
+        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!',
+    },
+    {
+        image: '/division/image-2.jpg',
+        title: 'НШДС «Классическая европейская прогимназия»',
+        address: 'Приморский край, г. Владивосток, ул. Десятая д.10',
+        week: '8:30 - 18:00 (5-дневная учебная неделя)',
+        site: 'odarenok.su',
+        phone_robot: '+74232614737',
+        phone: '2261-47-37',
+        map_link: 'https://yandex.ru/maps/-/CHET5OYs',
+        description: 'Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!',
+    },
+]
 
 export default function doshkolnoeObrazovanie() {
     return (
         <>
+            <div className='container'>
+                <section className={styles.hero_section}>
+                    <SlideMain item={data} />
+                </section>
+            </div>
+
             <section className={styles.section}>
                 <div className='container'>
                     <div className={styles.row}>
@@ -46,7 +104,7 @@ export default function doshkolnoeObrazovanie() {
                 </div>
             </section>
 
-            <Division />
+            <Division divisionData={divisionData} />
 
         </>
     )
