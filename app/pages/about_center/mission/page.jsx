@@ -1,8 +1,9 @@
 import styles from './style.module.css';
-import { Breadcrumbs, SlideMain } from '@/app/components';
+import { Breadcrumbs } from '@/app/components';
 
 import missionBg2 from '@/public/about_center/mission-bg-2.png';
-import missionBgSmall from '@/public/about_center/mission-bg-2-s.png'
+import missionBg3 from '@/public/about_center/mission-bg-2-m.png';
+import missionBgSmall from '@/public/about_center/mission-bg-2-small.png'
 
 import decor from '@/public/about_center/decor_mission.svg';
 import icon from '@/public/about_center/icon.svg';
@@ -32,11 +33,11 @@ export default function Page() {
                             className={styles.decor}
                         />
                         <Image 
-                                src={icon}
-                                width={400}
-                                height={150}
-                                alt='icon'
-                                className={styles.icon}
+                            src={icon}
+                            width={400}
+                            height={150}
+                            alt='icon'
+                            className={styles.icon}
                         />
                     </div>
 
@@ -61,6 +62,13 @@ export default function Page() {
                                 height={680}
                                 alt=''
                             />
+                            <Image
+                                className={styles.missionBg3}
+                                src={missionBg3}
+                                width={400}
+                                height={400}
+                                alt=''
+                            />
 
                             <Image
                                 className={styles.bg3_img}
@@ -69,9 +77,16 @@ export default function Page() {
                                 height={435}
                                 alt=''
                             />
-
-
+                            <Image 
+                                    src={icon}
+                                    width={50}
+                                    height={50}
+                                    alt='icon'
+                                    className={styles.icon1}
+                                />
                         </div>
+
+                        
                     </div>
                         
                 </div>
