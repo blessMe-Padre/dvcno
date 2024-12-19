@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.section:nth-child(2) {
+    padding: 120px 0;
+}
+
 .title {
     font-family: var(--second-family);
     font-weight: 700;
@@ -14,3 +18,211 @@
     display: inline-block;
 }
 
+.missionBg {
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 680px;
+    background-image: url(../../../../public/about_center/mission-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    padding: 60px 70px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    gap: 30px
+}
+
+.wrapper_title {
+    position: relative;
+}
+
+.decor {
+    position: absolute;
+    top: 90px;
+    left: 140px;
+}
+
+.icon {
+    position: absolute;
+    top: 0px;
+    left: 40%;
+}
+
+.info_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 620px;
+}
+
+.text {
+    margin-top: 20px;
+    font-size: clamp(0.875rem, 0.313vw + 0.875rem, 1.25rem);
+    line-height: 130%;
+
+}
+
+
+.bg2 {
+    position: absolute;
+    top: 0;
+    right: 110px;
+    height: 100%;
+}
+
+.bg3_img {
+    display: none;
+}
+
+.icon1 {
+    display: none;
+}
+
+.missionBg3 {
+    display: none;
+}
+
+.add_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.item {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    background-color: var(--gray);
+    border-radius: 30px;
+
+    min-height: 260px;
+
+    transition: transform var(--anim-function);
+}
+
+.item:hover {
+    transform: scale(0.95);
+}
+
+.item_title {
+    font-weight: 700;
+    color: var(--black);
+}
+
+.pattern2 {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.item_content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (max-width: 769px) {
+    .missionBg3 {
+        display: block;
+    }
+    .info {
+        flex-direction: column;
+    }
+    .bg2 {
+        position: relative;
+        right: 0;
+    }
+    .wrapper {
+        background-image: url(../../../../public/about_center/mission-bg-2-medium.png);
+        padding: 30px 30px;
+    }
+     .bg2_img {
+        display: none;
+    }
+    .icon {
+        display: none;
+    }
+    .decor {
+        top: 38px;
+        left: 0px;
+    }
+    .add_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .section:nth-child(2) {
+        padding: 30px 0;
+    }
+    .bg2 {
+        position: relative;
+        top: -84px;
+        right: 0;
+    }
+
+      
+    .missionBg3 {
+        display: none;
+    }
+   
+    .info {
+        flex-direction: column;
+    }
+    .bg3_img {
+        display: block;
+    }
+    .wrapper {
+        background-image: url(../../../../public/about_center/mission-bg-small.png);
+        padding: 30px 30px;
+        border-radius: 30px;
+    }
+    .decor {
+        position: relative;
+        top: 0;
+        right: auto;
+        left: auto;
+        width: 300px;
+    }
+    .icon {
+       display: none;
+    }
+    .icon1 { 
+        display: block;
+        position: absolute;
+        top: 200px;
+    }
+    .title {
+        margin-bottom: 0px;
+    }
+
+     .add_list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .item {
+        min-height: auto;
+    }
+    .item_content {
+        flex-direction: row;
+        align-items: center;
+    }
+}
