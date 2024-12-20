@@ -1,6 +1,6 @@
 'use client'
 export { default as Awards } from './Awards/Awards';
-export { default as Breadcrumbs } from './Breadcrumbs/breadcrumbs';
+export { default as Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
 export { default as Card } from './Cards/Card/Card';
 export { default as CatalogButton } from './Catalog-button/CatalogButton';
 export { default as Footer } from './Footer/Footer';
@@ -20,4 +20,4 @@ export { default as VdsButton } from './Vds/VdsButton';
 export { default as VdsPanel } from './VdsPanel/VdsPanel';
 export { default as DivisionCard } from './Cards/Division-Card/Division-Card';
 export { default as SlideMain } from './Hero/SlideMain';
-
+export { default as AnimateItems } from './AnimateItems/AnimateItems';
