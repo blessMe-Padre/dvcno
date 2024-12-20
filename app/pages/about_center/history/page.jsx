@@ -1,5 +1,5 @@
 import styles from './style.module.css';
-import { Breadcrumbs } from '@/app/components';
+import { Breadcrumbs, DocumentComponent } from '@/app/components';
 
 import decor from '@/public/about_center/decor2.svg';
 import Image from 'next/image';
@@ -115,6 +115,18 @@ export default function Page() {
             <section className={styles.list}>
                 <div className='container'>
                    <AnimateItems data={data} />
+                </div>
+            </section>
+
+            <section className={styles.section}>
+                <div className="container">
+
+                    <DocumentComponent 
+                        title={'Реестр Доска почета России образование'} 
+                        link={'#'} 
+                        background_color={''}
+                    />
+                    
                 </div>
             </section>
         </>
