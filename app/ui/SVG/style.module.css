@@ -1,0 +1,30 @@
+.light_blue_stroke {
+  stroke: lightblue; /* Or your light blue color */
+}
+
+.green_stroke {
+  stroke: green; /* Or your green color */
+}
+
+.yellow_stroke {
+  stroke: yellow; /* Or your yellow color */
+}
+
+.violet_stroke {
+  stroke: violet; /* Or your violet color */
+}
+
+
+
+.history_decor {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+}
+
+.history_decor_without_year {
+    position: absolute;
+    top: -70px;
+    left: 80%;
+    transform: rotate(-95deg);
+}
