@@ -1,7 +1,6 @@
 import styles from './style.module.css';
 
 const SvgComponent = ({ className, item }) => {
-  console.log(item); 
   const strokeClass =
     item.className === 'light-blue'
       ? styles.light_blue_stroke

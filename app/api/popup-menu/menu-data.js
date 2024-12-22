@@ -13,7 +13,7 @@ export const popupMenuData = [
     },
     {
         title: "О центре",
-        link: "#",
+        link: "/about_center",
     },
     {
         title: "ГИА",

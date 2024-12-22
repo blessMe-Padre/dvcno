@@ -1,5 +1,6 @@
 .section {
     position: relative;
+    padding: 120px 0 120px;
 }
 
 .section:nth-child(2) {
@@ -46,7 +47,7 @@ section.list::before {
     content: "";
     position: absolute;
     top: 0;
-    height: 89%;
+    height: 85.6%;
     width: 1px;
     background: var(--gray);
     z-index: 1;
