@@ -1,0 +1,60 @@
+.document_item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    padding: 30px;
+
+    border-radius: 20px;
+    background-color: var(--gray);
+
+    max-width: 550px;
+
+}
+
+.name_document {
+    color: var(--black);
+    font-weight: 700;
+    text-decoration: underline;
+
+    transition: color var(--anim-function);
+    
+}
+
+.document_item svg path {
+    transition: fill var(--anim-function);
+}
+
+.background_white {
+    background-color: var(--white);
+}
+
+.document_item:hover svg path {
+    fill: var(--white);
+}
+
+.document_item:hover .name_document {
+    color: var(--violet);
+}
+
+.document_item:active .name_document {
+    color: var(--green);
+}
+
+.document_item:active svg path {
+    fill: var(--white);
+}
+
+
+.document_item svg rect {
+    transition: fill var(--anim-function);
+}
+
+.document_item:hover svg rect {
+    fill: var(--violet);
+}
+
+.document_item:active svg rect {
+    fill: var(--green);
+}
