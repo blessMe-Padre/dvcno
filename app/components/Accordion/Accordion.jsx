@@ -25,13 +25,14 @@ export default function Accordion({ color, title, accordionData }) {
     const handleClick = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };
+    let count = 1;
 
     return (
         <>
             <header className={` ${styles.header}`} style={{ backgroundColor: color }}>
                 <p>{title}</p>
             </header>
-            <ul>
+            <ul className={styles.list}>
                 {accordionData.map((item, index) => (
                     <li
                         key={item.title}
@@ -41,8 +42,11 @@ export default function Accordion({ color, title, accordionData }) {
                             className={styles.button_wrapper}
                             onClick={() => handleClick(index)}
                         >
-                            <button className={styles.button}>{item.title}</button>
-                            <div className={styles.button_decor}></div>
+                            <div className="flex gap-10">
+                                <span className={styles.count}>{count < 10 ? '0' + count++ : count++}</span>
+                                <button className={styles.button}>{item.title}</button>
+                            </div>
+                            <div className={`${styles.button_decor} ${openIndex === index ? styles.is_active : ''}`}></div>
                         </div>
                         <motion.div
                             layout
@@ -50,7 +54,13 @@ export default function Accordion({ color, title, accordionData }) {
                             initial={'hidden'}
                             animate={openIndex === index ? 'visible' : 'hidden'}
                         >
-                            <div className={styles.content}>{item.content}</div>
+                            <div className={styles.content}>
+                                <ul className={styles.list_content}>
+                                    {item.content.map((li) => (
+                                        <li className={styles.item_content}>{li}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </motion.div>
                     </li>
                 ))}

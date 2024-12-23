@@ -133,6 +133,9 @@ ul {
   gap: 20px;
 }
 
+.mb-30 {
+  margin-bottom: 30px;
+}
 
 .flex-0 {
   flex: 0 0 auto;
