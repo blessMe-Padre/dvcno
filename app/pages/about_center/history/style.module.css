@@ -55,6 +55,15 @@ section.list::before {
     left: 50%;
 }
 
+@media screen and (max-width: 769px) {
+    .list {
+        height: 78.6%;
+    }
+    .circle_last {
+        left: 46.6%;
+    }
+}
+
 
 @media screen and (max-width: 480px) {
     section.list::before {
