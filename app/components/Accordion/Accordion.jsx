@@ -48,20 +48,24 @@ export default function Accordion({ color, title, accordionData }) {
                             </div>
                             <div className={`${styles.button_decor} ${openIndex === index ? styles.is_active : ''}`}></div>
                         </div>
-                        <motion.div
-                            layout
-                            variants={variants}
-                            initial={'hidden'}
-                            animate={openIndex === index ? 'visible' : 'hidden'}
-                        >
-                            <div className={styles.content}>
-                                <ul className={styles.list_content}>
-                                    {item.content.map((li) => (
-                                        <li className={styles.item_content}>{li}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </motion.div>
+
+                        <div>
+                            <motion.div
+                                layout
+                                variants={variants}
+                                initial={'hidden'}
+                                animate={openIndex === index ? 'visible' : 'hidden'}
+                                className="parallax-wrapper"
+                            >
+                                <div className={styles.content}>
+                                    <ul className={styles.list_content}>
+                                        {item.content.map((li, index) => (
+                                            <li key={index} className={styles.item_content}>{li}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </motion.div>
+                        </div>
                     </li>
                 ))}
             </ul>

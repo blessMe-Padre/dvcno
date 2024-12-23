@@ -1,7 +1,10 @@
+"use client"
+import React from "react"
 import Image from 'next/image';
 import styles from '../education.module.css';
 import { Division } from '@/app/sections';
 import { Breadcrumbs, SlideMain, Accordion } from '@/app/components';
+import { motion, useAnimation } from "framer-motion"
 
 const data = {
     title: "Дополнительное образование в ДВЦНО",
@@ -32,7 +35,6 @@ const data = {
     textPattern: 'Здесь создают творцов будущего',
     link: "#",
 }
-
 
 const accordionData = [
     {
@@ -146,12 +148,24 @@ const accordionData2 = [
 
 ]
 
-export const metadata = {
-    title: "ДВЦНО | Дополнительное образование в ДВЦНО",
-    description: "Дополнительное образование в ДВЦНО",
-};
+// export const metadata = {
+//     title: "ДВЦНО | Дополнительное образование в ДВЦНО",
+//     description: "Дополнительное образование в ДВЦНО",
+// };
 
 export default function doshkolnoeObrazovanie() {
+    const imgAnimation = useAnimation();
+
+    const handleMouseMove = e => {
+        const { clientX, clientY } = e
+        const moveX = clientX - window.innerWidth / 2
+        const moveY = clientY - window.innerHeight / 2
+        const offsetFactor = 10
+        imgAnimation.start({
+            x: moveX / offsetFactor,
+            y: moveY / offsetFactor
+        })
+    }
     return (
         <>
             <div className='container'>
@@ -164,8 +178,22 @@ export default function doshkolnoeObrazovanie() {
                     <SlideMain item={data} />
                 </section>
             </div>
-            <div className="container">
-                <h2 className={`title ${styles.half_title}`}>Перечень реализуемых дополнительных программ </h2>
+            <motion.div
+                onMouseMove={e => handleMouseMove(e)}
+                className="container">
+                <div className={styles.title_wrapper}>
+                    <h2 className={`title ${styles.half_title}`}>Перечень реализуемых дополнительных программ </h2>
+                    <motion.img
+                        src="/education/decor-3.svg"
+                        alt="Изображение"
+                        width={283}
+                        height={219}
+                        className="dsv-image"
+                        animate={imgAnimation}
+                        transition={{ duration: 0.5 }
+                        }
+                    />
+                </div>
 
                 <Accordion
                     color='#37a4da'
@@ -178,7 +206,7 @@ export default function doshkolnoeObrazovanie() {
                     title='Программы повышения квалификации'
                     accordionData={accordionData2}
                 />
-            </div>
+            </motion.div>
         </>
     )
 }
