@@ -1,12 +1,7 @@
-'use client'
 import styles from './style.module.css'
-import { useState, useEffect } from 'react';
-import{ animate, motion } from 'framer-motion';
-
-import history_decor from '@/public/about_center/history_decor.svg';
+import { motion } from 'framer-motion';
 
 import Image from 'next/image';
-import SvgComponent from '@/app/ui/SVG/Svg';
 
 const AnimateItems = ({data}) => {
                       
@@ -15,12 +10,10 @@ const AnimateItems = ({data}) => {
             
             {data.map((item, index) => (
                
-            
                 <ul className={`${styles.ul_wrapper} ${index % 2 ? `${styles.ul_wrapper_reversed}`: ''}`} key={index}>        
                     {index != data.length - 1 ? (
                         <>
                             <li className={styles.list_content}>
-                                {console.log(item.desc)}
 
                                 <motion.div
                                     className={styles.image_wrapper}
@@ -130,10 +123,13 @@ const AnimateItems = ({data}) => {
                                             <h2 className={styles.subtitle}>{item.title}</h2>
                                         )}
 
-                                        <p className={styles.list_content_desc}>{item.desc ? item.desc.replace(/<br>/g, '\n') : item.desc}</p>
+                                        {/* <p className={styles.list_content_desc}>{item.desc ? item.desc.replace(/<br>/g, '\n') : item.desc}</p>
                                         {item.desc2 && (
                                             <p className={styles.list_content_desc}>{item.desc2 ? item.desc2.replace(/<br>/g, '\n') : item.desc2}</p>
-                                        )}
+                                        )} */}
+
+                                        <p className={styles.list_content_desc} dangerouslySetInnerHTML={{ __html: item.desc }}></p>
+
 
                                     </motion.div>
                                 </div>
@@ -186,10 +182,12 @@ const AnimateItems = ({data}) => {
                                             <h2 className={styles.subtitle}>{item.title}</h2>
                                         )}
 
-                                        <p className={styles.list_content_desc}>{item.desc ? item.desc.replace(/<br>/g, '\n') : item.desc}</p>
+                                        {/* <p className={styles.list_content_desc}>{item.desc ? item.desc.replace(/<br>/g, '\n') : item.desc}</p>
                                         {item.desc2 && (
                                             <p className={styles.list_content_desc}>{item.desc2 ? item.desc2.replace(/<br>/g, '\n') : item.desc2}</p>
-                                        )}
+                                        )} */}
+                                            
+                                            <p className={styles.list_content_desc} dangerouslySetInnerHTML={{ __html: item.desc }}></p>
 
                                     </motion.div>
                                 </div>

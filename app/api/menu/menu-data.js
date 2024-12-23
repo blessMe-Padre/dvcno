@@ -85,7 +85,7 @@ export const menuData = [
     },
     {
         title: "О центре",
-        link: "#",
+        link: "/about_center",
         submenu: [
             {
                 title: "Основные сведения",
