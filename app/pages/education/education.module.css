@@ -140,5 +140,9 @@
     .row+.row {
         margin-top: 30px;
     }
+}
 
+.half_title {
+    max-width: 70%;
+    margin-bottom: 40px;
 }
