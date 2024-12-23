@@ -1,121 +1,212 @@
+"use client"
+import React from "react"
 import Image from 'next/image';
 import styles from '../education.module.css';
 import { Division } from '@/app/sections';
-import { Breadcrumbs, SlideMain } from '@/app/components';
+import { Breadcrumbs, SlideMain, Accordion } from '@/app/components';
+import { motion, useAnimation } from "framer-motion"
 
 const data = {
-    title: "Среднее общее образование в ДВЦНО",
+    title: "Дополнительное образование в ДВЦНО",
     images: [
         {
-            sliderBgBig: '/education/hero-bg-4-l.png',
+            sliderBgBig: '/education/hero-bg-5-l.png',
 
         },
         {
-            sliderBgMedium: '/education/hero-bg-4-m.png',
+            sliderBgMedium: '/education/hero-bg-5-m.png',
 
         },
         {
-            sliderBgSmall: '/education/hero-bg-4-s.png',
+            sliderBgSmall: '/education/hero-bg-5-s.png',
 
         }
     ],
 
-    description: "Это третий, завершающий уровень, направленный на подготовку школьников к получению высшего  или среднего профессионального образования",
+    description: "Это мотивированное образование, позволяющее обучающемуся приобрести устойчивую потребность в познании и творчестве, максимально реализовать себя, самоопределиться профессионально и личностно",
     listItems: [
+        'НШДС «Классическая европейская прогимназия»',
+        'Начальная общеобразовательная школа-детский сад "Восточная школа" ',
         'Международная лингвистическая школа',
         'Академический колледж (АК)',
         '«Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина»',
+        'Физкультурно-оздоровительный комплекс с бассейном «Лига спорта» (ФОК «Лига спорта»)',
     ],
     textPattern: 'Здесь создают творцов будущего',
     link: "#",
 }
 
-const divisionData = [
+const accordionData = [
     {
-        image: '/division/image-3.jpg',
-        title: 'Международная лингвистическая школа (МЛШ)',
-        address: '690990 г. Владивосток, ул. Партизанский проспект д. 44',
-        week: '8.15 - 19.00 (5–дневная учебная неделя)',
-        site: 'mlsh.ru',
-        phone_robot: '+74232404284',
-        phone: '8 (423) 240-42-84',
-        map_link: 'https://yandex.ru/maps/-/CHET5OYs',
-        description: 'Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!',
+        title: 'Менеджмент в образовании',
+        content: [
+            'Приглашаются специалисты, имеющие высшее профессиональное образование.',
+            'Цель: формирование компетентностей, позволяющих осуществлять профессиональную управленческую деятельность в социальной сфере.',
+            'По завершении обучения выдается диплом, дающий право на выполнение нового вида профессиональной деятельности, связанной с полученной квалификацией.',
+            'Срок обучения: 520 часов.',
+            'Форма обучения: очно-заочная.',
+            'Режим занятий: с отрывом и без отрыва от работы.',
+            'Стоимость обучения - 7500 р.',
+        ]
     },
     {
-        image: '/division/image-4.jpg',
-        title: 'Академический колледж',
-        address: '690990 Приморский край, г. Владивосток, ул. Гоголя д. 39-а',
-        week: ' 8:30 - 18:00 (5-дневная учебная неделя)',
-        site: 'ac-dvcno.ru',
-        phone_robot: '+74232404155',
-        phone: '8 (423 )240-41-55',
-        map_link: 'https://yandex.ru/maps/-/CHET5OYs',
-        description: 'Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!',
+        title: 'Педагогика и психология',
+        content: [
+            'Приглашаются специалисты, имеющие среднее или высшее профессиональное образование.',
+            'Цель: формирование и развитие компетентностей, позволяющих осуществлять профессиональную деятельность в области педагогики и психологии.',
+            'По завершении обучения выдается диплом, дающий право на выполнение нового вида профессиональной деятельности, связанной с полученной квалификацией.',
+            'Срок обучения: 260-часов.',
+            'Форма обучения: очная, очно-заочная.',
+            'Режим занятий: с отрывом и без отрыва от работы.',
+            'Стоимость обучения - на договорной основе.',
+        ]
     },
     {
-        image: '/division/image-5.jpg',
-        title: '«Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина» (ШОД)',
-        address: '690022, г. Владивосток, ул. Чапаева, д. 5',
-        week: ' 8:30 - 18:00 (5-дневная учебная неделя)',
-        site: 'giftedschool.dvcno.ru',
-        phone_robot: '+74232658562',
-        phone: '8 (423) 265-85-62',
-        map_link: 'https://yandex.ru/maps/-/CHET5OYs',
-        description: 'Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit! Lorem ipsum, <h2>dolor sit amet</h2> consectetur adipisicing elit. Magni reiciendis mollitia quos praesentium maiores beatae similique voluptatibus facere quidem velit!',
+        title: 'Образование и педагогика',
+        content: [
+            'Приглашаются специалисты, имеющие среднее или высшее профессиональное образование.',
+            'Цель: формирование профессиональных компетенций, позволяющих осуществлять профессиональную деятельность в области образования и педагогики.',
+            'По завершении обучения выдается диплом, дающий право на выполнение нового вида профессиональной деятельности, связанной с полученной квалификацией.',
+            'Срок обучения: 268 часов.',
+            'Форма обучения: очная, очно-заочная.',
+            'Режим занятий: с отрывом и без отрыва от работы.',
+            'Стоимость обучения - 12650 р.',
+        ]
     },
 ]
+const accordionData2 = [
+    {
+        title: 'КОНЦЕПТУАЛЬНО-МЕТОДИЧЕСКИЕ, НОРМАТИВНО-ПРАВОВЫЕ И ПСИХОЛОГИЧЕСКИЕ ОСНОВЫ ФГОС ООО',
+        content: [
+            'Приглашаются руководители (директора) ОУ, заместители руководителя (директора) ОУ, учителя разных учебных предметов, педагоги - организаторы, социальные педагоги, тьюторы.',
+            'Цель: формирование профессиональной готовности педагогических работников ОУ к реализации ФГОС основного общего образования, к выполнению должностных обязанностей, связанных с обеспечением образовательного процесса на основе нормативных документов',
+            'По завершении обучения выдается удостоверение установленного образца.',
+            'Срок обучения: 108 часов.',
+            'Форма обучения: очная, очно-заочная.',
+            'Режим занятий: с отрывом и без отрыва от работы.',
+            'Стоимость обучения - на договорной основе.',
+        ]
+    },
+    {
+        title: 'ОБРАЗОВАНИЕ И ПЕДАГОГИКА',
+        content: [
+            'Приглашаются специалисты, имеющие среднее или высшее профессиональное образование.',
+            'Цель: формирование профессиональных компетенций, позволяющих осуществлять профессиональную деятельность в области образования и педагогики.',
+            'По завершении обучения выдается удостоверение установленного образца.',
+            'Срок обучения: 108 часов.',
+            'Форма обучения: очная, очно-заочная.',
+            'Режим занятий: с отрывом и без отрыва от работы.',
+            'Стоимость обучения - на договорной основе.',
+        ]
+    },
+    {
+        title: 'ПСИХОЛОГИЧЕСКОЕ И УЧЕБНО-МЕТОДИЧЕСКОЕ СОПРОВОЖДЕНИЕ ПРОФЕССИОНАЛЬНОЙ ДЕЯТЕЛЬНОСТИ РУКОВОДЯЩИХ И ПЕДАГОГИЧЕСКИХ РАБОТНИКОВ СПО В УСЛОВИЯХ РЕАЛИЗАЦИИ ФГОС',
+        content: [
+            'Приглашаютсяпреподаватели и специалисты колледжей.',
+            'Цель: формирование педагогической компетентности в области рациональной организации учебной деятельности.',
+            'Срок обучения: 72 часа.',
+            'По завершении обучения выдается удостоверение установленного образца.',
+            'Форма обучения: очная, очно-заочная.',
+            'Режим занятий: с отрывом и без отрыва от работы.',
+            'Стоимость обучения - на договорной основе.',
+        ]
+    },
+    {
+        title: 'ФОРМИРОВАНИЕ ПСИХОЛОГО-ПЕДАГОГИЧЕСКОЙ И УЧЕБНО-МЕТОДИЧЕСКОЙ ПОДГОТОВКИ ДЕЯТЕЛЬНОСТИ СПЕЦИАЛИСТА СРЕДНЕГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ',
+        content: [
+            'Приглашаются преподаватели и специалисты колледжей.',
+            'Цель: формирование педагогической компетентности в области рациональной организации учебной деятельности.',
+            'По завершении обучения выдается удостоверение установленного образца.',
+            'Срок обучения: 72 часа.',
+            'Форма обучения: очная, очно-заочная.',
+            'Режим занятий: с отрывом и без отрыва от работы.',
+            'Стоимость обучения - на договорной основе.',
+        ]
+    },
+    {
+        title: 'ИНФОРМАЦИОННЫЕ ТЕХНОЛОГИИ В ПРОФЕССИОНАЛЬНОЙ ДЕЯТЕЛЬНОСТИ',
+        content: [
+            'Приглашаются: специалисты, имеющие среднее или высшее профессиональное образование.',
+            'Целью является получение навыков и знаний для базовой работы пользователя на компьютере.',
+            'По завершении обучения выдается удостоверение установленного образца.',
+            'Срок обучения: 32 часа.',
+            'Форма обучения: очная.',
+            'Режим занятий: с отрывом от работы.',
+            'Стоимость обучения - на договорной основе.',
+        ]
+    },
+    {
+        title: 'УПРАВЛЯЮЩИЙ РЕСТОРАНОМ',
+        content: [
+            'Приглашаются: специалисты, имеющие среднее или высшее профессиональное образование.',
+            'Цель: обеспечить развитие профессиональных навыков в сфере ресторанного бизнеса, обеспечивающих эффективную работу и карьерный рост слушателя.',
+            'По завершении обучения выдается удостоверение установленного образца.',
+            'Срок обучения: 36 часов.',
+            'Форма обучения: очная.',
+        ]
+    },
 
-export const metadata = {
-    title: "ДВЦНО | Среднее общее образование в ДВЦНО",
-    description: "Дальневосточный центр непрерывного образования",
-};
+]
+
+// export const metadata = {
+//     title: "ДВЦНО | Дополнительное образование в ДВЦНО",
+//     description: "Дополнительное образование в ДВЦНО",
+// };
 
 export default function doshkolnoeObrazovanie() {
+    const imgAnimation = useAnimation();
+
+    const handleMouseMove = e => {
+        const { clientX, clientY } = e
+        const moveX = clientX - window.innerWidth / 2
+        const moveY = clientY - window.innerHeight / 2
+        const offsetFactor = 10
+        imgAnimation.start({
+            x: moveX / offsetFactor,
+            y: moveY / offsetFactor
+        })
+    }
     return (
         <>
             <div className='container'>
                 <Breadcrumbs
                     slug={'Образование'}
                     link={'education'}
-                    title={'Среднее общее образование в ДВЦНО'}
+                    title={'Дополнительное образование в ДВЦНО'}
                 />
                 <section className={styles.hero_section}>
                     <SlideMain item={data} />
                 </section>
             </div>
-
-            <section className={`${styles.section}`}>
-                <div className='container'>
-                    <div className={styles.row}>
-                        <div>
-                            <h2 className={styles.title}>Отделение Лицейских классов
-                                <span className={`${styles.sticker} ${styles.sticker_new}`}>10-11 классов</span>
-                            </h2>
-                            <ul className={styles.list}>
-                                <li>основное общее образование.</li>
-                                <li>среднее общее образование</li>
-                            </ul>
-                            <p className={styles.text}>Выпускники отделения Лицейских классов при успешной сдаче ЕГЭ по русскому языку и математике получают аттестат государственного образца.</p>
-                            <p className={styles.text}>После 9 и 11 классов ребята могут выбрать индивидуальную образовательную траекторию: продолжить обучение по программам среднего профессионального образования АНПОО «ДВЦНО» и высшего профессионального образования во ВГУЭС.</p>
-
-                        </div>
-                        <div className={styles.image_wrapper}>
-                            <Image
-                                aria-hidden
-                                src="/education/image-11.jpg"
-                                alt="Дошкольные группы"
-                                width={671}
-                                height={619}
-                                className={`${styles.image} dsv-image`}
-                            />
-                        </div>
-                    </div>
+            <motion.div
+                onMouseMove={e => handleMouseMove(e)}
+                className="container">
+                <div className={styles.title_wrapper}>
+                    <h2 className={`title ${styles.half_title}`}>Перечень реализуемых дополнительных программ </h2>
+                    <motion.img
+                        src="/education/decor-3.svg"
+                        alt="Изображение"
+                        width={283}
+                        height={219}
+                        className="dsv-image"
+                        animate={imgAnimation}
+                        transition={{ duration: 0.5 }
+                        }
+                    />
                 </div>
-            </section>
 
-            <Division divisionData={divisionData} />
+                <Accordion
+                    color='#37a4da'
+                    title='Программы профессиональной переподготовки'
+                    accordionData={accordionData}
+                />
 
+                <Accordion
+                    color='green'
+                    title='Программы повышения квалификации'
+                    accordionData={accordionData2}
+                />
+            </motion.div>
         </>
     )
 }

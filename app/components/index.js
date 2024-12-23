@@ -22,3 +22,4 @@ export { default as DivisionCard } from './Cards/Division-Card/Division-Card';
 export { default as SlideMain } from './Hero/SlideMain';
 export { default as AnimateItems } from './AnimateItems/AnimateItems';
 export { default as DocumentComponent } from './Documents/Documents';
+export { default as Accordion } from './Accordion/Accordion';
