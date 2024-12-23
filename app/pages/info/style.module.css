@@ -1,0 +1,137 @@
+.section {
+    position: relative;
+}
+
+.title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.subtitle {
+    width: 900px;
+
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 1.25rem + 2.083vw, 3.125rem);
+
+    color: var(--white);
+}
+
+.desc {
+    width: 900px;
+
+    margin-top: 40px;
+    text-transform: lowercase;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.75rem + 0.556vw, 1.25rem);
+
+    color: var(--white);
+}
+
+
+
+
+.wrapper_content {
+    padding: 110px 80px;
+
+    background-image: url('../../../public/info/bg_info_b.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-bottom: 80px;
+
+    max-height: 680px;
+    height: 100%;
+}
+
+.wrapper_lang {
+    margin-top: 100px;
+}
+
+.list_language {
+    margin-top: 16px;
+
+    display: flex;
+    gap: 16px;
+}
+
+.item {
+    width: 100%;
+    max-width: 197px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.bg_yellow {
+    background-color: var(--yellow);
+    color: var(--default-color);
+}
+
+.bg_green {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.bg_blue {
+    background-color: var(--light-blue);
+    color: var(--white);
+}
+
+.bg_white {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+
+.list_title {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 769px) {
+    .subtitle {
+        width: 100%;
+    }
+
+    .desc {
+        width: 100%;
+    }
+
+    .wrapper_content {
+        padding: 20px 20px;
+        background-image: url('../../../public/info/bg_info_m.png');
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .wrapper_lang {
+        margin-top: 20px;
+    }
+
+    .desc {
+        margin-top: 16px;
+    }
+    
+    .wrapper_content {
+        height: 100vh;
+        padding: 20px 20px;
+        background-image: url('../../../public/info/bg_info_s.png');
+        max-height: 100%;
+    }
+
+    .list_language {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
