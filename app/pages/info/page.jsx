@@ -1,9 +1,6 @@
 import styles from './style.module.css';
 import { Breadcrumbs } from '@/app/components';
 
-
-import Image from 'next/image';
-
 export default function page() {
     return (
           <section className={styles.section}>
@@ -12,14 +9,6 @@ export default function page() {
                     <h2 className={styles.title}>Сведения об образовательной организации</h2>
                 
                     <div className={styles.wrapper_content}>
-                        
-                        {/* <Image 
-                            className={`${styles.info_bg} dsv-image`} 
-                            src={bg_big} 
-                            width={1440} 
-                            height={700} 
-                            alt="info_bg"
-                        /> */}
                     
                     <p className={styles.subtitle}>АВТОНОМНАЯ НЕКОММЕРЧЕСКАЯ ПРОФЕССИОНАЛЬНАЯ ОБРАЗОВАТЕЛЬНАЯ ОРГАНИЗАЦИЯ «ДАЛЬНЕВОСТОЧНЫЙ ЦЕНТР НЕПРЕРЫВНОГО ОБРАЗОВАНИЯ» </p>
                     
