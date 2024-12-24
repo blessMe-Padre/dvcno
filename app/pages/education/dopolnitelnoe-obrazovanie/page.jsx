@@ -4,7 +4,8 @@ import Image from 'next/image';
 import styles from '../education.module.css';
 import { Division } from '@/app/sections';
 import { Breadcrumbs, SlideMain, Accordion } from '@/app/components';
-import { motion, useAnimation } from "framer-motion"
+import { motion, useAnimation } from "framer-motion";
+
 
 const data = {
     title: "Дополнительное образование в ДВЦНО",
@@ -160,10 +161,16 @@ export default function doshkolnoeObrazovanie() {
         const { clientX, clientY } = e
         const moveX = clientX - window.innerWidth / 2
         const moveY = clientY - window.innerHeight / 2
-        const offsetFactor = 10
+        const offsetFactor = 20
         imgAnimation.start({
             x: moveX / offsetFactor,
-            y: moveY / offsetFactor
+            y: moveY / offsetFactor,
+            transition: {
+                type: "spring", // Тип анимации Используется для естественного перехода с эффектом пружины.
+                stiffness: 200, // Жесткость пружины Определяет "жесткость" пружины. Чем выше значение, тем быстрее анимация.
+                damping: 20,    // Сопротивление Контролирует затухание движения. Более высокие значения делают анимацию более плавной.
+                duration: 0.3,  // Продолжительность анимации (опционально) Альтернатива для фиксированной продолжительности анимации.
+            },
         })
     }
     return (
@@ -190,8 +197,7 @@ export default function doshkolnoeObrazovanie() {
                         height={219}
                         className="dsv-image"
                         animate={imgAnimation}
-                        transition={{ duration: 0.5 }
-                        }
+                        transition={{ ease: "easeInOut", }}
                     />
                 </div>
 
