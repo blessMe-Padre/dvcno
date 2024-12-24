@@ -4,6 +4,7 @@ import decor from '@/public/decor/image-1.png';
 import Image from 'next/image';
 
 import decor2 from '@/public/info/svedenya/decor.svg';
+import decor3 from '@/public/info/decor_3.svg';
 
 export default function page() {
     
@@ -73,42 +74,42 @@ export default function page() {
     const data_address = [
         {
             'title': 'Начальная школа – детский сад «Классическая европейская прогимназия» (НШДС "КЕП")',
-            'address': '<span style="font-weight: 700; margin: 10px 0;"> Адрес: </span> <br> 690024, г. Владивосток, ул. Десятая, д. 10 (станция «Санаторная»)',
+            'address': '690024, г. Владивосток, ул. Десятая, д. 10 (станция «Санаторная»)',
             'img': '/info/address_1.png',
             'link': '/'
         },
 
         {
             'title': 'Начальная общеобразовательная школа-детский сад "Восточная школа"',
-            'address': '<span style="font-weight: 700; margin: 10px 0;"> Адрес: </span> <br> 690066, г. Владивосток, ул. Тунгусская, д. 59',
+            'address': '690066, г. Владивосток, ул. Тунгусская, д. 59',
             'img': '/info/address_2.png',
             'link': '/'
         },
 
         {
             'title': 'Международная лингвистическая школа (МЛШ)',
-            'address': '<span style="font-weight: 700; margin: 10px 0;"> Адрес: </span> <br> 690106, г. Владивосток,  Партизанский пр-т, д. 44, корп. 4',
+            'address': ' 690106, г. Владивосток,  Партизанский пр-т, д. 44, корп. 4',
             'img': '/info/address_3.png',
             'link': '/'
         },
 
         {
             'title': 'Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина (ШОД)',
-            'address': '<span style="font-weight: 700; margin: 10px 0;"> Адрес: </span> <br> 690022, г. Владивосток, ул. Чапаева, д. 5',
+            'address': '690022, г. Владивосток, ул. Чапаева, д. 5',
             'img': '/info/address_5.png',
             'link': '/',
         },
 
         {
             'title': 'Академический колледж (АК)',
-            'address': '<span style="font-weight: 700; margin: 10px 0;"> Адрес: </span> <br> 690014, г. Владивосток, ул. Гоголя, д. 41',
+            'address': '690014, г. Владивосток, ул. Гоголя, д. 41',
             'link': '/',
             'img': '/info/address_5.png',
         },
 
         {
             'title': 'Физкультурно-оздоровительный комплекс «Лига спорта»',
-            'address': '<span style="font-weight: 700; margin: 10px 0;"> Адрес: </span> <br> 690022, г. Владивосток, ул. Чапаева, д. 5, стр. 2',
+            'address': '690022, г. Владивосток, ул. Чапаева, д. 5, стр. 2',
             'link': '/',
             'img': '/info/address_6.png',
         },
@@ -213,8 +214,11 @@ export default function page() {
                                      <Image className={styles.decor2_img} src={decor2} width={50} height={50} alt='decor_2' />
                                 </div>
                                  
-                                <p className={styles.svedenya_info_second} dangerouslySetInnerHTML={{__html: item.address}}></p>
-                            
+                                    <div className={styles.field_wrapper}>
+                                        <p className={styles.field}>Адрес:</p>
+                                        <p className={styles.field_value}>{item.address}</p> 
+                                     </div>
+
                                     <a
                                         href={item.link}
                                         className={styles.link}
@@ -261,10 +265,18 @@ export default function page() {
             </section>
 
             <section className={styles.section}>
-                    <div className='container'>
+                    <div className='container relative'>
                         <h2 className={styles.title}>
                             Банковские реквизиты АНПОО «ДВЦНО»
-                        </h2>
+                    </h2>
+                    
+                    <Image
+                        className={styles.decor3_img}
+                        src={decor3}
+                        width={200}
+                        height={100}
+                        alt=''
+                    />
                     
                         <div className={styles.bank_info}>
                             <p className={styles.bank_name}>
