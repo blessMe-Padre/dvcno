@@ -32,4 +32,245 @@
     gap: 20px;
 }
 
+.list_svedenya_four {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.svedenya_info_second {
+    color: var(--black);
+    margin-bottom: 20px;
+
+}
+
 .list_address {}
+
+
+.bank_info_list {
+    padding: 30px 0;
+}
+
+.bank_name {
+    font-family: var(--font-family);
+    font-size: clamp(0.875rem, 0.875rem + 0.2778vw, 1.125rem);
+    font-weight: 700;
+
+    color: var(--black);
+    background-color: var(--white);
+    padding: 20px 30px;
+    
+    border-radius: 20px;
+
+    max-width: 680px;
+    width: 100%;
+
+    box-shadow: 20px 20px 30px 0 rgba(15, 15, 15, 0.2);
+
+}
+
+.bank_info {
+    position: relative;
+    background-image: url(../../../../public/info/svedenya/bank_info_b.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    padding: 60px;
+
+    min-height: 500px;
+    height: 100%;
+}
+
+.bank_info_text {
+    font-size: clamp(0.875rem, 0.125vw + 0.85rem, 1rem);    
+    line-height: 130%;
+    color: var(--white);
+}
+
+.bank_info li {
+    margin-top: 10px;
+}
+
+
+.documents_wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.item_title_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-weight: 700;
+    padding: 15px;
+    color: var(--black);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: var(--white);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.svedenya_info {
+    margin-bottom: 20px;
+}
+
+.link {
+    font-weight: 500;
+    color: var(--violet);
+    text-decoration: underline;
+}
+
+.decor2_img {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+}
+
+.svedenya_item_name {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 18px;
+}
+
+
+.svedenya_item_desc {
+    font-weight: 500;
+    color: var(--black);
+    line-height: 130%;
+}
+
+.svedenya_item {
+    position: relative;
+    background-color: var(--gray);
+    border-radius: 30px;
+    padding: 40px 30px;
+    min-height: 330px;
+}
+
+.decor_svg {
+    scale: .8;
+    position: absolute;
+    right: -10px;
+    bottom: 30px;
+}
+
+.decor3_img {
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.field_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.field {
+    font-weight: 700;
+    color: var(--black);
+}
+
+.field_value {
+    color: var(--black);
+}
+
+
+@media screen and (max-width: 480px) {
+    .documents_wrapper {
+        flex-direction: column;
+    }
+    .list_svedenya_four {
+        display: grid;
+        grid-template-columns: repeat(1, fr);
+    }
+}
+
+.document_content {
+    width: 100%;
+    padding: 40px 25px;
+    border-radius: 20px;
+}
+
+.document_name {
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(0.875rem, 0.25vw + 0.825rem, 1.125rem);
+    font-weight: 700;
+
+    background-color: var(--white);
+    color: var(--black);
+    
+    border-radius: 20px;
+    
+    padding: 15px;
+}
+
+.document_name span {
+    display: block;
+    max-width: 460px;
+    text-align: center;
+}
+
+.document_info {
+    padding: 20px 15px;
+    list-style: disc;
+}
+
+.document_info li {
+    margin-top: 10px;
+}
+
+.background_color_violet {
+    background-color: var(--violet);
+}
+
+.background_color_light_blue {
+    background-color: var(--light-blue);
+}
+
+@media screen and (max-width: 769px) {
+    .list_svedenya {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bank_info_list {
+        padding: 15px 0;
+    }
+    .bank_name {
+        max-width: 500px;
+    }
+    .bank_info {
+        padding: 30px;
+        position: relative;
+        background-image: url(../../../../public/info/svedenya/bank_info_m.png);
+    }   
+}
+
+
+@media screen and (max-width: 480px) {
+    .list_svedenya {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .svedenya_item {
+        max-height: 330px;
+        padding: 40px 30px;
+    }
+    .bank_info {
+        padding: 15px 0;
+        background-image: url(../../../../public/info/svedenya/bank_info_s.png);
+        background-size: contain;
+        height: 100vh;
+    }
+    
+    .bank_info li {
+        margin-top: 20px;
+    }
+}
