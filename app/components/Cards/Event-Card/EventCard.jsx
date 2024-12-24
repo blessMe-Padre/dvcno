@@ -15,6 +15,9 @@ export default function EventCard(
         minute
     }
 ) {
+
+                                            {console.log(thumbnail)}
+
     return (
         <div className={styles.card}>
             <header className={styles.header}>
