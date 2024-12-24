@@ -316,7 +316,6 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
-
     margin-bottom: 50px;
 }
 
@@ -337,6 +336,16 @@
 @media (max-width: 768px) {
     .document_list {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .title_sticker {
+        font-size: 17px;
+        color: var(--black);
+        padding: 10px 20px;
+    }
+
+    .acceptance_title_wrapper {
         gap: 20px;
     }
 }
