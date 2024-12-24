@@ -284,3 +284,26 @@
         font-size: 10px;
     }
 }
+
+.documents {
+    background-color: var(--violet);
+    border-radius: 40px;
+    padding: 100px 0;
+    background-image: url('/education/decor-6.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.document_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .document_list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}

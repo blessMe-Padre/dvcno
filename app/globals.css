@@ -141,6 +141,10 @@ ul {
   flex: 0 0 auto;
 }
 
+.text-white {
+  color: var(--white);
+}
+
 .swiper {
   position: static !important;
 }
