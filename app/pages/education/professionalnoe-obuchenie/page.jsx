@@ -35,6 +35,16 @@ const data = {
     link: "#",
 }
 
+const documentData2 = [
+    {
+        title: "Правила приема на обучение по образовательным программам среднего профессионального образования в АНПОО «ДВЦНО» на 2024/25 учебный год.",
+        link: "/",
+    },
+    {
+        title: "Условия приема на обучение по договорам об оказании платных образовательных услуг в Автономную некоммерческую профессиональную образовательную организацию «Дальневосточный центр непрерывного образования» по программам среднего профессионального образования.",
+        link: "/",
+    },
+]
 const documentData = [
     {
         title: "Оригинал или ксерокопия документов, удостоверяющих личность, гражданство",
@@ -202,11 +212,27 @@ export default function page() {
                                 <DocumentComponent title={item.title} link={item.link} />
                             </li>
                         ))}
-
                     </ul>
                 </div>
 
             </motion.section>
+
+            <section className={styles.acceptance}>
+                <div className="container">
+                    <div className={styles.acceptance_title_wrapper}>
+                        <h2 className="title">Прием документов начинается</h2>
+                        <div className={styles.title_sticker}>20 июня 2024 года</div>
+                    </div>
+
+                    <ul className={styles.document_list}>
+                        {documentData2.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
 
         </>
     )
