@@ -2,7 +2,7 @@
 import React from "react"
 import Image from 'next/image';
 import styles from '../education.module.css';
-import { Breadcrumbs, SlideMain, Accordion } from '@/app/components';
+import { Breadcrumbs, SlideMain, Accordion, DocumentComponent } from '@/app/components';
 import { motion, useAnimation } from "framer-motion";
 
 const data = {
@@ -34,6 +34,49 @@ const data = {
     textPattern: 'Здесь создают творцов будущего',
     link: "#",
 }
+
+const documentData = [
+    {
+        title: "Оригинал или ксерокопия документов, удостоверяющих личность, гражданство",
+        link: "/",
+    },
+    {
+        title: "Оригинал и (или) копия документа об образовании и (или) документа об образовании и о квалификации",
+        link: "/",
+    },
+    {
+        title: "4 фотографии 3х4",
+        link: "/",
+    },
+    {
+        title: "Копия СНИЛС абитуриента",
+        link: "/",
+    },
+    {
+        title: "Копия СНИЛС заказчика образовательных услуг",
+        link: "/",
+    },
+    {
+        title: "Копия медицинского полиса",
+        link: "/",
+    },
+    {
+        title: "Прививочный сертификат",
+        link: "/",
+    },
+    {
+        title: "Результаты флюорографического обследования",
+        link: "/",
+    },
+    {
+        title: "Копия свидетельства о перемене фамилии, имени, отчества (при наличии)",
+        link: "/",
+    },
+    {
+        title: "Копия удостоверения призывника или военного билета (при наличии)",
+        link: "/",
+    },
+]
 
 // export const metadata = {
 //     title: "ДВЦНО | Профессиональное обучение в ДВЦНО",
@@ -131,6 +174,39 @@ export default function page() {
 
                 </motion.section>
             </div>
+
+            <motion.section
+                onMouseMove={e => handleMouseMove(e)}
+                className={styles.documents}>
+
+                <div className="container">
+                    <div className={styles.title_wrapper}>
+                        <div>
+                            <h2 className={`${styles.half_title} title text-white`}>Документы, необходимые для поступления</h2>
+                            <p className={`${styles.accept_text} text-white`}>При поступлении на обучение поступающий предоставляет медицинскую справку по форме № 086/у</p>
+                        </div>
+                        <motion.img
+                            src="/education/decor-5.svg"
+                            alt="Изображение"
+                            width={166}
+                            height={166}
+                            className={`dsv-image`}
+                            animate={imgAnimation}
+                            transition={{ ease: "easeInOut", }}
+                        />
+                    </div>
+
+                    <ul className={styles.document_list}>
+                        {documentData.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))}
+
+                    </ul>
+                </div>
+
+            </motion.section>
 
         </>
     )
