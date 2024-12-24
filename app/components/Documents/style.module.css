@@ -57,3 +57,10 @@
 .document_item:active svg rect {
     fill: var(--green);
 }
+
+@media (max-width: 768px) {
+    .name_document {
+        font-size: 14px;
+    }
+
+}
