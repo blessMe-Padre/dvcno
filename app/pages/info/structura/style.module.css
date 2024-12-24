@@ -137,4 +137,14 @@
     .item {
         padding: 20px;
     }
+    .item_title_wrapper {
+        min-height: auto;
+        font-size: 12px;
+    }
+    .field {
+        font-size: 12px;
+    }
+    .decor3 {
+        bottom: -40px;
+    }
 }
