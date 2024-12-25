@@ -2,9 +2,9 @@ import styles from './style.module.css';
 import Link from 'next/link';
 
 
-const DocumentComponent = ({ title, link }) => {
+const DocumentComponent = ({ title, link, background }) => {
     return (
-        <div className={styles.document_item}>
+        <div  className={`${styles.document_item} ${background === 'white' ? styles.background_white : ''}`}>
 
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="40" height="40" rx="10" fill="white" />
