@@ -10,7 +10,7 @@ export const metadata = {
 const links = [
     {
         title: 'Локальные акты',
-        link: 'lokalnye-akty'
+        link: '/pages/info-security/lokalnye-akty'
     },
     {
         title: 'Нормативное регулирование',

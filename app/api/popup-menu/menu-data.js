@@ -4,8 +4,8 @@ export const popupMenuData = [
         link: "pages/info-security",
     },
     {
-        title: "Обучение",
-        link: "#",
+        title: 'Локальные акты',
+        link: 'pages/info-security/lokalnye-akty'
     },
     {
         title: "О центре",
