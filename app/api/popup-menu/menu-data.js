@@ -1,14 +1,10 @@
 export const popupMenuData = [
     {
-        title: "Сведения об образовательной организации",
-        link: "#",
+        title: "Информационная безопасность",
+        link: "pages/info-security",
     },
     {
         title: "Обучение",
-        link: "#",
-    },
-    {
-        title: "Информационная безопасность",
         link: "#",
     },
     {
