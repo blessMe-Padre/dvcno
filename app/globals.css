@@ -142,7 +142,7 @@ ul {
 }
 
 .text-white {
-  color: var(--white);
+  color: var(--white) !important;
 }
 
 .swiper {
