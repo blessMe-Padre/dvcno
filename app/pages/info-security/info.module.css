@@ -82,3 +82,44 @@
         gap: 20px;
     }
 }
+
+.link_list {
+    padding-left: 40px;
+    list-style: disc;
+    margin-bottom: 60px;
+}
+
+.link_list li::marker {
+    color: #433c8c;
+}
+
+.link_list li {
+    margin-bottom: 20px;
+}
+
+.link_list a {
+    font-weight: 500;
+    font-size: 1.1em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #433c8c;
+}
+
+.small_title {
+    font-size: clamp(2.5em, 0.357em + 4.464vw, 4.375em);
+}
+
+@media (max-width: 768px) {
+    .small_title {
+        font-size: 1.9em;
+    }
+
+    .link_list a {
+        font-size: 0.9em;
+    }
+
+    .link_list {
+        padding-left: 20px;
+        margin-bottom: 40px;
+    }
+}

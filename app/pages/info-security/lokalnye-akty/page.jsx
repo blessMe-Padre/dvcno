@@ -47,7 +47,6 @@ export default function Page() {
 
     return (
         <div className="container">
-            <Breadcrumbs title={"Локальные акты"} />
             <Breadcrumbs
                 slug={'Информационная безопасность'}
                 link={'pages/info-security'}

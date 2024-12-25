@@ -14,23 +14,23 @@ const links = [
     },
     {
         title: 'Нормативное регулирование',
-        link: 'normativnoe-regulirovanie'
+        link: '/pages/info-security/normativnoe-regulirovanie'
     },
     {
         title: 'Педагогам',
-        link: 'pedagogam'
+        link: '/pages/info-security/pedagogam'
     },
     {
         title: 'Родителям',
-        link: 'roditelyam'
+        link: '/pages/info-security/roditelyam'
     },
     {
         title: 'Обучающимся',
-        link: 'obuchayushchimsya'
+        link: '/pages/info-security/obuchayushchimsya'
     },
     {
         title: 'Детские безопасные сайты',
-        link: 'detskie-bezopasnye-sajty'
+        link: '/pages/info-security/detskie-bezopasnye-sajty'
     },
 
 ]
