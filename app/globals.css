@@ -171,8 +171,6 @@ ul {
   background-color: var(--white) !important;
 }
 
-
-
 .main_slider .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
   background-color: var(--white);
   opacity: 30%;
@@ -213,6 +211,10 @@ ul {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--black-toggle);
+}
+
+.title-black {
+  color: var(--black);
 }
 
 @media (max-width: 768px) {
