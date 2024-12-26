@@ -12,6 +12,10 @@ export const menuData = [
                 link: "/pages/info/osnovnue_svedenya",
             },
             {
+                title: "Образование",
+                link: "/pages/info/education",
+            },
+            {
                 title: "Документы",
                 link: "/pages/info/documents",
             },
