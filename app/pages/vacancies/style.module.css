@@ -1,0 +1,128 @@
+.section {
+    padding: 0 0 60px 0;
+}
+
+
+.title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.title_wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+
+.bg_gray {
+    background-color: var(--gray);
+    border-radius: 30px;
+}
+
+.bg_gray .title {
+    color: var(--black);
+}
+
+.vacancies_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.vacancies_item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--gray);
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.vacancies_item_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.vacancies_item_info_name {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--black);
+
+}
+
+.vacancies_item_info_address {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--black);
+}
+
+.vacancies_item_info_price {
+    font-weight: 700;
+    color: var(--violet);
+    font-size: 30px;
+}
+
+.button_wrapper {
+    margin-top: 20px;
+}
+
+.button {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--violet);
+    padding: 20px 0;
+    border-radius: 10px;
+    color: var(--white);
+    width: 100%;
+
+    max-height: 60px;
+}
+
+.decor2 {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+}
+
+.arrow {
+
+}
+
+
+.item_job {
+    position: relative;
+    text-align: center;
+    color: var(--black);
+    border-radius: 50px;
+    padding: 20px;
+    background-color: var(--white);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .document_list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+@media screen and (max-width: 480px ) {
+    .vacancies_list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
