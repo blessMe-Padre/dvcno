@@ -19,7 +19,7 @@ export default async function Page() {
         }
     ]
 
-     const data_price = [
+    const data_price = [
         {
             'title': 'Начальная школа – детский сад «Классическая европейская прогимназия» (НШДС "КЕП")',
             'link': '/'
@@ -49,8 +49,7 @@ export default async function Page() {
 
     ]
 
-
-     const data_template = [
+    const data_template = [
         {
             'title': 'Шаблоны договоров АК на 2023-2024 учебные года',
             'link': '/'
@@ -86,7 +85,7 @@ export default async function Page() {
                 <div className="container">
                     <Breadcrumbs
                         slug={'Платные образовательные услуги'}
-                        link={'pages/about_center'}
+                        link={'pages/info'}
                         title={'Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.'}
                         />
                     

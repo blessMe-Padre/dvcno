@@ -4,7 +4,7 @@ import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 
 
 export const metadata = {
-    title: "ДВЦНО | Пед состав",
+    title: "ДВЦНО | Педагогический состав",
     description: "Дальневосточный центр непрерывного образования",
 };
 
@@ -61,10 +61,10 @@ export default async function Page() {
         <div className="container">
             <Breadcrumbs
                 slug={'Сведения об образовательной организации'}
-                link={'pages/about_center'}
-                title={'Платные образовательные услуги'}
+                link={'pages/info'}
+                title={'Педагогический состав'}
             />
-            <h2 className={`title ${styles.title}`}>Платные образовательные услуги</h2>
+            <h2 className={`title ${styles.title}`}>Педагогический состав</h2>
 
             <ul className={styles.list}>
                 {educationPages && educationPages.length > 0 ? (

@@ -3,8 +3,6 @@ import styles from "./style.module.css";
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 
 
-import { DocumentComponent } from "@/app/components";
-
 export const metadata = {
     title: "ДВЦНО | Международное сотрудничество",
     description: "Дальневосточный центр непрерывного образования",
@@ -29,7 +27,7 @@ export default async function Page() {
                 <div className="container">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/about_center'}
+                        link={'pages/info'}
                         title={'Международное сотрудничество.'}
                     />
                     <h2 className={`title ${styles.title}`}>Международное сотрудничество.</h2>
