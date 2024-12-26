@@ -6,6 +6,14 @@ import decor2 from '@/public/info/structura/decor2.svg';
 import decor3 from '@/public/info/structura/decor3.svg';
 
 import arrow from '@/public/info/education/arrow.svg';
+
+
+export const metadata = {
+    title: "ДВЦНО | Руководство",
+    description: "Дальневосточный центр непрерывного образования",
+};
+
+
 export default function page() {
 
     const data_director = [
@@ -131,7 +139,7 @@ export default function page() {
                 <div className='container'>
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/about_center'}
+                        link={'pages/info'}
                         title={'Структура и органы управления образовательной организацией'}
                     />
                     

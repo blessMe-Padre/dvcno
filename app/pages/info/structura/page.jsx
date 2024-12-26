@@ -5,6 +5,12 @@ import decor2 from '@/public/info/structura/decor2.svg';
 import decor3 from '@/public/info/structura/decor3.svg';
 import doc from '@/public/info/structura/doc.svg';
 
+export const metadata = {
+    title: "ДВЦНО | Структура и органы управления образовательной организацией",
+    description: "Дальневосточный центр непрерывного образования",
+};
+
+
 export default function page() { 
 
     const data_director = [

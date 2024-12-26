@@ -7,6 +7,14 @@ import decor_icon from '@/public/info/education/decor_icon.svg';
 import { Breadcrumbs, DocumentComponent } from '@/app/components';
 import date from '@/public/info/education/date.png';
 
+
+
+export const metadata = {
+    title: "ДВЦНО | Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда",
+    description: "Дальневосточный центр непрерывного образования",
+};
+
+
 export default function page() {
 
     const data_education = [
@@ -98,7 +106,7 @@ export default function page() {
                 <div className='container'>
                         <Breadcrumbs
                             slug={'Сведения об образовательной организации'}
-                            link={'pages/about_center'}
+                            link={'pages/info'}
                             title={'Образование'}
                     />
                     

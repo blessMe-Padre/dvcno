@@ -4,52 +4,56 @@ export const menuData = [
         link: "#",
         submenu: [
             {
+                title: "Информация",
+                link: "/pages/info",
+            },
+            {
                 title: "Основные сведения",
-                link: "#",
+                link: "/pages/info/osnovnue_svedenya",
             },
             {
                 title: "Документы",
-                link: "#",
+                link: "/pages/info/documents",
             },
             {
                 title: "Руководство",
-                link: "#",
+                link: "/pages/info/management",
             },
             {
                 title: "Педагогический состав",
-                link: "#",
+                link: "/pages/info/sostav",
             },
             {
                 title: "Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.",
-                link: "#",
+                link: "/pages/info/dostupnaya_sreda",
             },
             {
                 title: "Платные образовательные услуги",
-                link: "#",
+                link: "/pages/info/services",
             },
             {
                 title: "Финансово-хозяйственная деятельность",
-                link: "#",
+                link: "/pages/info/activities",
             },
             {
                 title: "Вакантные места для приёма (перевода) обучающихся",
-                link: "#",
+                link: "/pages/info/vacancies",
             },
             {
                 title: "Стипендия и меры поддержки обучающихся",
-                link: "#",
+                link: "/pages/info/grands",
             },
             {
                 title: "Международное сотрудничество",
-                link: "#",
+                link: "/pages/info/international_cooperation",
             },
             {
                 title: "Организация питания в образовательной организации",
-                link: "#",
+                link: "/pages/info/nutrition",
             },
             {
                 title: "Образовательные стандарты и требования",
-                link: "#",
+                link: "/pages/info/standarts",
             },
         ],
     },
