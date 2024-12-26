@@ -37,6 +37,7 @@
 
 .page_content p {
     margin-bottom: 20px;
+    max-width: 1100px;
 }
 
 @media (max-width:768px) {
@@ -179,6 +180,7 @@
     background-size: cover;
     padding: 70px;
     min-height: 437px;
+    margin-bottom: 70px;
 }
 
 .hero h1 {
@@ -213,4 +215,8 @@
         font-size: 2.3em;
         margin-bottom: 20px;
     }
+}
+
+.method {
+    padding: 70px 0;
 }
