@@ -1,6 +1,13 @@
 import styles from './style.module.css';
 import { Breadcrumbs } from '@/app/components';
 
+
+export const metadata = {
+    title: "ДВЦНО | Сведения об образовательной организации",
+    description: "Дальневосточный центр непрерывного образования",
+};
+
+
 export default function page() {
     return (
           <section className={styles.section}>

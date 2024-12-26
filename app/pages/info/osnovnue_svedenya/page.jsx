@@ -6,6 +6,13 @@ import Image from 'next/image';
 import decor2 from '@/public/info/svedenya/decor.svg';
 import decor3 from '@/public/info/decor_3.svg';
 
+
+export const metadata = {
+    title: "ДВЦНО | Основные сведения",
+    description: "Дальневосточный центр непрерывного образования",
+};
+
+
 export default function page() {
     
 
@@ -155,7 +162,7 @@ export default function page() {
                 <div className="container relative">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/about_center'}
+                        link={'pages/info'}
                         title={'Основные сведения'}
                     />
 

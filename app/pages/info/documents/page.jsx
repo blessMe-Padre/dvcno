@@ -10,6 +10,12 @@ import decor5 from '@/public/info/doc/decor5.svg';
 import { DocumentComponent } from "@/app/components";
 
 
+export const metadata = {
+    title: "ДВЦНО | Документы",
+    description: "Дальневосточный центр непрерывного образования",
+};
+
+
 export default function page() {
 
     const data_docs = [
@@ -289,7 +295,7 @@ export default function page() {
         <>
             <section>
                 <div className="container">
-                    <Breadcrumbs title={"Документы"} link={'/'} slug={"Сведения об образовательной организации"} />
+                    <Breadcrumbs title={"Документы"} link={'pages/info'} slug={"Сведения об образовательной организации"} />
                     <div className={styles.title_wrapper}>
                         <h2 className={styles.title}>Документы</h2>
                         <Image
