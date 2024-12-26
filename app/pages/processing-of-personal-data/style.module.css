@@ -1,0 +1,129 @@
+.title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.title_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.subtitle {
+    font-size: clamp(1em, 0.427em + 1.192vw, 1.5em);
+    max-width: 700px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+
+.section:not(:first-of-type) {
+    padding: 100px 0 0px 0px;
+}
+
+.section_custom {
+    padding: 100px 0 100px 0 !important;
+}
+
+
+.img_year {
+    position: absolute;
+    top: -10px;
+    right: 40px;
+    transform: rotate(5deg);
+}
+
+.bg_gray {
+    background-color: var(--gray);
+    border-radius: 30px;
+}
+
+.bg_gray .title {
+    color: var(--black);
+}
+
+.section:last-of-type {
+    padding: 100px 0px;
+}
+
+.document_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+.document_wrapper {
+    margin-top: 40px;
+}
+
+.usefull {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.text {
+    font-size: clamp(1em, 0.427em + 1.192vw, 1.5em);
+    font-weight: 700;
+}
+
+.bg_violet {
+    margin-top: 60px;
+    background-image: url('/processing-of-personal-data/bg_school.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.lessons_school {
+    padding: 91px 50px;
+    max-width: 900px;
+}
+
+.lessons_school .title {
+    color: var(--white);
+}
+
+.lessons_info {
+    color: var(--white);
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.document_list_custom {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .document_list {
+        grid-template-columns: repeat(1, fr);
+        gap: 20px;
+    }
+    .bg_violet {
+        background-image: url('/processing-of-personal-data/bg_school_m.png');
+    }      
+}
+
+@media (max-width: 480px) {
+    .lessons_school {
+        padding: 30px 20px;
+    }
+    .document_list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .bg_violet {
+        background-image: url('/processing-of-personal-data/bg_school_s.png');
+    }
+}
