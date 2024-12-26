@@ -12,7 +12,18 @@
 
 .title_wrapper {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 30px;
+}
+
+.subtitle {
+    
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 1.25rem + 2.083vw, 3.125rem);
+
+    color: var(--white);
 }
 
 
