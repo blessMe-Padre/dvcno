@@ -7,20 +7,28 @@ import decor_icon from '@/public/info/education/decor_icon.svg';
 import { Breadcrumbs, DocumentComponent } from '@/app/components';
 import date from '@/public/info/education/date.png';
 
+
+
+export const metadata = {
+    title: "ДВЦНО | Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда",
+    description: "Дальневосточный центр непрерывного образования",
+};
+
+
 export default function page() {
 
     const data_education = [
         {
-            'title': 'уровни общего образования',
-            'desc': '<p> Дошкольное образование(3- 7 лет),</p >  <p>Начальное общее образование(1 - 4 классы), </p>  <p>Основное общее образование (5-9 классы), </p>  <p>Среднее общее образование(10-11 классы), </p>  <p>Дополнительное образование </p>',
+            'title': '<p>уровни общего образования</p>',
+            'desc': '<p style="margin-bottom: 5px;"> Дошкольное образование(3- 7 лет),</p >  <p style="margin-bottom: 5px;">Начальное общее образование(1 - 4 классы), </p>  <p style="margin-bottom: 5px;">Основное общее образование (5-9 классы), </p>  <p style="margin-bottom: 5px;">Среднее общее образование(10-11 классы), </p>  <p style="margin-bottom: 5px;">Дополнительное образование </p>',
             'background': 'yellow',
             'img': '/info/education/decor_1.svg',
             'bg': '/info/education/bg_1.png'
         },
 
         {
-            'title': 'Формы обучения',
-            'desc': 'Очная, <br /> Очно-заочная, <br /> Заочная, ',
+            'title': '<p>Формы обучения</p>',
+            'desc': '<p style="margin-bottom: 5px; color: #fff;">Очная,</p><p style="margin-bottom: 5px; color: #fff;">Очно-заочная, </p> <p style="margin-bottom: 5px; color: #fff;">Заочная,</p> ',
             'background': 'green',
             'img': '/info/education/decor_12.svg',
             'bg': '/info/education/bg_2.png'
@@ -28,8 +36,8 @@ export default function page() {
         },
 
         {
-            'title': 'Языки образования',
-            'desc': 'Русский, <br /> Английский, <br /> Китайский, <br /> Корейский',
+            'title': '<p>Языки образования</p>',
+            'desc': '<p style="margin-bottom: 5px; color: #ffff;">Русский,</p>  <p style="margin-bottom: 5px; color: #ffff;">Английский,</p>  <p style="margin-bottom: 5px; color: #ffff;">Китайский,</p>  <p style="margin-bottom: 5px; color: #ffff;">Корейский,</p>',
             'background': 'light-blue',
             'img': '/info/education/decor_13.svg',
             'bg': '/info/education/bg_3.png'
@@ -98,7 +106,7 @@ export default function page() {
                 <div className='container'>
                         <Breadcrumbs
                             slug={'Сведения об образовательной организации'}
-                            link={'pages/about_center'}
+                            link={'pages/info'}
                             title={'Образование'}
                     />
                     
@@ -115,7 +123,7 @@ export default function page() {
                                 ${item.background === 'light-blue' ? styles.background_light_blue : ''}
                                 ${item.background === 'green' ? styles.background_green : ''}`}>
                                 <p className={styles.item_title}>
-                                    {item.title}
+                                    <p dangerouslySetInnerHTML={{ __html: item.title}}></p>
 
                                     <Image
                                         className={styles.decor}
