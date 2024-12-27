@@ -1,3 +1,11 @@
+/* 
+  20px - font-size: 1.25em;
+  18px - font-size: 1.125em;
+  14px - font-size: 0.875em;
+  12px - font-size: 0.75em;
+  10px - font-size: 0.625em;
+*/
+
 :root {
   --background-color: #ffffff;
   --default-color: #171717;
