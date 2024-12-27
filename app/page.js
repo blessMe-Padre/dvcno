@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 
 import { Awards, SlideMain } from "./components";
-import { Slider, About, Events, News, Partners, Why, Gallery } from "./sections";
+import { Slider, About, Events, News, Partners, Why, Gallery, Contacts} from "./sections";
 
 export const metadata = {
   title: "ДВЦНО | Главная",
@@ -45,7 +45,7 @@ export default function Home() {
       <Events />
       <News />
       <Gallery />
-      {/* <Contacts /> */}
+      <Contacts />
       <Partners />
     </>
   );
