@@ -23,3 +23,4 @@ export { default as SlideMain } from './Hero/SlideMain';
 export { default as AnimateItems } from './AnimateItems/AnimateItems';
 export { default as DocumentComponent } from './Documents/Documents';
 export { default as Accordion } from './Accordion/Accordion';
+export { default as ComponentMap } from './Map/Map';
