@@ -54,7 +54,7 @@ export default function Page() {
                     title={'Обучающимся'}
                 />
 
-                {/* <section className={`${styles.hero} ${styles.hero_parents} ${styles.hero_student}`}>
+                <section className={`${styles.hero} ${styles.hero_parents} ${styles.hero_student}`}>
                     <h1 className={`title title-white`}>Обучающимся</h1>
 
                     <div className={styles.document_wrapper}>
@@ -66,10 +66,10 @@ export default function Page() {
                             ))}
                         </ul>
                     </div>
-                </section> */}
+                </section>
             </div>
 
-            {/* <section className={styles.recommended}>
+            <section className={styles.recommended}>
                 <div className="container">
                     <div className={styles.title_wrapper}>
                         <h2 className={`title ${styles.half_title} title-black`}>Рекомендуемые интернет-ресурсы</h2>
@@ -93,12 +93,34 @@ export default function Page() {
                         ))}
                     </ul>
                 </div>
-            </section> */}
+            </section>
 
             <div className="container">
                 <div className={styles.image_wrapper}>
                     <Image
                         src="/info-security/student-1.jpg"
+                        alt="Изображение"
+                        width={1442}
+                        height={1189}
+                        className="dsv-image"
+                        placeholder="blur"
+                        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
+                    />
+                </div>
+                <div className={styles.image_wrapper}>
+                    <Image
+                        src="/info-security/student-2.jpg"
+                        alt="Изображение"
+                        width={1442}
+                        height={1189}
+                        className="dsv-image"
+                        placeholder="blur"
+                        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
+                    />
+                </div>
+                <div className={styles.image_wrapper}>
+                    <Image
+                        src="/info-security/student-3.jpg"
                         alt="Изображение"
                         width={1442}
                         height={1189}
