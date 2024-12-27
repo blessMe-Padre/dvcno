@@ -35,19 +35,35 @@ const documentData = [
 ];
 const documentData2 = [
     {
-        title: "http://obrnadzor.gov.ru/gia/gia-9/poleznaya-informacziya/",
+        title: "Расписание проведения ЕГЭ и ГВЭ-11 в 2022 году",
         link: "/",
     },
     {
-        title: "http://obrnadzor.gov.ru/gia/gia-11/poleznaya-informacziya/",
+        title: "Приказы об утверждении расписания ЕГЭ и ГВЭ-11",
         link: "/",
     },
     {
-        title: "https://fipi.ru/ege",
+        title: "Приказ ГВЭ-9 и ГВЭ-11",
+        link: "/",
+    },
+];
+const documentData3 = [
+    {
+        title: "Сроки проведения итогового собеседования по русскому языку",
+        link: "/",
+    },
+];
+const documentData4 = [
+    {
+        title: "Расписание проведения ЕГЭ и ГВЭ-11 в 2022 году",
         link: "/",
     },
     {
-        title: "https://fipi.ru/oge",
+        title: "Приказы об утверждении расписания ЕГЭ и ГВЭ-11",
+        link: "/",
+    },
+    {
+        title: "Приказ ГВЭ-9 и ГВЭ-11",
         link: "/",
     },
 ];
@@ -85,19 +101,19 @@ export default function Page() {
             </section>
 
             <section className={styles.method}>
-                <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}>Памятка</h2>
+                <div className={styles.title_wrapper_between}>
+                    <h2 className={`title ${styles.half_title}`}>информация</h2>
                     <Image
-                        src="/gia/image-2.svg"
+                        src="/gia/image-4.svg"
                         alt="Изображение"
-                        width={227}
-                        height={122}
+                        width={146}
+                        height={78}
                         className="dsv-image"
                     />
                 </div>
 
                 <ul className={styles.document_list}>
-                    {documentData.map((item, index) => (
+                    {documentData2.map((item, index) => (
                         <li key={index}>
                             <DocumentComponent title={item.title} link={item.link} />
                         </li>
@@ -105,20 +121,59 @@ export default function Page() {
                 </ul>
             </section>
 
-            <section className={styles.use_info}>
-                <h2 className={`title ${styles.half_title} title-white`}>Полезная информация</h2>
-                <svg width="302" height="18" viewBox="0 0 302 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 14.1279C49.5326 16.1054 146.926 17.0941 167.297 14.1279C191.215 10.6452 119.677 5.51891 159.148 3.00441C199.891 0.408926 247.617 3.00441 300 8.93693" stroke="#433C8C" strokeWidth="3" strokeLinecap="round" />
-                </svg>
+            <div className={styles.image_wrapper}>
+                <Image
+                    src="/gia/image-5.jpg"
+                    alt="Изображение"
+                    width={1442}
+                    height={960}
+                    className="dsv-image"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
+                />
+            </div>
+
+            <section className={`${styles.hero} ${styles.hero_total}`}>
+                <div className={styles.title_wrapper}>
+                    <h2 className={`title ${styles.half_title}`}>Итоговое собеседование</h2>
+                    <Image
+                        src="/gia/image-5.svg"
+                        alt="Изображение"
+                        width={125}
+                        height={125}
+                        className={`${styles.title_img} dsv-image`}
+                    />
+                </div>
+
+                <ul className={styles.hero_list}>
+                    {documentData3.map((item, index) => (
+                        <li key={index}>
+                            <DocumentComponent title={item.title} link={item.link} />
+                        </li>
+                    ))}
+                </ul>
             </section>
 
-            <ul className={styles.document_list}>
-                {documentData.map((item, index) => (
-                    <li key={index}>
-                        <DocumentComponent title={item.title} link={item.link} />
-                    </li>
-                ))}
-            </ul>
+            <section className={styles.method}>
+                <div className={styles.title_wrapper_between}>
+                    <h2 className={`title ${styles.half_title}`}>Материалы для подготовки к ОГЭ</h2>
+                    <Image
+                        src="/gia/image-4.svg"
+                        alt="Изображение"
+                        width={146}
+                        height={78}
+                        className="dsv-image"
+                    />
+                </div>
+
+                <ul className={styles.document_list}>
+                    {documentData4.map((item, index) => (
+                        <li key={index}>
+                            <DocumentComponent title={item.title} link={item.link} />
+                        </li>
+                    ))}
+                </ul>
+            </section>
 
         </div>
     )
