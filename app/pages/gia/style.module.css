@@ -231,3 +231,46 @@
         width: 55%;
     }
 }
+
+.hero_list li {
+    margin-bottom: 20px;
+}
+
+.hero_list li>div {
+    padding: 20px;
+    max-width: 548px;
+}
+
+.hero_oge {
+    background-image: url('/gia/banner-3-l.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .hero_list li>div {
+        padding: 15px;
+        max-width: 394px;
+    }
+
+    .hero_list li {
+        margin-bottom: 10px;
+    }
+
+    .hero_list li svg {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    .hero_oge {
+        background-image: url('/gia/banner-3-m.webp');
+    }
+}
+
+@media (max-width: 560px) {
+    .hero_oge {
+        background-image: url('/gia/banner-3-s.webp');
+    }
+}
