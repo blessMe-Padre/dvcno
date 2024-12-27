@@ -317,3 +317,47 @@
         min-height: 466px;
     }
 }
+
+.hero_ege {
+    background-image: url('/gia/banner-5-l.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 628px;
+}
+
+@media (max-width: 768px) {
+    .hero_ege {
+        background-image: url('/gia/banner-5-m.webp');
+        min-height: 384px;
+    }
+}
+
+@media (max-width:560px) {
+    .hero_ege {
+        background-image: url('/gia/banner-5-s.webp');
+        min-height: 625px;
+    }
+}
+
+.hero_total_2 {
+    background-image: url('/gia/banner-6-l.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 628px;
+}
+
+@media (max-width: 768px) {
+    .hero_total_2 {
+        background-image: url('/gia/banner-6-m.webp');
+        min-height: 330px;
+    }
+}
+
+@media (max-width:560px) {
+    .hero_total_2 {
+        background-image: url('/gia/banner-6-s.webp');
+        min-height: 466px;
+    }
+}
