@@ -1,3 +1,20 @@
+.recommended {
+    padding: 140px 0 70px;
+    border-radius: 60px;
+    background-color: var(--gray);
+    margin-bottom: 70px;
+}
+
+@media (max-width:768px) {
+    .recommended {
+        padding: 40px 0 20px;
+    }
+}
+
+.recommended .document_list li>div {
+    background-color: var(--white);
+}
+
 .title_wrapper {
     display: flex;
     gap: 20px;
@@ -175,12 +192,24 @@
 
 .hero {
     background-image: url('/info-security/banner-1-l.webp');
+    min-height: 437px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     padding: 70px;
-    min-height: 437px;
     margin-bottom: 70px;
+    border-radius: 30px;
+}
+
+.hero_parents {
+    background-image: url('/info-security/banner-2-l.webp');
+    min-height: 680px;
+    box-sizing: border-box;
+    background-position: center right;
+}
+
+.hero_parents .document_wrapper li>div {
+    padding: 20px 30px;
 }
 
 .hero h1 {
@@ -190,6 +219,10 @@
 
 .document_wrapper {
     max-width: 700px;
+}
+
+.document_wrapper li {
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -202,6 +235,27 @@
     .document_wrapper {
         max-width: 451px;
     }
+
+    .hero_parents {
+        background-image: url('/info-security/banner-2-m.webp');
+        background-position: center center;
+        min-height: 381px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .hero_parents .document_wrapper li>div {
+        padding: 5px 20px;
+    }
+
+    .hero_parents .document_wrapper li {
+        margin-bottom: 15px;
+    }
+
+    .hero_parents h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 560px) {
@@ -209,11 +263,21 @@
         background-image: url('/info-security/banner-1-s.webp');
         min-height: 772px;
         padding: 30px 20px;
+        margin-bottom: 20px;
+    }
+
+    .hero_parents {
+        background-image: url('/info-security/banner-2-s.webp');
+        min-height: 605px;
     }
 
     .hero h1 {
         font-size: 2.3em;
         margin-bottom: 20px;
+    }
+
+    .hero_parents .document_wrapper li>div {
+        padding: 10px 20px;
     }
 }
 
