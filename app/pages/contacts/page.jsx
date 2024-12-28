@@ -1,9 +1,5 @@
 import styles from './style.module.css';
-import { ComponentMap } from '@/app/components';
-
-import decor from '@/public/contacts/decor.svg';
-import Image from 'next/image';
-import Link from 'next/link';
+import { ComponentMap, ContactsList } from '@/app/components';
 
 
 export default function page() {
@@ -24,7 +20,8 @@ export default function page() {
             'works_of_clock': '<p>Пн-чт: с 8.30-17.30</p> <p>Пт: с 8:30-16:15</p> <p>Обед: с 12:30-13:15</p> <p>Выходные дни: Сб, Вс</p>',
             'socials_vk': '/',
             'socials_tg': '/',
-            'background': 'violet'
+            'background': 'violet',
+            'href': '#item_1'
 
         },
 
@@ -43,7 +40,8 @@ export default function page() {
             'works_of_clock': '<p>Пн-чт: с 8.30-17.30</p> <p>Пт: с 8:30-16:15</p> <p>Обед: с 12:30-13:15</p> <p>Выходные дни: Сб, Вс</p>',
             'socials_vk': '/',
             'socials_tg': '/',
-            'background': 'light-blue'
+            'background': 'green',
+            'href': '#item_2'
 
         },
 
@@ -58,7 +56,8 @@ export default function page() {
             'works_of_clock': '<p>Пн-чт: с 8.30-17.30</p> <p>Пт: с 8:30-16:15</p> <p>Обед: с 12:30-13:15</p> <p>Выходные дни: Сб, Вс</p>',
             'socials_vk': '/',
             'socials_tg': '/',
-            'background': 'green'
+            'background': 'purple',
+            'href': '#item_3'
         },
 
         {
@@ -74,7 +73,23 @@ export default function page() {
             'works_of_clock': '<p>Пн-чт: с 8.30-17.30</p> <p>Пт: с 8:30-16:15</p> <p>Обед: с 12:30-13:15</p> <p>Выходные дни: Сб, Вс</p>',
             'socials_vk': '/',
             'socials_tg': '/',
-            'background': 'purple'
+            'background': 'light-blue',
+            'href': '#item_4'
+        },
+
+        {
+            'name': 'ШОД',
+            'title': 'Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина (ШОД)',
+            'url': 'https://giftedschool.dvcno.ru',
+            'address': '690022, г. Владивосток, ул. Чапаева, д. 5',
+            'phone': '8 (423) 265-85-62,',
+            'phone_bot': '+74232658562',
+            'mail': 'dvcno_shiod@rambler.ru',
+            'works_of_clock': '<p>Пн-чт: с 8.30-17.30</p> <p>Пт: с 8:30-16:15</p> <p>Обед: с 12:30-13:15</p> <p>Выходные дни: Сб, Вс</p>',
+            'socials_vk': '/',
+            'socials_tg': '/',
+            'background': 'light-blue',
+            'href': '#item_5'
         },
 
         {
@@ -88,7 +103,8 @@ export default function page() {
             'works_of_clock': '<p>Пн-чт: с 8.30-17.30</p> <p>Пт: с 8:30-16:15</p> <p>Обед: с 12:30-13:15</p> <p>Выходные дни: Сб, Вс</p>',
             'socials_vk': '/',
             'socials_tg': '/',
-            'background': 'light-blue'
+            'background': 'yellow',
+            'href': '#item_6'
         },
 
         {
@@ -104,7 +120,8 @@ export default function page() {
             'works_of_clock': '<p>Пн-чт: с 8.30-17.30</p> <p>Пт: с 8:30-16:15</p> <p>Обед: с 12:30-13:15</p> <p>Выходные дни: Сб, Вс</p>',
             'socials_vk': '/',
             'socials_tg': '/',
-            'background': 'green'
+            'background': 'green',
+            'href': '#item_7'
         },
 
 
@@ -118,93 +135,9 @@ export default function page() {
             <section className={styles.section}>
                 <div className="container">
                     <h2 className={styles.title}>Контакты</h2>
-
-                    <ul className={styles.contact_list_btn}>
-
-                        {data_contacts.map((item, index) => (
-                            <>
-                            
-                                <button className={styles.item_btn}>
-                                    {item.name}
-                                </button>
-
-                               
-                            </>
-                        ))}
-
-                    </ul>
-                    <ul className={styles.contact_list}>
-                        {data_contacts.map((item, index) => (
-                            <li className={styles.contact_item}>
-                                <div className={`${styles.contact_name_wrapper}                                                 
-                                        ${item.background === 'yellow' ? styles.bg_yellow : ''}
-                                        ${item.background === 'light-blue' ? styles.bg_light_blue : ''}
-                                        ${item.background === 'purple' ? styles.bg_purple : ''}
-                                        ${item.background === 'green' ? styles.bg_green : ''}
-                                        ${item.background === 'violet' ? styles.bg_violet : ''}
-                                    `}>
-                                        
-                                    <Image className={styles.decor} src={decor} width={50} height={50} alt='' />
-                                    <p  className={styles.contact_name}>
-                                        {item.title}</p>
-                               </div>
-
-                                <ul className={styles.contact_info}>
-                                    <li className={styles.info_item}>
-                                        <div className={styles.info_item_url}>
-                                            <p>Сайт</p>
-                                            <p>{item.url}</p>
-                                        </div>                                            
-
-                                    </li>
-
-                                    <li className={styles.info_item}>
-                                        <div className={styles.info_item_works}>
-                                            <p>График работы:</p>
-                                            <p dangerouslySetInnerHTML={{ __html: {item}}}></p>
-                                        </div>                                    
-                                    </li>
-
-                                     <li className={styles.info_item}>
-                                        <div className={styles.info_item_address}>
-                                            <p>Адрес</p>
-                                            <p>{item.address}</p>
-                                        </div>                                 
-                                    </li>
-
-
-                                    <li className={styles.info_item}>
-                                        <div className={styles.info_item_phone}>
-                                            <p>Телефон</p>
-                                            <a href={item.phone_bot}><p>{item.phone}</p></a>
-                                            <a href={item.phone_bot2}><p>{item.phone2}</p></a>
-
-                                        </div>                             
-                                    </li>
-
-                                    <li className={styles.info_item}>
-                                         <div className={styles.info_item_email}>
-                                            <p>Электронная почта</p>
-                                            <Link href={'item.mail'}><p>{item.mail}</p></Link>
-                                            <Link href={'item.mail2'}><p>{item.mail2}</p></Link>
-                                        </div>                          
-                                    </li>
-
-                                    <li className={styles.info_item}>
-                                         <div className={styles.info_item_socials}>
-                                            <p>Мы в социальных сетях</p>
-                                            {item.socials_tg}
-                                            {item.socials_vk}
-
-                                        </div>                          
-                                    </li>
-                                </ul>
-                            </li>
-                        ))}
-                    </ul>
+                    <ContactsList data={data_contacts} />
                 </div>
             </section>
-            
 
             <section className={styles.section}>
                 <div className="container">

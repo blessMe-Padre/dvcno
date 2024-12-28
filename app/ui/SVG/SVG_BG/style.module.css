@@ -1,0 +1,27 @@
+.svg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+}
+
+
+.yellow  {
+    stroke: #FFCF82;
+}
+
+.light-blue  {
+    stroke: #37A4DA;
+}
+
+.violet  {
+    stroke: #37A4DA;
+}
+
+.purple  {
+    stroke: #A14BC5;
+}
+
+.green  {
+    stroke: #36B369;
+}

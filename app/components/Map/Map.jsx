@@ -29,6 +29,7 @@ const ComponentMap = () => {
                 <ul className={styles.tabs_wrapper}>
                     {items.map((n, i) => (
                         <button
+                            key={i}
                             className={`${styles.tabs_btn} ${i === active ? `${styles.active}` : ''}`}
                             onClick={openTab}
                             data-index={i}

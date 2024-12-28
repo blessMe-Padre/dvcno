@@ -99,7 +99,7 @@ const AnimateItems = ({data}) => {
                                                 : item.className === 'violet'
                                                 ? styles.violet_stroke
                                                 : ''}
-                                                 d="M1.00008 2.04532C21.974 0.282198 63.343 10.0074 61.0278 63.013" stroke="#FFB236" stroke-width="2" stroke-linecap="round"/>
+                                                 d="M1.00008 2.04532C21.974 0.282198 63.343 10.0074 61.0278 63.013" stroke="#FFB236" strokeWidth="2" strokeLinecap="round"/>
                                         </svg>
                                         ) : (
                                               <svg className={styles.history_decor_without_year} width="63" height="65" viewBox="0 0 63 65" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +113,7 @@ const AnimateItems = ({data}) => {
                                                     : item.className === 'violet'
                                                     ? styles.violet_stroke
                                                     : ''}
-                                                 d="M1.00008 2.04532C21.974 0.282198 63.343 10.0074 61.0278 63.013" stroke="#FFB236" stroke-width="2" stroke-linecap="round"/>
+                                                 d="M1.00008 2.04532C21.974 0.282198 63.343 10.0074 61.0278 63.013" stroke="#FFB236" strokeWidth="2" strokeLinecap="round"/>
                                                 </svg>
                                             // <SvgComponent className={styles.history_decor_without_year} item={item} /> 
                                         )
