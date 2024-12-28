@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 import getPopupMenu from '../../utils/getPopupMenu';
 import Link from "next/link";
 
-export default function PopupMenu({ opened }) {
+export default function PopupMenu({ opened, setOpened }) {
 
     const [menuPopupData, setMenuPopupData] = useState([]);
 
@@ -23,7 +23,9 @@ export default function PopupMenu({ opened }) {
             <ul className={styles.list}>
                 {menuPopupData.map((item, index) => (
                     <li key={index} className={styles.item}>
-                        <Link href={item.link}>
+                        <Link
+                            onClick={() => setOpened(false)}
+                            href={item.link}>
                             {item.title}
                         </Link>
                     </li>

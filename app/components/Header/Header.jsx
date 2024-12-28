@@ -41,8 +41,6 @@ export default function Header() {
         },
     }
 
-
-    // const currentLanguage = localStorage.getItem('language') || 'ru';
     return (
         <div className={styles.header}>
 
@@ -99,7 +97,10 @@ export default function Header() {
                         onClick={() => { setOpened(!opened) }}
                         opened={opened}
                     />
-                    <PopupMenu opened={opened} />
+                    <PopupMenu
+                        opened={opened}
+                        setOpened={setOpened}
+                    />
                     <Menu />
                 </div>
 

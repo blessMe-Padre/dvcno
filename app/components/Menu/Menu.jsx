@@ -21,7 +21,7 @@ export default function Menu() {
         <ul className={styles.list}>
             {menuData.map((item, index) => (
                 <li key={index} className={styles.menuTitle}>
-                    <a
+                    <Link
                         className={styles.link}
                         href={item.link}>
                         <span>
@@ -33,7 +33,7 @@ export default function Menu() {
                                 <path d="M0.5 1L5.85897 5L11.5 1" strokeLinecap="round" />
                             </svg>
                         )}
-                    </a>
+                    </Link>
 
                     {item.submenu && item.submenu.length > 0 && (
                         <ul className={styles.sublist}>

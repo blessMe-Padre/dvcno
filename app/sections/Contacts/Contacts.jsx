@@ -31,6 +31,7 @@ const Contacts = () => {
                             className={`${styles.tabs_btn} ${i === active ? `${styles.active}` : ''}`}
                             onClick={openTab}
                             data-index={i}
+                            key={i}
                         >{n.title}</button>
                     ))}
                 </ul>
