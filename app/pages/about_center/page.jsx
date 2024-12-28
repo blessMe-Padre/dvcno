@@ -70,7 +70,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         НШДС «КЕП»
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" stroke-width="1.01111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
 
                                     </Link>
@@ -82,7 +82,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         НОШДС «ВШ»
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" stroke-width="1.01111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
 
                                     </Link>
@@ -94,7 +94,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         МЛШ 
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" stroke-width="1.01111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
 
                                     </Link>
@@ -106,7 +106,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         АК
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" stroke-width="1.01111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
 
                                     </Link>
@@ -118,7 +118,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         ЦРУСО
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" stroke-width="1.01111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
 
                                     </Link>
@@ -130,7 +130,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         СКИБ
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" stroke-width="1.01111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
 
                                     </Link>
