@@ -5,7 +5,7 @@
 .title {
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: clamp(2.5rem, -1.071rem + 7.44vw, 5.625rem);
+    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--black);
@@ -60,7 +60,7 @@
 
 .subtile {
     font-weight: 700;
-    font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
+    font-size: clamp(0.75em, 0.179em + 1.19vw, 1.25em);
     text-transform: uppercase;
     color: var(--white);
     margin-bottom: 10px;
@@ -68,8 +68,9 @@
 }
 
 .text {
-    font-size: clamp(0.625rem, 0.196rem + 0.893vw, 1rem);
+    font-size: clamp(0.625em, 0.196em + 0.893vw, 1em);
     max-width: 260px;
+    color: var(--white);
 }
 
 .item:nth-child(1) {

@@ -85,7 +85,7 @@ export default function doshkolnoeObrazovanie() {
                 </section>
             </div>
 
-            <section className={`${styles.section} ${styles.section_green}`}>
+            <section className={`${styles.section} ${styles.section_green} section-dsv`}>
                 <div className='container'>
                     <div className={styles.row}>
                         <div>

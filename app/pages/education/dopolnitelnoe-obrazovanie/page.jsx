@@ -36,7 +36,6 @@ const data = {
     textPattern: 'Здесь создают творцов будущего',
     link: "#",
 }
-
 const accordionData = [
     {
         title: 'Менеджмент в образовании',

@@ -78,7 +78,7 @@ export default function Page() {
                     title={'Педагогам'}
                 />
 
-                <section className={styles.hero}>
+                <section className={`${styles.hero} section-dsv`}>
                     <h1 className={`title title-black`}>Педагогам</h1>
 
                     <div className={styles.document_wrapper}>

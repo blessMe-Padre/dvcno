@@ -42,6 +42,7 @@
     font-size: 1.125em;
     max-width: 60%;
     margin-bottom: 70px;
+    color: var(--white);
 }
 
 .page_content p {

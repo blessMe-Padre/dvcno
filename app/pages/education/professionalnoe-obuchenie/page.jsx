@@ -187,7 +187,7 @@ export default function page() {
 
             <motion.section
                 onMouseMove={e => handleMouseMove(e)}
-                className={styles.documents}>
+                className={`${styles.documents} section-dsv`}>
 
                 <div className="container">
                     <div className={styles.title_wrapper}>

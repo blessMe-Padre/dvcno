@@ -1,4 +1,4 @@
-/* 
+/*
   20px - font-size: 1.25em;
   18px - font-size: 1.125em;
   14px - font-size: 0.875em;
@@ -245,4 +245,11 @@ ul {
 
 .dsv-image {
   /* transition: all 0.3s ease; */
+}
+
+.gray_filter {
+  filter: grayscale(100%);
+}
+.toggle_background_image {
+  background-image: none !important;
 }

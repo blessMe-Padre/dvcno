@@ -39,7 +39,6 @@ const documentData2 = [
     },
 ];
 
-
 const helpCardData1 = '<p>Горячая линия Центра защиты прав и интересов детей по оказанию психолого-педагогической, методической и консультативной помощи родителям(законным представителям): <strong>8 (800) 555-89-81</strong>;</p><p>Телефон доверия для детей, подростков и их родителей: <strong>8 (800) 2000-122;</strong></p><p>Московская служба психологической помощи населению: <strong>8 (499) 173-09-09;</strong></p><p>Телефон неотложной психологической помощи(г.Москва):</p><ul><li>051 — с городского телефона или 8(495) 051 — с мобильного телефона;</li><li>Неотложная психологическая помощь Государственного бюджетного учреждения города Москвы «Городской психолого - педагогический центр Департамента образования и науки города Москвы»: 8(800) 250 - 11 - 91;</li></ul><p>В экстренной ситуации:</p><ul><li>экстренная медико - психологическая помощь: 8(499) 791 - 20 - 50;</li><li>телефон горячей линии психологической помощи МЧС России: 8(495) 989 - 50 - 50;</li><li>Горячая линия «Ребенок в опасности» Следственного комитета РФ: 8 - 800 - 200 - 19 - 10</li></ul>';
 const helpCardData2 = '<p><a href="https://мырядом.онлайн" target="_blank" rel="noopener noreferrer">мырядом.онлайн</a></p><p><a href="https://ПомощьРядом.рф (pomoschryadom.ru)" target="_blank" rel="noopener noreferrer">ПомощьРядом.рф (pomoschryadom.ru)</a></p><p><a href="https://твоятерритория.онлайн" target="_blank" rel="noopener noreferrer">твоятерритория.онлайн</a>/<p><p>Обратиться в организацию, которая специализируется на теме травли в школе: АНО БО «Журавлик» (программа «Травли NET»): <a href="tel:+79639952999">8 (963) 995 29 99</a><a href="mailto:info@zhuravlik.org">info@zhuravlik.org</a></p><p>Обратиться в центры психолого-педагогической, медицинской и социальной помощи (ППМС-центры). Ближайший к вам можно найти по ссылке: <a href="https://https://ovzrf.ru/navigator/" target="_blank" rel="noopener noreferrer">https://ovzrf.ru/navigator/</a></p>';
 
@@ -54,7 +53,7 @@ export default function Page() {
                     title={'Обучающимся'}
                 />
 
-                <section className={`${styles.hero} ${styles.hero_parents} ${styles.hero_student}`}>
+                <section className={`${styles.hero} ${styles.hero_parents} ${styles.hero_student} section-dsv`}>
                     <h1 className={`title title-white`}>Обучающимся</h1>
 
                     <div className={styles.document_wrapper}>

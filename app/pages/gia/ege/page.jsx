@@ -62,7 +62,7 @@ export default function Page() {
                 title={'ЕГЭ'}
             />
 
-            <section className={`${styles.hero} ${styles.hero_oge} ${styles.hero_ege}`}>
+            <section className={`${styles.hero} ${styles.hero_oge} ${styles.hero_ege} section-dsv`}>
                 <div className={styles.title_wrapper}>
                     <h2 className={`title ${styles.half_title}`}>ЕГЭ</h2>
                     <Image
@@ -117,7 +117,7 @@ export default function Page() {
                 />
             </div>
 
-            <section className={`${styles.hero} ${styles.hero_total_2}`}>
+            <section className={`${styles.hero} ${styles.hero_total_2} section-dsv`}>
                 <div className={styles.title_wrapper}>
                     <h2 className={`title ${styles.half_title} title-black`}>Итоговое сочинение</h2>
                     <Image

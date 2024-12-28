@@ -63,7 +63,7 @@ export default function doshkolnoeObrazovanie() {
                 </section>
             </div>
 
-            <section className={styles.section}>
+            <section className={`${styles.section} section-dsv`}>
                 <div className='container'>
                     <div className={styles.row}>
                         <div>
