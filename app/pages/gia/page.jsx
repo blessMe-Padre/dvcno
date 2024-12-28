@@ -80,9 +80,9 @@ export default function Page() {
                 ))}
             </ul>
 
-            <section className={styles.hero}>
+            <section className={`${styles.hero} section-dsv`}>
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}>ГИА</h2>
+                    <h2 className={`title ${styles.half_title} title-white`}>ГИА</h2>
                     <Image
                         src="/gia/image-1.svg"
                         alt="Изображение"

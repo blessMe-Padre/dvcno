@@ -87,7 +87,7 @@ export default function Page() {
                     title={'Родителям'}
                 />
 
-                <section className={`${styles.hero} ${styles.hero_parents}`}>
+                <section className={`${styles.hero} ${styles.hero_parents} section-dsv`}>
                     <h1 className={`title title-white`}>Родителям</h1>
 
                     <div className={styles.document_wrapper}>

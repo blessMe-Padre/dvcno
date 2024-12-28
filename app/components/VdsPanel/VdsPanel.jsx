@@ -7,6 +7,9 @@ import { useState } from "react";
 export default function VdsPanel({ setPanel, setPanelBtn }) {
     const [filter, setFilter] = useState(false);
 
+    const images = document.querySelectorAll('.dsv-image');
+    const sections = document.querySelectorAll('.section-dsv');
+
     // Повторное произношение текста
     function speachtxt(txt) {
         speechSynthesis.cancel();
@@ -65,7 +68,6 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
     const removeImages = (evt) => {
         speachtxt("изображения выключены");
 
-        const images = document.querySelectorAll('.dsv-image');
         images.forEach(image => {
             image.style.display = 'none';
             const alt = image.getAttribute('alt');
@@ -77,6 +79,12 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
                 image.parentNode.insertBefore(div, image.nextSibling);
             }
         });
+
+        if (sections) {
+            sections.forEach(section => {
+                section.classList.add('toggle_background_image');
+            });
+        }
     }
 
     const addImages = () => {
@@ -91,7 +99,14 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
         imageDivs.forEach(div => {
             div.remove();
         });
+
+        if (sections) {
+            sections.forEach(section => {
+                section.classList.remove('toggle_background_image');
+            });
+        }
     }
+
 
     const addFilter = () => {
 
@@ -106,17 +121,29 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
         images.forEach(image => {
             image.classList.toggle(styles.filter);
         });
+
+        if (sections) {
+            sections.forEach(section => {
+                section.classList.toggle('gray_filter');
+            });
+        }
     }
 
     // Кнопки закрыть панель и обычная версия сайта
     const resetAll = () => {
         speachtxt("обычная версия сайта");
 
-        const images = document.querySelectorAll('.dsv-image');
         images.forEach(image => {
             image.style.display = 'block';
             image.classList.remove(styles.filter);
         });
+
+        if (sections) {
+            sections.forEach(section => {
+                section.classList.remove('toggle_background_image');
+                section.classList.remove('gray_filter');
+            });
+        }
 
         const imageDivs = document.querySelectorAll('.dsv-image-div');
         imageDivs.forEach(div => {

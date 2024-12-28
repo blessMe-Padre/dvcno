@@ -7,18 +7,6 @@ export const metadata = {
     description: "ОГЭ",
 };
 
-const links = [
-    {
-        title: 'ОГЭ',
-        link: '/pages/gia/oge'
-    },
-    {
-        title: 'ЕГЭ',
-        link: '/pages/gia/ege'
-    },
-]
-
-
 const documentData = [
     {
         title: "Сроки проведения",
@@ -78,7 +66,7 @@ export default function Page() {
                 title={'ОГЭ'}
             />
 
-            <section className={`${styles.hero} ${styles.hero_oge}`}>
+            <section className={`${styles.hero} ${styles.hero_oge} section-dsv`}>
                 <div className={styles.title_wrapper}>
                     <h2 className={`title ${styles.half_title}`}>ОГЭ</h2>
                     <Image
@@ -133,9 +121,9 @@ export default function Page() {
                 />
             </div>
 
-            <section className={`${styles.hero} ${styles.hero_total}`}>
+            <section className={`${styles.hero} ${styles.hero_total} section-dsv`}>
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}>Итоговое собеседование</h2>
+                    <h2 className={`title ${styles.half_title} title-white`}>Итоговое собеседование</h2>
                     <Image
                         src="/gia/image-5.svg"
                         alt="Изображение"

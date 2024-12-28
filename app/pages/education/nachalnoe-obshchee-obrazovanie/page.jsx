@@ -107,12 +107,12 @@ export default function page() {
                     title={'Начальное общее образование'}
                 />
 
-                <section className={styles.hero_section}>
+                <section className={`${styles.hero_section} section-dsv`}>
                     <SlideMain item={data} />
                 </section>
             </div>
 
-            <section className={styles.section}>
+            <section className={`${styles.section} section-dsv`}>
                 <div className='container'>
                     <div className={styles.row}>
                         <div>
