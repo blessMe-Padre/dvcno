@@ -83,7 +83,7 @@
 .info_item_url, .info_item_address, .info_item_phone, .info_item_email, .info_item_works { 
     color: var(--black);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
 }
 
@@ -93,6 +93,12 @@
 
 .info_item_field {
 
+}
+
+.socials_btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .contact_name {
@@ -149,8 +155,25 @@
 
 
 @media (max-width: 768px) {
+    .contact_list_btn {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
     .contacts_list {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    .contact_info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact_info {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact_list_btn {
+        grid-template-columns: repeat(1, 1fr);
         gap: 20px;
     }
 }
