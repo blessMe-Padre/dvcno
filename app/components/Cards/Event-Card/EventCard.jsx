@@ -16,8 +16,6 @@ export default function EventCard(
     }
 ) {
 
-                                            {console.log(thumbnail)}
-
     return (
         <div className={styles.card}>
             <header className={styles.header}>

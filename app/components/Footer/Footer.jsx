@@ -1,14 +1,14 @@
 'use client'
 import Image from "next/image"
 import styles from './style.module.css';
-import { Popup, SocialIcon } from "..";
+import { Cookies, Popup, SocialIcon } from "..";
 
 import getPopupMenu from '../../utils/getPopupMenu';
 
 import Link from "next/link";
 
-
 import { useEffect, useState } from 'react';
+
 
 const Footer = () => {
 
@@ -119,6 +119,8 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+
+            <Cookies />
         </footer>
     )
 }

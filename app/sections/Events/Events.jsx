@@ -48,8 +48,7 @@ export default function Events() {
                             events.map((item) => (
                                 <SwiperSlide key={item.id}>
                                     <Link href={` /pages/event/${item.slug}`}>
-                                        
-                                        {console.log(item.thumbnail)}
+
                                         <EventCard
                                             title={item.title}
                                             key={item.aid}
