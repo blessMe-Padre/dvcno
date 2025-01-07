@@ -1,6 +1,6 @@
 const getEventsBySlug = async (slug) => {
     try {
-        const res = await fetch('http://localhost:3000/api/events/');
+        const res = await fetch('https://localhost:3000/api/events/');
         if (!res.ok) {
             throw new Error(`Ошибка HTTP: ${res.status}`);
         }

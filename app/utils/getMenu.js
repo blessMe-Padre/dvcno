@@ -1,6 +1,6 @@
 const getMenu = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/menu/', {
+        const res = await fetch('https://localhost:3000/api/menu/', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {

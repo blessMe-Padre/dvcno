@@ -1,6 +1,6 @@
 const getGallery = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/gallery/', {
+        const res = await fetch('https://localhost:3000/api/gallery/', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
