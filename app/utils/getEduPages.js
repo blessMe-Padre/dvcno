@@ -1,6 +1,6 @@
 const getEduPages = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/edu-pages/', {
+        const res = await fetch('https://localhost:3000/api/edu-pages/', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
