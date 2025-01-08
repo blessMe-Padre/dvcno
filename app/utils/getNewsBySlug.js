@@ -1,7 +1,7 @@
 
 const getNewsBySlug = async (slug) => {
     try {
-        const res = await fetch('https://localhost:3000/api/news/');
+        const res = await fetch('http://localhost:3000/api/news/');
         if (!res.ok) {
             throw new Error(`Ошибка HTTP: ${res.status}`);
         }

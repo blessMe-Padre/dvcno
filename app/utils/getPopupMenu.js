@@ -1,6 +1,6 @@
 const getPopupMenu = async () => {
     try {
-        const res = await fetch('https://inside-dev.ru/api/popup-menu/', {
+        const res = await fetch('http://localhost:3000/api/popup-menu/', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
