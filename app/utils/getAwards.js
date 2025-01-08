@@ -1,6 +1,6 @@
 const getAwards = async () => {
     try {
-        const res = await fetch('https://localhost:3000/api/awards/', {
+        const res = await fetch('http://localhost:3000/api/awards/', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
