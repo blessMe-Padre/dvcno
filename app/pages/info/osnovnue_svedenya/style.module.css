@@ -10,10 +10,10 @@
 .title {
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
     line-height: 1.1;
     letter-spacing: 0.02em;
-    color: var(--white);
+    color: var(--black-toggle);
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -53,7 +53,7 @@
 
 .bank_name {
     font-family: var(--font-family);
-    font-size: clamp(0.875rem, 0.875rem + 0.2778vw, 1.125rem);
+    font-size: clamp(0.875em, 0.875em + 0.2778vw, 1.125em);
     font-weight: 700;
 
     color: var(--black);
@@ -82,7 +82,7 @@
 }
 
 .bank_info_text {
-    font-size: clamp(0.875rem, 0.125vw + 0.85rem, 1rem);    
+    font-size: clamp(0.875em, 0.125vw + 0.85em, 1em);    
     line-height: 130%;
     color: var(--white);
 }
@@ -203,7 +203,7 @@
     align-items: center;
     justify-content: center;
 
-    font-size: clamp(0.875rem, 0.25vw + 0.825rem, 1.125rem);
+    font-size: clamp(0.875em, 0.25vw + 0.825em, 1.125em);
     font-weight: 700;
 
     background-color: var(--white);

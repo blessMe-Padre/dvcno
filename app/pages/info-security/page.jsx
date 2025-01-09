@@ -30,7 +30,7 @@ const links = [
     },
     {
         title: 'Детские безопасные сайты',
-        link: 'detskie-bezopasnye-sajty'
+        link: '/pages/info-security/detskie-bezopasnye-sajty'
     },
 
 ]

@@ -68,7 +68,7 @@ export default function Events() {
                             <p className="span-error-message">Данные отсутствуют.</p>
                         )}
 
-                        <SwiperNavButtons addClass="swiper_nav_btns" />
+                        <SwiperNavButtons addClass="swiper_nav_btns shadows_nav" />
                     </Swiper>
                 </div>
             </div>

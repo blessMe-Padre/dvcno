@@ -67,7 +67,7 @@
 .contact_name {
     color: var(--white);
     font-weight: 700;
-    font-size: clamp(.875rem, 2.2355vw + .1587rem, 1.5rem);
+    font-size: clamp(.875em, 2.2355vw + .1587em, 1.5em);
 }
 
 .item_link {
