@@ -133,7 +133,12 @@
     height: 100%;
     object-fit: cover;
 
+    transition: all 0.3s ease;
 
+}
+
+.img_wrapper:hover {
+    scale: 0.95
 }
 
 .img_big {
