@@ -8,6 +8,7 @@
 }
 
 .footer_list a {
+    color: var(--white);
     transition: color 0.1s ease-in-out;
 }
 
@@ -18,7 +19,7 @@
 .footer_content {
     display: flex;
     flex-direction: column;
-
+    color: var(--white);
 }
 
 .top {
