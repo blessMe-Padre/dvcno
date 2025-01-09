@@ -1,10 +1,10 @@
 .title {
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
     line-height: 1.1;
     letter-spacing: 0.02em;
-    color: var(--white);
+    color: var(--black-toggle);
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -21,7 +21,7 @@
 
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: clamp(1.25rem, 1.25rem + 2.083vw, 3.125rem);
+    font-size: clamp(1.25em, 1.25em + 2.083vw, 3.125em);
 
     color: var(--white);
 }

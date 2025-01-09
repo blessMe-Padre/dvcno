@@ -62,7 +62,7 @@ export default function Page() {
 
                 <div className={styles.wrapper}>
                     <div className={styles.wrapper_title}>
-                        <h2 className={styles.title}>Миссия ДВЦНО </h2>
+                        <h2 className={`${styles.title} ${styles.color_white}`}>Миссия ДВЦНО </h2>
                         <Image 
                             src={decor}
                             width={400}

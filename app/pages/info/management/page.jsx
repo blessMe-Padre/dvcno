@@ -194,7 +194,7 @@ export default function page() {
                                     </div>
 
                                         <div className={styles.link}>
-                                            <p>Написать</p>
+                                            <p style={{color: '#fff'}}>Написать</p>
                                             <Image src={arrow} width={15} height={15} alt='' />
                                         </div>
                                     
@@ -277,7 +277,7 @@ export default function page() {
                                     </div>
 
                                     <div className={styles.link}>
-                                        <p>Перейти на сайт</p>
+                                        <p style={{color: '#fff'}}>Перейти на сайт</p>
                                         <Image src={arrow} width={15} height={15} alt='' />
                                     </div>
                                 </li>

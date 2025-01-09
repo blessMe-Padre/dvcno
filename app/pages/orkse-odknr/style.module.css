@@ -8,7 +8,7 @@
     font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
     line-height: 1.1;
     letter-spacing: 0.02em;
-    color: var(--white);
+    color: var(--black-toggle);
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -51,7 +51,7 @@
     text-decoration: underline;
     color: var(--white);
     font-weight: 500;
-    font-size: clamp(.625rem, 1.3413vw + .052rem, 1.125rem);
+    font-size: clamp(.625em, 1.3413vw + .052em, 1.125em);
 }
 
 .document_list {
@@ -63,7 +63,7 @@
 }
 
 .document_link li {
-    font-size: clamp(.625rem, 1.3413vw + .052rem, 1.125rem);
+    font-size: clamp(.625em, 1.3413vw + .052em, 1.125em);
 }
 
 

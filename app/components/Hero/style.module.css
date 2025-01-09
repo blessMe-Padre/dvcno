@@ -15,7 +15,7 @@
     mix-blend-mode: difference;
 
     font-family: var(--second-family);
-    font-size: clamp(2.25rem, 1.286rem + 4.821vw, 5.625rem);
+    font-size: clamp(2.25em, 1.286em + 4.821vw, 5.625em);
     font-weight: 700;
 
     text-transform: uppercase;
@@ -33,7 +33,7 @@
 
     max-width: 50%;
 
-    font-size: clamp(0.875rem, 0.804rem + 0.357vw, 1.125rem);
+    font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
 }
 
 
@@ -53,7 +53,7 @@
 }
 
 .add_class li {
-    font-size: clamp(0.75rem, 0.482rem + 0.714vw, 1.125rem) !important;
+    font-size: clamp(0.75em, 0.482em + 0.714vw, 1.125em) !important;
     margin-bottom: 10px;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .slider__list li {
-    font-size: clamp(0.75rem, 0.607rem + 0.714vw, 1.25rem);
+    font-size: clamp(0.75em, 0.607em + 0.714vw, 1.25em);
     font-family: var(--font-family);
     font-weight: 600;
     margin-bottom: 10px;
@@ -80,7 +80,7 @@
     width: max-content;
 
     font-family: var(--font-family);
-    font-size: clamp(0.875rem, 0.804rem + 0.357vw, 1.125rem);
+    font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,8 +145,8 @@
 }
 
 .slider__img__pattern {
-    max-height: clamp(20rem, 13.214rem + 33.929vw, 43.75rem);
-    max-width: clamp(18.75rem, 9.107rem + 48.214vw, 52.5rem);
+    max-height: clamp(20em, 13.214em + 33.929vw, 43.75em);
+    max-width: clamp(18.75em, 9.107em + 48.214vw, 52.5em);
 }
 
 @media screen and (max-width: 769px) {

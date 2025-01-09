@@ -64,7 +64,7 @@ export default async function Page() {
                 link={'pages/info'}
                 title={'Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.'}
             />
-            <h2 className={`title ${styles.title}`}>Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.</h2>
+            <h2 className={`title ${styles.title} ${styles.text_white}`}>Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.</h2>
 
             <ul className={styles.list}>
                 {educationPages && educationPages.length > 0 ? (
