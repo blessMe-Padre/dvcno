@@ -4,7 +4,7 @@
 
 .form__title {
     font-family: var(--second-family);
-    font-size: clamp(2.125rem, 1.661rem + 2.321vw, 3.75rem);
+    font-size: clamp(2.125em, 1.661em + 2.321vw, 3.75em);
     color: var(--black);
     font-weight: 700;
     margin-bottom: 20px;
@@ -12,7 +12,7 @@
 
 .form__subtitle {
     color: var(--black);
-    font-size: clamp(0.875rem, 0.768rem + 0.536vw, 1.25rem);
+    font-size: clamp(0.875em, 0.768em + 0.536vw, 1.25em);
     text-align: start;
     font-weight: 600;
     margin-bottom: 20px;
@@ -21,7 +21,7 @@
 .form__label {
     display: block;
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.75rem, 0.679rem + 0.357vw, 1rem);
+    font-size: clamp(0.75em, 0.679em + 0.357vw, 1em);
     color: #757F99;
     text-align: start;
     font-weight: 400;

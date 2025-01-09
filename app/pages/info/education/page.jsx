@@ -168,6 +168,7 @@ export default function page() {
                             <li key={index} className={styles.item_program}>
                                 <div>
                                     <Image 
+                                        className='dsv-image'
                                         src={item.img}
                                         width={280}
                                         height={220}

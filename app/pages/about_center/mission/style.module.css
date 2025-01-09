@@ -9,13 +9,18 @@
 .title {
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
     line-height: 1.1;
     letter-spacing: 0.02em;
-    color: var(--white);
+    color: var(--black-toggle);
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
+}
+
+
+.color_white {
+    color: var(--white);
 }
 
 .missionBg {
@@ -65,8 +70,9 @@
 }
 
 .text {
+    color:var(--white);
     margin-top: 20px;
-    font-size: clamp(0.875rem, 0.313vw + 0.875rem, 1.25rem);
+    font-size: clamp(0.875em, 0.313vw + 0.875em, 1.25em);
     line-height: 130%;
 
 }

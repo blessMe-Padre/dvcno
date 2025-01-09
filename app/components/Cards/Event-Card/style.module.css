@@ -60,8 +60,9 @@
 }
 
 .title {
+    color: var(--black-toggle);
     font-weight: 700;
-    font-size: clamp(1rem, 0.857rem + 0.298vw, 1.125rem);
+    font-size: clamp(1em, 0.857em + 0.298vw, 1.125em);
     line-height: 1.44444;
     text-transform: uppercase;
     flex: 1;

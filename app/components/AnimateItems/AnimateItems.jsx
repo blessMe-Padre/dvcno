@@ -22,7 +22,7 @@ const AnimateItems = ({data}) => {
                                     >
                                         {item.image && (
                                             <Image 
-                                            className={styles.image_history} 
+                                            className={`${styles.image_history} dsv-image`} 
                                             src={item.image}
                                             width={200} 
                                             height={200} 

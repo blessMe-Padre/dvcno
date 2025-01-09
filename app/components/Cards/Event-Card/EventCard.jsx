@@ -36,7 +36,7 @@ export default function EventCard(
                     alt="Фото мероприятия"
                     width={605}
                     height={300}
-                    className={styles.image}
+                    className={`${styles.image} dsv-image`}
                 />
             </div>
 
