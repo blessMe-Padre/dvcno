@@ -1,6 +1,6 @@
 const fetchData = async (route) => {
     try {
-        const res = await fetch(`https://localhost:3000/api/${route}/`, {
+        const res = await fetch(`http://localhost:3000/api/${route}/`, {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
