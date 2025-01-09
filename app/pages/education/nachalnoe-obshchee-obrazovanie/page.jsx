@@ -116,7 +116,7 @@ export default function page() {
                 <div className='container'>
                     <div className={styles.row}>
                         <div>
-                            <h2 className={styles.title}>Начальное общее образование <span className={styles.sticker}>1-4 класс</span></h2>
+                            <h2 className={`${styles.title} ${styles.text_white}`}>Начальное общее образование <span className={styles.sticker}>1-4 класс</span></h2>
                             <p className={styles.text}>Младший школьный возраст – это период становления и активного развития мышления ребёнка. Основная образовательная программа НШДС соответствует требованиям ФГОС начального общего образования.</p>
 
                             <p className={styles.text}>Федеральный государственный образовательный стандарт устанавливает требования к результатам обучающихся, освоивших основную образовательную программу начального общего образования:</p>
@@ -160,7 +160,7 @@ export default function page() {
                             />
                         </div>
                         <div>
-                            <h2 className={styles.title}>Дополнительное образование <span className={styles.sticker}>3-10 лет</span></h2>
+                            <h2 className={`${styles.title} ${styles.text_white}`}>Дополнительное образование <span className={styles.sticker}>3-10 лет</span></h2>
                             <p className={styles.text}>В НШДС дошкольники и младшие школьники имеют возможность обучаться и по программам дополнительного образования. Это целый ряд секций, кружков и студий, которые не только развивают способности и интересы учащихся, но и способствуют сохранению и укреплению их здоровья. Развита проектная деятельность.</p>
                             <p className={styles.text}>Основные направления дополнительного образования детей:.</p>
 

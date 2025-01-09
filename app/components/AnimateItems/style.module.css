@@ -39,7 +39,7 @@
     color: var(--white);
     text-transform: uppercase;
 
-    font-size: clamp(1.875rem, 2.083vw + 1.875rem, 4.375rem);
+    font-size: clamp(1.875em, 2.083vw + 1.875em, 4.375em);
     font-family: var(--second-family);
 
     font-weight: 700;
@@ -54,7 +54,7 @@
 
 .list_content_desc {
     font-family: var(--font-family);
-    font-size: clamp(0.875rem, 0.208vw + 0.875rem, 1.125rem);
+    font-size: clamp(0.875em, 0.208vw + 0.875em, 1.125em);
     color: var(--white);
     line-height: 150%;
 

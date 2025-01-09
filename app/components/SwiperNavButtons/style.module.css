@@ -1,7 +1,6 @@
 .swiper_nav_btns button {
     transition: all var(--anim-function);
 }
-
 .swiper_nav_btns button:hover {
     background-color: var(--violet);
     color: var(--white);

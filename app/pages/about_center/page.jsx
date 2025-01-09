@@ -57,7 +57,7 @@ export default function Page() {
                     </div>
 
                     <div className={styles.info}>
-                        <h2 className={styles.title}>АНПОО «ДВЦНО»</h2>
+                        <h2 className={`${styles.title} ${styles.title_white}`}>АНПОО «ДВЦНО»</h2>
                         <Image
                             src={pattern}
                             width={50}
@@ -232,7 +232,7 @@ export default function Page() {
                 <div className='container relative'>
                     <div className={`${styles.title_strategy_wrapper}`}>
                         <div className='relative'>
-                            <h2 className={styles.title}>Стратегия развития</h2>
+                            <h2 className={`${styles.title} ${styles.title_white}`}>Стратегия развития</h2>
                             <Image  
                                 className={styles.title_decor}
                                 src={decor3}

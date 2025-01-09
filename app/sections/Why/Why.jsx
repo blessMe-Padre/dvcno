@@ -7,7 +7,7 @@ export default function Why() {
     return (
         <section className={styles.section}>
             <div className="container">
-                <h2 className={styles.title}>почему выбирают нас</h2>
+                <h2 className={`${styles.title} title-black`}>почему выбирают нас</h2>
 
                 <ul className={styles.list}>
                     <li className={styles.item}>

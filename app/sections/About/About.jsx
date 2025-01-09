@@ -31,7 +31,7 @@ export default function About() {
     return (
         <section className={styles.section}>
             <div className={styles.title_wrapper}>
-                <h2 className={styles.title}>Дальневосточный центр непрерывного образования - это</h2>
+                <h2 className={styles.title}>Дальневосточный центр <br /> непрерывного образования - это</h2>
                 <div className={styles.image_wrapper}>
                     <Image
                         alt="декор"

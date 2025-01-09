@@ -164,7 +164,8 @@ export default function page() {
                         {data_programs.map((item, index) => (
                             <li key={index} className={styles.item_program}>
                                 <div>
-                                    <Image
+                                    <Image 
+                                        className='dsv-image'
                                         src={item.img}
                                         width={280}
                                         height={220}

@@ -10,9 +10,9 @@
 .title {
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: clamp(1.875rem, -0.268rem + 4.464vw, 3.75rem);
+    font-size: clamp(1.875em, -0.268em + 4.464vw, 3.75em);
     line-height: 1.1;
-    color: var(--toggle-black);
+    color: var(--black-toggle);
     margin-bottom: 40px;
     margin-top: 40px;
 }

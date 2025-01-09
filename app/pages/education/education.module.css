@@ -7,6 +7,12 @@
     background-position: top right;
 }
 
+.text_white {
+    color: var(--white) !important;
+    margin-bottom: 40px;
+}
+
+
 .section_green {
     background-color: var(--green);
     background-image: url('../../../public/education/decor-2.svg');
@@ -37,10 +43,10 @@
 .title {
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071rem + 7.44vw, 5.625em);
+    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
     line-height: 1.1;
     letter-spacing: 0.02em;
-    color: var(--white);
+    color: var(--black-toggle);
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -156,7 +162,7 @@
 
 .accept_text {
     font-weight: 700;
-    font-size: clamp(1rem, 0.429rem + 1.19vw, 1.5rem);
+    font-size: clamp(1em, 0.429em + 1.19vw, 1.5em);
     line-height: 1.1;
     letter-spacing: 0.02em;
 }

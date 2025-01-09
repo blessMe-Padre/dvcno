@@ -89,7 +89,7 @@ export default function doshkolnoeObrazovanie() {
                 <div className='container'>
                     <div className={styles.row}>
                         <div>
-                            <h2 className={styles.title}>Отделение Лицейских классов
+                            <h2 className={`${styles.title} ${styles.text_white}`}>Отделение Лицейских классов
                                 <span className={`${styles.sticker} ${styles.sticker_new}`}>10-11 классов</span>
                             </h2>
                             <ul className={styles.list}>
