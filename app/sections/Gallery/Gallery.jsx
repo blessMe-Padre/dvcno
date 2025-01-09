@@ -83,7 +83,7 @@ function Gallery() {
                                         </a>
                                     </SwiperSlide>
                                 ))}
-                                <SwiperNavButtons addClass="swiper_nav_btns" />
+                                <SwiperNavButtons addClass="swiper_nav_btns shadows_nav" />
                             </Swiper>
 
                         )
