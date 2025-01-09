@@ -95,7 +95,6 @@ export default async function EventPage({ params }) {
   );
 }
 
-
 export async function generateStaticParams() {
   try {
     const postsResponse = await fetch('http://localhost:3000/api/events');
@@ -115,3 +114,4 @@ export async function generateStaticParams() {
     return [];
   }
 }
+
