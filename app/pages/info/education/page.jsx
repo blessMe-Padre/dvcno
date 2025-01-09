@@ -19,7 +19,7 @@ export default function page() {
 
     const data_education = [
         {
-            'title': '<p>уровни общего образования</p>',
+            'title': 'уровни общего образования',
             'desc': '<p style="margin-bottom: 5px;"> Дошкольное образование(3- 7 лет),</p >  <p style="margin-bottom: 5px;">Начальное общее образование(1 - 4 классы), </p>  <p style="margin-bottom: 5px;">Основное общее образование (5-9 классы), </p>  <p style="margin-bottom: 5px;">Среднее общее образование(10-11 классы), </p>  <p style="margin-bottom: 5px;">Дополнительное образование </p>',
             'background': 'yellow',
             'img': '/info/education/decor_1.svg',
@@ -45,7 +45,6 @@ export default function page() {
         }
     ]
 
-
     const data_programs = [
         {
             'title': 'Дошкольное образование',
@@ -58,13 +57,13 @@ export default function page() {
             'desc': "[НОШДС, ВШНШДС, КЕП]",
             'img': '/info/education/programm2.png',
         },
-         
+
         {
             'title': 'Основное общее образование',
-            'desc': "[НОШДС, ВШНШДС, КЕП]",  
+            'desc': "[НОШДС, ВШНШДС, КЕП]",
             'img': '/info/education/programm3.png',
         },
-          
+
         {
             'title': 'Среднее общее образование',
             'desc': "[НОШДС, ВШНШДС, КЕП]",
@@ -97,34 +96,36 @@ export default function page() {
 
     const data_amount = [
         {
-            'title': 'Численность обучающихся АНПОО ДВЦНО ЭЦП', 'link': '/'}
+            'title': 'Численность обучающихся АНПОО ДВЦНО ЭЦП', 'link': '/'
+        }
     ]
 
     return (
         <>
             <section className={styles.section}>
                 <div className='container'>
-                        <Breadcrumbs
-                            slug={'Сведения об образовательной организации'}
-                            link={'pages/info'}
-                            title={'Образование'}
+                    <Breadcrumbs
+                        slug={'Сведения об образовательной организации'}
+                        link={'pages/info'}
+                        title={'Образование'}
                     />
-                    
+
 
                     <h2 className={styles.title}>Образование</h2>
-                
-                    
+
+
                     <ul className={styles.education_list}>
                         {data_education.map((item, index) => (
-                            <li 
-                                style={{backgroundImage: 'url(' + item.bg}}
+                            <li
+                                style={{ backgroundImage: 'url(' + item.bg }}
                                 className={`${styles.item} 
                                 ${item.background === 'yellow' ? styles.background_yellow : ''}
                                 ${item.background === 'light-blue' ? styles.background_light_blue : ''}
-                                ${item.background === 'green' ? styles.background_green : ''}`}>
-                                <p className={styles.item_title}>
-                                    <p dangerouslySetInnerHTML={{ __html: item.title}}></p>
-
+                                ${item.background === 'green' ? styles.background_green : ''}`}
+                                key={index}
+                            >
+                                <div className={styles.item_title}>
+                                    <div dangerouslySetInnerHTML={{ __html: item.title }}></div>
                                     <Image
                                         className={styles.decor}
                                         src={item.img}
@@ -132,14 +133,10 @@ export default function page() {
                                         height={50}
                                         alt='decor'
                                     />
-
-                                </p>
-                                
-                                <div style={{ position: 'relative', zIndex: 1}} dangerouslySetInnerHTML={{ __html: item.desc }}>
-                                    
                                 </div>
 
-                                
+                                <div style={{ position: 'relative', zIndex: 1 }} dangerouslySetInnerHTML={{ __html: item.desc }}>
+                                </div>
                             </li>
                         ))}
                     </ul>
@@ -184,7 +181,7 @@ export default function page() {
                                         alt=''
                                     />
                                     <p className={styles.item_title_program}>{item.title}</p>
-                                    {item.desc.replace(/[\[\]]/g,'').split(', ').map((name, index) => (
+                                    {item.desc.replace(/[\[\]]/g, '').split(', ').map((name, index) => (
                                         <li className={styles.item_item} key={index}>{name}</li>
                                     ))}
                                 </ul>
@@ -197,7 +194,7 @@ export default function page() {
 
             <section className={`${styles.section} ${styles.back_gray}`}>
                 <div className="container">
-                     <div className={styles.title_wrapper}>
+                    <div className={styles.title_wrapper}>
                         <h2 className={styles.title}>
                             Календарные учебные  <br /> графики 2023-2024
                         </h2>
@@ -213,7 +210,7 @@ export default function page() {
 
                     <div className={styles.documents_list}>
                         {data_calendars.map((item, index) => (
-                            <DocumentComponent title={item.title} background={'white'} /> 
+                            <DocumentComponent title={item.title} background={'white'} />
                         ))}
                     </div>
                 </div>
@@ -221,7 +218,7 @@ export default function page() {
 
             <section className={styles.section}>
                 <div className="container">
-                     <div className={styles.title_wrapper}>
+                    <div className={styles.title_wrapper}>
                         <h2 className={styles.title}>
                             Численность обучающихся по программам
                         </h2>
@@ -246,7 +243,7 @@ export default function page() {
                     <p className={styles.subtitle}>В том числе численность обучающихся, являющихся иностранными гражданами</p>
                     <div className={styles.documents_list}>
                         {data_amount.map((item, index) => (
-                            <DocumentComponent key={index} title={item.title} background={'white'} /> 
+                            <DocumentComponent key={index} title={item.title} background={'white'} />
                         ))}
                     </div>
                 </div>
