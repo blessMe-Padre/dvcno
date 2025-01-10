@@ -21,7 +21,7 @@ export default function PopupMenu({ opened, setOpened }) {
     return (
         <div className={`${styles.popup} ${opened ? styles.active : ''}`}>
             <ul className={styles.list}>
-                {menuPopupData.map((item, index) => (
+                {menuPopupData.data?.items.map((item, index) => (
                     <li key={index} className={styles.item}>
                         <Link
                             onClick={() => setOpened(false)}

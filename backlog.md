@@ -1,5 +1,6 @@
 1. https://realfavicongenerator.net/ favicon
 2. иконка бургер
+3. Поиск
 
 
 
