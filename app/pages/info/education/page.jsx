@@ -162,7 +162,7 @@ export default function page() {
 
                     <ul className={styles.list_programs}>
                         {data_programs.map((item, index) => (
-                            <li key={index} className={styles.item_program}>
+                            <li key={index} className={`${styles.item_program} anim_hover_card`}>
                                 <div>
                                     <Image 
                                         className='dsv-image'

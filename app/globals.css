@@ -258,3 +258,12 @@ ul {
 .shadows_nav button{
   box-shadow: 5px 5px 15px 0 #bfc5db;
 }
+
+
+.anim_hover_card {
+  transition: transform var(--anim-function);
+}
+
+.anim_hover_card:hover {
+  transform: scale(0.95)
+}

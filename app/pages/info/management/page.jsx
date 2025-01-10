@@ -150,7 +150,7 @@ export default function page() {
                         <p className={styles.subtitle}>АНПОО «ДВЦНО»</p>
                         <ul className={styles.list}>
                             {data_director.map((item, index) => (
-                                <li className={styles.item} key={index}>
+                                <li className={`${styles.item} anim_hover_card`} key={index}>
                                     <div className={styles.item_title_wrapper}>
                                             {item.job}      
                                             <Image
@@ -208,7 +208,7 @@ export default function page() {
                         <p className={styles.subtitle}>Cтруктурные подразделения</p>
                           <ul className={styles.list}>
                             {data_division.map((item, index) => (
-                                <li className={styles.item} key={index}>
+                                <li className={`${styles.item} anim_hover_card`} key={index}>
                                     <div className={styles.item_title_wrapper}>
                                         <Image
                                             className={`dsv-image`}

@@ -3,7 +3,7 @@
 import decor from '@/public/contacts/decor.svg';
 import Image from 'next/image';
 import SVG_BG_Compoment from '@/app/ui/SVG/SVG_BG/SVG_BG';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import Link from 'next/link';
 
@@ -29,7 +29,7 @@ const ContactsList = ({ data }) => {
                         id={item.href}
                         href={item.href}
                         key={index}
-                        className={`${styles.item_link} ${activeLink ? '' : styles.active}`}
+                        className={`${styles.item_link} ${activeLink?.id === item.href ? styles.active : ""}`}       
                         onClick={(e) => handleChange(e)}
                         >
                         {item.name}
@@ -142,7 +142,7 @@ const ContactsList = ({ data }) => {
                                                     `}
                                         width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="50" height="50" rx="25" fill="#433C8C"/>
-                                            <g clip-path="url(#clip0_1001_5022)">
+                                            <g clipPath="url(#clip0_1001_5022)">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M36.5617 34.1103C36.4024 34.2692 36.2102 34.4723 36.0064 34.6872C35.4979 35.2269 34.8627 35.8977 34.4645 36.1698C32.3697 37.6013 29.5671 36.9163 27.5847 36.0903C24.9696 35.0007 22.1225 32.9923 19.566 30.4356C17.0072 27.8786 14.999 25.0306 13.9094 22.417C13.0844 20.4342 12.398 17.6311 13.8297 15.5357C14.1016 15.1373 14.774 14.503 15.313 13.9936C15.5286 13.7904 15.7302 13.5985 15.8895 13.4396C16.1725 13.1581 16.5554 13 16.9546 13C17.3537 13 17.7366 13.1581 18.0196 13.4396L21.874 17.2929C22.1554 17.5758 22.3134 17.9587 22.3134 18.3577C22.3134 18.7567 22.1554 19.1395 21.874 19.4225L20.824 20.4704C20.4734 20.8185 20.2445 21.2705 20.1714 21.7592C20.0984 22.2478 20.1851 22.747 20.4186 23.1825C21.8628 25.9083 24.0924 28.1375 26.8184 29.5812C27.2538 29.8147 27.7529 29.9013 28.2414 29.8281C28.7299 29.7549 29.1818 29.5259 29.5296 29.1752L30.577 28.1272C30.86 27.8457 31.2429 27.6876 31.642 27.6876C32.0412 27.6876 32.4241 27.8457 32.7071 28.1272L36.5617 31.9812C36.8431 32.264 37.0011 32.6468 37.0011 33.0457C37.0011 33.4447 36.8431 33.8275 36.5617 34.1103Z" fill="white"/>
                                             </g>
                                             <defs>

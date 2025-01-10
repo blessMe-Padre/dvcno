@@ -6,7 +6,7 @@ import styles from './style.module.css';
 import { SlideMain } from '../../components';
 import { useState, useEffect } from 'react';
 
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -32,10 +32,11 @@ export default function Slider() {
         >
             <Swiper
                 pagination={true}
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
+                autoplay={true}
                 spaceBetween={50}
                 slidesPerView={1}
-                speed={1500}
+                speed={4000}
             >
 
                 {data && data.length > 0 ? (
