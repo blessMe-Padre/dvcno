@@ -14,7 +14,6 @@ export const metadata = {
 
 export default async function Page() {
 
-
     const data_damage = [
         {
             'title': 'Террористический акт',
@@ -47,8 +46,6 @@ export default async function Page() {
 
     ]
 
-
-
     return (
         <div className="container">
             <Breadcrumbs
@@ -56,7 +53,7 @@ export default async function Page() {
             />
             <div className={styles.title_wrapper}>
                 <h2 className={`title ${styles.title}`}>Противодействие идеологии терроризма и экстремизма</h2>
-                <Image 
+                <Image
                     src={decor}
                     className={styles.decor}
                     width={150}
@@ -65,13 +62,13 @@ export default async function Page() {
                 />
             </div>
 
-                 <ul className={styles.document_list}>
-                    {data_damage.map((item, index) => (
-                        <li key={index}>
-                            <DocumentComponent title={item.title} link={item.link} />
-                        </li>
-                    ))}
-                </ul>
+            <ul className={styles.document_list}>
+                {data_damage.map((item, index) => (
+                    <li key={index}>
+                        <DocumentComponent title={item.title} link={item.link} />
+                    </li>
+                ))}
+            </ul>
 
         </div>
     )

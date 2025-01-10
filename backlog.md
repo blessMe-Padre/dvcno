@@ -1,5 +1,5 @@
-4. 404
-7. https://realfavicongenerator.net/ favicon
+1. https://realfavicongenerator.net/ favicon
+2. иконка бургер
 
 
 

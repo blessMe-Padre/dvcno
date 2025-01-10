@@ -15,11 +15,13 @@ export default function Menu() {
         };
 
         fetchData();
+
     }, []);
 
+    // console.log(menuData.data?.items);
     return (
         <ul className={styles.list}>
-            {menuData.map((item, index) => (
+            {menuData.data?.items.map((item, index) => (
                 <li key={index} className={styles.menuTitle}>
                     <Link
                         className={styles.link}
