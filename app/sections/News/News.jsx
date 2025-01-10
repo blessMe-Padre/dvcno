@@ -25,11 +25,12 @@ const News = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getNews();
-            setNews(result.data);
+            const data = await getNews();
+            setNews(data);
         };
 
         fetchData();
+
     }, []);
 
 
