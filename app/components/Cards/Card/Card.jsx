@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Card({ image, link, description, }) {
     return (
-        <div className={styles.card}>
+        <div className={`${styles.card} anim_hover_card`}>
             <div className={styles.image_wrapper}>
                 <Image
                     src={image ? image : '/placeholder/placeholder.png'}
