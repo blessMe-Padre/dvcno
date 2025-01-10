@@ -7,6 +7,8 @@ import { SlideMain } from '../../components';
 import { useState, useEffect } from 'react';
 
 import { Pagination, Autoplay } from 'swiper/modules';
+
+import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -50,7 +52,16 @@ export default function Slider() {
                     })
                 )
                     : (
-                        <div>Loading...</div>
+                        <Image
+                            // src={placeholder}
+                            width={1400}
+                            height={600}
+                            alt='slider_bg'
+                            className={`${styles.sliderBg} dsv-image`}
+                            placeholder="blur"
+                            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
+
+                        />                    
                     )
                 }
             </Swiper>
