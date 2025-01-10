@@ -37,12 +37,12 @@ export default function RootLayout({ children }) {
     <html lang="ru">
       <body className={`${montserrat.className} ${BebasNeue.variable} footer-sticky`}>
         <div className="container">
-          {/* <Header /> */}
+          <Header />
         </div>
         <main>
           {children}
         </main >
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

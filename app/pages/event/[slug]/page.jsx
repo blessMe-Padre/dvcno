@@ -5,9 +5,6 @@ import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
 import LinkButton from '@/app/components/Link/LinkButton';
 import styles from "./style.module.css";
 
-// На данный момент страницы генерируются по SSR
-// https://nextjs.org/docs/app/api-reference/functions/generate-static-params
-// https://www.youtube.com/watch?v=2svgA1O4fO0&ab_channel=ITMATEPK
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -19,7 +16,7 @@ export async function generateMetadata({ params }) {
   }
 }
 export default async function EventPage({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
   const page = await getEventsBySlug(slug);
   const sanitizedContent = page.content || '';
 
