@@ -3,7 +3,7 @@ import Image from "next/image"
 import styles from './style.module.css';
 import { Cookies, Popup, SocialIcon } from "..";
 
-import getPopupMenu from '../../utils/getPopupMenu';
+import getFooterMenu from '../../utils/getFooterMenu';
 
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ const Footer = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getPopupMenu();
+            const data = await getFooterMenu();
             setMenu(data);
         };
 
@@ -69,7 +69,7 @@ const Footer = () => {
 
                 <div className={styles.middle}>
                     <ul className={styles.footer_list}>
-                        {menu.map((item, key) => (
+                        {menu.data?.items.map((item, key) => (
                             <li key={key}>
                                 <Link href={item.link}>
                                     {item.title}

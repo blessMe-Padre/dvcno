@@ -12,8 +12,6 @@ export const metadata = {
 export default async function Page() {
 
     const data_standarts = [
-
-
         {
             'name': 'Положение о системе управления охраной труда',
             'title': 'Положение о системе управления охраной труда',
@@ -34,7 +32,7 @@ export default async function Page() {
             'link': '/',
             'background': 'light-blue'
         },
-         
+
         {
             'name': 'МЛШ (Сводная ведомость и перечень мероприятий)',
             'title': 'Перечень мероприятий по СОУТ МЛШ',
@@ -114,7 +112,7 @@ export default async function Page() {
         },
 
 
-          {
+        {
             'name': 'ШИОД (Сводная ведомость и перечень мероприятий)',
             'title': 'Сводная ведомость результатов СОУТ ШИОД',
             'link': '/',
@@ -131,7 +129,7 @@ export default async function Page() {
     ]
 
 
-     const groupedStandards = data_standarts.reduce((acc, item) => {
+    const groupedStandards = data_standarts.reduce((acc, item) => {
         acc[item.name] = acc[item.name] || [];
         acc[item.name].push(item);
         return acc;
@@ -139,7 +137,7 @@ export default async function Page() {
 
     return (
         <>
-            <section className={styles.section}> 
+            <section className={styles.section}>
                 <div className="container">
                     <Breadcrumbs
                         title={'Результаты СОУТ'}
@@ -151,22 +149,20 @@ export default async function Page() {
                     <ul>
                         {Object.entries(groupedStandards).map(([name, items]) => (
                             <li className={styles.item_object} key={name}>
-                            {/*  Removed unnecessary console.log */}
-                            <p className={`${styles.item_name} ${
-                                items[0].background === 'yellow' ? styles.background_yellow : ''
-                            } ${items[0].background === 'light-blue' ? styles.background_light_blue : ''} ${
-                                items[0].background === 'green' ? styles.background_green : ''
-                            } ${items[0].background === 'violet' ? styles.background_violet : ''}`}>
-                                {name}
-                            </p>
-                            <ul className={styles.document_list}>
-                                {items.map((item, index) => (
-                                <DocumentComponent key={index} title={item.title} link={item.link} />
-                                ))}
-                            </ul>
+                                {/*  Removed unnecessary console.log */}
+                                <p className={`${styles.item_name} ${items[0].background === 'yellow' ? styles.background_yellow : ''
+                                    } ${items[0].background === 'light-blue' ? styles.background_light_blue : ''} ${items[0].background === 'green' ? styles.background_green : ''
+                                    } ${items[0].background === 'violet' ? styles.background_violet : ''}`}>
+                                    {name}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {items.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.link} />
+                                    ))}
+                                </ul>
                             </li>
                         ))}
-                        </ul>
+                    </ul>
 
                 </div>
             </section>
