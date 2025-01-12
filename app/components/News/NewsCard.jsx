@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './style.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 // import 'swiper/css/pagination';
@@ -14,16 +14,16 @@ import Image from 'next/image';
 const NewsCard = ({ data }) => {
     return (
         <div className={styles.container}>
-            <div className={styles.card}>
+            <div className={`${styles.card} anim_hover_card`}>
                 <div className={styles.card_img}>
                     <Swiper
                         pagination={true}
-                        modules={[Pagination]}
+                        modules={[Pagination, Autoplay]}
                         spaceBetween={50}
                         slidesPerView={1}
                         loop={true}
                         autoplay={true}
-                        speed={1500}
+                        speed={3000}
                         className='custom_wrapper'
                     >
                         {data.images.map((image, index) => (
