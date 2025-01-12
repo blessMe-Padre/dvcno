@@ -13,11 +13,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { NewsCard } from '../../components';
 
 import { SwiperNavButtons } from '../../components';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Link from 'next/link';
+
+
 const News = () => {
     const [news, setNews] = useState();
 
@@ -50,9 +52,10 @@ const News = () => {
                             </h2>
 
                             <Swiper
+                                modules={[Navigation, Autoplay]}
                                 spaceBetween={20}
                                 slidesPerView={3}
-                                modules={[Navigation]}
+                                autoplay={true}
                                 centeredSlides='true'
                                 centeredSlidesBounds="true"
                                 className={styles.swiper_news}

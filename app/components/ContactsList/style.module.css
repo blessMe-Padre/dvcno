@@ -16,6 +16,35 @@
     width: 100%;
 }
 
+.info_item:first-of-type, .info_item_url {
+    transition: all var(--anim-function);
+    cursor: pointer;
+}
+
+.info_item:first-of-type:hover .info_item_url {
+    color: var(--white);
+}
+
+.info_item:first-of-type:hover {
+    background-color: #433C8C;
+}
+
+.info_item:first-of-type svg rect {
+    transition: all var(--anim-function);
+}
+
+.info_item:first-of-type:hover svg rect{
+    fill: var(--yellow);
+}
+
+.info_item:first-of-type:active svg rect {
+    fill: var(--yellow);
+}
+
+.info_item:first-of-type:active {
+    background-color: #7B1FA2;
+}
+
 .contact_name_wrapper {
     position: relative;
     z-index: 1;

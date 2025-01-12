@@ -59,7 +59,7 @@ const Partners = () => {
                             {partners.data && partners.data.length > 0 ? (
                                 partners.data.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <div className={styles.partners_img}>
+                                        <div className={`${styles.partners_img} anim_hover_card`}>
 
                                             <Image
                                                 src={item.image}
