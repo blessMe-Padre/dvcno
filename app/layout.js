@@ -21,6 +21,7 @@ const montserrat = Montserrat({
 //   variable: "--font-geist-mono",
 //   weight: "100 900",
 // });
+
 const BebasNeue = localFont({
   src: "./fonts/BebasNeue.ttf",
   variable: '--second-family',
