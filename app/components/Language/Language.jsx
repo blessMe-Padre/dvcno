@@ -21,9 +21,9 @@ export default function Language() {
 
     return (
         <select onChange={handleChange} className={styles.select} value={lang}>
-            <option value="ru">ru</option>
-            <option value="en">en</option>
-            <option value="ch">ch</option>
+            <option value="ru">Ru</option>
+            <option value="en">En</option>
+            <option value="ch">Ch</option>
         </select>
     );
 }
