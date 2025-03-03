@@ -56,7 +56,7 @@ const educationPages = [
 
 const fetchData = async () => {
     try {
-        const res = await fetch(`http://localhost:3000/api/education/`, {
+        const res = await fetch(`https://inside-dev.ru/api/education/`, {
             next: { revalidate: 10 }
         });
         if (!res.ok) {

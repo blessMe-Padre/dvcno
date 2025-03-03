@@ -1,6 +1,6 @@
 const getNews = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/news/', {
+        const res = await fetch('https://inside-dev.ru/api/news/', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
