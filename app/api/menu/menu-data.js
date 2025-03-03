@@ -67,87 +67,87 @@ export const menuData = [
         submenu: [
             {
                 title: "Дошкольное образование",
-                link: "/pages/doshkolnoe-obrazovanie",
+                link: "/pages/education/doshkolnoe-obrazovanie",
             },
             {
                 title: "Начальное общее образование",
-                link: "/pages/nachalnoe-obshchee-obrazovanie",
+                link: "/pages/education/nachalnoe-obshchee-obrazovanie",
             },
             {
                 title: "Основное общее образование",
-                link: "/pages/osnovnoe-obshchee-obrazovanie",
+                link: "/pages/education/osnovnoe-obshchee-obrazovanie",
             },
             {
                 title: "Среднее общее образование",
-                link: "/pages/srednee-obshchee-obrazovanie",
+                link: "/pages/education/srednee-obshchee-obrazovanie",
             },
             {
                 title: "Профессиональное обучение",
-                link: "/pages/professionalnoe-obuchenie",
+                link: "/pages/education/professionalnoe-obuchenie",
             },
             {
                 title: "Дополнительное образование",
-                link: "/pages/dopolnitelnoe-obrazovanie",
+                link: "/pages/education/dopolnitelnoe-obrazovanie",
             },
         ],
     },
     {
         title: "О центре",
-        link: "/about_center",
+        link: "/pages/about_center",
         submenu: [
             {
                 title: "Основные сведения",
-                link: "/pages/osnovnue_svedenya",
+                link: "/pages/info/osnovnue_svedenya",
             },
             {
                 title: "Документы",
-                link: "/pages/documents",
+                link: "/pages/about_center/documents",
             },
             {
                 title: "Руководство",
-                link: "/pages/management",
+                link: "/pages/info/management",
             },
             {
                 title: "Педагогический состав",
-                link: "/pages/sostav",
+                link: "/pages/info/sostav",
             },
             {
                 title: "Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.",
-                link: "/pages/dostupnaya_sreda",
+                link: "/pages/info/dostupnaya_sreda",
             },
             {
                 title: "Платные образовательные услуги",
-                link: "/pages/services",
+                link: "/pages/info/services",
             },
             {
                 title: "Финансово-хозяйственная деятельность",
-                link: "/pages/activities",
+                link: "/pages/info/activities",
             },
             {
                 title: "Вакантные места для приёма (перевода) обучающихся",
-                link: "/pages/vacancies",
+                link: "/pages/info/vacancies",
             },
             {
                 title: "Стипендия и меры поддержки обучающихся",
-                link: "/pages/grands",
+                link: "/pages/info/grands",
             },
             {
                 title: "Международное сотрудничество",
-                link: "/pages/international_cooperation",
+                link: "/pages/info/international_cooperation",
             },
             {
                 title: "Организация питания в образовательной организации",
-                link: "/pages/nutrition",
+                link: "/pages/info/nutrition",
             },
             {
                 title: "Образовательные стандарты и требования",
-                link: "/pages/education",
+                link: "/pages/info/education",
             },
         ],
     },
     {
         title: "Контакты",
-        link: "#",
+        link: "/pages/contacts",
     },
 
 ];
