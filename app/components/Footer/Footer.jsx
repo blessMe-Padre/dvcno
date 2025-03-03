@@ -69,7 +69,7 @@ const Footer = () => {
 
                 <div className={styles.middle}>
                     <ul className={styles.footer_list}>
-                        {menu.data?.items.map((item, key) => (
+                        {menu?.map((item, key) => (
                             <li key={key}>
                                 <Link href={item.link}>
                                     {item.title}

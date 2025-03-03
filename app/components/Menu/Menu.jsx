@@ -8,6 +8,9 @@ import getMenu from '../../utils/getMenu';
 export default function Menu() {
     const [menuData, setMenuData] = useState([]);
 
+    console.log(menuData);
+
+
     useEffect(() => {
         const fetchData = async () => {
             const menu = await getMenu();
@@ -21,7 +24,7 @@ export default function Menu() {
     // console.log(menuData.data?.items);
     return (
         <ul className={styles.list}>
-            {menuData.data?.items.map((item, index) => (
+            {menuData?.map((item, index) => (
                 <li key={index} className={styles.menuTitle}>
                     <Link
                         className={styles.link}
