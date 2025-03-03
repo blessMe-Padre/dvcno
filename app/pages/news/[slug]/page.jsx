@@ -75,7 +75,7 @@ export default async function NewsPage({ params }) {
 
 export async function generateStaticParams() {
   try {
-    const postsResponse = await fetch('http://localhost:3000/api/news');
+    const postsResponse = await fetch('https://inside-dev.ru/api/news');
     if (!postsResponse.ok) {
       throw new Error(`HTTP error! status: ${postsResponse.status}`);
     }

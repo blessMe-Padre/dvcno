@@ -1,6 +1,6 @@
 const getMainSliders = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/main-sliders', {
+        const res = await fetch('https://inside-dev.ru/api/main-sliders', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {

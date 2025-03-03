@@ -1,6 +1,6 @@
 const getEvents = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/events/', {
+        const res = await fetch('https://inside-dev.ru/api/events/', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
