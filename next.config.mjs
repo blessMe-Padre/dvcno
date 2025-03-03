@@ -1,4 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// import createNextIntlPlugin from 'next-intl/plugin';
+ 
+// const withNextIntl = createNextIntlPlugin('./app/i18n/request.js');
+ 
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {};
+ 
+// export default withNextIntl(nextConfig);
 
+
+const nextConfig = {};
+ 
 export default nextConfig;

@@ -53,7 +53,7 @@ export default function SimpleGallery(props) {
       >
         <div className="pswp-gallery" id={props.galleryID}>
           {props.images.map((image, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className='anim_hover_card'>
               <a
                 href={image.largeURL}
                 data-pswp-width={image.width}

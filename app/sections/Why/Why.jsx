@@ -10,7 +10,7 @@ export default function Why() {
                 <h2 className={`${styles.title} title-black`}>почему выбирают нас</h2>
 
                 <ul className={styles.list}>
-                    <li className={styles.item}>
+                    <li className={`${styles.item} anim_hover_card`}>
                         <h3 className={styles.subtile}>Компе&shy;тентность педагогических кадров</h3>
                         <p className={styles.text}>Педагоги центра строят свою работу, опираясь на индивидуальные способности ребенка, отслеживая результаты контрольных срезов, тестов</p>
                         <Image
@@ -21,7 +21,7 @@ export default function Why() {
                             className={`${styles.item_img} dsv-image`}
                         />
                     </li>
-                    <li className={styles.item}>
+                    <li className={`${styles.item} anim_hover_card`}>
                         <Image
                             src="/why/main-bg.png"
                             alt="Компетентность педагогических кадров"
@@ -37,7 +37,7 @@ export default function Why() {
                             className={`${styles.main_img_mobile} dsv-image`}
                         />
                     </li>
-                    <li className={styles.item}>
+                    <li className={`${styles.item} anim_hover_card`}>
                         <h3 className={styles.subtile}>Материально-техническое оснащение</h3>
                         <p className={styles.text}>Наши учебные кабинеты оборудованы в соответствии
                             с современными образовательными стандартами</p>
@@ -49,7 +49,7 @@ export default function Why() {
                             className={`${styles.item_img} dsv-image`}
                         />
                     </li>
-                    <li className={styles.item}>
+                    <li className={`${styles.item} anim_hover_card`}>
                         <h3 className={styles.subtile}>Качественное образование</h3>
                         <p className={styles.text}>Главная задача АНПОО «ДВЦНО» – обеспечить качество, что в полной мере совпадает с представлением большинства родителей</p>
                         <Image
@@ -60,7 +60,7 @@ export default function Why() {
                             className={`${styles.item_img} dsv-image`}
                         />
                     </li>
-                    <li className={styles.item}>
+                    <li className={`${styles.item} anim_hover_card`}>
                         <h3 className={styles.subtile}>Территориальное расположение образовательных комплексов</h3>
                         <p className={styles.text}>Единый комплекс зданий и территорий, расположенных в одном месте обеспечивает удобство и доступность образовательных услуг</p>
                         <Image

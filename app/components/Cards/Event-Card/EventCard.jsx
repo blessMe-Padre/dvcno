@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./style.module.css";
-import Link from "next/link";
 
 export default function EventCard(
     {
@@ -17,7 +16,7 @@ export default function EventCard(
 ) {
 
     return (
-        <div className={styles.card}>
+        <div className={`${styles.card} anim_hover_card`}>
             <header className={styles.header}>
                 <div className="flex">
                     <div className={styles.day}>{date}</div>
