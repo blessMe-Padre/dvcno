@@ -8,9 +8,6 @@ import getMenu from '../../utils/getMenu';
 export default function Menu() {
     const [menuData, setMenuData] = useState([]);
 
-    console.log(menuData);
-
-
     useEffect(() => {
         const fetchData = async () => {
             const menu = await getMenu();
