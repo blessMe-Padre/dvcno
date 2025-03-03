@@ -1,7 +1,7 @@
 const getFooterMenu = async () => {
     try {
         // http://localhost:3000/api/popup-menu/
-        const res = await fetch('http://134.0.118.139/api/v1/menus/menu_footer?lang=ru', {
+        const res = await fetch('http://localhost:3000/api/popup-menu/', {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
