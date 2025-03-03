@@ -6,6 +6,15 @@
     color: var(--black);
     display: flex;
     flex-direction: column;
+
+}
+
+.card:hover .title {
+    color: var(--violet);
+}
+
+.card:active .title {
+    color: var(--green);
 }
 
 .header {
@@ -60,12 +69,14 @@
 }
 
 .title {
-    color: var(--black-toggle);
+    color: var(--black);
     font-weight: 700;
     font-size: clamp(1em, 0.857em + 0.298vw, 1.125em);
     line-height: 1.44444;
     text-transform: uppercase;
     flex: 1;
+
+    transition: all var(--anim-function);
 }
 
 .description {
