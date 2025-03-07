@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/app/components';
 import pattern from '@/public/about_center/pattern.svg';
 import center from '@/public/about_center/bg_pattern.png';
 import center2 from '@/public/about_center/bg_pattern2.png';
-import decor from '@/public/about_center/decor.svg'; 
+import decor from '@/public/about_center/decor.svg';
 import decor1 from '@/public/about_center/do_item_1.svg';
 import decor2 from '@/public/about_center/do_item_2.svg';
 import decor3 from '@/public/about_center/decor2.svg';
@@ -22,7 +22,7 @@ export const metadata = {
     description: "Дальневосточный центр непрерывного образования",
 }
 
-export default function Page() { 
+export default function Page() {
     return (
         <>
             <section className={styles.section}>
@@ -32,25 +32,25 @@ export default function Page() {
 
                     <div className={styles.wrapper_links}>
                         <Link
-                            href="/pages/about_center/mission"
+                            href="/about_center/mission"
                             className={styles.link}
-                            >
-                            
+                        >
+
                             <p>Миссия ДВЦНО</p>
                             <svg className={styles.svg} width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#FCCC05" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#FCCC05" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </Link >
 
                         <Link
-                            href="/pages/about_center/history"
+                            href="/about_center/history"
                             className={styles.link}
                         >
-                            
-                        
+
+
                             <p>История АНПОО «ДВЦНО»</p>
                             <svg className={styles.svg} width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#FCCC05" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#FCCC05" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
 
                         </Link>
@@ -70,7 +70,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         НШДС «КЕП»
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </Link>
@@ -82,7 +82,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         НОШДС «ВШ»
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </Link>
@@ -92,9 +92,9 @@ export default function Page() {
                             <li className={styles.list_item}>
                                 <div>
                                     <Link href={'/'} className={styles.company_name}>
-                                        МЛШ 
+                                        МЛШ
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </Link>
@@ -106,7 +106,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         АК
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </Link>
@@ -118,7 +118,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         ЦРУСО
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </Link>
@@ -130,7 +130,7 @@ export default function Page() {
                                     <Link href={'/'} className={styles.company_name}>
                                         СКИБ
                                         <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822" stroke="#433C8C" strokeWidth="1.01111" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </Link>
@@ -168,7 +168,7 @@ export default function Page() {
             </section>
 
             <section className={styles.section_do}>
-                 <div className='container relative'>
+                <div className='container relative'>
                     <h2 className={styles.title}>Деятельность</h2>
                     <p className={styles.description}>
                         АНПОО «ДВЦНО» реализует образовательные программы: основные общеобразовательные программы, программы профессионального обучения, дополнительные общеобразовательные программы, дополнительные профессиональные программы
@@ -222,7 +222,7 @@ export default function Page() {
                                 <li>Дополнительное профессиональное образование</li>
                             </ul>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -233,13 +233,13 @@ export default function Page() {
                     <div className={`${styles.title_strategy_wrapper}`}>
                         <div className='relative'>
                             <h2 className={`${styles.title} ${styles.title_white}`}>Стратегия развития</h2>
-                            <Image  
+                            <Image
                                 className={styles.title_decor}
                                 src={decor3}
                                 width={300}
                                 height={15}
                                 alt=''
-                                />
+                            />
                         </div>
                         <div>
                             <Image
@@ -263,8 +263,8 @@ export default function Page() {
                                 />
                             </div>
                             <div>
-                                <p className={styles.strategy_item_desc}>Международная деятельность, сотрудничество с учреждениями 
-                                и предприятиями г. Владивостока, Приморского края, России, стран Европы, Азии, Канады, США</p>
+                                <p className={styles.strategy_item_desc}>Международная деятельность, сотрудничество с учреждениями
+                                    и предприятиями г. Владивостока, Приморского края, России, стран Европы, Азии, Канады, США</p>
                             </div>
                         </li>
                         <li className={styles.strategy_item}>
@@ -292,8 +292,8 @@ export default function Page() {
                                 />
                             </div>
                             <div>
-                                <p className={styles.strategy_item_desc}>Удовлетворение меняющихся образовательных потребностей и запросов государства и социума в получении доступного и качественного образования детей, взрослых и талантливой молодежи, соответствующего требованиям инновационного социально ориентированного развития 
-                                Приморского края</p>
+                                <p className={styles.strategy_item_desc}>Удовлетворение меняющихся образовательных потребностей и запросов государства и социума в получении доступного и качественного образования детей, взрослых и талантливой молодежи, соответствующего требованиям инновационного социально ориентированного развития
+                                    Приморского края</p>
                             </div>
                         </li>
 
@@ -304,7 +304,7 @@ export default function Page() {
             <section className={styles.section_purpose}>
                 <div className='container relative'>
                     <h2 className={styles.title}>Главные цели и задачи</h2>
-                        
+
                     <Image
                         className={styles.purpose_img}
                         src={purpose}
@@ -313,93 +313,93 @@ export default function Page() {
                         alt='purpose'
                     />
 
-                  <ul className={styles.purpose_list}>
-                    <li className={styles.purpose_item}>
-                       <Image
-                        src={purposeImage}
-                        width={60}
-                        height={60}
-                        alt='purpose_check'
-                        />  
-                        <p>Обеспечение качественного дошкольного, начального общего, основного общего, среднего общего образования</p> 
-                    </li>
-                    <li className={styles.purpose_item}>
-                        <Image
-                            src={purposeImage}
-                            width={60}
-                            height={60}
-                            alt='purpose_check'
-                            />  
-                            <p>Подготовка учащихся начальной школы к поступлению 
-                            и успешному обучению 
-                            в основной школе</p>
-                    </li>
-                    <li className={styles.purpose_item}>
-                        <Image
-                            src={purposeImage}
-                            width={60}
-                            height={60}
-                            alt='purpose_check'
-                            />  
-                            <p>Подготовка учащихся средней школы к поступлению 
-                            и успешному обучению 
-                            в техникумах, колледжах и вузах</p>
-                    </li>
-                    <li className={styles.purpose_item}>
-                        <Image
-                            src={purposeImage}
-                            width={60}
-                            height={60}
-                            alt='purpose_check'
-                            />  
+                    <ul className={styles.purpose_list}>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
+                            <p>Обеспечение качественного дошкольного, начального общего, основного общего, среднего общего образования</p>
+                        </li>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
+                            <p>Подготовка учащихся начальной школы к поступлению
+                                и успешному обучению
+                                в основной школе</p>
+                        </li>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
+                            <p>Подготовка учащихся средней школы к поступлению
+                                и успешному обучению
+                                в техникумах, колледжах и вузах</p>
+                        </li>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
                             <p>Воспитание целостной личности учащегося, личности, готовой к дальнейшему саморазвитию и самовоспитанию через приобщение к различным мировым культурам и на основе гуманистических ценностей</p>
-                    </li>
-                    <li className={styles.purpose_item}>
-                        <Image
-                            src={purposeImage}
-                            width={60}
-                            height={60}
-                            alt='purpose_check'
-                            />  
+                        </li>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
                             <p>Формирование у обучающихся системы ценностей, развитие умений критически и творчески мыслить, успешно действовать в различных ситуациях, взаимодействовать с другими людьми, заботиться о здоровье и безопасности жизни</p>
-                    </li>
-                    <li className={styles.purpose_item}>
-                        <Image
-                            src={purposeImage}
-                            width={60}
-                            height={60}
-                            alt='purpose_check'
-                            />  
+                        </li>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
                             <p>Создание для обучающихся образовательного пространства, способствующего воспитанию любознательного, умного, неравнодушного к проблемам окружающей жизни человека, стремящегося к созданию лучшего безопасного мира, знающего и любящего свою культуру и историю и уважающего культуры и историю других народов</p>
-                    </li>
-                    <li className={styles.purpose_item}>
-                        <Image
-                            src={purposeImage}
-                            width={60}
-                            height={60}
-                            alt='purpose_check'
-                            />  
+                        </li>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
                             <p>Воспитание у обучающихся активной гражданской и жизненной позиции</p>
-                    </li>
-                    <li className={styles.purpose_item}>
-                        <Image
-                            src={purposeImage}
-                            width={60}
-                            height={60}
-                            alt='purpose_check'
-                            />  
+                        </li>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
                             <p>Становление учащихся ответственными, активными, способными и желающими обучаться всю свою сознательную жизнь</p>
-                    </li>
-                    <li className={styles.purpose_item}>
-                        <Image
-                            src={purposeImage}
-                            width={60}
-                            height={60}
-                            alt='purpose_check'
-                            />  
+                        </li>
+                        <li className={styles.purpose_item}>
+                            <Image
+                                src={purposeImage}
+                                width={60}
+                                height={60}
+                                alt='purpose_check'
+                            />
                             <p>Воспитание у обучающихся способности видеть и творить прекрасное</p>
-                    </li>
-                  </ul>
+                        </li>
+                    </ul>
 
                 </div>
             </section>

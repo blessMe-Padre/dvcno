@@ -12,18 +12,18 @@ export default async function Page() {
 
 
     const educationPages = [
-    {
-        id: 1,
-        image: '/education/image-1.jpg',
-        description: 'Международная лингвистическая школа (МЛШ)',
-        link: '/pages/education',
-        slug: 'doshkolnoe-obrazovanie',
-    },
+        {
+            id: 1,
+            image: '/education/image-1.jpg',
+            description: 'Международная лингвистическая школа (МЛШ)',
+            link: '/education',
+            slug: 'doshkolnoe-obrazovanie',
+        },
     ];
 
     return (
         <>
-            <section className={styles.section}> 
+            <section className={styles.section}>
                 <div className="container">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}

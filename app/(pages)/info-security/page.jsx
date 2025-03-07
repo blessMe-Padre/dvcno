@@ -10,27 +10,27 @@ export const metadata = {
 const links = [
     {
         title: 'Локальные акты',
-        link: '/pages/info-security/lokalnye-akty'
+        link: '/info-security/lokalnye-akty'
     },
     {
         title: 'Нормативное регулирование',
-        link: '/pages/info-security/normativnoe-regulirovanie'
+        link: '/info-security/normativnoe-regulirovanie'
     },
     {
         title: 'Педагогам',
-        link: '/pages/info-security/pedagogam'
+        link: '/info-security/pedagogam'
     },
     {
         title: 'Родителям',
-        link: '/pages/info-security/roditelyam'
+        link: '/info-security/roditelyam'
     },
     {
         title: 'Обучающимся',
-        link: '/pages/info-security/obuchayushchimsya'
+        link: '/info-security/obuchayushchimsya'
     },
     {
         title: 'Детские безопасные сайты',
-        link: '/pages/info-security/detskie-bezopasnye-sajty'
+        link: '/info-security/detskie-bezopasnye-sajty'
     },
 
 ]
