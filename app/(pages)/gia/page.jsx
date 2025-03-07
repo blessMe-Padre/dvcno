@@ -10,11 +10,11 @@ export const metadata = {
 const links = [
     {
         title: 'ОГЭ',
-        link: '/pages/gia/oge'
+        link: '/gia/oge'
     },
     {
         title: 'ЕГЭ',
-        link: '/pages/gia/ege'
+        link: '/gia/ege'
     },
 ]
 

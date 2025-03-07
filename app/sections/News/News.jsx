@@ -76,7 +76,7 @@ const News = () => {
                                     news.map((item, index) => (
                                         <SwiperSlide key={index}>
                                             <Link
-                                                href={`/pages/news/${item.slug}`}
+                                                href={`/news/${item.slug}`}
                                             >
                                                 <NewsCard
                                                     data={item}

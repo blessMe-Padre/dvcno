@@ -12,48 +12,48 @@ export default async function Page() {
 
 
     const educationPages = [
-    {
-        id: 1,
-        image: '/education/image-1.jpg',
-        description: 'Начальная школа – детский сад «Классическая европейская прогимназия» (НШДС "КЕП")',
-        link: '/pages/education',
-        slug: 'doshkolnoe-obrazovanie',
-    },
-    {
-        id: 2,
-        image: '/education/image-2.jpg',
-        description: 'Начальная общеобразовательная школа-детский сад "Восточная школа" (НОШДС «ВШ»)',
-        link: '/pages/education',
-        slug: 'nachalnoe-obshchee-obrazovanie',
-    },
-    {
-        id: 3,
-        image: '/education/image-3.jpg',
-        description: 'Международная лингвистическая школа (МЛШ)',
-        link: '/pages/education',
-        slug: 'osnovnoe-obshchee-obrazovanie',
-    },
-    {
-        id: 4,
-        image: '/education/image-4.jpg',
-        description: 'Академический колледж (АК)',
-        link: '/pages/education',
-        slug: 'srednee-obshchee-obrazovanie',
-    },
-    {
-        id: 5,
-        image: '/education/image-5.jpg',
-        description: '«Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина» (ШОД)',
-        link: '/pages/education',
-        slug: 'professionalnoe-obuchenie',
-    },
-    {
-        id: 6,
-        image: '/education/image-6.jpg',
-        description: 'Физкультурно-оздоровительный комплекс с бассейном «Лига спорта» (ФОК «Лига спорта»)',
-        link: '/pages/education',
-        slug: 'dopolnitelnoe-obrazovanie',
-    },
+        {
+            id: 1,
+            image: '/education/image-1.jpg',
+            description: 'Начальная школа – детский сад «Классическая европейская прогимназия» (НШДС "КЕП")',
+            link: '/education',
+            slug: 'doshkolnoe-obrazovanie',
+        },
+        {
+            id: 2,
+            image: '/education/image-2.jpg',
+            description: 'Начальная общеобразовательная школа-детский сад "Восточная школа" (НОШДС «ВШ»)',
+            link: '/education',
+            slug: 'nachalnoe-obshchee-obrazovanie',
+        },
+        {
+            id: 3,
+            image: '/education/image-3.jpg',
+            description: 'Международная лингвистическая школа (МЛШ)',
+            link: '/education',
+            slug: 'osnovnoe-obshchee-obrazovanie',
+        },
+        {
+            id: 4,
+            image: '/education/image-4.jpg',
+            description: 'Академический колледж (АК)',
+            link: '/education',
+            slug: 'srednee-obshchee-obrazovanie',
+        },
+        {
+            id: 5,
+            image: '/education/image-5.jpg',
+            description: '«Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина» (ШОД)',
+            link: '/education',
+            slug: 'professionalnoe-obuchenie',
+        },
+        {
+            id: 6,
+            image: '/education/image-6.jpg',
+            description: 'Физкультурно-оздоровительный комплекс с бассейном «Лига спорта» (ФОК «Лига спорта»)',
+            link: '/education',
+            slug: 'dopolnitelnoe-obrazovanie',
+        },
     ];
 
 
