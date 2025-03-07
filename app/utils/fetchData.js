@@ -1,6 +1,6 @@
 const fetchData = async (route) => {
     try {
-        const res = await fetch(`https://inside-dev.ru/api/${route}/`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/${route}/`, {
             next: { revalidate: 10 }
         });
         if (!res.ok) {

@@ -5,149 +5,149 @@ export const menuData = [
         submenu: [
             {
                 title: "Информация",
-                link: "/pages/info",
+                link: "/info",
             },
             {
                 title: "Основные сведения",
-                link: "/pages/info/osnovnue_svedenya",
+                link: "/info/osnovnue_svedenya",
             },
             {
                 title: "Образование",
-                link: "/pages/info/education",
+                link: "/info/education",
             },
             {
                 title: "Документы",
-                link: "/pages/info/documents",
+                link: "/info/documents",
             },
             {
                 title: "Руководство",
-                link: "/pages/info/management",
+                link: "/info/management",
             },
             {
                 title: "Педагогический состав",
-                link: "/pages/info/sostav",
+                link: "/info/sostav",
             },
             {
                 title: "Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.",
-                link: "/pages/info/dostupnaya_sreda",
+                link: "/info/dostupnaya_sreda",
             },
             {
                 title: "Платные образовательные услуги",
-                link: "/pages/info/services",
+                link: "/info/services",
             },
             {
                 title: "Финансово-хозяйственная деятельность",
-                link: "/pages/info/activities",
+                link: "/info/activities",
             },
             {
                 title: "Вакантные места для приёма (перевода) обучающихся",
-                link: "/pages/info/vacancies",
+                link: "/info/vacancies",
             },
             {
                 title: "Стипендия и меры поддержки обучающихся",
-                link: "/pages/info/grands",
+                link: "/info/grands",
             },
             {
                 title: "Международное сотрудничество",
-                link: "/pages/info/international_cooperation",
+                link: "/info/international_cooperation",
             },
             {
                 title: "Организация питания в образовательной организации",
-                link: "/pages/info/nutrition",
+                link: "/info/nutrition",
             },
             {
                 title: "Образовательные стандарты и требования",
-                link: "/pages/info/standarts",
+                link: "/info/standarts",
             },
         ],
     },
     {
         title: "Обучение",
-        link: "/pages/education",
+        link: "/education",
         submenu: [
             {
                 title: "Дошкольное образование",
-                link: "/pages/education/doshkolnoe-obrazovanie",
+                link: "/education/doshkolnoe-obrazovanie",
             },
             {
                 title: "Начальное общее образование",
-                link: "/pages/education/nachalnoe-obshchee-obrazovanie",
+                link: "/education/nachalnoe-obshchee-obrazovanie",
             },
             {
                 title: "Основное общее образование",
-                link: "/pages/education/osnovnoe-obshchee-obrazovanie",
+                link: "/education/osnovnoe-obshchee-obrazovanie",
             },
             {
                 title: "Среднее общее образование",
-                link: "/pages/education/srednee-obshchee-obrazovanie",
+                link: "/education/srednee-obshchee-obrazovanie",
             },
             {
                 title: "Профессиональное обучение",
-                link: "/pages/education/professionalnoe-obuchenie",
+                link: "/education/professionalnoe-obuchenie",
             },
             {
                 title: "Дополнительное образование",
-                link: "/pages/education/dopolnitelnoe-obrazovanie",
+                link: "/education/dopolnitelnoe-obrazovanie",
             },
         ],
     },
     {
         title: "О центре",
-        link: "/pages/about_center",
+        link: "/about_center",
         submenu: [
             {
                 title: "Основные сведения",
-                link: "/pages/info/osnovnue_svedenya",
+                link: "/info/osnovnue_svedenya",
             },
             {
                 title: "Документы",
-                link: "/pages/about_center/documents",
+                link: "/about_center/documents",
             },
             {
                 title: "Руководство",
-                link: "/pages/info/management",
+                link: "/info/management",
             },
             {
                 title: "Педагогический состав",
-                link: "/pages/info/sostav",
+                link: "/info/sostav",
             },
             {
                 title: "Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.",
-                link: "/pages/info/dostupnaya_sreda",
+                link: "/info/dostupnaya_sreda",
             },
             {
                 title: "Платные образовательные услуги",
-                link: "/pages/info/services",
+                link: "/info/services",
             },
             {
                 title: "Финансово-хозяйственная деятельность",
-                link: "/pages/info/activities",
+                link: "/info/activities",
             },
             {
                 title: "Вакантные места для приёма (перевода) обучающихся",
-                link: "/pages/info/vacancies",
+                link: "/info/vacancies",
             },
             {
                 title: "Стипендия и меры поддержки обучающихся",
-                link: "/pages/info/grands",
+                link: "/info/grands",
             },
             {
                 title: "Международное сотрудничество",
-                link: "/pages/info/international_cooperation",
+                link: "/info/international_cooperation",
             },
             {
                 title: "Организация питания в образовательной организации",
-                link: "/pages/info/nutrition",
+                link: "/info/nutrition",
             },
             {
                 title: "Образовательные стандарты и требования",
-                link: "/pages/info/education",
+                link: "/info/education",
             },
         ],
     },
     {
         title: "Контакты",
-        link: "/pages/contacts",
+        link: "/contacts",
     },
 
 ];

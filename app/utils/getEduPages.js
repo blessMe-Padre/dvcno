@@ -1,6 +1,6 @@
 const getEduPages = async () => {
     try {
-        const res = await fetch('https://inside-dev.ru/api/edu-pages/', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/edu-pages/`, {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
