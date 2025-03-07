@@ -1,15 +1,15 @@
 export const popupMenuData = [
     {
         title: "Информационная безопасность",
-        link: "pages/info-security",
+        link: "/info-security",
     },
     {
         title: 'Локальные акты',
-        link: 'pages/info-security/lokalnye-akty'
+        link: '/info-security/lokalnye-akty'
     },
     {
         title: "О центре",
-        link: "pages/about_center",
+        link: "/about_center",
     },
     {
         title: "ГИА",

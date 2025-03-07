@@ -1,7 +1,7 @@
 
 const getNewsBySlug = async (slug) => {
     try {
-        const res = await fetch('https://inside-dev.ru/api/news/');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/news/`);
         if (!res.ok) {
             throw new Error(`Ошибка HTTP: ${res.status}`);
         }

@@ -1,28 +1,25 @@
-import Image from "next/image";
-import getEventsBySlug from '@/app/utils/getEventBySlug';
-import { notFound } from 'next/navigation';
+import getNewsBySlug from '@/app/utils//getNewsBySlug';
 import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
 import LinkButton from '@/app/components/Link/LinkButton';
-import styles from "./style.module.css";
+import Image from 'next/image';
+import styles from './style.module.css';
 
 
-export async function generateMetadata({ params }) {
+export const metadata = {
+  title: "Новости",
+  description: "Описание новости",
+};
+
+export default async function NewsPage({ params }) {
+
   const { slug } = await params;
-  const page = await getEventsBySlug(slug);
+  const page = await getNewsBySlug(slug);
 
-  return {
-    title: page.title,
-    description: page.description,
-  }
-}
-export default async function EventPage({ params }) {
-  const { slug } = params;
-  const page = await getEventsBySlug(slug);
   const sanitizedContent = page.content || '';
-
   if (!page) {
     notFound();
   }
+
 
   return (
     <div className='container'>
@@ -53,24 +50,8 @@ export default async function EventPage({ params }) {
             width={25}
             height={25}
           />
-          <div className={styles.tag}>Начало в {page.date_event.time_H}:{page.date_event.time_i}</div>
+          <div className={styles.tag}>Время чтения: {page.time_to_read}</div>
         </div>
-
-        <div className={styles.item}>
-          <Image
-            src={'/icons/clock.svg'}
-            alt={"время"}
-            width={25}
-            height={25}
-          />
-          <div className={styles.tag}>{page.address}</div>
-        </div>
-
-        <LinkButton
-          color={'green'}
-          href={page.link_to_map}
-          text={'Посмотреть на карте'}
-        />
       </header>
 
       <div className={styles.image_wrapper}>
@@ -94,7 +75,7 @@ export default async function EventPage({ params }) {
 
 export async function generateStaticParams() {
   try {
-    const postsResponse = await fetch('https://inside-dev.ru/api/events');
+    const postsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/news`);
     if (!postsResponse.ok) {
       throw new Error(`HTTP error! status: ${postsResponse.status}`);
     }
@@ -111,4 +92,3 @@ export async function generateStaticParams() {
     return [];
   }
 }
-

@@ -1,6 +1,6 @@
 const getAwards = async () => {
     try {
-        const res = await fetch('https://inside-dev.ru/api/awards/', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/awards/`, {
             next: { revalidate: 10 }
         });
         if (!res.ok) {

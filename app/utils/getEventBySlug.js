@@ -1,6 +1,6 @@
 const getEventsBySlug = async (slug) => {
     try {
-        const res = await fetch('https://inside-dev.ru/api/events/');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/events/`);
         if (!res.ok) {
             throw new Error(`Ошибка HTTP: ${res.status}`);
         }
