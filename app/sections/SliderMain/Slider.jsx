@@ -15,9 +15,7 @@ import 'swiper/css/pagination';
 import getMainSliders from '../../utils/getMainSliders';
 
 export default function Slider() {
-
     const [data, setData] = useState([]);
-
     useEffect(() => {
         const fetchData = async () => {
             const result = await getMainSliders();
@@ -61,7 +59,7 @@ export default function Slider() {
                             placeholder="blur"
                             blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
 
-                        />                    
+                        />
                     )
                 }
             </Swiper>
