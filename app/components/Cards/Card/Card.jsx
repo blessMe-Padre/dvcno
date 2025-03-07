@@ -14,7 +14,7 @@ export default function Card({ image, link, description, }) {
                     className={`${styles.img} dsv-image`}
                 />
             </div>
-            <Link href={link} className={styles.card_footer} target="_blank">
+            <Link href={link} className={styles.card_footer}>
                 <div className={styles.card_link_wrapper}>
                     <p className={styles.text}>{description}</p>
                     <div className={styles.link}>

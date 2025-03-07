@@ -39,7 +39,7 @@ export default function Slider() {
                 speed={4000}
             >
 
-                {data && data.length > 0 ? (
+                {
                     data.map((item, index) => {
                         return (
                             // ПОДОГНАТЬ ВСЕ СЛАЙДЕРЫ ПОД ОДИН РАЗМЕР
@@ -48,19 +48,6 @@ export default function Slider() {
                             </SwiperSlide>
                         )
                     })
-                )
-                    : (
-                        <Image
-                            // src={placeholder}
-                            width={1400}
-                            height={600}
-                            alt='slider_bg'
-                            className={`${styles.sliderBg} dsv-image`}
-                            placeholder="blur"
-                            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
-
-                        />
-                    )
                 }
             </Swiper>
         </section>
