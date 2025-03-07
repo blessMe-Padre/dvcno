@@ -5,24 +5,19 @@ import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
 import LinkButton from '@/app/components/Link/LinkButton';
 import styles from "./style.module.css";
 
-
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
   const page = await getEventsBySlug(slug);
-
   return {
     title: page.title,
     description: page.description,
   }
 }
+
 export default async function EventPage({ params }) {
   const { slug } = params;
   const page = await getEventsBySlug(slug);
   const sanitizedContent = page.content || '';
-
-  if (!page) {
-    notFound();
-  }
 
   return (
     <div className='container'>
@@ -95,6 +90,7 @@ export default async function EventPage({ params }) {
 export async function generateStaticParams() {
   try {
     const postsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/events`);
+
     if (!postsResponse.ok) {
       throw new Error(`HTTP error! status: ${postsResponse.status}`);
     }
@@ -104,7 +100,6 @@ export async function generateStaticParams() {
       throw new Error("API response does not contain data property");
     }
     const slugs = posts.data.map((post) => ({ slug: post.slug }));
-
     return slugs;
   } catch (error) {
     console.error('Ошибка получения данных:', error);
