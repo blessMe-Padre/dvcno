@@ -4,6 +4,10 @@ import LinkButton from '@/app/components/Link/LinkButton';
 import Image from 'next/image';
 import styles from './style.module.css';
 
+//добавить для всех EventPage удалить 
+//generateStaticParams удалить 
+
+export const revalidate = 60;
 
 export const metadata = {
   title: "Новости",
@@ -73,22 +77,4 @@ export default async function NewsPage({ params }) {
   );
 }
 
-export async function generateStaticParams() {
-  try {
-    const postsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/news`);
-    if (!postsResponse.ok) {
-      throw new Error(`HTTP error! status: ${postsResponse.status}`);
-    }
 
-    const posts = await postsResponse.json();
-    if (!posts.data) {
-      throw new Error("API response does not contain data property");
-    }
-    const slugs = posts.data.map((post) => ({ slug: post.slug }));
-
-    return slugs;
-  } catch (error) {
-    console.error('Ошибка получения данных:', error);
-    return [];
-  }
-}

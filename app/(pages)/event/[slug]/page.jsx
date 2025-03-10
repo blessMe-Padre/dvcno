@@ -5,6 +5,8 @@ import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
 import LinkButton from '@/app/components/Link/LinkButton';
 import styles from "./style.module.css";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const page = await getEventsBySlug(slug);
@@ -87,23 +89,23 @@ export default async function EventPage({ params }) {
   );
 }
 
-export async function generateStaticParams() {
-  try {
-    const postsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/events`);
+// export async function generateStaticParams() {
+//   try {
+//     const postsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/events`);
 
-    if (!postsResponse.ok) {
-      throw new Error(`HTTP error! status: ${postsResponse.status}`);
-    }
+//     if (!postsResponse.ok) {
+//       throw new Error(`HTTP error! status: ${postsResponse.status}`);
+//     }
 
-    const posts = await postsResponse.json();
-    if (!posts.data) {
-      throw new Error("API response does not contain data property");
-    }
-    const slugs = posts.data.map((post) => ({ slug: post.slug }));
-    return slugs;
-  } catch (error) {
-    console.error('Ошибка получения данных:', error);
-    return [];
-  }
-}
+//     const posts = await postsResponse.json();
+//     if (!posts.data) {
+//       throw new Error("API response does not contain data property");
+//     }
+//     const slugs = posts.data.map((post) => ({ slug: post.slug }));
+//     return slugs;
+//   } catch (error) {
+//     console.error('Ошибка получения данных:', error);
+//     return [];
+//   }
+// }
 
