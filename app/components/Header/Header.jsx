@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -25,6 +25,21 @@ export default function Header() {
     const [opened, setOpened] = useState(false);
     const [searchOpened, setSearchOpened] = useState(false);
     const [popupActive, setPopupActive] = useState(false);
+    const menuRef = useRef(null);
+
+    // закрываем меню при клике вне попапа
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setOpened(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const variants = {
         visible: {
@@ -97,10 +112,12 @@ export default function Header() {
                         onClick={() => { setOpened(!opened) }}
                         opened={opened}
                     />
-                    <PopupMenu
-                        opened={opened}
-                        setOpened={setOpened}
-                    />
+                    <div ref={menuRef}>
+                        <PopupMenu
+                            opened={opened}
+                            setOpened={setOpened}
+                        />
+                    </div>
                     <Menu />
                 </div>
 
