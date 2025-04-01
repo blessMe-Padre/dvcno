@@ -115,14 +115,14 @@ export default function Header() {
       </div>
 
       <div className={styles.row}>
-        <div className="relative flex gap-20">
+        <div ref={menuRef} className="relative flex gap-20">
           <CatalogButton
             onClick={() => {
               setOpened(!opened);
             }}
             opened={opened}
           />
-          <div ref={menuRef}>
+          <div >
             <PopupMenu opened={opened} setOpened={setOpened} />
           </div>
           <Menu />
