@@ -29,7 +29,6 @@ export default function Header() {
   // закрываем меню при клике вне попапа
   useEffect(() => {
     const handleClickOutside = (event) => {
-      console.log("event.target", event.target);
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setOpened(false);
       }
