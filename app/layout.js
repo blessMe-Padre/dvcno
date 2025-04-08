@@ -1,15 +1,10 @@
-import localFont from "next/font/local";
-import { Montserrat } from 'next/font/google';
+import { headers } from 'next/headers'
 import "./globals.css";
-
+import { Montserrat, Bebas_Neue } from 'next/font/google';
 import { Footer, Header } from "./components";
+import { getDefaultLanguage } from '@/app/utils/translations';
 
-const montserrat = Montserrat({
-  weight: ['400', '500', '600', '700'],
-  style: ['normal'],
-  display: 'swap',
-  subsets: ['cyrillic', 'cyrillic-ext'],
-});
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -22,10 +17,10 @@ const montserrat = Montserrat({
 //   weight: "100 900",
 // });
 
-const BebasNeue = localFont({
-  src: "./fonts/BebasNeue.ttf",
-  variable: '--second-family',
-  weight: "100 900",
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas-neue",
 });
 
 export const metadata = {
@@ -34,16 +29,19 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const headersList = headers();
+  const userLang = headersList.get('x-user-language') || getDefaultLanguage();
+
   return (
-    <html lang="ru">
-      <body className={`${montserrat.className} ${BebasNeue.variable} footer-sticky`}>
+    <html lang={userLang}>
+      <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
         <div className="container">
           <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
         </div>
-        <main>
-          {children}
-        </main >
-        <Footer />
       </body>
     </html>
   );
