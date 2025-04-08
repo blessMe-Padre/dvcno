@@ -26,6 +26,7 @@ export default function Header() {
   const [popupActive, setPopupActive] = useState(false);
   const menuRef = useRef(null);
 
+
   // закрываем меню при клике вне попапа
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -121,7 +122,7 @@ export default function Header() {
             }}
             opened={opened}
           />
-          <div >
+          <div>
             <PopupMenu opened={opened} setOpened={setOpened} />
           </div>
           <Menu />
