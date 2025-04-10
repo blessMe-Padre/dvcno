@@ -11,7 +11,7 @@ export const metadata = {
 
 const fetchData = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/education/`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL_FRONT}/api/education/`);
         if (!res.ok) {
             throw new Error(`Ошибка HTTP: ${res.status}`);
         }
