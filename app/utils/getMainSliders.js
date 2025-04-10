@@ -1,6 +1,6 @@
 const getMainSliders = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/main-sliders`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL_FRONT}/api/main-sliders`, {
             next: { revalidate: 10 }
         });
         if (!res.ok) {

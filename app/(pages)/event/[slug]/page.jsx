@@ -91,7 +91,7 @@ export default async function EventPage({ params }) {
 
 // export async function generateStaticParams() {
 //   try {
-//     const postsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/events`);
+//     const postsResponse = await fetch(`${process.env.NEXT_PUBLIC_URL_FRONT}/api/events`);
 
 //     if (!postsResponse.ok) {
 //       throw new Error(`HTTP error! status: ${postsResponse.status}`);

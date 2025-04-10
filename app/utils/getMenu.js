@@ -1,6 +1,6 @@
 const getMenu = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/menu`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL_FRONT}/api/menu`, {
             next: { revalidate: 10 }
         });
         if (!res.ok) {
