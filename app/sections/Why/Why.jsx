@@ -1,13 +1,17 @@
-
+'use client';
 
 import Image from "next/image";
 import styles from "./style.module.css";
+import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
 
 export default function Why() {
+    const { getTranslation } = useTranslationsStore();
+    const sectionTitle = getTranslation('why_choose_us', TRANSLATION_SECTIONS.HEADERS);
+
     return (
         <section className={styles.section}>
             <div className="container">
-                <h2 className={`${styles.title} title-black`}>почему выбирают нас</h2>
+                <h2 className={`${styles.title} title-black`}>{sectionTitle}</h2>
 
                 <ul className={styles.list}>
                     <li className={`${styles.item} anim_hover_card`}>
