@@ -2,10 +2,13 @@
 import styles from './style.module.css';
 import { useState, useEffect } from 'react';
 import { TabContent, SocialIcon } from '../../components';
+import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
 
 const Contacts = () => {
 
     const [active, setActive] = useState(0);
+    const { getTranslation } = useTranslationsStore();
+    const sectionTitle = getTranslation('contacts', TRANSLATION_SECTIONS.HEADERS);
 
     const openTab = e => setActive(+e.target.dataset.index);
 
@@ -39,7 +42,7 @@ const Contacts = () => {
                 <div className={styles.map_wrapper}>
                     <div className={styles.map_content}>
                         <h2 className={styles.title}>
-                            контакты
+                            {sectionTitle}
                         </h2>
 
                         <div className={styles.info}>
