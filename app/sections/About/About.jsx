@@ -1,10 +1,10 @@
 'use client'
 import { useEffect, useState } from "react";
-
 import Image from "next/image";
 import styles from "./style.module.css";
 import Card from "./../../components/Cards/Card/Card";
 import getEduPages from '../../utils/getEduPages';
+import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
@@ -12,10 +12,10 @@ import { SwiperNavButtons } from "../../components";
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-
 export default function About() {
     const [data, setData] = useState([]);
     const [isMobile, setIsMobile] = useState(false);
+    const { getTranslation } = useTranslationsStore();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,13 +25,15 @@ export default function About() {
 
         fetchData();
         setIsMobile(window.innerWidth < 560);
-
     }, []);
+
+    // Получаем заголовок из переводов
+    const sectionTitle = getTranslation('dvcno_is', TRANSLATION_SECTIONS.HEADERS);
 
     return (
         <section className={styles.section}>
             <div className={styles.title_wrapper}>
-                <h2 className={styles.title}>Дальневосточный центр <br /> непрерывного образования - это</h2>
+                <h2 className={styles.title}>{sectionTitle}</h2>
                 <div className={styles.image_wrapper}>
                     <Image
                         alt="декор"
@@ -85,7 +87,6 @@ export default function About() {
                     </ul>
                 )}
             </div>
-
         </section>
     )
 }
