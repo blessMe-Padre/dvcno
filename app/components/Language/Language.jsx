@@ -1,41 +1,25 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./language.module.css";
-import { getAvailableLanguages, getDefaultLanguage } from '@/app/utils/translations';
+import useTranslationsStore from '@/app/store/translationsStore';
 import { useRouter } from 'next/navigation';
 
+const AVAILABLE_LANGUAGES = ['ru', 'en', 'ch'];
+
 export default function Language() {
-    const [lang, setLang] = useState(getDefaultLanguage());
-    const availableLanguages = getAvailableLanguages();
+    const { currentLang, setLanguage } = useTranslationsStore();
     const router = useRouter();
 
-    useEffect(() => {
-        // Получаем текущий язык из cookie при монтировании компонента
-        const getCookie = (name) => {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        };
-        
-        const currentLang = getCookie('language') || getDefaultLanguage();
-        setLang(currentLang);
-    }, []);
-
-    const handleChange = async (evt) => {
+    const handleChange = (evt) => {
         const newLang = evt.target.value;
-        setLang(newLang);
-        
-        // Устанавливаем cookie
-        document.cookie = `language=${newLang}; path=/; max-age=31536000`; // cookie на 1 год
-        
-        // Обновляем страницу для применения нового языка
+        setLanguage(newLang);
         router.refresh();
     };
 
     return (
-        <select onChange={handleChange} className={styles.select} value={lang}>
-            {availableLanguages.map(lang => (
+        <select onChange={handleChange} className={styles.select} value={currentLang}>
+            {AVAILABLE_LANGUAGES.map(lang => (
                 <option key={lang} value={lang}>
                     {lang === 'ru' ? 'Русский' : lang === 'en' ? 'English' : '中文'}
                 </option>
