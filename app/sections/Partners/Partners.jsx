@@ -2,8 +2,8 @@
 
 import getPartners from '@/app/utils/getPartners';
 import styles from './style.module.css';
-import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
 
 import { SwiperNavButtons } from '../../components';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -13,20 +13,10 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-
 const Partners = () => {
-
-    const [partners, setPartners] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await getPartners();
-            setPartners(data);
-        };
-
-        fetchData();
-
-    }, []);
+    const { getTranslation } = useTranslationsStore();
+    const partners = getPartners();
+    const sectionTitle = getTranslation('partners', TRANSLATION_SECTIONS.HEADERS);
 
     return (
         <section className={styles.section}>
@@ -35,7 +25,7 @@ const Partners = () => {
                     <div className='relative'>
 
                         <h2 className={styles.title}>
-                            Наши партнеры
+                            {sectionTitle}
                         </h2>
 
                         <Swiper
