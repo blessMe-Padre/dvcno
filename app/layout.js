@@ -1,8 +1,8 @@
-import { headers } from 'next/headers'
+import { cookies } from 'next/headers'
 import "./globals.css";
 import { Montserrat, Bebas_Neue } from 'next/font/google';
 import { Footer, Header } from "./components";
-import { getDefaultLanguage } from '@/app/utils/translations';
+import { StoreInitializer } from './components/StoreInitializer';
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -29,19 +29,21 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const headersList = headers();
-  const userLang = headersList.get('x-user-language') || getDefaultLanguage();
+  const cookieStore = cookies();
+  const lang = cookieStore.get('language')?.value || 'ru';
 
   return (
-    <html lang={userLang}>
+    <html lang={lang}>
       <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
-        <div className="container">
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <StoreInitializer lang={lang}>
+          <div className="container">
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </StoreInitializer>
       </body>
     </html>
   );
