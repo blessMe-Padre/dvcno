@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
 // Хардкодный адрес API для тестирования
-const BASE_API_URL = 'http://134.0.118.139/api/v1/dictionaries/headers_pages';
+const BASE_API_URL = "http://134.0.118.139/api/v1/dictionaries/headers_pages";
 // const BASE_API_URL = `${process.env.NEXT_PUBLIC_API_DOMAIN}${process.env.NEXT_PUBLIC_API_PATH}`;
 
 // Типы секций для переводов
@@ -35,7 +35,7 @@ const useTranslationsStore = create(
           }
 
           set({ isLoading: true, error: null });
-          
+
           // Для тестирования делаем запрос только к одному эндпоинту
           const response = await fetch(BASE_API_URL, {
             headers: {
@@ -49,11 +49,10 @@ const useTranslationsStore = create(
           }
 
           const data = await response.json();
-          console.log('API Response:', data);
 
           // Формируем объект с переводами
           const translationsObject = {
-            [TRANSLATION_SECTIONS.HEADERS]: data
+            [TRANSLATION_SECTIONS.HEADERS]: data,
           };
 
           set({
@@ -61,11 +60,9 @@ const useTranslationsStore = create(
             isLoading: false,
           });
 
-          console.log("fetchTranslations result:", translationsObject);
           return translationsObject;
         } catch (error) {
           console.error("Error fetching translations:", error);
-          console.log("Error details:", error.message, error.stack);
           set({ error: error.message, isLoading: false });
           return null;
         }
@@ -75,18 +72,16 @@ const useTranslationsStore = create(
       getTranslation: (key, section) => {
         const state = get();
         const { translations, currentLang } = state;
-        console.log('getTranslation called with:', { key, section, translations, currentLang });
 
         if (!translations?.[section]?.data?.[key]) {
-          console.log('Translation not found for:', { key, section });
           return key;
         }
 
-        const translation = translations[section].data[key][currentLang] ||
-                          translations[section].data[key]["ru"] ||
-                          key;
-        
-        // console.log('Translation found:', translation);
+        const translation =
+          translations[section].data[key][currentLang] ||
+          translations[section].data[key]["ru"] ||
+          key;
+
         return translation;
       },
 

@@ -16,7 +16,6 @@ const ContactsList = ({ data }) => {
 
     const handleChange = (e) => {
         setActiveLink(e.target);
-        console.log(e.target);
     };
 
 

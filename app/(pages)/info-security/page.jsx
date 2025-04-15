@@ -47,7 +47,6 @@ export default function Page() {
 
     // Получаем заголовок напрямую из store
     const pageTitle = getTranslation('info_security', TRANSLATION_SECTIONS.HEADERS);
-    // console.log('Page title:', pageTitle, 'Current language:', currentLang);
 
     return (
         <>

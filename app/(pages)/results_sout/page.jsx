@@ -149,7 +149,6 @@ export default async function Page() {
                     <ul>
                         {Object.entries(groupedStandards).map(([name, items]) => (
                             <li className={styles.item_object} key={name}>
-                                {/*  Removed unnecessary console.log */}
                                 <p className={`${styles.item_name} ${items[0].background === 'yellow' ? styles.background_yellow : ''
                                     } ${items[0].background === 'light-blue' ? styles.background_light_blue : ''} ${items[0].background === 'green' ? styles.background_green : ''
                                     } ${items[0].background === 'violet' ? styles.background_violet : ''}`}>
