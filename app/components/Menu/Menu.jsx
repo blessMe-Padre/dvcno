@@ -17,7 +17,6 @@ export default function Menu() {
     fetchData();
   }, []);
 
-  // console.log(menuData.data?.items);
   return (
     <ul className={styles.list}>
       {menuData?.map((item, index) => (

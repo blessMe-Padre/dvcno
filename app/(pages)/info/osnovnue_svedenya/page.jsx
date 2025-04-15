@@ -181,7 +181,6 @@ export default function page() {
                     <ul className={styles.list_svedenya}>
                         {data_svedenya.map((item, index) => (
                             <li className={`${styles.svedenya_item} anim_hover_card`} key={index}>
-                            {console.log(item.img)}
                                 <p className={styles.svedenya_item_name}>{item.title}</p>
                                 <p className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: item.desc }}></p>
                                 

@@ -2,14 +2,18 @@ import Card from "@/app/components/Cards/Card/Card";
 import styles from "./style.module.css";
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 
-// import fetchData from '../../utils/fetchData';
-
 export const metadata = {
     title: "ДВЦНО | Обучение",
     description: "Дальневосточный центр непрерывного образования",
 };
 
 const fetchData = async () => {
+    // Проверяем, выполняется ли код на сервере
+    if (typeof window === 'undefined') {
+        // Возвращаем заглушку для серверного рендеринга
+        return [];
+    }
+    
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_URL_FRONT}/api/education/`);
         if (!res.ok) {
