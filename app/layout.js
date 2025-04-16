@@ -3,6 +3,7 @@ import "./globals.css";
 import { Montserrat, Bebas_Neue } from 'next/font/google';
 import { Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
+import localFont from 'next/font/local';
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -17,9 +18,8 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 //   weight: "100 900",
 // });
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
-  subsets: ["latin"],
+const bebasNeue = localFont({
+  src: "./fonts/BebasNeue.ttf",
   variable: "--font-bebas-neue",
 });
 
