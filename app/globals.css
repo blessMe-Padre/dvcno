@@ -16,7 +16,7 @@
   --color-gray: #aab2c9;
 
   --font-family: "Montserrat", sans-serif;
-  --second-family: "Bebas Neue", sans-serif;
+  --second-family: var(--font-bebas-neue), sans-serif;
   --third-family: "Sriracha Cyrillic", sans-serif;
 
   --black: #191830;
