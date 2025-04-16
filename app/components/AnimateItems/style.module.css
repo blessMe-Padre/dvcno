@@ -40,7 +40,7 @@
     text-transform: uppercase;
 
     font-size: clamp(1.875em, 2.083vw + 1.875em, 4.375em);
-    font-family: var(--second-family);
+    font-family: var(--font-bebas-neue);
 
     font-weight: 700;
 

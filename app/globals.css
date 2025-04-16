@@ -213,7 +213,7 @@ ul {
 }
 
 .title {
-  font-family: var(--second-family);
+  font-family: var(--font-bebas-neue);
   font-weight: 700;
   font-size: clamp(2.5em, -1.071em + 7.44vi, 5.625em);
   line-height: 1.2;

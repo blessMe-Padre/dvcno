@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
 import "./globals.css";
-import { Montserrat, Bebas_Neue } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import { Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
@@ -19,8 +19,10 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 // });
 
 const bebasNeue = localFont({
-  src: "./fonts/BebasNeue.ttf",
-  variable: "--font-bebas-neue",
+  src: './fonts/BebasNeue.ttf',
+  display: 'swap',
+  variable: '--font-bebas-neue',
+  preload: true,
 });
 
 export const metadata = {

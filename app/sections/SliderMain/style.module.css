@@ -12,7 +12,7 @@
 .slider__title { 
     max-width: 70%;
     color: var(--white);
-    font-family: var(--second-family);
+    font-family: var(--font-bebas-neue);
     font-size: clamp(2.25em, 1.286em + 4.821vw, 5.625em);
     font-weight: 700;
 
