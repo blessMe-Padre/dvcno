@@ -5,7 +5,12 @@ import { Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -36,7 +41,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang={lang}>
-      <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
+      <body className={`${montserrat.variable} ${bebasNeue.variable} footer-sticky`}>
         <StoreInitializer lang={lang}>
           <div className="container">
             <Header />

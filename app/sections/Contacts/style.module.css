@@ -9,7 +9,7 @@
 }
 
 .tabs_btn {
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     color: var(--black);
     background-color: var(--gray);
     border: none;
@@ -71,7 +71,7 @@
 }
 
 .info {
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
 
     display: flex;
     flex-direction: column;

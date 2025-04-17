@@ -29,7 +29,7 @@
 
     margin-top: 40px;
     text-transform: lowercase;
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-weight: 400;
     font-size: clamp(0.75em, 0.75em + 0.556vw, 1.25em);
 

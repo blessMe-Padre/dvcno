@@ -24,13 +24,10 @@
 
 .slider__desc {
     color: var(--white);
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-weight: 400;
-    
     margin-bottom: 40px;
-
     max-width: 50%;
-
     font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
 }
 
@@ -50,7 +47,7 @@
 
 .slider__list li {
     font-size: clamp(0.75em, 0.607em + 0.714vw, 1.25em);
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-weight: 600;
 
 }
@@ -58,7 +55,7 @@
 .slider__link {
     width: max-content;
 
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
     display: flex;
     align-items: center;

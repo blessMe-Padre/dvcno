@@ -16,7 +16,7 @@
 }
 
 .p {
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-weight: 700;
     font-size: clamp(1em, 0.571em + 0.893vw, 1.375em);
     line-height: 1.3;

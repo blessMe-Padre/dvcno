@@ -53,7 +53,7 @@
 }
 
 .list_content_desc {
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-size: clamp(0.875em, 0.208vw + 0.875em, 1.125em);
     color: var(--white);
     line-height: 150%;
