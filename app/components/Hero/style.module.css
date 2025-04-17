@@ -12,16 +12,17 @@
 .slider__title {
     max-width: 70%;
     color: var(--white);
-    mix-blend-mode: difference;
-
     font-family: var(--font-bebas-neue);
     font-size: clamp(2.25em, 1.286em + 4.821vw, 5.625em);
     font-weight: 700;
-
     text-transform: uppercase;
-
     margin-bottom: 30px;
+}
 
+.add_text_black .slider__title,
+.add_text_black .slider__desc,
+.add_text_black .slider__list li {
+    color: var(--black);
 }
 
 .slider__desc {

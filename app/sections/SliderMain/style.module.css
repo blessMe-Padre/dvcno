@@ -1,139 +1,133 @@
 .section__swiper {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .slider {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
-.slider__title { 
-    max-width: 70%;
-    color: var(--white);
-    font-family: var(--font-bebas-neue);
-    font-size: clamp(2.25em, 1.286em + 4.821vw, 5.625em);
-    font-weight: 700;
+.slider__title {
+  max-width: 70%;
+  color: var(--white);
+  font-family: var(--font-bebas-neue);
+  font-size: clamp(2.25em, 1.286em + 4.821vw, 5.625em);
+  font-weight: 700;
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 
-    margin-bottom: 30px;
-
+  margin-bottom: 30px;
 }
 
 .slider__desc {
-    color: var(--white);
-    font-family: var(--font-montserrat);
-    font-weight: 400;
-    margin-bottom: 40px;
-    max-width: 50%;
-    font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
+  color: var(--white);
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 50%;
+  font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
 }
 
-
 .slider__list {
-
-    display: grid;
-    gap: 20px;
-    list-style: disc;
-
-    max-width: 50%;
+  max-width: 50%;
+  display: grid;
+  gap: 20px;
+  list-style: disc;
 }
 
 .add_class {
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .slider__list li {
-    font-size: clamp(0.75em, 0.607em + 0.714vw, 1.25em);
-    font-family: var(--font-montserrat);
-    font-weight: 600;
-
+  font-size: clamp(0.75em, 0.607em + 0.714vw, 1.25em);
+  font-family: var(--font-montserrat);
+  font-weight: 600;
 }
 
 .slider__link {
-    width: max-content;
+  width: max-content;
 
-    font-family: var(--font-montserrat);
-    font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    cursor: pointer;
-    color: var(--black);
-    
-    font-weight: 700;
-    background-color: var(--orange);
+  font-family: var(--font-montserrat);
+  font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  color: var(--black);
 
-    text-align: center;
-    padding: 20px 20px;
-    border: none;
-    border-radius: 6px;
+  font-weight: 700;
+  background-color: var(--orange);
 
-    transition: 0.7s ease-in-out;
+  text-align: center;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 6px;
 
-    margin-top: 40px;
-    min-width: 330px;
+  transition: 0.7s ease-in-out;
 
-    box-shadow: 20px 20px 30px 0 rgba(25, 24, 48, .9);
+  margin-top: 40px;
+  min-width: 330px;
 
+  box-shadow: 20px 20px 30px 0 rgba(25, 24, 48, 0.9);
 }
 
 .slider__link:hover {
-    color: var(--white);
-    background-color: var(--green);
+  color: var(--white);
+  background-color: var(--green);
 }
 
 .slider__link:active {
-    color: var(--white);
-    background-color: var(--violet);
+  color: var(--white);
+  background-color: var(--violet);
 }
-
 
 .slider__link > svg path {
-    transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
 }
 
-.slider__link:hover > svg path{
-    stroke: var(--white);
+.slider__link:hover > svg path {
+  stroke: var(--white);
 }
-
 
 .slider__wrapper__content {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 
-    min-height: 680px;
+  min-height: 680px;
 
-    padding: 60px 90px;
+  padding: 60px 90px;
 }
 
 .sliderBg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    border-radius: 20px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .slider__img__pattern {
-    max-height: clamp(20em, 13.214em + 33.929vw, 43.75em);
-    max-width:clamp(18.75em, 9.107em + 48.214vw, 52.5em);}
+  max-height: clamp(20em, 13.214em + 33.929vw, 43.75em);
+  max-width: clamp(18.75em, 9.107em + 48.214vw, 52.5em);
+}
 
 @media screen and (max-width: 769px) {
-    .slider__wrapper__content {
-        padding: 30px 30px;
-    }
+  .slider__wrapper__content {
+    padding: 30px 30px;
+  }
 
-    .slider__title, .slider__desc, .slider__list {
-        max-width: 100%;
-    }
+  .slider__title,
+  .slider__desc,
+  .slider__list {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 480px) {
-
 }
