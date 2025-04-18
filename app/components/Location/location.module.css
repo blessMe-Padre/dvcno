@@ -5,7 +5,7 @@
 }
 
 .city {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-family-montserrat), sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: var(--default-color);
