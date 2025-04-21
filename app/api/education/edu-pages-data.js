@@ -19,7 +19,7 @@ export const educationPages = [
         description: 'Основное общее образование',
         link: '/education',
         slug: 'osnovnoe-obshchee-obrazovanie',
-    },
+    }, 
     {
         id: 4,
         image: '/education/image-4.jpg',
