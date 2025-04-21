@@ -4,6 +4,7 @@ import decor from '@/public/info/structura/decor.svg';
 import decor2 from '@/public/info/structura/decor2.svg';
 import decor3 from '@/public/info/structura/decor3.svg';
 import doc from '@/public/info/structura/doc.svg';
+import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
 
 export const metadata = {
     title: "ДВЦНО | Структура и органы управления образовательной организацией",
@@ -239,6 +240,12 @@ export default function page() {
     return (
         <section className={styles.section}>
             <div className='container relative'>
+            <Breadcrumbs
+                        slug={'Сведения об образовательной организации'}
+                        link={'info'}
+                        title={'Структура и органы управления образовательной организацией'}
+                    />
+
                 <h2 className={styles.title}>
                     Структура и органы управления образовательной организацией
                 </h2>

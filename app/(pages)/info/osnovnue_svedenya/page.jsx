@@ -162,7 +162,7 @@ export default function page() {
                 <div className="container relative">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
+                        link={'info'}
                         title={'Основные сведения'}
                     />
 

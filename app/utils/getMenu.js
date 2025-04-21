@@ -3,8 +3,6 @@ import { getApiUrl, isDevelopment } from './environment';
 const getMenu = async () => {
     try {
         const apiUrl = getApiUrl();
-        console.log('Is development:', isDevelopment);
-        console.log('API URL:', apiUrl);
         
         const res = await fetch(`${apiUrl}/api/menu`, {
             next: { revalidate: 10 }

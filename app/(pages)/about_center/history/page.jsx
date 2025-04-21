@@ -93,7 +93,7 @@ export default function Page() {
                 <div className='container'>
                     <Breadcrumbs
                         slug={'О центре'}
-                        link={'pages/about_center'}
+                        link={'/about_center'}
                         title={'История'}
                     />
                     <div className={styles.title_wrapper}>

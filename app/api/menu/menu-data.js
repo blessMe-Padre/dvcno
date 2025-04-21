@@ -100,7 +100,7 @@ export const menuData = [
                 link: "/about_center/mission",
             },
             {
-                title: "История становления",
+                title: "История",
                 link: "/about_center/history",
             },
         ],

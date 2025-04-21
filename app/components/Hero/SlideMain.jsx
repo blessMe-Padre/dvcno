@@ -11,8 +11,6 @@ import placeholder from "../../../public/placeholder/placeholder.png";
 const SlideMain = ({ item }) => {
   const [sliderBg, setSliderBg] = useState(null);
 
-  console.log("item: ", item);
-
   useEffect(() => {
     if (item) {
       function handleResize() {

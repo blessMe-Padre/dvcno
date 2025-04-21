@@ -27,10 +27,10 @@ export default async function Page() {
                 <div className="container">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
-                        title={'Международное сотрудничество.'}
+                        link={'info'}
+                        title={'Международное сотрудничество'}
                     />
-                    <h2 className={`title ${styles.title}`}>Международное сотрудничество.</h2>
+                    <h2 className={`title ${styles.title}`}>Международное сотрудничество</h2>
 
                     <p className={styles.subtitle}>Структурные подразделения АНПОО «ДВЦНО» АК, НОШДС «ВШ», НШДС «КЕП», ШИОД не ведут деятельность в сфере международного сотрудничества.</p>
                     <ul className={styles.list}>

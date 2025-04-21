@@ -13,6 +13,10 @@ const HOME_TRANSLATIONS = {
 export default function Breadcrumbs({ slug, link, title }) {
     const { currentLang } = useTranslationsStore();
 
+    console.log('slug', slug);
+    console.log('link', link);
+    console.log('title', title);
+
     return (
         <nav className={styles.nav}>
             <Link href="/">

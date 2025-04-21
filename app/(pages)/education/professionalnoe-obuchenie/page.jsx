@@ -116,7 +116,7 @@ export default function page() {
         <>
             <div className='container'>
                 <Breadcrumbs
-                    slug={'Образование'}
+                    slug={'Обучение'}
                     link={'education'}
                     title={'Профессиональное обучение в ДВЦНО'}
                 />

@@ -29,6 +29,9 @@ const fetchData = async () => {
 
 export default async function Page() {
     const data = await fetchData();
+    console.log('data', data);
+
+
     return (
         <div className="container">
             <Breadcrumbs title={"Обучение"} />

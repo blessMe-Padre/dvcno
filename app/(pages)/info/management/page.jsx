@@ -139,7 +139,7 @@ export default function page() {
                 <div className='container'>
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
+                        link={'info'}
                         title={'Структура и органы управления образовательной организацией'}
                     />
                     
