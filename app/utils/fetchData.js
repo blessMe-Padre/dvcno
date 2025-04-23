@@ -1,17 +1,29 @@
 const fetchData = async (route) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_URL_FRONT}/api/${route}/`, {
-            next: { revalidate: 10 }
-        });
-        if (!res.ok) {
-            throw new Error(`Ошибка HTTP: ${res.status}`);
+      const baseUrl =
+        process.env.NEXT_PUBLIC_URL_FRONT || 'https://inside-dev.ru';
+      const res = await fetch(`${baseUrl}/api/${route}/`, {
+        next: { revalidate: 10 },
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (!res.ok) {
+        if (res.status === 502) {
+          console.error('Сервер временно недоступен');
+          return [];
         }
-        const result = await res.json();
-        return result;
+        throw new Error(`Ошибка HTTP: ${res.status}`);
+      }
+  
+      const result = await res.json();
+      return result;
     } catch (error) {
-        console.error("Ошибка при загрузке:", error);
-        return [];
+      console.error('Ошибка при загрузке:', error);
+      return [];
     }
-};
-
-export default fetchData;
+  };
+  
+  export default fetchData;
