@@ -90,7 +90,7 @@
     width: 80px;
     height: 40px;
     border: 3px solid var(--light-blue);
-    background-color: var(--black);
+    background-color: var(--white);
 }
 
 .circle_last {
@@ -101,7 +101,7 @@
     width: 40px;
     height: 40px;
     border: 3px solid var(--light-blue);
-    background-color: var(--black);
+    background-color: var(--white);
 }
 
 .light_blue_border {

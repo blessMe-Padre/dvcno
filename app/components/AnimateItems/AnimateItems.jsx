@@ -179,15 +179,11 @@ const AnimateItems = ({ data }) => {
                       <h2 className={styles.subtitle}>{item.title}</h2>
                     )}
 
-                    {/* <p className={styles.list_content_desc}>{item.desc ? item.desc.replace(/<br>/g, '\n') : item.desc}</p>
-                                        {item.desc2 && (
-                                            <p className={styles.list_content_desc}>{item.desc2 ? item.desc2.replace(/<br>/g, '\n') : item.desc2}</p>
-                                        )} */}
-
-                    <p
+                    <div
                       className={styles.list_content_desc}
                       dangerouslySetInnerHTML={{ __html: item.desc }}
-                    ></p>
+                      suppressHydrationWarning
+                    />
                   </motion.div>
                 </div>
               </li>
@@ -251,15 +247,11 @@ const AnimateItems = ({ data }) => {
                       <h2 className={styles.subtitle}>{item.title}</h2>
                     )}
 
-                    {/* <p className={styles.list_content_desc}>{item.desc ? item.desc.replace(/<br>/g, '\n') : item.desc}</p>
-                                        {item.desc2 && (
-                                            <p className={styles.list_content_desc}>{item.desc2 ? item.desc2.replace(/<br>/g, '\n') : item.desc2}</p>
-                                        )} */}
-
-                    <p
+                    <div
                       className={styles.list_content_desc}
                       dangerouslySetInnerHTML={{ __html: item.desc }}
-                    ></p>
+                      suppressHydrationWarning
+                    />
                   </motion.div>
                 </div>
               </li>
