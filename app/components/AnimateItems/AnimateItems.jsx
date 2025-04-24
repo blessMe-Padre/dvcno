@@ -76,13 +76,13 @@ const AnimateItems = ({ data }) => {
                       transition: {
                         duration: 0.8,
                         ease: "easeOut",
-                        delay: 0.2
+                        delay: 0.2,
                       },
                     }}
                     viewport={{
                       margin: "-100px",
                       amount: 0.3,
-                      once: true
+                      once: true,
                     }}
                   >
                     {item.year && (

@@ -18,7 +18,7 @@ export default function Language() {
     };
 
     return (
-        <select onChange={handleChange} className={styles.select} value={currentLang}>
+        <select disabled onChange={handleChange} className={styles.select} value={currentLang}>
             {AVAILABLE_LANGUAGES.map(lang => (
                 <option key={lang} value={lang}>
                     {lang === 'ru' ? 'Русский' : lang === 'en' ? 'English' : '中文'}
