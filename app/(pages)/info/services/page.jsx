@@ -84,9 +84,9 @@ export default async function Page() {
             <section className={styles.section}>
                 <div className="container">
                     <Breadcrumbs
-                        slug={'Платные образовательные услуги'}
-                        link={'pages/info'}
-                        title={'Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.'}
+                        slug={'Сведения об образовательной организации'}
+                        link={'info'}
+                        title={'Платные образовательные услуги'}
                         />
                     
                     <h2 className={`title ${styles.title}`}>Платные образовательные услуги</h2>

@@ -76,7 +76,7 @@ export default function doshkolnoeObrazovanie() {
         <>
             <div className='container'>
                 <Breadcrumbs
-                    slug={'Образование'}
+                    slug={'Обучение'}
                     link={'education'}
                     title={'Среднее общее образование в ДВЦНО'}
                 />

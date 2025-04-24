@@ -27,7 +27,7 @@ export default function Page() {
     <>
       <section className={styles.section}>
         <div className="container">
-          <Breadcrumbs title={"Обучение"} />
+          <Breadcrumbs title={"О центре"} />
           <h2 className={styles.title}>О центре</h2> 
 
           <div className={styles.wrapper_links}>

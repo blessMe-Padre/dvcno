@@ -97,10 +97,10 @@ export default async function Page() {
                 <div className="container">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
-                        title={'Организация питания в образовательной организации.'}
+                        link={'info'}
+                        title={'Организация питания в образовательной организации'}
                     />
-                    <h2 className={`title ${styles.title}`}>Организация питания в образовательной организации.</h2>
+                    <h2 className={`title ${styles.title}`}>Организация питания в образовательной организации</h2>
 
                     <ul className={styles.list}>
                         {educationPages && educationPages.length > 0 ? (

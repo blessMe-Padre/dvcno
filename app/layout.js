@@ -1,11 +1,16 @@
 import { cookies } from 'next/headers'
 import "./globals.css";
-import { Montserrat, Bebas_Neue } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import { Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -19,8 +24,10 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 // });
 
 const bebasNeue = localFont({
-  src: "./fonts/BebasNeue.ttf",
-  variable: "--font-bebas-neue",
+  src: './fonts/BebasNeue.ttf',
+  display: 'swap',
+  variable: '--font-bebas-neue',
+  preload: true,
 });
 
 export const metadata = {
@@ -34,7 +41,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang={lang}>
-      <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
+      <body className={`${montserrat.variable} ${bebasNeue.variable} footer-sticky`}>
         <StoreInitializer lang={lang}>
           <div className="container">
             <Header />

@@ -3,7 +3,7 @@
 }
 
 .form__title {
-    font-family: var(--second-family);
+    font-family: var(--font-bebas-neue);
     font-size: clamp(2.125em, 1.661em + 2.321vw, 3.75em);
     color: var(--black);
     font-weight: 700;

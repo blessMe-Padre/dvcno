@@ -12,21 +12,22 @@
 .slider__title {
     max-width: 70%;
     color: var(--white);
-    mix-blend-mode: difference;
-
-    font-family: var(--second-family);
+    font-family: var(--font-bebas-neue);
     font-size: clamp(2.25em, 1.286em + 4.821vw, 5.625em);
     font-weight: 700;
-
     text-transform: uppercase;
-
     margin-bottom: 30px;
+}
 
+.add_text_black .slider__title,
+.add_text_black .slider__desc,
+.add_text_black .slider__list li {
+    color: var(--black);
 }
 
 .slider__desc {
     color: var(--white);
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-weight: 400;
 
     margin-bottom: 40px;
@@ -71,7 +72,7 @@
 
 .slider__list li {
     font-size: clamp(0.75em, 0.607em + 0.714vw, 1.25em);
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -79,7 +80,7 @@
 .slider__link {
     width: max-content;
 
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
     display: flex;
     align-items: center;

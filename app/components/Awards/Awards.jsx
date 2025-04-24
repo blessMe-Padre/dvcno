@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 
 export default function Awards() {
   const [data, setData] = useState();
-  const { getTranslation, currentLang } = useTranslationsStore();
+  const { getTranslation } = useTranslationsStore();
   const sectionTitle = getTranslation('dvcno_awards', TRANSLATION_SECTIONS.HEADERS);
 
   useEffect(() => {

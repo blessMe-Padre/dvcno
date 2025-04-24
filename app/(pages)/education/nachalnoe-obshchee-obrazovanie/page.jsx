@@ -102,7 +102,7 @@ export default function page() {
             <div className='container'>
 
                 <Breadcrumbs
-                    slug={'Образование'}
+                    slug={'Обучение'}
                     link={'education'}
                     title={'Начальное общее образование'}
                 />

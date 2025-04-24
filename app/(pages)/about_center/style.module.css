@@ -6,7 +6,7 @@
 }
 
 .title {
-    font-family: var(--second-family);
+    font-family: var(--font-bebas-neue);
     font-weight: 700;
     font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
     line-height: 1.1;
@@ -200,7 +200,7 @@
 }
 
 .name_company_do {
-    font-family: var(--second-family);
+    font-family: var(--font-bebas-neue);
     font-weight: 700;
     font-size: clamp(1.5em, 1vw + 1.3em, 2.5em);
     text-transform: uppercase;
@@ -278,7 +278,7 @@
 .strategy_item_desc {
     font-size: clamp(0.875em, 0.25vw + 0.825em, 1.125em);
     list-style: 1.3;
-    font-family: var(--font-family);
+    font-family: var(--font-montserrat);
     font-weight: 500;
     color: var(--black);
 }
