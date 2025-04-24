@@ -25,6 +25,7 @@
 *.pem
 *.doc
 *.docx
+*.tar
 
 # debug
 npm-debug.log*
