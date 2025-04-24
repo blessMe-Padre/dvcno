@@ -1,6 +1,11 @@
 import { cookies } from 'next/headers'
 import "./globals.css";
+import { cookies } from 'next/headers'
+import "./globals.css";
 import { Montserrat } from 'next/font/google';
+import { Footer, Header } from "./components";
+import { StoreInitializer } from './components/StoreInitializer';
+import localFont from 'next/font/local';
 import { Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
@@ -36,6 +41,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const cookieStore = cookies();
+  const lang = cookieStore.get('language')?.value || 'ru';
+
   const cookieStore = cookies();
   const lang = cookieStore.get('language')?.value || 'ru';
 

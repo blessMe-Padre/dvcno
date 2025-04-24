@@ -17,6 +17,7 @@ export const metadata = {
   description: "Дальневосточный центр непрерывного образования",
 };
 
+
 export default function Home() {
   return (
     <>
