@@ -54,7 +54,7 @@ export default function Page() {
                 <title>ДВЦНО | {pageTitle}</title>
                 <meta name="description" content={pageTitle} />
             </Head>
-            
+
             <div className="container">
                 <Breadcrumbs title={pageTitle} />
 

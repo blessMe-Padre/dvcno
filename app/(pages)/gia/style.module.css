@@ -19,6 +19,7 @@
     align-items: center;
     gap: 30px;
     margin-bottom: 60px;
+    margin-top: 20px;
 }
 
 .link {
@@ -35,6 +36,13 @@
     padding: 8px 29px;
     backdrop-filter: blur(50px);
     background: var(--gray);
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+    background-color: var(--violet2);
+    color: var(--white);
 }
 
 .page_content {

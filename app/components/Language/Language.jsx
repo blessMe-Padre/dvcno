@@ -5,7 +5,13 @@ import styles from "./language.module.css";
 import useTranslationsStore from '@/app/store/translationsStore';
 import { useRouter } from 'next/navigation';
 
-const AVAILABLE_LANGUAGES = ['ru', 'en', 'ch'];
+/**
+ * TODO: добавить получение языков по api
+ * http://134.0.118.139/api/v1/languages/
+ */
+
+// const AVAILABLE_LANGUAGES = ['ru', 'en', 'ch'];
+const AVAILABLE_LANGUAGES = ['ru', 'en'];
 
 export default function Language() {
     const { currentLang, setLanguage } = useTranslationsStore();
