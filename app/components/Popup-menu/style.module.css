@@ -41,7 +41,7 @@
 }
 
 .sublist_item {
-    padding: 5px 0;
+    padding: 3px 0;
 }
 
 @media (max-width: 700px) {
@@ -64,5 +64,13 @@
     .popup {
         width: 88vw;
     }
+}
 
+.svg {
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.up {
+    transform: rotate(180deg);
 }
