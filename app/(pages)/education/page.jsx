@@ -13,7 +13,7 @@ const fetchData = async () => {
         // Возвращаем заглушку для серверного рендеринга
         return [];
     }
-    
+
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_URL_FRONT}/api/education/`);
         if (!res.ok) {
