@@ -5,18 +5,12 @@ import { Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
 
-const montserrat = Montserrat({ subsets: ["latin"] });
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+const montserrat = Montserrat({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
 
 const bebasNeue = localFont({
   src: './fonts/BebasNeue.ttf',

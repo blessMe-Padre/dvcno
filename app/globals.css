@@ -11,11 +11,14 @@
   --default-color: #171717;
   --link-color: #191830;
 
+  /* 62px - 40px */
+  --size: clamp(2.5rem, 0.929rem + 3.274vw, 3.875rem);
+
   --color-purple: #433c8c;
   --color-green: #29a55c;
   --color-gray: #aab2c9;
 
-  --font-family: "Montserrat", sans-serif;
+  --font-family: var(--font-montserrat), sans-serif;
   --second-family: var(--font-bebas-neue), sans-serif;
   --third-family: "Sriracha Cyrillic", sans-serif;
 
@@ -41,16 +44,35 @@
   /* Переменные для плагина */
   --light-yellow: #F7F3D6;
   --light-green: #3B2716;
+  --black: #191830;
+  --black-toggle: #191830;
+  --dark-blue: #282646;
+  --white: #FFFFFF;
+  --gray: #EBEEF8;
+  --dark-gray: #e4e8f5;
+  --light-blue: #37A4DA;
+  --yellow: #FCCC05;
+  --green: #29A55C;
+  --violet: #433C8C;
+  --purple: #7B1FA2;
+  --orange: #FFB236;
+  --slate-gray: #757f99;
+  --violet-gradient: linear(from(#433C8C) to (#625AB6));
+  --purple-gradient: linear(from(#7B1FA2) to (#A340CD));
+
+  /* Переменные для плагина */
+  --light-yellow: #F7F3D6;
+  --light-green: #3B2716;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #171717;
     --default-color: #ededed;
     --link-color: #ededed;
     --black-toggle: #f2f2f2;
   }
-}
+} */
 
 html,
 body {
@@ -215,7 +237,8 @@ ul {
 .title {
   font-family: var(--font-bebas-neue);
   font-weight: 700;
-  font-size: clamp(2.5em, -1.071em + 7.44vi, 5.625em);
+  /* font-size: clamp(2.5em, -1.071em + 7.44vi, 5.625em); */
+  font-size: var(--size);
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--black-toggle);
@@ -250,12 +273,13 @@ ul {
 .gray_filter {
   filter: grayscale(100%);
 }
+
 .toggle_background_image {
   background-image: none !important;
 }
 
 
-.shadows_nav button{
+.shadows_nav button {
   box-shadow: 5px 5px 15px 0 #bfc5db;
 }
 

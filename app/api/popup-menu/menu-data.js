@@ -1,4 +1,67 @@
 export const popupMenuData = [
+
+    {
+        title: "Сведения об образовательной организации",
+        link: "#",
+        submenu: [
+            {
+                title: "Информация",
+                link: "/info",
+            },
+            {
+                title: "Основные сведения",
+                link: "/info/osnovnue_svedenya",
+            },
+            {
+                title: "Образование",
+                link: "/info/education",
+            },
+            {
+                title: "Документы",
+                link: "/info/documents",
+            },
+            {
+                title: "Руководство",
+                link: "/info/management",
+            },
+            {
+                title: "Педагогический состав",
+                link: "/info/sostav",
+            },
+            {
+                title: "Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.",
+                link: "/info/dostupnaya_sreda",
+            },
+            {
+                title: "Платные образовательные услуги",
+                link: "/info/services",
+            },
+            {
+                title: "Финансово-хозяйственная деятельность",
+                link: "/info/activities",
+            },
+            {
+                title: "Вакантные места для приёма (перевода) обучающихся",
+                link: "/info/vacancies",
+            },
+            {
+                title: "Стипендия и меры поддержки обучающихся",
+                link: "/info/grands",
+            },
+            {
+                title: "Международное сотрудничество",
+                link: "/info/international_cooperation",
+            },
+            {
+                title: "Организация питания в образовательной организации",
+                link: "/info/nutrition",
+            },
+            {
+                title: "Образовательные стандарты и требования",
+                link: "/info/standarts",
+            },
+        ],
+    },
     {
         title: "Информационная безопасность",
         link: "/info-security",

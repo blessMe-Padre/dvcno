@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./style.module.css";
@@ -6,7 +7,6 @@ import getPopupMenu from '../../utils/getPopupMenu';
 import Link from "next/link";
 
 export default function PopupMenu({ opened, setOpened }) {
-
     const [menuPopupData, setMenuPopupData] = useState([]);
 
     useEffect(() => {
@@ -14,7 +14,6 @@ export default function PopupMenu({ opened, setOpened }) {
             const popupMenu = await getPopupMenu();
             setMenuPopupData(popupMenu);
         };
-
         fetchData();
     }, []);
 
@@ -28,6 +27,18 @@ export default function PopupMenu({ opened, setOpened }) {
                             href={item.link}>
                             {item.title}
                         </Link>
+
+                        {item.submenu && item.submenu.length > 0 && (
+                            <ul className={styles.sublist}>
+                                {item.submenu.map((subItem, index) => (
+                                    <li className={styles.sublist_item} key={index}>
+                                        <Link className={styles.sub_link} href={subItem.link}>
+                                            {subItem.title}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </li>
                 ))}
             </ul>

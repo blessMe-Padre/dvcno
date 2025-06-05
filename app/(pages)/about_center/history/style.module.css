@@ -11,7 +11,7 @@
     width: 100%;
     font-family: var(--font-bebas-neue);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
+    font-size: var(--size);
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--black-toggle);
@@ -40,7 +40,7 @@ section.list {
     position: relative;
     padding: 30px 0;
     margin-bottom: 0;
-    font-family: "Palatino"; 
+    font-family: "Palatino";
 }
 
 section.list::before {
@@ -59,6 +59,7 @@ section.list::before {
     .list {
         height: 78.6%;
     }
+
     .circle_last {
         left: 46.6%;
     }

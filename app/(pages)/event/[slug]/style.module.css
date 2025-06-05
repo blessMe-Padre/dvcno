@@ -10,7 +10,7 @@
 .title {
     font-family: var(--font-bebas-neue);
     font-weight: 700;
-    font-size: clamp(1.875em, -0.268em + 4.464vw, 3.75em);
+    font-size: var(--size);
     line-height: 1.1;
     color: var(--black-toggle);
     margin-bottom: 40px;

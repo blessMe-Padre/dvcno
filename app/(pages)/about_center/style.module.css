@@ -1,6 +1,7 @@
 .section {
     position: relative;
 }
+
 .section_do {
     padding: 60px 0;
 }
@@ -8,7 +9,7 @@
 .title {
     font-family: var(--font-bebas-neue);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
+    font-size: var(--size);
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--black-toggle);
@@ -312,21 +313,27 @@
     .info {
         padding: 20px 30px;
     }
+
     .img_big {
         display: none;
     }
+
     .wrapper_links {
         flex-direction: column;
     }
+
     .img_small {
         display: block;
     }
+
     .do_list {
         columns: 1;
     }
+
     .strategy_list {
         grid-template-columns: repeat(1, 1fr);
     }
+
     .strategy_item {
         padding: 20px;
 

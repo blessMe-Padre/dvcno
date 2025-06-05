@@ -1,7 +1,7 @@
 .title {
     font-family: var(--font-bebas-neue);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
+    font-size: var(--size);
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--black-toggle);
@@ -110,19 +110,22 @@
         grid-template-columns: repeat(1, fr);
         gap: 20px;
     }
+
     .bg_violet {
         background-image: url('/processing-of-personal-data/bg_school_m.png');
-    }      
+    }
 }
 
 @media (max-width: 480px) {
     .lessons_school {
         padding: 30px 20px;
     }
+
     .document_list {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
     .bg_violet {
         background-image: url('/processing-of-personal-data/bg_school_s.png');
     }

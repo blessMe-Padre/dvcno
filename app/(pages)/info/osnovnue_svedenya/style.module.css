@@ -2,7 +2,7 @@
     padding-bottom: 60px;
 }
 
-.section + .section {
+.section+.section {
     padding: 60px 0;
 }
 
@@ -10,7 +10,7 @@
 .title {
     font-family: var(--font-bebas-neue);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
+    font-size: var(--size);
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--black-toggle);
@@ -59,7 +59,7 @@
     color: var(--black);
     background-color: var(--white);
     padding: 20px 30px;
-    
+
     border-radius: 20px;
 
     max-width: 680px;
@@ -74,7 +74,7 @@
     background-image: url(../../../../public/info/svedenya/bank_info_b.png);
     background-repeat: no-repeat;
     background-size: contain;
-    
+
     padding: 60px;
 
     min-height: 500px;
@@ -82,7 +82,7 @@
 }
 
 .bank_info_text {
-    font-size: clamp(0.875em, 0.125vw + 0.85em, 1em);    
+    font-size: clamp(0.875em, 0.125vw + 0.85em, 1em);
     line-height: 130%;
     color: var(--white);
 }
@@ -112,6 +112,7 @@
     border-radius: 20px;
     margin-bottom: 20px;
 }
+
 .svedenya_info {
     margin-bottom: 20px;
 }
@@ -184,6 +185,7 @@
     .documents_wrapper {
         flex-direction: column;
     }
+
     .list_svedenya_four {
         display: grid;
         grid-template-columns: repeat(1, fr);
@@ -208,9 +210,9 @@
 
     background-color: var(--white);
     color: var(--black);
-    
+
     border-radius: 20px;
-    
+
     padding: 15px;
 }
 
@@ -241,17 +243,20 @@
     .list_svedenya {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .bank_info_list {
         padding: 15px 0;
     }
+
     .bank_name {
         max-width: 500px;
     }
+
     .bank_info {
         padding: 30px;
         position: relative;
         background-image: url(../../../../public/info/svedenya/bank_info_m.png);
-    }   
+    }
 }
 
 
@@ -259,17 +264,19 @@
     .list_svedenya {
         grid-template-columns: repeat(1, 1fr);
     }
+
     .svedenya_item {
         max-height: 330px;
         padding: 40px 30px;
     }
+
     .bank_info {
         padding: 15px 0;
         background-image: url(../../../../public/info/svedenya/bank_info_s.png);
         background-size: contain;
         height: 100vh;
     }
-    
+
     .bank_info li {
         margin-top: 20px;
     }

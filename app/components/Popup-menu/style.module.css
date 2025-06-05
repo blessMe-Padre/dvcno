@@ -31,10 +31,17 @@
     cursor: pointer;
 }
 
-
 .active {
     opacity: 1;
     visibility: visible;
+}
+
+.sublist {
+    padding-left: 20px;
+}
+
+.sublist_item {
+    padding: 5px 0;
 }
 
 @media (max-width: 700px) {

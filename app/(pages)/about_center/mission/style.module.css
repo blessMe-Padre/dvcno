@@ -9,7 +9,7 @@
 .title {
     font-family: var(--font-bebas-neue);
     font-weight: 700;
-    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
+    font-size: var(--size);
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--black-toggle);
@@ -70,7 +70,7 @@
 }
 
 .text {
-    color:var(--white);
+    color: var(--white);
     margin-top: 20px;
     font-size: clamp(0.875em, 0.313vw + 0.875em, 1.25em);
     line-height: 130%;
@@ -148,60 +148,71 @@
     .missionBg3 {
         display: block;
     }
+
     .info {
         flex-direction: column;
     }
+
     .bg2 {
         position: relative;
         right: 0;
     }
+
     .wrapper {
         background-image: url(../../../../public/about_center/mission-bg-2-medium.png);
         padding: 30px 30px;
     }
-     .bg2_img {
+
+    .bg2_img {
         display: none;
     }
+
     .icon {
         display: none;
     }
+
     .decor {
         top: 38px;
         left: 0px;
     }
+
     .add_list {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    
+
 }
 
 @media screen and (max-width: 480px) {
     .section:nth-child(2) {
         padding: 30px 0;
     }
+
     .bg2 {
         position: relative;
         top: -84px;
         right: 0;
     }
 
-      
+
     .missionBg3 {
         display: none;
     }
-   
+
     .info {
         flex-direction: column;
     }
+
     .bg3_img {
         display: block;
     }
+
     .wrapper {
         background-image: url(../../../../public/about_center/mission-bg-small.png);
         padding: 30px 30px;
         border-radius: 30px;
     }
+
     .decor {
         position: relative;
         top: 0;
@@ -209,24 +220,29 @@
         left: auto;
         width: 300px;
     }
+
     .icon {
-       display: none;
+        display: none;
     }
-    .icon1 { 
+
+    .icon1 {
         display: block;
         position: absolute;
         top: 200px;
     }
+
     .title {
         margin-bottom: 0px;
     }
 
-     .add_list {
+    .add_list {
         grid-template-columns: repeat(1, 1fr);
     }
+
     .item {
         min-height: auto;
     }
+
     .item_content {
         flex-direction: row;
         align-items: center;
