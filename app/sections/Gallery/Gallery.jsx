@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
 import styles from "./style.module.css";
-import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
@@ -9,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { SwiperNavButtons } from "../../components";
-import Link from "next/link";
 
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
@@ -19,7 +17,6 @@ import getGallery from '@/app/utils/getGallery';
 
 function Gallery() {
     const [data, setData] = useState();
-    const { getTranslation } = useTranslationsStore();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -44,13 +41,11 @@ function Gallery() {
         };
     }, []);
 
-    const sectionTitle = getTranslation('gallery', TRANSLATION_SECTIONS.HEADERS);
-
     return (
         <section className={styles.section}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    <h2 className={styles.title}>{sectionTitle}</h2>
+                    <h2 className={styles.title}>галерея</h2>
                     <div className='pswp-gallery' id='main-gallery'>
                         {data && data.length > 0 ? (
                             <Swiper

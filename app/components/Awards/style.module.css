@@ -16,7 +16,7 @@
 .awards_title {
     font-family: var(--font-bebas-neue), sans-serif;
     font-weight: 700;
-    font-size: clamp(2.25em, 1.286em + 4.821vw, 5.625em);
+    font-size: var(--size);
     text-transform: uppercase;
     line-height: 130%;
     color: var(--black);

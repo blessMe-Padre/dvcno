@@ -14,21 +14,20 @@ export default function Home() {
     <>
 
       <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
-
-      {/* <Slider /> */}
+      <Slider />
       <div className="container">
-        {/* <About /> */}
+        <About />
       </div>
 
       <div className="gray-wrapper">
-        {/* <Why /> */}
-        {/* <Awards /> */}
+        <Why />
+        <Awards />
       </div>
       <Events />
-      {/* <News /> */}
-      {/* <Gallery /> */}
-      {/* <Contacts /> */}
-      {/* <Partners /> */}
+      <News />
+      <Gallery />
+      <Contacts />
+      <Partners />
     </>
   );
 }

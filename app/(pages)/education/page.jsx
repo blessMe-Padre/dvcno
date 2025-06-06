@@ -1,34 +1,16 @@
 import Card from "@/app/components/Cards/Card/Card";
 import styles from "./style.module.css";
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
+import fetchApiData from "@/app/utils/fetchApiData";
+
 
 export const metadata = {
     title: "ДВЦНО | Обучение",
     description: "Дальневосточный центр непрерывного образования",
 };
 
-const fetchData = async () => {
-    // Проверяем, выполняется ли код на сервере
-    if (typeof window === 'undefined') {
-        // Возвращаем заглушку для серверного рендеринга
-        return [];
-    }
-
-    try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_URL_FRONT}/api/education/`);
-        if (!res.ok) {
-            throw new Error(`Ошибка HTTP: ${res.status}`);
-        }
-        const result = await res.json();
-        return result;
-    } catch (error) {
-        console.error("Ошибка при загрузке:", error);
-        return [];
-    }
-};
-
 export default async function Page() {
-    const data = await fetchData();
+    const data = await fetchApiData('education');
     return (
         <div className="container">
             <Breadcrumbs title={"Обучение"} />

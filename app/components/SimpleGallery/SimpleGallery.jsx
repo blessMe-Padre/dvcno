@@ -12,9 +12,9 @@ import { SwiperNavButtons } from '../../components';
 import { Navigation } from 'swiper/modules'
 
 import 'swiper/css';
+import Image from 'next/image';
 
 export default function SimpleGallery(props) {
-
 
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({
@@ -69,8 +69,16 @@ export default function SimpleGallery(props) {
                   </svg>
 
                 </div>
+                <div className={styles.image_wrapper}>
+                  <Image
+                    src={image.thumbnailURL}
+                    width={337}
+                    height={450}
+                    alt="image"
+                    loading='lazy'
+                  />
+                </div>
 
-                <img src={image.thumbnailURL} alt="" />
               </a>
             </SwiperSlide>
           ))}

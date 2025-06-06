@@ -15,6 +15,11 @@
     scale: 0.95
 }
 
+.image_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .div_img_shadow {
     position: absolute;

@@ -35,7 +35,7 @@ export default function Cookies() {
 
     return (
         <div className={`${styles.popup} ${open ? styles.popup_active : ''}`}>
-            <span>Мы используем куки</span>
+            <span style={{ color: '#191830' }}>Мы используем куки</span>
 
             <button
                 className={styles.button}

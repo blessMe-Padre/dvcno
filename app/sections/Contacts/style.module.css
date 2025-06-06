@@ -15,12 +15,10 @@
     border: none;
     border-radius: 20px;
     padding: 14px 20px;
-
     font-weight: 600;
     transition: all 0.6s ease-in-out;
-
     min-width: 170px;
-
+    cursor: pointer;
 }
 
 .active {
@@ -47,7 +45,7 @@
 .map_wrapper {
     display: grid;
     grid-template-columns: 3fr 6fr;
-    grid-gap: 10px; 
+    grid-gap: 10px;
 }
 
 
@@ -61,10 +59,10 @@
 .map_content::before {
     content: '';
     position: absolute;
-    top: 0px;
-    right: -100px;
-    width: 245px;
-    height: 100%;
+    top: 32px;
+    right: -127px;
+    width: 200px;
+    height: 200px;
     background-image: url('../../../public/decor/contact-dekor.svg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -83,7 +81,7 @@
 }
 
 
-.info > p {
+.info>p {
     font-weight: 600;
 }
 
@@ -97,6 +95,7 @@
     .tabs_wrapper {
         flex-wrap: wrap;
     }
+
     .map_wrapper {
         grid-template-columns: repeat(1, 1fr);
     }

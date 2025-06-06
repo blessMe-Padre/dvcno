@@ -2,6 +2,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    min-height: 70vh;
     max-height: 700px;
     border-radius: 16px;
 }
@@ -128,6 +129,19 @@
     .slider__list {
         max-width: 100%;
     }
+}
+
+.loading {
+    width: 100%;
+    min-height: 75vh;
+    background-color: var(--gray);
+    color: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--size);
+
 }
 
 @media screen and (max-width: 480px) {}

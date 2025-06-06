@@ -4,18 +4,12 @@ import "swiper/css";
 import styles from "./style.module.css";
 import "swiper/css/navigation";
 import SimpleGallery from "../SimpleGallery/SimpleGallery";
-
-import useTranslationsStore, {
-  TRANSLATION_SECTIONS,
-} from "@/app/store/translationsStore";
 import getAwards from "@/app/utils/getAwards";
 
 import { useEffect, useState } from "react";
 
 export default function Awards() {
   const [data, setData] = useState();
-  const { getTranslation } = useTranslationsStore();
-  const sectionTitle = getTranslation('dvcno_awards', TRANSLATION_SECTIONS.HEADERS);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,7 +26,7 @@ export default function Awards() {
         <div className={styles.awards_inner}>
           <div className={styles.awards_wrapper}>
             <div className={styles.awards_title_wrapper}>
-              <h2 className={styles.awards_title}>{sectionTitle}</h2>
+              <h2 className={styles.awards_title}>награды ДВЦНО</h2>
               <svg
                 width="82"
                 height="85"

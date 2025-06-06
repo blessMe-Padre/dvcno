@@ -2,14 +2,9 @@
 import styles from './style.module.css';
 import { useState, useEffect } from 'react';
 import { TabContent, SocialIcon } from '../../components';
-import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
 
 const Contacts = () => {
-
     const [active, setActive] = useState(0);
-    const { getTranslation } = useTranslationsStore();
-    const sectionTitle = getTranslation('contacts', TRANSLATION_SECTIONS.HEADERS);
-
     const openTab = e => setActive(+e.target.dataset.index);
 
     const items = [
@@ -23,7 +18,6 @@ const Contacts = () => {
         { title: 'АК', content: '6', link: '' },
         { title: 'ФОК «Лига спорта»', content: '7', link: '' }
     ];
-
 
     return (
         <section className={styles.section}>
@@ -41,9 +35,7 @@ const Contacts = () => {
 
                 <div className={styles.map_wrapper}>
                     <div className={styles.map_content}>
-                        <h2 className={styles.title}>
-                            {sectionTitle}
-                        </h2>
+                        <h2 className={styles.title}>Контакты</h2>
 
                         <div className={styles.info}>
                             <p>Адрес</p>

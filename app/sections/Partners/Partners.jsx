@@ -3,9 +3,6 @@
 import getPartners from '@/app/utils/getPartners';
 import styles from './style.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import useTranslationsStore, {
-  TRANSLATION_SECTIONS,
-} from '@/app/store/translationsStore';
 import { useState, useEffect } from 'react';
 
 import { SwiperNavButtons } from '../../components';
@@ -17,7 +14,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const Partners = () => {
-  const { getTranslation } = useTranslationsStore();
   const [partners, setPartners] = useState([]);
 
   useEffect(() => {
@@ -28,14 +24,12 @@ const Partners = () => {
     fetchPartners();
   }, []);
 
-  const sectionTitle = getTranslation('partners', TRANSLATION_SECTIONS.HEADERS);
-
   return (
     <section className={styles.section}>
       <div className='container'>
         <div className={`${styles.wrapper}`}>
           <div className='relative'>
-            <h2 className={styles.title}>{sectionTitle}</h2>
+            <h2 className={styles.title}>контакты</h2>
 
             <Swiper
               spaceBetween={30}
