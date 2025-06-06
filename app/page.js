@@ -1,7 +1,8 @@
 import styles from "./page.module.css";
-
 import { Awards, SlideMain } from "./components";
 import { Slider, About, Events, News, Partners, Why, Gallery, Contacts } from "./sections";
+
+
 
 export const metadata = {
   title: "ДВЦНО | Главная",
@@ -14,20 +15,21 @@ export default function Home() {
     <>
 
       <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
-      <Slider />
+
+      {/* <Slider /> */}
       <div className="container">
-        <About />
+        {/* <About /> */}
       </div>
 
       <div className="gray-wrapper">
-        <Why />
-        <Awards />
+        {/* <Why /> */}
+        {/* <Awards /> */}
       </div>
       <Events />
-      <News />
-      <Gallery />
-      <Contacts />
-      <Partners />
+      {/* <News /> */}
+      {/* <Gallery /> */}
+      {/* <Contacts /> */}
+      {/* <Partners /> */}
     </>
   );
 }

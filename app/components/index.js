@@ -26,3 +26,4 @@ export { default as Accordion } from './Accordion/Accordion';
 export { default as ComponentMap } from './Map/Map';
 export { default as ContactsList } from './ContactsList/ContactsList';
 export { default as Cookies } from './Cookies/Cookies';
+export { default as ClientLangInitializer } from './ClientLangInitializer/ClientLangInitializer';

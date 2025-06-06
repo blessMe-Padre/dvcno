@@ -2,7 +2,7 @@
 
 import styles from "./style.module.css";
 import Link from "next/link";
-import useTranslationsStore from '@/app/store/translationsStore';
+import useLangStore from '@/app/store/languageStore';
 
 const HOME_TRANSLATIONS = {
     ru: 'Главная',
@@ -11,12 +11,12 @@ const HOME_TRANSLATIONS = {
 };
 
 export default function Breadcrumbs({ slug, link, title }) {
-    const { currentLang } = useTranslationsStore();
+    const { lang } = useLangStore();
 
     return (
         <nav className={styles.nav}>
             <Link href="/">
-                {HOME_TRANSLATIONS[currentLang] || HOME_TRANSLATIONS.ru}
+                {HOME_TRANSLATIONS[lang] || HOME_TRANSLATIONS.ru}
             </Link>
             <span className={styles.separator}></span>
             {slug && (

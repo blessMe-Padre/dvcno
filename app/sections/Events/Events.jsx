@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
 import styles from "./style.module.css";
-import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
+import useLangStore from '@/app/store/languageStore';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
@@ -14,8 +14,8 @@ import getEvents from "@/app/utils/getEvents";
 import Link from "next/link";
 
 export default function Events() {
+    const { lang } = useLangStore();
     const [events, setEvents] = useState();
-    const { getTranslation } = useTranslationsStore();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,13 +26,11 @@ export default function Events() {
         fetchData();
     }, []);
 
-    const sectionTitle = getTranslation('events', TRANSLATION_SECTIONS.HEADERS);
-
     return (
         <section className={styles.section}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    <h2 className={styles.title}>{sectionTitle}</h2>
+                    <h2 className={styles.title}>События</h2>
                     <Swiper
                         spaceBetween={20}
                         slidesPerView={2}
@@ -49,13 +47,14 @@ export default function Events() {
                         className="swiper-mobile"
                     >
                         {events && events.length > 0 ? (
+
                             events.map((item) => (
                                 <SwiperSlide key={item.id}>
                                     <Link href={`/event/${item.slug}`}>
                                         <EventCard
-                                            title={item.title}
+                                            title={item?.title?.[lang]}
                                             key={item.aid}
-                                            description={item.description}
+                                            description={item.description?.[lang]}
                                             thumbnail={item.thumbnail}
                                             date={item.date_event.day_d}
                                             month={item.date_event.month_F[1]}

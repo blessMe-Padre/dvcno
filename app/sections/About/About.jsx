@@ -4,7 +4,6 @@ import Image from "next/image";
 import styles from "./style.module.css";
 import Card from "./../../components/Cards/Card/Card";
 import getEduPages from '../../utils/getEduPages';
-import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
@@ -15,7 +14,6 @@ import 'swiper/css/navigation';
 export default function About() {
     const [data, setData] = useState([]);
     const [isMobile, setIsMobile] = useState(false);
-    const { getTranslation } = useTranslationsStore();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,13 +25,10 @@ export default function About() {
         setIsMobile(window.innerWidth < 560);
     }, []);
 
-    // Получаем заголовок из переводов
-    const sectionTitle = getTranslation('dvcno_is', TRANSLATION_SECTIONS.HEADERS);
-
     return (
         <section className={styles.section}>
             <div className={styles.title_wrapper}>
-                <h2 className={styles.title}>{sectionTitle}</h2>
+                <h2 className={styles.title}>О нас</h2>
                 <div className={styles.image_wrapper}>
                     <Image
                         alt="декор"

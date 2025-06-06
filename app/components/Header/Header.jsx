@@ -18,6 +18,9 @@ import PopupBtn from "../Popup-btn/PopupBtn";
 import Search from "../Search/Search";
 import { motion } from "framer-motion";
 
+
+import useLangStore from '@/app/store/languageStore';
+
 export default function Header() {
   const [panel, setPanel] = useState(false);
   const [panelBtn, setPanelBtn] = useState(true);
@@ -26,6 +29,11 @@ export default function Header() {
   const [popupActive, setPopupActive] = useState(false);
   const menuRef = useRef(null);
 
+  const { fetchDictionary, dictionary, lang } = useLangStore();
+
+  useEffect(() => {
+    fetchDictionary();
+  }, [lang]);
 
   // закрываем меню при клике вне попапа
   useEffect(() => {
@@ -121,6 +129,7 @@ export default function Header() {
               setOpened(!opened);
             }}
             opened={opened}
+            text={dictionary?.menu?.[lang]}
           />
           <div>
             <PopupMenu opened={opened} setOpened={setOpened} />
@@ -133,12 +142,12 @@ export default function Header() {
             className={styles.modal_button}
             onClick={() => setPopupActive(true)}
           >
-            Задать вопрос
+            {dictionary?.ask_question?.[lang]}
           </button>
 
           <button
             className={styles.search_button}
-            onClick={() => setSearchOpened(!searchOpened)}
+          // onClick={() => setSearchOpened(!searchOpened)}
           >
             {!searchOpened ? (
               <Image

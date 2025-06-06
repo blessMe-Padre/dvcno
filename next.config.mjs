@@ -1,12 +1,3 @@
-// import createNextIntlPlugin from 'next-intl/plugin';
-
-// const withNextIntl = createNextIntlPlugin('./app/i18n/request.js');
-
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {};
-
-// export default withNextIntl(nextConfig);
-
 const nextConfig = {
     images: {
         remotePatterns: [
@@ -27,6 +18,8 @@ const nextConfig = {
             }
         ],
     },
+
+    matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'], // применять middleware ко всем путям
 };
 
 export default nextConfig;

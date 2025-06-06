@@ -1,7 +1,7 @@
-import { cookies } from 'next/headers'
+import { cookies } from 'next/headers';
 import "./globals.css";
 import { Montserrat } from 'next/font/google';
-import { Footer, Header } from "./components";
+import { ClientLangInitializer, Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
 
@@ -26,12 +26,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const cookieStore = cookies();
+  console.log(cookieStore)
   const lang = cookieStore.get('language')?.value || 'ru';
 
   return (
     <html lang={lang}>
       <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
-        <StoreInitializer lang={lang}>
+        <ClientLangInitializer>
           <div className="container">
             <Header />
             <main>
@@ -39,7 +40,7 @@ export default function RootLayout({ children }) {
             </main>
             <Footer />
           </div>
-        </StoreInitializer>
+        </ClientLangInitializer>
       </body>
     </html>
   );

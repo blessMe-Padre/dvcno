@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import styles from "./language.module.css";
-import useTranslationsStore from '@/app/store/translationsStore';
 import useLangStore from '@/app/store/languageStore';
 import { useRouter } from 'next/navigation';
 
@@ -16,6 +15,7 @@ const AVAILABLE_LANGUAGES = ['ru', 'en'];
 
 export default function Language() {
     const { lang, setLang } = useLangStore();
+    console.log(lang);
 
     const handleChange = (evt) => {
         const newLang = evt.target.value;

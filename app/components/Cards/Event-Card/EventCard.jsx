@@ -14,6 +14,8 @@ export default function EventCard(
         minute
     }
 ) {
+    const domain = process.env.NEXT_PUBLIC_API_SERVER;
+    const sanitizedContent = description || '';
 
     return (
         <div className={`${styles.card} anim_hover_card`}>
@@ -31,7 +33,7 @@ export default function EventCard(
 
             <div className={styles.image_wrapper}>
                 <Image
-                    src={thumbnail ? thumbnail : '/placeholder/placeholder.png'}
+                    src={thumbnail ? domain + thumbnail : '/placeholder/placeholder.png'}
                     alt="Фото мероприятия"
                     width={605}
                     height={300}
@@ -41,7 +43,9 @@ export default function EventCard(
 
             <div className={styles.footer}>
                 <h3 className={styles.title}>{title}</h3>
-                <p className={styles.description}>{description}</p>
+                <div className={styles.description}
+                    dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+                />
             </div>
         </div>
     )
