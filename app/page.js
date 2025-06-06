@@ -3,7 +3,6 @@ import { Awards, SlideMain } from "./components";
 import { Slider, About, Events, News, Partners, Why, Gallery, Contacts } from "./sections";
 
 
-
 export const metadata = {
   title: "ДВЦНО | Главная",
   description: "Дальневосточный центр непрерывного образования",

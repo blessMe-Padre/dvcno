@@ -86,6 +86,7 @@ export default function Header() {
               width={86}
               height={86}
               className={styles.header_logo}
+              priority={true}
             />
           </Link>
           <p className={styles.p}>

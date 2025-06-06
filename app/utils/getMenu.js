@@ -1,10 +1,8 @@
-import { getApiUrl, isDevelopment } from './environment';
-
 const getMenu = async () => {
   try {
     // const apiUrl = getApiUrl();
-    const apiUrl = process.env.NEXT_PUBLIC_API_DOMAIN;
-    const res = await fetch(`${apiUrl}/api/menu`, {
+    const apiUrl = process.env.NEXT_PUBLIC_API_SERVER;
+    const res = await fetch(`${apiUrl}/api/v1/menus/`, {
       next: { revalidate: 10 },
     });
     if (!res.ok) {

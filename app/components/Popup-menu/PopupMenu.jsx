@@ -4,17 +4,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./style.module.css";
 
-import getPopupMenu from '../../utils/getPopupMenu';
+import getMenu from '../../utils/getMenu';
 import Link from "next/link";
 
+import useLangStore from '@/app/store/languageStore';
+
 export default function PopupMenu({ opened, setOpened }) {
+    const { lang } = useLangStore();
     const [menuPopupData, setMenuPopupData] = useState([]);
     const [openSubmenus, setOpenSubmenus] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
-            const popupMenu = await getPopupMenu();
-            setMenuPopupData(popupMenu);
+            const menu = await getMenu();
+            const popupMenu = menu.data.find(item => item?.alias === 'menu_popup');
+            setMenuPopupData(popupMenu?.items);
         };
         fetchData();
     }, []);
@@ -59,7 +63,7 @@ export default function PopupMenu({ opened, setOpened }) {
                                         toggleSubmenu(index);
                                     }}
                                 >
-                                    {item.title}
+                                    {item?.title?.[lang]}
                                     <svg
                                         className={`${styles.svg} ${isOpen ? styles.up : ''} `}
                                         width="12"
@@ -72,7 +76,7 @@ export default function PopupMenu({ opened, setOpened }) {
                                     onClick={() => setOpened(false)}
                                     className={styles.link}
                                 >
-                                    {item.title}
+                                    {item?.title?.[lang]}
                                 </Link>
                             )}
 
@@ -87,22 +91,23 @@ export default function PopupMenu({ opened, setOpened }) {
 
 
                                     {item.submenu.map((subItem, subIndex) => (
-                                        <li key={subIndex} className={styles.sublist_item}>
+                                        < li key={subIndex} className={styles.sublist_item} >
                                             <Link
                                                 href={subItem.link}
                                                 className={styles.sub_link}
                                                 onClick={() => setOpened(false)}
                                             >
-                                                {subItem.title}
+                                                {subItem?.title?.[lang]}
                                             </Link>
                                         </li>
                                     ))}
                                 </motion.ul>
-                            )}
+                            )
+                            }
                         </li>
                     );
                 })}
             </ul>
-        </div>
+        </div >
     )
 }

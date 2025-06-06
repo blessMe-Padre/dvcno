@@ -3,23 +3,22 @@ import Image from "next/image"
 import styles from './style.module.css';
 import { Cookies, Popup, SocialIcon } from "..";
 
-import getFooterMenu from '../../utils/getFooterMenu';
-
+import getMenu from '../../utils/getMenu';
 import Link from "next/link";
-
 import { useEffect, useState } from 'react';
+import useLangStore from '@/app/store/languageStore';
 
 
 const Footer = () => {
-
+    const { lang } = useLangStore();
     const [popupActive, setPopupActive] = useState(false);
-
     const [menu, setMenu] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getFooterMenu();
-            setMenu(data);
+            const menu = await getMenu();
+            const footerMenu = menu.data.find(item => item?.alias === 'menu_footer');
+            setMenu(footerMenu?.items);
         };
 
         fetchData();
@@ -72,7 +71,7 @@ const Footer = () => {
                         {menu?.map((item, key) => (
                             <li key={key}>
                                 <Link href={item.link}>
-                                    {item.title}
+                                    {item?.title?.[lang]}
                                 </Link>
                             </li>
                         ))}

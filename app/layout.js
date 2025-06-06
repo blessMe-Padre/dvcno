@@ -26,7 +26,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const cookieStore = cookies();
-  console.log(cookieStore)
   const lang = cookieStore.get('language')?.value || 'ru';
 
   return (

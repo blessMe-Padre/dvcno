@@ -4,14 +4,17 @@ import Image from "next/image";
 
 import styles from "./style.module.css";
 import getMenu from "../../utils/getMenu";
+import useLangStore from '@/app/store/languageStore';
 
 export default function Menu() {
   const [menuData, setMenuData] = useState([]);
+  const { lang } = useLangStore();
 
   useEffect(() => {
     const fetchData = async () => {
       const menu = await getMenu();
-      setMenuData(menu);
+      const headerMenu = menu.data.find(item => item?.alias === 'menu_header');
+      setMenuData(headerMenu?.items);
     };
 
     fetchData();
@@ -22,7 +25,7 @@ export default function Menu() {
       {menuData?.map((item, index) => (
         <li key={index} className={styles.menuTitle}>
           <Link className={styles.link} href={item.link}>
-            <span>{item.title}</span>
+            <span>{item?.title?.[lang]}</span>
 
             {item.submenu && item.submenu.length > 0 && (
               <svg
@@ -42,7 +45,7 @@ export default function Menu() {
               {item.submenu.map((subItem, index) => (
                 <li className={styles.sublist_item} key={index}>
                   <Link className={styles.sub_link} href={subItem.link}>
-                    {subItem.title}
+                    {subItem.title?.[lang]}
                   </Link>
                 </li>
               ))}

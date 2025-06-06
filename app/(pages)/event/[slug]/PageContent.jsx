@@ -65,6 +65,7 @@ const PageContent = ({ page }) => {
                     width={1460}
                     height={723}
                     className={styles.image}
+                    priority={true}
                 />
             </div>
 
