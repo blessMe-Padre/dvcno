@@ -36,7 +36,7 @@ export default function Slider() {
         <div className={styles.loading}>
           <div>
             <p>Загрузка</p>
-            <span class="loader"></span>
+            <span className="loader"></span>
           </div>
         </div>
         :
