@@ -30,7 +30,7 @@ const NewsCard = ({ data }) => {
                             <SwiperSlide key={index}>
                                 {image.slide && (
                                     <Image
-                                        src={image.slide ? image.slide : '/placeholder/placeholder.png'}
+                                        src={image.slide ? image.slide : '/placeholder/placeholder.svg'}
                                         width={500}
                                         height={300}
                                         objectFit='contain'
@@ -59,7 +59,7 @@ const NewsCard = ({ data }) => {
 
                     <h2 className={styles.title}>{data.title}</h2>
 
-                    <p className={styles.content} dangerouslySetInnerHTML={{ __html: data.content}}></p>
+                    <p className={styles.content} dangerouslySetInnerHTML={{ __html: data.content }}></p>
 
                     {/* <a href={data.link} target="_blank">Read More</a> */}
                 </div>

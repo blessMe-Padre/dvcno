@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import styles from './style.module.css';
 
-import placeholder from '../../../public/placeholder/placeholder.png';
+import placeholder from '../../../public/placeholder/placeholder.svg';
 
 const SlideMain = ({ item }) => {
     const [sliderBg, setSliderBg] = useState(null);

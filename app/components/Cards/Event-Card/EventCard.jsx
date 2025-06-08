@@ -33,7 +33,7 @@ export default function EventCard(
 
             <div className={styles.image_wrapper}>
                 <Image
-                    src={thumbnail ? domain + thumbnail : '/placeholder/placeholder.png'}
+                    src={thumbnail ? domain + thumbnail : '/placeholder/placeholder.svg'}
                     alt="Фото мероприятия"
                     width={605}
                     height={300}

@@ -60,7 +60,7 @@ export default async function NewsPage({ params }) {
 
       <div className={styles.image_wrapper}>
         <Image
-          src={page.thumbnail ? page.thumbnail : '/placeholder/placeholder.png'}
+          src={page.thumbnail ? page.thumbnail : '/placeholder/placeholder.svg'}
           alt={page.title}
           width={1460}
           height={723}

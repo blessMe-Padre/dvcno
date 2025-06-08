@@ -60,7 +60,7 @@ const PageContent = ({ page }) => {
 
             <div className={styles.image_wrapper}>
                 <Image
-                    src={page.thumbnail ? process.env.NEXT_PUBLIC_API_SERVER + page?.thumbnail : '/placeholder/placeholder.png'}
+                    src={page.thumbnail ? process.env.NEXT_PUBLIC_API_SERVER + page?.thumbnail : '/placeholder/placeholder.svg'}
                     alt={page.title}
                     width={1460}
                     height={723}

@@ -14,7 +14,7 @@ export const metadata = {
 
 
 export default function page() {
-    
+
 
     const data_svedenya = [
         {
@@ -37,13 +37,13 @@ export default function page() {
 
         },
 
-         {
+        {
             'title': 'Юридический, почтовый:',
             'desc': '690014, г. Владивосток, ул. Гоголя, д. 41',
             'img': '/info/svg_4.svg'
 
         },
-         
+
         {
             'title': 'Контакты:',
             'desc': '8 (423) 240-41-91 - дирекция <br>, 8 (423) 240-43-41 - отдел образовательных программ и проектов <br>, dvcno-vl@yandex.ru <br>, Svetlana.Shirshikova@vvsu.ru',
@@ -66,7 +66,7 @@ export default function page() {
             'img': '/info/svg_7.svg'
 
         },
-         
+
         {
             'title': 'Руководитель:',
             'desc': 'Директор - Ширшикова Светлана Валентиновна',
@@ -123,18 +123,18 @@ export default function page() {
 
 
     ]
-    
+
     const bank_info = [
-    {
-        'address': '<span style="font-weight: 600;">690014 </span>, г. Владивосток, ул. Гоголя, д. 41. Тел. 8(423)240-41-91',
-        'bank_inn': '<span style="font-weight: 600;">ИНН </span> 2536144181, ',
-        'bank_kpp': '<span style="font-weight: 600;">КПП </span> 253601001, ',
-        'bank_p_c': '<span style="font-weight: 600;">р/с </span> 40703810800100000021 в ПАО СКБ Приморья',
-        'bank_name': '<span style="font-weight: 600;">«Примсоцбанк» </span>: ',
-        'bank_bik': '<span style="font-weight: 600;">БИК </span> 040507803',
-        'bank_k_c': '<span style="font-weight: 600;"к/с </span> 30101810200000000803',
-        'bank_okpo': '<span style="font-weight: 600;">ОКПО </span> 73243973',
-    },
+        {
+            'address': '<span style="font-weight: 600;">690014 </span>, г. Владивосток, ул. Гоголя, д. 41. Тел. 8(423)240-41-91',
+            'bank_inn': '<span style="font-weight: 600;">ИНН </span> 2536144181, ',
+            'bank_kpp': '<span style="font-weight: 600;">КПП </span> 253601001, ',
+            'bank_p_c': '<span style="font-weight: 600;">р/с </span> 40703810800100000021 в ПАО СКБ Приморья',
+            'bank_name': '<span style="font-weight: 600;">«Примсоцбанк» </span>: ',
+            'bank_bik': '<span style="font-weight: 600;">БИК </span> 040507803',
+            'bank_k_c': '<span style="font-weight: 600;"к/с </span> 30101810200000000803',
+            'bank_okpo': '<span style="font-weight: 600;">ОКПО </span> 73243973',
+        },
     ];
 
     const documents_data = [
@@ -152,7 +152,7 @@ export default function page() {
             'time': 'Срок действия государственной аккредитации - бессрочно.',
             'background_color': 'violet',
             'background_color': 'light-blue',
-            'link' : '/'
+            'link': '/'
         },
     ]
 
@@ -183,10 +183,10 @@ export default function page() {
                             <li className={`${styles.svedenya_item} anim_hover_card`} key={index}>
                                 <p className={styles.svedenya_item_name}>{item.title}</p>
                                 <p className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: item.desc }}></p>
-                                
+
                                 <Image
                                     className={`${styles.decor_svg} dsv-image`}
-                                    src={item.img ? item.img : '/placeholder/placeholder.png'}
+                                    src={item.img ? item.img : '/placeholder/placeholder.svg'}
                                     width={200}
                                     height={80}
                                     alt=''
@@ -199,12 +199,12 @@ export default function page() {
 
 
             <section className={styles.section}>
-                    <div className='container'>
-                        <h2 className={styles.title}>
-                            адреса мест осуществления образовательной деятельности </h2>
-                    
+                <div className='container'>
+                    <h2 className={styles.title}>
+                        адреса мест осуществления образовательной деятельности </h2>
+
                     <ul className={styles.list_svedenya_four}>
-                         {data_address.map((item, index) => (
+                        {data_address.map((item, index) => (
                             <li className={`${styles.svedenya_item} anim_hover_card`} key={index}>
                                 <div className={styles.item_title_wrapper}>
                                     <Image
@@ -214,36 +214,36 @@ export default function page() {
                                         height={90}
                                         alt='decor'
                                     />
-                                     {item.title}
-                                     
+                                    {item.title}
 
-                                     <Image className={styles.decor2_img} src={decor2} width={50} height={50} alt='decor_2' />
+
+                                    <Image className={styles.decor2_img} src={decor2} width={50} height={50} alt='decor_2' />
                                 </div>
-                                 
-                                    <div className={styles.field_wrapper}>
-                                        <p className={styles.field}>Адрес:</p>
-                                        <p className={styles.field_value}>{item.address}</p> 
-                                     </div>
 
-                                    <a
-                                        href={item.link}
-                                        className={styles.link}
-                                        >Посмотреть на карте</a>
-                                        
+                                <div className={styles.field_wrapper}>
+                                    <p className={styles.field}>Адрес:</p>
+                                    <p className={styles.field_value}>{item.address}</p>
+                                </div>
+
+                                <a
+                                    href={item.link}
+                                    className={styles.link}
+                                >Посмотреть на карте</a>
+
                             </li>
                         ))}
                     </ul>
-                    </div>
+                </div>
             </section>
 
-            
+
             <section className={styles.section}>
-                    <div className='container'>
-                        <h2 className={styles.title}>
-                            документы на осуществление образовательной деятельности </h2>
-                        
-                    
-                        <div className={styles.documents_wrapper}>
+                <div className='container'>
+                    <h2 className={styles.title}>
+                        документы на осуществление образовательной деятельности </h2>
+
+
+                    <div className={styles.documents_wrapper}>
                         {documents_data.map((item, index) => (
                             <div
                                 key={index}
@@ -251,11 +251,11 @@ export default function page() {
                             >
                                 <p className={styles.document_name}>
                                     <span>{item.title}</span></p>
-                                
+
                                 <ul className={styles.document_info} >
                                     <li>
                                         <a href={item.link}>
-                                            <p dangerouslySetInnerHTML={{__html: item.desc}}></p>
+                                            <p dangerouslySetInnerHTML={{ __html: item.desc }}></p>
                                         </a>
                                     </li>
 
@@ -264,18 +264,18 @@ export default function page() {
                                     </li>
                                 </ul>
                             </div>
-                                
-                           ))}
-                        </div>
+
+                        ))}
                     </div>
+                </div>
             </section>
 
             <section className={styles.section}>
-                    <div className='container relative'>
-                        <h2 className={styles.title}>
-                            Банковские реквизиты АНПОО «ДВЦНО»
+                <div className='container relative'>
+                    <h2 className={styles.title}>
+                        Банковские реквизиты АНПОО «ДВЦНО»
                     </h2>
-                    
+
                     <Image
                         className={styles.decor3_img}
                         src={decor3}
@@ -283,33 +283,33 @@ export default function page() {
                         height={100}
                         alt=''
                     />
-                    
-                        <div className={styles.bank_info}>
-                            <p className={styles.bank_name}>
-                                Автономная некоммерческая профессиональная образовательная организация «Дальневосточный центр непрерывного образования»
+
+                    <div className={styles.bank_info}>
+                        <p className={styles.bank_name}>
+                            Автономная некоммерческая профессиональная образовательная организация «Дальневосточный центр непрерывного образования»
                         </p>
-                        
-                            <ul className={styles.bank_info_list}>
+
+                        <ul className={styles.bank_info_list}>
                             {bank_info.map((item, index) => (
 
                                 <>
-                                    <li dangerouslySetInnerHTML={{ __html: item.address}}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_inn}}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_kpp}}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_p_c}}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_name}}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_bik}}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_k_c}}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_okpo}}></li>
+                                    <li dangerouslySetInnerHTML={{ __html: item.address }}></li>
+                                    <li dangerouslySetInnerHTML={{ __html: item.bank_inn }}></li>
+                                    <li dangerouslySetInnerHTML={{ __html: item.bank_kpp }}></li>
+                                    <li dangerouslySetInnerHTML={{ __html: item.bank_p_c }}></li>
+                                    <li dangerouslySetInnerHTML={{ __html: item.bank_name }}></li>
+                                    <li dangerouslySetInnerHTML={{ __html: item.bank_bik }}></li>
+                                    <li dangerouslySetInnerHTML={{ __html: item.bank_k_c }}></li>
+                                    <li dangerouslySetInnerHTML={{ __html: item.bank_okpo }}></li>
                                 </>
-                                    
-                                ))}
-                            </ul>
 
-                        </div>
-                    
+                            ))}
+                        </ul>
 
                     </div>
+
+
+                </div>
             </section>
         </>
     )

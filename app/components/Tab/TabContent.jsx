@@ -2,7 +2,7 @@ import styles from './style.module.css'
 
 import Image from 'next/image';
 
-import placeholder from '../../../public/placeholder/placeholder.png'
+import placeholder from '../../../public/placeholder/placeholder.svg'
 
 const TabContent = ({ title, content, link, placeholder }) => (
 
