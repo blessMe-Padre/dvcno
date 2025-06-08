@@ -24,7 +24,6 @@ export default async function NewsPage({ params }) {
     notFound();
   }
 
-
   return (
     <div className='container'>
       <Breadcrumbs title={page.title} />

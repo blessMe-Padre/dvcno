@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
 import styles from './style.module.css';
-import useTranslationsStore, { TRANSLATION_SECTIONS } from '@/app/store/translationsStore';
 
 import bg from '../../../public/news/decor_news.png'
 import Image from 'next/image';
@@ -22,8 +21,6 @@ import Link from 'next/link';
 
 const News = () => {
     const [news, setNews] = useState();
-    const { getTranslation } = useTranslationsStore();
-    const sectionTitle = getTranslation('news', TRANSLATION_SECTIONS.HEADERS);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -46,9 +43,7 @@ const News = () => {
                 <div className='container'>
                     <div className={`${styles.wrapper} `}>
                         <div className='relative'>
-                            <h2 className={styles.title}>
-                                {sectionTitle}
-                            </h2>
+                            <h2 className={styles.title}>Новости</h2>
 
                             <Swiper
                                 modules={[Navigation, Autoplay]}
