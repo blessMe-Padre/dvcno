@@ -108,13 +108,13 @@ const Footer = () => {
 
 
                     <div className={styles.bottom_content}>
-                        <Link href="/">
+                        <Link href="/processing-of-personal-data">
                             Политика конфиденциальности
                         </Link>
 
-                        <Link href="/">
+                        {/* <Link href="/">
                             Пользовательское соглашения
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>
