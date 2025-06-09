@@ -106,7 +106,7 @@ export default function page() {
                 <div className='container'>
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
+                        link={'info'}
                         title={'Образование'}
                     />
 
@@ -164,7 +164,7 @@ export default function page() {
                         {data_programs.map((item, index) => (
                             <li key={index} className={`${styles.item_program} anim_hover_card`}>
                                 <div>
-                                    <Image 
+                                    <Image
                                         className='dsv-image'
                                         src={item.img}
                                         width={280}

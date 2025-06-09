@@ -27,7 +27,7 @@ export default async function Page() {
                 <div className="container">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
+                        link={'info'}
                         title={'Международное сотрудничество.'}
                     />
                     <h2 className={`title ${styles.title}`}>Международное сотрудничество.</h2>

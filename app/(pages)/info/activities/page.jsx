@@ -33,7 +33,7 @@ export default async function Page() {
             'link': '/'
         },
 
-          {
+        {
             'title': 'Финансовый план доходов и расходов АНПОО ДВЦНО 2014 год',
             'link': '/'
         },
@@ -47,7 +47,7 @@ export default async function Page() {
             'title': 'Финансовый план доходов и расходов АНПОО ДВЦНО 2016 год',
             'link': '/'
         },
-        
+
         {
             'title': 'Финансовый план доходов и расходов АНПОО ДВЦНО и выполнение 2019 год',
             'link': '/'
@@ -65,17 +65,17 @@ export default async function Page() {
                 <div className="container">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
+                        link={'info'}
                         title={'Финансово-хозяйственная деятельность.'}
-                        />
-                    
+                    />
+
                     <h2 className={`title ${styles.title}`}>Финансово-хозяйственная деятельность</h2>
 
-                    
+
                     <p className={styles.subtitle}>
                         План финансово-хозяйственной деятельности
                     </p>
-                
+
                     <div>
                         <ul className={styles.document_list}>
                             {data_activities.map((item, index) => (

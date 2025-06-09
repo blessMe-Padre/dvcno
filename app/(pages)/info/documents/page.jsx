@@ -56,7 +56,7 @@ export default function page() {
             'title': 'Сводный отчет самообследование АНПОО ДВЦНО 2022',
             'link': '/'
         },
-        
+
         {
             'title': 'Отчет о самообследовании ДВЦНО_2020',
             'link': '/'
@@ -295,7 +295,7 @@ export default function page() {
         <>
             <section>
                 <div className="container">
-                    <Breadcrumbs title={"Документы"} link={'pages/info'} slug={"Сведения об образовательной организации"} />
+                    <Breadcrumbs title={"Документы"} link={'info'} slug={"Сведения об образовательной организации"} />
                     <div className={styles.title_wrapper}>
                         <h2 className={styles.title}>Документы</h2>
                         <Image
@@ -303,16 +303,16 @@ export default function page() {
                             width={100}
                             height={100}
                             alt=""
-                            />
+                        />
                     </div>
 
-                <ul className={styles.document_list}>
-                            {data_docs.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link} />
-                                </li>
-                            ))}
-                        </ul>
+                    <ul className={styles.document_list}>
+                        {data_docs.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </section>
 
@@ -320,26 +320,26 @@ export default function page() {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                    <h2 className={styles.title}>
-                        Отчет о результатах самообследования АНПОО "ДВЦНО" по годам
+                        <h2 className={styles.title}>
+                            Отчет о результатах самообследования АНПОО "ДВЦНО" по годам
 
-                    </h2>
+                        </h2>
 
-                    <Image
-                        src={decor2}
-                        width={100}
-                        height={100}
-                        alt=""
-                    />
-                </div>
+                        <Image
+                            src={decor2}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
+                    </div>
 
-                
-                <ul className={styles.document_list}>
-                            {data_results.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link} />
-                                </li>
-                            ))}
+
+                    <ul className={styles.document_list}>
+                        {data_results.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
@@ -349,32 +349,32 @@ export default function page() {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                    <h2 className={styles.title}>
-                        Локально-нормативные акты АНПОО «ДВЦНО»
+                        <h2 className={styles.title}>
+                            Локально-нормативные акты АНПОО «ДВЦНО»
 
-                    </h2>
+                        </h2>
 
-                    <Image
-                        src={decor4}
-                        width={100}
-                        height={100}
-                        alt=""
-                    />
-                    <Image
-                        src={decor3}
-                        width={100}
-                        height={100}
-                        alt=""
-                    />
-                </div>
+                        <Image
+                            src={decor4}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
+                        <Image
+                            src={decor3}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
+                    </div>
 
-                
-                <ul className={styles.document_list}>
-                            {data_acts.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link} />
-                                </li>
-                            ))}
+
+                    <ul className={styles.document_list}>
+                        {data_acts.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
@@ -385,33 +385,33 @@ export default function page() {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                    <h2 className={styles.title}>
-                        Локально-нормативные акты АНПОО «ДВЦНО»
+                        <h2 className={styles.title}>
+                            Локально-нормативные акты АНПОО «ДВЦНО»
 
-                    </h2>
+                        </h2>
 
-                    <Image
-                        src={decor4}
-                        width={100}
-                        height={100}
-                        alt=""
-                    />
-                    <Image
-                        src={decor3}
-                        width={100}
-                        height={100}
-                        alt=""
-                    />
-                </div>
+                        <Image
+                            src={decor4}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
+                        <Image
+                            src={decor3}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
+                    </div>
 
-                
-                <ul className={styles.document_list}>
-                            {data_acts.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link}
-                                    background="white"/>
-                                </li>
-                            ))}
+
+                    <ul className={styles.document_list}>
+                        {data_acts.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link}
+                                    background="white" />
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
@@ -421,26 +421,26 @@ export default function page() {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                    <h2 className={styles.title}>
-                        Графики оценочных процедур
-                    </h2>
+                        <h2 className={styles.title}>
+                            Графики оценочных процедур
+                        </h2>
 
-                    <Image
-                        src={decor5}
-                        width={100}
-                        height={100}
-                        alt=""
-                    />
-                        
-                </div>
+                        <Image
+                            src={decor5}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
 
-                
-                <ul className={styles.document_list}>
-                            {data_proccess.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link} />
-                                </li>
-                            ))}
+                    </div>
+
+
+                    <ul className={styles.document_list}>
+                        {data_proccess.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
@@ -450,26 +450,26 @@ export default function page() {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                    <h2 className={styles.title}>
-                        Предписания и отчеты об их устранении
-                    </h2>
+                        <h2 className={styles.title}>
+                            Предписания и отчеты об их устранении
+                        </h2>
 
-                    <Image
-                        src={decor5}
-                        width={100}
-                        height={100}
-                        alt=""
-                    />
-                        
-                </div>
+                        <Image
+                            src={decor5}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
 
-                
-                <ul className={styles.document_list}>
-                            {data_predpicaniya.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link} />
-                                </li>
-                            ))}
+                    </div>
+
+
+                    <ul className={styles.document_list}>
+                        {data_predpicaniya.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))}
                     </ul>
                 </div>
 

@@ -42,7 +42,7 @@ export default async function Page() {
             'link': '/',
             'background': 'light-blue'
         },
-         
+
         {
             'name': 'ФГОС НОО',
             'title': 'Приказ Минпросвещения России от 31.05.2021 N 286',
@@ -73,7 +73,7 @@ export default async function Page() {
     ]
 
 
-     const groupedStandards = data_standarts.reduce((acc, item) => {
+    const groupedStandards = data_standarts.reduce((acc, item) => {
         acc[item.name] = acc[item.name] || [];
         acc[item.name].push(item);
         return acc;
@@ -81,11 +81,11 @@ export default async function Page() {
 
     return (
         <>
-            <section className={styles.section}> 
+            <section className={styles.section}>
                 <div className="container">
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
+                        link={'info'}
                         title={'Образовательные стандарты и требования.'}
                     />
 
@@ -95,21 +95,19 @@ export default async function Page() {
                     <ul>
                         {Object.entries(groupedStandards).map(([name, items]) => (
                             <li key={name}>
-                            <p className={`${styles.item_name} ${
-                                items[0].background === 'yellow' ? styles.background_yellow : ''
-                            } ${items[0].background === 'light-blue' ? styles.background_light_blue : ''} ${
-                                items[0].background === 'green' ? styles.background_green : ''
-                            } ${items[0].background === 'violet' ? styles.background_violet : ''}`}>
-                                {name}
-                            </p>
-                            <ul className={styles.document_list}>
-                                {items.map((item, index) => (
-                                <DocumentComponent key={index} title={item.title} link={item.link} />
-                                ))}
-                            </ul>
+                                <p className={`${styles.item_name} ${items[0].background === 'yellow' ? styles.background_yellow : ''
+                                    } ${items[0].background === 'light-blue' ? styles.background_light_blue : ''} ${items[0].background === 'green' ? styles.background_green : ''
+                                    } ${items[0].background === 'violet' ? styles.background_violet : ''}`}>
+                                    {name}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {items.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.link} />
+                                    ))}
+                                </ul>
                             </li>
                         ))}
-                        </ul>
+                    </ul>
 
                 </div>
             </section>
@@ -118,13 +116,13 @@ export default async function Page() {
                 <div className="container">
                     <h2 className={`title ${styles.title}`}>Федеральные образовательные программы</h2>
 
-                       
+
                     <ul className={styles.document_list}>
-                            {data_documents.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link} />
-                                </li>
-                            ))}
+                        {data_documents.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </section>

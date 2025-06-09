@@ -11,7 +11,6 @@ import placeholder from '../../../public/placeholder/placeholder.svg';
 const SlideMain = ({ item, isActive }) => {
     const [sliderBg, setSliderBg] = useState(null);
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
-    console.log(sliderBg); //main-sliders/sliders-bg-s-1.png
 
     useEffect(() => {
         if (item) {

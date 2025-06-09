@@ -9,8 +9,8 @@ export default function Card({ image, link, description, }) {
                 <Image
                     src={image ? image : '/placeholder/placeholder.svg'}
                     alt="фото"
-                    width={410}
-                    height={195}
+                    fill
+                    sizes="100%"
                     className={`${styles.img} dsv-image`}
                 />
             </div>

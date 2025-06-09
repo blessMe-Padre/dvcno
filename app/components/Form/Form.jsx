@@ -21,19 +21,22 @@ export const Form = ({ setActive }) => {
                 },
                 body: JSON.stringify(formData),
             });
+            // const data = await response.json();
+            const text = await response.text(); // читаем ответ как текст
             if (response.ok) {
-                const data = await response.json();
-                console.log(data);
-
-                setIsSuccess(true);
-                isSending(false);
-                setError(undefined)
-                // setActive(false)
-                reset();
+                if (text.trim() === 'success') {
+                    setIsSuccess(true);
+                    setError(undefined);
+                    isSending(false);
+                    reset();
+                } else {
+                    setError('Произошла ошибка, попробуйте позже');
+                    isSending(false);
+                    console.error('Ответ от сервера:', text);
+                }
             } else {
-                isSending(false);
-                setError('Что-то пошло не так');
-                console.error('Статус ошибки:', response.status);
+                setError('Ошибка на сервере: ' + response.status);
+                console.error('HTTP статус:', response.status, 'Ответ:', text);
             }
         } catch (err) {
             setError('Ошибка запроса, попробуйте позже');

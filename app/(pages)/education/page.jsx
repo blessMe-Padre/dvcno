@@ -6,13 +6,21 @@ import fetchApiData from "@/app/utils/fetchApiData";
 
 export const metadata = {
     title: "ДВЦНО | Обучение",
-    description: "Дальневосточный центр непрерывного образования",
+    description: "Дальневосточный центр непрерывного образования (ДВЦНО) предлагает полный цикл образовательных услуг: дошкольное образование, профессиональное обучение, переподготовка",
+    keywords: [
+        "ДВЦНО",
+        "Дальневосточный центр образования",
+        "обучение",
+        "профессиональное обучение",
+        "переподготовка",
+        "образование во Владивостоке"
+    ]
 };
 
 export default async function Page() {
     const data = await fetchApiData('education');
     return (
-        <div className="container">
+        <>
             <Breadcrumbs title={"Обучение"} />
             <h2 className={`title ${styles.title}`}>Обучение</h2>
             <p className={styles.description}>Дальневосточный центр непрерывного образования (ДВЦНО) предлагает полный цикл образовательных услуг. От дошкольного образования до получения специальности (профессиональное обучение) и профессиональной переподготовки</p>
@@ -32,6 +40,6 @@ export default async function Page() {
                     <p className="span-error-message">Данные отсутствуют.</p>
                 )}
             </ul>
-        </div>
+        </>
     )
 }

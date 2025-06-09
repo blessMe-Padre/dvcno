@@ -10,7 +10,9 @@
 }
 
 .image_wrapper {
+    position: relative;
     height: 195px;
+    width: 100%;
 }
 
 .img {
@@ -135,6 +137,7 @@
     .text {
         font-size: 0.75em;
     }
+
     .card_footer {
         font-size: 0.75em;
     }

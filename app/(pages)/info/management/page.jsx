@@ -45,14 +45,14 @@ export default function page() {
             'address': '690024, г. Владивосток, ул. Десятая, д. 10 (станция «Санаторная»)',
             'phone2': '8 (423) 261-47-37',
             'phone1': '8 (423) 261-47-54',
-            'phone_1_robot': '+74232614737',   
+            'phone_1_robot': '+74232614737',
             'phone_2_robot': '+74232614754',
             'email': "odarenok@list.ru",
             'url': 'https://odarenok.su/',
             'name_document': 'Положения',
             'link': '/'
-        }, 
-        
+        },
+
         {
             'img': '/info/address_2.png',
             'job': 'Директор школы',
@@ -60,13 +60,13 @@ export default function page() {
             'name': 'Степаненко Анастасия Александровна',
             'address': '690066, г. Владивосток, ул. Тунгусская, д. 59',
             'phone1': '8 (423) 240-41-85',
-            'phone_1_robot': '+74232404185',   
+            'phone_1_robot': '+74232404185',
             'email': "odarenok@list.ru",
             'url': 'https://odarenok.su/',
             'name_document': 'Положения',
             'link': '/'
         },
-        
+
         {
             'img': '/info/address_3.png',
             'job': 'Директор школы',
@@ -75,7 +75,7 @@ export default function page() {
             'address': '690106, г. Владивосток,  Партизанский пр-т, д. 44, корп. 4',
             'phone1': '8 (423) 240-42-83',
             'phone2': '8 (423) 240-42-84',
-            'phone_1_robot': '+74232404283',   
+            'phone_1_robot': '+74232404283',
             'phone_2_robot': '+74232404284',
             'email': "mlsh@vvsu.ru",
             'url': ' https://mlsh.ru',
@@ -112,7 +112,7 @@ export default function page() {
             'name_document': 'Положения',
             'link': '/'
         },
-        
+
         {
             'img': '/info/address_6.png',
             'title': 'Физкультурно-оздоровительный комплекс с бассейном «Лига спорта» (ФОК «Лига спорта»)',
@@ -139,52 +139,52 @@ export default function page() {
                 <div className='container'>
                     <Breadcrumbs
                         slug={'Сведения об образовательной организации'}
-                        link={'pages/info'}
+                        link={'info'}
                         title={'Структура и органы управления образовательной организацией'}
                     />
-                    
+
 
                     <h2 className={styles.title}>Руководство</h2>
-                
+
                     <div>
                         <p className={styles.subtitle}>АНПОО «ДВЦНО»</p>
                         <ul className={styles.list}>
                             {data_director.map((item, index) => (
                                 <li className={`${styles.item} anim_hover_card`} key={index}>
                                     <div className={styles.item_title_wrapper}>
-                                            {item.job}      
-                                            <Image
-                                                className={`${styles.decor2} dsv-image`}
-                                                src={decor2}
-                                                width={25}
-                                                height={25}
-                                                alt={'decor2'}
-                                            />
-                                        
-                                            <Image
-                                                className={`${styles.decor3} dsv-image`}
-                                                src={decor3}
-                                                width={50}
-                                                height={50}
-                                                alt={'decor3'}
-                                            />
+                                        {item.job}
+                                        <Image
+                                            className={`${styles.decor2} dsv-image`}
+                                            src={decor2}
+                                            width={25}
+                                            height={25}
+                                            alt={'decor2'}
+                                        />
+
+                                        <Image
+                                            className={`${styles.decor3} dsv-image`}
+                                            src={decor3}
+                                            width={50}
+                                            height={50}
+                                            alt={'decor3'}
+                                        />
                                     </div>
-                                    
+
                                     <div className={styles.info}>
                                         <p className={styles.item_name}>{item.name}</p>
                                         <div className={styles.field_wrapper}>
                                             <p className={styles.field}>Адрес:</p>
-                                            <p className={styles.field_value}>{item.address}</p> 
+                                            <p className={styles.field_value}>{item.address}</p>
                                         </div>
 
                                         <div className={styles.field_wrapper}>
                                             <p className={styles.field}>Телефон:</p>
-                                            <p className={styles.field_value}>{item.phone}</p> 
+                                            <p className={styles.field_value}>{item.phone}</p>
                                         </div>
 
                                         <div className={styles.field_wrapper}>
                                             <p className={styles.field}>E-mail:</p>
-                                            <p className={styles.field_value}>{item.email}</p> 
+                                            <p className={styles.field_value}>{item.email}</p>
                                         </div>
 
                                         <div className={styles.field_wrapper}>
@@ -193,11 +193,11 @@ export default function page() {
                                         </div>
                                     </div>
 
-                                        <div className={styles.link}>
-                                            <p style={{color: '#fff'}}>Написать</p>
-                                            <Image src={arrow} width={15} height={15} alt='' />
-                                        </div>
-                                    
+                                    <div className={styles.link}>
+                                        <p style={{ color: '#fff' }}>Написать</p>
+                                        <Image src={arrow} width={15} height={15} alt='' />
+                                    </div>
+
                                 </li>
                             ))}
                         </ul>
@@ -206,7 +206,7 @@ export default function page() {
 
                     <div>
                         <p className={styles.subtitle}>Cтруктурные подразделения</p>
-                          <ul className={styles.list}>
+                        <ul className={styles.list}>
                             {data_division.map((item, index) => (
                                 <li className={`${styles.item} anim_hover_card`} key={index}>
                                     <div className={styles.item_title_wrapper}>
@@ -217,9 +217,9 @@ export default function page() {
                                             height={90}
                                             alt='decor'
                                         />
-                                        
-                                        {item.title}      
-                                    
+
+                                        {item.title}
+
                                         <Image
                                             className={`${styles.decor3} dsv-image`}
                                             src={decor3}
@@ -228,46 +228,46 @@ export default function page() {
                                             alt={'decor3'}
                                         />
                                     </div>
-                                    
+
                                     <div className={styles.info}>
                                         <div className={styles.field_wrapper}>
                                             <p className={styles.field}>{item.job}:</p>
-                                            <p className={styles.field_value}>{item.name}</p> 
+                                            <p className={styles.field_value}>{item.name}</p>
                                         </div>
 
                                         {item.job_2 && item.name_2 && (
                                             <div className={styles.field_wrapper}>
                                                 <p className={styles.field}>{item.job_2}:</p>
-                                                <p className={styles.field_value}>{item.name_2}</p> 
+                                                <p className={styles.field_value}>{item.name_2}</p>
                                             </div>
                                         )}
 
                                         <div className={styles.field_wrapper}>
                                             <p className={styles.field}>Адрес:</p>
-                                            <p className={styles.field_value}>{item.address}</p> 
+                                            <p className={styles.field_value}>{item.address}</p>
                                         </div>
 
                                         <div className={styles.field_wrapper}>
                                             <p className={styles.field}>Телефон:</p>
                                             <p className={styles.field_value}>
-                                                
+
                                                 <a href={item.phone_1_robot}>
                                                     {item.phone1}
                                                 </a>
-                                            
-                                            </p> 
+
+                                            </p>
                                             <p className={styles.field_value}>
-                                                
+
                                                 <a href={`mailto:${item.phone_2_robot}`}>
                                                     {item.phone2}
                                                 </a>
-                                            
-                                            </p> 
+
+                                            </p>
                                         </div>
 
                                         <div className={styles.field_wrapper}>
                                             <p className={styles.field}>E-mail:</p>
-                                            <p className={styles.field_value}>{item.email}</p> 
+                                            <p className={styles.field_value}>{item.email}</p>
                                         </div>
 
                                         <div className={styles.field_wrapper}>
@@ -277,7 +277,7 @@ export default function page() {
                                     </div>
 
                                     <div className={styles.link}>
-                                        <p style={{color: '#fff'}}>Перейти на сайт</p>
+                                        <p style={{ color: '#fff' }}>Перейти на сайт</p>
                                         <Image src={arrow} width={15} height={15} alt='' />
                                     </div>
                                 </li>
@@ -285,9 +285,9 @@ export default function page() {
                         </ul>
                     </div>
 
-                    
+
                 </div>
             </section>
         </>
     )
-}25
+} 25
