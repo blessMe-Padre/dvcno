@@ -18,42 +18,42 @@ export default async function Page() {
             id: 1,
             image: '/education/image-1.jpg',
             description: 'Начальная школа – детский сад «Классическая европейская прогимназия» (НШДС "КЕП")',
-            link: '/education',
+            link: '',
             slug: 'doshkolnoe-obrazovanie',
         },
         {
             id: 2,
             image: '/education/image-2.jpg',
             description: 'Начальная общеобразовательная школа-детский сад "Восточная школа" (НОШДС «ВШ»)',
-            link: '/education',
+            link: '',
             slug: 'nachalnoe-obshchee-obrazovanie',
         },
         {
             id: 3,
             image: '/education/image-3.jpg',
             description: 'Международная лингвистическая школа (МЛШ)',
-            link: '/education',
+            link: '',
             slug: 'osnovnoe-obshchee-obrazovanie',
         },
         {
             id: 4,
             image: '/education/image-4.jpg',
             description: 'Академический колледж (АК)',
-            link: '/education',
+            link: '',
             slug: 'srednee-obshchee-obrazovanie',
         },
         {
             id: 5,
             image: '/education/image-5.jpg',
             description: '«Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина» (ШОД)',
-            link: '/education',
+            link: '',
             slug: 'professionalnoe-obuchenie',
         },
         {
             id: 6,
             image: '/education/image-6.jpg',
             description: 'Физкультурно-оздоровительный комплекс с бассейном «Лига спорта» (ФОК «Лига спорта»)',
-            link: '/education',
+            link: 'n',
             slug: 'dopolnitelnoe-obrazovanie',
         },
     ];
@@ -90,7 +90,6 @@ export default async function Page() {
         },
     ]
 
-
     return (
         <>
             <section className={styles.section}>
@@ -107,9 +106,9 @@ export default async function Page() {
                             educationPages.map((item) => (
                                 <li key={item.id}>
                                     <Card
-                                        image={item.image}
-                                        description={item.description}
-                                        link={`education/${item.slug}`}
+                                        image={item?.image}
+                                        description={item?.description}
+                                        link={`education/${item?.slug}`}
                                     />
                                 </li>
                             ))

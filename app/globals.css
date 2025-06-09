@@ -12,7 +12,7 @@
   --link-color: #191830;
 
   /* 62px - 40px */
-  --size: clamp(2.5rem, 0.929rem + 3.274vw, 3.875rem);
+  --size: clamp(2.5em, 0.929em + 3.274vw, 3.875em);
 
   --color-purple: #433c8c;
   --color-green: #29a55c;
@@ -68,10 +68,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #171717;
+    /* --background-color: #171717;
     --default-color: #ededed;
     --link-color: #ededed;
-    --black-toggle: #f2f2f2;
+    --black-toggle: #f2f2f2; */
   }
 }
 
@@ -242,7 +242,7 @@ ul {
   font-size: var(--size);
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: var(--black-toggle);
+  /* color: var(--black-toggle); */
 }
 
 .title-black {

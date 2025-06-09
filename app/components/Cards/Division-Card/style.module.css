@@ -22,7 +22,7 @@
 }
 
 .title {
-    color: var(--black-toggle);
+    /* color: var(--black-toggle); */
     font-size: 1.5em;
     line-height: 1.1;
     letter-spacing: 0.02em;
@@ -101,33 +101,34 @@
 .link_button:hover {
     background-color: var(--light-blue);
 }
+
 .link_button:active {
     background-color: var(--green);
 }
 
 .link_button_white {
-    background-color:transparent;
+    background-color: transparent;
     border: 1px solid var(--violet);
     color: var(--violet);
 }
 
 .link_button_white svg path {
-   stroke: var(--violet);
-   transition: all var(--anim-function);
+    stroke: var(--violet);
+    transition: all var(--anim-function);
 }
 
 .link_button_white:hover {
-    background-color:var(--violet);
+    background-color: var(--violet);
     border: 1px solid var(--violet);
     color: var(--white);
 }
 
-.link_button_white:hover svg path  {
+.link_button_white:hover svg path {
     stroke: var(--white);
 }
 
 .link_button_white:active {
-    background-color:var(--green);
+    background-color: var(--green);
     border: 1px solid var(--green);
     color: var(--white);
 }
@@ -135,8 +136,9 @@
 .spoiler_wrapper {
     margin-top: 30px;
 }
+
 .spoiler_text {
-overflow: hidden;
+    overflow: hidden;
 }
 
 .spoiler_link {
@@ -159,6 +161,7 @@ overflow: hidden;
     .link_button_wrapper {
         flex-direction: column;
     }
+
     .link_wrapper {
         flex-direction: column;
     }
@@ -170,10 +173,12 @@ overflow: hidden;
 
 
 @media (max-width:768px) {
+
     .link_button_wrapper,
     .link_wrapper {
         flex-direction: row;
     }
+
     .info {
         padding: 30px;
     }
@@ -183,6 +188,7 @@ overflow: hidden;
     .link_button_wrapper {
         flex-direction: column;
     }
+
     .info {
         padding: 20px;
     }
@@ -192,13 +198,19 @@ overflow: hidden;
         margin-bottom: 20px;
     }
 
-    .address {font-size: 0.75em;}
-    .link {font-size: 0.75em;}
+    .address {
+        font-size: 0.75em;
+    }
+
+    .link {
+        font-size: 0.75em;
+    }
 
     .icon_wrapper {
         width: 25px;
         height: 25px;
     }
+
     .icon_wrapper img {
         width: 13px;
         height: 13px;

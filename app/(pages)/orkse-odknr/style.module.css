@@ -8,7 +8,7 @@
     font-size: var(--size);
     line-height: 1.1;
     letter-spacing: 0.02em;
-    color: var(--black-toggle);
+    /* color: var(--black-toggle); */
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -58,7 +58,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 30px;
-
+    margin-bottom: 30px;
     max-width: 600px;
 }
 

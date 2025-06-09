@@ -12,7 +12,7 @@
     font-weight: 700;
     font-size: var(--size);
     line-height: 1.1;
-    color: var(--black-toggle);
+    /* color: var(--black-toggle); */
     margin-bottom: 40px;
     margin-top: 40px;
 }

@@ -12,7 +12,7 @@
     font-weight: 700;
     font-size: clamp(1.875em, -0.268em + 4.464vw, 3.75em);
     line-height: 1.1;
-    color: var(--black-toggle);
+    /* color: var(--black-toggle); */
     margin-bottom: 40px;
     margin-top: 40px;
 }
