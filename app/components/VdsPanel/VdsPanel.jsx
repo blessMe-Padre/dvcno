@@ -169,11 +169,13 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
                     <button
                         className={styles.button}
                         onClick={fontDecrease}
+                        title="Уменьшить шрифт"
                     >A-
                     </button>
                     <button
                         className={styles.button}
                         onClick={fontIncrease}
+                        title="Увеличить шрифт"
                     >A+
                     </button>
                 </div>
@@ -185,22 +187,27 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
                     <button
                         className={`${styles.button} ${styles.color_1}`}
                         onClick={changeThemeWhite}
+                        title="цвет сайта черным по белому"
                     >Ц</button>
                     <button
                         className={`${styles.button} ${styles.color_2}`}
                         onClick={changeThemeBlack}
+                        title="цвет сайта белым по черному"
                     >Ц</button>
                     <button
                         className={`${styles.button} ${styles.color_3}`}
                         onClick={changeThemeBlue}
+                        title="цвет сайта темно синим по голубому"
                     >Ц</button>
                     <button
                         className={`${styles.button} ${styles.color_4}`}
                         onClick={changeThemeYellow}
+                        title="цвет сайта темно коричневым по бежевому"
                     >Ц</button>
                     <button
                         className={`${styles.button} ${styles.color_5}`}
                         onClick={changeThemeGreen}
+                        title="цвет сайта зеленым по темно коричневому"
                     >Ц</button>
                 </div>
             </div>
@@ -211,18 +218,21 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
                     <button
                         className={styles.button}
                         onClick={addImages}
+                        title="Показать изображения"
                     >
                         <Image src="/icons/image.svg" alt="" width={20} height={20} />
                     </button>
                     <button
                         className={styles.button}
                         onClick={removeImages}
+                        title="Отключить изображения"
                     >
                         <Image src="/icons/minus-circle.svg" alt="" width={20} height={20} />
                     </button>
                     <button
                         className={styles.button}
                         onClick={addFilter}
+                        title="Изображения черно-белые"
                     >
                         <Image src="/icons/adjust.svg" alt="" width={20} height={20} />
                     </button>
