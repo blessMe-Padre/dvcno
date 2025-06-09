@@ -52,6 +52,7 @@
     width: 100%;
     margin-bottom: 30px;
 }
+
 .form__btn__submit svg {
     transition: all 0.3s ease;
     stroke: #191830;
@@ -61,6 +62,7 @@
     color: var(--white);
     background-color: var(--green);
 }
+
 .form__btn__submit:active {
     color: var(--white);
     background-color: var(--dark-blue);
@@ -92,6 +94,7 @@
 
 .form__input {
     background-color: var(--white);
+    color: var(--black);
     border-radius: 6px;
     border: none;
     min-height: 40px;
@@ -102,6 +105,7 @@
 
 .form__textarea {
     background-color: var(--white);
+    color: var(--black);
     border-radius: 6px;
     border: none;
     min-height: 100px;
@@ -147,7 +151,7 @@
     border: 1px solid var(--dark-blue);
 }
 
-.checkbox:checked ~ .label {
+.checkbox:checked~.label {
     background-color: var(--dark-blue);
     background-image: url('/icons/check.svg');
     background-repeat: no-repeat;
@@ -171,7 +175,3 @@
     border-radius: 6px;
     text-align: center;
 }
-
-
-
-

@@ -8,10 +8,13 @@ export const Form = ({ setActive }) => {
     const [error, setError] = useState();
     const [sending, isSending] = useState(false);
 
+    // const url = 'https://httpbin.org/post';
+    const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/sendMail`;
+
     const onSubmit = async (formData) => {
         isSending(true);
         try {
-            const response = await fetch('https://httpbin.org/post', {
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -20,6 +23,8 @@ export const Form = ({ setActive }) => {
             });
             if (response.ok) {
                 const data = await response.json();
+                console.log(data);
+
                 setIsSuccess(true);
                 isSending(false);
                 setError(undefined)

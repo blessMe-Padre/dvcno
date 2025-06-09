@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 import { useState, useEffect } from 'react';
 
-import getNews from '../../utils/getNews';
+import fetchApiServerData from '@/app/utils/fetchApiServerData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { NewsCard } from '../../components';
@@ -21,11 +21,10 @@ import Link from 'next/link';
 
 const News = () => {
     const [news, setNews] = useState();
-
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getNews();
-            setNews(data);
+            const data = await fetchApiServerData('news');
+            setNews(data?.data);
         };
 
         fetchData();
@@ -79,7 +78,7 @@ const News = () => {
                                         </SwiperSlide>
                                     ))
                                 ) : (
-                                    <p className="span-error-message">Данные отсутствуют.</p>
+                                    <p className="span-error-message">Здесь пока ничего нет.</p>
                                 )}
                                 <SwiperNavButtons />
                             </Swiper>

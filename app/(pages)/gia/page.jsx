@@ -53,7 +53,6 @@ const documentData2 = [
     },
 ];
 
-
 export default function Page() {
     const sanitizedContent = pageTextData || '';
 

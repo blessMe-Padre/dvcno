@@ -1,17 +1,18 @@
 "use client";
 import React from 'react';
 import styles from './style.module.css';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import { Autoplay, Pagination } from 'swiper/modules';
-
 import 'swiper/css';
 // import 'swiper/css/pagination';
 
 import Image from 'next/image';
-
+import useLangStore from '@/app/store/languageStore';
 
 const NewsCard = ({ data }) => {
+    const { lang } = useLangStore();
+
     return (
         <div className={styles.container}>
             <div className={`${styles.card} anim_hover_card`}>
@@ -30,7 +31,7 @@ const NewsCard = ({ data }) => {
                             <SwiperSlide key={index}>
                                 {image.slide && (
                                     <Image
-                                        src={image.slide ? image.slide : '/placeholder/placeholder.svg'}
+                                        src={image.slide ? process.env.NEXT_PUBLIC_API_SERVER + image.slide : '/placeholder/placeholder.svg'}
                                         width={500}
                                         height={300}
                                         objectFit='contain'
@@ -53,15 +54,12 @@ const NewsCard = ({ data }) => {
                         </div>
 
                         <div className={styles.subtitle}>
-                            {data.subtitle}
+                            {data.subtitle?.[lang]}
                         </div>
                     </div>
 
-                    <h2 className={styles.title}>{data.title}</h2>
-
-                    <p className={styles.content} dangerouslySetInnerHTML={{ __html: data.content }}></p>
-
-                    {/* <a href={data.link} target="_blank">Read More</a> */}
+                    <h2 className={styles.title}>{data?.title?.[lang]}</h2>
+                    <p className={styles.content} dangerouslySetInnerHTML={{ __html: data.content?.[lang] }}></p>
                 </div>
             </div>
         </div>

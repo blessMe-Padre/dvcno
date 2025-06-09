@@ -5,20 +5,24 @@
     max-height: 600px;
 }
 
-
-
 .card__content {
     padding: 30px 0 20px 0;
 }
 
 .title {
-
     color: var(--black);
     font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
-    padding: 0 0 30px 0;
+    /* padding: 0 0 30px 0; */
+    margin-bottom: 20px;
     font-weight: 700;
-
     transition: all var(--anim-function);
+
+    line-height: 1.5;
+    overflow: hidden;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .card:hover .title {
@@ -34,7 +38,7 @@
     align-items: center;
     justify-content: space-start;
     gap: 10px;
-    
+
     padding-bottom: 20px;
 
     color: #757F99;
@@ -47,13 +51,14 @@
     line-height: 1.5;
 
     overflow: hidden;
-    line-height: 25px; /* каждая строка будет по высоте 25px, чтобы я точно мог установить высоту блока (это чисто визуально, ни на что не влияет) */
+    line-height: 25px;
+    /* каждая строка будет по высоте 25px, чтобы я точно мог установить высоту блока (это чисто визуально, ни на что не влияет) */
     text-align: justify;
 
     /* а вот это как раз и дает результат "..." в многострочном тексте */
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical; 
+    -webkit-box-orient: vertical;
 }
 
 .card_img {
@@ -67,5 +72,3 @@
     object-fit: cover;
     border-radius: 30px;
 }
-
-

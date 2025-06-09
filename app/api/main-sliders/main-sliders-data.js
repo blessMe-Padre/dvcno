@@ -23,7 +23,7 @@ export const mainSlidersData = [
             '"Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина"'
         ],
         textPattern: 'Здесь создают творцов будущего',
-        link: "#",
+        link: "/education/osnovnoe-obshchee-obrazovanie",
     },
     {
         title: "Дошкольное образование в ДВЦНО",
@@ -48,7 +48,7 @@ export const mainSlidersData = [
             'Начальная общеобразовательная школа-детский сад "Восточная школа" ',
         ],
         textPattern: 'Здесь создают творцов будущего',
-        link: "#",
+        link: "/education/doshkolnoe-obrazovanie",
     },
     {
         title: "Начальное общее образование в ДВЦНО",
@@ -76,9 +76,6 @@ export const mainSlidersData = [
             '«Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина»',
         ],
         textPattern: 'Здесь создают творцов будущего',
-        link: "#",
+        link: "/education/nachalnoe-obshchee-obrazovanie",
     },
-    
-    
-    
 ];
