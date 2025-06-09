@@ -23,12 +23,17 @@ export default function Language() {
     };
 
     return (
-        <select onChange={handleChange} className={styles.select} value={lang}>
-            {AVAILABLE_LANGUAGES.map(lang => (
-                <option key={lang} value={lang}>
-                    {lang === 'ru' ? 'Русский' : lang === 'en' ? 'English' : '中文'}
-                </option>
-            ))}
-        </select>
+        <>
+            <label htmlFor="language-select" className="visually-hidden">
+                Выбор языка
+            </label>
+            <select onChange={handleChange} className={styles.select} value={lang} id="language-select">
+                {AVAILABLE_LANGUAGES.map(lang => (
+                    <option key={lang} value={lang}>
+                        {lang === 'ru' ? 'Русский' : lang === 'en' ? 'English' : '中文'}
+                    </option>
+                ))}
+            </select>
+        </>
     );
 }

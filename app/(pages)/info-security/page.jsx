@@ -13,7 +13,7 @@ const links = [
     },
     {
         title: 'Педагогическим работникам',
-        link: '/info-security/pedagogicheskim-rabotnikam'
+        link: '/info-security/pedagogam'
     },
     {
         title: 'Обучающимся',

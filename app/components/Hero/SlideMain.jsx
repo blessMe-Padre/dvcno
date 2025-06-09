@@ -8,21 +8,24 @@ import styles from './style.module.css';
 
 import placeholder from '../../../public/placeholder/placeholder.svg';
 
-const SlideMain = ({ item }) => {
+const SlideMain = ({ item, isActive }) => {
     const [sliderBg, setSliderBg] = useState(null);
-
+    const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
+    console.log(sliderBg); //main-sliders/sliders-bg-s-1.png
 
     useEffect(() => {
         if (item) {
+            const width = window.innerWidth;
             function handleResize() {
-                if (window.innerWidth >= 1200) {
+                if (width >= 1200) {
                     setSliderBg(item.images[0].sliderBgBig);
-                }
-                else if (window.innerWidth >= 769) {
+                    setImageSize({ width: 1440, height: 680 });
+                } else if (width >= 769) {
                     setSliderBg(item.images[1].sliderBgMedium);
-                }
-                else if (window.innerWidth <= 480) {
+                    setImageSize({ width: 1024, height: 500 });
+                } else if (window.innerWidth <= 480) {
                     setSliderBg(item.images[2].sliderBgSmall);
+                    setImageSize({ width: 768, height: 400 });
                 }
             }
 
@@ -36,12 +39,13 @@ const SlideMain = ({ item }) => {
         <>
             <Image
                 src={sliderBg ? sliderBg : placeholder}
-                width={2500}
-                height={1400}
+                width={imageSize.width}
+                height={imageSize.height}
                 alt='slider_bg'
                 className={`${styles.sliderBg} dsv-image`}
                 placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+"
+                priority={isActive}
 
             />
             <div className={styles.slider}>

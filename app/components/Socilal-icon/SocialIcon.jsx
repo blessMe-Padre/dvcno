@@ -21,7 +21,8 @@ export default function SocialIcon({ color, href, icon, alt, width, height }) {
         <Link
             href={href}
             target="_blank"
-            className={`${styles.link} ${addClass} `}>
+            className={`${styles.link} ${addClass} `}
+            aria-label={alt}>
             <Image
                 aria-hidden
                 src={icon}

@@ -4,15 +4,12 @@ export const mainSlidersData = [
         images: [
             {
                 sliderBgBig: '/main-sliders/sliders-bg-1.png',
-
             },
             {
                 sliderBgMedium: '/main-sliders/sliders-bg-m-1.png',
-
             },
             {
                 sliderBgSmall: '/main-sliders/sliders-bg-s-1.png',
-
             }
         ],
 

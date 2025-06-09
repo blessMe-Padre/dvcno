@@ -43,10 +43,11 @@ export default function Slider() {
         <Swiper
           pagination={true}
           modules={[Pagination, Autoplay]}
-          autoplay={true}
+          // // autoplay={{ delay: 6000 }}
+          // autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+          speed={2000}
           spaceBetween={50}
           slidesPerView={1}
-          speed={4000}
           preventClicksPropagation={false}
           preventClicks={false}
           // отправляем кастомное событие при клике на слайдер
@@ -56,9 +57,8 @@ export default function Slider() {
         >
           {data.map((item, index) => {
             return (
-              // ПОДОГНАТЬ ВСЕ СЛАЙДЕРЫ ПОД ОДИН РАЗМЕР
               <SwiperSlide key={index} style={{ pointerEvents: "auto" }}>
-                <SlideMain item={item} />
+                <SlideMain item={item} isActive={index === 0} />
               </SwiperSlide>
             );
           })}
