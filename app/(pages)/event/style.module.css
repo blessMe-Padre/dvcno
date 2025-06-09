@@ -1,0 +1,30 @@
+.section {
+    padding: 30px 0 60px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.events_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    color: var(--white);
+    text-transform: uppercase;
+    background-color: var(--violet);
+    padding: 10px 20px;
+    border-radius: 6px;
+
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.events_link:hover {
+    background-color: var(--green);
+}

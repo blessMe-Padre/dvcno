@@ -1,3 +1,7 @@
+/**
+ * TODO: ограничить вывод событий в слайдере и их отфильтровать
+ */
+
 'use client'
 import { useState, useEffect } from "react";
 import styles from "./style.module.css";
@@ -22,7 +26,6 @@ export default function Events() {
             const result = await getEvents();
             setEvents(result.data);
         };
-
         fetchData();
     }, []);
 
@@ -73,6 +76,8 @@ export default function Events() {
                         <SwiperNavButtons addClass="swiper_nav_btns shadows_nav" />
                     </Swiper>
                 </div>
+
+                <Link className={styles.events_link} href={'/event'}>Показать еще</Link>
             </div>
         </section>
     )
