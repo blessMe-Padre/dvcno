@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 import useLangStore from '@/app/store/languageStore';
-import EventCard from "@/app/components/Cards/Event-Card/EventCard";
+import { NewsCard } from '@/app/components';
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 import styles from "./style.module.css";
 import { motion } from "framer-motion";
@@ -22,9 +22,9 @@ const PageComponent = ({ data }) => {
     const visibleEvents = data?.slice(0, visibleCount);
 
     const languages = {
-        ru: 'События',
-        en: 'Events',
-        ch: '活動'
+        ru: 'Новости',
+        en: 'News',
+        ch: '訊息'
     };
 
     return (
@@ -43,17 +43,12 @@ const PageComponent = ({ data }) => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
                             >
-                                <Link href={`/event/${item.slug}`}>
-                                    <EventCard
-                                        title={item?.title?.[lang]}
-                                        description={item.description?.[lang]}
-                                        thumbnail={item.thumbnail}
-                                        date={item.date_event.day_d}
-                                        month={item.date_event.month_F[1]}
-                                        year={item.date_event.year_Y}
-                                        week={item.date_event.day_D[0]}
-                                        hour={item.date_event.time_H}
-                                        minute={item.date_event.time_i}
+                                <Link
+                                    href={`/news/${item.slug}`}
+                                >
+                                    <NewsCard
+                                        data={item}
+                                        isSlide={false}
                                     />
                                 </Link>
                             </motion.li>

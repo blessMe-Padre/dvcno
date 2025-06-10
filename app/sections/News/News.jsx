@@ -84,7 +84,9 @@ const News = () => {
                             </Swiper>
                         </div>
                     </div>
+
                 </div>
+                <Link className={styles.news_link} href="/news">Смотреть все новости</Link>
             </section>
         </div>
     )

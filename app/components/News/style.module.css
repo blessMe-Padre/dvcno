@@ -5,6 +5,12 @@
     max-height: 600px;
 }
 
+@media (max-width: 650px) {
+    .padding_off {
+        padding: 0;
+    }
+}
+
 .card__content {
     padding: 30px 0 20px 0;
 }

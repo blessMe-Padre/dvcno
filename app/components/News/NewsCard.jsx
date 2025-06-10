@@ -10,12 +10,13 @@ import 'swiper/css';
 import Image from 'next/image';
 import useLangStore from '@/app/store/languageStore';
 
-const NewsCard = ({ data }) => {
+const NewsCard = ({ data, isSlide = true }) => {
     const { lang } = useLangStore();
+    const paddingClass = isSlide ? '' : styles.padding_off;
 
     return (
         <div className={styles.container}>
-            <div className={`${styles.card} anim_hover_card`}>
+            <div className={`${styles.card} ${paddingClass} anim_hover_card`}>
                 <div className={styles.card_img}>
                     <Swiper
                         pagination={true}

@@ -4,15 +4,12 @@
 
 .list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
-@media (max-width: 650px) {
-    .list {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+.list li {
+    min-width: 0
 }
 
 .events_link {
@@ -34,4 +31,11 @@
 
 .events_link:hover {
     background-color: var(--green);
+}
+
+@media (max-width: 650px) {
+    .list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }

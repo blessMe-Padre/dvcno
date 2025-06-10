@@ -12,10 +12,19 @@
     position: absolute;
     top: 0;
     z-index: 0;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 650px) {
+    .news_dekor {
+        display: none;
+    }
 }
 
 .wrapper {
-    padding: 120px 0;
+    padding: 120px 0 30px;
 }
 
 .title {
@@ -68,9 +77,21 @@
     transition: transform .2s ease;
 }
 
-
 @media screen and (max-width: 480px) {
     .wrapper {
         padding: 0px 0;
+    }
+}
+
+.news_link {
+    color: var(--white);
+    border-bottom: 1px dashed var(--white);
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .news_link {
+        display: inline-flex;
+        margin-top: 20px;
     }
 }
