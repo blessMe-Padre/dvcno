@@ -148,7 +148,7 @@ export default function Header() {
 
           <button
             className={styles.search_button}
-          // onClick={() => setSearchOpened(!searchOpened)}
+            onClick={() => setSearchOpened(!searchOpened)}
           >
             {!searchOpened ? (
               <Image

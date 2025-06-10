@@ -5,6 +5,10 @@ import styles from "./style.module.css";
 
 export default function Search() {
     const [value, setValue] = useState('');
+    const [data, setData] = useState(null);
+
+    console.log(data);
+
 
     const handleChange = (e) => {
         setValue(e.target.value);
@@ -15,9 +19,30 @@ export default function Search() {
         setValue('');
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    }
+
+        try {
+            const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/live_search?value=${encodeURIComponent(value)}`;
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+            });
+            if (!response.ok) {
+                throw new Error(`Ошибка HTTP live_search: ${response.status}`);
+            }
+
+            const result = await response.json();
+            setData(result);
+
+        } catch (error) {
+            console.error('Ошибка загрузки Объектов:', error);
+        }
+    };
 
     return (
         <form className={styles.wrapper} onSubmit={handleSubmit}>

@@ -26,8 +26,8 @@ const PageContent = ({ data }) => {
 
             <ul className={styles.list}>
                 {data && listBlock[lang] && listBlock[lang].length > 0 ? (
-                    listBlock[lang].map((item) => (
-                        <li key={item.id}>
+                    listBlock[lang].map((item, index) => (
+                        <li key={index}>
                             <Card
                                 image={`${process.env.NEXT_PUBLIC_API_SERVER}${item.img}`}
                                 description={item.text}

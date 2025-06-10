@@ -66,12 +66,12 @@
     background-color: var(--light-blue);
 }
 
-.search_button,
+/* .search_button,
 .search_button:hover {
     cursor: auto !important;
     opacity: .6;
     background-color: var(--violet) !important;
-}
+} */
 
 .header_social_wrapper {
     display: flex;
