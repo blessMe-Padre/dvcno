@@ -1,15 +1,34 @@
 import { cookies } from 'next/headers';
 import "./globals.css";
-import { Montserrat } from 'next/font/google';
 import { ClientLangInitializer, Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
 
-const montserrat = Montserrat({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500', '600', '700'],
+const montserrat = localFont({
+  src: [
+    {
+      path: './fonts/Montserrat/Montserrat-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Montserrat/Montserrat-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Montserrat/Montserrat-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Montserrat/Montserrat-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    }
+  ],
   display: 'swap',
-  variable: '--font-montserrat',
+  variable: '--font-montserrat'
 });
 
 const bebasNeue = localFont({
