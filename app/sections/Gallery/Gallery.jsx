@@ -13,6 +13,7 @@ import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
 
 import getGallery from '@/app/utils/getGallery';
+import Image from "next/image";
 
 
 function Gallery() {
@@ -74,7 +75,14 @@ function Gallery() {
                                             rel="noreferrer"
                                             className={`${styles.img_wrapper} dsv-image`}
                                         >
-                                            <img src={image.largeURL} alt="" width={'100%'} height={'100%'} />
+                                            {/* <img src={image.largeURL} alt="" width={'100%'} height={'100%'} /> */}
+                                            <Image
+                                                className={styles.gallery_img}
+                                                src={image.largeURL}
+                                                alt="image"
+                                                width={708}
+                                                height={450}
+                                            />
                                         </a>
                                     </SwiperSlide>
                                 ))}

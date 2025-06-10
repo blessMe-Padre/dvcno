@@ -16,3 +16,10 @@
     /* color: var(--black-toggle); */
     margin-bottom: 40px;
 }
+
+.gallery_img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    min-width: 0
+}
