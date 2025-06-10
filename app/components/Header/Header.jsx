@@ -148,7 +148,8 @@ export default function Header() {
 
           <button
             className={styles.search_button}
-            onClick={() => setSearchOpened(!searchOpened)}
+            title="В разработке"
+          // onClick={() => setSearchOpened(!searchOpened)}
           >
             {!searchOpened ? (
               <Image
@@ -166,7 +167,7 @@ export default function Header() {
               />
             )}
           </button>
-          <button className={`${styles.account_button} disabled`}>
+          <button className={`${styles.account_button} disabled`} title="В разработке">
             <Image
               src="/icons/account.svg"
               alt="Поиск"

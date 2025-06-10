@@ -68,10 +68,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #171717;
+    /* --background-color: #171717;
     --default-color: #ededed;
     --link-color: #ededed;
-    --black-toggle: #f2f2f2;
+    --black-toggle: #f2f2f2; */
   }
 }
 
