@@ -1,7 +1,7 @@
 const getEvents = async () => {
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/v1/events/`, {
-            next: { revalidate: 10 }
+            next: { revalidate: 60 }
         });
         if (!res.ok) {
             throw new Error(`Ошибка HTTP: ${res.status}`);

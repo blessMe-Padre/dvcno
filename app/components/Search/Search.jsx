@@ -7,9 +7,6 @@ export default function Search() {
     const [value, setValue] = useState('');
     const [data, setData] = useState(null);
 
-    console.log(data);
-
-
     const handleChange = (e) => {
         setValue(e.target.value);
     }
