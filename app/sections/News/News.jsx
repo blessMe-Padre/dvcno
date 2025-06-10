@@ -32,7 +32,7 @@ const News = () => {
 
     return (
         <div className={styles.violet_bg}>
-            <section className={styles.section}>
+            <section className={`${styles.section} container`}>
                 <Image
                     src={bg}
                     alt="News Background"

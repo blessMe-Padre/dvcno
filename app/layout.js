@@ -34,11 +34,11 @@ export default function RootLayout({ children }) {
         <ClientLangInitializer>
           <div className="container">
             <Header />
-            <main>
-              {children}
-            </main>
-            <Footer />
           </div>
+          <main>
+            {children}
+          </main>
+          <Footer />
         </ClientLangInitializer>
       </body>
     </html>

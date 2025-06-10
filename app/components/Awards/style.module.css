@@ -36,4 +36,13 @@
     .section_awards {
         padding: 50px 0px 50px;
     }
+
+    .awards_title_wrapper svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .awards_title_wrapper {
+        gap: 10px;
+    }
 }

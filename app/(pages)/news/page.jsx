@@ -8,6 +8,8 @@ export default async function page() {
 
 
     return (
-        <PageComponent data={data} />
+        <div className='container'>
+            <PageComponent data={data} />
+        </div>
     )
 }

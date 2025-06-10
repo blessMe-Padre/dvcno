@@ -11,8 +11,8 @@ export default async function page() {
     const data = result.data;
 
     return (
-        <>
+        <div className="container">
             <PageComponent data={data} />
-        </>
+        </div>
     )
 }

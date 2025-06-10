@@ -40,16 +40,20 @@
 }
 
 .menuTitle:hover svg {
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
+    transform: scaleY(-1);
 }
 
+.menuTitle {
+    padding: 5px 0;
+}
 
 .sublist {
     margin: 0;
     padding: 30px 40px;
     list-style: none;
     position: absolute;
-    top: 30px;
+    top: 100%;
     left: 0;
     min-width: 100%;
     z-index: 5;

@@ -62,6 +62,17 @@
     background-position: center center;
 }
 
+@media (max-width: 650px) {
+    .title::after {
+        content: '';
+        position: absolute;
+        top: -60px;
+        left: auto;
+        right: 0px;
+        transform: scale(0.5);
+    }
+}
+
 
 .swiper_news .swiper-slide-active {
     transform: scale(1.5) !important;

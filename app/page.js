@@ -14,8 +14,8 @@ export default function Home() {
     <>
 
       <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
-      <Slider />
       <div className="container">
+        <Slider />
         <About />
       </div>
 
