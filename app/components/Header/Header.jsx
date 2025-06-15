@@ -18,7 +18,6 @@ import PopupBtn from "../Popup-btn/PopupBtn";
 import Search from "../Search/Search";
 import { motion } from "framer-motion";
 
-
 import useLangStore from '@/app/store/languageStore';
 
 export default function Header() {
@@ -72,6 +71,12 @@ export default function Header() {
     },
   };
 
+  const languages = {
+    ru: 'Дальневосточный центр непрерывного образования',
+    en: 'Far Eastern Center for Continuous Education',
+    ch: '遠東繼續教育中心'
+  };
+
   return (
     <div className={styles.header}>
       {panel && <VdsPanel setPanel={setPanel} setPanelBtn={setPanelBtn} />}
@@ -89,9 +94,7 @@ export default function Header() {
               priority={true}
             />
           </Link>
-          <p className={styles.p}>
-            Дальневосточный центр непрерывного образования
-          </p>
+          <p className={styles.p}>{languages[lang]}</p>
         </div>
 
         <div className={styles.item_row}>

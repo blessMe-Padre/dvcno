@@ -3,7 +3,7 @@ const nextConfig = {
         remotePatterns: [
             // Для локальной разработки
             {
-                protocol: 'http',
+                protocol: 'https',
                 hostname: 'localhost',
             },
             // Для продакшена
@@ -15,6 +15,10 @@ const nextConfig = {
             {
                 protocol: 'http',
                 hostname: '134.0.118.139',
+            },
+            {
+                protocol: 'https',
+                hostname: 'api.comp-vlad.ru',
             }
         ],
     },
