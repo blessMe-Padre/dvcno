@@ -2,7 +2,6 @@
 import React from 'react';
 import styles from './style.module.css';
 
-import bg from '../../../public/news/decor_news.png'
 import Image from 'next/image';
 
 import { useState, useEffect } from 'react';
@@ -31,16 +30,10 @@ const News = () => {
     }, []);
 
     return (
-        <div className={styles.violet_bg}>
+        <div className={`${styles.violet_bg} ${styles.news_dekor}`}>
             <section className={`${styles.section} container`}>
-                <Image
-                    src={bg}
-                    alt="News Background"
-                    objectFit="cover"
-                    className={styles.news_dekor}
-                />
                 <div className='container'>
-                    <div className={`${styles.wrapper} `}>
+                    <div className={`${styles.wrapper}`}>
                         <div className='relative'>
                             <h2 className={styles.title}>Новости</h2>
 
