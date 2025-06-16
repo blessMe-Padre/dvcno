@@ -4,11 +4,12 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const AnimateItems = ({data}) => {
-                      
+    //console.log(data);  
+
     return (
-         <ul className={styles.list_wrapper}>
+         <div className={styles.list_wrapper}>
             
-            {data.map((item, index) => (
+            {data?.map((item, index) => (
                
                 <ul className={`${styles.ul_wrapper} ${index % 2 ? `${styles.ul_wrapper_reversed}`: ''}`} key={index}>        
                     {index != data.length - 1 ? (
@@ -33,19 +34,19 @@ const AnimateItems = ({data}) => {
                                 </motion.div>
                             </li>
 
-                            <li className={`${styles.circle} ${item.className === 'light-blue'
+                            <li className={`${styles.circle} ${item.classes === 'light-blue'
                                                 ? styles.light_blue_border
-                                                : item.className === 'green'
+                                                : item.classes === 'green'
                                                 ? styles.green_border
-                                                : item.className === 'yellow'
+                                                : item.classes === 'yellow'
                                                 ? styles.yellow_border
-                                                : item.className === 'violet'
+                                                : item.classes === 'violet'
                                                 ? styles.violet_border
                                                 : ''}`}>
                                 {/* Кружок */}
                             </li>
 
-                            <li className={`${styles.list_content} ${item.year ? '' : `${styles.custom_list_content}`}`}>
+                            <li className={`${styles.list_content} ${item.title ? '' : `${styles.custom_list_content}`}`}>
                                 <div className={styles.list_content_wrapper}>
                                     <motion.div
                                         className='relative'
@@ -59,44 +60,44 @@ const AnimateItems = ({data}) => {
                                         }}
                                         >
 
-                                        {item.year && (
+                                        {item.title && (
                                             <div className={`${styles.list_content_year} ${
-                                                item.className === 'light-blue'
+                                                item.classes === 'light-blue'
                                                 ? styles.light_blue_background  
-                                                : item.className === 'green'
+                                                : item.classes === 'green'
                                                 ? styles.green_background
-                                                : item.className === 'yellow'
+                                                : item.classes === 'yellow'
                                                 ? styles.yellow_background
-                                                : item.className === 'violet'
+                                                : item.classes === 'violet'
                                                 ? styles.violet_background
                                                 : ''
                                             }`}>
-                                                    <div className={`${styles.circle_last_small} ${item.className === 'light-blue'
+                                                    <div className={`${styles.circle_last_small} ${item.classes === 'light-blue'
                                                         ? styles.light_blue_border
-                                                        : item.className === 'green'
+                                                        : item.classes === 'green'
                                                         ? styles.green_border
-                                                        : item.className === 'yellow'
+                                                        : item.classes === 'yellow'
                                                         ? styles.yellow_border
-                                                        : item.className === 'violet'
+                                                        : item.classes === 'violet'
                                                         ? styles.violet_border
                                                         : ''}`}>
                                                         {/* Кружок */}
                                                     </div>
                                                     
-                                                    {item.year}
+                                                    {item.title}
                                             </div>
                                             
                                         )}
-                                       {item.year ? ( 
+                                       {item.title ? ( 
                                        <svg className={styles.history_decor} width="63" height="65" viewBox="0 0 63 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path 
-                                                className={item.className === 'light-blue'
+                                                className={item.classes === 'light-blue'
                                                 ? styles.light_blue_stroke  
-                                                : item.className === 'green'
+                                                : item.classes === 'green'
                                                 ? styles.green_stroke
-                                                : item.className === 'yellow'
+                                                : item.classes === 'yellow'
                                                 ? styles.yellow_stroke
-                                                : item.className === 'violet'
+                                                : item.classes === 'violet'
                                                 ? styles.violet_stroke
                                                 : ''}
                                                  d="M1.00008 2.04532C21.974 0.282198 63.343 10.0074 61.0278 63.013" stroke="#FFB236" strokeWidth="2" strokeLinecap="round"/>
@@ -104,13 +105,13 @@ const AnimateItems = ({data}) => {
                                         ) : (
                                               <svg className={styles.history_decor_without_year} width="63" height="65" viewBox="0 0 63 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path 
-                                                    className={item.className === 'light-blue'
+                                                    className={item.classes === 'light-blue'
                                                     ? styles.light_blue_stroke  
-                                                    : item.className === 'green'
+                                                    : item.classes === 'green'
                                                     ? styles.green_stroke
-                                                    : item.className === 'yellow'
+                                                    : item.classes === 'yellow'
                                                     ? styles.yellow_stroke
-                                                    : item.className === 'violet'
+                                                    : item.classes === 'violet'
                                                     ? styles.violet_stroke
                                                     : ''}
                                                  d="M1.00008 2.04532C21.974 0.282198 63.343 10.0074 61.0278 63.013" stroke="#FFB236" strokeWidth="2" strokeLinecap="round"/>
@@ -128,7 +129,7 @@ const AnimateItems = ({data}) => {
                                             <p className={styles.list_content_desc}>{item.desc2 ? item.desc2.replace(/<br>/g, '\n') : item.desc2}</p>
                                         )} */}
 
-                                        <p className={styles.list_content_desc} dangerouslySetInnerHTML={{ __html: item.desc }}></p>
+                                        <p className={styles.list_content_desc} dangerouslySetInnerHTML={{ __html: item.content }}></p>
 
 
                                     </motion.div>
@@ -137,7 +138,7 @@ const AnimateItems = ({data}) => {
                         </>
                     ) : (
                         <>
-                            <li className={`${styles.list_content} ${item.year ? '' : `${styles.custom_list_content}`}`}>
+                            <li className={`${styles.list_content} ${item.title ? '' : `${styles.custom_list_content}`}`}>
                                 <div className={styles.list_content_wrapper}>
                                     <motion.div
                                         initial={index % 2 === 0 ? { opacity: 0, x: 100 } : { opacity: 0, x: -100 }}
@@ -147,30 +148,30 @@ const AnimateItems = ({data}) => {
                                        
                                         >
 
-                                        {item.year && (
+                                        {item.title && (
                                             <div className={`${styles.list_content_year} ${
-                                                item.className === 'light-blue'
+                                                item.classes === 'light-blue'
                                                 ? styles.light_blue_background  
-                                                : item.className === 'green'
+                                                : item.classes === 'green'
                                                 ? styles.green_background
-                                                : item.className === 'yellow'
+                                                : item.classes === 'yellow'
                                                 ? styles.yellow_background
-                                                : item.className === 'violet'
+                                                : item.classes === 'violet'
                                                 ? styles.violet_background
                                                 : ''
                                             }`}>
-                                                 <div className={`${styles.circle_last_small} ${item.className === 'light-blue'
+                                                 <div className={`${styles.circle_last_small} ${item.classes === 'light-blue'
                                                     ? styles.light_blue_border
-                                                    : item.className === 'green'
+                                                    : item.classes === 'green'
                                                     ? styles.green_border
-                                                    : item.className === 'yellow'
+                                                    : item.classes === 'yellow'
                                                     ? styles.yellow_border
-                                                    : item.className === 'violet'
+                                                    : item.classes === 'violet'
                                                     ? styles.violet_border
                                                     : ''}`}>
                                                     {/* Кружок */}
                                                 </div>
-                                                {item.year}
+                                                {item.title}
                                             
                                             </div>
                                             
@@ -178,16 +179,16 @@ const AnimateItems = ({data}) => {
 
                                         
 
-                                        {item.subtitle && (
+                                        {/* {item.title && (
                                             <h2 className={styles.subtitle}>{item.title}</h2>
-                                        )}
+                                        )} */}
 
                                         {/* <p className={styles.list_content_desc}>{item.desc ? item.desc.replace(/<br>/g, '\n') : item.desc}</p>
                                         {item.desc2 && (
                                             <p className={styles.list_content_desc}>{item.desc2 ? item.desc2.replace(/<br>/g, '\n') : item.desc2}</p>
                                         )} */}
                                             
-                                            <p className={styles.list_content_desc} dangerouslySetInnerHTML={{ __html: item.desc }}></p>
+                                            <p className={styles.list_content_desc} dangerouslySetInnerHTML={{ __html: item.content }}></p>
 
                                     </motion.div>
                                 </div>
@@ -209,7 +210,7 @@ const AnimateItems = ({data}) => {
                 </ul>
             ))}
             
-        </ul>
+        </div>
     )
 }
 

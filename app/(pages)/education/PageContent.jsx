@@ -10,6 +10,8 @@ const PageContent = ({ data }) => {
     const contentPage = data?.sections;
     const listBlock = data?.sections?.main[2]?.content;
 
+    console.log(contentPage);
+    
     const languages = {
         ru: 'Обучение',
         en: 'Training',
@@ -17,7 +19,7 @@ const PageContent = ({ data }) => {
     };
 
     return (
-        <>
+        <div className="container">
             <Breadcrumbs title={languages[lang]} />
             <h2 className={`title ${styles.title}`}>{contentPage?.main[0]?.content?.[lang]?.[0]}</h2>
             <div className={styles.description}
@@ -39,7 +41,7 @@ const PageContent = ({ data }) => {
                     <p className="span-error-message">Ошибка в получении данных</p>
                 )}
             </ul>
-        </>
+        </div>
     )
 }
 
