@@ -17,7 +17,7 @@ const PageContent = ({ data }) => {
     };
 
     return (
-        <>
+        <div className="container">
             <Breadcrumbs title={languages[lang]} />
             <h2 className={`title ${styles.title}`}>{contentPage?.main[0]?.content?.[lang]?.[0]}</h2>
             <div className={styles.description}
@@ -29,9 +29,9 @@ const PageContent = ({ data }) => {
                     listBlock[lang].map((item, index) => (
                         <li key={index}>
                             <Card
-                                image={`${process.env.NEXT_PUBLIC_API_SERVER}${item.img}`}
-                                description={item.text}
-                                link={`education/${item.url}`}
+                                image={`${process.env.NEXT_PUBLIC_API_SERVER + '/' + item.image}`}
+                                description={item.title}
+                                link={`education/${item.link}`}
                             />
                         </li>
                     ))
@@ -39,7 +39,7 @@ const PageContent = ({ data }) => {
                     <p className="span-error-message">Ошибка в получении данных</p>
                 )}
             </ul>
-        </>
+        </div>
     )
 }
 
