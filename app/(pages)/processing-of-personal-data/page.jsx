@@ -13,7 +13,7 @@ import { Breadcrumbs } from '@/app/components';
 import { DocumentComponent } from '@/app/components';
 
 export default function page() {
-    
+
     const data_documents = [
         {
             'title': 'Политика обработки персональных данных в АНПОО ДВЦНО_ЭЦП',
@@ -62,13 +62,13 @@ export default function page() {
 
     return (
         <>
-    
+
             <section className={styles.section}>
                 <div className="container">
 
                     <Breadcrumbs title={"Обработка персональных данных"} />
-                    
-                
+
+
                     <div className={styles.title_wrapper}>
                         <h2 className={styles.title}>
                             ДОКУМЕНТЫ
@@ -78,7 +78,7 @@ export default function page() {
                             src={decor}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
                     </div>
 
@@ -105,18 +105,18 @@ export default function page() {
                         Полезная информация
                     </h2>
 
-                        
+
                     <div className={styles.usefull}>
-                            
+
                         <p className={styles.text}>Видео-материалы для проведения уроков по вопросам защиты персональных данных</p>
 
                         <Image
                             src={icon}
                             width={50}
                             height={50}
-                            alt=""
+                            alt="image"
                         />
-                            
+
                     </div>
 
                     <div className={styles.document_wrapper}>
@@ -125,9 +125,9 @@ export default function page() {
                                 <li className='relative' key={index}>
 
                                     <DocumentComponent
-                                        video={true} 
-                                        background={'white'} 
-                                        title={item.title} 
+                                        video={true}
+                                        background={'white'}
+                                        title={item.title}
                                         link={item.link}
                                     />
 
@@ -155,10 +155,10 @@ export default function page() {
                             <ul className={styles.document_list_custom}>
                                 {data_lessons.map((item, index) => (
                                     <li key={index}>
-                                        <DocumentComponent 
-                                            video={true} 
-                                            background={'white'} 
-                                            title={item.title} 
+                                        <DocumentComponent
+                                            video={true}
+                                            background={'white'}
+                                            title={item.title}
                                             link={item.link}
                                         />
                                     </li>
@@ -168,6 +168,6 @@ export default function page() {
                     </div>
                 </div>
             </section>
-    </>
+        </>
     )
 }

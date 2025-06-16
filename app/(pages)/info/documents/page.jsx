@@ -302,7 +302,7 @@ export default function page() {
                             src={decor1}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
                     </div>
 
@@ -329,7 +329,7 @@ export default function page() {
                             src={decor2}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
                     </div>
 
@@ -358,13 +358,13 @@ export default function page() {
                             src={decor4}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
                         <Image
                             src={decor3}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
                     </div>
 
@@ -394,13 +394,13 @@ export default function page() {
                             src={decor4}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
                         <Image
                             src={decor3}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
                     </div>
 
@@ -429,7 +429,7 @@ export default function page() {
                             src={decor5}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
 
                     </div>
@@ -458,7 +458,7 @@ export default function page() {
                             src={decor5}
                             width={100}
                             height={100}
-                            alt=""
+                            alt="image"
                         />
 
                     </div>

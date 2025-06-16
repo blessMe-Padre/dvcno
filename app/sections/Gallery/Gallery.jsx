@@ -75,7 +75,7 @@ function Gallery() {
                                             rel="noreferrer"
                                             className={`${styles.img_wrapper} dsv-image`}
                                         >
-                                            {/* <img src={image.largeURL} alt="" width={'100%'} height={'100%'} /> */}
+                                            {/* <img src={image.largeURL} alt="image" width={'100%'} height={'100%'} /> */}
                                             <Image
                                                 className={styles.gallery_img}
                                                 src={image.largeURL}
