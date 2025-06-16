@@ -3,7 +3,7 @@ const nextConfig = {
         remotePatterns: [
             // Для локальной разработки
             {
-                protocol: 'https',
+                protocol: 'http',
                 hostname: 'localhost',
             },
             // Для продакшена

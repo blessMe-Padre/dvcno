@@ -31,9 +31,9 @@ const PageContent = ({ data }) => {
                     listBlock[lang].map((item, index) => (
                         <li key={index}>
                             <Card
-                                image={`${process.env.NEXT_PUBLIC_API_SERVER}${item.img}`}
-                                description={item.text}
-                                link={`education/${item.url}`}
+                                image={`${process.env.NEXT_PUBLIC_API_SERVER + '/' + item.image}`}
+                                description={item.title}
+                                link={`education/${item.link}`}
                             />
                         </li>
                     ))

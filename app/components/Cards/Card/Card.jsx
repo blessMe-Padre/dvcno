@@ -3,6 +3,8 @@ import styles from "./style.module.css";
 import Link from "next/link";
 
 export default function Card({ image, link, description, }) {
+    // console.log(description);
+
     return (
         <div className={`${styles.card} anim_hover_card`}>
             <div className={styles.image_wrapper}>
