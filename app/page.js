@@ -12,7 +12,6 @@ export default function Home() {
 
   return (
     <>
-
       <h1 className="visually-hidden">Дальневосточный центр непрерывного образования</h1>
       <div className="container">
         <Slider />

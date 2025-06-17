@@ -5,25 +5,31 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 import styles from './style.module.css';
-
+import useLangStore from '@/app/store/languageStore';
 import placeholder from '../../../public/placeholder/placeholder.svg';
 
 const SlideMain = ({ item, isActive }) => {
+    const { lang } = useLangStore();
     const [sliderBg, setSliderBg] = useState(null);
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
+
+    const language = {
+        ru: 'Узнать подробнее',
+        en: 'Find out more',
+    }
 
     useEffect(() => {
         if (item) {
             const width = window.innerWidth;
             function handleResize() {
                 if (width >= 1200) {
-                    setSliderBg(item.images[0].sliderBgBig);
+                    setSliderBg(item.images.big);
                     setImageSize({ width: 1440, height: 680 });
                 } else if (width >= 769) {
-                    setSliderBg(item.images[1].sliderBgMedium);
+                    setSliderBg(item.images.medium);
                     setImageSize({ width: 1024, height: 500 });
                 } else if (window.innerWidth <= 480) {
-                    setSliderBg(item.images[2].sliderBgSmall);
+                    setSliderBg(item.images.small);
                     setImageSize({ width: 768, height: 400 });
                 }
             }
@@ -37,7 +43,7 @@ const SlideMain = ({ item, isActive }) => {
     return (
         <>
             <Image
-                src={sliderBg ? sliderBg : placeholder}
+                src={sliderBg ? process.env.NEXT_PUBLIC_API_SERVER + sliderBg : placeholder}
                 width={imageSize.width}
                 height={imageSize.height}
                 alt='slider_bg'
@@ -48,34 +54,19 @@ const SlideMain = ({ item, isActive }) => {
 
             />
             <div className={styles.slider}>
-
                 <div className={styles.slider__wrapper__content}>
+                    <h2 className={`${styles.slider__title}`}>
+                        {item.title}
+                    </h2>
 
-                    {item.listItems && item.listItems.length > 0 && (
-                        <>
-                            <h2 className={`${styles.slider__title} ${item.listItems.length > 3 ? styles.add_class_title : ''}`}>
-                                {item.title}
-                            </h2>
+                    <div className={styles.slider__desc} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
 
-                            <p className={`${styles.slider__desc} ${item.listItems.length > 3 ? styles.add_class_desc : ''}`}>
-                                {item.description}
-                            </p>
-
-                            <ul className={`${styles.slider__list} ${item.listItems.length > 3 ? styles.add_class : ''} title-white`}>
-                                {item.listItems.map((element, idx) => (
-                                    <li key={idx}>{element}</li>
-                                ))}
-                            </ul>
-
-                            <Link href={item.link} className={`${styles.slider__link} ${item.listItems.length > 3 ? styles.add_class_link : ''}`}>
-                                <p>Узнать подробнее</p>
-                                <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </Link>
-                        </>
-                    )}
-
+                    <Link href={item.link} className={`${styles.slider__link}`}>
+                        <p>{language[lang] ?? 'Узнать подробнее'}</p>
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </Link>
                 </div>
             </div>
         </>

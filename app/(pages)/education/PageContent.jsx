@@ -10,8 +10,6 @@ const PageContent = ({ data }) => {
     const contentPage = data?.sections;
     const listBlock = data?.sections?.main[2]?.content;
 
-    console.log(contentPage);
-    
     const languages = {
         ru: 'Обучение',
         en: 'Training',
