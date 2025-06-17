@@ -27,14 +27,9 @@ const PageContent = ({ data }) => {
     const banner = data?.sections?.main[2]?.content[lang];
     const tasksList = data?.sections?.tasks?.[1]?.content?.[lang];
 
-    console.log(tasksList);
-    // console.log(data?.sections?.activity?.[2]?.content?.[lang]?.[0]?.content);
-    //  <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: data?.sections?.strategy?.[1]?.content?.[lang]?.[0]?.content }}></div>
-
     return (
         <>
-
-            {/* <section className={styles.section}>
+            <section className={styles.section}>
                 <div className="container">
                     <Breadcrumbs title={"Обучение"} />
                     <h2 className={styles.title}>{data?.title[lang]}</h2>
@@ -88,9 +83,9 @@ const PageContent = ({ data }) => {
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className={styles.section_do}>
+            <section className={styles.section_do}>
                 <div className="container relative">
                     <h2 className={styles.title}>{data?.sections?.activity[0]?.content[lang] || 'Деятельность'}</h2>
                     <p className={styles.description}>{data?.sections?.activity[1]?.content[lang]}</p>
@@ -139,9 +134,9 @@ const PageContent = ({ data }) => {
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className={styles.section_strategy}>
+            <section className={styles.section_strategy}>
                 <div className="container relative">
                     <div className={`${styles.title_strategy_wrapper}`}>
                         <div className="relative">
@@ -209,7 +204,7 @@ const PageContent = ({ data }) => {
                         </li>
                     </ul>
                 </div>
-            </section> */}
+            </section>
 
             <section className={styles.section_purpose}>
                 <div className="container relative">
