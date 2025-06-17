@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./style.module.css";
 import Card from "./../../components/Cards/Card/Card";
-import getEduPages from '../../utils/getEduPages';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
@@ -11,14 +10,18 @@ import { SwiperNavButtons } from "../../components";
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
+import useLangStore from '@/app/store/languageStore';
+
 export default function About() {
+    const { lang } = useLangStore();
     const [data, setData] = useState([]);
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
-            const menu = await getEduPages();
-            setData(menu);
+            const result = await fetchApiServerData('pages/main');
+            setData(result.data?.sections?.about);
         };
 
         fetchData();
@@ -28,7 +31,7 @@ export default function About() {
     return (
         <section className={styles.section}>
             <div className={styles.title_wrapper}>
-                <h2 className={styles.title}>О нас</h2>
+                <h2 className={styles.title}>{data?.[0]?.content?.[lang]}</h2>
                 <div className={styles.image_wrapper}>
                     <Image
                         alt="декор"
@@ -40,38 +43,36 @@ export default function About() {
             </div>
             <div>
                 {isMobile ? (
-                    <>
-                        <Swiper
-                            spaceBetween={20}
-                            slidesPerView={1}
-                            modules={[Navigation]}
-                        >
-                            {data && data.length > 0 ? (
-                                data.map((item) => (
-                                    <SwiperSlide key={item.id}>
-                                        <Card
-                                            image={item.image}
-                                            description={item.description}
-                                            link={item.link}
-                                        />
-                                    </SwiperSlide>
-                                ))
-                            ) : (
-                                <p className="span-error-message">Данные отсутствуют.</p>
-                            )}
-                            <SwiperNavButtons
-                                addClass={'buttons_bottom'}
-                            />
-                        </Swiper>
-                    </>
-                ) : (
-                    <ul className={styles.list}>
-                        {data && data.length > 0 ? (
-                            data.map((item) => (
-                                <li key={item.id}>
+                    <Swiper
+                        spaceBetween={20}
+                        slidesPerView={1}
+                        modules={[Navigation]}
+                    >
+                        {data?.[1]?.content?.[lang] && data?.[1]?.content?.[lang].length > 0 ? (
+                            data?.[1]?.content?.[lang].map((item, index) => (
+                                <SwiperSlide key={index}>
                                     <Card
                                         image={item.image}
-                                        description={item.description}
+                                        description={item.content}
+                                        link={item.link}
+                                    />
+                                </SwiperSlide>
+                            ))
+                        ) : (
+                            <p className="span-error-message">Данные отсутствуют.</p>
+                        )}
+                        <SwiperNavButtons
+                            addClass={'buttons_bottom'}
+                        />
+                    </Swiper>
+                ) : (
+                    <ul className={styles.list}>
+                        {data?.[1]?.content?.[lang] && data?.[1]?.content?.[lang].length > 0 ? (
+                            data?.[1]?.content?.[lang].map((item, index) => (
+                                <li key={index}>
+                                    <Card
+                                        image={item.image}
+                                        description={item.content}
                                         link={item.link}
                                     />
                                 </li>
