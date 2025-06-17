@@ -10,26 +10,35 @@ import { Autoplay, Navigation } from 'swiper/modules';
 
 import Image from 'next/image';
 
+import useLangStore from '@/app/store/languageStore';
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 const Partners = () => {
-  const [partners, setPartners] = useState([]);
+  const { lang } = useLangStore();
+  const [data, setData] = useState();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchPartners = async () => {
-      const data = await getPartners();
-      setPartners(data);
+    const fetchData = async () => {
+      const result = await fetchApiServerData('pages/main');
+      if (result.status === 'error') {
+        setError(true);
+      }
+      setData(result.data?.sections?.partners);
     };
-    fetchPartners();
+    fetchData();
   }, []);
+
 
   return (
     <section className={styles.section}>
       <div className='container'>
         <div className={`${styles.wrapper}`}>
           <div className='relative'>
-            <h2 className={styles.title}>контакты</h2>
+            <h2 className={styles.title}>{data?.[0]?.content?.[lang]}</h2>
 
             <Swiper
               spaceBetween={30}
@@ -49,28 +58,30 @@ const Partners = () => {
                 },
               }}
             >
-              {partners.data && partners.data.length > 0 ? (
-                partners.data.map((item, index) => (
+              {data?.[1]?.content?.ru?.length > 0 ? (
+                data[1].content.ru.map((item, index) => (
                   <SwiperSlide key={index}>
                     <div className={`${styles.partners_img} anim_hover_card`}>
                       <Image
                         src={item.image}
                         width={200}
                         height={200}
-                        alt={item.title}
+                        alt='image'
                       />
                     </div>
                   </SwiperSlide>
                 ))
+              ) : error ? (
+                <p>Ошибка при загрузке данных</p>
               ) : (
-                <p className='span-error-message'>Данные отсутствуют.</p>
+                <p className="span-error-message">Загрузка...</p>
               )}
               <SwiperNavButtons />
             </Swiper>
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

@@ -17,10 +17,14 @@ export default function About() {
     const { lang } = useLangStore();
     const [data, setData] = useState([]);
     const [isMobile, setIsMobile] = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await fetchApiServerData('pages/main');
+            if (result.status === 'error') {
+                setError(true);
+            }
             setData(result.data?.sections?.about);
         };
 
@@ -31,7 +35,7 @@ export default function About() {
     return (
         <section className={styles.section}>
             <div className={styles.title_wrapper}>
-                <h2 className={styles.title}>{data?.[0]?.content?.[lang]}</h2>
+                <h2 className={styles.title}>{data?.[0]?.content?.[lang] ?? 'Дальневосточный центр непрерывного образования - это'}</h2>
                 <div className={styles.image_wrapper}>
                     <Image
                         alt="декор"
@@ -77,8 +81,10 @@ export default function About() {
                                     />
                                 </li>
                             ))
+                        ) : error ? (
+                            <p>Ошибка при загрузке данных</p>
                         ) : (
-                            <p className="span-error-message">Данные отсутствуют.</p>
+                            <p className="span-error-message">Загрузка...</p>
                         )}
                     </ul>
                 )}

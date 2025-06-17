@@ -8,13 +8,21 @@ import getAwards from "@/app/utils/getAwards";
 
 import { useEffect, useState } from "react";
 
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
+import useLangStore from '@/app/store/languageStore';
+
 export default function Awards() {
-  const [data, setData] = useState();
+  const { lang } = useLangStore();
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getAwards();
-      setData(result);
+      const result = await fetchApiServerData('pages/main');
+      if (result.status === 'error') {
+        setError(true);
+      }
+      setData(result.data?.sections?.sertificates);
     };
 
     fetchData();
@@ -26,7 +34,7 @@ export default function Awards() {
         <div className={styles.awards_inner}>
           <div className={styles.awards_wrapper}>
             <div className={styles.awards_title_wrapper}>
-              <h2 className={styles.awards_title}>награды ДВЦНО</h2>
+              <h2 className={styles.awards_title}>{data?.[0]?.content?.[lang] ?? 'награды ДВЦНО'}</h2>
               <svg
                 width="82"
                 height="85"
@@ -45,9 +53,11 @@ export default function Awards() {
 
           <div className={styles.awards_content}>
             {data && data.length > 0 ? (
-              <SimpleGallery galleryID="my-test-gallery" images={data} />
+              <SimpleGallery galleryID="my-test-gallery" images={data?.[1]?.content?.ru} />
+            ) : error ? (
+              <p>Ошибка при загрузке данных</p>
             ) : (
-              <div style={{ color: "#333" }}>Данные не пришли</div>
+              <p className="span-error-message">Загрузка...</p>
             )}
           </div>
         </div>

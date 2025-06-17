@@ -16,6 +16,7 @@ const SlideMain = ({ item, isActive }) => {
     const language = {
         ru: 'Узнать подробнее',
         en: 'Find out more',
+        ch: '了解更多',
     }
 
     useEffect(() => {

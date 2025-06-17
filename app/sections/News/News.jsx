@@ -5,7 +5,7 @@ import styles from './style.module.css';
 import Image from 'next/image';
 
 import { useState, useEffect } from 'react';
-
+import useLangStore from '@/app/store/languageStore';
 import fetchApiServerData from '@/app/utils/fetchApiServerData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -19,11 +19,20 @@ import 'swiper/css/navigation';
 import Link from 'next/link';
 
 const News = () => {
+    const { lang } = useLangStore();
     const [news, setNews] = useState();
+    const [title, setTitle] = useState();
+    const [error, setError] = useState(false);
+
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchApiServerData('news');
             setNews(data?.data);
+            const result2 = await fetchApiServerData('pages/main');
+            if (result2.status === 'error') {
+                setError(true);
+            }
+            setTitle(result2.data?.sections?.news?.[0]?.content);
         };
 
         fetchData();
@@ -35,7 +44,7 @@ const News = () => {
                 <div className='container'>
                     <div className={`${styles.wrapper}`}>
                         <div className='relative'>
-                            <h2 className={styles.title}>Новости</h2>
+                            <h2 className={styles.title}>{title?.[lang] ?? 'Новости'}</h2>
 
                             <Swiper
                                 modules={[Navigation, Autoplay]}
@@ -70,8 +79,10 @@ const News = () => {
                                             </Link>
                                         </SwiperSlide>
                                     ))
+                                ) : error ? (
+                                    <p>Ошибка при загрузке данных</p>
                                 ) : (
-                                    <p className="span-error-message">Здесь пока ничего нет.</p>
+                                    <p className="span-error-message">Загрузка...</p>
                                 )}
                                 <SwiperNavButtons />
                             </Swiper>
