@@ -31,7 +31,6 @@
     font-size: clamp(0.875em, 0.804em + 0.357vw, 1.125em);
 }
 
-
 .slider__list {
     display: grid;
     gap: 20px;
@@ -112,6 +111,8 @@
     background-repeat: no-repeat;
     object-fit: cover;
     border-radius: 20px;
+    object-fit: contain;
+    max-height: 680px;
 }
 
 .slider__img__pattern {

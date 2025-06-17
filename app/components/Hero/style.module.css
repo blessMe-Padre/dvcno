@@ -38,7 +38,6 @@
     margin-bottom: 10px;
 }
 
-
 .slider__desc ul {
     -moz-column-count: 1;
     column-count: 1;
@@ -126,7 +125,6 @@
     stroke: var(--white);
 }
 
-
 .slider__wrapper__content {
     position: relative;
     z-index: 1;
@@ -139,7 +137,7 @@
 .sliderBg {
     position: absolute;
     height: 100%;
-    /* max-height: 680px; */
+    max-height: 680px;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -161,6 +159,11 @@
     .slider__desc,
     .slider__list {
         max-width: 100%;
+    }
+
+    .slider__desc ul {
+        max-width: 80%;
+        padding-left: 20px;
     }
 }
 
