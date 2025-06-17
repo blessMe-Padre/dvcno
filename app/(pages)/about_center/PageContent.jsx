@@ -24,11 +24,17 @@ const PageContent = ({ data }) => {
     const { lang } = useLangStore();
 
     const headerLinks = data?.sections?.main[1]?.content[lang];
-    console.log(headerLinks);
+    const banner = data?.sections?.main[2]?.content[lang];
+    const tasksList = data?.sections?.tasks?.[1]?.content?.[lang];
+
+    console.log(tasksList);
+    // console.log(data?.sections?.activity?.[2]?.content?.[lang]?.[0]?.content);
+    //  <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: data?.sections?.strategy?.[1]?.content?.[lang]?.[0]?.content }}></div>
 
     return (
         <>
-            <section className={styles.section}>
+
+            {/* <section className={styles.section}>
                 <div className="container">
                     <Breadcrumbs title={"Обучение"} />
                     <h2 className={styles.title}>{data?.title[lang]}</h2>
@@ -59,194 +65,16 @@ const PageContent = ({ data }) => {
                                 )
                             })}
 
-                        {/* <Link href="/about_center/history" className={styles.link}>
-                            <p>История АНПОО «ДВЦНО»</p>
-                            <svg
-                                className={styles.svg}
-                                width="19"
-                                height="18"
-                                viewBox="0 0 19 18"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546"
-                                    stroke="#FCCC05"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </Link> */}
                     </div>
 
                     <div className={styles.info}>
-                        <h2 className={`${styles.title} ${styles.title_white}`}>
-                            АНПОО «ДВЦНО»
-                        </h2>
-                        <Image src={pattern} width={50} height={50} />
-                        <ul className={styles.list_company}>
-                            <p className={styles.subtitle}>Структура организации:</p>
-                            <li className={styles.list_item}>
-                                <div>
-                                    <Link href={"/"} className={styles.company_name}>
-                                        НШДС «КЕП»
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 10 10"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822"
-                                                stroke="#433C8C"
-                                                strokeWidth="1.01111"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </Link>
-                                    <p className={styles.company_desc}>
-                                        Начальная школа-детский сад «Классическая Европейская
-                                        прогимназия»
-                                    </p>
-                                </div>
-                            </li>
-                            <li className={styles.list_item}>
-                                <div>
-                                    <Link href={"/"} className={styles.company_name}>
-                                        НОШДС «ВШ»
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 10 10"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822"
-                                                stroke="#433C8C"
-                                                strokeWidth="1.01111"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </Link>
-                                    <p className={styles.company_desc}>
-                                        Начальная общеобразовательная школа-детский сад «Восточная
-                                        школа»
-                                    </p>
-                                </div>
-                            </li>
-                            <li className={styles.list_item}>
-                                <div>
-                                    <Link href={"/"} className={styles.company_name}>
-                                        МЛШ
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 10 10"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822"
-                                                stroke="#433C8C"
-                                                strokeWidth="1.01111"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </Link>
-                                    <p className={styles.company_desc}>
-                                        Международная лингвистическая школа
-                                    </p>
-                                </div>
-                            </li>
-                            <li className={styles.list_item}>
-                                <div>
-                                    <Link href={"/"} className={styles.company_name}>
-                                        АК
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 10 10"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822"
-                                                stroke="#433C8C"
-                                                strokeWidth="1.01111"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </Link>
-                                    <p className={styles.company_desc}>Академический колледж</p>
-                                </div>
-                            </li>
-                            <li className={styles.list_item}>
-                                <div>
-                                    <Link href={"/"} className={styles.company_name}>
-                                        ЦРУСО
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 10 10"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822"
-                                                stroke="#433C8C"
-                                                strokeWidth="1.01111"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </Link>
-                                    <p className={styles.company_desc}>
-                                        Центр развития и управления системой образования
-                                    </p>
-                                </div>
-                            </li>
-                            <li className={styles.list_item}>
-                                <div>
-                                    <Link href={"/"} className={styles.company_name}>
-                                        СКИБ
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 10 10"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M1.92041 1.31592L8.54242 1.31583M8.54242 1.31583L8.54242 7.84366M8.54242 1.31583L0.850022 9.00822"
-                                                stroke="#433C8C"
-                                                strokeWidth="1.01111"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </Link>
-                                    <p className={styles.company_desc}>
-                                        Служба контроля и безопасности
-                                    </p>
-                                </div>
-                            </li>
-
-                            <Image
-                                src={center2}
-                                width={270}
-                                height={215}
-                                objectFit="cover"
-                                alt="center"
-                                className={`${styles.img_small} dsv-image`}
-                            />
-                        </ul>
+                        <div>
+                            <h2 className={`${styles.title} ${styles.title_white}`}>
+                                {banner?.title}
+                            </h2>
+                            <Image src={pattern} width={50} height={50} alt='img' />
+                            <div className={styles.content_desc} dangerouslySetInnerHTML={{ __html: banner?.content }}></div>
+                        </div>
 
                         <div className={styles.img_wrapper}>
                             <Image
@@ -260,17 +88,12 @@ const PageContent = ({ data }) => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className={styles.section_do}>
+            {/* <section className={styles.section_do}>
                 <div className="container relative">
-                    <h2 className={styles.title}>Деятельность</h2>
-                    <p className={styles.description}>
-                        АНПОО «ДВЦНО» реализует образовательные программы: основные
-                        общеобразовательные программы, программы профессионального обучения,
-                        дополнительные общеобразовательные программы, дополнительные
-                        профессиональные программы
-                    </p>
+                    <h2 className={styles.title}>{data?.sections?.activity[0]?.content[lang] || 'Деятельность'}</h2>
+                    <p className={styles.description}>{data?.sections?.activity[1]?.content[lang]}</p>
 
                     <Image
                         className={styles.decor}
@@ -283,7 +106,7 @@ const PageContent = ({ data }) => {
                     <div className={styles.do_info_wrapper}>
                         <div className={styles.do_info}>
                             <div className={styles.do_info_title_wrapper}>
-                                <p className={styles.name_company_do}>Общее образование</p>
+                                <p className={styles.name_company_do}>{data?.sections?.activity?.[2]?.content?.[lang]?.[0]?.title || 'Общее образование'}</p>
                                 <div>
                                     <Image
                                         src={decor1}
@@ -293,19 +116,13 @@ const PageContent = ({ data }) => {
                                     />
                                 </div>
                             </div>
-
-                            <ul className={styles.do_list}>
-                                <li>Дошкольное образование</li>
-                                <li>Основное общее образование</li>
-                                <li>Дошкольное образование</li>
-                                <li>Среднее общее образование</li>
-                            </ul>
+                            <div className={styles.do_list_wrapper} dangerouslySetInnerHTML={{ __html: data?.sections?.activity?.[2]?.content?.[lang]?.[0]?.content }}></div>
                         </div>
 
                         <div className={styles.do_info}>
                             <div className={styles.do_info_title_wrapper}>
                                 <p className={styles.name_company_do}>
-                                    профессиональное обучение
+                                    {data?.sections?.activity?.[2]?.content?.[lang]?.[1]?.title || 'профессиональное обучение'}
                                 </p>
                                 <div>
                                     <Image
@@ -317,21 +134,19 @@ const PageContent = ({ data }) => {
                                 </div>
                             </div>
 
-                            <ul className={styles.do_list}>
-                                <li>Дополнительное образование детей и взрослых</li>
-                                <li>Дополнительное профессиональное образование</li>
-                            </ul>
+                            <div className={styles.do_list_wrapper} dangerouslySetInnerHTML={{ __html: data?.sections?.activity?.[2]?.content?.[lang]?.[1]?.content }}></div>
+
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className={styles.section_strategy}>
+            {/* <section className={styles.section_strategy}>
                 <div className="container relative">
                     <div className={`${styles.title_strategy_wrapper}`}>
                         <div className="relative">
                             <h2 className={`${styles.title} ${styles.title_white}`}>
-                                Стратегия развития
+                                {data?.sections?.strategy?.[0]?.content?.[lang] || 'Стратегия развития'}
                             </h2>
                             <Image
                                 className={styles.title_decor}
@@ -347,6 +162,7 @@ const PageContent = ({ data }) => {
                                 src={label}
                                 width={350}
                                 height={180}
+                                alt="image"
                             />
                         </div>
                     </div>
@@ -363,11 +179,8 @@ const PageContent = ({ data }) => {
                                 />
                             </div>
                             <div>
-                                <p className={styles.strategy_item_desc}>
-                                    Международная деятельность, сотрудничество с учреждениями и
-                                    предприятиями г. Владивостока, Приморского края, России, стран
-                                    Европы, Азии, Канады, США
-                                </p>
+                                <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: data?.sections?.strategy?.[1]?.content?.[lang]?.[0]?.content }}></div>
+
                             </div>
                         </li>
                         <li className={styles.strategy_item}>
@@ -380,15 +193,7 @@ const PageContent = ({ data }) => {
                                     className={styles.strategy_img_number}
                                 />
                             </div>
-                            <div>
-                                <p className={styles.strategy_item_desc}>
-                                    Усиление вклада в социально-экономическое развитие города
-                                    Владивостока и Приморского края путем повышения качества
-                                    образования через программу «International Baccalaureate»,
-                                    формирования ключевых компетентностей, конкурентоспособности и
-                                    социальной значимости
-                                </p>
-                            </div>
+                            <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: data?.sections?.strategy?.[1]?.content?.[lang]?.[1]?.content }}></div>
                         </li>
                         <li className={styles.strategy_item}>
                             <div>
@@ -400,23 +205,15 @@ const PageContent = ({ data }) => {
                                     className={styles.strategy_img_number}
                                 />
                             </div>
-                            <div>
-                                <p className={styles.strategy_item_desc}>
-                                    Удовлетворение меняющихся образовательных потребностей и
-                                    запросов государства и социума в получении доступного и
-                                    качественного образования детей, взрослых и талантливой
-                                    молодежи, соответствующего требованиям инновационного
-                                    социально ориентированного развития Приморского края
-                                </p>
-                            </div>
+                            <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: data?.sections?.strategy?.[1]?.content?.[lang]?.[2]?.content }}></div>
                         </li>
                     </ul>
                 </div>
-            </section>
+            </section> */}
 
             <section className={styles.section_purpose}>
                 <div className="container relative">
-                    <h2 className={styles.title}>Главные цели и задачи</h2>
+                    <h2 className={styles.title}>{data?.sections?.tasks?.[0]?.content?.[lang] || 'Главные цели и задачи'}</h2>
 
                     <Image
                         className={styles.purpose_img}
@@ -427,121 +224,23 @@ const PageContent = ({ data }) => {
                     />
 
                     <ul className={styles.purpose_list}>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Обеспечение качественного дошкольного, начального общего,
-                                основного общего, среднего общего образования
-                            </p>
-                        </li>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Подготовка учащихся начальной школы к поступлению и успешному
-                                обучению в основной школе
-                            </p>
-                        </li>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Подготовка учащихся средней школы к поступлению и успешному
-                                обучению в техникумах, колледжах и вузах
-                            </p>
-                        </li>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Воспитание целостной личности учащегося, личности, готовой к
-                                дальнейшему саморазвитию и самовоспитанию через приобщение к
-                                различным мировым культурам и на основе гуманистических
-                                ценностей
-                            </p>
-                        </li>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Формирование у обучающихся системы ценностей, развитие умений
-                                критически и творчески мыслить, успешно действовать в различных
-                                ситуациях, взаимодействовать с другими людьми, заботиться о
-                                здоровье и безопасности жизни
-                            </p>
-                        </li>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Создание для обучающихся образовательного пространства,
-                                способствующего воспитанию любознательного, умного,
-                                неравнодушного к проблемам окружающей жизни человека,
-                                стремящегося к созданию лучшего безопасного мира, знающего и
-                                любящего свою культуру и историю и уважающего культуры и историю
-                                других народов
-                            </p>
-                        </li>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Воспитание у обучающихся активной гражданской и жизненной
-                                позиции
-                            </p>
-                        </li>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Становление учащихся ответственными, активными, способными и
-                                желающими обучаться всю свою сознательную жизнь
-                            </p>
-                        </li>
-                        <li className={styles.purpose_item}>
-                            <Image
-                                src={purposeImage}
-                                width={60}
-                                height={60}
-                                alt="purpose_check"
-                            />
-                            <p>
-                                Воспитание у обучающихся способности видеть и творить прекрасное
-                            </p>
-                        </li>
+                        {tasksList && tasksList.length > 0 ? (
+                            tasksList.map((item, index) => {
+                                return (
+                                    <li className={styles.purpose_item} key={index}>
+                                        <Image
+                                            src={purposeImage}
+                                            width={60}
+                                            height={60}
+                                            alt="purpose_check"
+                                        />
+                                        <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
+                                    </li>
+                                )
+                            })
+                        ) :
+                            'данные не загружены'
+                        }
                     </ul>
                 </div>
             </section>
