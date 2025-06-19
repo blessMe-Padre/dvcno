@@ -19,10 +19,6 @@ import 'swiper/css';
 import Image from 'next/image';
 
 export default function SimpleGallery(props) {
-
-  console.log(props);
-
-
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({
       gallery: '#' + props.galleryID,
@@ -78,7 +74,7 @@ export default function SimpleGallery(props) {
                 </div>
                 <div className={styles.image_wrapper}>
                   <Image
-                    src={image.url}
+                    src={process.env.NEXT_PUBLIC_API_SERVER + image.image}
                     width={337}
                     height={450}
                     alt="image"

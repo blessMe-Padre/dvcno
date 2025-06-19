@@ -85,7 +85,7 @@ function Gallery() {
                                             {/* <img src={image.largeURL} alt="image" width={'100%'} height={'100%'} /> */}
                                             <Image
                                                 className={styles.gallery_img}
-                                                src={image.image}
+                                                src={process.env.NEXT_PUBLIC_API_SERVER + image.image}
                                                 alt="image"
                                                 width={708}
                                                 height={450}
