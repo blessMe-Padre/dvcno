@@ -9,84 +9,6 @@ import decor3 from '@/public/info/decor_3.svg';
 
 import useLangStore from '@/app/store/languageStore';
 
-const data_address = [
-    {
-        'title': 'Начальная школа – детский сад «Классическая европейская прогимназия» (НШДС "КЕП")',
-        'address': '690024, г. Владивосток, ул. Десятая, д. 10 (станция «Санаторная»)',
-        'img': '/info/address_1.png',
-        'link': '/'
-    },
-
-    {
-        'title': 'Начальная общеобразовательная школа-детский сад "Восточная школа"',
-        'address': '690066, г. Владивосток, ул. Тунгусская, д. 59',
-        'img': '/info/address_2.png',
-        'link': '/'
-    },
-
-    {
-        'title': 'Международная лингвистическая школа (МЛШ)',
-        'address': ' 690106, г. Владивосток,  Партизанский пр-т, д. 44, корп. 4',
-        'img': '/info/address_3.png',
-        'link': '/'
-    },
-
-    {
-        'title': 'Общеобразовательная школа для одарённых детей им. Н.Н. Дубинина (ШОД)',
-        'address': '690022, г. Владивосток, ул. Чапаева, д. 5',
-        'img': '/info/address_5.png',
-        'link': '/',
-    },
-
-    {
-        'title': 'Академический колледж (АК)',
-        'address': '690014, г. Владивосток, ул. Гоголя, д. 41',
-        'link': '/',
-        'img': '/info/address_5.png',
-    },
-
-    {
-        'title': 'Физкультурно-оздоровительный комплекс «Лига спорта»',
-        'address': '690022, г. Владивосток, ул. Чапаева, д. 5, стр. 2',
-        'link': '/',
-        'img': '/info/address_6.png',
-    },
-
-
-]
-
-const bank_info = [
-    {
-        'address': '<span style="font-weight: 600;">690014 </span>, г. Владивосток, ул. Гоголя, д. 41. Тел. 8(423)240-41-91',
-        'bank_inn': '<span style="font-weight: 600;">ИНН </span> 2536144181, ',
-        'bank_kpp': '<span style="font-weight: 600;">КПП </span> 253601001, ',
-        'bank_p_c': '<span style="font-weight: 600;">р/с </span> 40703810800100000021 в ПАО СКБ Приморья',
-        'bank_name': '<span style="font-weight: 600;">«Примсоцбанк» </span>: ',
-        'bank_bik': '<span style="font-weight: 600;">БИК </span> 040507803',
-        'bank_k_c': '<span style="font-weight: 600;"к/с </span> 30101810200000000803',
-        'bank_okpo': '<span style="font-weight: 600;">ОКПО </span> 73243973',
-    },
-];
-
-const documents_data = [
-    {
-        'title': 'Лицензия на право ведения образовательной деятельности',
-        'desc': 'Лицензия на право ведения образовательной деятельности (с приложением)',
-        'time': 'Срок действия: бессрочно.',
-        'background_color': 'violet',
-        'link': '/'
-    },
-
-    {
-        'title': 'Государственная аккредитация',
-        'desc': 'Свидетельство о государственной аккредитации № 33',
-        'time': 'Срок действия государственной аккредитации - бессрочно.',
-        'background_color': 'violet',
-        'background_color': 'light-blue',
-        'link': '/'
-    },
-]
-
 const languages = {
     ru: 'Основные сведения',
     en: 'Basic information',
@@ -100,12 +22,10 @@ const languages2 = {
 
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
-    console.log('data', data);
-
     const data_svedenya = data?.sections?.main?.[1]?.content[lang];
     const data_address = data?.sections?.addresses?.[1]?.content[lang];
-
-    console.log('data_address', data_address);
+    const documents_data = data?.sections?.docs?.[1]?.content[lang];
+    const bank_info = data?.sections?.bank?.[1]?.content[lang];
 
     return (
         <>
@@ -184,9 +104,7 @@ const PageContent = ({ data }) => {
 
             <section className={styles.section}>
                 <div className='container'>
-                    <h2 className={styles.title}>
-                        документы на осуществление образовательной деятельности </h2>
-
+                    <h2 className={styles.title}>{data?.sections?.docs?.[0]?.content[lang] ?? "документы на осуществление образовательной деятельности"}</h2>
 
                     <div className={styles.documents_wrapper}>
                         {documents_data.map((item, index) => (
@@ -217,9 +135,7 @@ const PageContent = ({ data }) => {
 
             <section className={styles.section}>
                 <div className='container relative'>
-                    <h2 className={styles.title}>
-                        Банковские реквизиты АНПОО «ДВЦНО»
-                    </h2>
+                    <h2 className={styles.title}>{data?.sections?.bank?.[0]?.content[lang] ?? 'Банковские реквизиты АНПОО «ДВЦНО»'}</h2>
 
                     <Image
                         className={styles.decor3_img}
@@ -230,30 +146,9 @@ const PageContent = ({ data }) => {
                     />
 
                     <div className={styles.bank_info}>
-                        <p className={styles.bank_name}>
-                            Автономная некоммерческая профессиональная образовательная организация «Дальневосточный центр непрерывного образования»
-                        </p>
-
-                        <ul className={styles.bank_info_list}>
-                            {bank_info.map((item, index) => (
-
-                                <>
-                                    <li dangerouslySetInnerHTML={{ __html: item.address }}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_inn }}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_kpp }}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_p_c }}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_name }}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_bik }}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_k_c }}></li>
-                                    <li dangerouslySetInnerHTML={{ __html: item.bank_okpo }}></li>
-                                </>
-
-                            ))}
-                        </ul>
-
+                        <p className={styles.bank_name} dangerouslySetInnerHTML={{ __html: bank_info?.title }} />
+                        <div dangerouslySetInnerHTML={{ __html: bank_info?.content }}></div>
                     </div>
-
-
                 </div>
             </section>
         </>
