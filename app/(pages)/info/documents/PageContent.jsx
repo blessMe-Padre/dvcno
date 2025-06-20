@@ -39,7 +39,7 @@ const PageContent = ({ data }) => {
                     <ul className={styles.document_list}>
                         {data_docs.map((item, index) => (
                             <li key={index}>
-                                <DocumentComponent title={item.title} link={item.link} />
+                                <DocumentComponent title={item.title} link={item.document} />
                             </li>
                         ))}
                     </ul>
@@ -65,7 +65,7 @@ const PageContent = ({ data }) => {
                     <ul className={styles.document_list}>
                         {data_results.map((item, index) => (
                             <li key={index}>
-                                <DocumentComponent title={item.title} link={item.link} />
+                                <DocumentComponent title={item.title} link={item.document} />
                             </li>
                         ))}
                     </ul>
@@ -98,7 +98,7 @@ const PageContent = ({ data }) => {
                     <ul className={styles.document_list}>
                         {data_acts.map((item, index) => (
                             <li key={index}>
-                                <DocumentComponent title={item.title} link={item.link} />
+                                <DocumentComponent title={item.title} link={item.document} />
                             </li>
                         ))}
                     </ul>
@@ -126,7 +126,7 @@ const PageContent = ({ data }) => {
                     <ul className={styles.document_list}>
                         {data_proccess.map((item, index) => (
                             <li key={index}>
-                                <DocumentComponent title={item.title} link={item.link} />
+                                <DocumentComponent title={item.title} link={item.document} />
                             </li>
                         ))}
                     </ul>
