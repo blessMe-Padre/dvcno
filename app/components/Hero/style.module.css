@@ -39,6 +39,9 @@
 }
 
 .slider__wrapper__content ul, .slider__list {
+    color: #fff;
+    margin-left: 40px;
+}
 .slider__desc ul {
     -moz-column-count: 1;
     column-count: 1;
