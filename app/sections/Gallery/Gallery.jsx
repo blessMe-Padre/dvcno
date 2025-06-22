@@ -15,16 +15,23 @@ import 'photoswipe/style.css';
 import getGallery from '@/app/utils/getGallery';
 import Image from "next/image";
 
+import useLangStore from '@/app/store/languageStore';
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
+
 
 function Gallery() {
+    const { lang } = useLangStore();
     const [data, setData] = useState();
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getGallery();
-            setData(result);
+            const result = await fetchApiServerData('pages/main');
+            if (result.status === 'error') {
+                setError(true);
+            }
+            setData(result.data?.sections?.gallery);
         };
-
         fetchData();
     }, []);
 
@@ -46,7 +53,7 @@ function Gallery() {
         <section className={styles.section}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    <h2 className={styles.title}>галерея</h2>
+                    <h2 className={styles.title}>{data?.[0]?.content?.[lang]}</h2>
                     <div className='pswp-gallery' id='main-gallery'>
                         {data && data.length > 0 ? (
                             <Swiper
@@ -64,21 +71,21 @@ function Gallery() {
                                 }}
                                 className="swiper-mobile"
                             >
-                                {data.map((image, index) => (
+                                {data?.[1]?.content?.ru.map((image, index) => (
                                     <SwiperSlide key={index}>
                                         <a
-                                            href={image.largeURL}
-                                            data-pswp-width={image.width}
-                                            data-pswp-height={image.height}
+                                            href={image.image}
+                                            data-pswp-width={708}
+                                            data-pswp-height={450}
                                             key={'#main-gallery' + '-' + 1}
                                             target='_blank'
                                             rel="noreferrer"
                                             className={`${styles.img_wrapper} dsv-image`}
                                         >
-                                            {/* <img src={image.largeURL} alt="" width={'100%'} height={'100%'} /> */}
+                                            {/* <img src={image.largeURL} alt="image" width={'100%'} height={'100%'} /> */}
                                             <Image
                                                 className={styles.gallery_img}
-                                                src={image.largeURL}
+                                                src={process.env.NEXT_PUBLIC_API_SERVER + image.image}
                                                 alt="image"
                                                 width={708}
                                                 height={450}
@@ -88,10 +95,10 @@ function Gallery() {
                                 ))}
                                 <SwiperNavButtons addClass="swiper_nav_btns shadows_nav" />
                             </Swiper>
+                        ) : error ? (
+                            <p>Ошибка при загрузке данных</p>
                         ) : (
-                            <div>
-                                Загрузка данных...
-                            </div>
+                            <p className="span-error-message">Загрузка...</p>
                         )}
                     </div>
                 </div>

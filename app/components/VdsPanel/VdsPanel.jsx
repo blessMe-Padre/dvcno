@@ -220,21 +220,21 @@ export default function VdsPanel({ setPanel, setPanelBtn }) {
                         onClick={addImages}
                         title="Показать изображения"
                     >
-                        <Image src="/icons/image.svg" alt="" width={20} height={20} />
+                        <Image src="/icons/image.svg" alt="image" width={20} height={20} />
                     </button>
                     <button
                         className={styles.button}
                         onClick={removeImages}
                         title="Отключить изображения"
                     >
-                        <Image src="/icons/minus-circle.svg" alt="" width={20} height={20} />
+                        <Image src="/icons/minus-circle.svg" alt="image" width={20} height={20} />
                     </button>
                     <button
                         className={styles.button}
                         onClick={addFilter}
                         title="Изображения черно-белые"
                     >
-                        <Image src="/icons/adjust.svg" alt="" width={20} height={20} />
+                        <Image src="/icons/adjust.svg" alt="image" width={20} height={20} />
                     </button>
 
                 </div>

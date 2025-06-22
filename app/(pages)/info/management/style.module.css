@@ -15,6 +15,12 @@
     padding: 120px 0;
 }
 
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
 .decor2 {
     position: absolute;

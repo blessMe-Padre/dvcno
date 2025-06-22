@@ -25,7 +25,6 @@
     right: 0;
 }
 
-
 .list_svedenya {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -178,6 +177,9 @@
 
 .field_value {
     color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 

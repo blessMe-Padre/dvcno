@@ -1,19 +1,34 @@
-'use client';
+'use client'
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import styles from "./style.module.css";
 
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
+import useLangStore from '@/app/store/languageStore';
+
 export default function Why() {
+    const { lang } = useLangStore();
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await fetchApiServerData('pages/main');
+            setData(result.data?.sections?.why);
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <section className={styles.section}>
             <div className="container">
-                <h2 className={`${styles.title} title-black`}>почему выбирают нас</h2>
+                <h2 className={`${styles.title} title-black`}>{data?.[0]?.content?.[lang]}</h2>
 
                 <ul className={styles.list}>
                     <li className={`${styles.item} anim_hover_card`}>
-                        <h3 className={styles.subtile}>Компе&shy;тентность педагогических кадров</h3>
-                        <p className={styles.text}>Педагоги центра строят свою работу, опираясь на индивидуальные способности ребенка, отслеживая результаты контрольных срезов, тестов</p>
+                        <h3 className={styles.subtile}>{data?.[1]?.content?.[lang]?.[0]?.title}</h3>
+                        <div className={styles.text} dangerouslySetInnerHTML={{ __html: data?.[1]?.content?.[lang]?.[0]?.content }}></div>
                         <Image
                             src="/why/image-1.svg"
                             alt="Компетентность педагогических кадров"
@@ -39,9 +54,8 @@ export default function Why() {
                         />
                     </li>
                     <li className={`${styles.item} anim_hover_card`}>
-                        <h3 className={styles.subtile}>Материально-техническое оснащение</h3>
-                        <p className={styles.text}>Наши учебные кабинеты оборудованы в соответствии
-                            с современными образовательными стандартами</p>
+                        <h3 className={styles.subtile}>{data?.[1]?.content?.[lang]?.[2]?.title}</h3>
+                        <div className={styles.text} dangerouslySetInnerHTML={{ __html: data?.[1]?.content?.[lang]?.[2]?.content }}></div>
                         <Image
                             src="/why/image-2.svg"
                             alt="Компетентность педагогических кадров"
@@ -51,8 +65,8 @@ export default function Why() {
                         />
                     </li>
                     <li className={`${styles.item} anim_hover_card`}>
-                        <h3 className={styles.subtile}>Качественное образование</h3>
-                        <p className={styles.text}>Главная задача АНПОО «ДВЦНО» – обеспечить качество, что в полной мере совпадает с представлением большинства родителей</p>
+                        <h3 className={styles.subtile}>{data?.[1]?.content?.[lang]?.[3]?.title}</h3>
+                        <div className={styles.text} dangerouslySetInnerHTML={{ __html: data?.[1]?.content?.[lang]?.[3]?.content }}></div>
                         <Image
                             src="/why/image-3.svg"
                             alt="Компетентность педагогических кадров"
@@ -62,8 +76,8 @@ export default function Why() {
                         />
                     </li>
                     <li className={`${styles.item} anim_hover_card`}>
-                        <h3 className={styles.subtile}>Территориальное расположение образовательных комплексов</h3>
-                        <p className={styles.text}>Единый комплекс зданий и территорий, расположенных в одном месте обеспечивает удобство и доступность образовательных услуг</p>
+                        <h3 className={styles.subtile}>{data?.[1]?.content?.[lang]?.[4]?.title}</h3>
+                        <div className={styles.text} dangerouslySetInnerHTML={{ __html: data?.[1]?.content?.[lang]?.[4]?.content }}></div>
                         <Image
                             src="/why/image-4.svg"
                             alt="Компетентность педагогических кадров"

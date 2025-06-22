@@ -5,12 +5,19 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 import styles from './style.module.css';
-
+import useLangStore from '@/app/store/languageStore';
 import placeholder from '../../../public/placeholder/placeholder.svg';
 
-const SlideMain = ({ item, learn_more, isActive }) => {
+const SlideMain = ({ item, isActive }) => {
+    const { lang } = useLangStore();
     const [sliderBg, setSliderBg] = useState(null);
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
+
+    const language = {
+        ru: 'Узнать подробнее',
+        en: 'Find out more',
+        ch: '了解更多',
+    }
 
     useEffect(() => {
         if (item) {
@@ -37,7 +44,7 @@ const SlideMain = ({ item, learn_more, isActive }) => {
     return (
         <>
             <Image
-                src={sliderBg ? sliderBg : placeholder}
+                src={sliderBg ? process.env.NEXT_PUBLIC_API_SERVER + sliderBg : placeholder}
                 width={imageSize.width}
                 height={imageSize.height}
                 alt='slider_bg'
@@ -48,22 +55,20 @@ const SlideMain = ({ item, learn_more, isActive }) => {
 
             />
             <div className={styles.slider}>
-
                 <div className={styles.slider__wrapper__content}>
 
                             <h2 className={`${styles.slider__title} `}>
                                 {item.title}
                             </h2>
 
-                            <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: item.content }}></div>
+                    <div className={styles.slider__desc} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
 
-                            <Link href={item.link} className={`${styles.slider__link} `}>
-                                <span>{learn_more}</span>
-                                <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </Link>
-
+                    <Link href={item.link} className={`${styles.slider__link}`}>
+                        <p>{language[lang] ?? 'Узнать подробнее'}</p>
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </Link>
                 </div>
             </div>
         </>

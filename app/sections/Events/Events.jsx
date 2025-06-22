@@ -6,6 +6,7 @@
 import { useState, useEffect } from "react";
 import styles from "./style.module.css";
 import useLangStore from '@/app/store/languageStore';
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
@@ -20,11 +21,14 @@ import Link from "next/link";
 export default function Events() {
     const { lang } = useLangStore();
     const [events, setEvents] = useState();
+    const [title, setTitle] = useState();
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await getEvents();
             setEvents(result.data);
+            const result2 = await fetchApiServerData('pages/main');
+            setTitle(result2.data?.sections?.events?.[0]?.content);
         };
         fetchData();
     }, []);
@@ -33,7 +37,7 @@ export default function Events() {
         <section className={styles.section}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    <h2 className={styles.title}>События</h2>
+                    <h2 className={styles.title}>{title?.[lang]}</h2>
                     <Swiper
                         spaceBetween={20}
                         slidesPerView={2}

@@ -11,21 +11,25 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import getMainSliders from "../../utils/getMainSliders";
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
+import useLangStore from '@/app/store/languageStore';
 
 export default function Slider() {
+  const { lang } = useLangStore();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getMainSliders();
-      setData(result);
-      setIsLoading(false)
+
+      const result = await fetchApiServerData('pages/main');
+      setData(result.data?.sections?.hero[0]?.content?.[lang]);
+
+      setIsLoading(false);
     };
 
     fetchData();
-  }, []);
+  }, [lang]);
 
   return (
     <section

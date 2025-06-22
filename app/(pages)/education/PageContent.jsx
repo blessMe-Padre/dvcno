@@ -9,9 +9,7 @@ const PageContent = ({ data }) => {
     const { lang } = useLangStore();
     const contentPage = data?.sections;
     const listBlock = data?.sections?.main[2]?.content;
-
-    //console.log(contentPage);
-    
+  
     const languages = {
         ru: 'Обучение',
         en: 'Training',
@@ -31,7 +29,7 @@ const PageContent = ({ data }) => {
                     listBlock[lang].map((item, index) => (
                         <li key={index}>
                             <Card
-                                image={`${process.env.NEXT_PUBLIC_API_SERVER + '/' + item.image}`}
+                                image={item.image}
                                 description={item.title}
                                 link={`education/${item.link}`}
                             />
