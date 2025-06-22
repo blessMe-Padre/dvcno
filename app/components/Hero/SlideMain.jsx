@@ -8,7 +8,7 @@ import styles from './style.module.css';
 
 import placeholder from '../../../public/placeholder/placeholder.svg';
 
-const SlideMain = ({ item, isActive }) => {
+const SlideMain = ({ item, learn_more, isActive }) => {
     const [sliderBg, setSliderBg] = useState(null);
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
 
@@ -17,13 +17,13 @@ const SlideMain = ({ item, isActive }) => {
             const width = window.innerWidth;
             function handleResize() {
                 if (width >= 1200) {
-                    setSliderBg(item.images[0].sliderBgBig);
+                    setSliderBg(process.env.NEXT_PUBLIC_API_SERVER+item.images.big);
                     setImageSize({ width: 1440, height: 680 });
                 } else if (width >= 769) {
-                    setSliderBg(item.images[1].sliderBgMedium);
+                    setSliderBg(process.env.NEXT_PUBLIC_API_SERVER+item.images.medium);
                     setImageSize({ width: 1024, height: 500 });
                 } else if (window.innerWidth <= 480) {
-                    setSliderBg(item.images[2].sliderBgSmall);
+                    setSliderBg(process.env.NEXT_PUBLIC_API_SERVER+item.images.small);
                     setImageSize({ width: 768, height: 400 });
                 }
             }
@@ -33,7 +33,7 @@ const SlideMain = ({ item, isActive }) => {
             return () => window.removeEventListener('resize', handleResize);
         }
     }, [item]);
-
+    console.log(item.content);
     return (
         <>
             <Image
@@ -51,30 +51,18 @@ const SlideMain = ({ item, isActive }) => {
 
                 <div className={styles.slider__wrapper__content}>
 
-                    {item.listItems && item.listItems.length > 0 && (
-                        <>
-                            <h2 className={`${styles.slider__title} ${item.listItems.length > 3 ? styles.add_class_title : ''}`}>
+                            <h2 className={`${styles.slider__title} `}>
                                 {item.title}
                             </h2>
 
-                            <p className={`${styles.slider__desc} ${item.listItems.length > 3 ? styles.add_class_desc : ''}`}>
-                                {item.description}
-                            </p>
+                            <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: item.content }}></div>
 
-                            <ul className={`${styles.slider__list} ${item.listItems.length > 3 ? styles.add_class : ''} title-white`}>
-                                {item.listItems.map((element, idx) => (
-                                    <li key={idx}>{element}</li>
-                                ))}
-                            </ul>
-
-                            <Link href={item.link} className={`${styles.slider__link} ${item.listItems.length > 3 ? styles.add_class_link : ''}`}>
-                                <p>Узнать подробнее</p>
+                            <Link href={item.link} className={`${styles.slider__link} `}>
+                                <span>{learn_more}</span>
                                 <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </Link>
-                        </>
-                    )}
 
                 </div>
             </div>

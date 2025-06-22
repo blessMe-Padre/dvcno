@@ -152,7 +152,7 @@ export default function Header() {
           <button
             className={styles.search_button}
             title="В разработке"
-          // onClick={() => setSearchOpened(!searchOpened)}
+            onClick={() => setSearchOpened(!searchOpened)}
           >
             {!searchOpened ? (
               <Image

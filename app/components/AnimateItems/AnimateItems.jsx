@@ -24,7 +24,7 @@ const AnimateItems = ({data}) => {
                                         {item.image && (
                                             <Image 
                                             className={`${styles.image_history} dsv-image`} 
-                                            src={item.image}
+                                            src={process.env.NEXT_PUBLIC_API_SERVER + item.image}
                                             width={200} 
                                             height={200} 
                                             alt='image_history'

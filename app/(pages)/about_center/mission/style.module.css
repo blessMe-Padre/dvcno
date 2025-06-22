@@ -9,7 +9,7 @@
 .title {
     font-family: var(--font-bebas-neue);
     font-weight: 700;
-    font-size: var(--size);
+    font-size: clamp(2.5em, -1.071em + 7.44vw, 5.625em);
     line-height: 1.1;
     letter-spacing: 0.02em;
     /* color: var(--black-toggle); */
@@ -232,7 +232,7 @@
     }
 
     .title {
-        margin-bottom: 0px;
+        margin-bottom: 10px;
     }
 
     .add_list {

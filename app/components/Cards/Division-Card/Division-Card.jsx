@@ -6,10 +6,31 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from 'framer-motion';
 
-export default function DivisionCard({ divisionData }) {
+export default function DivisionCard({ divisionData, lang }) {
     const sanitizedContent = divisionData.description || '';
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const goto_site = {
+        ru: 'Перейти на сайт',
+        en: 'Go to site',
+        ch: '前往網站'
+    };
+    const on_map = {
+        ru: 'Посмотреть на карте',
+        en: 'View on map',
+        ch: '在地圖上查看'
+    };
+    const read_description = {
+        ru: 'Читать описание',
+        en: 'Read description',
+        ch: '閱讀說明'
+    };
+    const hide = {
+        ru: 'Скрыть',
+        en: 'Hide',
+        ch: '隱藏'
+    };
 
     const variants = {
         visible: {
@@ -26,6 +47,7 @@ export default function DivisionCard({ divisionData }) {
         },
     }
 
+    //console.log(process.env.NEXT_PUBLIC_API_SERVER + divisionData.image);
     return (
         <div className={styles.card}>
             <div className={styles.image_wrapper}>
@@ -73,7 +95,7 @@ export default function DivisionCard({ divisionData }) {
 
                     <div className={styles.link_button_wrapper}>
                         <a href={`https://${divisionData.site}`} className={styles.link_button}>
-                            <span>Перейти на сайт</span>
+                            <span>{goto_site[lang]}</span>
                             <Image
                                 src="/icons/link-arrow-white.svg"
                                 alt="world"
@@ -83,7 +105,7 @@ export default function DivisionCard({ divisionData }) {
                             />
                         </a>
                         <a href={divisionData.map_link} className={`${styles.link_button} ${styles.link_button_white}`}>
-                            <span>Посмотреть на карте</span>
+                            <span>{on_map[lang]}</span>
                             <svg width="23" height="23" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.55605 1.43907L16.6545 1.43888M16.6545 1.43888L16.6545 14.3511M16.6545 1.43888L1.4388 16.6546" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -106,7 +128,7 @@ export default function DivisionCard({ divisionData }) {
                             className={styles.spoiler_link}
                         >
                             <span>
-                                {isOpen ? 'Скрыть' : 'Читать описание'}
+                                {isOpen ? hide[lang] : read_description[lang]}
                             </span>
                             <Image
                                 src="/icons/arrow-down.svg"

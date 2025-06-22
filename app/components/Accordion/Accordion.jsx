@@ -59,9 +59,10 @@ export default function Accordion({ color, title, accordionData }) {
                             >
                                 <div className={styles.content}>
                                     <ul className={styles.list_content}>
-                                        {item.content.map((li, index) => (
+                                        <div className={styles.list_content} dangerouslySetInnerHTML={{ __html: item.content}}></div>  
+                                        {/* {item.content.map((li, index) => (
                                             <li key={index} className={styles.item_content}>{li}</li>
-                                        ))}
+                                        ))} */}
                                     </ul>
                                 </div>
                             </motion.div>

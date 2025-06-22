@@ -3,6 +3,7 @@
     background-color: var(--gray);
     border-radius: 10px;
     margin: 20px 0;
+    position: relative;
 }
 
 .input {
@@ -51,4 +52,21 @@
 .submit:hover,
 .submit:active {
     background-color: var(--violet);
+}
+
+.search_res {
+    width: 90%;
+    height: auto;
+    background-color: #fff;
+    position: sticky;
+    transform: translateY(-17px);
+    box-shadow: rgba(0, 0, 0, .4) 0px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    margin: 8px;
+}
+.search_res a:hover {
+    text-decoration: underline;
 }
