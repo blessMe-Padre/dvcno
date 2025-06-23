@@ -51,7 +51,6 @@
     cursor: pointer;
     transition: background-color var(--anim-function);
     flex: 0 0 auto;
-
 }
 
 .modal_button:hover,
@@ -66,12 +65,12 @@
     background-color: var(--light-blue);
 }
 
-.search_button,
+/* .search_button,
 .search_button:hover {
     cursor: auto !important;
     opacity: .6;
     background-color: var(--violet) !important;
-}
+} */
 
 .header_social_wrapper {
     display: flex;

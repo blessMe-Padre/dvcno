@@ -321,6 +321,11 @@ ul {
   animation: animloader 1s linear infinite alternate;
 }
 
+.loader-search {
+  display: block;
+  margin-left: 50px;
+}
+
 @keyframes animloader {
   0% {
     box-shadow: -38px -6px, -14px 6px, 14px -6px;

@@ -3,73 +3,114 @@ import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import styles from "./style.module.css";
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
+import { useRouter } from 'next/navigation';
+
+//   const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/live_search?value=${encodeURIComponent(inputValue)}`;
 
 export default function Search() {
-    const [value, setValue] = useState('');
-    const [data, setData] = useState([]);
-    const timerRef = useRef(null);
+    const [inputValue, setInputValue] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [dataList, setData] = useState([]);
+    const [isFocused, setIsFocused] = useState(false);
 
-    const [isOpen, setIsOpen] = useState(true);
-    const pathname = usePathname();    
-    useEffect(() => {
-        setIsOpen(false);
-    }, [pathname]);
-
-    const handleChange = (e) => {
-        setValue(e.target.value);
-
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-        }
-        timerRef.current = setTimeout(() => {
-            handleSubmit(value);
-        }, 500);
-    }
+    const router = useRouter();
+    const debounceTimeout = useRef(null)
 
     const handleDelete = (e) => {
         e.preventDefault();
-        setValue('');
+        setInputValue('');
     }
 
-    const handleSubmit = async (e) => {
+    const handleChange = (e) => {
+        setInputValue(e.target.value);
+    }
 
-        //e.preventDefault();
-
-        try {
-            const url = `${process.env.NEXT_PUBLIC_API_TEST_SERVER}/api/ajax/live_search?value=${encodeURIComponent(value)}`;
-
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
-            });
-            if (!response.ok) {
-                throw new Error(`Ошибка HTTP live_search: ${response.status}`);
-            }
-
-            const result = await response.json();
-            setData(result);
-            console.log(result);
-
-            
-
-        } catch (error) {
-            console.error('Ошибка загрузки Объектов:', error);
-        }
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        if (inputValue.trim() === '') return;
+        // Редирект
+        router.push(`/search?query=${encodeURIComponent(inputValue.trim())}`);
     };
+
+    const handleKeyUp = (e) => {
+        e.preventDefault();
+
+        if (e.key === "Enter") {
+            // Редирект
+            console.log(inputValue);
+            router.push(`/search?query=${encodeURIComponent(inputValue.trim())}`);
+        }
+    }
+
+    const highlightText = (text, highlight) => {
+        if (!highlight) return text;
+
+        const regex = new RegExp(`(${highlight})`, 'i');
+        const match = text.match(regex);
+
+        if (!match) return text;
+
+        const parts = text.split(regex);
+        return (
+            <>
+                {parts[0]}
+                <mark>{parts[1]}</mark>
+                {parts[2]}
+            </>
+        );
+    };
+
+    useEffect(() => {
+        if (debounceTimeout.current) {
+            clearTimeout(debounceTimeout.current)
+        }
+
+        if (inputValue.trim() === '') {
+            setData([])
+            return
+        }
+
+        setLoading(true)
+        debounceTimeout.current = setTimeout(async () => {
+            try {
+                const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/live_search?value=${encodeURIComponent(inputValue)}`;
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error(`Ошибка HTTP live_search: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                setData(result);
+                setLoading(false);
+            } catch (error) {
+                console.error('Ошибка загрузки Объектов:', error)
+                setLoading(false);
+            }
+        }, 1000)
+
+        return () => clearTimeout(debounceTimeout.current)
+    }, [inputValue])
 
     return (
         <>
-            <form className={styles.wrapper} onSubmit={handleSubmit}>
+            <div className={styles.wrapper}>
                 <input
-                    type="text"
-                    placeholder="Поиск по сайту"
-                    className={styles.input}
-                    value={value}
+                    type='text'
+                    value={inputValue}
                     onChange={handleChange}
+                    onFocus={() => setIsFocused(true)}
+                    onKeyUp={handleKeyUp}
+                    onBlur={() => setTimeout(() => setIsFocused(false), 1000)} // задержка, чтобы кликнуть по элементу
+                    className={styles.input}
+                    placeholder='Поиск'
                 />
 
                 <button
@@ -84,18 +125,46 @@ export default function Search() {
                     />
                 </button>
 
-                <button className={styles.submit} type="submit">
+                <button className={styles.submit} type="submit" onClick={handleSearchSubmit}>
                     Найти
                 </button>
-            </form>
+            </div>
+            {
+                isFocused && (
+                    <ul className={styles.list}>
+                        {inputValue.trim() === '' && <li>Начните печатать</li>}
+                        {loading && <span className="loader loader-search"></span>}
+                        {!loading && dataList.length === 0 && inputValue.trim() !== '' && (
+                            <li>Ничего не найдено</li>
+                        )}
 
-            {data?.length > 0 && isOpen && (
-                <div className={styles.search_res}>
-                {data?.map((item, index) => (
-                    <Link href={item.url} onclick={() => setIsOpen(false)}>{item.title}</Link>
-                    ))}
-                </div>
-            )}
+                        {
+                            !loading &&
+                            dataList.map((item, index) => {
+                                return (
+                                    <li key={index} className={styles.item}>
+                                        <Link href={item.url}
+                                            className={styles.item_link}
+                                        >
+                                            {/* <Image
+                                                src={`${domain}${product?.imgs[0]?.url}`}
+                                                alt="logo"
+                                                width={40}
+                                                height={50}
+                                                placeholder="blur"
+                                                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
+                                            /> */}
+
+                                            {item?.title}
+                                        </Link>
+                                    </li>
+                                );
+                            })
+                        }
+                    </ul>
+                )
+            }
+
         </>
     )
 }

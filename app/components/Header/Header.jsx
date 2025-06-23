@@ -187,7 +187,7 @@ export default function Header() {
         variants={variants}
         initial={"hidden"}
         animate={searchOpened ? "visible" : "hidden"}
-        className="overflow-hidden"
+        className="relative"
       >
         <Search />
       </motion.div>
