@@ -121,3 +121,8 @@
         /* padding: 20px; */
     }
 }
+
+.search_block {
+    position: relative;
+    /* margin: 20px 0; */
+}

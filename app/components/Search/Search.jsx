@@ -146,16 +146,7 @@ export default function Search() {
                                         <Link href={item.url}
                                             className={styles.item_link}
                                         >
-                                            {/* <Image
-                                                src={`${domain}${product?.imgs[0]?.url}`}
-                                                alt="logo"
-                                                width={40}
-                                                height={50}
-                                                placeholder="blur"
-                                                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+" priority
-                                            /> */}
-
-                                            {item?.title}
+                                            {highlightText(item?.title, inputValue)}
                                         </Link>
                                     </li>
                                 );

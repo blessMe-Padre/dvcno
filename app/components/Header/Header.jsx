@@ -60,6 +60,7 @@ export default function Header() {
     visible: {
       opacity: 1,
       height: "auto",
+      overflow: 'visible',
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.1,
@@ -68,6 +69,7 @@ export default function Header() {
     hidden: {
       opacity: 0,
       height: 0,
+      overflow: 'hidden',
     },
   };
 
@@ -187,7 +189,7 @@ export default function Header() {
         variants={variants}
         initial={"hidden"}
         animate={searchOpened ? "visible" : "hidden"}
-        className="relative"
+        className={styles.search_block}
       >
         <Search />
       </motion.div>
