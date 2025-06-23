@@ -24,13 +24,13 @@ const SlideMain = ({ item, isActive }) => {
             const width = window.innerWidth;
             function handleResize() {
                 if (width >= 1200) {
-                    setSliderBg(process.env.NEXT_PUBLIC_API_SERVER+item.images.big);
+                    setSliderBg(item.images.big);
                     setImageSize({ width: 1440, height: 680 });
                 } else if (width >= 769) {
-                    setSliderBg(process.env.NEXT_PUBLIC_API_SERVER+item.images.medium);
+                    setSliderBg(item.images.medium);
                     setImageSize({ width: 1024, height: 500 });
                 } else if (window.innerWidth <= 480) {
-                    setSliderBg(process.env.NEXT_PUBLIC_API_SERVER+item.images.small);
+                    setSliderBg(item.images.small);
                     setImageSize({ width: 768, height: 400 });
                 }
             }
@@ -40,7 +40,7 @@ const SlideMain = ({ item, isActive }) => {
             return () => window.removeEventListener('resize', handleResize);
         }
     }, [item]);
-    console.log(item.content);
+
     return (
         <>
             <Image
@@ -54,15 +54,16 @@ const SlideMain = ({ item, isActive }) => {
                 priority={isActive}
 
             />
+
             <div className={styles.slider}>
                 <div className={styles.slider__wrapper__content}>
+                    <div>
+                        <h2 className={`${styles.slider__title} `}>
+                            {item.title}
+                        </h2>
 
-                            <h2 className={`${styles.slider__title} `}>
-                                {item.title}
-                            </h2>
-
-                    <div className={styles.slider__desc} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
-
+                        <div className={styles.slider__desc} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
+                    </div>
                     <Link href={item.link} className={`${styles.slider__link}`}>
                         <p>{language[lang] ?? 'Узнать подробнее'}</p>
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">

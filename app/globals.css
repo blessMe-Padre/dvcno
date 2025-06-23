@@ -216,14 +216,22 @@ ul {
   opacity: 100% !important;
 }
 
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 60px;
+}
+
 @media (max-width: 768px) {
   .swiper-mobile .swiper_nav_btns {
     top: 0;
   }
+
+  .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 10px;
+  }
+
 }
 
 @media (max-width: 460px) {
-
   .swiper-mobile {
     padding-bottom: 70px !important;
   }
@@ -280,11 +288,9 @@ ul {
   background-image: none !important;
 }
 
-
 .shadows_nav button {
   box-shadow: 5px 5px 15px 0 #bfc5db;
 }
-
 
 .anim_hover_card {
   transition: transform var(--anim-function);
