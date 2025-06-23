@@ -11,6 +11,8 @@ import placeholder from '../../../public/placeholder/placeholder.svg';
 import Popup from "../Popup/Popup";
 
 const SlideMain = ({ item, isActive, isSlider = false }) => {
+    console.log(item);
+
     const { lang } = useLangStore();
     const [sliderBg, setSliderBg] = useState(null);
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
@@ -67,7 +69,7 @@ const SlideMain = ({ item, isActive, isSlider = false }) => {
                 <div className={styles.slider__wrapper__content}>
                     <div>
                         <h2 className={`${styles.slider__title} `}>
-                            {item.title}
+                            {item?.title}
                         </h2>
 
                         <div className={styles.slider__desc} dangerouslySetInnerHTML={{ __html: item?.content }}></div>

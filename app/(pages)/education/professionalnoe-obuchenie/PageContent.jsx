@@ -8,18 +8,16 @@ import { motion, useAnimation } from "framer-motion";
 
 import useLangStore from '@/app/store/languageStore';
 
- /**
-  * TODO: получать таблицу из api   
-  */
-export default function Page({data}) {
+/**
+ * TODO: получать таблицу из api   
+ */
+export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const hero = data?.sections?.hero[0]?.content?.[lang];
     const process = data?.sections?.process;
     const docs = data?.sections?.docs;
     const docsStart = data?.sections?.docs_start;
-    // const structure = data?.sections?.structure;
-    //console.log(hero);
 
     const link1 = {
         ru: 'Обучение',
@@ -64,7 +62,7 @@ export default function Page({data}) {
                     title={link2[lang]}
                 />
                 <section className={styles.hero_section}>
-                    <SlideMain item={hero} learn_more={learn_more[lang]}/>
+                    <SlideMain item={hero} learn_more={learn_more[lang]} />
                 </section>
 
                 <motion.section
@@ -74,7 +72,7 @@ export default function Page({data}) {
                         <div>
                             <h2 className={`title`}>{process[0]?.content?.[lang]}</h2>
                             <p className={styles.accept_text}>
-                                <div dangerouslySetInnerHTML={{ __html: process[1]?.content?.[lang]}}></div>                      
+                                <div dangerouslySetInnerHTML={{ __html: process[1]?.content?.[lang] }}></div>
                             </p>
                         </div>
                         <motion.img
@@ -94,17 +92,17 @@ export default function Page({data}) {
                             alt="Изображение"
                             width={112}
                             height={112}
-                            className="dsv-image" 
+                            className="dsv-image"
                         />
                         <div>
-                            <div className={styles.alert_text} dangerouslySetInnerHTML={{ __html: process[2]?.content?.[lang]}}></div>
+                            <div className={styles.alert_text} dangerouslySetInnerHTML={{ __html: process[2]?.content?.[lang] }}></div>
                         </div>
                     </div>
 
-                    <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[2]?.content?.[lang]}}></div>
+                    <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[2]?.content?.[lang] }}></div>
 
                     <div className={styles.accept_table}>
-                        <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[3]?.content?.[lang] }}></div><br/>
+                        <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[3]?.content?.[lang] }}></div><br />
 
                         <table>
                             <thead>
@@ -140,7 +138,7 @@ export default function Page({data}) {
                             <div>
                                 <h1 className={`${styles.half_title} title text-white`}>{docs[0]?.content?.[lang]}</h1>
                                 <p className={`${styles.accept_text} text-white`}>
-                                    <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: docs[1]?.content?.[lang]}}></div>
+                                    <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: docs[1]?.content?.[lang] }}></div>
                                 </p>
                             </div>
                             <motion.img
@@ -155,7 +153,7 @@ export default function Page({data}) {
                         </div>
 
                         <ul className={styles.document_list}>
-                            {docs[2]?.content?.[lang].list.map((item, index) => (
+                            {docs[2]?.content?.[lang]?.list.map((item, index) => (
                                 <li key={index}>
                                     <DocumentComponent title={item.title} link={item.link} />
                                 </li>
@@ -173,7 +171,7 @@ export default function Page({data}) {
                         </div>
 
                         <ul className={styles.document_list}>
-                            {docsStart[2]?.content?.[lang].list.map((item, index) => (
+                            {docsStart[2]?.content?.[lang]?.list.map((item, index) => (
                                 <li key={index}>
                                     <DocumentComponent title={item.title} link={item.link} />
                                 </li>
