@@ -8,12 +8,11 @@ import { motion, useAnimation } from "framer-motion";
 
 import useLangStore from '@/app/store/languageStore';
 
-export default function Page({data}) {
+export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const dop_program = data?.sections?.dop_program;
-    console.log(dop_program[1]?.content?.[lang]?.list);
 
     const link2 = {
         ru: 'Дополнительное образование в ДВЦНО',
@@ -29,17 +28,6 @@ export default function Page({data}) {
         ru: 'Узнать подробнее',
         en: 'Learn more',
         ch: '了解更多'
-    };
-
-    const programs1 = {
-        ru: 'Программы профессиональной переподготовки',
-        en: 'Professional retraining programs',
-        ch: '了解更多'
-    };
-    const programs2 = {
-        ru: 'Программы повышения квалификации',
-        en: 'Professional development programs',
-        ch: '专业发展计划'
     };
 
     const imgAnimation = useAnimation();
@@ -71,7 +59,7 @@ export default function Page({data}) {
                 />
 
                 <section className={styles.hero_section}>
-                    <SlideMain item={banner} learn_more={learn_more[lang]}/>
+                    <SlideMain item={banner} learn_more={learn_more[lang]} isSlider={false} />
                 </section>
             </div>
 

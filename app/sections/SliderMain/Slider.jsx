@@ -62,7 +62,7 @@ export default function Slider() {
           {data.map((item, index) => {
             return (
               <SwiperSlide key={index} style={{ pointerEvents: "auto" }}>
-                <SlideMain item={item} isActive={index === 0} />
+                <SlideMain item={item} isActive={index === 0} isSlider={true} />
               </SwiperSlide>
             );
           })}

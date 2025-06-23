@@ -8,15 +8,23 @@ import styles from './style.module.css';
 import useLangStore from '@/app/store/languageStore';
 import placeholder from '../../../public/placeholder/placeholder.svg';
 
-const SlideMain = ({ item, isActive }) => {
+import Popup from "../Popup/Popup";
+
+const SlideMain = ({ item, isActive, isSlider = false }) => {
     const { lang } = useLangStore();
     const [sliderBg, setSliderBg] = useState(null);
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
+    const [popupActive, setPopupActive] = useState(false);
 
     const language = {
         ru: 'Узнать подробнее',
         en: 'Find out more',
         ch: '了解更多',
+    }
+    const language2 = {
+        ru: 'Узнать подробнее',
+        en: 'Ask a question',
+        ch: '提出問題',
     }
 
     useEffect(() => {
@@ -64,14 +72,28 @@ const SlideMain = ({ item, isActive }) => {
 
                         <div className={styles.slider__desc} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
                     </div>
-                    <Link href={item.link} className={`${styles.slider__link}`}>
-                        <p>{language[lang] ?? 'Узнать подробнее'}</p>
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </Link>
+
+                    {
+                        isSlider ?
+                            (<Link href={item?.link || ''} className={`${styles.slider__link}`}>
+                                <p>{language[lang] ?? 'Узнать подробнее'}</p>
+                                <svg width="19" height="18" viewBox="0 0 19 18" fill="#" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.05507 1.43907L17.1536 1.43888M17.1536 1.43888L17.1536 14.3511M17.1536 1.43888L1.93782 16.6546" stroke="#191830" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </Link>)
+                            :
+                            (<button
+                                className={`${styles.slider__link}`}
+                                onClick={() => setPopupActive(true)}
+                            >
+                                {language2[lang] ?? 'Задать вопрос'}
+                            </button>)
+                    }
+
+
                 </div>
             </div>
+            <Popup active={popupActive} setActive={setPopupActive} />
         </>
     )
 
