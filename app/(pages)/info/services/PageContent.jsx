@@ -42,7 +42,7 @@ const PageContent = ({ data }) => {
                                 (
                                     data_order.map((item, index) => (
                                         <li key={index}>
-                                            <DocumentComponent title={item.title} link={item.link} />
+                                            <DocumentComponent title={item.title} link={item.document} />
                                         </li>
                                     ))
                                 )
@@ -64,7 +64,7 @@ const PageContent = ({ data }) => {
                             (
                                 data_price.map((item, index) => (
                                     <li key={index}>
-                                        <DocumentComponent title={item.title} link={item.link} />
+                                        <DocumentComponent title={item.title} link={item.document} />
                                     </li>
                                 ))
                             ) : (
@@ -91,7 +91,7 @@ const PageContent = ({ data }) => {
 
                                     data_template.map((item, index) => (
                                         <li key={index}>
-                                            <DocumentComponent title={item.title} link={item.link} />
+                                            <DocumentComponent title={item.title} link={item.document} />
                                         </li>
                                     ))
                                 ) :
