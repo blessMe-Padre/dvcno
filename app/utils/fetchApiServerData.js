@@ -5,7 +5,7 @@ const fetchApiServerData = async (route) => {
     const baseUrl = `${process.env.NEXT_PUBLIC_API_SERVER}/api/v1`;
 
     const res = await fetch(`${baseUrl}/${route}`, {
-      next: { revalidate: 600 },
+      next: { revalidate: 10 },
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

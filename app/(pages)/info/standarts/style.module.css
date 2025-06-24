@@ -10,8 +10,6 @@
     display: inline-block;
 }
 
-
-
 .description {
     font-weight: 600;
     font-size: clamp(0.875em, 0.446em + 0.893vi, 1.25em);
@@ -34,7 +32,6 @@
     gap: 30px;
 }
 
-
 .section:not(:first-of-type) {
     padding: 100px 0 0px 0px;
 }
@@ -42,7 +39,6 @@
 .section_custom {
     padding: 100px 0 100px 0 !important;
 }
-
 
 .bg_gray {
     background-color: var(--gray);
@@ -64,7 +60,6 @@
     margin-bottom: 30px;
 }
 
-
 .item_name {
     text-align: center;
     font-weight: 700;
@@ -77,6 +72,21 @@
     /* background-color: var(--yellow); */
 }
 
+.item:nth-child(4n+1) .item_name {
+    background-color: var(--green);
+}
+
+.item:nth-child(4n+2) .item_name {
+    background-color: var(--light-blue);
+}
+
+.item:nth-child(4n+3) .item_name {
+    background-color: var(--yellow);
+}
+
+.item:nth-child(4n) .item_name {
+    background-color: var(--violet);
+}
 
 .background_yellow {
     background-color: var(--yellow);
