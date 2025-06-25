@@ -11,8 +11,6 @@ import placeholder from '../../../public/placeholder/placeholder.svg';
 import Popup from "../Popup/Popup";
 
 const SlideMain = ({ item, isActive, isSlider = false }) => {
-    console.log(item);
-
     const { lang } = useLangStore();
     const [sliderBg, setSliderBg] = useState(null);
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
