@@ -9,9 +9,6 @@ const PageContent = ({ page }) => {
     const { lang } = useLangStore();
     const sanitizedContent = page?.content?.[lang] || '';
 
-    console.log('link_to_map', page.link_to_map);
-
-
     return (
         <div className='container'>
             <Breadcrumbs title={page?.title?.[lang]} />
