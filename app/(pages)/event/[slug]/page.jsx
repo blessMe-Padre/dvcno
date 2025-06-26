@@ -7,8 +7,8 @@ export async function generateMetadata({ params }) {
   const { slug } = params;
   const page = await getEventsBySlug(slug);
   return {
-    title: page.title,
-    description: page.description,
+    title: page?.title ?? "Мероприятие",
+    description: page?.description ?? "Описание",
   }
 }
 
@@ -33,7 +33,7 @@ export async function generateStaticParams() {
     if (!posts.data) {
       throw new Error("API response does not contain data property");
     }
-    const slugs = posts.data.map((post) => ({ slug: post.slug }));
+    const slugs = posts?.data.map((post) => ({ slug: post.slug }));
     return slugs;
   } catch (error) {
     console.error('Ошибка получения данных:', error);

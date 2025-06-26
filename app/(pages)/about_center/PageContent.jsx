@@ -38,7 +38,7 @@ const PageContent = ({ data }) => {
                         {headerLinks && headerLinks.length > 0 &&
                             headerLinks.map((item, index) => {
                                 return (
-                                    <Link key={index} href={item?.url} className={styles.link}>
+                                    <Link key={index} href={item?.link} className={styles.link}>
                                         <p>{item?.title}</p>
                                         <svg
                                             className={styles.svg}

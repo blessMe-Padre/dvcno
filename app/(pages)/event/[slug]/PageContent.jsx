@@ -7,13 +7,16 @@ import useLangStore from '@/app/store/languageStore';
 
 const PageContent = ({ page }) => {
     const { lang } = useLangStore();
-    const sanitizedContent = page.content?.[lang] || '';
+    const sanitizedContent = page?.content?.[lang] || '';
+
+    console.log('link_to_map', page.link_to_map);
+
 
     return (
         <div className='container'>
-            <Breadcrumbs title={page.title?.[lang]} />
+            <Breadcrumbs title={page?.title?.[lang]} />
 
-            <h1 className={styles.title}>{page.title?.[lang]}</h1>
+            <h1 className={styles.title}>{page?.title?.[lang]}</h1>
 
             <header className={styles.header}>
 
@@ -48,20 +51,20 @@ const PageContent = ({ page }) => {
                         width={25}
                         height={25}
                     />
-                    <div className={styles.tag}>{page.address?.[lang]}</div>
+                    <div className={styles.tag}>{page?.address?.[lang]}</div>
                 </div>
 
                 <LinkButton
                     color={'green'}
-                    href={page.link_to_map}
+                    href={page?.link_to_map}
                     text={'Посмотреть на карте'}
                 />
             </header>
 
             <div className={styles.image_wrapper}>
                 <Image
-                    src={page.thumbnail ? process.env.NEXT_PUBLIC_API_SERVER + page?.thumbnail : '/placeholder/placeholder.svg'}
-                    alt={page.title}
+                    src={page?.thumbnail ? process.env.NEXT_PUBLIC_API_SERVER + page?.thumbnail : '/placeholder/placeholder.svg'}
+                    alt={page?.title}
                     width={1460}
                     height={723}
                     className={styles.image}

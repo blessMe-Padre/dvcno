@@ -4,6 +4,7 @@ import styles from './info.module.css';
 import { Breadcrumbs } from '@/app/components';
 
 import useLangStore from '@/app/store/languageStore';
+import Link from 'next/link';
 
 export default function Page({ data }) {
     const { lang } = useLangStore();
@@ -39,7 +40,7 @@ export default function Page({ data }) {
             <ul className={styles.link_wrapper}>
                 {list_links && list_links?.map((link, index) => (
                     <li key={index}>
-                        <a href={link.link} className={styles.link}>
+                        <Link href={link.link} className={styles.link}>
                             <span>{link.title}</span>
                             <Image
                                 src="/info-security/arrow-icon.svg"
@@ -48,7 +49,7 @@ export default function Page({ data }) {
                                 height={22}
                                 className="dsv-image"
                             />
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
