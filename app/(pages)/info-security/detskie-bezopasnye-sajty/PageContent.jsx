@@ -7,10 +7,9 @@ import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
-    const header = data?.sections?.main[0]?.content?.[lang][0];
+    const header = data?.sections?.main[0]?.content?.[lang];
     const list_docs = data?.sections?.main[1]?.content?.[lang];
-    //console.log(banner);
-    
+
     const link1 = {
         ru: 'Информационная безопасность',
         en: 'Information security',
@@ -31,7 +30,7 @@ export default function Page({ data }) {
             />
 
             <div className={styles.title_wrapper}>
-                <h2 className={`title ${styles.half_title}`}>{header}</h2>
+                <h2 className={`title ${styles.half_title}`}>{header ?? 'Детские безопасные сайты'}</h2>
                 <Image
                     src="/info-security/image-5.svg"
                     alt="Изображение"
@@ -54,7 +53,7 @@ export default function Page({ data }) {
                             />
                             <a href={item.link} target="_blank" rel="noopener noreferrer">{item.link}</a>
                         </div>
-                        <div className={styles.site_description}>{item.description}</div>
+                        <div className={styles.site_description} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
                     </li>
                 ))
                 }
