@@ -1,7 +1,7 @@
 import getEventsBySlug from '@/app/utils/getEventBySlug';
 import PageContent from './PageContent';
 
-export const revalidate = 600;
+export const revalidate = 10;
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
