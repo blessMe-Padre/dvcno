@@ -24,6 +24,9 @@ const News = () => {
     const [title, setTitle] = useState();
     const [error, setError] = useState(false);
 
+    console.log(news);
+
+
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchApiServerData('news');
@@ -72,6 +75,7 @@ const News = () => {
                                         <SwiperSlide key={index}>
                                             <Link
                                                 href={`/news/${item.slug}`}
+                                                style={{ display: 'block', height: '100%' }}
                                             >
                                                 <NewsCard
                                                     data={item}
