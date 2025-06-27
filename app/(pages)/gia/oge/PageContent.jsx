@@ -14,8 +14,7 @@ export default function Page({ data }) {
     const total_list_links = data?.sections?.total[1]?.content?.[lang];
     const materials_header = data?.sections?.materials[0]?.content?.[lang][0];
     const materials_list_links = data?.sections?.materials[1]?.content?.[lang];
-    //console.log(banner);
-    
+
     const link1 = {
         ru: 'ГИА',
         en: 'GIA',

@@ -8,13 +8,12 @@ import Image from 'next/image';
 import styles from '../education.module.css';
 import { Division } from '@/app/sections';
 
-export default function Page({data}) {
+export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const hero = data?.sections?.hero[0]?.content?.[lang];
     const desc = data?.sections?.desc[0]?.content?.[lang];
     const structure = data?.sections?.structure;
-    //console.log(desc);
 
     const link1 = {
         ru: 'Обучение',
@@ -42,7 +41,7 @@ export default function Page({data}) {
                 />
 
                 <section className={styles.hero_section}>
-                    <SlideMain item={hero} learn_more={learn_more[lang]}/>
+                    <SlideMain item={hero} learn_more={learn_more[lang]} />
                 </section>
 
                 <section className={`${styles.section} ${styles.section_green} section-dsv`}>
@@ -68,7 +67,7 @@ export default function Page({data}) {
                     </div>
                 </section>
 
-                <Division divisionData={structure} lang={lang}/>
+                <Division divisionData={structure} lang={lang} />
             </div>
         </>
     )

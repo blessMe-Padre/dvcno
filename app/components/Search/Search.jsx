@@ -38,7 +38,6 @@ export default function Search() {
 
         if (e.key === "Enter") {
             // Редирект
-            console.log(inputValue);
             router.push(`/search?query=${encodeURIComponent(inputValue.trim())}`);
         }
     }

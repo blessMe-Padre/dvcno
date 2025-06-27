@@ -16,7 +16,6 @@ export default function Page({ data }) {
     const main3_header = data?.sections?.main3[0]?.content?.[lang][0];
     const main3_format_text = data?.sections?.main3[1]?.content?.[lang][0];
     const main3_list_links = data?.sections?.main3[2]?.content?.[lang];
-    console.log(data);
 
     const link1 = {
         ru: 'Информационная безопасность',

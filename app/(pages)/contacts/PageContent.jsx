@@ -134,9 +134,6 @@ const languages = {
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
 
-    console.log(data);
-
-
     return (
         <>
             <section className={styles.section}>

@@ -16,10 +16,6 @@ export default function Page({ data }) {
     const desc = data?.sections?.desc[0]?.content?.[lang];
     const structure = data?.sections?.structure;
 
-
-    console.log(desc);
-
-
     const link1 = {
         ru: 'Обучение',
         en: 'Training',

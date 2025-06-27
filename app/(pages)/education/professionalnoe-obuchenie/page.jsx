@@ -10,10 +10,9 @@ export default async function Page() {
 
     const result = await fetchApiServerData('pages/professionalnoe-obuchenie');
     const data = result?.data;
-    //console.log(data);
-    
+
     return (
-        <PageContent data={data}/>
+        <PageContent data={data} />
     )
 }
 

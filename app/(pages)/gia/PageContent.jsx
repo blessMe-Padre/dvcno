@@ -14,8 +14,7 @@ export default function Page({ data }) {
     const main1_list_links = data?.sections?.main1[1]?.content?.[lang];
     const main2_header = data?.sections?.main2[0]?.content?.[lang][0];
     const main2_list_links = data?.sections?.main2[1]?.content?.[lang];
-    //console.log(banner);
-    
+
     const link1 = {
         ru: 'ГИА',
         en: 'GIA',
@@ -25,7 +24,7 @@ export default function Page({ data }) {
     return (
         <div className="container">
             <Breadcrumbs
-                 title={link1[lang]}
+                title={link1[lang]}
             />
 
             <h1 className={`title ${styles.half_title}`}>{header}</h1>
