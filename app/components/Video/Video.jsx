@@ -3,7 +3,7 @@ import styles from './style.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const VideoComponent = ({ title, link, background }) => {
+const VideoComponent = ({ title, mp4, webm, background }) => {
     const [active, setActive] = useState(false);
 
     const handleClick = () => {
@@ -25,7 +25,12 @@ const VideoComponent = ({ title, link, background }) => {
                 <p>{title}</p>
             </div>
 
-            <VideoPopup active={active} setActive={setActive} />
+            <VideoPopup
+                active={active}
+                setActive={setActive}
+                mp4={mp4}
+                webm={webm}
+            />
         </div>
     )
 }

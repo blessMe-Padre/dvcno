@@ -17,10 +17,9 @@ const languages = {
 
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
-
     const data_documents = data?.sections?.documents?.[2]?.content?.[lang]?.list;
-    const data_video = data?.sections?.information?.[2]?.content?.[lang];
-    const data_lessons = data?.sections?.lessons?.[2]?.content?.[lang];
+    const data_video = data?.sections?.information?.[2]?.content?.[lang]?.list;
+    const data_lessons = data?.sections?.lessons?.[2]?.content?.[lang]?.list;
 
     return (
         <>
@@ -62,7 +61,6 @@ const PageContent = ({ data }) => {
                 </div>
             </section>
 
-
             <section className={styles.section}>
                 <div className="container">
 
@@ -88,10 +86,10 @@ const PageContent = ({ data }) => {
                                         <li className='relative' key={index}>
 
                                             <VideoComponent
-                                                video={true}
                                                 background={'white'}
                                                 title={item.title}
-                                                link={item.link}
+                                                mp4={item.video_mp4}
+                                                webm={item.video_webm}
                                             />
 
                                             <Image
@@ -102,11 +100,9 @@ const PageContent = ({ data }) => {
                                                 objectFit='contain'
                                                 alt=''
                                             />
-
                                         </li>
                                     ))
                                 ) : (<p>Данные не загружены</p>)
-
                             }
                         </ul>
                     </div>
@@ -119,7 +115,6 @@ const PageContent = ({ data }) => {
 
                             <div className={styles.lessons_info} dangerouslySetInnerHTML={{ __html: data?.sections?.lessons?.[1]?.content?.[lang] ?? 'по вопросам защиты персональных данных:' }}></div>
 
-
                             <ul className={styles.document_list_custom}>
                                 {data_lessons && data_lessons.length > 0 ?
                                     (
@@ -128,7 +123,8 @@ const PageContent = ({ data }) => {
                                                 <VideoComponent
                                                     background={'white'}
                                                     title={item.title}
-                                                    link={item.link}
+                                                    mp4={item.video_mp4}
+                                                    webm={item.video_webm}
                                                 />
                                             </li>
                                         ))

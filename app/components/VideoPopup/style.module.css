@@ -19,9 +19,9 @@
 }
 
 .popupActive {
-  opacity: 1;
-  visibility: visible;
-  z-index: 70;
+    opacity: 1;
+    visibility: visible;
+    z-index: 70;
 }
 
 .popup__body {
@@ -64,9 +64,8 @@
 }
 
 .popup__close:hover {
-background-color: var( --light-blue);
+    background-color: var(--light-blue);
 }
-
 
 .popup__text {
     font-size: 16px;
@@ -95,5 +94,10 @@ background-color: var( --light-blue);
 .popup__btn svg path {
     background-color: #303030;
     border-radius: 10px;
+    stroke: white;
+}
+
+.close_svg {
+    fill: white;
     stroke: white;
 }
