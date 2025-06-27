@@ -34,8 +34,8 @@ const PageContent = ({ data }) => {
 
             <ul className={styles.list}>
                 {educationPages && educationPages.length > 0 ? (
-                    educationPages.map((item) => (
-                        <li key={item.id}>
+                    educationPages.map((item, index) => (
+                        <li key={index}>
                             <Card
                                 image={item.image}
                                 description={item.title}

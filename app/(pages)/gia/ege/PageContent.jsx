@@ -9,11 +9,11 @@ export default function Page({ data }) {
 
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const info_header = data?.sections?.info[0]?.content?.[lang][0];
-    const info_list_links = data?.sections?.info[1]?.content?.[lang];
+    const info_list_docs = data?.sections?.info[1]?.content?.[lang]?.list;
     const total_header = data?.sections?.total[0]?.content?.[lang][0];
-    const total_list_links = data?.sections?.total[1]?.content?.[lang];
+    const total_list_docs = data?.sections?.total[1]?.content?.[lang]?.list;
     const materials_header = data?.sections?.materials[0]?.content?.[lang][0];
-    const materials_list_links = data?.sections?.materials[1]?.content?.[lang];
+    const materials_list_docs = data?.sections?.materials[1]?.content?.[lang]?.list;
     //console.log(banner);
     
     const link1 = {
@@ -31,13 +31,13 @@ export default function Page({ data }) {
         <div className="container">
             <Breadcrumbs
                 slug={link1[lang]}
-                link={'pages/gia'}
+                link={'gia'}
                 title={link2[lang]}
             />
 
             <section className={`${styles.hero} ${styles.hero_ege} section-dsv`}>
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}>{banner.title}</h2>
+                    <h2 className={`title ${styles.half_title}`}>{banner.title ?? "ОГЭ"}</h2>
                     <Image
                         src="/gia/image-3.svg"
                         alt="Изображение"
@@ -48,11 +48,15 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.hero_list}>
-                    {banner.links.map((item, index) => (
-                        <li key={index}>
-                            <DocumentComponent title={item.title} link={item.link} />
-                        </li>
-                    ))}
+                    {banner.links && banner.links.length > 0 ? (
+                        banner.links.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.link} />
+                            </li>
+                        ))
+                    ) :
+                        'данные не загружены'
+                    }
                 </ul>
             </section>
 
@@ -69,11 +73,15 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.document_list}>
-                    {info_list_links.map((item, index) => (
-                        <li key={index}>
-                            <DocumentComponent title={item.title} link={item.link} />
-                        </li>
-                    ))}
+                    {info_list_docs && info_list_docs.length > 0 ? (
+                        info_list_docs.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.document} />
+                            </li>
+                        ))
+                    ) :
+                        'данные не загружены'
+                    }                        
                 </ul>
             </section>
 
@@ -102,11 +110,15 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.hero_list}>
-                    {total_list_links.map((item, index) => (
-                        <li key={index}>
-                            <DocumentComponent title={item.title} link={item.link} />
-                        </li>
-                    ))}
+                    {total_list_docs && total_list_docs.length > 0 ? (
+                        total_list_docs.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.document} />
+                            </li>
+                        ))
+                    ) :
+                        'данные не загружены'
+                    }  
                 </ul>
             </section>
 
@@ -123,11 +135,15 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.document_list}>
-                    {materials_list_links.map((item, index) => (
-                        <li key={index}>
-                            <DocumentComponent title={item.title} link={item.link} />
-                        </li>
-                    ))}
+                    {total_list_docs && total_list_docs.length > 0 ? (
+                        materials_list_docs.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.document} />
+                            </li>
+                        ))
+                    ) :
+                        'данные не загружены'
+                    }                         
                 </ul>
             </section>
 
