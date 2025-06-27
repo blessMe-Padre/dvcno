@@ -18,8 +18,6 @@ function SearchResultsContent() {
     const searchParams = useSearchParams();
     const query = searchParams.get('query');
 
-    console.log(dataList);
-
     useEffect(() => {
         const fetchData = async () => {
             try {

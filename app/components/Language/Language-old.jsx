@@ -15,8 +15,6 @@ const AVAILABLE_LANGUAGES = ['ru', 'en'];
 
 export default function Language() {
     const { lang, setLang } = useLangStore();
-    console.log(lang);
-
     const handleChange = (evt) => {
         const newLang = evt.target.value;
         setLang(newLang);

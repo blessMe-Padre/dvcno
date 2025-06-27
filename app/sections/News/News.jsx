@@ -72,6 +72,7 @@ const News = () => {
                                         <SwiperSlide key={index}>
                                             <Link
                                                 href={`/news/${item.slug}`}
+                                                style={{ display: 'block', height: '100%' }}
                                             >
                                                 <NewsCard
                                                     data={item}

@@ -25,7 +25,7 @@ export default function Page({ data }) {
     return (
         <div className="container">
             <Breadcrumbs
-                 title={link1[lang]}
+                title={link1[lang]}
             />
 
             <h1 className={`title ${styles.half_title}`}>{header ?? "ГИА"}</h1>

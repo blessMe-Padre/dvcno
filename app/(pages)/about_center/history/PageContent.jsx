@@ -17,8 +17,6 @@ export default function Page({ data }) {
 
     const docsHeader = data?.sections?.docs[0]?.content?.[lang];
     const docs = data?.sections?.docs[1]?.content?.[lang];
-    //console.log('ru ', data?.sections?.main[1]?.content?.['ru']);
-    console.log(docs);
 
     const languages = {
         ru: 'История',

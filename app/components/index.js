@@ -10,6 +10,7 @@ export { default as SocialIcon } from './Socilal-icon/SocialIcon'
 export { default as Menu } from './Menu/Menu';
 export { default as NewsCard } from './News/NewsCard';
 export { default as Popup } from './Popup/Popup';
+export { default as VideoPopup } from './VideoPopup/VideoPopup';
 export { default as PopupBtn } from './Popup-btn/PopupBtn';
 export { default as PopupMenu } from './Popup-menu/PopupMenu';
 export { default as Search } from './Search/Search';
@@ -22,6 +23,7 @@ export { default as DivisionCard } from './Cards/Division-Card/Division-Card';
 export { default as SlideMain } from './Hero/SlideMain';
 export { default as AnimateItems } from './AnimateItems/AnimateItems';
 export { default as DocumentComponent } from './Documents/Documents';
+export { default as VideoComponent } from './Video/Video';
 export { default as Accordion } from './Accordion/Accordion';
 export { default as ComponentMap } from './Map/Map';
 export { default as ContactsList } from './ContactsList/ContactsList';

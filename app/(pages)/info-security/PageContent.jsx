@@ -4,16 +4,14 @@ import styles from './info.module.css';
 import { Breadcrumbs } from '@/app/components';
 
 import useLangStore from '@/app/store/languageStore';
+import Link from 'next/link';
 
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
-    //const sanitizedContent = pageTextData || '';
-
     const header = data?.sections?.main[0]?.content?.[lang][0];
     const list_links = data?.sections?.main[1]?.content?.[lang];
     const format_text = data?.sections?.main[2]?.content?.[lang];
-    //console.log(list_links);
 
     const link = {
         ru: 'Информационная безопасность',
@@ -24,9 +22,9 @@ export default function Page({ data }) {
     return (
         <div className="container">
             <Breadcrumbs
-                    link={'main'}
-                    title={link[lang]}
-                />
+                link={'main'}
+                title={link[lang]}
+            />
 
             <div className={styles.title_wrapper}>
                 <h2 className={`title ${styles.half_title}`}>{header}</h2>
@@ -42,7 +40,7 @@ export default function Page({ data }) {
             <ul className={styles.link_wrapper}>
                 {list_links && list_links?.map((link, index) => (
                     <li key={index}>
-                        <a href={link.link} className={styles.link}>
+                        <Link href={link.link} className={styles.link}>
                             <span>{link.title}</span>
                             <Image
                                 src="/info-security/arrow-icon.svg"
@@ -51,7 +49,7 @@ export default function Page({ data }) {
                                 height={22}
                                 className="dsv-image"
                             />
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
