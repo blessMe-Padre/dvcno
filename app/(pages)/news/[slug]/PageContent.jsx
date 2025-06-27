@@ -5,6 +5,13 @@ import Breadcrumbs from '@/app/components/Breadcrumbs/Breadcrumbs';
 import Image from 'next/image';
 import styles from './style.module.css';
 
+const languages = {
+    ru: 'Новости',
+    en: 'News',
+    ch: '訊息'
+};
+
+
 const PageContent = ({ page }) => {
     const { lang } = useLangStore();
 
@@ -15,7 +22,11 @@ const PageContent = ({ page }) => {
 
     return (
         <div className='container'>
-            <Breadcrumbs title={page.title?.[lang]} />
+            <Breadcrumbs
+                slug={languages[lang]}
+                link={'news'}
+                title={page.title?.[lang]}
+            />
 
             <h1 className={styles.title}>{page.title?.[lang]}</h1>
 
