@@ -24,9 +24,6 @@ const News = () => {
     const [title, setTitle] = useState();
     const [error, setError] = useState(false);
 
-    console.log(news);
-
-
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchApiServerData('news');

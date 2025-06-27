@@ -6,8 +6,6 @@ import Image from 'next/image';
 import styles from './style.module.css';
 
 const PageContent = ({ page }) => {
-    console.log(page);
-
     const { lang } = useLangStore();
 
     const sanitizedContent = page?.content?.[lang] || '';
@@ -35,13 +33,24 @@ const PageContent = ({ page }) => {
             </header>
 
             <div className={styles.image_wrapper}>
-                <Image
-                    src={page.images[0].slide ? process.env.NEXT_PUBLIC_API_SERVER + page.images[0].slide : '/placeholder/placeholder.svg'}
-                    alt={page.title}
-                    width={1460}
-                    height={723}
-                    className={styles.image}
-                />
+                {
+                    page?.images ?
+                        (<Image
+                            src={page?.images[0]?.slide ? process.env.NEXT_PUBLIC_API_SERVER + page?.images[0]?.slide : '/placeholder/placeholder.svg'}
+                            alt={page.title}
+                            width={1460}
+                            height={723}
+                            className={styles.image}
+                        />)
+                        :
+                        (<Image
+                            src={'/placeholder/placeholder.svg'}
+                            alt={page.title}
+                            width={1460}
+                            height={723}
+                            className={styles.image}
+                        />)
+                }
             </div>
 
             <div
