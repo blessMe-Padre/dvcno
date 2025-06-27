@@ -1,11 +1,5 @@
-import styles from "./style.module.css";
-import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
-
-import decor from '@/public/damage/decor.svg';
-
-import Image from "next/image";
-
-import { DocumentComponent } from "@/app/components";
+import PageContent from "./PageContent";
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
 
 export const metadata = {
     title: "ДВЦНО | Противодействие идеологии терроризма и экстремизма",
@@ -13,63 +7,9 @@ export const metadata = {
 };
 
 export default async function Page() {
-
-    const data_damage = [
-        {
-            'title': 'Террористический акт',
-            'link': '/'
-        },
-        {
-            'title': 'Террористический акт',
-            'link': '/'
-        },
-        {
-            'title': 'Террористический акт',
-            'link': '/'
-        },
-        {
-            'title': 'Террористический акт',
-            'link': '/'
-        },
-        {
-            'title': 'Террористический акт',
-            'link': '/'
-        },
-        {
-            'title': 'Террористический акт',
-            'link': '/'
-        },
-        {
-            'title': 'Террористический акт',
-            'link': '/'
-        },
-
-    ]
+    const data = await fetchApiServerData('pages/resistance_to_damage_2');
 
     return (
-        <div className="container">
-            <Breadcrumbs
-                title={'Террористический акт'}
-            />
-            <div className={styles.title_wrapper}>
-                <h2 className={`title ${styles.title}`}>Противодействие идеологии терроризма и экстремизма</h2>
-                <Image
-                    src={decor}
-                    className={styles.decor}
-                    width={150}
-                    height={50}
-                    alt='/'
-                />
-            </div>
-
-            <ul className={styles.document_list}>
-                {data_damage.map((item, index) => (
-                    <li key={index}>
-                        <DocumentComponent title={item.title} link={item.link} />
-                    </li>
-                ))}
-            </ul>
-
-        </div>
+        <PageContent data={data.data} />
     )
 }
