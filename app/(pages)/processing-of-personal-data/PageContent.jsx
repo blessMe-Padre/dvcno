@@ -6,53 +6,8 @@ import Image from 'next/image';
 import icon from '@/public/processing-of-personal-data/icon.svg';
 
 import { Breadcrumbs } from '@/app/components';
-import { DocumentComponent } from '@/app/components';
+import { VideoComponent, DocumentComponent } from '@/app/components';
 import useLangStore from '@/app/store/languageStore';
-
-const data_documents = [
-    {
-        'title': 'Политика обработки персональных данных в АНПОО ДВЦНО_ЭЦП',
-        'link': '',
-    },
-    {
-        'title': 'Положение об обработке персональных данных обучающихся и третьих лиц',
-        'link': '',
-    },
-    {
-        'title': 'Положение об обработке персональных данных обучающихся и третьих лиц подпись.',
-        'link': '',
-    },
-]
-const data_video = [
-    {
-        'title': 'Презентация для детей 9-11 лет для использования на уроке',
-        'link': '',
-        'img': '/processing-of-personal-data/years_1.png',
-    },
-    {
-        'title': 'Презентация для детей 12-14 лет для использования на уроке',
-        'link': '',
-        'img': '/processing-of-personal-data/years_2.png',
-    }
-]
-const data_lessons = [
-    {
-        'title': 'Урок 1',
-        'link': '',
-    },
-    {
-        'title': 'Урок 2',
-        'link': '',
-    },
-    {
-        'title': 'Урок 3',
-        'link': '',
-    },
-    {
-        'title': 'Урок 4',
-        'link': '',
-    }
-]
 
 const languages = {
     ru: 'Обработка персональных данных',
@@ -132,7 +87,7 @@ const PageContent = ({ data }) => {
                                     data_video.map((item, index) => (
                                         <li className='relative' key={index}>
 
-                                            <DocumentComponent
+                                            <VideoComponent
                                                 video={true}
                                                 background={'white'}
                                                 title={item.title}
@@ -170,8 +125,7 @@ const PageContent = ({ data }) => {
                                     (
                                         data_lessons.map((item, index) => (
                                             <li key={index}>
-                                                <DocumentComponent
-                                                    video={true}
+                                                <VideoComponent
                                                     background={'white'}
                                                     title={item.title}
                                                     link={item.link}
