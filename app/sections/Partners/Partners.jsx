@@ -63,7 +63,7 @@ const Partners = () => {
                   <SwiperSlide key={index}>
                     <div className={`${styles.partners_img} anim_hover_card`}>
                       <Image
-                        src={item.image}
+                        src={process.env.NEXT_PUBLIC_API_SERVER + item.image}
                         width={200}
                         height={200}
                         alt='image'

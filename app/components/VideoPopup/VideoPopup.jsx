@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import styles from './style.module.css';
 
-export default function VideoPopup({ active, setActive }) {
+export default function VideoPopup({ active, setActive, mp4, webm }) {
     const videoRef = useRef(null);
-
     const handleKeyDown = (event) => {
         if (event.key === 'Escape' || event.key === 'Esc') {
             setActive(false);
@@ -35,9 +34,9 @@ export default function VideoPopup({ active, setActive }) {
                         className={styles.popup__close}
                         onClick={() => { setActive(false) }}
                     >
-                        <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="18.4463" width="21.8033" height="0.726776" rx="0.363388" transform="rotate(-45 3 18.4463)" fill="white" />
-                            <rect x="4.21094" y="3" width="21.8033" height="0.726776" rx="0.363388" transform="rotate(45 4.21094 3)" fill="white" />
+                        <svg className={styles.close_svg} width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="18.4463" width="21.8033" height="1" rx="0.363388" transform="rotate(-45 3 18.4463)" fill="white" />
+                            <rect x="4.21094" y="3" width="21.8033" height="1" rx="0.363388" transform="rotate(45 4.21094 3)" fill="white" />
                         </svg>
                     </button>
 
@@ -48,8 +47,8 @@ export default function VideoPopup({ active, setActive }) {
                             controls
                             ref={videoRef}
                         >
-                            <source src="/video/sample-5s.webm" type="video/webm" />
-                            <source src="/video/sample-5s.mp4" type="video/mp4" />
+                            <source src={process.env.NEXT_PUBLIC_API_SERVER + webm} type="video/webm" />
+                            <source src={process.env.NEXT_PUBLIC_API_SERVER + mp4} type="video/mp4" />
                         </video>
                     </div>
                 </div>

@@ -24,8 +24,6 @@ const Footer = () => {
         fetchData();
     }, []);
 
-
-
     return (
         <footer className={styles.footer}>
             <div className={`${styles.footer_content} container`}>
@@ -82,13 +80,10 @@ const Footer = () => {
                             <p className={styles.info_title}>Контакты</p>
                         </div>
                         <div>
-                            <a className={styles.info} href="tel:+74232404191">+ 7 (423) 240-41-91 </a>
+                            <a className={styles.info} href="tel:+74232150005">8 423 215-00-05 </a>
                         </div>
                         <div>
-                            <a className={styles.info} href="mailto:svetlana.shirshikova@vvsu.ru">svetlana.shirshikova@vvsu.ru</a>
-                        </div>
-                        <div>
-                            <a className={styles.info} href="mailto:dvcno-vl@yandex.ru">dvcno-vl@yandex.ru</a>
+                            <a className={styles.info} href="mailto:dvcno-vl@dvcno.ru">dvcno-vl@dvcno.ru</a>
                         </div>
                         <div>
                             <p>г. Владивосток, ул. Гоголя, 41,</p>
