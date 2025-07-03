@@ -57,6 +57,9 @@
     color: var(--black);
 
 }
+.vacancies_item > div > p > span {
+    margin-top: 20px;
+}
 
 .vacancies_item_info_address {
     font-weight: 400;

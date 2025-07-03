@@ -11,7 +11,7 @@ export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const header = data?.sections?.header[0]?.content?.[lang];
-    const list_links = data?.sections?.list_links[0]?.content?.[lang]?.list;
+    const list_links = data?.sections?.vacancies[0]?.content?.[lang];
     //console.log(banner);
     
     const link = {
@@ -34,7 +34,7 @@ export default function Page({ data }) {
                         list_links.map((item, index) => (
                             <li key={index} className={styles.vacancies_item}>
                                 <div className="relative">
-                                    <p className={styles.item_job}>{item.job}</p>
+                                    <p className={styles.item_job}>{item.title}</p>
                                     <Image
                                         className={styles.decor2}
                                         src={decor2}
@@ -44,14 +44,7 @@ export default function Page({ data }) {
                                     />
                                 </div>
 
-                                <div className={styles.vacancies_item_info}>
-                                    <p className={styles.vacancies_item_info_name}>{item.title}</p>
-                                    <p className={styles.vacancies_item_info_address}>{item.address}</p>
-                                </div>
-
-                                <div>
-                                    <p className={styles.vacancies_item_info_price}>{item.price}</p>
-                                </div>
+                                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
 
                                 <div className={styles.button_wrapper}>
                                     <button className={styles.button}>
