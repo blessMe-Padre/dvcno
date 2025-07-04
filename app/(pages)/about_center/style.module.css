@@ -91,6 +91,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 50px;
+    color: var(--white);
 }
 
 @media (max-width: 650px) {
@@ -415,3 +416,4 @@
 .content_desc a:hover {
     color: var(--violet);
 }
+

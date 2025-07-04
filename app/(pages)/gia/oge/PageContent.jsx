@@ -10,11 +10,11 @@ export default function Page({ data }) {
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const info_header = data?.sections?.info[0]?.content?.[lang][0];
     const info_list_docs = data?.sections?.info[1]?.content?.[lang]?.list;
-    const total_header = data?.sections?.total[0]?.content?.[lang][0];
-    const total_list_docs = data?.sections?.total[1]?.content?.[lang]?.list;
+    const total_header = data?.sections?.total[0]?.content?.[lang]?.title;
+    const total_list_docs = data?.sections?.total[0]?.content?.[lang]?.documents;
     const materials_header = data?.sections?.materials[0]?.content?.[lang][0];
     const materials_list_docs = data?.sections?.materials[1]?.content?.[lang]?.list;
-    //console.log(banner);
+    //console.log(total_list_docs);
     
     const link1 = {
         ru: 'ГИА',
@@ -48,8 +48,8 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.hero_list}>
-                    {banner.links && banner.links.length > 0 ? (
-                        banner.links.map((item, index) => (
+                    {banner.documents && banner.documents.length > 0 ? (
+                        banner.documents.map((item, index) => (
                             <li key={index}>
                                 <DocumentComponent title={item.title} link={item.document} />
                             </li>

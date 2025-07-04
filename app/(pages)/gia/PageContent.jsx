@@ -9,7 +9,7 @@ export default function Page({ data }) {
 
     const header = data?.sections?.banner[0]?.content?.[lang][0];
     const list_links = data?.sections?.banner[1]?.content?.[lang];
-    const banner = data?.sections?.banner[2]?.content?.[lang][0];
+    const banner = data?.sections?.banner[2]?.content?.[lang];
      const main1_header = data?.sections?.main1[0]?.content?.[lang][0];
     const main1_list_docs = data?.sections?.main1[1]?.content?.[lang]?.list;
     const main2_header = data?.sections?.main2[0]?.content?.[lang][0];
@@ -59,11 +59,10 @@ export default function Page({ data }) {
                     />
                 </div>
 
-                <div className={styles.subtitle}>
-                    <p>{banner.content}</p>
+                <div className={styles.page_content}>
+                    <p><div dangerouslySetInnerHTML={{ __html: banner.content }}></div></p>
                 </div>
 
-                <div className={styles.page_content} dangerouslySetInnerHTML={{ __html: banner.description }}></div>
             </section>
 
             <section className={styles.method}>

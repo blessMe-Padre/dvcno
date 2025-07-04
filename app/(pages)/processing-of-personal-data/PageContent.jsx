@@ -17,9 +17,14 @@ const languages = {
 
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
-    const data_documents = data?.sections?.documents?.[2]?.content?.[lang]?.list;
-    const data_video = data?.sections?.information?.[2]?.content?.[lang]?.list;
-    const data_lessons = data?.sections?.lessons?.[2]?.content?.[lang]?.list;
+
+    const documents_header = data?.sections?.documents?.[0]?.content?.[lang];
+    const documents_subtitle = data?.sections?.documents?.[1]?.content?.[lang];
+    const documents_list = data?.sections?.documents?.[2]?.content?.[lang]?.list;
+    const information_header = data?.sections?.information?.[0]?.content?.[lang];
+    const information_subtitle = data?.sections?.information?.[1]?.content?.[lang];
+    const information_list = data?.sections?.information?.[2]?.content?.[lang]?.list;
+    const lessons = data?.sections?.lessons?.[0]?.content?.[lang];
 
     return (
         <>
@@ -31,7 +36,7 @@ const PageContent = ({ data }) => {
 
                     <div className={styles.title_wrapper}>
                         <h2 className={styles.title}>
-                            {data?.sections?.documents?.[0]?.content?.[lang] ?? 'ДОКУМЕНТЫ'}
+                            {documents_header ?? 'ДОКУМЕНТЫ'}
                         </h2>
 
                         <Image
@@ -42,14 +47,14 @@ const PageContent = ({ data }) => {
                         />
                     </div>
 
-                    <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data?.sections?.documents?.[1]?.content?.[lang] ?? 'о защите, хранении, обработке и передаче персональных данных работников АНПОО "ДВЦНО"' }}></div>
+                    <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: documents_subtitle ?? 'о защите, хранении, обработке и передаче персональных данных работников АНПОО "ДВЦНО"' }}></div>
 
                     <div className={styles.document_wrapper}>
                         <ul className={styles.document_list}>
 
-                            {data_documents && data_documents.length > 0 ?
+                            {documents_list && documents_list.length > 0 ?
                                 (
-                                    data_documents.map((item, index) => (
+                                    documents_list.map((item, index) => (
                                         <li key={index}>
                                             <DocumentComponent title={item.title} link={item.document} />
                                         </li>
@@ -65,11 +70,11 @@ const PageContent = ({ data }) => {
                 <div className="container">
 
                     <h2 className={styles.title}>
-                        {data?.sections?.information?.[0]?.content?.[lang] ?? 'Полезная информация'}
+                        {information_header ?? 'Полезная информация'}
                     </h2>
 
                     <div className={styles.usefull}>
-                        <div className={styles.text} dangerouslySetInnerHTML={{ __html: data?.sections?.information?.[1]?.content?.[lang] ?? 'Видео-материалы для проведения уроков по вопросам защиты персональных данных' }}></div>
+                        <div className={styles.text} dangerouslySetInnerHTML={{ __html: information_subtitle ?? 'Видео-материалы для проведения уроков по вопросам защиты персональных данных' }}></div>
                         <Image
                             src={icon}
                             width={50}
@@ -80,9 +85,9 @@ const PageContent = ({ data }) => {
 
                     <div className={styles.document_wrapper}>
                         <ul className={styles.document_list}>
-                            {data_video && data_video.length > 0 ?
+                            {information_list && information_list.length > 0 ?
                                 (
-                                    data_video.map((item, index) => (
+                                    information_list.map((item, index) => (
                                         <li className='relative' key={index}>
 
                                             <VideoComponent
@@ -110,15 +115,15 @@ const PageContent = ({ data }) => {
                     <div className={styles.bg_violet}>
                         <div className={styles.lessons_school}>
                             <h2 className={styles.title}>
-                                {data?.sections?.lessons?.[0]?.content?.[lang] ?? 'Урок для школьников'}
+                                {lessons.title ?? 'Урок для школьников'}
                             </h2>
 
-                            <div className={styles.lessons_info} dangerouslySetInnerHTML={{ __html: data?.sections?.lessons?.[1]?.content?.[lang] ?? 'по вопросам защиты персональных данных:' }}></div>
+                            <div className={styles.lessons_info} dangerouslySetInnerHTML={{ __html: lessons.content ?? 'по вопросам защиты персональных данных:' }}></div>
 
                             <ul className={styles.document_list_custom}>
-                                {data_lessons && data_lessons.length > 0 ?
+                                {lessons.videos && lessons.videos.length > 0 ?
                                     (
-                                        data_lessons.map((item, index) => (
+                                        lessons.videos.map((item, index) => (
                                             <li key={index}>
                                                 <VideoComponent
                                                     background={'white'}

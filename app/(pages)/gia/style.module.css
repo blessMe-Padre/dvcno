@@ -48,11 +48,20 @@
 .page_content {
     font-weight: 400;
     font-size: 1.125em;
-    max-width: 60%;
+    max-width: 65%;
     margin-bottom: 70px;
     color: var(--white);
 }
-
+.page_content h2 {
+    padding: 20px 25px;
+    background-color: var(--light-blue);
+    border-radius: 57px;
+    display: inline-flex;
+    font-weight: 600;
+    font-size: 1.25em;
+    color: var(--white);
+    margin-bottom: 40px;       
+}
 .page_content p {
     margin-bottom: 20px;
     max-width: 1100px;

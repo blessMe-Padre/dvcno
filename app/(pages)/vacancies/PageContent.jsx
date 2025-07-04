@@ -1,14 +1,17 @@
 "use client"
+import { useState, useRef, useEffect } from "react";
 import Image from 'next/image';
 import styles from './style.module.css';
 import { Breadcrumbs, DocumentComponent } from "@/app/components";
 import Link from 'next/link';
 import decor2 from '@/public/vacancies/decor.svg';
 import arrow from '@/public/vacancies/arrow.svg';
+import Popup from "../../Components/Popup/Popup";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
+    const [popupActive, setPopupActive] = useState(false);
 
     const header = data?.sections?.header[0]?.content?.[lang];
     const list_links = data?.sections?.vacancies[0]?.content?.[lang];
@@ -47,7 +50,7 @@ export default function Page({ data }) {
                                 <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
 
                                 <div className={styles.button_wrapper}>
-                                    <button className={styles.button}>
+                                    <button className={styles.button} onClick={() => setPopupActive(true)}>
                                         <p>Откликнуться</p>
                                         <Image
                                             src={arrow}
@@ -65,6 +68,7 @@ export default function Page({ data }) {
                 </ul>
 
             </div>
+            <Popup active={popupActive} setActive={setPopupActive} />
         </section>
     )
 }
