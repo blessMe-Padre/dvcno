@@ -1,18 +1,24 @@
+/**
+ * Заменить img hero на получение из админки
+ */
+
 "use client"
 import Image from 'next/image';
 import styles from '../info.module.css';
-import { Breadcrumbs, DocumentComponent } from "@/app/components";
+import { Breadcrumbs, DocumentComponent, InternetResources } from "@/app/components";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    const bannerList = data?.sections?.banner[0]?.content?.[lang]?.list_docs;
+    const bannerList = data?.sections?.banner[0]?.content?.[lang]?.documents;
     const header = data?.sections?.main[0]?.content?.[lang][0];
     const format_text = data?.sections?.main[2]?.content?.[lang][0];
-    const list_links = data?.sections?.main[1]?.content?.[lang]?.list;
+    const list_links = data?.sections?.main[1]?.content?.[lang];
     const imagesList = data?.sections?.img?.[0]?.content?.[lang];
+
+    console.log(list_links);
 
     const link1 = {
         ru: 'Информационная безопасность',
@@ -43,7 +49,7 @@ export default function Page({ data }) {
                                 (
                                     bannerList.map((item, index) => (
                                         <li key={index}>
-                                            <DocumentComponent title={item.title} link={item.document} />
+                                            <DocumentComponent title={item.title} link={item.link} />
                                         </li>
                                     ))
                                 ) : (<p>Данные не загружены</p>)
@@ -74,7 +80,7 @@ export default function Page({ data }) {
                             (
                                 list_links.map((item, index) => (
                                     <li key={index}>
-                                        <DocumentComponent title={item.title} link={item.document} />
+                                        <InternetResources title={item.title} link={item.link} />
                                     </li>
                                 ))
                             ) : (<p>Данные не загружены</p>)

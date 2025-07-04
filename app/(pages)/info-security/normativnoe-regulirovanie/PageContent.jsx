@@ -2,15 +2,16 @@
 import Image from 'next/image';
 import styles from '../info.module.css';
 import { Breadcrumbs, DocumentComponent } from "@/app/components";
+import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const header = data?.sections?.main[0]?.content?.[lang][0];
-    const list_links = data?.sections?.main[1]?.content?.[lang];
+    const content = data?.sections?.main[1]?.content?.[lang];
     const header2 = data?.sections?.main2[0]?.content?.[lang][0];
-    const list_links2 = data?.sections?.main2[1]?.content?.[lang];
+    const content2 = data?.sections?.main2[1]?.content?.[lang];
 
     const link1 = {
         ru: 'Информационная безопасность',
@@ -42,17 +43,13 @@ export default function Page({ data }) {
                 />
             </div>
 
-            <ul className={styles.link_list}>
-                {list_links && list_links.length > 0 ?
+            <div className={`${styles.link_list} api_content`}>
+                {content && content.length > 0 ?
                     (
-                        list_links.map((link, index) => (
-                            <li key={index}>
-                                <a href={link.link} target="_blank" rel="noopener noreferrer">{link.title}</a>
-                            </li>
-                        ))
+                        insertSafeContent(content)
                     ) : (<p>Данные не загружены</p>)
                 }
-            </ul>
+            </div>
 
             <div className={styles.title_wrapper}>
                 <h2 className={`title ${styles.half_title} ${styles.small_title}`}>{header2}</h2>
@@ -65,17 +62,13 @@ export default function Page({ data }) {
                 />
             </div>
 
-            <ul className={styles.link_list}>
-                {list_links2 && list_links2.length > 0 ?
+            <div className={`${styles.link_list} api_content`}>
+                {content2 && content2.length > 0 ?
                     (
-                        list_links2.map((link, index) => (
-                            <li key={index}>
-                                <a href={link.link} target="_blank" rel="noopener noreferrer">{link.title}</a>
-                            </li>
-                        ))
+                        insertSafeContent(content2)
                     ) : (<p>Данные не загружены</p>)
                 }
-            </ul>
+            </div>
         </div>
     )
 }

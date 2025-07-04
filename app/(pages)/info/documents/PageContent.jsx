@@ -13,6 +13,8 @@ import { DocumentComponent } from "@/app/components";
 import useLangStore from '@/app/store/languageStore';
 
 const PageContent = ({ data }) => {
+    console.log(data);
+
     const { lang } = useLangStore();
 
     const data_docs = data?.sections?.documents?.[1]?.content[lang]?.list;
@@ -110,7 +112,7 @@ const PageContent = ({ data }) => {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                        <h2 className={styles.title}>{data?.sections?.report?.[0]?.content[lang] ?? 'Графики оценочных процедур'}
+                        <h2 className={styles.title}>{data?.sections?.data_proccess?.[0]?.content[lang] ?? 'Графики оценочных процедур'}
                         </h2>
 
                         <Image

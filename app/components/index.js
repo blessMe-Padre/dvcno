@@ -23,6 +23,7 @@ export { default as DivisionCard } from './Cards/Division-Card/Division-Card';
 export { default as SlideMain } from './Hero/SlideMain';
 export { default as AnimateItems } from './AnimateItems/AnimateItems';
 export { default as DocumentComponent } from './Documents/Documents';
+export { default as InternetResources } from './InternetResources/InternetResources';
 export { default as VideoComponent } from './Video/Video';
 export { default as Accordion } from './Accordion/Accordion';
 export { default as ComponentMap } from './Map/Map';
