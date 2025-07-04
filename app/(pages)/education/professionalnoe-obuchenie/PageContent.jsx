@@ -1,4 +1,3 @@
-
 "use client"
 import React from "react"
 import Image from 'next/image';
@@ -98,8 +97,6 @@ export default function Page({ data }) {
                             <div className={styles.alert_text} dangerouslySetInnerHTML={{ __html: process[2]?.content?.[lang] }}></div>
                         </div>
                     </div>
-
-                    <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[2]?.content?.[lang] }}></div>
 
                     <div className={styles.accept_table}>
                         <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[3]?.content?.[lang] }}></div><br />

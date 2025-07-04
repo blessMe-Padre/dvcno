@@ -43,11 +43,15 @@ export default function Page({ data }) {
 
                     <div className={styles.document_wrapper}>
                         <ul>
-                            {banner.list_docs.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.document} />
-                                </li>
-                            ))}
+                            {banner?.documents && banner?.documents.length > 0 ?
+                                (
+                                    banner?.documents.map((item, index) => (
+                                        <li key={index}>
+                                            <DocumentComponent title={item.title} link={item.document} />
+                                        </li>
+                                    ))
+                                ) : (<p>данные не загружены</p>)
+                            }
                         </ul>
                     </div>
                 </section>

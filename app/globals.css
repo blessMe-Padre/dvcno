@@ -343,3 +343,19 @@ ul {
     box-shadow: -38px 6px, -14px -6px, 14px 6px;
   }
 }
+
+/* Глобальные классы для контента с api */
+
+.api_content ul {
+  list-style: disc;
+  margin-bottom: 20px;
+}
+
+.api_content li {
+  list-style: disc;
+  margin-bottom: 10px;
+}
+
+.api_content p {
+  margin: 10px 0;
+}

@@ -4,14 +4,12 @@ import styles from './style.module.css';
 import { Breadcrumbs, DocumentComponent } from "@/app/components";
 import icon from '@/public/ege/icon.svg';
 import Link from 'next/link';
+import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
-
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    //console.log(banner);
-    
     const link = {
         ru: 'ОРКСЭ/ОДКНР',
         en: 'ORKSE/ODKNR',
@@ -29,7 +27,7 @@ export default function Page({ data }) {
 
                             <h2 className={styles.title}>{banner.title ?? "ОРКСЭ/ОДКНР"}</h2>
 
-                            <Image 
+                            <Image
                                 className={styles.icon}
                                 src={icon}
                                 width={150}
@@ -38,19 +36,14 @@ export default function Page({ data }) {
                             />
                         </div>
 
-                        <ul className={styles.document_link}>
-                            {banner.links && banner.links.length > 0 ? (
-                                banner.links.map((item, index) => (
-                                    <li className={styles.link} key={index}>
-                                        <Link href={item.document}>{item.title}</Link>
-                                    </li>
-                                ))
-                            ) :
-                                'данные не загружены'
+                        <div className={`${styles.document_list} api_content`}>
+                            {banner?.content ? (
+                                insertSafeContent(banner?.content)
+                            ) : (<p>данные не загружены</p>)
                             }
-                        </ul>
+                        </div>
 
-                         <ul className={styles.document_list}>
+                        <ul className={styles.document_list}>
                             {banner.documents && banner.documents.length > 0 ? (
                                 banner.documents.map((item, index) => (
                                     <li key={index}>

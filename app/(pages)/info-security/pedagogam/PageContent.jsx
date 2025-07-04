@@ -1,9 +1,10 @@
 "use client"
 import Image from 'next/image';
 import styles from '../info.module.css';
-import { Breadcrumbs, DocumentComponent } from "@/app/components";
-
+import { Breadcrumbs, DocumentComponent, InternetResources } from "@/app/components";
+import { insertSafeContent } from "@/app/utils/insertSafeContent";
 import useLangStore from '@/app/store/languageStore';
+
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
@@ -12,7 +13,7 @@ export default function Page({ data }) {
     const list_links = data?.sections?.main[1]?.content?.[lang]?.list;
     const main2_header = data?.sections?.main2[0]?.content?.[lang][0];
     const main2_format_text = data?.sections?.main2[1]?.content?.[lang][0];
-    const main2_list_links = data?.sections?.main2[2]?.content?.[lang]?.list;
+    const main2_list_links = data?.sections?.main2[2]?.content?.[lang];
     const main3_header = data?.sections?.main3[0]?.content?.[lang][0];
     const main3_format_text = data?.sections?.main3[1]?.content?.[lang][0];
     const main3_list_links = data?.sections?.main3[2]?.content?.[lang];
@@ -41,7 +42,7 @@ export default function Page({ data }) {
                     <h1 className={`title title-black`}>{banner.title ?? "Педагогам"}</h1>
 
                     <div className={styles.document_wrapper}>
-                        <DocumentComponent title={banner?.list_docs?.[0]?.title} link={banner?.list_docs?.[0]?.document} />
+                        <DocumentComponent title={banner?.documents?.[0]?.title} link={banner?.documents?.[0]?.document} />
                     </div>
                 </section>
 
@@ -86,7 +87,7 @@ export default function Page({ data }) {
                     <ul className={styles.document_list}>
                         {main2_list_links.map((item, index) => (
                             <li key={index}>
-                                <DocumentComponent title={item.title} link={item.document} />
+                                <InternetResources title={item.title} link={item.link} />
                             </li>
                         ))}
                     </ul>
@@ -113,12 +114,17 @@ export default function Page({ data }) {
                         <li className={styles.help_item}>
                             <div className={styles.help_count}>01</div>
                             <h3 className={styles.help_title}>{main3_list_links[0].title}</h3>
-                            <div className={styles.help_content} dangerouslySetInnerHTML={{ __html: main3_list_links[0].content }}></div>
+                            <div className={styles.help_content} >
+                                {insertSafeContent(main3_list_links[0]?.content)}
+                            </div>
                         </li>
                         <li className={`${styles.help_item} ${styles.help_item_bg}`}>
                             <div className={`${styles.help_count} ${styles.help_count_green}`}>02</div>
                             <h3 className={styles.help_title}>{main3_list_links[1].title}</h3>
-                            <div className={styles.help_content} dangerouslySetInnerHTML={{ __html: main3_list_links[1].content }}></div>
+
+                            <div className={styles.help_content} >
+                                {insertSafeContent(main3_list_links[1]?.content)}
+                            </div>
                         </li>
                     </ul>
                 </section>

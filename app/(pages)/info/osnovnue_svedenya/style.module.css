@@ -45,6 +45,9 @@
 
 .list_address {}
 
+.bank_info {
+    color: var(--white);
+}
 
 .bank_info_list {
     padding: 30px 0;
@@ -227,6 +230,7 @@
 .document_info {
     padding: 20px 15px;
     list-style: disc;
+    color: var(--white);
 }
 
 .document_info li {
