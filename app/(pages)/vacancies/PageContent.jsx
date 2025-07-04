@@ -1,12 +1,11 @@
 "use client"
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Image from 'next/image';
 import styles from './style.module.css';
-import { Breadcrumbs, DocumentComponent } from "@/app/components";
-import Link from 'next/link';
+import { Breadcrumbs } from "@/app/components";
 import decor2 from '@/public/vacancies/decor.svg';
 import arrow from '@/public/vacancies/arrow.svg';
-import Popup from "../../Components/Popup/Popup";
+import { Popup } from "@/app/components";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
@@ -15,8 +14,7 @@ export default function Page({ data }) {
 
     const header = data?.sections?.header[0]?.content?.[lang];
     const list_links = data?.sections?.vacancies[0]?.content?.[lang];
-    //console.log(banner);
-    
+
     const link = {
         ru: 'Вакансии',
         en: 'Vacancies',
