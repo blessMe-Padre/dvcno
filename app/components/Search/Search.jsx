@@ -18,7 +18,7 @@ export default function Search() {
     const { lang } = useLangStore();
 
     const router = useRouter();
-    const debounceTimeout = useRef(null)
+    const debounceTimeout = useRef(null);
 
     const handleDelete = (e) => {
         e.preventDefault();
@@ -84,13 +84,13 @@ export default function Search() {
                         'Content-Type': 'application/json',
                     },
                 });
-                if (!response.ok) {
+                if (response === 'error') {
                     throw new Error(`Ошибка HTTP live_search: ${response.status}`);
                 }
 
                 const result = await response.json();
 
-                setData(result);
+                setData(result?.data);
                 setLoading(false);
             } catch (error) {
                 console.error('Ошибка загрузки Объектов:', error)

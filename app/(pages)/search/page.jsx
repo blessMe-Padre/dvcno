@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import Image from "next/image";
 import styles from "./style.module.css";
 import Link from 'next/link';
+import useLangStore from '@/app/store/languageStore';
 
 export default function SearchResultsPage() {
     return (
@@ -17,13 +18,14 @@ function SearchResultsContent() {
     const [dataList, setDataList] = useState([]);
     const searchParams = useSearchParams();
     const query = searchParams.get('query');
+    const { lang } = useLangStore();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 if (!query) return;
 
-                const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/live_search?value=${encodeURIComponent(query)}`;
+                const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/live_search?value=${encodeURIComponent(query)}&lang=${lang}`;
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
@@ -36,7 +38,7 @@ function SearchResultsContent() {
                 }
 
                 const result = await response.json();
-                setDataList(result);
+                setDataList(result?.data);
 
             } catch (error) {
                 console.error('Ошибка в работе поиска:', error);
