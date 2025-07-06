@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import styles from "./style.module.css";
 import Link from 'next/link';
+import useLangStore from '@/app/store/languageStore';
 
 import { useRouter } from 'next/navigation';
 
@@ -13,6 +14,8 @@ export default function Search() {
     const [loading, setLoading] = useState(false);
     const [dataList, setData] = useState([]);
     const [isFocused, setIsFocused] = useState(false);
+
+    const { lang } = useLangStore();
 
     const router = useRouter();
     const debounceTimeout = useRef(null)
@@ -73,7 +76,7 @@ export default function Search() {
         setLoading(true)
         debounceTimeout.current = setTimeout(async () => {
             try {
-                const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/live_search?value=${encodeURIComponent(inputValue)}`;
+                const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/live_search?value=${encodeURIComponent(inputValue)}&lang=${lang}`;
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
