@@ -1,6 +1,3 @@
-/**
- * TODO: ограничить вывод событий в слайдере и их отфильтровать
- */
 
 'use client'
 import { useState, useEffect } from "react";
@@ -25,10 +22,11 @@ export default function Events() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getEvents();
-            setEvents(result.data);
             const result2 = await fetchApiServerData('pages/main');
+            const currentSettings = await result2.data?.sections?.events?.[1]?.content?.[lang];
             setTitle(result2.data?.sections?.events?.[0]?.content);
+            const result = await getEvents(currentSettings?.count, currentSettings?.enabled);
+            setEvents(result.data);
         };
         fetchData();
     }, []);

@@ -1,9 +1,7 @@
-const getEvents = async (count, enabled) => {
-    count = count ? `items_per_page=${count}&` : '';
-    enabled = enabled === 'true' ? 'false' : 'true';
+const getEvents = async () => {
 
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/v1/events/?${count}only_active=${enabled}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/v1/events?only_active=true`, {
             next: { revalidate: 60 }
         });
         if (!res.ok) {

@@ -1,4 +1,4 @@
-import getEvents from "@/app/utils/getEvents";
+import getAllEvents from "@/app/utils/getAllEvents";
 import PageComponent from "./PageComponent";
 
 export const metadata = {
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default async function page() {
-    const result = await getEvents();
+    const result = await getAllEvents();
     const data = result.data;
 
     return (
