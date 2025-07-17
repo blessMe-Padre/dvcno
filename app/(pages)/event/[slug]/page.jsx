@@ -7,9 +7,57 @@ export async function generateMetadata({ params }) {
   const { slug } = params;
   const page = await getEventsBySlug(slug);
 
+  if (!page) {
+    return {
+      title: 'ДВЦНО | Событие не найдено',
+      description: 'Запрашиваемое мероприятие не найдено',
+    };
+  }
+
+  // Формируем дату для OG
+  const eventDate = page.date_event ?
+    `${page.date_event.day_d} ${page.date_event.month_F[1]} ${page.date_event.year_Y}` : '';
+
+  const eventTime = page.date_event ?
+    `${page.date_event.time_H}:${page.date_event.time_i}` : '';
+
+  // Формируем полное описание
+  const fullDescription = page.description ||
+    `Мероприятие ${page.title?.ru || page.title} ${eventDate ? `состоится ${eventDate}` : ''} ${eventTime ? `в ${eventTime}` : ''} ${page.address ? `по адресу: ${page.address}` : ''}`;
+
+  // Формируем URL изображения
+  const imageUrl = page.thumbnail ?
+    `${process.env.NEXT_PUBLIC_API_SERVER}${page.thumbnail}` :
+    '/placeholder/placeholder.svg';
+
+  console.log('imageUrl', imageUrl);
+
   return {
-    title: `ДВЦНО | ${page?.title?.ru}`,
-    description: page?.description || 'Описание мероприятия',
+    title: `ДВЦНО | ${page.title?.ru || page.title}`,
+    description: fullDescription,
+
+    // Open Graph метаданные
+    openGraph: {
+      title: page.title?.ru || page.title,
+      description: fullDescription,
+      type: 'article',
+      url: `/event/${slug}`,
+      siteName: 'ДВЦНО',
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: page.title?.ru || page.title,
+        },
+      ],
+      locale: 'ru_RU',
+      publishedTime: page.date_event?.date_iso || '',
+      authors: ['ДВЦНО'],
+      section: 'Мероприятия',
+      tags: ['Мероприятие', 'ДВЦНО', 'Образование'],
+    },
+
   };
 }
 
