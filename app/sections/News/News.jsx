@@ -26,9 +26,10 @@ const News = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await fetchApiServerData('news');
-            setNews(data?.data);
             const result2 = await fetchApiServerData('pages/main');
+            const currentSettings = await result2?.data?.sections?.news?.[1]?.content?.[lang];
+            const data = await fetchApiServerData(`news?items_per_page=${currentSettings?.count}&only_active=true`);
+            setNews(data?.data);
             if (result2.status === 'error') {
                 setError(true);
             }
@@ -68,7 +69,7 @@ const News = () => {
                                 }}
                             >
                                 {news && news.length > 0 ? (
-                                    news.map((item, index) => (
+                                    news?.map((item, index) => (
                                         <SwiperSlide key={index}>
                                             <Link
                                                 href={`/news/${item.slug}`}

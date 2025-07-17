@@ -1,6 +1,7 @@
 // Эта функция для получение данных с сервера http://134.0.118.139/api/v1/...
 
 const fetchApiServerData = async (route) => {
+
   try {
     const baseUrl = `${process.env.NEXT_PUBLIC_API_SERVER}/api/v1`;
 

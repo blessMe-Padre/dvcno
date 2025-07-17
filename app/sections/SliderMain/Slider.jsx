@@ -59,7 +59,7 @@ export default function Slider() {
             document.dispatchEvent(new CustomEvent("sliderClick"));
           }}
         >
-          {data.map((item, index) => {
+          {data?.map((item, index) => {
             return (
               <SwiperSlide key={index} style={{ pointerEvents: "auto" }}>
                 <SlideMain item={item} isActive={index === 0} isSlider={true} />
