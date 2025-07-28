@@ -28,7 +28,8 @@ const News = () => {
         const fetchData = async () => {
             const result2 = await fetchApiServerData('pages/main');
             const currentSettings = await result2?.data?.sections?.news?.[1]?.content?.[lang];
-            const data = await fetchApiServerData(`news?items_per_page=${currentSettings?.count}&only_active=true`);
+            const enabled = currentSettings?.enabled === 'true' ? 'false' : 'true';
+            const data = await fetchApiServerData(`news?items_per_page=${currentSettings?.count}&only_active=${enabled}`);
             setNews(data?.data);
             if (result2.status === 'error') {
                 setError(true);
