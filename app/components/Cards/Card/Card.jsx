@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./style.module.css";
 import Link from "next/link";
+import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 export default function Card({ image, link, description, }) {
 
@@ -17,7 +18,7 @@ export default function Card({ image, link, description, }) {
             </div>
             <Link href={link} className={styles.card_footer}>
                 <div className={styles.card_link_wrapper}>
-                    <p className={styles.text}>{description}</p>
+                    <div className={styles.text}>{insertSafeContent(description)}</div>
                     <div className={styles.link}>
                         <Image
                             src="/icons/arrow__card.svg"
