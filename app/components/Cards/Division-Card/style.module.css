@@ -5,11 +5,13 @@
 .image_wrapper {
     border-radius: 30px;
     margin-bottom: 30px;
+    max-height: 432px;
+    height: auto;
 }
 
 .image {
     width: 100%;
-    height: 100%;
+    height: revert-layer;
     object-fit: cover;
     border-radius: 30px;
 }
@@ -139,6 +141,15 @@
 
 .spoiler_text {
     overflow: hidden;
+}
+
+.spoiler_text p {
+    margin: 10px 0;
+}
+
+.spoiler_text li {
+    margin-left: 20px;
+    list-style: disc;
 }
 
 .spoiler_link {

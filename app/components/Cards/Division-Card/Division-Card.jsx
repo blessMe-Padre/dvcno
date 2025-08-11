@@ -5,10 +5,9 @@ import styles from "./style.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from 'framer-motion';
+import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 export default function DivisionCard({ divisionData, lang }) {
-    const sanitizedContent = divisionData.description || '';
-
     const [isOpen, setIsOpen] = useState(false);
 
     const goto_site = {
@@ -48,12 +47,16 @@ export default function DivisionCard({ divisionData, lang }) {
     }
 
     //console.log(process.env.NEXT_PUBLIC_API_SERVER + divisionData.image);
+    // const imageUrl = page.thumbnail ?
+    // `${process.env.NEXT_PUBLIC_API_SERVER}${page.thumbnail}` :
+    // '/placeholder/placeholder.svg';
+
     return (
         <div className={styles.card}>
             <div className={styles.image_wrapper}>
                 <Image
                     aria-hidden
-                    src={divisionData.image}
+                    src={divisionData.image ?? '/placeholder/placeholder.svg'}
                     alt="Изображение"
                     width={706}
                     height={432}
@@ -63,7 +66,7 @@ export default function DivisionCard({ divisionData, lang }) {
             <div className={styles.info}>
                 <h3 className={styles.title}>{divisionData.title}</h3>
                 <p className={styles.address}>{divisionData.address}</p>
-                <p className={styles.week}>{divisionData.week}</p>
+                <div className={styles.week}>{insertSafeContent(divisionData.shedule)}</div>
 
                 <div>
                     <div className={styles.link_wrapper}>
@@ -79,7 +82,7 @@ export default function DivisionCard({ divisionData, lang }) {
                             </div>
                             <span>{divisionData.site}</span>
                         </a>
-                        <a href={`tel:${divisionData.phone_robot}`} className={styles.link}>
+                        <a href={`tel:${divisionData.phones}`} className={styles.link}>
                             <div className={`${styles.icon_wrapper}`}>
                                 <Image
                                     src="/icons/phone.svg"
@@ -89,7 +92,7 @@ export default function DivisionCard({ divisionData, lang }) {
                                     className={`${styles.icon_image}`}
                                 />
                             </div>
-                            <span>{divisionData.phone}</span>
+                            <span>{divisionData.phones}</span>
                         </a>
                     </div>
 
@@ -104,7 +107,7 @@ export default function DivisionCard({ divisionData, lang }) {
                                 className={`${styles.icon_image}`}
                             />
                         </a>
-                        <a href={divisionData.map_link} className={`${styles.link_button} ${styles.link_button_white}`}>
+                        <a href={divisionData.link_to_place} className={`${styles.link_button} ${styles.link_button_white}`}>
                             <span>{on_map[lang]}</span>
                             <svg width="23" height="23" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.55605 1.43907L16.6545 1.43888M16.6545 1.43888L16.6545 14.3511M16.6545 1.43888L1.4388 16.6546" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -119,9 +122,7 @@ export default function DivisionCard({ divisionData, lang }) {
                             initial={'hidden'}
                             animate={isOpen ? 'visible' : 'hidden'}
                             className={`${styles.spoiler_text}`}>
-                            <div
-                                dangerouslySetInnerHTML={{ __html: sanitizedContent }}
-                            ></div>
+                            {insertSafeContent(divisionData.description)}
                         </motion.div>
                         <div
                             onClick={() => setIsOpen(!isOpen)}
