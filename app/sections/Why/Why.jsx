@@ -6,6 +6,7 @@ import styles from "./style.module.css";
 
 import fetchApiServerData from "@/app/utils/fetchApiServerData";
 import useLangStore from '@/app/store/languageStore';
+import { AnimateElement } from "@/app/components";
 
 export default function Why() {
     const { lang } = useLangStore();
@@ -23,7 +24,9 @@ export default function Why() {
     return (
         <section className={styles.section}>
             <div className="container">
-                <h2 className={`${styles.title} title-black`}>{data?.[0]?.content?.[lang]}</h2>
+                <AnimateElement element="h2" className={`${styles.title} title-black`}>
+                    {data?.[0]?.content?.[lang]}
+                </AnimateElement>
 
                 <ul className={styles.list}>
                     <li className={`${styles.item} anim_hover_card`}>

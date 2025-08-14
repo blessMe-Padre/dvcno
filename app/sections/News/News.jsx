@@ -17,6 +17,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Link from 'next/link';
+import { AnimateElement } from "@/app/components";
 
 const News = () => {
     const { lang } = useLangStore();
@@ -46,7 +47,9 @@ const News = () => {
                 <div className='container'>
                     <div className={`${styles.wrapper}`}>
                         <div className='relative'>
-                            <h2 className={styles.title}>{title?.[lang] ?? 'Новости'}</h2>
+                            <AnimateElement element="h2" className={styles.title}>
+                                {title?.[lang] ?? 'Новости'}
+                            </AnimateElement>
 
                             <Swiper
                                 modules={[Navigation, Autoplay]}

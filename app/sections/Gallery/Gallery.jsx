@@ -17,6 +17,7 @@ import Image from "next/image";
 
 import useLangStore from '@/app/store/languageStore';
 import fetchApiServerData from "@/app/utils/fetchApiServerData";
+import { AnimateElement } from "@/app/components";
 
 
 function Gallery() {
@@ -53,7 +54,9 @@ function Gallery() {
         <section className={styles.section}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    <h2 className={styles.title}>{data?.[0]?.content?.[lang]}</h2>
+                    <AnimateElement element="h2" className={styles.title}>
+                        {data?.[0]?.content?.[lang]}
+                    </AnimateElement>
                     <div className='pswp-gallery' id='main-gallery'>
                         {data && data.length > 0 ? (
                             <Swiper

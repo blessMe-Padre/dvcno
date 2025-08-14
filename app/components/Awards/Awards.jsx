@@ -4,7 +4,7 @@ import "swiper/css";
 import styles from "./style.module.css";
 import "swiper/css/navigation";
 import SimpleGallery from "../SimpleGallery/SimpleGallery";
-import getAwards from "@/app/utils/getAwards";
+import { AnimateElement } from "@/app/components";
 
 import { useEffect, useState } from "react";
 
@@ -34,7 +34,10 @@ export default function Awards() {
         <div className={styles.awards_inner}>
           <div className={styles.awards_wrapper}>
             <div className={styles.awards_title_wrapper}>
-              <h2 className={styles.awards_title}>{data?.[0]?.content?.[lang] ?? 'награды ДВЦНО'}</h2>
+              <AnimateElement element="h2" className={styles.awards_title}>
+                {data?.[0]?.content?.[lang] ?? 'награды ДВЦНО'}
+              </AnimateElement>
+
               <svg
                 width="82"
                 height="85"

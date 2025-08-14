@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./style.module.css";
 import Card from "./../../components/Cards/Card/Card";
+import { AnimateElement } from "@/app/components";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules'
@@ -35,7 +36,9 @@ export default function About() {
     return (
         <section className={styles.section}>
             <div className={styles.title_wrapper}>
-                <h2 className={styles.title}>{data?.[0]?.content?.[lang] ?? 'Дальневосточный центр непрерывного образования - это'}</h2>
+                <AnimateElement element="h2" className={styles.title}>
+                    {data?.[0]?.content?.[lang] ?? 'Дальневосточный центр непрерывного образования - это'}
+                </AnimateElement>
                 <div className={styles.image_wrapper}>
                     <Image
                         alt="декор"

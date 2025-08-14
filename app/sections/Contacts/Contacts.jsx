@@ -2,6 +2,7 @@
 import styles from './style.module.css';
 import { useState, useEffect } from 'react';
 import { TabContent, SocialIcon } from '../../components';
+import { AnimateElement } from "@/app/components";
 
 const Contacts = () => {
     const [active, setActive] = useState(0);
@@ -33,7 +34,9 @@ const Contacts = () => {
 
                 <div className={styles.map_wrapper}>
                     <div className={styles.map_content}>
-                        <h2 className={styles.title}>Контакты</h2>
+                        <AnimateElement element="h2" className={styles.title}>
+                            Контакты
+                        </AnimateElement>
 
                         <div className={styles.info}>
                             <p>Адрес</p>

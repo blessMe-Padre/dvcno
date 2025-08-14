@@ -12,6 +12,7 @@ import Image from 'next/image';
 
 import useLangStore from '@/app/store/languageStore';
 import fetchApiServerData from "@/app/utils/fetchApiServerData";
+import { AnimateElement } from "@/app/components";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -38,7 +39,9 @@ const Partners = () => {
       <div className='container'>
         <div className={`${styles.wrapper}`}>
           <div className='relative'>
-            <h2 className={styles.title}>{data?.[0]?.content?.[lang]}</h2>
+            <AnimateElement element="h2" className={styles.title}>
+              {data?.[0]?.content?.[lang]}
+            </AnimateElement>
 
             <Swiper
               spaceBetween={30}

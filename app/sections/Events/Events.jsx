@@ -14,6 +14,7 @@ import EventCard from "./../../components/Cards/Event-Card/EventCard";
 import { SwiperNavButtons } from "../../components";
 import getEvents from "@/app/utils/getEvents";
 import Link from "next/link";
+import { AnimateElement } from "@/app/components";
 
 export default function Events() {
     const { lang } = useLangStore();
@@ -35,7 +36,9 @@ export default function Events() {
         <section className={styles.section}>
             <div className="container">
                 <div className={styles.wrapper}>
-                    <h2 className={styles.title}>{title?.[lang]}</h2>
+                    <AnimateElement element="h2" className={styles.title}>
+                        {title?.[lang]}
+                    </AnimateElement>
                     <Swiper
                         spaceBetween={20}
                         slidesPerView={2}
