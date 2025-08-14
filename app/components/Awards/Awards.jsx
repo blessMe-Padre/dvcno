@@ -15,10 +15,12 @@ export default function Awards() {
   const { lang } = useLangStore();
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
+  console.log('222222222222222222', data);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetchApiServerData('pages/main');
+
       if (result.status === 'error') {
         setError(true);
       }
@@ -56,7 +58,7 @@ export default function Awards() {
 
           <div className={styles.awards_content}>
             {data && data.length > 0 ? (
-              <SimpleGallery galleryID="my-test-gallery" images={data?.[1]?.content?.ru} />
+              <SimpleGallery galleryID="my-test-gallery" images={data?.[1]?.content?.[lang]} />
             ) : error ? (
               <p>Ошибка при загрузке данных</p>
             ) : (

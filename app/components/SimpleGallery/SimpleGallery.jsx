@@ -58,7 +58,7 @@ export default function SimpleGallery(props) {
           {props.images.map((image, index) => (
             <SwiperSlide key={index} className='anim_hover_card'>
               <a
-                href={image.url}
+                href={process.env.NEXT_PUBLIC_API_SERVER + image.image}
                 data-pswp-width={337}
                 data-pswp-height={450}
                 key={props.galleryID + '-' + index}
