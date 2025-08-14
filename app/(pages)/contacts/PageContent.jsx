@@ -1,9 +1,8 @@
 'use client'
 import styles from './style.module.css';
-import { Breadcrumbs } from '@/app/components';
+import { Breadcrumbs, AnimateElement } from '@/app/components';
 import { ComponentMap, ContactsList } from '@/app/components';
 import useLangStore from '@/app/store/languageStore';
-
 
 const data_contacts = [
     {
@@ -142,7 +141,9 @@ const PageContent = ({ data }) => {
                         link={'/'}
                         title={languages[lang]}
                     />
-                    <h2 className={styles.title}>Контакты</h2>
+                    <AnimateElement element="h2" className={styles.title}>
+                        Контакты
+                    </AnimateElement>
                     <ContactsList data={data_contacts} />
                 </div>
             </section>

@@ -2,7 +2,7 @@
 import styles from "./style.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { Breadcrumbs } from "@/app/components";
+import { Breadcrumbs, AnimateElement } from "@/app/components";
 
 import pattern from "@/public/about_center/pattern.svg";
 import center from "@/public/about_center/bg_pattern.png";
@@ -87,7 +87,9 @@ const PageContent = ({ data }) => {
 
             <section className={styles.section_do}>
                 <div className="container relative">
-                    <h2 className={styles.title}>{data?.sections?.activity[0]?.content[lang] || 'Деятельность'}</h2>
+                    <AnimateElement element="h2" className={styles.title}>
+                        {data?.sections?.activity[0]?.content[lang] || 'Деятельность'}
+                    </AnimateElement>
                     <p className={styles.description}>{data?.sections?.activity[1]?.content[lang]}</p>
 
                     <Image
@@ -140,9 +142,9 @@ const PageContent = ({ data }) => {
                 <div className="container relative">
                     <div className={`${styles.title_strategy_wrapper}`}>
                         <div className="relative">
-                            <h2 className={`${styles.title} ${styles.title_white}`}>
+                            <AnimateElement element="h2" className={`${styles.title} ${styles.title_white}`}>
                                 {data?.sections?.strategy?.[0]?.content?.[lang] || 'Стратегия развития'}
-                            </h2>
+                            </AnimateElement>
                             <Image
                                 className={styles.title_decor}
                                 src={decor3}
@@ -163,7 +165,7 @@ const PageContent = ({ data }) => {
                     </div>
 
                     <ul className={styles.strategy_list}>
-                        <li className={styles.strategy_item}>
+                        <AnimateElement element="li" className={styles.strategy_item} animationDelay={200}>
                             <div>
                                 <Image
                                     src={number_01}
@@ -177,8 +179,8 @@ const PageContent = ({ data }) => {
                                 <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: data?.sections?.strategy?.[1]?.content?.[lang]?.[0]?.content }}></div>
 
                             </div>
-                        </li>
-                        <li className={styles.strategy_item}>
+                        </AnimateElement>
+                        <AnimateElement element="li" className={styles.strategy_item} animationDelay={300}>
                             <div>
                                 <Image
                                     src={number_02}
@@ -189,8 +191,8 @@ const PageContent = ({ data }) => {
                                 />
                             </div>
                             <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: data?.sections?.strategy?.[1]?.content?.[lang]?.[1]?.content }}></div>
-                        </li>
-                        <li className={styles.strategy_item}>
+                        </AnimateElement>
+                        <AnimateElement element="li" className={styles.strategy_item} animationDelay={400}>
                             <div>
                                 <Image
                                     src={number_03}
@@ -201,14 +203,16 @@ const PageContent = ({ data }) => {
                                 />
                             </div>
                             <div className={styles.strategy_item_desc} dangerouslySetInnerHTML={{ __html: data?.sections?.strategy?.[1]?.content?.[lang]?.[2]?.content }}></div>
-                        </li>
+                        </AnimateElement>
                     </ul>
                 </div>
             </section>
 
             <section className={styles.section_purpose}>
                 <div className="container relative">
-                    <h2 className={styles.title}>{data?.sections?.tasks?.[0]?.content?.[lang] || 'Главные цели и задачи'}</h2>
+                    <AnimateElement element="h2" className={styles.title}>
+                        {data?.sections?.tasks?.[0]?.content?.[lang] || 'Главные цели и задачи'}
+                    </AnimateElement>
 
                     <Image
                         className={styles.purpose_img}

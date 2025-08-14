@@ -1,7 +1,7 @@
 "use client"
 
 import styles from './style.module.css';
-import { Breadcrumbs, DocumentComponent } from '@/app/components';
+import { Breadcrumbs, DocumentComponent, AnimateElement } from '@/app/components';
 import useLangStore from '@/app/store/languageStore';
 
 import decor from '@/public/about_center/decor2.svg';
@@ -52,7 +52,6 @@ export default function Page({ data }) {
                 </div>
             </section>
 
-
             <section className={styles.list}>
                 <div className='container'>
                     <AnimateItems data={listBlocks} />
@@ -61,14 +60,21 @@ export default function Page({ data }) {
 
             <section className={styles.section}>
                 <div className="container">
-                    <h2 className={styles.title} style={{ textAlign: 'start' }}>{docsHeader}</h2>
-                    <DocumentComponent
-                        title={docs[0].title}
-                        link={docs[0].url}
+                    <AnimateElement element="h2" className={`${styles.title} text-left`}>
+                        {docsHeader}
+                    </AnimateElement>
 
-                        background_color={''}
-                    />
-
+                    <ul className={styles.docs_list}>
+                        {docs && docs.length > 0 ? docs.map((item, index) => (
+                            <AnimateElement element="li" key={index}>
+                                <DocumentComponent
+                                    title={item.title}
+                                    link={item.url}
+                                    background_color={''}
+                                />
+                            </AnimateElement>
+                        )) : <li className={styles.no_docs}>документы не найдены</li>}
+                    </ul>
                 </div>
             </section>
         </>

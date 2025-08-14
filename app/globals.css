@@ -90,6 +90,10 @@ body {
   min-height: 100vh; */
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 body {
   color: var(--default-color);
   background: var(--background-color);

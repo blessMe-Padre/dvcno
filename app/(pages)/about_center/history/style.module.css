@@ -71,3 +71,8 @@ section.list::before {
         left: 5%;
     }
 }
+
+.docs_list li {
+    list-style: none;
+    margin-bottom: 20px;
+}

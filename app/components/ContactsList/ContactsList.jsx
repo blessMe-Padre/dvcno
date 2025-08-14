@@ -4,7 +4,7 @@ import decor from '@/public/contacts/decor.svg';
 import Image from 'next/image';
 import SVG_BG_Compoment from '@/app/ui/SVG/SVG_BG/SVG_BG';
 import { useState } from 'react';
-
+import { AnimateElement } from "@/app/components";
 import Link from 'next/link';
 
 import styles from './style.module.css';
@@ -41,11 +41,7 @@ const ContactsList = ({ data }) => {
 
             <ul className={styles.contact_list}>
                 {data.map((item, index) => (
-                    <li
-                        id={item.href.slice(1)}
-                        key={index}
-                        className={styles.contact_item}
-                    >
+                    <AnimateElement element="li" key={index} className={styles.contact_item} id={item.href.slice(1)}>
                         <div className={`${styles.contact_name_wrapper}                                                 
                                 ${item.background === 'yellow' ? styles.bg_yellow : ''}
                                 ${item.background === 'light-blue' ? styles.bg_light_blue : ''}
@@ -223,7 +219,7 @@ const ContactsList = ({ data }) => {
                                 </div>
                             </li>
                         </ul>
-                    </li>
+                    </AnimateElement>
                 ))}
             </ul>
 
