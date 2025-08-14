@@ -77,7 +77,7 @@ function Gallery() {
                                 {data?.[1]?.content?.ru.map((image, index) => (
                                     <SwiperSlide key={index}>
                                         <a
-                                            href={image.image}
+                                            href={process.env.NEXT_PUBLIC_API_SERVER + image.image}
                                             data-pswp-width={708}
                                             data-pswp-height={450}
                                             key={'#main-gallery' + '-' + 1}

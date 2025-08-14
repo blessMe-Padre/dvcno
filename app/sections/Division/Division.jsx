@@ -1,18 +1,20 @@
 import Image from "next/image";
 import styles from "./style.module.css";
-import { DivisionCard } from "@/app/components";
+import { DivisionCard, AnimateElement } from "@/app/components";
 
 export default function Division({ divisionData, lang }) {
-    console.log('division', divisionData);
+
     return (
         <section className={styles.section}>
             <div className="container">
-                <h2 className={`${styles.title} title`}>{divisionData[0]?.content?.[lang]}</h2>
+                <AnimateElement element="h2" className={`${styles.title} title`}>
+                    {divisionData[0]?.content?.[lang]}
+                </AnimateElement>
                 <ul className={styles.list}>
                     {divisionData[1]?.content?.[lang]?.map((item, index) => (
-                        <li key={index}>
+                        <AnimateElement element="li" key={index} animationName='fadeUp' animationDelay={index * 50}>
                             <DivisionCard divisionData={item} lang={lang} />
-                        </li>
+                        </AnimateElement>
                     ))}
                 </ul>
             </div>

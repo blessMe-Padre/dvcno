@@ -43,8 +43,6 @@
 
 }
 
-.list_address {}
-
 .bank_info {
     color: var(--white);
 }
@@ -92,7 +90,6 @@
 .bank_info li {
     margin-top: 10px;
 }
-
 
 .documents_wrapper {
     display: flex;
@@ -149,15 +146,17 @@
     position: relative;
     background-color: var(--gray);
     border-radius: 30px;
-    padding: 40px 30px;
-    min-height: 330px;
+    padding: 40px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .decor_svg {
-    scale: .8;
-    position: absolute;
-    right: -10px;
-    bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-top: 20px;
 }
 
 .decor3_img {

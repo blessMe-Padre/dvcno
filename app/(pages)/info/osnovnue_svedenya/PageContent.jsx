@@ -20,12 +20,55 @@ const languages2 = {
     ch: '教育機構資訊'
 };
 
+const tileLanguages = [{
+    ru: 'Полное наименование организации:',
+    en: 'Full name of the organization:',
+    ch: '組織の完全な名称:'
+}, {
+    ru: 'Краткое наименование организации:',
+    en: 'Short name of the organization:',
+    ch: '組織の簡略な名称:'
+},
+{
+    ru: 'Год создания учреждения:',
+    en: 'Year of establishment of the institution:',
+    ch: '機関の設立年:'
+},
+{
+    ru: 'Юридический, почтовый и фактический адрес:',
+    en: 'Legal, postal and actual address:',
+    ch: '法的、郵送および実際の住所:'
+},
+{
+    ru: 'Контакты:',
+    en: 'Contacts:',
+    ch: '連絡先:'
+},
+{
+    ru: 'Режим работы:',
+    en: 'Working hours:',
+    ch: '営業時間:'
+},
+{
+    ru: 'Учредитель:',
+    en: 'Founder:',
+    ch: '設立者:'
+},
+{
+    ru: 'Руководитель:',
+    en: 'Director:',
+    ch: '責任者:'
+}
+];
+
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
-    const data_svedenya = data?.sections?.main?.[1]?.content[lang];
+    const data_svedenya = data?.sections?.main?.[1]?.content[lang]?.[0];
     const data_address = data?.sections?.addresses?.[1]?.content[lang];
     const documents_data = data?.sections?.docs?.[1]?.content[lang];
     const bank_info = data?.sections?.bank?.[1]?.content[lang];
+
+    const manager = data_svedenya.management_positions.split('<br />');
 
     return (
         <>
@@ -48,25 +91,116 @@ const PageContent = ({ data }) => {
                     />
 
                     <ul className={styles.list_svedenya}>
-                        {data_svedenya.map((item, index) => (
-                            <li className={`${styles.svedenya_item} anim_hover_card`} key={index}>
-                                <p className={styles.svedenya_item_name}>{item.title}</p>
-                                <p className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: item.content }}></p>
-
-                                <Image
-                                    className={`${styles.decor_svg} dsv-image`}
-                                    src={item.image ? process.env.NEXT_PUBLIC_API_SERVER + item.image : '/placeholder/placeholder.svg'}
-                                    width={200}
-                                    height={80}
-                                    alt=''
-                                />
-                            </li>
-                        ))}
+                        <li className={`${styles.svedenya_item} anim_hover_card`}>
+                            <div>
+                                <h3 className={styles.svedenya_item_name}>{tileLanguages[0][lang]}</h3>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: data_svedenya.title }}></div>
+                            </div>
+                            <Image
+                                className={`${styles.decor_svg} dsv-image`}
+                                src='/osnovnye/svg_1.svg'
+                                width={60}
+                                height={60}
+                                alt=''
+                            />
+                        </li>
+                        <li className={`${styles.svedenya_item} anim_hover_card`}>
+                            <div>
+                                <h3 className={styles.svedenya_item_name}>{tileLanguages[1][lang]}</h3>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: data_svedenya.subtitle }}></div>
+                            </div>
+                            <Image
+                                className={`${styles.decor_svg} dsv-image`}
+                                src='/osnovnye/svg_8.svg'
+                                width={60}
+                                height={60}
+                                alt=''
+                            />
+                        </li>
+                        <li className={`${styles.svedenya_item} anim_hover_card`}>
+                            <div>
+                                <h3 className={styles.svedenya_item_name}>{tileLanguages[2][lang]}</h3>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: data_svedenya.description }}></div>
+                            </div>
+                            <Image
+                                className={`${styles.decor_svg} dsv-image`}
+                                src='/osnovnye/svg_8.svg'
+                                width={60}
+                                height={60}
+                                alt=''
+                            />
+                        </li>
+                        <li className={`${styles.svedenya_item} anim_hover_card`}>
+                            <div>
+                                <h3 className={styles.svedenya_item_name}>{tileLanguages[3][lang]}</h3>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: data_svedenya.address }}></div>
+                            </div>
+                            <Image
+                                className={`${styles.decor_svg} dsv-image`}
+                                src='/osnovnye/svg_3.svg'
+                                width={60}
+                                height={60}
+                                alt=''
+                            />
+                        </li>
+                        <li className={`${styles.svedenya_item} anim_hover_card`}>
+                            <div>
+                                <h3 className={styles.svedenya_item_name}>{tileLanguages[4][lang]}</h3>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: data_svedenya.phones }}></div>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: data_svedenya.emails }}></div>
+                            </div>
+                            <Image
+                                className={`${styles.decor_svg} dsv-image`}
+                                src='/osnovnye/svg_4.svg'
+                                width={60}
+                                height={60}
+                                alt=''
+                            />
+                        </li>
+                        <li className={`${styles.svedenya_item} anim_hover_card`}>
+                            <div>
+                                <h3 className={styles.svedenya_item_name}>{tileLanguages[5][lang]}</h3>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: data_svedenya.shedule }}></div>
+                            </div>
+                            <Image
+                                className={`${styles.decor_svg} dsv-image`}
+                                src='/osnovnye/svg_5.svg'
+                                width={60}
+                                height={60}
+                                alt=''
+                            />
+                        </li>
+                        <li className={`${styles.svedenya_item} anim_hover_card`}>
+                            <div>
+                                <h3 className={styles.svedenya_item_name}>{tileLanguages[6][lang]}</h3>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: manager[0] }}></div>
+                            </div>
+                            <Image
+                                className={`${styles.decor_svg} dsv-image`}
+                                src='/osnovnye/svg_6.svg'
+                                width={60}
+                                height={60}
+                                alt=''
+                            />
+                        </li>
+                        <li className={`${styles.svedenya_item} anim_hover_card`}>
+                            <div>
+                                <h3 className={styles.svedenya_item_name}>{tileLanguages[7][lang]}</h3>
+                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: manager[1] }}></div>
+                            </div>
+                            <Image
+                                className={`${styles.decor_svg} dsv-image`}
+                                src='/osnovnye/svg_7.svg'
+                                width={60}
+                                height={60}
+                                alt=''
+                            />
+                        </li>
                     </ul>
                 </div>
             </section>
 
-            <section className={styles.section}>
+            {/* <section className={styles.section}>
                 <div className='container'>
                     <h2 className={styles.title}>{data?.sections?.addresses?.[0]?.content[lang] ?? 'адреса мест осуществления образовательной деятельности'}
                     </h2>
@@ -100,9 +234,9 @@ const PageContent = ({ data }) => {
                         ))}
                     </ul>
                 </div>
-            </section>
+            </section> */}
 
-            <section className={styles.section}>
+            {/* <section className={styles.section}>
                 <div className='container'>
                     <h2 className={styles.title}>{data?.sections?.docs?.[0]?.content[lang] ?? "документы на осуществление образовательной деятельности"}</h2>
 
@@ -131,9 +265,9 @@ const PageContent = ({ data }) => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className={styles.section}>
+            {/* <section className={styles.section}>
                 <div className='container relative'>
                     <h2 className={styles.title}>{data?.sections?.bank?.[0]?.content[lang] ?? 'Банковские реквизиты АНПОО «ДВЦНО»'}</h2>
 
@@ -150,7 +284,7 @@ const PageContent = ({ data }) => {
                         <div dangerouslySetInnerHTML={{ __html: bank_info?.content }}></div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     )
 }

@@ -46,11 +46,6 @@ export default function DivisionCard({ divisionData, lang }) {
         },
     }
 
-    //console.log(process.env.NEXT_PUBLIC_API_SERVER + divisionData.image);
-    // const imageUrl = page.thumbnail ?
-    // `${process.env.NEXT_PUBLIC_API_SERVER}${page.thumbnail}` :
-    // '/placeholder/placeholder.svg';
-
     return (
         <div className={styles.card}>
             <div className={styles.image_wrapper}>
@@ -115,31 +110,35 @@ export default function DivisionCard({ divisionData, lang }) {
                         </a>
                     </div>
 
-                    <div className={styles.spoiler_wrapper}>
-                        <motion.div
-                            layout
-                            variants={variants}
-                            initial={'hidden'}
-                            animate={isOpen ? 'visible' : 'hidden'}
-                            className={`${styles.spoiler_text}`}>
-                            {insertSafeContent(divisionData.description)}
-                        </motion.div>
-                        <div
-                            onClick={() => setIsOpen(!isOpen)}
-                            className={styles.spoiler_link}
-                        >
-                            <span>
-                                {isOpen ? hide[lang] : read_description[lang]}
-                            </span>
-                            <Image
-                                src="/icons/arrow-down.svg"
-                                alt="world"
-                                width={17}
-                                height={10}
-                                className={`${styles.spoiler_arrow} ${isOpen ? styles.spoiler_arrow_up : ''}`}
-                            />
+                    {divisionData.description && (
+                        <div className={styles.spoiler_wrapper}>
+                            <motion.div
+                                layout
+                                variants={variants}
+                                initial={'hidden'}
+                                animate={isOpen ? 'visible' : 'hidden'}
+                                className={`${styles.spoiler_text}`}>
+                                {insertSafeContent(divisionData.description)}
+                            </motion.div>
+                            <div
+                                onClick={() => setIsOpen(!isOpen)}
+                                className={styles.spoiler_link}
+                            >
+                                <span>
+                                    {isOpen ? hide[lang] : read_description[lang]}
+                                </span>
+                                <Image
+                                    src="/icons/arrow-down.svg"
+                                    alt="world"
+                                    width={17}
+                                    height={10}
+                                    className={`${styles.spoiler_arrow} ${isOpen ? styles.spoiler_arrow_up : ''}`}
+                                />
+                            </div>
                         </div>
-                    </div>
+                    )}
+
+
                 </div>
             </div>
         </div >

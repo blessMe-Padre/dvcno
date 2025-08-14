@@ -7,8 +7,11 @@ export const metadata = {
 }
 
 export default async function Page() {
-
     const result = await fetchApiServerData('pages/nachalnoe-obshchee-obrazovanie');
+
+    if (!result.data) {
+        return <div className={styles.error_message}>Ошибка при загрузке данных</div>
+    }
     const data = result?.data;
 
     return (
