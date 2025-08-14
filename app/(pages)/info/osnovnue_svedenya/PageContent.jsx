@@ -1,6 +1,6 @@
 "use client"
 import styles from './style.module.css';
-import { Breadcrumbs } from '@/app/components';
+import { Breadcrumbs, AnimateElement } from "@/app/components";
 import decor from '@/public/decor/image-1.png';
 import Image from 'next/image';
 
@@ -200,19 +200,22 @@ const PageContent = ({ data }) => {
                 </div>
             </section>
 
-            {/* <section className={styles.section}>
+            <section className={styles.section}>
                 <div className='container'>
-                    <h2 className={styles.title}>{data?.sections?.addresses?.[0]?.content[lang] ?? 'адреса мест осуществления образовательной деятельности'}
-                    </h2>
+                    <AnimateElement element='h2' className={styles.title}>
+                        {data?.sections?.addresses?.[0]?.content[lang] ?? 'адреса мест осуществления образовательной деятельности'}
+                    </AnimateElement>
+
                     <ul className={styles.list_svedenya_four}>
                         {data_address.map((item, index) => (
-                            <li className={`${styles.svedenya_item} anim_hover_card`} key={index}>
+                            <AnimateElement element='li' className={`${styles.svedenya_item} anim_hover_card`} animationDelay={index * 100} key={index}>
                                 <div className={styles.item_title_wrapper}>
                                     <Image
                                         className={`dsv-image`}
-                                        src={process.env.NEXT_PUBLIC_API_SERVER + item.image}
-                                        width={120}
-                                        height={90}
+                                        src={`/osnovnye/image_${index + 1}.png`}
+                                        width={80}
+                                        height={80}
+                                        loading='lazy'
                                         alt='decor'
                                     />
                                     {item.title}
@@ -222,23 +225,24 @@ const PageContent = ({ data }) => {
                                 </div>
 
                                 <div className={styles.field_wrapper}>
-                                    <div className={styles.field_value} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
+                                    <div className={styles.field_value} dangerouslySetInnerHTML={{ __html: item?.address }}></div>
                                 </div>
 
                                 <a
-                                    href={item.link}
+                                    href={item.link ? item.link : '/'}
                                     className={styles.link}
                                 >Посмотреть на карте</a>
-
-                            </li>
+                            </AnimateElement>
                         ))}
                     </ul>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className={styles.section}>
+            <section className={styles.section}>
                 <div className='container'>
-                    <h2 className={styles.title}>{data?.sections?.docs?.[0]?.content[lang] ?? "документы на осуществление образовательной деятельности"}</h2>
+                    <AnimateElement element='h2' className={styles.title}>
+                        {data?.sections?.docs?.[0]?.content[lang] ?? "документы на осуществление образовательной деятельности"}
+                    </AnimateElement>
 
                     <div className={styles.documents_wrapper}>
                         {documents_data.map((item, index) => (
@@ -265,9 +269,9 @@ const PageContent = ({ data }) => {
                         ))}
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className={styles.section}>
+            <section className={styles.section}>
                 <div className='container relative'>
                     <h2 className={styles.title}>{data?.sections?.bank?.[0]?.content[lang] ?? 'Банковские реквизиты АНПОО «ДВЦНО»'}</h2>
 
@@ -284,7 +288,7 @@ const PageContent = ({ data }) => {
                         <div dangerouslySetInnerHTML={{ __html: bank_info?.content }}></div>
                     </div>
                 </div>
-            </section> */}
+            </section>
         </>
     )
 }
