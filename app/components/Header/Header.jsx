@@ -116,7 +116,7 @@ export default function Header() {
             />
             <SocialIcon
               color="purple"
-              href="#"
+              href="https://vk.com/akvvsu"
               icon="/icons/vk.svg"
               width="23"
               height="14"

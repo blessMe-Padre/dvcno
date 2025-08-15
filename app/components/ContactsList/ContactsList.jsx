@@ -184,7 +184,7 @@ const ContactsList = ({ data }) => {
                                         <p style={{ fontWeight: '600', marginBottom: '5px' }}>Мы в социльных сетях</p>
 
                                         <div className={`${styles.socials_btn} ${styles.wrapper_svg}`}>
-                                            <a href={item.socials_tg}>
+                                            <a href='https://t.me/dvcno_ru'>
                                                 <svg
                                                     className={` ${backgrounds[index] === 'yellow' ? styles.fill_yellow : ''}
                                                         ${backgrounds[index] === 'light-blue' ? styles.fill_light_blue : ''}
@@ -198,7 +198,7 @@ const ContactsList = ({ data }) => {
                                                 </svg>
                                             </a>
 
-                                            <a href={item.socials_vk}>
+                                            <a href='https://vk.com/akvvsu'>
                                                 <svg
                                                     className={` ${backgrounds[index] === 'yellow' ? styles.fill_yellow : ''}
                                                         ${backgrounds[index] === 'light-blue' ? styles.fill_light_blue : ''}
