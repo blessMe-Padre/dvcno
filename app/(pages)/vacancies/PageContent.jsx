@@ -9,6 +9,8 @@ import { Popup } from "@/app/components";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
+    console.log(data);
+
     const { lang } = useLangStore();
     const [popupActive, setPopupActive] = useState(false);
 
@@ -34,18 +36,19 @@ export default function Page({ data }) {
                     {list_links && list_links.length > 0 ? (
                         list_links.map((item, index) => (
                             <li key={index} className={styles.vacancies_item}>
-                                <div className="relative">
-                                    <p className={styles.item_job}>{item.title}</p>
-                                    <Image
-                                        className={styles.decor2}
-                                        src={decor2}
-                                        width={50}
-                                        height={50}
-                                        alt="image"
-                                    />
+                                <div>
+                                    <div className="relative">
+                                        <p className={styles.item_job}>{item.title}</p>
+                                        <Image
+                                            className={styles.decor2}
+                                            src={decor2}
+                                            width={50}
+                                            height={50}
+                                            alt="image"
+                                        />
+                                    </div>
+                                    <div className={styles.content} dangerouslySetInnerHTML={{ __html: item.content }}></div>
                                 </div>
-
-                                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
 
                                 <div className={styles.button_wrapper}>
                                     <button className={styles.button} onClick={() => setPopupActive(true)}>

@@ -286,3 +286,27 @@
         margin-top: 20px;
     }
 }
+
+.document_content_text {
+    color: var(--white);
+}
+
+.document_content_text ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.document_content_text li {
+    margin-top: 10px;
+}
+
+.document_content_text li a {
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.document_content_text li a:hover {
+    text-decoration: none;
+}

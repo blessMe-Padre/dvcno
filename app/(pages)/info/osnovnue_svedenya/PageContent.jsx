@@ -70,6 +70,8 @@ const PageContent = ({ data }) => {
 
     const manager = data_svedenya.management_positions.split('<br />');
 
+    console.log(data);
+
     return (
         <>
             <section className={styles.section}>
@@ -253,17 +255,8 @@ const PageContent = ({ data }) => {
                                 <p className={styles.document_name}>
                                     <span>{item.title}</span></p>
 
-                                <ul className={styles.document_info} >
-                                    <li>
-                                        <a href={item.link}>
-                                            <p dangerouslySetInnerHTML={{ __html: item.desc }}></p>
-                                        </a>
-                                    </li>
+                                <div className={styles.document_content_text} dangerouslySetInnerHTML={{ __html: item.content }}></div>
 
-                                    <li>
-                                        <time>{item.time}</time>
-                                    </li>
-                                </ul>
                             </div>
 
                         ))}
