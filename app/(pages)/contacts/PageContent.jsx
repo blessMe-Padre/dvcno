@@ -132,6 +132,7 @@ const languages = {
 
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
+    const data_contacts = data?.sections?.header?.[1]?.content[lang];
 
     return (
         <>
@@ -142,7 +143,7 @@ const PageContent = ({ data }) => {
                         title={languages[lang]}
                     />
                     <AnimateElement element="h2" className={styles.title}>
-                        Контакты
+                        {data?.sections?.header?.[0]?.content[lang] ?? 'Контакты'}
                     </AnimateElement>
                     <ContactsList data={data_contacts} />
                 </div>

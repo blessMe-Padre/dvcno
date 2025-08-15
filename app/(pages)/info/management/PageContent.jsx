@@ -92,9 +92,10 @@ const PageContent = ({ data }) => {
                                         <div className={styles.item_title_wrapper}>
                                             <Image
                                                 className={`dsv-image`}
-                                                src={process.env.NEXT_PUBLIC_API_SERVER + item.image}
-                                                width={120}
-                                                height={90}
+                                                src={`/osnovnye/image_${index + 1}.png`}
+                                                width={index === 2 ? 120 : 80}
+                                                height={80}
+                                                loading='lazy'
                                                 alt='decor'
                                             />
 

@@ -6,7 +6,7 @@ import decor from '@/public/info/structura/decor.svg';
 import decor2 from '@/public/info/structura/decor2.svg';
 import decor3 from '@/public/info/structura/decor3.svg';
 import doc from '@/public/info/structura/doc.svg';
-import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
+import { Breadcrumbs, AnimateElement } from '@/app/components';
 import useLangStore from '@/app/store/languageStore';
 
 const languages = {
@@ -27,6 +27,9 @@ const PageContent = ({ data }) => {
     const data_division = data?.sections?.structure?.[1]?.content[lang];
     const data_manager = data?.sections?.departments?.[1]?.content[lang];
 
+
+    console.log(data_manager);
+
     return (
         <section className={styles.section}>
             <div className='container relative'>
@@ -36,8 +39,9 @@ const PageContent = ({ data }) => {
                     title={languages[lang]}
                 />
 
-                <h2 className={styles.title}>{data?.sections?.main?.[0]?.content[lang] ?? 'Структура и органы управления образовательной организацией'}
-                </h2>
+                <AnimateElement element='h2' className={styles.title}>
+                    {data?.sections?.main?.[0]?.content[lang] ?? 'Структура и органы управления образовательной организацией'}
+                </AnimateElement>
 
                 <Image
                     className={styles.decor}
@@ -51,7 +55,7 @@ const PageContent = ({ data }) => {
                     <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data?.sections?.manager?.[0]?.content[lang] ?? 'Дирекция' }}></div>
                     <ul className={styles.list}>
                         {data_director.map((item, index) => (
-                            <li className={styles.item} key={index}>
+                            <AnimateElement element='li' animationDelay={index * 100} a className={styles.item} key={index}>
                                 <div className={styles.item_title_wrapper}>
                                     {item.title}
                                     <Image
@@ -70,24 +74,25 @@ const PageContent = ({ data }) => {
                                         alt={'decor3'}
                                     />
                                 </div>
-
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
-                            </li>
+                            </AnimateElement>
                         ))}
                     </ul>
                 </div>
 
                 <div className={styles.list_division}>
+                    <AnimateElement element='div' className={styles.subtitle}></AnimateElement>
                     <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data?.sections?.structure?.[0]?.content[lang] ?? 'Cтруктурные подразделения' }}></div>
                     <ul className={styles.list}>
                         {data_division.map((item, index) => (
-                            <li className={styles.item} key={index}>
+                            <AnimateElement element='li' animationDelay={index * 100} className={styles.item} key={index}>
                                 <div className={styles.item_title_wrapper}>
                                     <Image
                                         className={`dsv-image`}
-                                        src={process.env.NEXT_PUBLIC_API_SERVER + item.image}
-                                        width={120}
-                                        height={90}
+                                        src={`/osnovnye/image_${index + 1}.png`}
+                                        width={index === 2 ? 120 : 80}
+                                        height={80}
+                                        loading='lazy'
                                         alt='decor'
                                     />
 
@@ -104,11 +109,11 @@ const PageContent = ({ data }) => {
 
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
 
-                                <a href={process.env.NEXT_PUBLIC_API_SERVER + item.link} className={styles.doc} download="filename">
+                                <a href={process.env.NEXT_PUBLIC_API_SERVER + item.link_to_place} className={styles.doc} download="filename">
                                     <Image src={doc} width={50} height={50} alt='image' />
                                     Положения
                                 </a>
-                            </li>
+                            </AnimateElement>
                         ))}
                     </ul>
                 </div>
@@ -138,9 +143,20 @@ const PageContent = ({ data }) => {
                                     />
                                 </div>
 
-                                <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
+                                <div className={styles.info}>
+                                    <p><strong>Начальник отдела:</strong></p>
+                                    <p>{item.name}</p>
+                                    <p><strong>Адрес:</strong></p>
+                                    <p>{item.address}</p>
+                                    <p><strong>Телефон:</strong></p>
+                                    <p>{item.phones}</p>
+                                    <p><strong>E-mail:</strong></p>
+                                    <div dangerouslySetInnerHTML={{ __html: item.emails }} />
+                                    <p><strong>Сайт:</strong></p>
+                                    <a href="https://dvcno.ru/">https://dvcno.ru/</a>
+                                </div>
 
-                                <a href={process.env.NEXT_PUBLIC_API_SERVER + item.link} className={styles.doc} download="filename">
+                                <a href={process.env.NEXT_PUBLIC_API_SERVER + item.link_to_place} className={styles.doc} download="filename">
                                     <Image src={doc} width={50} height={50} alt='image' />
                                     Положения
                                 </a>
