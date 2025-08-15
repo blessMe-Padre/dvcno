@@ -2,7 +2,7 @@
 
 import styles from "./style.module.css";
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
-import { DocumentComponent } from "@/app/components";
+import { DocumentComponent, AnimateElement } from "@/app/components";
 import useLangStore from '@/app/store/languageStore';
 
 const languages = {
@@ -32,18 +32,19 @@ const PageContent = ({ data }) => {
                         title={languages[lang]}
                     />
 
-                    <h2 className={`title ${styles.title}`}>
+                    <AnimateElement element="h2" className={`title ${styles.title}`}>
                         {data?.sections?.services?.[0]?.content?.[lang] ?? 'Платные образовательные услуги'}
-                    </h2>
+                    </AnimateElement>
+
 
                     <div>
                         <ul className={styles.document_list}>
                             {data_order && data_order.length > 0 ?
                                 (
                                     data_order.map((item, index) => (
-                                        <li key={index}>
+                                        <AnimateElement element="li" key={index} animationName="fadeLeft" animationDelay={index * 100}>
                                             <DocumentComponent title={item.title} link={item.document} />
-                                        </li>
+                                        </AnimateElement>
                                     ))
                                 )
                                 :
@@ -56,16 +57,16 @@ const PageContent = ({ data }) => {
 
             <section className={styles.section}>
                 <div className="container">
-                    <h2 className={`title ${styles.title}`}>
+                    <AnimateElement element="h2" className={`title ${styles.title}`}>
                         {data?.sections?.cost?.[0]?.content?.[lang] ?? 'Стоимость обучения по образовательным программам'}
-                    </h2>
+                    </AnimateElement>
                     <ul className={styles.document_list}>
                         {data_price && data_price.length > 0 ?
                             (
                                 data_price.map((item, index) => (
-                                    <li key={index}>
+                                    <AnimateElement element="li" key={index} animationName="fadeLeft" animationDelay={index * 100}>
                                         <DocumentComponent title={item.title} link={item.document} />
-                                    </li>
+                                    </AnimateElement>
                                 ))
                             ) : (
                                 <p>Данные не загружены</p>
@@ -77,11 +78,11 @@ const PageContent = ({ data }) => {
 
             <section className={styles.section}>
                 <div className="container">
-                    <h2 className={`title ${styles.title}`}>
+                    <AnimateElement element="h2" className={`title ${styles.title}`}>
                         {data?.sections?.template?.[0]?.content?.[lang]
                             ?? 'Шаблоны договоров об оказании платных образовательных услуг 2020-2024 учебные года'
                         }
-                    </h2>
+                    </AnimateElement>
 
 
                     <div>
@@ -90,9 +91,9 @@ const PageContent = ({ data }) => {
                                 (
 
                                     data_template.map((item, index) => (
-                                        <li key={index}>
+                                        <AnimateElement element="li" key={index} animationName="fadeLeft" animationDelay={index * 100}>
                                             <DocumentComponent title={item.title} link={item.document} />
-                                        </li>
+                                        </AnimateElement>
                                     ))
                                 ) :
                                 (<p>Данные не загружены</p>)

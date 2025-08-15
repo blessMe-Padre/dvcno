@@ -12,7 +12,6 @@ import styles from './style.module.css';
 const backgrounds = ['purple', 'light-blue', 'green', 'violet', 'light-blue', 'yellow', 'green']
 
 const ContactsList = ({ data }) => {
-    console.log(data);
 
     const [activeLink, setActiveLink] = useState(null);
     const handleChange = (e) => {

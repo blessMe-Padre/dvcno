@@ -6,7 +6,7 @@ import Image from 'next/image';
 import icon from '@/public/processing-of-personal-data/icon.svg';
 
 import { Breadcrumbs } from '@/app/components';
-import { VideoComponent, DocumentComponent } from '@/app/components';
+import { VideoComponent, DocumentComponent, AnimateElement } from '@/app/components';
 import useLangStore from '@/app/store/languageStore';
 
 const languages = {
@@ -16,6 +16,7 @@ const languages = {
 };
 
 const PageContent = ({ data }) => {
+    console.log(data);
     const { lang } = useLangStore();
 
     const documents_header = data?.sections?.documents?.[0]?.content?.[lang];
@@ -35,9 +36,9 @@ const PageContent = ({ data }) => {
 
 
                     <div className={styles.title_wrapper}>
-                        <h2 className={styles.title}>
+                        <AnimateElement element="h2" className={styles.title}>
                             {documents_header ?? 'ДОКУМЕНТЫ'}
-                        </h2>
+                        </AnimateElement>
 
                         <Image
                             src={decor}
@@ -46,8 +47,9 @@ const PageContent = ({ data }) => {
                             alt="image"
                         />
                     </div>
-
-                    <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: documents_subtitle ?? 'о защите, хранении, обработке и передаче персональных данных работников АНПОО "ДВЦНО"' }}></div>
+                    <AnimateElement element="div" className={styles.subtitle}>
+                        <div dangerouslySetInnerHTML={{ __html: documents_subtitle ?? 'о защите, хранении, обработке и передаче персональных данных работников АНПОО "ДВЦНО"' }}></div>
+                    </AnimateElement>
 
                     <div className={styles.document_wrapper}>
                         <ul className={styles.document_list}>
@@ -55,9 +57,9 @@ const PageContent = ({ data }) => {
                             {documents_list && documents_list.length > 0 ?
                                 (
                                     documents_list.map((item, index) => (
-                                        <li key={index}>
+                                        <AnimateElement element="li" key={index} animationName="fadeLeft" animationDelay={index * 100}>
                                             <DocumentComponent title={item.title} link={item.document} />
-                                        </li>
+                                        </AnimateElement>
                                     ))
                                 ) : (<p>Данные не загруженны</p>)
                             }
@@ -69,9 +71,9 @@ const PageContent = ({ data }) => {
             <section className={styles.section}>
                 <div className="container">
 
-                    <h2 className={styles.title}>
+                    <AnimateElement element="h2" className={styles.title}>
                         {information_header ?? 'Полезная информация'}
-                    </h2>
+                    </AnimateElement>
 
                     <div className={styles.usefull}>
                         <div className={styles.text} dangerouslySetInnerHTML={{ __html: information_subtitle ?? 'Видео-материалы для проведения уроков по вопросам защиты персональных данных' }}></div>
@@ -114,9 +116,10 @@ const PageContent = ({ data }) => {
 
                     <div className={styles.bg_violet}>
                         <div className={styles.lessons_school}>
-                            <h2 className={styles.title}>
+                            <AnimateElement element="h2" className={styles.title}>
                                 {lessons.title ?? 'Урок для школьников'}
-                            </h2>
+                            </AnimateElement>
+
 
                             <div className={styles.lessons_info} dangerouslySetInnerHTML={{ __html: lessons.content ?? 'по вопросам защиты персональных данных:' }}></div>
 
@@ -124,14 +127,14 @@ const PageContent = ({ data }) => {
                                 {lessons.videos && lessons.videos.length > 0 ?
                                     (
                                         lessons.videos.map((item, index) => (
-                                            <li key={index}>
+                                            <AnimateElement element="li" key={index} animationName="fadeLeft" animationDelay={index * 100}>
                                                 <VideoComponent
                                                     background={'white'}
                                                     title={item.title}
                                                     mp4={item.video_mp4}
                                                     webm={item.video_webm}
                                                 />
-                                            </li>
+                                            </AnimateElement>
                                         ))
                                     ) : (<p>Данные не загружены</p>)
                                 }
