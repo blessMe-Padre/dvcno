@@ -34,6 +34,7 @@ export default function Search() {
         if (inputValue.trim() === '') return;
         // Редирект
         router.push(`/search?query=${encodeURIComponent(inputValue.trim())}`);
+        setIsFocused(false);
     };
 
     const handleKeyUp = (e) => {
@@ -42,6 +43,7 @@ export default function Search() {
         if (e.key === "Enter") {
             // Редирект
             router.push(`/search?query=${encodeURIComponent(inputValue.trim())}`);
+            setIsFocused(false);
         }
     }
 
