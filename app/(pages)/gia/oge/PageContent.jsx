@@ -14,8 +14,7 @@ export default function Page({ data }) {
     const total_list_docs = data?.sections?.total[0]?.content?.[lang]?.documents;
     const materials_header = data?.sections?.materials[0]?.content?.[lang][0];
     const materials_list_docs = data?.sections?.materials[1]?.content?.[lang]?.list;
-    //console.log(total_list_docs);
-    
+
     const link1 = {
         ru: 'ГИА',
         en: 'GIA',

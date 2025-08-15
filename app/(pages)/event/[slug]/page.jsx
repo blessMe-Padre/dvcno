@@ -30,8 +30,6 @@ export async function generateMetadata({ params }) {
     `${process.env.NEXT_PUBLIC_API_SERVER}${page.thumbnail}` :
     '/placeholder/placeholder.svg';
 
-  console.log('imageUrl', imageUrl);
-
   return {
     title: `ДВЦНО | ${page.title?.ru || page.title}`,
     description: fullDescription,

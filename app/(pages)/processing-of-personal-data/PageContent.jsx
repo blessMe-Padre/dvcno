@@ -16,7 +16,6 @@ const languages = {
 };
 
 const PageContent = ({ data }) => {
-    console.log(data);
     const { lang } = useLangStore();
 
     const documents_header = data?.sections?.documents?.[0]?.content?.[lang];

@@ -16,8 +16,7 @@ export default function Page({ data }) {
     const list_docs5 = data?.sections?.list_docs5[0]?.content?.[lang];
     const list_docs6 = data?.sections?.list_docs6[0]?.content?.[lang];
     const list_docs7 = data?.sections?.list_docs7[0]?.content?.[lang];
-    //console.log(banner);
-    
+
     const link = {
         ru: 'Результаты СОУТ',
         en: 'Results of SOUT',
@@ -42,127 +41,127 @@ export default function Page({ data }) {
 
                     <ul>
                         {list_docs1 && list_docs1.list.length > 0 ? (
-                            
-                                <li className={styles.item_object}>
-                                    <p className={`${styles.item_name} ${list_docs1.classes === 'yellow' ? styles.background_yellow : ''
-                                        } ${list_docs1.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs1.classes === 'green' ? styles.background_green : ''
-                                        } ${list_docs1.classes === 'violet' ? styles.background_violet : ''}`}>
-                                        {list_docs1.title}
-                                    </p>
-                                    <ul className={styles.document_list}>
-                                        {list_docs1.list.map((item, index) => (
-                                            <DocumentComponent key={index} title={item.title} link={item.document} />
-                                        ))}
-                                    </ul>
-                                </li>
+
+                            <li className={styles.item_object}>
+                                <p className={`${styles.item_name} ${list_docs1.classes === 'yellow' ? styles.background_yellow : ''
+                                    } ${list_docs1.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs1.classes === 'green' ? styles.background_green : ''
+                                    } ${list_docs1.classes === 'violet' ? styles.background_violet : ''}`}>
+                                    {list_docs1.title}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {list_docs1.list.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.document} />
+                                    ))}
+                                </ul>
+                            </li>
                         ) :
                             'данные не загружены'
                         }
 
                         {list_docs2 && list_docs2.list.length > 0 ? (
-                            
-                                <li className={styles.item_object}>
-                                    <p className={`${styles.item_name} ${list_docs2.classes === 'yellow' ? styles.background_yellow : ''
-                                        } ${list_docs2.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs2.classes === 'green' ? styles.background_green : ''
-                                        } ${list_docs2.classes === 'violet' ? styles.background_violet : ''}`}>
-                                        {list_docs2.title}
-                                    </p>
-                                    <ul className={styles.document_list}>
-                                        {list_docs2.list.map((item, index) => (
-                                            <DocumentComponent key={index} title={item.title} link={item.document} />
-                                        ))}
-                                    </ul>
-                                </li>
+
+                            <li className={styles.item_object}>
+                                <p className={`${styles.item_name} ${list_docs2.classes === 'yellow' ? styles.background_yellow : ''
+                                    } ${list_docs2.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs2.classes === 'green' ? styles.background_green : ''
+                                    } ${list_docs2.classes === 'violet' ? styles.background_violet : ''}`}>
+                                    {list_docs2.title}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {list_docs2.list.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.document} />
+                                    ))}
+                                </ul>
+                            </li>
                         ) :
                             'данные не загружены'
                         }
 
                         {list_docs3 && list_docs3.list.length > 0 ? (
-                            
-                                <li className={styles.item_object}>
-                                    <p className={`${styles.item_name} ${list_docs3.classes === 'yellow' ? styles.background_yellow : ''
-                                        } ${list_docs3.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs3.classes === 'green' ? styles.background_green : ''
-                                        } ${list_docs3.classes === 'violet' ? styles.background_violet : ''}`}>
-                                        {list_docs3.title}
-                                    </p>
-                                    <ul className={styles.document_list}>
-                                        {list_docs3.list.map((item, index) => (
-                                            <DocumentComponent key={index} title={item.title} link={item.document} />
-                                        ))}
-                                    </ul>
-                                </li>
+
+                            <li className={styles.item_object}>
+                                <p className={`${styles.item_name} ${list_docs3.classes === 'yellow' ? styles.background_yellow : ''
+                                    } ${list_docs3.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs3.classes === 'green' ? styles.background_green : ''
+                                    } ${list_docs3.classes === 'violet' ? styles.background_violet : ''}`}>
+                                    {list_docs3.title}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {list_docs3.list.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.document} />
+                                    ))}
+                                </ul>
+                            </li>
                         ) :
                             'данные не загружены'
                         }
 
                         {list_docs4 && list_docs4.list.length > 0 ? (
-                            
-                                <li className={styles.item_object}>
-                                    <p className={`${styles.item_name} ${list_docs4.classes === 'yellow' ? styles.background_yellow : ''
-                                        } ${list_docs4.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs4.classes === 'green' ? styles.background_green : ''
-                                        } ${list_docs4.classes === 'violet' ? styles.background_violet : ''}`}>
-                                        {list_docs4.title}
-                                    </p>
-                                    <ul className={styles.document_list}>
-                                        {list_docs4.list.map((item, index) => (
-                                            <DocumentComponent key={index} title={item.title} link={item.document} />
-                                        ))}
-                                    </ul>
-                                </li>
+
+                            <li className={styles.item_object}>
+                                <p className={`${styles.item_name} ${list_docs4.classes === 'yellow' ? styles.background_yellow : ''
+                                    } ${list_docs4.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs4.classes === 'green' ? styles.background_green : ''
+                                    } ${list_docs4.classes === 'violet' ? styles.background_violet : ''}`}>
+                                    {list_docs4.title}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {list_docs4.list.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.document} />
+                                    ))}
+                                </ul>
+                            </li>
                         ) :
                             'данные не загружены'
                         }
 
                         {list_docs5 && list_docs5.list.length > 0 ? (
-                            
-                                <li className={styles.item_object}>
-                                    <p className={`${styles.item_name} ${list_docs5.classes === 'yellow' ? styles.background_yellow : ''
-                                        } ${list_docs5.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs5.classes === 'green' ? styles.background_green : ''
-                                        } ${list_docs5.classes === 'violet' ? styles.background_violet : ''}`}>
-                                        {list_docs5.title}
-                                    </p>
-                                    <ul className={styles.document_list}>
-                                        {list_docs5.list.map((item, index) => (
-                                            <DocumentComponent key={index} title={item.title} link={item.document} />
-                                        ))}
-                                    </ul>
-                                </li>
+
+                            <li className={styles.item_object}>
+                                <p className={`${styles.item_name} ${list_docs5.classes === 'yellow' ? styles.background_yellow : ''
+                                    } ${list_docs5.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs5.classes === 'green' ? styles.background_green : ''
+                                    } ${list_docs5.classes === 'violet' ? styles.background_violet : ''}`}>
+                                    {list_docs5.title}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {list_docs5.list.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.document} />
+                                    ))}
+                                </ul>
+                            </li>
                         ) :
                             'данные не загружены'
                         }
 
                         {list_docs6 && list_docs6.list.length > 0 ? (
-                            
-                                <li className={styles.item_object}>
-                                    <p className={`${styles.item_name} ${list_docs6.classes === 'yellow' ? styles.background_yellow : ''
-                                        } ${list_docs6.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs6.classes === 'green' ? styles.background_green : ''
-                                        } ${list_docs6.classes === 'violet' ? styles.background_violet : ''}`}>
-                                        {list_docs6.title}
-                                    </p>
-                                    <ul className={styles.document_list}>
-                                        {list_docs6.list.map((item, index) => (
-                                            <DocumentComponent key={index} title={item.title} link={item.document} />
-                                        ))}
-                                    </ul>
-                                </li>
+
+                            <li className={styles.item_object}>
+                                <p className={`${styles.item_name} ${list_docs6.classes === 'yellow' ? styles.background_yellow : ''
+                                    } ${list_docs6.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs6.classes === 'green' ? styles.background_green : ''
+                                    } ${list_docs6.classes === 'violet' ? styles.background_violet : ''}`}>
+                                    {list_docs6.title}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {list_docs6.list.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.document} />
+                                    ))}
+                                </ul>
+                            </li>
                         ) :
                             'данные не загружены'
                         }
 
                         {list_docs7 && list_docs7.list.length > 0 ? (
-                            
-                                <li className={styles.item_object}>
-                                    <p className={`${styles.item_name} ${list_docs7.classes === 'yellow' ? styles.background_yellow : ''
-                                        } ${list_docs7.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs7.classes === 'green' ? styles.background_green : ''
-                                        } ${list_docs7.classes === 'violet' ? styles.background_violet : ''}`}>
-                                        {list_docs7.title}
-                                    </p>
-                                    <ul className={styles.document_list}>
-                                        {list_docs7.list.map((item, index) => (
-                                            <DocumentComponent key={index} title={item.title} link={item.document} />
-                                        ))}
-                                    </ul>
-                                </li>
+
+                            <li className={styles.item_object}>
+                                <p className={`${styles.item_name} ${list_docs7.classes === 'yellow' ? styles.background_yellow : ''
+                                    } ${list_docs7.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs7.classes === 'green' ? styles.background_green : ''
+                                    } ${list_docs7.classes === 'violet' ? styles.background_violet : ''}`}>
+                                    {list_docs7.title}
+                                </p>
+                                <ul className={styles.document_list}>
+                                    {list_docs7.list.map((item, index) => (
+                                        <DocumentComponent key={index} title={item.title} link={item.document} />
+                                    ))}
+                                </ul>
+                            </li>
                         ) :
                             'данные не загружены'
                         }

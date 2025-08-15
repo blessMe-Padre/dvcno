@@ -9,8 +9,6 @@ import { Popup } from "@/app/components";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
-    console.log(data);
-
     const { lang } = useLangStore();
     const [popupActive, setPopupActive] = useState(false);
 

@@ -15,7 +15,6 @@ export default function Awards() {
   const { lang } = useLangStore();
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
-  console.log('222222222222222222', data);
 
   useEffect(() => {
     const fetchData = async () => {

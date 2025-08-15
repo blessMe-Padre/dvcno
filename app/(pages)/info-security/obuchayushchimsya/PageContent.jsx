@@ -18,8 +18,6 @@ export default function Page({ data }) {
     const list_links = data?.sections?.main[1]?.content?.[lang];
     const imagesList = data?.sections?.img?.[0]?.content?.[lang];
 
-    console.log(list_links);
-
     const link1 = {
         ru: 'Информационная безопасность',
         en: 'Information security',

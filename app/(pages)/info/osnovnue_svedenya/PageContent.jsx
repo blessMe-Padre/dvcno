@@ -70,8 +70,6 @@ const PageContent = ({ data }) => {
 
     const manager = data_svedenya.management_positions.split('<br />');
 
-    console.log(data);
-
     return (
         <>
             <section className={styles.section}>
