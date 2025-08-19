@@ -49,6 +49,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang={lang}>
+      <head>
+        <meta name="robots" content="noindex" />
+      </head>
       <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
         <ClientLangInitializer>
           <div className="container">

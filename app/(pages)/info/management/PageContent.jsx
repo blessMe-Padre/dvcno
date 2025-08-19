@@ -110,7 +110,8 @@ const PageContent = ({ data }) => {
                                             />
                                         </div>
 
-                                        <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
+                                        <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div>
+                                        <b>Телефоны:</b> <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.phones }}></div>
 
                                         <a href={item.link} className={styles.link}>
                                             <p style={{ color: '#fff' }}>Перейти на сайт</p>

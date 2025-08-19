@@ -124,7 +124,7 @@ const PageContent = ({ data }) => {
                             </div>
                             <Image
                                 className={`${styles.decor_svg} dsv-image`}
-                                src='/osnovnye/svg_8.svg'
+                                src='/osnovnye/svg_9.svg'
                                 width={60}
                                 height={60}
                                 alt=''
@@ -225,6 +225,7 @@ const PageContent = ({ data }) => {
                                 </div>
 
                                 <div className={styles.field_wrapper}>
+                                    <b>Адрес:</b>
                                     <div className={styles.field_value} dangerouslySetInnerHTML={{ __html: item?.address }}></div>
                                 </div>
 

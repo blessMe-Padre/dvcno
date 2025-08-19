@@ -224,6 +224,7 @@
     display: block;
     max-width: 460px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .document_info {
