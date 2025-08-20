@@ -42,7 +42,7 @@ const AnimateElement = ({
       animationName = styles.fadeDown;
       break;
     default:
-      animationName = styles.fadeUp;
+      animationName = null;
       break;
   }
 

@@ -106,6 +106,17 @@ const PageContent = ({ data }) => {
 
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
 
+                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div></p>
+                                <p><strong>Адрес:</strong></p>
+                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.address }}></div></p>
+                                <p><strong>Телефоны:</strong></p> 
+                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.phones }}></div></p>
+                                <p><strong>Email:</strong></p> 
+                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.emails }}></div></p>
+                                <p><strong>Сайт:</strong></p> 
+                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.site }}></div></p>
+
+
                                 <a href={process.env.NEXT_PUBLIC_API_SERVER + item.link_to_place} className={styles.doc} download="filename">
                                     <Image src={doc} width={50} height={50} alt='image' />
                                     Положения

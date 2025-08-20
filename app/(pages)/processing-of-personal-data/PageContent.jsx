@@ -126,7 +126,7 @@ const PageContent = ({ data }) => {
                                 {lessons.videos && lessons.videos.length > 0 ?
                                     (
                                         lessons.videos.map((item, index) => (
-                                            <AnimateElement element="li" key={index} animationName="fadeLeft" animationDelay={index * 100}>
+                                            <AnimateElement element="li" key={index} animationName="null" animationDelay={index * 100}>
                                                 <VideoComponent
                                                     background={'white'}
                                                     title={item.title}

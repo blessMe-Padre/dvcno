@@ -363,3 +363,7 @@ ul {
 .api_content p {
   margin: 10px 0;
 }
+
+.style_content ul li {
+  list-style-type: disc !important;
+}

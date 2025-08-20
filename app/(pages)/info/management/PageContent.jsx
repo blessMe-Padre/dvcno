@@ -110,8 +110,15 @@ const PageContent = ({ data }) => {
                                             />
                                         </div>
 
-                                        <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div>
-                                        <b>Телефоны:</b> <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.phones }}></div>
+                                        <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div></p>
+                                        <p><strong>Адрес:</strong></p>
+                                        <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.address }}></div></p>
+                                        <p><strong>Телефоны:</strong></p> 
+                                        <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.phones }}></div></p>
+                                        <p><strong>Email:</strong></p> 
+                                        <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.emails }}></div></p>
+                                        <p><strong>Сайт:</strong></p> 
+                                        <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.site }}></div></p>
 
                                         <a href={item.link} className={styles.link}>
                                             <p style={{ color: '#fff' }}>Перейти на сайт</p>
