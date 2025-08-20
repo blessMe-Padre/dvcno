@@ -66,6 +66,20 @@
     margin-bottom: 70px;
 }
 
+.content ul li {
+    list-style-type: disc;
+}
+.content table {
+    border-collapse: collapse;
+}
+.content table td {
+    border: 1px solid #757f99;
+    padding: 3px;
+}
+.content a {
+    text-decoration: underline;
+}
+
 .content h2 {
     font-weight: 700;
     line-height: 0.86667;
