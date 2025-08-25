@@ -101,7 +101,8 @@ export default function Page({ data }) {
                     <div className={styles.accept_table}>
                         <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[3]?.content?.[lang] }}></div><br />
 
-                        <table>
+                        <div dangerouslySetInnerHTML={{ __html: process[4]?.content?.[lang] }}></div>
+                        {/* <table>
                             <thead>
                                 <tr>
                                     <th>Код и наименование специальности</th>
@@ -120,7 +121,7 @@ export default function Page({ data }) {
                                     <td>Операционный логист</td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> */}
                     </div>
 
                 </motion.section>
