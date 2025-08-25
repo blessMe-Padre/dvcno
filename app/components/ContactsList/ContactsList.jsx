@@ -73,7 +73,7 @@ const ContactsList = ({ data }) => {
                                         </div>
                                         <div>
                                             <p style={{ marginBottom: '5px', color: '#757f99' }}>Сайт</p>
-                                            <p style={{ fontWeight: '600' }}>{item.site}</p>
+                                            <a href={item.site} target="_blank"><p style={{ fontWeight: '600' }}>{item.site}</p></a>
                                         </div>
                                     </div>
 
