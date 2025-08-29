@@ -85,7 +85,7 @@ export default async function NewsPage({ params }) {
 export async function generateStaticParams() {
   try {
     const postsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/api/v1/news/`, {
-      next: { revalidate: 60 } // Кешируем запрос на 60 секунд
+      next: { revalidate: 10 } // Кешируем запрос на 60 секунд
     });
 
     if (!postsResponse.ok) {

@@ -68,13 +68,18 @@ const NewsCard = ({ data, isSlide = true }) => {
                         {data.date}
                     </div>
 
+                    {data.date && data.subtitle[lang] && data.subtitle[lang] != '' ?
+                        (
+                            '|'
+                        ) : ''}
+
                     <div className={styles.subtitle}>
                         {data.subtitle?.[lang]}
                     </div>
                 </div>
 
                 <h2 className={styles.title}>{data?.title?.[lang]}</h2>
-                <p className={styles.content} dangerouslySetInnerHTML={{ __html: data.content?.[lang] }}></p>
+                <p className={styles.content} dangerouslySetInnerHTML={{ __html: data.description?.[lang] }}></p>
             </div>
         </div>
     )

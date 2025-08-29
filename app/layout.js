@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClientLangInitializer, Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
+import fetchApiServerData from "@/app/utils/fetchApiServerData";
 
 const montserrat = localFont({
   src: [
@@ -43,9 +44,12 @@ export const metadata = {
   description: "Дальневосточный центр непрерывного образования",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   const cookieStore = cookies();
   const lang = cookieStore.get('language')?.value || 'ru';
+
+  const result = await fetchApiServerData('settings/technical_works');
+  console.log(result);
 
   return (
     <html lang={lang}>
@@ -58,7 +62,7 @@ export default function RootLayout({ children }) {
             <Header />
           </div>
           <main>
-            {children}
+            {result?.data?.technical_works === "1" ? (<p className="technical_works">{result.data.technical_text}</p>) : children}
           </main>
           <Footer />
         </ClientLangInitializer>

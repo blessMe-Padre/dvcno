@@ -153,11 +153,11 @@ const PageContent = ({ data }) => {
 
                                 <div className={styles.info}>
                                     <p><strong>Начальник отдела:</strong></p>
-                                    <p>{item.name}</p>
+                                    <div dangerouslySetInnerHTML={{ __html: item.name }} />
                                     <p><strong>Адрес:</strong></p>
-                                    <p>{item.address}</p>
+                                    <div dangerouslySetInnerHTML={{ __html: item.address }} />
                                     <p><strong>Телефон:</strong></p>
-                                    <p>{item.phones}</p>
+                                    <div dangerouslySetInnerHTML={{ __html: item.phones }} />
                                     <p><strong>E-mail:</strong></p>
                                     <div dangerouslySetInnerHTML={{ __html: item.emails }} />
                                     <p><strong>Сайт:</strong></p>
