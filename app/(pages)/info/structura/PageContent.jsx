@@ -153,7 +153,7 @@ const PageContent = ({ data }) => {
 
                                 <div className={styles.info}>
                                     <p><strong>Начальник отдела:</strong></p>
-                                    <div dangerouslySetInnerHTML={{ __html: item.name }} />
+                                    <div dangerouslySetInnerHTML={{ __html: item.management_positions }} />
                                     <p><strong>Адрес:</strong></p>
                                     <div dangerouslySetInnerHTML={{ __html: item.address }} />
                                     <p><strong>Телефон:</strong></p>
