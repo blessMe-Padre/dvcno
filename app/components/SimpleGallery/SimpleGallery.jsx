@@ -33,7 +33,7 @@ export default function SimpleGallery(props) {
     };
   }, []);
 
-
+  console.log(props.images);
 
   return (
    
@@ -63,9 +63,9 @@ export default function SimpleGallery(props) {
 
             <SwiperSlide key={index} className='anim_hover_card'>
               <a
-                href={process.env.NEXT_PUBLIC_API_SERVER + image.image}
-                data-pswp-width={image.image.width}
-                data-pswp-height={image.image.height}
+                href={process.env.NEXT_PUBLIC_API_SERVER + image.image.path}
+                data-pswp-width={image.image.metadata.resolution.width}
+                data-pswp-height={image.image.metadata.resolution.height}
                 key={props.galleryID + '-' + index}
                 target='_blank'
                 rel="noreferrer"
@@ -79,7 +79,7 @@ export default function SimpleGallery(props) {
                 </div>
                 <div className={styles.image_wrapper}>
                   <Image
-                    src={process.env.NEXT_PUBLIC_API_SERVER + image.image}
+                    src={process.env.NEXT_PUBLIC_API_SERVER + image.image.path}
                     width={337}
                     height={450}
                     alt="image"
