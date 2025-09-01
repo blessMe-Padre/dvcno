@@ -33,8 +33,10 @@ export default function SimpleGallery(props) {
     };
   }, []);
 
-  return (
 
+
+  return (
+   
     <div className='pswp-gallery' id={props.galleryID}>
       <Swiper
         modules={[Navigation]}
@@ -56,11 +58,14 @@ export default function SimpleGallery(props) {
       >
         <div className="pswp-gallery" id={props.galleryID}>
           {props.images.map((image, index) => (
+
+
+
             <SwiperSlide key={index} className='anim_hover_card'>
               <a
                 href={process.env.NEXT_PUBLIC_API_SERVER + image.image}
-                data-pswp-width={337}
-                data-pswp-height={450}
+                data-pswp-width={image.image.width}
+                data-pswp-height={image.image.height}
                 key={props.galleryID + '-' + index}
                 target='_blank'
                 rel="noreferrer"

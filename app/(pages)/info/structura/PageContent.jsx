@@ -26,6 +26,7 @@ const PageContent = ({ data }) => {
     const data_director = data?.sections?.manager?.[1]?.content[lang];
     const data_division = data?.sections?.structure?.[1]?.content[lang];
     const data_manager = data?.sections?.departments?.[1]?.content[lang];
+    console.log(data_division);
 
     return (
         <section className={styles.section}>
@@ -104,6 +105,7 @@ const PageContent = ({ data }) => {
                                     />
                                 </div>
 
+                                
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
 
                                 <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div></p>
@@ -116,11 +118,12 @@ const PageContent = ({ data }) => {
                                 <p><strong>Сайт:</strong></p> 
                                 <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.site }}></div></p>
 
-
-                                <a href={process.env.NEXT_PUBLIC_API_SERVER + item.link_to_place} className={styles.doc} download="filename">
-                                    <Image src={doc} width={50} height={50} alt='image' />
-                                    Положения
-                                </a>
+                                {item.position && 
+                                    <a href={process.env.NEXT_PUBLIC_API_SERVER + item.position} className={styles.doc} download="filename">
+                                        <Image src={doc} width={50} height={50} alt='image' />
+                                        Положения
+                                    </a>
+                                }
                             </AnimateElement>
                         ))}
                     </ul>
@@ -164,10 +167,12 @@ const PageContent = ({ data }) => {
                                     <a href="https://dvcno.ru/">https://dvcno.ru/</a>
                                 </div>
 
-                                <a href={process.env.NEXT_PUBLIC_API_SERVER + item.link_to_place} className={styles.doc} download="filename">
-                                    <Image src={doc} width={50} height={50} alt='image' />
-                                    Положения
-                                </a>
+                                {item.position && 
+                                    <a href={process.env.NEXT_PUBLIC_API_SERVER + item.position} className={styles.doc} download="filename">
+                                        <Image src={doc} width={50} height={50} alt='image' />
+                                        Положения
+                                    </a>
+                                }
                             </li>
                         ))}
                     </ul>

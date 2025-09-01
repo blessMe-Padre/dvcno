@@ -40,16 +40,20 @@
 
 
 .wrapper_content {
-    padding: 110px 80px;
+    padding: 75px 80px;
 
-    background-image: url('../../../public/info/bg_info_b.png');
+    /* background-image: url('../../../public/info/bg_info_b.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+
+    position: relative;
 
     margin-bottom: 80px;
 
     max-height: 680px;
     height: 100%;
+
+    z-index: -1;
 }
 
 .wrapper_lang {
