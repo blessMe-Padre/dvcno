@@ -55,6 +55,9 @@
 
     z-index: -1;
 }
+.dsv-image {
+    z-index: -1;
+}
 
 .wrapper_lang {
     margin-top: 100px;
