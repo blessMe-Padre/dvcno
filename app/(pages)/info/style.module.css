@@ -55,8 +55,9 @@
 
     z-index: -1;
 }
-.dsv-image {
+.wrapper_content img {
     z-index: -1;
+
 }
 
 .wrapper_lang {
