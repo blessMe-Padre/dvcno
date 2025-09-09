@@ -89,7 +89,7 @@ const Footer = () => {
                             <p>г. Владивосток, ул. Гоголя, 41,</p>
                         </div>
                         <div>
-                            <p style={{ color: '#FFB236', textDecoration: 'underline' }}>Посмореть на карте</p>
+                            <a href="https://yandex.ru/maps/-/CHtVMW9f" target="_blank" style={{ color: '#FFB236', textDecoration: 'underline' }}>Посмореть на карте</a>
                         </div>
                     </div>
                 </div>

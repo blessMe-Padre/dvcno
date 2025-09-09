@@ -49,7 +49,6 @@ export async function generateMetadata({ params }) {
       tags: page.subtitle ? [page.subtitle] : ['Новости', 'ДВЦНО'],
     },
 
-
     // Дополнительные мета-теги
     keywords: ['ДВЦНО', 'новости', 'образование', page.subtitle].filter(Boolean).join(', '),
     authors: [{ name: 'ДВЦНО' }],
