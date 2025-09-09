@@ -1,14 +1,15 @@
 import { useForm } from 'react-hook-form';
 import styles from './style.module.css';
 import { useState } from 'react';
+import { useId } from 'react';
 
 export const Form = ({ setActive }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState();
     const [sending, isSending] = useState(false);
+    const id = useId();
 
-    // const url = 'https://httpbin.org/post';
     const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/sendMail`;
 
     const onSubmit = async (formData) => {
@@ -94,7 +95,6 @@ export const Form = ({ setActive }) => {
                 </div>
             }
 
-
             <button className={styles.form__btn__submit}>
                 <p>Задать вопрос</p>
 
@@ -116,11 +116,11 @@ export const Form = ({ setActive }) => {
                     className={styles.checkbox}
                     {...register('policy', { required: { value: true, message: 'Необходимо согласиться' } })}
                     error={errors.name}
-                    id='checkbox'
+                    id={id}
                 />
                 <label
                     className={`${styles.label} ${errors['policy'] ? styles.error : ''}`}
-                    htmlFor="checkbox">
+                    htmlFor={id}>
                 </label>
                 <p className={styles.policy_text}>Пользуясь нашими услугами, вы подтверждаете, что прочитали
                     и полностью согласны с этим документом: <a href="#"> Пользовательское Соглашение</a></p>
