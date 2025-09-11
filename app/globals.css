@@ -387,6 +387,11 @@ figure img {
   border-radius: 30px;
 }
 
+figure.image-style-align-center {
+  display: block;
+  margin: 20px auto;
+}
+
 figure.image-style-align-center img {
   display: block;
   margin: 20px auto;
@@ -395,4 +400,22 @@ figure.image-style-align-center img {
 figure.image-style-block-align-right img {
   display: block;
   margin-left: auto;
+}
+
+figure.image-style-align-left {
+  float: left;
+  margin-right: 20px;
+}
+
+figure.image-style-align-left img {
+  margin: 0;
+}
+
+figure.image-style-align-right {
+  float: right;
+  margin-left: 20px;
+}
+
+figure.image-style-align-right img {
+  margin: 0;
 }
