@@ -1,3 +1,49 @@
 .content {
     margin: 20px 0 40px;
 }
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    margin: 20px 0;
+}
+
+.content ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.content p,
+.content li {
+    margin: 10px 0;
+
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+}
+
+.content figure {
+    display: block;
+}
+
+.content img {
+    margin: 20px 0;
+    display: block;
+}
+
+.content th,
+.content td {
+    padding: 12px;
+    border: 1px solid #171717;
+}
+
+.content th {
+    font-weight: 600;
+    color: #171717;
+}

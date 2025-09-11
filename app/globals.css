@@ -374,3 +374,25 @@ ul {
 .style_content ul li {
   list-style-type: disc !important;
 }
+
+/* Глобальные стили для контента шаблонных страниц */
+
+figure img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 30px;
+}
+
+figure.image-style-align-center img {
+  display: block;
+  margin: 20px auto;
+}
+
+figure.image-style-block-align-right img {
+  display: block;
+  margin-left: auto;
+}

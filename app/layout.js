@@ -49,7 +49,6 @@ export default async function RootLayout({ children }) {
   const lang = cookieStore.get('language')?.value || 'ru';
 
   const result = await fetchApiServerData('settings/technical_works');
-  console.log(result);
 
   return (
     <html lang={lang}>

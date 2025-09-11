@@ -5,16 +5,18 @@ export const revalidate = 10;
 
 export async function generateMetadata({ params }) {
     const { slug } = params;
-    const result = await fetchApiServerData(`pages/info-security`);
+    const result = await fetchApiServerData(`info-page/${slug}`);
+    const data = result?.data;
 
     return {
-        title: `ДВЦНО | ${slug}`,
-        description: slug,
+        title: `ДВЦНО | ${data?.title?.ru}`,
+        description: data?.description?.ru,
     };
 }
 
-export default async function Page() {
-    const result = await fetchApiServerData(`pages/info-security`);
+export default async function Page({ params }) {
+    const { slug } = params;
+    const result = await fetchApiServerData(`info-page/${slug}`);
     const data = result?.data;
 
     return (
