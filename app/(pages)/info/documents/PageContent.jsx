@@ -13,6 +13,9 @@ import { DocumentComponent } from "@/app/components";
 import useLangStore from '@/app/store/languageStore';
 
 const PageContent = ({ data }) => {
+
+    console.log('data', data);
+
     const { lang } = useLangStore();
 
     const data_docs = data?.sections?.documents?.[1]?.content[lang]?.list;
@@ -154,7 +157,7 @@ const PageContent = ({ data }) => {
                     <ul className={styles.document_list}>
                         {data_predpicaniya.map((item, index) => (
                             <li key={index}>
-                                <DocumentComponent title={item.title} link={item.link} />
+                                <DocumentComponent title={item.title} link={item.document} />
                             </li>
                         ))}
                     </ul>
