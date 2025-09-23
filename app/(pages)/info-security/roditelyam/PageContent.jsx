@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import styles from '../info.module.css';
 import { Breadcrumbs, DocumentComponent } from "@/app/components";
+import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
@@ -17,6 +18,8 @@ export default function Page({ data }) {
     const main3_header = data?.sections?.main3[0]?.content?.[lang][0];
     const main3_format_text = data?.sections?.main3[1]?.content?.[lang][0];
     const main3_list_links = data?.sections?.main3[2]?.content?.[lang];
+
+    console.log('banner', banner);
 
     const link1 = {
         ru: 'Информационная безопасность',
@@ -43,14 +46,14 @@ export default function Page({ data }) {
 
                     <div className={styles.document_wrapper}>
                         <ul>
-                            {banner?.documents && banner?.documents.length > 0 ?
+                            {banner?.list && banner?.list.length > 0 ?
                                 (
-                                    banner?.documents.map((item, index) => (
+                                    banner?.list.map((item, index) => (
                                         <li key={index}>
                                             <DocumentComponent title={item.title} link={item.document} />
                                         </li>
                                     ))
-                                ) : (<p>данные не загружены</p>)
+                                ) : (<p>Документы не загружены</p>)
                             }
                         </ul>
                     </div>
@@ -93,7 +96,7 @@ export default function Page({ data }) {
                             />
                         </div>
                         <div className={styles.page_content}>
-                            <p className="title-black">{main2_format_text}</p>
+                            <div className="title-black">{insertSafeContent(main2_format_text)}</div>
                         </div>
 
                         <ul className={styles.document_list}>
@@ -123,7 +126,7 @@ export default function Page({ data }) {
                         />
                     </div>
                     <div className={styles.page_content}>
-                        <p>{main3_format_text}</p>
+                        <div className="title-black">{insertSafeContent(main3_format_text)}</div>
                     </div>
 
                     <ul className={styles.help_list}>

@@ -90,7 +90,9 @@ const PageContent = ({ data }) => {
                     <AnimateElement element="h2" className={styles.title}>
                         {data?.sections?.activity[0]?.content[lang] || 'Деятельность'}
                     </AnimateElement>
-                    <p className={styles.description}>{data?.sections?.activity[1]?.content[lang]}</p>
+                    <div className={styles.description}>
+                        {insertSafeContent(data?.sections?.activity[1]?.content[lang])}
+                    </div>
 
                     <Image
                         className={styles.decor}

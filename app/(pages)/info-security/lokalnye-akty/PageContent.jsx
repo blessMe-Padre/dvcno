@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '../info.module.css';
 import { Breadcrumbs, DocumentComponent } from "@/app/components";
 import useLangStore from '@/app/store/languageStore';
+import { insertSafeContent } from '@/app/utils/insertSafeContent';
 
 export default function Page({ data }) {
     const { lang } = useLangStore();
@@ -43,7 +44,7 @@ export default function Page({ data }) {
             </div>
 
             <div className={styles.page_content}>
-                <p>{format_text}</p>
+                {insertSafeContent(format_text)}
             </div>
 
             <ul className={styles.document_list}>

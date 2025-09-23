@@ -9,6 +9,7 @@ export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const banner = data?.sections?.banner[0]?.content?.[lang];
+    const banner_list = data?.sections?.banner[0]?.content?.[lang]?.list;
     const main1_header = data?.sections?.main[0]?.content?.[lang][0];
     const list_links = data?.sections?.main[1]?.content?.[lang]?.list;
     const main2_header = data?.sections?.main2[0]?.content?.[lang][0];
@@ -42,7 +43,19 @@ export default function Page({ data }) {
                     <h1 className={`title title-black`}>{banner.title ?? "Педагогам"}</h1>
 
                     <div className={styles.document_wrapper}>
-                        <DocumentComponent title={banner?.documents?.[0]?.title} link={banner?.documents?.[0]?.document} />
+                        <ul className={styles.banner_list}>
+                            {
+                                banner_list && banner_list.length > 0 ? (
+                                    banner_list.map((item, index) => (
+                                        <li key={index}>
+                                            <DocumentComponent key={index} title={item.title} link={item.document} />
+                                        </li>
+                                    ))
+                                ) : (
+                                    <p>Документы не загружены</p>
+                                )
+                            }
+                        </ul>
                     </div>
                 </section>
 
@@ -81,7 +94,7 @@ export default function Page({ data }) {
                         />
                     </div>
                     <div className={styles.page_content}>
-                        <p className="title-black">{main2_format_text}</p>
+                        <div className="title-black"> {insertSafeContent(main2_format_text)}</div>
                     </div>
 
                     <ul className={styles.document_list}>
@@ -107,7 +120,7 @@ export default function Page({ data }) {
                         />
                     </div>
                     <div className={styles.page_content}>
-                        <p>{main3_format_text}</p>
+                        <div className="title-black">{insertSafeContent(main3_format_text)}</div>
                     </div>
 
                     <ul className={styles.help_list}>

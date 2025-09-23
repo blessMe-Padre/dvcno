@@ -25,6 +25,10 @@ const PageContent = ({ data }) => {
     const information_subtitle = data?.sections?.information?.[1]?.content?.[lang];
     const information_list = data?.sections?.information?.[2]?.content?.[lang]?.list;
     const lessons = data?.sections?.lessons?.[0]?.content?.[lang];
+    const lessons_list = data?.sections?.lessons?.[0]?.content?.[lang]?.list;
+
+    console.log('lessons', lessons);
+    console.log('lessons_list', lessons_list);
 
     return (
         <>
@@ -66,6 +70,7 @@ const PageContent = ({ data }) => {
                     </div>
                 </div>
             </section>
+
 
             <section className={styles.section}>
                 <div className="container">
@@ -123,9 +128,9 @@ const PageContent = ({ data }) => {
                             <div className={styles.lessons_info} dangerouslySetInnerHTML={{ __html: lessons.content ?? 'по вопросам защиты персональных данных:' }}></div>
 
                             <ul className={styles.document_list_custom}>
-                                {lessons.videos && lessons.videos.length > 0 ?
+                                {lessons_list && lessons_list.length > 0 ?
                                     (
-                                        lessons.videos.map((item, index) => (
+                                        lessons_list.map((item, index) => (
                                             <AnimateElement element="li" key={index} animationName="null" animationDelay={index * 100}>
                                                 <VideoComponent
                                                     background={'white'}
@@ -135,7 +140,7 @@ const PageContent = ({ data }) => {
                                                 />
                                             </AnimateElement>
                                         ))
-                                    ) : (<p>Данные не загружены</p>)
+                                    ) : (<p>Уроки не загружены</p>)
                                 }
                             </ul>
                         </div>
