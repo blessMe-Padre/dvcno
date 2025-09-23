@@ -229,14 +229,6 @@
     border-top-right-radius: 20px;
 }
 
-.accept_table tbody td:first-child {
-    border-bottom-left-radius: 20px;
-}
-
-.accept_table tbody td:last-child {
-    border-bottom-right-radius: 20px;
-}
-
 .accept_table thead th+th::before {
     content: '';
     position: absolute;
@@ -257,6 +249,14 @@
     letter-spacing: 0.02em;
     color: var(--black);
     background-color: var(--gray);
+}
+
+.accept_table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 20px;
+}
+
+.accept_table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 20px;
 }
 
 @media (max-width: 460px) {

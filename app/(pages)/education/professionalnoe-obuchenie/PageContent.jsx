@@ -18,6 +18,9 @@ export default function Page({ data }) {
     const docs = data?.sections?.docs;
     const docsStart = data?.sections?.docs_start;
 
+    console.log('process', process);
+
+
     const link1 = {
         ru: 'Обучение',
         en: 'Training',
@@ -99,29 +102,9 @@ export default function Page({ data }) {
                     </div>
 
                     <div className={styles.accept_table}>
-                        <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[3]?.content?.[lang] }}></div><br />
-
-                        <div dangerouslySetInnerHTML={{ __html: process[4]?.content?.[lang] }}></div>
-                        {/* <table>
-                            <thead>
-                                <tr>
-                                    <th>Код и наименование специальности</th>
-                                    <th>Форма&nbsp;обучения</th>
-                                    <th>Требования к уровню образования</th>
-                                    <th>Сроки обучения</th>
-                                    <th>Квалификация</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>38.02.03 Операционная деятельность в&nbsp;логистике</td>
-                                    <td>очная</td>
-                                    <td>основное общее образование (9 классов)</td>
-                                    <td>2 года 10 месяцев</td>
-                                    <td>Операционный логист</td>
-                                </tr>
-                            </tbody>
-                        </table> */}
+                        <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[3]?.content?.[lang] }} />
+                        <br />
+                        <div dangerouslySetInnerHTML={{ __html: process[4]?.content?.[lang] }} />
                     </div>
 
                 </motion.section>

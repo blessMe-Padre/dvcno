@@ -16,6 +16,8 @@ export default function Page({ data }) {
         ch: 'ORKSE/ODKNR'
     };
 
+    console.log('banner', banner);
+
     return (
         <>
             <section>
@@ -51,7 +53,7 @@ export default function Page({ data }) {
                                     </li>
                                 ))
                             ) :
-                                'данные не загружены'
+                                ''
                             }
                         </ul>
                     </div>

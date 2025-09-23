@@ -14,7 +14,7 @@ export default function Page({ data }) {
     const total_list_docs = data?.sections?.total[0]?.content?.[lang]?.documents;
     const materials_header = data?.sections?.materials[0]?.content?.[lang][0];
     const materials_list_docs = data?.sections?.materials[1]?.content?.[lang]?.list;
-    
+
     const link1 = {
         ru: 'ГИА',
         en: 'GIA',
@@ -54,7 +54,7 @@ export default function Page({ data }) {
                             </li>
                         ))
                     ) :
-                        'данные не загружены'
+                        ''
                     }
                 </ul>
             </section>
@@ -80,7 +80,7 @@ export default function Page({ data }) {
                         ))
                     ) :
                         'данные не загружены'
-                    }                        
+                    }
                 </ul>
             </section>
 
@@ -116,10 +116,11 @@ export default function Page({ data }) {
                             </li>
                         ))
                     ) :
-                        'данные не загружены'
-                    }  
+                        ''
+                    }
                 </ul>
             </section>
+
 
             <section className={styles.method}>
                 <div className={styles.title_wrapper_between}>
@@ -134,7 +135,7 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.document_list}>
-                    {total_list_docs && total_list_docs.length > 0 ? (
+                    {materials_list_docs && materials_list_docs.length > 0 ? (
                         materials_list_docs.map((item, index) => (
                             <li key={index}>
                                 <DocumentComponent title={item.title} link={item.document} />
@@ -142,7 +143,7 @@ export default function Page({ data }) {
                         ))
                     ) :
                         'данные не загружены'
-                    }                         
+                    }
                 </ul>
             </section>
 
