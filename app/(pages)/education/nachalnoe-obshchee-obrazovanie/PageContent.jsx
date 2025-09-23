@@ -45,12 +45,12 @@ export default function Page({ data }) {
                     <SlideMain item={hero} learn_more={learn_more[lang]} />
                 </section>
 
-                <section className={`${styles.section} section-dsv`}>
+                <section className={`${styles.section} section-dsv text-white`}>
                     <div className='container'>
                         <div className={styles.row}>
                             <div>
                                 <h2 className={`${styles.title} ${styles.text_white}`}>{desc[0].title} <span className={styles.sticker}>{desc[0].subtitle}</span></h2>
-                                <div className={styles.text} dangerouslySetInnerHTML={{ __html: desc[0]?.content }}></div>
+                                <div className="api_content" dangerouslySetInnerHTML={{ __html: desc[0]?.content }}></div>
                             </div>
                             <div className={styles.image_wrapper}>
                                 <Image
@@ -77,7 +77,7 @@ export default function Page({ data }) {
                             </div>
                             <div>
                                 <h2 className={`${styles.title} ${styles.text_white}`}>{desc[1].title} <span className={styles.sticker}>{desc[1].subtitle}</span></h2>
-                                <div className={styles.text} dangerouslySetInnerHTML={{ __html: desc[1]?.content }}></div>
+                                <div className="api_content" dangerouslySetInnerHTML={{ __html: desc[1]?.content }}></div>
                             </div>
                         </div>
 

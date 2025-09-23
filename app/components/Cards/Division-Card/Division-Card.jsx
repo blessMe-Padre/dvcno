@@ -77,7 +77,7 @@ export default function DivisionCard({ divisionData, lang }) {
                             </div>
                             <span>{divisionData.site}</span>
                         </a>
-                        <a href={`tel:${divisionData.phones}`} className={styles.link}>
+                        <div className={styles.link}>
                             <div className={`${styles.icon_wrapper}`}>
                                 <Image
                                     src="/icons/phone.svg"
@@ -87,8 +87,8 @@ export default function DivisionCard({ divisionData, lang }) {
                                     className={`${styles.icon_image}`}
                                 />
                             </div>
-                            <span>{divisionData.phones}</span>
-                        </a>
+                            <span dangerouslySetInnerHTML={{ __html: divisionData.phones }} />
+                        </div>
                     </div>
 
                     <div className={styles.link_button_wrapper}>

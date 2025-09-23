@@ -360,6 +360,7 @@ ul {
 .api_content ul {
   list-style: disc;
   margin-bottom: 20px;
+  padding-left: 20px;
 }
 
 .api_content li {

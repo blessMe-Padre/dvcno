@@ -18,9 +18,6 @@ export default function Page({ data }) {
     const docs = data?.sections?.docs;
     const docsStart = data?.sections?.docs_start;
 
-    console.log('process', process);
-
-
     const link1 = {
         ru: 'Обучение',
         en: 'Training',

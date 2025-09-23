@@ -210,14 +210,17 @@ const PageContent = ({ data }) => {
                         {data_address.map((item, index) => (
                             <AnimateElement element='li' className={`${styles.svedenya_item} anim_hover_card`} animationDelay={index * 100} key={index}>
                                 <div className={styles.item_title_wrapper}>
-                                    <Image
-                                        className={`dsv-image`}
-                                        src={`/osnovnye/image_${index + 1}.png`}
-                                        width={80}
-                                        height={80}
-                                        loading='lazy'
-                                        alt='decor'
-                                    />
+                                    {item?.thumbnail && (
+                                        <Image
+                                            className={`dsv-image`}
+                                            src={process.env.NEXT_PUBLIC_API_SERVER + item.thumbnail}
+                                            width={80}
+                                            height={80}
+                                            loading='lazy'
+                                            alt='decor'
+                                        />
+                                    )}
+
                                     {item.title}
 
 
