@@ -59,9 +59,9 @@ export default function About() {
                             data?.[1]?.content?.[lang].map((item, index) => (
                                 <SwiperSlide key={index}>
                                     <Card
-                                        image={item.image}
-                                        description={item.content}
-                                        link={item.link}
+                                        image={item?.image}
+                                        description={item?.content}
+                                        link={item?.link}
                                     />
                                 </SwiperSlide>
                             ))
@@ -78,9 +78,9 @@ export default function About() {
                             data?.[1]?.content?.[lang].map((item, index) => (
                                 <li key={index}>
                                     <Card
-                                        image={item.image}
-                                        description={item.content}
-                                        link={item.link}
+                                        image={item?.image}
+                                        description={item?.content}
+                                        link={item?.link}
                                     />
                                 </li>
                             ))

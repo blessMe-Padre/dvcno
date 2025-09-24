@@ -33,10 +33,7 @@ export default function SimpleGallery(props) {
     };
   }, []);
 
-  console.log(props.images);
-
   return (
-   
     <div className='pswp-gallery' id={props.galleryID}>
       <Swiper
         modules={[Navigation]}

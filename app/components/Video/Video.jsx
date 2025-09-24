@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 const VideoComponent = ({ title, mp4, webm, background }) => {
     const [active, setActive] = useState(false);
-
     const handleClick = () => {
         setActive(!active);
     }

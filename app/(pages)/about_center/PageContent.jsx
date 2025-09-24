@@ -19,6 +19,7 @@ import purpose from "@/public/about_center/purpose.svg";
 import purposeImage from "@/public/about_center/purpose_check.svg";
 
 import useLangStore from '@/app/store/languageStore';
+import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
@@ -38,7 +39,7 @@ const PageContent = ({ data }) => {
                         {headerLinks && headerLinks.length > 0 &&
                             headerLinks.map((item, index) => {
                                 return (
-                                    <Link key={index} href={item?.link} className={styles.link}>
+                                    <Link key={index} href={item.link ? item.link : '#'} className={styles.link}>
                                         <p>{item?.title}</p>
                                         <svg
                                             className={styles.svg}
@@ -59,7 +60,6 @@ const PageContent = ({ data }) => {
                                     </Link>
                                 )
                             })}
-
                     </div>
 
                     <div className={styles.info}>
