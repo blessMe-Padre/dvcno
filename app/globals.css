@@ -179,6 +179,10 @@ ul {
   margin-bottom: 30px;
 }
 
+.rounded-30 {
+  border-radius: 30px;
+}
+
 .flex-0 {
   flex: 0 0 auto;
 }
@@ -419,4 +423,10 @@ figure.image-style-align-right {
 
 figure.image-style-align-right img {
   margin: 0;
+}
+
+.news_slide_buttons {
+  position: static !important;
+  justify-content: center;
+  margin-top: 20px;
 }

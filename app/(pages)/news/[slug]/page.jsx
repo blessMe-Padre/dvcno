@@ -66,15 +66,6 @@ export default async function NewsPage({ params }) {
   const { slug } = await params;
   const page = await getNewsBySlug(slug);
 
-  if (!page) {
-    return (
-      <div className="container mb-30">
-        <h1>Новость не найдена</h1>
-        <p>Попробуйте перезагрузить страницу или вернуться позже.</p>
-      </div>
-    );
-  }
-
   return (
     <PageContent page={page} />
   );
