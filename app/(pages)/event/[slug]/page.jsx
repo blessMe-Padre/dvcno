@@ -1,4 +1,5 @@
 import getEventsBySlug from '@/app/utils/getEventBySlug';
+import { notFound } from 'next/navigation';
 import PageContent from './PageContent';
 
 export const revalidate = 60;
@@ -63,13 +64,11 @@ export default async function EventPage({ params }) {
   const { slug } = params;
   const page = await getEventsBySlug(slug);
 
-  if (!page) {
-    return (
-      <div className="container mb-30">
-        <h1>Событие не найдено</h1>
-        <p>Попробуйте перезагрузить страницу или вернуться позже.</p>
-      </div>
-    );
+  const isEmptyArray = Array.isArray(page) && page.length === 0;
+  const isEmptyObject = typeof page === 'object' && !Array.isArray(page) && page && Object.keys(page).length === 0;
+
+  if (!page || isEmptyArray || isEmptyObject) {
+    notFound();
   }
   return <PageContent page={page} />;
 }

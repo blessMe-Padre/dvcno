@@ -5,7 +5,6 @@ import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 import useLangStore from '@/app/store/languageStore';
 
 import Image from 'next/image';
-import { SlideMain } from '@/app/components';
 
 const languages = {
     ru: 'Сведения об образовательной организации',

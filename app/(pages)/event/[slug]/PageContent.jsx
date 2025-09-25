@@ -53,7 +53,7 @@ const PageContent = ({ page }) => {
 
                 <LinkButton
                     color={'green'}
-                    href={page?.link_to_map}
+                    href={page?.link_to_map ? page?.link_to_map : '#'}
                     text={'Посмотреть на карте'}
                 />
             </header>
@@ -61,7 +61,7 @@ const PageContent = ({ page }) => {
             <div className={styles.image_wrapper}>
                 <Image
                     src={page?.thumbnail ? process.env.NEXT_PUBLIC_API_SERVER + page?.thumbnail : '/placeholder/placeholder.svg'}
-                    alt={page?.title}
+                    alt={page?.title ? page?.title : 'Событие'}
                     width={1460}
                     height={723}
                     className={styles.image}

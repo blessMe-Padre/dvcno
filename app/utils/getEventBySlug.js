@@ -26,11 +26,20 @@ const getEventsBySlug = async (slug) => {
         const result = await res.json();
 
         // Проверяем, что данные есть и они в ожидаемом формате
-        if (!result.data) {
-            throw new Error("Некорректный формат данных события");
+        const data = result?.data;
+        if (data == null) {
+            return null;
+        }
+        // Пустой массив => нет события
+        if (Array.isArray(data) && data.length === 0) {
+            return null;
+        }
+        // Пустой объект => нет события
+        if (typeof data === 'object' && !Array.isArray(data) && Object.keys(data).length === 0) {
+            return null;
         }
 
-        return result.data;
+        return data;
     } catch (error) {
         console.error("Ошибка при загрузке события:", error);
         return null; // Возвращаем null вместо undefined или []

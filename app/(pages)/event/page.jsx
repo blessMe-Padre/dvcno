@@ -8,6 +8,7 @@ export const metadata = {
 
 export default async function page() {
     const result = await getAllEvents();
+
     const data = result.data;
 
     return (
