@@ -16,7 +16,8 @@
     width: 100%;
 }
 
-.info_item:first-of-type, .info_item_url {
+.info_item:first-of-type,
+.info_item_url {
     transition: all var(--anim-function);
     cursor: pointer;
 }
@@ -33,7 +34,7 @@
     transition: all var(--anim-function);
 }
 
-.info_item:first-of-type:hover svg rect{
+.info_item:first-of-type:hover svg rect {
     fill: var(--yellow);
 }
 
@@ -89,6 +90,7 @@
 
 .socials_btn {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 10px;
 }
