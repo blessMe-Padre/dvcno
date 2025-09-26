@@ -20,7 +20,7 @@ const DocumentComponent = ({ video = false, title, link, background }) => {
 
             }
 
-            <a href={process.env.NEXT_PUBLIC_API_SERVER + link} download={title} className={styles.name_document}>
+            <a target="_blank" href={process.env.NEXT_PUBLIC_API_SERVER + link} download={title} className={styles.name_document}>
                 <p>{title}</p>
             </a>
         </div>

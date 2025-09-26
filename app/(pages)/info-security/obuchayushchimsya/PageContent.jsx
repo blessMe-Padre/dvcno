@@ -12,7 +12,6 @@ export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    const bannerList = data?.sections?.banner[0]?.content?.[lang]?.documents;
     const header = data?.sections?.main[0]?.content?.[lang][0];
     const format_text = data?.sections?.main[2]?.content?.[lang][0];
     const list_links = data?.sections?.main[1]?.content?.[lang];
@@ -39,18 +38,18 @@ export default function Page({ data }) {
                 />
 
                 <section className={`${styles.hero} ${styles.hero_parents} ${styles.hero_student} section-dsv`}>
-                    <h1 className={`title title-white`}>{banner.title ?? 'Обучающимся'}</h1>
+                    <h1 className={`title title-white`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "Обучающимся"}}/></h1>
 
                     <div className={styles.document_wrapper}>
                         <ul>
-                            {bannerList && bannerList.length > 0 ?
+                            {banner.documents?.list && banner.documents?.list.length > 0 ? 
                                 (
-                                    bannerList.map((item, index) => (
+                                    banner.documents.list.map((item, index) => (
                                         <li key={index}>
-                                            <DocumentComponent title={item.title} link={item.link} />
+                                            <DocumentComponent title={item.title} link={item.document} />
                                         </li>
                                     ))
-                                ) : (<p>Данные не загружены</p>)
+                                ) : ("")
                             }
                         </ul>
                     </div>

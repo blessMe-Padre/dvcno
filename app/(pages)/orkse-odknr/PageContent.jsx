@@ -8,15 +8,16 @@ import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
+
     const { lang } = useLangStore();
+
+    console.log(data);
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const link = {
         ru: 'ОРКСЭ/ОДКНР',
         en: 'ORKSE/ODKNR',
         ch: 'ORKSE/ODKNR'
     };
-
-    console.log('banner', banner);
 
     return (
         <>
@@ -27,7 +28,7 @@ export default function Page({ data }) {
                     <div className={styles.bg_wrapper}>
                         <div className={styles.title_wrapper}>
 
-                            <h2 className={styles.title}>{banner.title ?? "ОРКСЭ/ОДКНР"}</h2>
+                            <h2 className={styles.title}><div dangerouslySetInnerHTML={{ __html: banner.title ?? "ОРКСЭ/ОДКНР"}}/></h2>
 
                             <Image
                                 className={styles.icon}
@@ -46,14 +47,14 @@ export default function Page({ data }) {
                         </div>
 
                         <ul className={styles.document_list}>
-                            {banner.documents && banner.documents.length > 0 ? (
-                                banner.documents.map((item, index) => (
-                                    <li key={index}>
-                                        <DocumentComponent title={item.title} link={item.document} />
-                                    </li>
-                                ))
-                            ) :
-                                ''
+                            {banner.documents?.list && banner.documents?.list.length > 0 ? 
+                                (
+                                    banner.documents.list.map((item, index) => (
+                                        <li key={index}>
+                                            <DocumentComponent title={item.title} link={item.document} />
+                                        </li>
+                                    ))
+                                ) : ("")
                             }
                         </ul>
                     </div>

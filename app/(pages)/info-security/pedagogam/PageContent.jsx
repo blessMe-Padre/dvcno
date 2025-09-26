@@ -8,8 +8,8 @@ import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
+    console.log(data);
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    const banner_list = data?.sections?.banner[0]?.content?.[lang]?.list;
     const main1_header = data?.sections?.main[0]?.content?.[lang][0];
     const list_links = data?.sections?.main[1]?.content?.[lang]?.list;
     const main2_header = data?.sections?.main2[0]?.content?.[lang][0];
@@ -40,19 +40,19 @@ export default function Page({ data }) {
                 />
 
                 <section className={`${styles.hero} section-dsv`}>
-                    <h1 className={`title title-black`}>{banner.title ?? "Педагогам"}</h1>
+                    <h1 className={`title title-black`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "Педагогам"}}/></h1>
 
                     <div className={styles.document_wrapper}>
                         <ul className={styles.banner_list}>
                             {
-                                banner_list && banner_list.length > 0 ? (
-                                    banner_list.map((item, index) => (
+                                banner.documents?.list && banner.documents.list.length > 0 ? (
+                                    banner.documents.list.map((item, index) => (
                                         <li key={index}>
                                             <DocumentComponent key={index} title={item.title} link={item.document} />
                                         </li>
                                     ))
                                 ) : (
-                                    <p>Документы не загружены</p>
+                                    ""
                                 )
                             }
                         </ul>
