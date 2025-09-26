@@ -44,7 +44,7 @@
     background-color: var(--violet);
 }
 
-.link {
+.cookie_message a {
     font-weight: 700;
     text-decoration: underline;
 }

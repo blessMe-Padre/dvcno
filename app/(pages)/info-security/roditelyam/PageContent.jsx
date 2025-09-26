@@ -40,11 +40,11 @@ export default function Page({ data }) {
                 />
 
                 <section className={`${styles.hero} ${styles.hero_parents} section-dsv`}>
-                    <h1 className={`title title-white`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "Родителям"}}/></h1>
+                    <h1 className={`title title-white`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "Родителям" }} /></h1>
 
                     <div className={styles.document_wrapper}>
                         <ul>
-                            {banner.documents?.list && banner.documents?.list.length > 0 ?  
+                            {banner.documents?.list && banner.documents?.list.length > 0 ?
                                 (
                                     banner.documents.list.map((item, index) => (
                                         <li key={index}>

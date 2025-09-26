@@ -11,7 +11,6 @@ export default function Page({ data }) {
 
     const { lang } = useLangStore();
 
-    console.log(data);
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const link = {
         ru: 'ОРКСЭ/ОДКНР',
@@ -20,46 +19,44 @@ export default function Page({ data }) {
     };
 
     return (
-        <>
-            <section>
-                <div className="container">
-                    <Breadcrumbs title={link[lang]} />
+        <section>
+            <div className="container">
+                <Breadcrumbs title={link[lang]} />
 
-                    <div className={styles.bg_wrapper}>
-                        <div className={styles.title_wrapper}>
+                <div className={styles.bg_wrapper}>
+                    <div className={styles.title_wrapper}>
 
-                            <h2 className={styles.title}><div dangerouslySetInnerHTML={{ __html: banner.title ?? "ОРКСЭ/ОДКНР"}}/></h2>
+                        <h2 className={styles.title}><div dangerouslySetInnerHTML={{ __html: banner.title ?? "ОРКСЭ/ОДКНР" }} /></h2>
 
-                            <Image
-                                className={styles.icon}
-                                src={icon}
-                                width={150}
-                                height={100}
-                                alt=''
-                            />
-                        </div>
-
-                        <div className={`${styles.document_list} api_content`}>
-                            {banner?.content ? (
-                                insertSafeContent(banner?.content)
-                            ) : (<p>данные не загружены</p>)
-                            }
-                        </div>
-
-                        <ul className={styles.document_list}>
-                            {banner.documents?.list && banner.documents?.list.length > 0 ? 
-                                (
-                                    banner.documents.list.map((item, index) => (
-                                        <li key={index}>
-                                            <DocumentComponent title={item.title} link={item.document} />
-                                        </li>
-                                    ))
-                                ) : ("")
-                            }
-                        </ul>
+                        <Image
+                            className={styles.icon}
+                            src={icon}
+                            width={150}
+                            height={100}
+                            alt=''
+                        />
                     </div>
+
+                    <div className={`${styles.document_list} api_content`}>
+                        {banner?.content ? (
+                            insertSafeContent(banner?.content)
+                        ) : (<p>данные не загружены</p>)
+                        }
+                    </div>
+
+                    <ul className={styles.document_list}>
+                        {banner.documents?.list && banner.documents?.list.length > 0 ?
+                            (
+                                banner.documents.list.map((item, index) => (
+                                    <li key={index}>
+                                        <DocumentComponent title={item.title} link={item.document} />
+                                    </li>
+                                ))
+                            ) : ("")
+                        }
+                    </ul>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     )
 }

@@ -2,9 +2,14 @@
 import { useEffect, useState } from 'react';
 import styles from './style.module.css';
 import Link from 'next/link';
+import useLangStore from '@/app/store/languageStore';
+import fetchApiServerData from '@/app/utils/fetchApiServerData';
+import { insertSafeContent } from '@/app/utils/insertSafeContent';
 
 export default function Cookies() {
     const [open, setOpen] = useState(false);
+    const [data, setData] = useState(null);
+    const { lang } = useLangStore();
 
     const UTCDate = new Date(new Date().setMonth(new Date().getMonth() + 1)).toUTCString();
     const cookiesStorage = {
@@ -29,6 +34,14 @@ export default function Cookies() {
         }
     }, []);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetchApiServerData('settings/cookie');
+            setData(data.data);
+        }
+        fetchData();
+    }, []);
+
     const handleClick = () => {
         setOpen(false);
         cookiesStorage.setItem('site_consent', 'true');
@@ -36,7 +49,10 @@ export default function Cookies() {
 
     return (
         <div className={`${styles.popup} ${open ? styles.popup_active : ''}`}>
-            <span style={{ color: '#191830' }}><span>Мы используем cookies, чтобы сайт был лучше. <Link className={styles.link} href="/cookies">Что это?</Link></span></span>
+
+            <div className={styles.cookie_message}>
+                {insertSafeContent(data?.cookie_message?.[lang])}
+            </div>
 
             <button
                 className={styles.button}
