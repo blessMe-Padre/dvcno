@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from './style.module.css';
 
 export default function VideoPopup({ active, setActive, content }) {
+    const contentRef = useRef(null);
+
+    useEffect(() => {
+        if (!active && contentRef.current) {
+            const video = contentRef.current.querySelector('video');
+            if (video) video.pause();
+        }
+    }, [active]);
+
     const handleKeyDown = (event) => {
         if (event.key === 'Escape' || event.key === 'Esc') {
             setActive(false);
@@ -23,6 +32,7 @@ export default function VideoPopup({ active, setActive, content }) {
                 <div
                     className={styles.popup__content}
                     onClick={e => e.stopPropagation()}
+                    ref={contentRef}
                 >
                     <button
                         className={styles.popup__close}
