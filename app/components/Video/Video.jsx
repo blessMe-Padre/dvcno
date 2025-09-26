@@ -11,7 +11,7 @@ import styles from './style.module.css';
  */
 
 const VideoComponent = ({ data = {}, background }) => {
-    const { title, type, webm, mp4, link, iframe, background: dataBackground } = data || {};
+    const { title, type, video_webm, video_mp4, link, iframe, background: dataBackground } = data || {};
     const bg = background ?? dataBackground;
 
     const [active, setActive] = useState(false);
@@ -37,16 +37,16 @@ const VideoComponent = ({ data = {}, background }) => {
                     height="320"
                     controls
                 >
-                    <source src={process.env.NEXT_PUBLIC_API_SERVER + webm} type="video/webm" />
-                    <source src={process.env.NEXT_PUBLIC_API_SERVER + mp4} type="video/mp4" />
+                    <source src={process.env.NEXT_PUBLIC_API_SERVER + video_webm} type="video/webm" />
+                    <source src={process.env.NEXT_PUBLIC_API_SERVER + video_mp4} type="video/mp4" />
                 </video>
             );
             break;
-        case 'link':
-            content = (
-                <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
-            );
-            break;
+        // case 'link':
+        //     content = (
+        //         <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
+        //     );
+        //     break;
         case 'iframe':
             content = (
                 <div dangerouslySetInnerHTML={{ __html: decodeHtml(iframe) }} />
@@ -56,7 +56,15 @@ const VideoComponent = ({ data = {}, background }) => {
             content = null;
     }
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+        if (type === 'link') {
+            e && e.preventDefault && e.preventDefault();
+            e && e.stopPropagation && e.stopPropagation();
+            if (link) {
+                window.open(link, '_blank', 'noopener,noreferrer');
+            }
+            return;
+        }
         setActive(!active);
     }
 
