@@ -1,3 +1,4 @@
+"use client"
 import { useState, useRef } from 'react';
 import { VideoPopup } from '@/app/components';
 import styles from './style.module.css';
@@ -17,6 +18,16 @@ const VideoComponent = ({ data = {}, background }) => {
     // const videoRef = useRef(null);
 
     let content;
+
+    const decodeHtml = (str) => {
+        if (!str) return '';
+        return String(str)
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;|&apos;/g, "'")
+            .replace(/&amp;/g, '&');
+    };
 
     switch (type) {
         case 'video':
@@ -38,7 +49,7 @@ const VideoComponent = ({ data = {}, background }) => {
             break;
         case 'iframe':
             content = (
-                iframe
+                <div dangerouslySetInnerHTML={{ __html: decodeHtml(iframe) }} />
             );
             break;
         default:

@@ -93,10 +93,7 @@ const PageContent = ({ data }) => {
                                     information_list.map((item, index) => (
                                         <li className='relative' key={index}>
 
-                                            <VideoComponent
-                                                background={'white'}
-                                                data={item}
-                                            />
+                                            <VideoComponent data={item} />
 
                                             <Image
                                                 className={styles.img_year}

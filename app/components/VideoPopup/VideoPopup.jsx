@@ -2,8 +2,6 @@ import React from "react";
 import styles from './style.module.css';
 
 export default function VideoPopup({ active, setActive, content }) {
-    console.log('content', content);
-
     const handleKeyDown = (event) => {
         if (event.key === 'Escape' || event.key === 'Esc') {
             setActive(false);
