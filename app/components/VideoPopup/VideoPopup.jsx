@@ -44,7 +44,7 @@ export default function VideoPopup({ active, setActive, content }) {
                         </svg>
                     </button>
 
-                    <div>{content}</div>
+                    <div className={styles.popup__content_inner}>{content}</div>
                 </div>
             </div>
         </div>

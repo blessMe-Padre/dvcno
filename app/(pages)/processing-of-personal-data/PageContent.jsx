@@ -17,7 +17,6 @@ const languages = {
 
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
-
     const documents_header = data?.sections?.documents?.[0]?.content?.[lang];
     const documents_subtitle = data?.sections?.documents?.[1]?.content?.[lang];
     const documents_list = data?.sections?.documents?.[2]?.content?.[lang]?.list;
@@ -25,7 +24,9 @@ const PageContent = ({ data }) => {
     const information_subtitle = data?.sections?.information?.[1]?.content?.[lang];
     const information_list = data?.sections?.information?.[2]?.content?.[lang]?.list;
     const lessons = data?.sections?.lessons?.[0]?.content?.[lang];
-    const lessons_list = data?.sections?.lessons?.[0]?.content?.[lang]?.list;
+    const lessons_list = data?.sections?.lessons?.[0]?.content?.[lang]?.videos?.list;
+
+    console.log('lessons_list', lessons_list);
 
     return (
         <>
@@ -67,7 +68,6 @@ const PageContent = ({ data }) => {
                     </div>
                 </div>
             </section>
-
 
             <section className={styles.section}>
                 <div className="container">
@@ -116,7 +116,6 @@ const PageContent = ({ data }) => {
                                 {lessons.title ?? 'Урок для школьников'}
                             </AnimateElement>
 
-
                             <div className={styles.lessons_info} dangerouslySetInnerHTML={{ __html: lessons.content ?? 'по вопросам защиты персональных данных:' }}></div>
 
                             <ul className={styles.document_list_custom}>
@@ -124,15 +123,7 @@ const PageContent = ({ data }) => {
                                     (
                                         lessons_list.map((item, index) => (
                                             <AnimateElement element="li" key={index} animationName="null" animationDelay={index * 100}>
-                                                <VideoComponent
-                                                    background={'white'}
-                                                    data={{
-                                                        title: item.title,
-                                                        mp4: item.video_mp4,
-                                                        webm: item.video_webm,
-                                                        type: 'video',
-                                                    }}
-                                                />
+                                                <VideoComponent data={item} />
                                             </AnimateElement>
                                         ))
                                     ) : (<p>Уроки не загружены</p>)
