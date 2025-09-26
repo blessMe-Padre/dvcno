@@ -41,11 +41,8 @@ export default function Page({ data }) {
 
                     <ul>
                         {list_docs1 && list_docs1.list.length > 0 ? (
-
                             <li className={styles.item_object}>
-                                <p className={`${styles.item_name} ${list_docs1.classes === 'yellow' ? styles.background_yellow : ''
-                                    } ${list_docs1.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs1.classes === 'green' ? styles.background_green : ''
-                                    } ${list_docs1.classes === 'violet' ? styles.background_violet : ''}`}>
+                                <p className={`${styles.item_name} ${styles.background_yellow}`}>
                                     {list_docs1.title}
                                 </p>
                                 <ul className={styles.document_list}>
@@ -61,9 +58,7 @@ export default function Page({ data }) {
                         {list_docs2 && list_docs2.list.length > 0 ? (
 
                             <li className={styles.item_object}>
-                                <p className={`${styles.item_name} ${list_docs2.classes === 'yellow' ? styles.background_yellow : ''
-                                    } ${list_docs2.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs2.classes === 'green' ? styles.background_green : ''
-                                    } ${list_docs2.classes === 'violet' ? styles.background_violet : ''}`}>
+                                <p className={`${styles.item_name} ${styles.background_light_blue}`}>
                                     {list_docs2.title}
                                 </p>
                                 <ul className={styles.document_list}>
@@ -79,9 +74,7 @@ export default function Page({ data }) {
                         {list_docs3 && list_docs3.list.length > 0 ? (
 
                             <li className={styles.item_object}>
-                                <p className={`${styles.item_name} ${list_docs3.classes === 'yellow' ? styles.background_yellow : ''
-                                    } ${list_docs3.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs3.classes === 'green' ? styles.background_green : ''
-                                    } ${list_docs3.classes === 'violet' ? styles.background_violet : ''}`}>
+                                <p className={`${styles.item_name} ${styles.background_green}`}>
                                     {list_docs3.title}
                                 </p>
                                 <ul className={styles.document_list}>
@@ -97,9 +90,7 @@ export default function Page({ data }) {
                         {list_docs4 && list_docs4.list.length > 0 ? (
 
                             <li className={styles.item_object}>
-                                <p className={`${styles.item_name} ${list_docs4.classes === 'yellow' ? styles.background_yellow : ''
-                                    } ${list_docs4.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs4.classes === 'green' ? styles.background_green : ''
-                                    } ${list_docs4.classes === 'violet' ? styles.background_violet : ''}`}>
+                                <p className={`${styles.item_name} ${styles.background_violet}`}>
                                     {list_docs4.title}
                                 </p>
                                 <ul className={styles.document_list}>
@@ -115,9 +106,7 @@ export default function Page({ data }) {
                         {list_docs5 && list_docs5.list.length > 0 ? (
 
                             <li className={styles.item_object}>
-                                <p className={`${styles.item_name} ${list_docs5.classes === 'yellow' ? styles.background_yellow : ''
-                                    } ${list_docs5.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs5.classes === 'green' ? styles.background_green : ''
-                                    } ${list_docs5.classes === 'violet' ? styles.background_violet : ''}`}>
+                                <p className={`${styles.item_name} ${styles.background_yellow}`}>
                                     {list_docs5.title}
                                 </p>
                                 <ul className={styles.document_list}>
@@ -133,9 +122,7 @@ export default function Page({ data }) {
                         {list_docs6 && list_docs6.list.length > 0 ? (
 
                             <li className={styles.item_object}>
-                                <p className={`${styles.item_name} ${list_docs6.classes === 'yellow' ? styles.background_yellow : ''
-                                    } ${list_docs6.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs6.classes === 'green' ? styles.background_green : ''
-                                    } ${list_docs6.classes === 'violet' ? styles.background_violet : ''}`}>
+                                <p className={`${styles.item_name} ${styles.background_light_blue}`}>
                                     {list_docs6.title}
                                 </p>
                                 <ul className={styles.document_list}>
@@ -151,9 +138,7 @@ export default function Page({ data }) {
                         {list_docs7 && list_docs7.list.length > 0 ? (
 
                             <li className={styles.item_object}>
-                                <p className={`${styles.item_name} ${list_docs7.classes === 'yellow' ? styles.background_yellow : ''
-                                    } ${list_docs7.classes === 'light-blue' ? styles.background_light_blue : ''} ${list_docs7.classes === 'green' ? styles.background_green : ''
-                                    } ${list_docs7.classes === 'violet' ? styles.background_violet : ''}`}>
+                                <p className={`${styles.item_name} ${styles.background_green}`}>
                                     {list_docs7.title}
                                 </p>
                                 <ul className={styles.document_list}>

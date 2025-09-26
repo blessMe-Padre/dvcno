@@ -9,7 +9,6 @@ const AnimateItems = ({ data }) => {
         <div className={styles.list_wrapper}>
 
             {data?.map((item, index) => (
-
                 <ul className={`${styles.ul_wrapper} ${index % 2 ? `${styles.ul_wrapper_reversed}` : ''}`} key={index}>
                     {index != data.length - 1 ? (
                         <>
@@ -18,18 +17,17 @@ const AnimateItems = ({ data }) => {
                                 <motion.div
                                     className={styles.image_wrapper}
                                     initial={index % 2 === 0 ? { opacity: 0, x: -100 } : { opacity: 0, x: 100 }}
-                                    whileInView={{ opacity: 1, x: 0, transition: { duration: 3}}}
-                                    >
-                                        {item.image && (
-                                            <Image 
-                                            className={`${styles.image_history} dsv-image`} 
+                                    whileInView={{ opacity: 1, x: 0, transition: { duration: 3 } }}
+                                >
+                                    {item.image && (
+                                        <Image
+                                            className={`${styles.image_history} dsv-image`}
                                             src={process.env.NEXT_PUBLIC_API_SERVER + item.image}
-                                            width={200} 
-                                            height={200} 
+                                            width={200}
+                                            height={200}
                                             alt='image_history'
                                         />
                                     )}
-
                                 </motion.div>
                             </li>
 
@@ -49,28 +47,28 @@ const AnimateItems = ({ data }) => {
                                 <div className={styles.list_content_wrapper}>
                                     <motion.div
                                         className='relative'
-                                        initial={index % 2 === 0 ? { opacity: 0, x: 100 } : { opacity: 0, x: -100 }}
-                                        whileInView={{
-                                            opacity: 1, x: 0, transition: {
-                                                duration: 2
-                                            }
-                                        }}
-                                        viewport={{
-                                            once: true,
-                                            amount: 'all'
-                                        }}
+                                    // initial={index % 2 === 0 ? { opacity: 0, x: 100 } : { opacity: 0, x: -100 }}
+                                    // whileInView={{
+                                    //     opacity: 1, x: 0, transition: {
+                                    //         duration: 2
+                                    //     }
+                                    // }}
+                                    // viewport={{
+                                    //     once: true,
+                                    //     amount: 'all'
+                                    // }}
                                     >
 
                                         {item.title && (
                                             <div className={`${styles.list_content_year} ${item.classes === 'light-blue'
-                                                    ? styles.light_blue_background
-                                                    : item.classes === 'green'
-                                                        ? styles.green_background
-                                                        : item.classes === 'yellow'
-                                                            ? styles.yellow_background
-                                                            : item.classes === 'violet'
-                                                                ? styles.violet_background
-                                                                : ''
+                                                ? styles.light_blue_background
+                                                : item.classes === 'green'
+                                                    ? styles.green_background
+                                                    : item.classes === 'yellow'
+                                                        ? styles.yellow_background
+                                                        : item.classes === 'violet'
+                                                            ? styles.violet_background
+                                                            : ''
                                                 }`}>
                                                 <div className={`${styles.circle_last_small} ${item.classes === 'light-blue'
                                                     ? styles.light_blue_border
@@ -129,7 +127,7 @@ const AnimateItems = ({ data }) => {
                                             <p className={styles.list_content_desc}>{item.desc2 ? item.desc2.replace(/<br>/g, '\n') : item.desc2}</p>
                                         )} */}
 
-                                        <p className={styles.list_content_desc} dangerouslySetInnerHTML={{ __html: item.content }}></p>
+                                        <div className={styles.list_content_desc} dangerouslySetInnerHTML={{ __html: item.content }}></div>
 
 
                                     </motion.div>
@@ -152,14 +150,14 @@ const AnimateItems = ({ data }) => {
 
                                         {item.title && (
                                             <div className={`${styles.list_content_year} ${item.classes === 'light-blue'
-                                                    ? styles.light_blue_background
-                                                    : item.classes === 'green'
-                                                        ? styles.green_background
-                                                        : item.classes === 'yellow'
-                                                            ? styles.yellow_background
-                                                            : item.classes === 'violet'
-                                                                ? styles.violet_background
-                                                                : ''
+                                                ? styles.light_blue_background
+                                                : item.classes === 'green'
+                                                    ? styles.green_background
+                                                    : item.classes === 'yellow'
+                                                        ? styles.yellow_background
+                                                        : item.classes === 'violet'
+                                                            ? styles.violet_background
+                                                            : ''
                                                 }`}>
                                                 <div className={`${styles.circle_last_small} ${item.classes === 'light-blue'
                                                     ? styles.light_blue_border

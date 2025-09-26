@@ -16,7 +16,7 @@ export default function Page({ data }) {
     const listBlocks = data?.sections?.main[1]?.content?.[lang];
 
     const docsHeader = data?.sections?.docs[0]?.content?.[lang];
-    const docs = data?.sections?.docs[1]?.content?.[lang];
+    const docs = data?.sections?.docs[1]?.content?.[lang]?.list;
 
     const languages = {
         ru: 'История',
@@ -69,7 +69,7 @@ export default function Page({ data }) {
                             <AnimateElement element="li" key={index}>
                                 <DocumentComponent
                                     title={item.title}
-                                    link={item.url}
+                                    link={item.document}
                                     background_color={''}
                                 />
                             </AnimateElement>

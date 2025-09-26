@@ -71,11 +71,9 @@
     gap: 30px;
 }
 
-
 .item_object {
     margin-bottom: 40px;
 }
-
 
 .item_name {
     text-align: center;
@@ -85,12 +83,13 @@
     border-radius: 50px;
     max-width: 800px;
     padding: 20px;
-    /* background-color: var(--yellow); */
+    color: var(--white);
 }
 
 
 .background_yellow {
     background-color: var(--yellow);
+    color: var(--black);
 }
 
 .background_light_blue {
