@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import styles from './style.module.css';
+import Link from 'next/link';
 
 export default function Cookies() {
     const [open, setOpen] = useState(false);
@@ -35,13 +36,20 @@ export default function Cookies() {
 
     return (
         <div className={`${styles.popup} ${open ? styles.popup_active : ''}`}>
-            <span style={{ color: '#191830' }}>Мы используем куки</span>
+            <span style={{ color: '#191830' }}><span>Мы используем cookies, чтобы сайт был лучше. <Link class={styles.link} href="/cookies">Что это?</Link></span></span>
 
             <button
                 className={styles.button}
                 onClick={handleClick}
             >
-                ок
+                Принять
+            </button>
+
+            <button
+                className={`${styles.button} ${styles.button_reject}`}
+                onClick={handleClick}
+            >
+                Отклонить
             </button>
         </div>
     )

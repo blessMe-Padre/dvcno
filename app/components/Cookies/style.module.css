@@ -29,4 +29,22 @@
     text-transform: uppercase;
     font-size: 18px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--violet);
+}
+
+.button_reject {
+    background-color: var(--red);
+}
+
+.button_reject:hover {
+    background-color: var(--violet);
+}
+
+.link {
+    font-weight: 700;
+    text-decoration: underline;
 }
