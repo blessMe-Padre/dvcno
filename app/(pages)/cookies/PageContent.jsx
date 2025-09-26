@@ -10,7 +10,6 @@ const languages = {
 };
 
 const PageContent = ({ data }) => {
-    console.log(data);
     const { lang } = useLangStore();
 
     return (

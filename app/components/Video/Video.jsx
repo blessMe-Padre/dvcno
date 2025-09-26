@@ -1,17 +1,57 @@
+import { useState, useRef } from 'react';
 import { VideoPopup } from '@/app/components';
 import styles from './style.module.css';
-import Link from 'next/link';
-import { useState } from 'react';
 
-const VideoComponent = ({ title, mp4, webm, background }) => {
+/**
+ * type = 'video' | 'link' | 'iframe'
+ * video = открывает попап с видео mp4 и webm на сайте через тег видео
+ * link = не открывает попап и открывает ссылку в новой вкладке
+ * iframe = открывает попап с iframe
+ */
+
+const VideoComponent = ({ data = {}, background }) => {
+    const { title, type, webm, mp4, link, iframe, background: dataBackground } = data || {};
+    const bg = background ?? dataBackground;
+
     const [active, setActive] = useState(false);
+    // const videoRef = useRef(null);
+
+    let content;
+
+    switch (type) {
+        case 'video':
+            content = (
+                <video
+                    width="320"
+                    height="320"
+                    controls
+                >
+                    <source src={process.env.NEXT_PUBLIC_API_SERVER + webm} type="video/webm" />
+                    <source src={process.env.NEXT_PUBLIC_API_SERVER + mp4} type="video/mp4" />
+                </video>
+            );
+            break;
+        case 'link':
+            content = (
+                <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
+            );
+            break;
+        case 'iframe':
+            content = (
+                iframe
+            );
+            break;
+        default:
+            content = null;
+    }
+
     const handleClick = () => {
         setActive(!active);
     }
 
     return (
         <div
-            className={`${styles.document_item} ${background === 'white' ? styles.background_white : ''}`}
+            className={`${styles.document_item} ${bg === 'white' ? styles.background_white : ''}`}
             onClick={handleClick}
         >
 
@@ -27,8 +67,7 @@ const VideoComponent = ({ title, mp4, webm, background }) => {
             <VideoPopup
                 active={active}
                 setActive={setActive}
-                mp4={mp4}
-                webm={webm}
+                content={content}
             />
         </div>
     )

@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from './style.module.css';
 
-export default function VideoPopup({ active, setActive, mp4, webm }) {
-    const videoRef = useRef(null);
+export default function VideoPopup({ active, setActive, content }) {
+    console.log('content', content);
+
     const handleKeyDown = (event) => {
         if (event.key === 'Escape' || event.key === 'Esc') {
             setActive(false);
@@ -10,11 +11,6 @@ export default function VideoPopup({ active, setActive, mp4, webm }) {
     }
 
     const closePopup = () => {
-        // Останавливаем видео и сбрасываем время
-        if (videoRef.current) {
-            videoRef.current.pause();
-            videoRef.current.currentTime = 0;
-        }
         setActive(false);
     }
 
@@ -40,17 +36,7 @@ export default function VideoPopup({ active, setActive, mp4, webm }) {
                         </svg>
                     </button>
 
-                    <div>
-                        <video
-                            width="320"
-                            height="320"
-                            controls
-                            ref={videoRef}
-                        >
-                            <source src={process.env.NEXT_PUBLIC_API_SERVER + webm} type="video/webm" />
-                            <source src={process.env.NEXT_PUBLIC_API_SERVER + mp4} type="video/mp4" />
-                        </video>
-                    </div>
+                    <div>{content}</div>
                 </div>
             </div>
         </div>

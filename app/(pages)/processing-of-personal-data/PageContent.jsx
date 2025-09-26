@@ -27,9 +27,6 @@ const PageContent = ({ data }) => {
     const lessons = data?.sections?.lessons?.[0]?.content?.[lang];
     const lessons_list = data?.sections?.lessons?.[0]?.content?.[lang]?.list;
 
-    console.log('lessons', lessons);
-    console.log('lessons_list', lessons_list);
-
     return (
         <>
             <section className={styles.section}>
@@ -98,9 +95,7 @@ const PageContent = ({ data }) => {
 
                                             <VideoComponent
                                                 background={'white'}
-                                                title={item.title}
-                                                mp4={item.video_mp4}
-                                                webm={item.video_webm}
+                                                data={item}
                                             />
 
                                             <Image
@@ -134,9 +129,12 @@ const PageContent = ({ data }) => {
                                             <AnimateElement element="li" key={index} animationName="null" animationDelay={index * 100}>
                                                 <VideoComponent
                                                     background={'white'}
-                                                    title={item.title}
-                                                    mp4={item.video_mp4}
-                                                    webm={item.video_webm}
+                                                    data={{
+                                                        title: item.title,
+                                                        mp4: item.video_mp4,
+                                                        webm: item.video_webm,
+                                                        type: 'video',
+                                                    }}
                                                 />
                                             </AnimateElement>
                                         ))
