@@ -11,7 +11,7 @@ export const metadata = {
 
 
 export default async function page() {
-    const data = await fetchApiServerData('settings/cookie');
+    const data = await fetchApiServerData('pages/cookies');
 
     return (
         <>
