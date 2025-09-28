@@ -4,6 +4,8 @@ import { ClientLangInitializer, Footer, Header } from "./components";
 import { StoreInitializer } from './components/StoreInitializer';
 import localFont from 'next/font/local';
 import fetchApiServerData from "@/app/utils/fetchApiServerData";
+import { Metrika } from './components/Metrika/Metrika';
+import { Suspense } from 'react';
 
 const montserrat = localFont({
   src: [
@@ -56,6 +58,9 @@ export default async function RootLayout({ children }) {
         <meta name="robots" content="noindex" />
       </head>
       <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
+        <Suspense>
+          <Metrika />
+        </Suspense>
         <ClientLangInitializer>
           <div className="container">
             <Header />
