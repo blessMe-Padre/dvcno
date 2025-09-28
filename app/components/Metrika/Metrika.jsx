@@ -4,7 +4,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
 
-const base = "https://nakhodka-vodokanal.ru/";
+const base = "https://comp-vlad.ru/";
 
 export function Metrika() {
     const pathName = usePathname();
