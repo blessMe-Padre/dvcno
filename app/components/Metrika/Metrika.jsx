@@ -4,6 +4,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
 
+import { cookiesStorage } from '@/app/utils/cookiesStorage';
+
 const base = "https://comp-vlad.ru/";
 
 export function Metrika() {
@@ -11,6 +13,10 @@ export function Metrika() {
     const searchParams = useSearchParams();
 
     useEffect(() => {
+        // if (cookiesStorage.getItem('site_consent') === 'false') {
+        //     return;
+        // }
+
         const params = searchParams.toString();
         const url = base + pathName + (params ? "?" + params : "");
 

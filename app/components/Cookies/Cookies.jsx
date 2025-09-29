@@ -5,29 +5,15 @@ import Link from 'next/link';
 import useLangStore from '@/app/store/languageStore';
 import fetchApiServerData from '@/app/utils/fetchApiServerData';
 import { insertSafeContent } from '@/app/utils/insertSafeContent';
+import { cookiesStorage } from '@/app/utils/cookiesStorage';
 
 export default function Cookies() {
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(null);
     const { lang } = useLangStore();
 
-    const UTCDate = new Date(new Date().setMonth(new Date().getMonth() + 1)).toUTCString();
-    const cookiesStorage = {
-        getItem: (key) => {
-            const cookies = document.cookie
-                .split(';')
-                .map(cookie => cookie.split('='))
-                .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {});
-
-            return cookies[key];
-        },
-        setItem: (key, value) => {
-            document.cookie = `${key}=${value};expires=${UTCDate}`;
-        }
-    }
-
     useEffect(() => {
-        if (cookiesStorage.getItem('site_consent') === 'true') {
+        if (cookiesStorage.getItem('site_consent') === 'true' || cookiesStorage.getItem('site_consent') === 'false') {
             setOpen(false);
         } else {
             setOpen(true);
@@ -47,6 +33,11 @@ export default function Cookies() {
         cookiesStorage.setItem('site_consent', 'true');
     }
 
+    const handleClickReject = () => {
+        setOpen(false);
+        cookiesStorage.setItem('site_consent', 'false');
+    }
+
     return (
         <div className={`${styles.popup} ${open ? styles.popup_active : ''}`}>
 
@@ -63,7 +54,7 @@ export default function Cookies() {
 
             <button
                 className={`${styles.button} ${styles.button_reject}`}
-                onClick={handleClick}
+                onClick={handleClickReject}
             >
                 Отклонить
             </button>

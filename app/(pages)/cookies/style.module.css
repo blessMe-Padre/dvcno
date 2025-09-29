@@ -19,6 +19,16 @@
     background-color: var(--red);
 }
 
+.button_reject:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
+}
+
 .button_reject:hover {
     background-color: var(--violet);
+}
+
+.button_reject:hover:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
 }

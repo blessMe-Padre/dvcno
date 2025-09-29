@@ -3,6 +3,7 @@ import styles from './style.module.css';
 import { Breadcrumbs, AnimateElement } from '@/app/components';
 import useLangStore from '@/app/store/languageStore';
 import { insertSafeContent } from '@/app/utils/insertSafeContent';
+import { cookiesStorage } from '@/app/utils/cookiesStorage';
 
 const languages = {
     ru: 'Куки',
@@ -13,6 +14,13 @@ const languages = {
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
     const content = data?.sections?.main?.[0]?.content?.[lang][0];
+
+
+
+    const handleClickReject = () => {
+        cookiesStorage.setItem('site_consent', 'false');
+        window.location.reload();
+    }
 
     return (
         <>
@@ -25,7 +33,12 @@ const PageContent = ({ data }) => {
                     <div className="api_content">
                         {insertSafeContent(content)}
                     </div>
-                    <button className={`${styles.button} ${styles.button_reject}`}>Отклонить</button>
+                    <button
+                        className={`${styles.button} ${styles.button_reject}`}
+                        onClick={handleClickReject}
+                        disabled={cookiesStorage.getItem('site_consent') === 'false'}
+
+                    >Отклонить</button>
 
                 </div>
             </section>
