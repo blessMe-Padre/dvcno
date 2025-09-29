@@ -1,7 +1,3 @@
-/**
- * Заменить img hero на получение из админки
- */
-
 "use client"
 import Image from 'next/image';
 import styles from '../info.module.css';
@@ -38,11 +34,11 @@ export default function Page({ data }) {
                 />
 
                 <section className={`${styles.hero} ${styles.hero_parents} ${styles.hero_student} section-dsv`}>
-                    <h1 className={`title title-white`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "Обучающимся"}}/></h1>
+                    <h1 className={`title title-white`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "Обучающимся" }} /></h1>
 
                     <div className={styles.document_wrapper}>
                         <ul>
-                            {banner.documents?.list && banner.documents?.list.length > 0 ? 
+                            {banner.documents?.list && banner.documents?.list.length > 0 ?
                                 (
                                     banner.documents.list.map((item, index) => (
                                         <li key={index}>
@@ -93,7 +89,7 @@ export default function Page({ data }) {
                             imagesList.map((img, index) => (
                                 <div className={styles.image_wrapper} key={index}>
                                     <Image
-                                        src={process.env.NEXT_PUBLIC_API_SERVER + img.image}
+                                        src={img.image ? process.env.NEXT_PUBLIC_API_SERVER + img.image : '/placeholder/placeholder.svg'}
                                         alt="Изображение"
                                         width={1442}
                                         height={1189}

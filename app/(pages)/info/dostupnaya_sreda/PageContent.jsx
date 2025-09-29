@@ -20,8 +20,6 @@ const PageContent = ({ data }) => {
     const { lang } = useLangStore();
     const educationPages = data?.sections?.section?.[0]?.content?.[lang];
 
-    console.log(educationPages);
-
     return (
         <div className="container">
             <Breadcrumbs
