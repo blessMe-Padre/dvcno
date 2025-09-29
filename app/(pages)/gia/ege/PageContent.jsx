@@ -1,17 +1,17 @@
 "use client"
 import Image from 'next/image';
 import styles from '../style.module.css';
-import { Breadcrumbs, DocumentComponent } from "@/app/components";
+import { Breadcrumbs, DocumentComponent, VideoComponent } from "@/app/components";
 
 import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
-
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const info_header = data?.sections?.info[0]?.content?.[lang][0];
     const info_list_docs = data?.sections?.info[1]?.content?.[lang]?.list;
     const total_header = data?.sections?.total[0]?.content?.[lang]?.title;
-    const total_list_docs = data?.sections?.total[0]?.content?.[lang]?.documents;
+    const total_list_docs = data?.sections?.total[0]?.content?.[lang]?.documents?.list;
+    const total_list_videos = data?.sections?.total[0]?.content?.[lang]?.videos?.list;
     const materials_header = data?.sections?.materials[0]?.content?.[lang][0];
     const materials_list_docs = data?.sections?.materials[1]?.content?.[lang]?.list;
 
@@ -26,6 +26,8 @@ export default function Page({ data }) {
         ch: '奧格'
     };
 
+    console.log(total_list_videos);
+
     return (
         <div className="container">
             <Breadcrumbs
@@ -36,7 +38,7 @@ export default function Page({ data }) {
 
             <section className={`${styles.hero} ${styles.hero_ege} section-dsv`}>
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "ЕГЭ"}}/></h2>
+                    <h2 className={`title ${styles.half_title}`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "ЕГЭ" }} /></h2>
                     <Image
                         src="/gia/image-3.svg"
                         alt="Изображение"
@@ -47,7 +49,7 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.hero_list}>
-                    {banner.documents?.list && banner.documents?.list.length > 0 ? 
+                    {banner.documents?.list && banner.documents?.list.length > 0 ?
                         (
                             banner.documents.list.map((item, index) => (
                                 <li key={index}>
@@ -113,6 +115,17 @@ export default function Page({ data }) {
                         total_list_docs.map((item, index) => (
                             <li key={index}>
                                 <DocumentComponent title={item.title} link={item.document} />
+                            </li>
+                        ))
+                    ) :
+                        ''
+                    }
+                </ul>
+                <ul className={styles.hero_list}>
+                    {total_list_videos && total_list_videos.length > 0 ? (
+                        total_list_videos.map((item, index) => (
+                            <li key={index}>
+                                <VideoComponent data={item} />
                             </li>
                         ))
                     ) :

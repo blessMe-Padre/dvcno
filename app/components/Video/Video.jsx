@@ -42,11 +42,6 @@ const VideoComponent = ({ data = {}, background }) => {
                 </video>
             );
             break;
-        // case 'link':
-        //     content = (
-        //         <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
-        //     );
-        //     break;
         case 'iframe':
             content = (
                 <div dangerouslySetInnerHTML={{ __html: decodeHtml(iframe) }} />

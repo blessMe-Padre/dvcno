@@ -26,8 +26,6 @@ const PageContent = ({ data }) => {
     const lessons = data?.sections?.lessons?.[0]?.content?.[lang];
     const lessons_list = data?.sections?.lessons?.[0]?.content?.[lang]?.videos?.list;
 
-    console.log('lessons_list', lessons_list);
-
     return (
         <>
             <section className={styles.section}>
