@@ -37,9 +37,6 @@ export default function Page({ data }) {
         en: 'About center',
         ch: '关于中心'
     };
-
-    console.log(sliderBg);
-
     useEffect(() => {
         if (banner) {
             function handleResize() {

@@ -91,8 +91,18 @@
 
 .footer_social_wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
+}
+
+.footer_social_list svg rect {
+    fill: #433C8C;
+    transition: fill var(--anim-function);
+}
+
+.footer_social_list a:hover svg rect {
+    fill: var(--yellow);
 }
 
 .footer_list {
@@ -175,4 +185,10 @@
         height: 1px;
         background-color: #353D53;
     }
+}
+
+.footer_social_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }

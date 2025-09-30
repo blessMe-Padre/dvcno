@@ -56,6 +56,10 @@
     color: var(--black);
 }
 
+.item_title_program {
+    margin-bottom: 10px;
+}
+
 .education_list {
     display: flex;
     gap: 20px;
@@ -171,6 +175,10 @@
 
 .section:last-of-type {
     padding: 100px 0px;
+}
+
+.decor_icon {
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 769) {

@@ -98,13 +98,17 @@ const PageContent = ({ data }) => {
                                         />
                                     </div>
 
-                                    <Image
-                                        src={decor_icon}
-                                        width={25}
-                                        height={25}
-                                        alt=''
-                                    />
-                                    <div className={styles.item_info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
+                                    <div className={styles.item_info} >
+                                        <Image
+                                            src={decor_icon}
+                                            className={styles.decor_icon}
+                                            width={25}
+                                            height={25}
+                                            alt=''
+                                        />
+                                        <h3 className={styles.item_title_program}>{item.title}</h3>
+                                        <div dangerouslySetInnerHTML={{ __html: item?.content }} />
+                                    </div>
                                 </li>
                             ))
                         ) :

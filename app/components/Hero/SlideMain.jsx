@@ -6,13 +6,11 @@ import Link from "next/link";
 
 import styles from './style.module.css';
 import useLangStore from '@/app/store/languageStore';
-import placeholder from '../../../public/placeholder/placeholder.svg';
-
 import Popup from "../Popup/Popup";
 
 const SlideMain = ({ item, isActive, isSlider = false }) => {
     const { lang } = useLangStore();
-    const [sliderBg, setSliderBg] = useState(null);
+    const [sliderBg, setSliderBg] = useState(item.images.big);
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
     const [popupActive, setPopupActive] = useState(false);
 
@@ -32,10 +30,10 @@ const SlideMain = ({ item, isActive, isSlider = false }) => {
         if (item) {
             const width = window.innerWidth;
             function handleResize() {
-                if (width >= 1200) {
+                if (width >= 1024) {
                     setSliderBg(item.images.big);
                     setImageSize({ width: 1440, height: 680 });
-                } else if (width >= 769) {
+                } else if (width >= 520) {
                     setSliderBg(item.images.medium);
                     setImageSize({ width: 1024, height: 500 });
                 } else if (window.innerWidth <= 480) {
@@ -50,10 +48,11 @@ const SlideMain = ({ item, isActive, isSlider = false }) => {
         }
     }, [item]);
 
+
     return (
         <>
             <Image
-                src={sliderBg ? process.env.NEXT_PUBLIC_API_SERVER + sliderBg : placeholder}
+                src={process.env.NEXT_PUBLIC_API_SERVER + sliderBg}
                 width={imageSize.width}
                 height={imageSize.height}
                 alt='slider_bg'
@@ -61,9 +60,7 @@ const SlideMain = ({ item, isActive, isSlider = false }) => {
                 placeholder="blur"
                 blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MiIgaGVpZ2h0PSIxMTg5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjY2MiIC8+PC9zdmc+"
                 priority={isActive}
-
             />
-
             <div className={styles.slider}>
                 <div className={styles.slider__wrapper__content}>
                     <div>
