@@ -54,15 +54,19 @@ export default async function RootLayout({ children }) {
   const metrics = await fetchApiServerData('settings/metrics');
   const ymCode = Number(metrics?.data?.site_metrics) || null;
 
+  const showMetrika = cookieStore.get('site_consent')?.value === 'true';
+
   return (
     <html lang={lang}>
       <head>
         <meta name="robots" content="noindex" />
       </head>
       <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
-        <Suspense>
-          <Metrika code={ymCode} />
-        </Suspense>
+        {showMetrika && (
+          <Suspense>
+            <Metrika code={ymCode} />
+          </Suspense>
+        )}
         <ClientLangInitializer>
           <div className="container">
             <Header />

@@ -2,11 +2,14 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 
 const base = "/";
 
 export function Metrika({ code }) {
+  if (code == null) {
+    return null;
+  }
   const pathName = usePathname();
   const searchParams = useSearchParams();
 
@@ -16,7 +19,6 @@ export function Metrika({ code }) {
 
     ym(code, "hit", url);
   }, [pathName, searchParams]);
-
 
   return (
     <Script id="metrika">
