@@ -56,11 +56,11 @@ export default async function RootLayout({ children }) {
     <html lang={lang}>
       <head>
         <meta name="robots" content="noindex" />
-      </head>
-      <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
         <Suspense>
           <Metrika />
         </Suspense>
+      </head>
+      <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
         <ClientLangInitializer>
           <div className="container">
             <Header />
