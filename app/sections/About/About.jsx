@@ -79,7 +79,7 @@ export default function About() {
                                 <li key={index}>
                                     <Card
                                         image={item?.image}
-                                        description={item?.content}
+                                        description={item?.title}
                                         link={item?.link}
                                     />
                                 </li>
