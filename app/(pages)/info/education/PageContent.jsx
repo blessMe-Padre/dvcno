@@ -171,7 +171,7 @@ const PageContent = ({ data }) => {
                     <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data?.sections?.count?.[1]?.content[lang] ?? 'В том числе численность обучающихся, являющихся иностранными гражданами' }} />
                     <div className={styles.documents_list}>
                         {data_amount.map((item, index) => (
-                            <DocumentComponent key={index} link={item.document} title={item.title} background={'white'} />
+                            <DocumentComponent key={index} link={item.document} title={item.title} background={'gray'} />
                         ))}
                     </div>
                 </div>
