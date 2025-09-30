@@ -31,6 +31,8 @@ export default function Page({ data }) {
         ch: '了解更多'
     };
 
+    console.log(data);
+
     return (
         <>
             <div className='container'>

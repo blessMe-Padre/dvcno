@@ -36,7 +36,7 @@ export default function Page({ data }) {
 
             <section className={`${styles.hero} ${styles.hero_oge} section-dsv`}>
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "ОГЭ"}}/></h2>
+                    <h2 className={`title ${styles.half_title}`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "ОГЭ" }} /></h2>
                     <Image
                         src="/gia/image-3.svg"
                         alt="Изображение"
@@ -47,7 +47,7 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.hero_list}>
-                    {banner.documents?.list && banner.documents?.list.length > 0 ? 
+                    {banner.documents?.list && banner.documents?.list.length > 0 ?
                         (
                             banner.documents.list.map((item, index) => (
                                 <li key={index}>
