@@ -16,14 +16,14 @@ const SlideMain = ({ item, isActive, isSlider = false }) => {
     const [imageSize, setImageSize] = useState({ width: 1440, height: 680 });
     const [popupActive, setPopupActive] = useState(false);
 
-    
+
     const language = {
         ru: 'Узнать подробнее',
         en: 'Find out more',
         ch: '了解更多',
     }
     const language2 = {
-        ru: 'Узнать подробнее',
+        ru: 'Задать вопрос',
         en: 'Ask a question',
         ch: '提出問題',
     }
