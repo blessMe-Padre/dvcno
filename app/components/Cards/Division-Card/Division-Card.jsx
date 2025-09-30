@@ -51,7 +51,7 @@ export default function DivisionCard({ divisionData, lang }) {
             <div className={styles.image_wrapper}>
                 <Image
                     aria-hidden
-                    src={divisionData.image ?? '/placeholder/placeholder.svg'}
+                    src={divisionData.thumbnail ? process.env.NEXT_PUBLIC_API_SERVER + divisionData.thumbnail : '/placeholder/placeholder.svg'}
                     alt="Изображение"
                     width={706}
                     height={432}

@@ -3,6 +3,7 @@ import styles from "./style.module.css";
 import { DivisionCard, AnimateElement } from "@/app/components";
 
 export default function Division({ divisionData, lang }) {
+    console.log(divisionData);
 
     return (
         <section className={styles.section}>

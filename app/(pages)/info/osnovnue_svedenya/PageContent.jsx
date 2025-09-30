@@ -213,17 +213,14 @@ const PageContent = ({ data }) => {
                                     {item?.thumbnail && (
                                         <Image
                                             className={`dsv-image`}
-                                            src={process.env.NEXT_PUBLIC_API_SERVER + item.thumbnail}
+                                            src={item.thumbnail ? process.env.NEXT_PUBLIC_API_SERVER + item.thumbnail : '/placeholder/placeholder.svg'}
                                             width={80}
                                             height={80}
                                             loading='lazy'
                                             alt='decor'
                                         />
                                     )}
-
                                     {item.title}
-
-
                                     <Image className={styles.decor2_img} src={decor2} width={50} height={50} alt='decor_2' />
                                 </div>
 
