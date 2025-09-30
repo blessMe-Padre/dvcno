@@ -76,7 +76,6 @@
 .item_title_wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
     position: relative;
     font-weight: 700;

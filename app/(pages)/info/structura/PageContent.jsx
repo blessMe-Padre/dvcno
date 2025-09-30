@@ -85,15 +85,16 @@ const PageContent = ({ data }) => {
                         {data_division.map((item, index) => (
                             <AnimateElement element='li' animationDelay={index * 100} className={styles.item} key={index}>
                                 <div className={styles.item_title_wrapper}>
-                                    <Image
-                                        className={`dsv-image`}
-                                        src={`/osnovnye/image_${index + 1}.png`}
-                                        width={index === 2 ? 120 : 80}
-                                        height={80}
-                                        loading='lazy'
-                                        alt='decor'
-                                    />
-
+                                    {item.thumbnail && (
+                                        <Image
+                                            className={`dsv-image`}
+                                            src={item.thumbnail ? process.env.NEXT_PUBLIC_API_SERVER + item.thumbnail : '/placeholder/placeholder.svg'}
+                                            width={index === 2 ? 120 : 80}
+                                            height={80}
+                                            loading='lazy'
+                                            alt='decor'
+                                        />
+                                    )}
                                     {item.title}
 
                                     <Image
@@ -105,20 +106,20 @@ const PageContent = ({ data }) => {
                                     />
                                 </div>
 
-                                
+
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
 
-                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div></p>
+                                <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div>
                                 <p><strong>Адрес:</strong></p>
-                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.address }}></div></p>
-                                <p><strong>Телефоны:</strong></p> 
-                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.phones }}></div></p>
-                                <p><strong>Email:</strong></p> 
-                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.emails }}></div></p>
-                                <p><strong>Сайт:</strong></p> 
-                                <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.site }}></div></p>
+                                <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.address }}></div>
+                                <p><strong>Телефоны:</strong></p>
+                                <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.phones }}></div>
+                                <p><strong>Email:</strong></p>
+                                <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.emails }}></div>
+                                <p><strong>Сайт:</strong></p>
+                                <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.site }}></div>
 
-                                {item.position && 
+                                {item.position &&
                                     <a href={process.env.NEXT_PUBLIC_API_SERVER + item.position} className={styles.doc} download="filename">
                                         <Image src={doc} width={50} height={50} alt='image' />
                                         Положения
@@ -167,7 +168,7 @@ const PageContent = ({ data }) => {
                                     <a href="https://dvcno.ru/">https://dvcno.ru/</a>
                                 </div>
 
-                                {item.position && 
+                                {item.position &&
                                     <a href={process.env.NEXT_PUBLIC_API_SERVER + item.position} className={styles.doc} download="filename">
                                         <Image src={doc} width={50} height={50} alt='image' />
                                         Положения

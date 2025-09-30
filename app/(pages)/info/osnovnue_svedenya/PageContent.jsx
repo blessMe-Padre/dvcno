@@ -124,7 +124,7 @@ const PageContent = ({ data }) => {
                             </div>
                             <Image
                                 className={`${styles.decor_svg} dsv-image`}
-                                src='/osnovnye/svg_9.svg'
+                                src='/osnovnye/svg_10.svg'
                                 width={60}
                                 height={60}
                                 alt=''
