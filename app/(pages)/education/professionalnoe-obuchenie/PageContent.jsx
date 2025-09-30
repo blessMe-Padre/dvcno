@@ -53,111 +53,109 @@ export default function Page({ data }) {
     }
 
     return (
-        <>
-            <div className='container'>
-                <Breadcrumbs
-                    slug={link1[lang]}
-                    link={'education'}
-                    title={link2[lang]}
-                />
-                <section className={styles.hero_section}>
-                    <SlideMain item={hero} learn_more={learn_more[lang]} />
-                </section>
+        <div className='container'>
+            <Breadcrumbs
+                slug={link1[lang]}
+                link={'education'}
+                title={link2[lang]}
+            />
+            <section className={styles.hero_section}>
+                <SlideMain item={hero} learn_more={learn_more[lang]} />
+            </section>
 
-                <motion.section
-                    onMouseMove={e => handleMouseMove(e)}
-                    className={styles.accept}>
+            <motion.section
+                onMouseMove={e => handleMouseMove(e)}
+                className={styles.accept}>
+                <div className={styles.title_wrapper}>
+                    <div>
+                        <h2 className={`title`}>{process[0]?.content?.[lang]}</h2>
+                        <p className={styles.accept_text}>
+                            <div dangerouslySetInnerHTML={{ __html: process[1]?.content?.[lang] }}></div>
+                        </p>
+                    </div>
+                    <motion.img
+                        src="/education/decor-4.svg"
+                        alt="Изображение"
+                        width={200}
+                        height={80}
+                        className={`${styles.decor_img} dsv-image`}
+                        animate={imgAnimation}
+                        transition={{ ease: "easeInOut", }}
+                    />
+                </div>
+
+                <div className={styles.alert}>
+                    <Image
+                        src="/education/alert.svg"
+                        alt="Изображение"
+                        width={112}
+                        height={112}
+                        className="dsv-image"
+                    />
+                    <div>
+                        <div className={styles.alert_text} dangerouslySetInnerHTML={{ __html: process[2]?.content?.[lang] }}></div>
+                    </div>
+                </div>
+
+                <div className={styles.accept_table}>
+                    <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[3]?.content?.[lang] }} />
+                    <br />
+                    <div dangerouslySetInnerHTML={{ __html: process[4]?.content?.[lang] }} />
+                </div>
+
+            </motion.section>
+
+
+            <motion.section
+                onMouseMove={e => handleMouseMove(e)}
+                className={`${styles.documents} section-dsv`}>
+
+                <div className="container">
                     <div className={styles.title_wrapper}>
                         <div>
-                            <h2 className={`title`}>{process[0]?.content?.[lang]}</h2>
-                            <p className={styles.accept_text}>
-                                <div dangerouslySetInnerHTML={{ __html: process[1]?.content?.[lang] }}></div>
+                            <h1 className={`${styles.half_title} title text-white`}>{docs[0]?.content?.[lang]}</h1>
+                            <p className={`${styles.accept_text} text-white`}>
+                                <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: docs[1]?.content?.[lang] }}></div>
                             </p>
                         </div>
                         <motion.img
-                            src="/education/decor-4.svg"
+                            src="/education/decor-5.svg"
                             alt="Изображение"
-                            width={200}
-                            height={80}
-                            className={`${styles.decor_img} dsv-image`}
+                            width={166}
+                            height={166}
+                            className={`dsv-image`}
                             animate={imgAnimation}
                             transition={{ ease: "easeInOut", }}
                         />
                     </div>
 
-                    <div className={styles.alert}>
-                        <Image
-                            src="/education/alert.svg"
-                            alt="Изображение"
-                            width={112}
-                            height={112}
-                            className="dsv-image"
-                        />
-                        <div>
-                            <div className={styles.alert_text} dangerouslySetInnerHTML={{ __html: process[2]?.content?.[lang] }}></div>
-                        </div>
+                    <ul className={styles.document_list}>
+                        {docs[2]?.content?.[lang]?.list.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.document} />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+            </motion.section>
+
+            <section className={styles.acceptance}>
+                <div className="container">
+                    <div className={styles.acceptance_title_wrapper}>
+                        <h2 className="title">{docsStart[0]?.content?.[lang]}</h2>
+                        <div className={styles.title_sticker}>{docsStart[1]?.content?.[lang]}</div>
                     </div>
 
-                    <div className={styles.accept_table}>
-                        <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: process[3]?.content?.[lang] }} />
-                        <br />
-                        <div dangerouslySetInnerHTML={{ __html: process[4]?.content?.[lang] }} />
-                    </div>
-
-                </motion.section>
-
-
-                <motion.section
-                    onMouseMove={e => handleMouseMove(e)}
-                    className={`${styles.documents} section-dsv`}>
-
-                    <div className="container">
-                        <div className={styles.title_wrapper}>
-                            <div>
-                                <h1 className={`${styles.half_title} title text-white`}>{docs[0]?.content?.[lang]}</h1>
-                                <p className={`${styles.accept_text} text-white`}>
-                                    <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: docs[1]?.content?.[lang] }}></div>
-                                </p>
-                            </div>
-                            <motion.img
-                                src="/education/decor-5.svg"
-                                alt="Изображение"
-                                width={166}
-                                height={166}
-                                className={`dsv-image`}
-                                animate={imgAnimation}
-                                transition={{ ease: "easeInOut", }}
-                            />
-                        </div>
-
-                        <ul className={styles.document_list}>
-                            {docs[2]?.content?.[lang]?.list.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link} />
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                </motion.section>
-
-                <section className={styles.acceptance}>
-                    <div className="container">
-                        <div className={styles.acceptance_title_wrapper}>
-                            <h2 className="title">{docsStart[0]?.content?.[lang]}</h2>
-                            <div className={styles.title_sticker}>{docsStart[1]?.content?.[lang]}</div>
-                        </div>
-
-                        <ul className={styles.document_list}>
-                            {docsStart[2]?.content?.[lang]?.list.map((item, index) => (
-                                <li key={index}>
-                                    <DocumentComponent title={item.title} link={item.link} />
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            </div>
-        </>
+                    <ul className={styles.document_list}>
+                        {docsStart[2]?.content?.[lang]?.list.map((item, index) => (
+                            <li key={index}>
+                                <DocumentComponent title={item.title} link={item.document} />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
+        </div>
     )
 }

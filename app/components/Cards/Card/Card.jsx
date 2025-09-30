@@ -16,7 +16,7 @@ export default function Card({ image, link = '#', description, }) {
                     className={`${styles.img} dsv-image`}
                 />
             </div>
-            <a href={link} className={styles.card_footer} target="_blank" rel="noopener noreferrer">
+            <a href={link} className={styles.card_footer}>
                 <div className={styles.card_link_wrapper}>
                     <div className={styles.text}>{insertSafeContent(description)}</div>
                     <div className={styles.link}>

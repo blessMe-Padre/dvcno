@@ -39,7 +39,7 @@ const PageContent = ({ data }) => {
                             <Card
                                 image={item.image}
                                 description={item.title}
-                                link={`education/${item.link}`}
+                                link={item.link}
                             />
                         </li>
                     ))
