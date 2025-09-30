@@ -51,6 +51,8 @@ export default async function RootLayout({ children }) {
   const lang = cookieStore.get('language')?.value || 'ru';
 
   const result = await fetchApiServerData('settings/technical_works');
+  const metrics = await fetchApiServerData('settings/metrics');
+  const ymCode = Number(metrics?.data?.site_metrics) || null;
 
   return (
     <html lang={lang}>
@@ -59,7 +61,7 @@ export default async function RootLayout({ children }) {
       </head>
       <body className={`${montserrat.className} ${bebasNeue.variable} footer-sticky`}>
         <Suspense>
-          <Metrika />
+          <Metrika code={ymCode} />
         </Suspense>
         <ClientLangInitializer>
           <div className="container">

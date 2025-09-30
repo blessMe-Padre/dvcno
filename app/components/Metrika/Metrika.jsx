@@ -7,23 +7,18 @@ import fetchApiServerData from '@/app/utils/fetchApiServerData';
 
 const base = "/";
 
-export function Metrika() {
-  const [ymCode, setYmCode] = useState(null);
+export function Metrika({ code }) {
+  const [ymCode, setYmCode] = useState(code ?? null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const isInitedRef = useRef(false);
   const pathName = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchApiServerData('settings/metrics');
-      const code = Number(data?.data?.site_metrics);
-      if (Number.isFinite(code)) {
-        setYmCode(code);
-      }
+    if (!Number.isFinite(ymCode) && Number.isFinite(Number(code))) {
+      setYmCode(Number(code));
     }
-    fetchData();
-  }, []);
+  }, [code]);
 
   // Инициализация счётчика после загрузки скрипта и получения кода
   useEffect(() => {
@@ -50,11 +45,16 @@ export function Metrika() {
   }, [pathName, searchParams, ymCode]);
 
   return (
-    <Script
-      id="ym-tag"
-      src="https://mc.yandex.ru/metrika/tag.js"
-      strategy="afterInteractive"
-      onLoad={() => setIsScriptLoaded(true)}
-    />
+    <>
+      <Script
+        id="ym-tag"
+        src="https://mc.yandex.ru/metrika/tag.js"
+        strategy="afterInteractive"
+        onLoad={() => setIsScriptLoaded(true)}
+      />
+      <noscript>
+        <div><img src={`https://mc.yandex.ru/watch/${ymCode ?? ''}`} style={{ position: 'absolute', left: '-9999px' }} alt="" /></div>
+      </noscript>
+    </>
   );
 }
