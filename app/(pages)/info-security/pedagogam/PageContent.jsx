@@ -10,12 +10,12 @@ export default function Page({ data }) {
 
     console.log(data);
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    const main1_header = data?.sections?.main[0]?.content?.[lang][0]?.title;
+    const main1_header = data?.sections?.main[0]?.content?.[lang]?.title;
     const list_links = data?.sections?.main[1]?.content?.[lang]?.list;
-    const main2_header = data?.sections?.main2[0]?.content?.[lang][0]?.title;
+    const main2_header = data?.sections?.main2[0]?.content?.[lang]?.title;
     const main2_format_text = data?.sections?.main2[1]?.content?.[lang][0];
     const main2_list_links = data?.sections?.main2[2]?.content?.[lang];
-    const main3_header = data?.sections?.main3[0]?.content?.[lang][0]?.title;
+    const main3_header = data?.sections?.main3[0]?.content?.[lang]?.title;
     const main3_format_text = data?.sections?.main3[1]?.content?.[lang][0];
     const main3_list_links = data?.sections?.main3[2]?.content?.[lang];
 

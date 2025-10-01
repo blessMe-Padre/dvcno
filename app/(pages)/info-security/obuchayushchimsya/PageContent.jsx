@@ -8,7 +8,7 @@ export default function Page({ data }) {
     const { lang } = useLangStore();
 
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    const header = data?.sections?.main[0]?.content?.[lang][0]?.title;
+    const header = data?.sections?.main[0]?.content?.[lang]?.title;
     const format_text = data?.sections?.main[2]?.content?.[lang][0];
     const list_links = data?.sections?.main[1]?.content?.[lang];
     const imagesList = data?.sections?.img?.[0]?.content?.[lang];

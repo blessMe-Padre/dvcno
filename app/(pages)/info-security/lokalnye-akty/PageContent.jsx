@@ -8,7 +8,7 @@ import { insertSafeContent } from '@/app/utils/insertSafeContent';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
-    const header = data?.sections?.main[0]?.content?.[lang]?.[0]?.title;
+    const header = data?.sections?.main[0]?.content?.[lang]?.title;
     const format_text = data?.sections?.main[1]?.content?.[lang];
     const list_links = data?.sections?.main[2]?.content?.[lang]?.list;
 

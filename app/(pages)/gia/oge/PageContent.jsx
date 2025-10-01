@@ -9,10 +9,10 @@ export default function Page({ data }) {
 
     console.log(data);
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    const info_header = data?.sections?.info[0]?.content?.[lang][0]?.title;
+    const info_header = data?.sections?.info[0]?.content?.[lang]?.title;
     const info_list_docs = data?.sections?.info[1]?.content?.[lang]?.list;
     const total = data?.sections?.total[0]?.content?.[lang];
-    const materials_header = data?.sections?.materials[0]?.content?.[lang][0]?.title;
+    const materials_header = data?.sections?.materials[0]?.content?.[lang]?.title;
     const materials_list_docs = data?.sections?.materials[1]?.content?.[lang]?.list;
 
     const link1 = {

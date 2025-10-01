@@ -28,12 +28,18 @@ const PageContent = ({ data }) => {
     const banner = data?.sections?.main[2]?.content[lang];
     const tasksList = data?.sections?.tasks?.[1]?.content?.[lang];
 
+    const about_center = {
+        ru: 'О центре',
+        en: 'About center',
+        ch: '关于中心'
+    };
+
     return (
         <>
             <section className={styles.section}>
                 <div className="container">
-                    <Breadcrumbs title={"Обучение"} />
-                    <h2 className={styles.title}>{data?.title[lang]?.title}</h2>
+                    <Breadcrumbs title={about_center[lang]} />
+                    <h2 className={styles.title}>{data?.sections?.main[0]?.content[lang]?.title}</h2>
 
                     <div className={styles.wrapper_links}>
                         {headerLinks && headerLinks.length > 0 &&
