@@ -30,7 +30,7 @@ const PageContent = ({ data }) => {
                     />
 
                     <h2 className={`title ${styles.title}`}>
-                        {data?.sections?.header?.[0]?.content?.[lang] ?? 'Финансово-хозяйственная деятельность'}
+                        {data?.sections?.header?.[0]?.content?.[lang]?.title ?? 'Финансово-хозяйственная деятельность'}
                     </h2>
 
 

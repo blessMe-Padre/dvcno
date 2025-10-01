@@ -40,7 +40,7 @@ const Partners = () => {
         <div className={`${styles.wrapper}`}>
           <div className='relative'>
             <AnimateElement element="h2" className={styles.title}>
-              {data?.[0]?.content?.[lang]}
+              {data?.[0]?.content?.[lang]?.title}
             </AnimateElement>
 
             <Swiper

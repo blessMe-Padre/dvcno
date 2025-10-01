@@ -36,7 +36,7 @@ const PageContent = ({ data }) => {
                     title={languages[lang]}
                 />
 
-                <h2 className={styles.title}>{data?.sections?.main?.[0]?.content[lang] ?? 'Руководство'}</h2>
+                <h2 className={styles.title}>{data?.sections?.main?.[0]?.content[lang]?.title ?? 'Руководство'}</h2>
 
                 <div>
                     <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data?.sections?.personal?.[0]?.content[lang] ?? 'АНПОО «ДВЦНО»' }}></div>

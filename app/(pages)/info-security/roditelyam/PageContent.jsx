@@ -10,12 +10,12 @@ export default function Page({ data }) {
 
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const list_docs = data?.sections?.main[1]?.content?.[lang];
-    const main1_header = data?.sections?.main[0]?.content?.[lang][0];
+    const main1_header = data?.sections?.main[0]?.content?.[lang][0]?.title;
     const main1_list_docs = data?.sections?.main[1]?.content?.[lang]?.list;
-    const main2_header = data?.sections?.main2[0]?.content?.[lang][0];
+    const main2_header = data?.sections?.main2[0]?.content?.[lang][0]?.title;
     const main2_format_text = data?.sections?.main2[1]?.content?.[lang][0];
     const main2_list_docs = data?.sections?.main2[2]?.content?.[lang]?.list;
-    const main3_header = data?.sections?.main3[0]?.content?.[lang][0];
+    const main3_header = data?.sections?.main3[0]?.content?.[lang][0]?.title;
     const main3_format_text = data?.sections?.main3[1]?.content?.[lang][0];
     const main3_list_links = data?.sections?.main3[2]?.content?.[lang];
 
@@ -40,7 +40,7 @@ export default function Page({ data }) {
                 />
 
                 <section className={`${styles.hero} ${styles.hero_parents} section-dsv`}>
-                    <h1 className={`title title-white`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "Родителям" }} /></h1>
+                    <h1 className={`title title-white`}><div dangerouslySetInnerHTML={{ __html: banner.title ?? "Родителям" }} /></h1>
 
                     <div className={styles.document_wrapper}>
                         <ul>

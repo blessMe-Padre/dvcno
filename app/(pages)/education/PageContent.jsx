@@ -21,7 +21,7 @@ const PageContent = ({ data }) => {
         <div className="container">
             <Breadcrumbs title={languages[lang]} />
             <AnimateElement element="h2" className={`title ${styles.title}`}>
-                {contentPage?.main[0]?.content?.[lang]?.[0]}
+                {contentPage?.main[0]?.content?.[lang]?.[0]?.title}
             </AnimateElement>
             <AnimateElement element="div" className={styles.description}>
                 <div

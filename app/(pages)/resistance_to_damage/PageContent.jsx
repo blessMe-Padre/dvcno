@@ -24,7 +24,7 @@ const PageContent = ({ data }) => {
             />
             <div className={styles.title_wrapper}>
                 <h2 className={`title ${styles.title}`}>
-                    {data?.sections?.main?.[0]?.content?.[lang] ?? 'Противодействие коррупции'}
+                    {data?.sections?.main?.[0]?.content?.[lang]?.title ?? 'Противодействие коррупции'}
                 </h2>
                 <Image
                     src={decor}

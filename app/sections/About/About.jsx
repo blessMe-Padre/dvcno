@@ -37,7 +37,7 @@ export default function About() {
         <section className={styles.section}>
             <div className={styles.title_wrapper}>
                 <AnimateElement element="h2" className={styles.title}>
-                    {data?.[0]?.content?.[lang] ?? 'Дальневосточный центр непрерывного образования - это'}
+                    {data?.[0]?.content?.[lang]?.title ?? 'Дальневосточный центр непрерывного образования - это'}
                 </AnimateElement>
                 <div className={styles.image_wrapper}>
                     <Image

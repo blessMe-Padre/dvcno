@@ -29,7 +29,7 @@ const PageContent = ({ data }) => {
             />
 
             <h2 className={`title ${styles.title}`}>
-                {data?.sections?.main?.[0]?.content?.[lang] ?? 'Вакантные места для приёма (перевода) обучающихся'}
+                {data?.sections?.main?.[0]?.content?.[lang]?.title ?? 'Вакантные места для приёма (перевода) обучающихся'}
             </h2>
 
             <ul className={styles.list}>

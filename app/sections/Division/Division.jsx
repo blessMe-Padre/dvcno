@@ -9,7 +9,7 @@ export default function Division({ divisionData, lang }) {
         <section className={styles.section}>
             <div className="container">
                 <AnimateElement element="h2" className={`${styles.title} title`}>
-                    {divisionData[0]?.content?.[lang]}
+                    {divisionData[0]?.content?.[lang]?.title}
                 </AnimateElement>
                 <ul className={styles.list}>
                     {divisionData[1]?.content?.[lang]?.map((item, index) => (

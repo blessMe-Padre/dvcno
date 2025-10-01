@@ -25,7 +25,7 @@ export default function Why() {
         <section className={styles.section}>
             <div className="container">
                 <AnimateElement element="h2" className={`${styles.title} title-black`}>
-                    {data?.[0]?.content?.[lang]}
+                    {data?.[0]?.content?.[lang]?.title}
                 </AnimateElement>
 
                 <ul className={styles.list}>

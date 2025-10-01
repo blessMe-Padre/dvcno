@@ -12,10 +12,10 @@ import { AnimateItems } from '@/app/components';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
-    const title = data?.sections?.main[0]?.content?.[lang];
+    const title = data?.sections?.main[0]?.content?.[lang]?.title;
     const listBlocks = data?.sections?.main[1]?.content?.[lang];
 
-    const docsHeader = data?.sections?.docs[0]?.content?.[lang];
+    const docsHeader = data?.sections?.docs[0]?.content?.[lang]?.title;
     const docs = data?.sections?.docs[1]?.content?.[lang]?.list;
 
     const languages = {

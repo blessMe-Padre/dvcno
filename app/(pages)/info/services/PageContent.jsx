@@ -33,7 +33,7 @@ const PageContent = ({ data }) => {
                     />
 
                     <AnimateElement element="h2" className={`title ${styles.title}`}>
-                        {data?.sections?.services?.[0]?.content?.[lang] ?? 'Платные образовательные услуги'}
+                        {data?.sections?.services?.[0]?.content?.[lang]?.title ?? 'Платные образовательные услуги'}
                     </AnimateElement>
 
 
@@ -58,7 +58,7 @@ const PageContent = ({ data }) => {
             <section className={styles.section}>
                 <div className="container">
                     <AnimateElement element="h2" className={`title ${styles.title}`}>
-                        {data?.sections?.cost?.[0]?.content?.[lang] ?? 'Стоимость обучения по образовательным программам'}
+                        {data?.sections?.cost?.[0]?.content?.[lang]?.title ?? 'Стоимость обучения по образовательным программам'}
                     </AnimateElement>
                     <ul className={styles.document_list}>
                         {data_price && data_price.length > 0 ?
@@ -79,7 +79,7 @@ const PageContent = ({ data }) => {
             <section className={styles.section}>
                 <div className="container">
                     <AnimateElement element="h2" className={`title ${styles.title}`}>
-                        {data?.sections?.template?.[0]?.content?.[lang]
+                        {data?.sections?.template?.[0]?.content?.[lang]?.title
                             ?? 'Шаблоны договоров об оказании платных образовательных услуг 2020-2024 учебные года'
                         }
                     </AnimateElement>

@@ -12,7 +12,7 @@ export default function Page({ data }) {
     const { lang } = useLangStore();
     const [popupActive, setPopupActive] = useState(false);
 
-    const header = data?.sections?.header[0]?.content?.[lang];
+    const header = data?.sections?.header[0]?.content?.[lang]?.title;
     const list_links = data?.sections?.vacancies[0]?.content?.[lang];
 
     const link = {

@@ -33,7 +33,7 @@ const PageContent = ({ data }) => {
             <section className={styles.section}>
                 <div className="container">
                     <Breadcrumbs title={"Обучение"} />
-                    <h2 className={styles.title}>{data?.title[lang]}</h2>
+                    <h2 className={styles.title}>{data?.title[lang]?.title}</h2>
 
                     <div className={styles.wrapper_links}>
                         {headerLinks && headerLinks.length > 0 &&
@@ -88,7 +88,7 @@ const PageContent = ({ data }) => {
             <section className={styles.section_do}>
                 <div className="container relative">
                     <AnimateElement element="h2" className={styles.title}>
-                        {data?.sections?.activity[0]?.content[lang] || 'Деятельность'}
+                        {data?.sections?.activity[0]?.content[lang]?.title || 'Деятельность'}
                     </AnimateElement>
                     <div className={styles.description}>
                         {insertSafeContent(data?.sections?.activity[1]?.content[lang])}
@@ -145,7 +145,7 @@ const PageContent = ({ data }) => {
                     <div className={`${styles.title_strategy_wrapper}`}>
                         <div className="relative">
                             <AnimateElement element="h2" className={`${styles.title} ${styles.title_white}`}>
-                                {data?.sections?.strategy?.[0]?.content?.[lang] || 'Стратегия развития'}
+                                {data?.sections?.strategy?.[0]?.content?.[lang]?.title || 'Стратегия развития'}
                             </AnimateElement>
                             <Image
                                 className={styles.title_decor}
@@ -213,7 +213,7 @@ const PageContent = ({ data }) => {
             <section className={styles.section_purpose}>
                 <div className="container relative">
                     <AnimateElement element="h2" className={styles.title}>
-                        {data?.sections?.tasks?.[0]?.content?.[lang] || 'Главные цели и задачи'}
+                        {data?.sections?.tasks?.[0]?.content?.[lang]?.title || 'Главные цели и задачи'}
                     </AnimateElement>
 
                     <Image

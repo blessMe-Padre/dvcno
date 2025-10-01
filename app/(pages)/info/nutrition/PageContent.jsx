@@ -33,7 +33,7 @@ const PageContent = ({ data }) => {
                         title={languages[lang]}
                     />
                     <h2 className={`title ${styles.title}`}>
-                        {data?.sections?.main?.[0]?.content[lang] ?? 'Организация питания в образовательной организации.'}
+                        {data?.sections?.main?.[0]?.content[lang]?.title ?? 'Организация питания в образовательной организации.'}
                     </h2>
 
                     <ul className={styles.list}>
@@ -57,7 +57,7 @@ const PageContent = ({ data }) => {
 
             <section className={styles.section}>
                 <div className="container">
-                    <h2 className={`title ${styles.title}`}>{data?.sections?.docs?.[0]?.content[lang] ?? 'Документы'}</h2>
+                    <h2 className={`title ${styles.title}`}>{data?.sections?.docs?.[0]?.content[lang]?.title ?? 'Документы'}</h2>
 
 
                     <ul className={styles.document_list}>

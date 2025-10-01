@@ -32,7 +32,7 @@ const PageContent = ({ data }) => {
                         title={languages[lang]}
                     />
 
-                    <h2 className={`title ${styles.title}`}>{data?.sections?.main?.[0]?.content?.[lang] ?? 'Образовательные стандарты и требования.'}</h2>
+                    <h2 className={`title ${styles.title}`}>{data?.sections?.main?.[0]?.content?.[lang]?.title ?? 'Образовательные стандарты и требования.'}</h2>
 
                     <ul>
                         {list && list.length > 0 ?
@@ -61,7 +61,7 @@ const PageContent = ({ data }) => {
 
             <section className={styles.section}>
                 <div className="container">
-                    <h2 className={`title ${styles.title}`}>{data?.sections?.programs?.[0]?.content?.[lang] ?? 'Федеральные образовательные программы'}</h2>
+                    <h2 className={`title ${styles.title}`}>{data?.sections?.programs?.[0]?.content?.[lang]?.title ?? 'Федеральные образовательные программы'}</h2>
 
 
                     <ul className={styles.document_list}>

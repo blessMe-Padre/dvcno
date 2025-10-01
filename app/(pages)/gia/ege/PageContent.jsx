@@ -7,12 +7,12 @@ import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    const info_header = data?.sections?.info[0]?.content?.[lang][0];
+    const info_header = data?.sections?.info[0]?.content?.[lang][0]?.title;
     const info_list_docs = data?.sections?.info[1]?.content?.[lang]?.list;
     const total_header = data?.sections?.total[0]?.content?.[lang]?.title;
     const total_list_docs = data?.sections?.total[0]?.content?.[lang]?.documents?.list;
     const total_list_videos = data?.sections?.total[0]?.content?.[lang]?.videos?.list;
-    const materials_header = data?.sections?.materials[0]?.content?.[lang][0];
+    const materials_header = data?.sections?.materials[0]?.content?.[lang][0]?.title;
     const materials_list_docs = data?.sections?.materials[1]?.content?.[lang]?.list;
 
     const link1 = {
@@ -38,7 +38,7 @@ export default function Page({ data }) {
 
             <section className={`${styles.hero} ${styles.hero_ege} section-dsv`}>
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "ЕГЭ" }} /></h2>
+                    <h2 className={`title ${styles.half_title}`}><div dangerouslySetInnerHTML={{ __html: banner.title ?? "ЕГЭ" }} /></h2>
                     <Image
                         src="/gia/image-3.svg"
                         alt="Изображение"

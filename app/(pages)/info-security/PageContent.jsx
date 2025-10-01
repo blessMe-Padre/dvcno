@@ -9,7 +9,7 @@ import Link from 'next/link';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
-    const header = data?.sections?.main[0]?.content?.[lang][0];
+    const header = data?.sections?.main[0]?.content?.[lang][0]?.title;
     const list_links = data?.sections?.main[1]?.content?.[lang];
     const format_text = data?.sections?.main[2]?.content?.[lang];
 

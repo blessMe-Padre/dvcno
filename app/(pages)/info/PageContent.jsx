@@ -21,7 +21,7 @@ const PageContent = ({ data }) => {
         <section className={styles.section}>
             <div className='container'>
                 <Breadcrumbs title={languages[lang]} />
-                <h2 className={styles.title}>{data?.sections?.hero?.[0]?.content[lang] ?? 'Сведения об образовательной организации'}</h2>
+                <h2 className={styles.title}>{data?.sections?.hero?.[0]?.content[lang]?.title ?? 'Сведения об образовательной организации'}</h2>
 
                 {/* <section className={styles.hero_section}>
                     <SlideMain item={data?.sections?.hero?.[1]?.content[lang]} />

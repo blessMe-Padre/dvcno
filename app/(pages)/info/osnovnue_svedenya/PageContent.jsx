@@ -80,7 +80,7 @@ const PageContent = ({ data }) => {
                         title={languages[lang]}
                     />
 
-                    <h2 className={styles.title}>{data?.sections?.main?.[0]?.content[lang] ?? 'Основные сведения'}</h2>
+                    <h2 className={styles.title}>{data?.sections?.main?.[0]?.content[lang]?.title ?? 'Основные сведения'}</h2>
 
                     <Image
                         className={styles.decor_img}
@@ -203,7 +203,7 @@ const PageContent = ({ data }) => {
             <section className={styles.section}>
                 <div className='container'>
                     <AnimateElement element='h2' className={styles.title}>
-                        {data?.sections?.addresses?.[0]?.content[lang] ?? 'адреса мест осуществления образовательной деятельности'}
+                        {data?.sections?.addresses?.[0]?.content[lang]?.title ?? 'адреса мест осуществления образовательной деятельности'}
                     </AnimateElement>
 
                     <ul className={styles.list_svedenya_four}>
@@ -242,7 +242,7 @@ const PageContent = ({ data }) => {
             <section className={styles.section}>
                 <div className='container'>
                     <AnimateElement element='h2' className={styles.title}>
-                        {data?.sections?.docs?.[0]?.content[lang] ?? "документы на осуществление образовательной деятельности"}
+                        {data?.sections?.docs?.[0]?.content[lang]?.title ?? "документы на осуществление образовательной деятельности"}
                     </AnimateElement>
 
                     <div className={styles.documents_wrapper}>
@@ -265,7 +265,7 @@ const PageContent = ({ data }) => {
 
             <section className={styles.section}>
                 <div className='container relative'>
-                    <h2 className={styles.title}>{data?.sections?.bank?.[0]?.content[lang] ?? 'Банковские реквизиты АНПОО «ДВЦНО»'}</h2>
+                    <h2 className={styles.title}>{data?.sections?.bank?.[0]?.content[lang]?.title ?? 'Банковские реквизиты АНПОО «ДВЦНО»'}</h2>
 
                     <Image
                         className={styles.decor3_img}

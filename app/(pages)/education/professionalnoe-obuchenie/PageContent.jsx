@@ -68,7 +68,7 @@ export default function Page({ data }) {
                 className={styles.accept}>
                 <div className={styles.title_wrapper}>
                     <div>
-                        <h2 className={`title`}>{process[0]?.content?.[lang]}</h2>
+                        <h2 className={`title`}>{process[0]?.content?.[lang]?.title}</h2>
                         <p className={styles.accept_text}>
                             <div dangerouslySetInnerHTML={{ __html: process[1]?.content?.[lang] }}></div>
                         </p>
@@ -113,7 +113,7 @@ export default function Page({ data }) {
                 <div className="container">
                     <div className={styles.title_wrapper}>
                         <div>
-                            <h1 className={`${styles.half_title} title text-white`}>{docs[0]?.content?.[lang]}</h1>
+                            <h1 className={`${styles.half_title} title text-white`}>{docs[0]?.content?.[lang]?.title}</h1>
                             <p className={`${styles.accept_text} text-white`}>
                                 <div className={styles.accept_text} dangerouslySetInnerHTML={{ __html: docs[1]?.content?.[lang] }}></div>
                             </p>
@@ -143,7 +143,7 @@ export default function Page({ data }) {
             <section className={styles.acceptance}>
                 <div className="container">
                     <div className={styles.acceptance_title_wrapper}>
-                        <h2 className="title">{docsStart[0]?.content?.[lang]}</h2>
+                        <h2 className="title">{docsStart[0]?.content?.[lang]?.title}</h2>
                         <div className={styles.title_sticker}>{docsStart[1]?.content?.[lang]}</div>
                     </div>
 

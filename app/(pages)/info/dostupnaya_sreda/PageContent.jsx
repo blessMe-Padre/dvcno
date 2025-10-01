@@ -28,7 +28,7 @@ const PageContent = ({ data }) => {
                 title={languages[lang]}
             />
             <h2 className={`title ${styles.title} ${styles.text_white}`}>
-                {data?.sections?.title?.[0]?.content?.[lang] ??
+                {data?.sections?.title?.[0]?.content?.[lang]?.title ??
                     'Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда.'
                 }
             </h2>

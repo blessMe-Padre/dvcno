@@ -8,7 +8,7 @@ import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
-    const header = data?.sections?.header[0]?.content?.[lang];
+    const header = data?.sections?.header[0]?.content?.[lang]?.title;
     const list_docs1 = data?.sections?.list_docs1[0]?.content?.[lang];
     const list_docs2 = data?.sections?.list_docs2[0]?.content?.[lang];
     const list_docs3 = data?.sections?.list_docs3[0]?.content?.[lang];

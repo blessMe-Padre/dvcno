@@ -37,7 +37,7 @@ export default function Events() {
             <div className="container">
                 <div className={styles.wrapper}>
                     <AnimateElement element="h2" className={styles.title}>
-                        {title?.[lang]}
+                        {title?.[lang]?.title}
                     </AnimateElement>
                     <Swiper
                         spaceBetween={20}

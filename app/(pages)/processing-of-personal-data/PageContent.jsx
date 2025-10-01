@@ -17,10 +17,10 @@ const languages = {
 
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
-    const documents_header = data?.sections?.documents?.[0]?.content?.[lang];
+    const documents_header = data?.sections?.documents?.[0]?.content?.[lang]?.title;
     const documents_subtitle = data?.sections?.documents?.[1]?.content?.[lang];
     const documents_list = data?.sections?.documents?.[2]?.content?.[lang]?.list;
-    const information_header = data?.sections?.information?.[0]?.content?.[lang];
+    const information_header = data?.sections?.information?.[0]?.content?.[lang]?.title;
     const information_subtitle = data?.sections?.information?.[1]?.content?.[lang];
     const information_list = data?.sections?.information?.[2]?.content?.[lang]?.list;
     const lessons = data?.sections?.lessons?.[0]?.content?.[lang];

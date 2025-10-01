@@ -7,12 +7,12 @@ import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
-    const header = data?.sections?.banner[0]?.content?.[lang][0];
+    const header = data?.sections?.banner[0]?.content?.[lang][0]?.title;
     const list_links = data?.sections?.banner[1]?.content?.[lang];
     const banner = data?.sections?.banner[2]?.content?.[lang];
-    const main1_header = data?.sections?.main1[0]?.content?.[lang][0];
+    const main1_header = data?.sections?.main1[0]?.content?.[lang][0]?.title;
     const main1_list_docs = data?.sections?.main1[1]?.content?.[lang]?.list;
-    const main2_header = data?.sections?.main2[0]?.content?.[lang][0];
+    const main2_header = data?.sections?.main2[0]?.content?.[lang][0]?.title;
     const main2_list_docs = data?.sections?.main2[1]?.content?.[lang]?.list;
 
     const link1 = {

@@ -7,12 +7,12 @@ import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
+    console.log(data);
     const banner = data?.sections?.banner[0]?.content?.[lang];
-    const info_header = data?.sections?.info[0]?.content?.[lang][0];
+    const info_header = data?.sections?.info[0]?.content?.[lang][0]?.title;
     const info_list_docs = data?.sections?.info[1]?.content?.[lang]?.list;
-    const total_header = data?.sections?.total[0]?.content?.[lang]?.title;
-    const total_list_docs = data?.sections?.total[0]?.content?.[lang]?.documents;
-    const materials_header = data?.sections?.materials[0]?.content?.[lang][0];
+    const total = data?.sections?.total[0]?.content?.[lang];
+    const materials_header = data?.sections?.materials[0]?.content?.[lang][0]?.title;
     const materials_list_docs = data?.sections?.materials[1]?.content?.[lang]?.list;
 
     const link1 = {
@@ -36,7 +36,7 @@ export default function Page({ data }) {
 
             <section className={`${styles.hero} ${styles.hero_oge} section-dsv`}>
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}><div dangerouslySetInnerHTML={{ __html: banner.content ?? "ОГЭ" }} /></h2>
+                    <h2 className={`title ${styles.half_title}`}><div dangerouslySetInnerHTML={{ __html: banner.title ?? "ОГЭ" }} /></h2>
                     <Image
                         src="/gia/image-3.svg"
                         alt="Изображение"
@@ -98,7 +98,7 @@ export default function Page({ data }) {
 
             <section className={`${styles.hero} ${styles.hero_total} section-dsv`}>
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title} title-white`}>{total_header}</h2>
+                    <h2 className={`title ${styles.half_title} title-white`}><div dangerouslySetInnerHTML={{ __html: total.title ?? "ИТОГОВОЕ СОБЕСЕДОВАНИЕ" }} /></h2>
                     <Image
                         src="/gia/image-5.svg"
                         alt="Изображение"
@@ -109,14 +109,14 @@ export default function Page({ data }) {
                 </div>
 
                 <ul className={styles.hero_list}>
-                    {total_list_docs && total_list_docs.length > 0 ? (
-                        total_list_docs.map((item, index) => (
-                            <li key={index}>
-                                <DocumentComponent title={item.title} link={item.document} />
-                            </li>
-                        ))
-                    ) :
-                        'данные не загружены'
+                    {total.documents?.list && total.documents?.list.length > 0 ?
+                        (
+                            total.documents.list.map((item, index) => (
+                                <li key={index}>
+                                    <DocumentComponent title={item.title} link={item.document} />
+                                </li>
+                            ))
+                        ) : ("")
                     }
                 </ul>
             </section>

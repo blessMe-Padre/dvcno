@@ -29,7 +29,7 @@ const PageContent = ({ data }) => {
                 title={languages[lang]}
             />
             <h2 className={`title ${styles.title}`}>
-                {data?.sections?.header?.[0]?.content?.[lang] ?? 'Педагогический состав'}
+                {data?.sections?.header?.[0]?.content?.[lang]?.title ?? 'Педагогический состав'}
             </h2>
 
             <ul className={styles.list}>

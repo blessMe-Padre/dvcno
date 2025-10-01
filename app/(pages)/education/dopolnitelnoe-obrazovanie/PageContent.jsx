@@ -67,7 +67,7 @@ export default function Page({ data }) {
                 onMouseMove={e => handleMouseMove(e)}
                 className="container">
                 <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}>{dop_program[0]?.content?.[lang]} </h2>
+                    <h2 className={`title ${styles.half_title}`}>{dop_program[0]?.content?.[lang]?.title} </h2>
                     <motion.img
                         src="/education/decor-3.svg"
                         alt="Изображение"

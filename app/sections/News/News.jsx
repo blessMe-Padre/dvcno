@@ -48,7 +48,7 @@ const News = () => {
                     <div className={`${styles.wrapper}`}>
                         <div className='relative'>
                             <AnimateElement element="h2" className={styles.title}>
-                                {title?.[lang] ?? 'Новости'}
+                                {title?.[lang]?.title ?? 'Новости'}
                             </AnimateElement>
 
                             <Swiper

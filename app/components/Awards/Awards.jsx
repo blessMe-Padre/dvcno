@@ -36,7 +36,7 @@ export default function Awards() {
           <div className={styles.awards_wrapper}>
             <div className={styles.awards_title_wrapper}>
               <AnimateElement element="h2" className={styles.awards_title}>
-                {data?.[0]?.content?.[lang] ?? 'награды ДВЦНО'}
+                {data?.[0]?.content?.[lang]?.title ?? 'награды ДВЦНО'}
               </AnimateElement>
 
               <svg

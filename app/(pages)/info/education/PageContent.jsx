@@ -38,7 +38,7 @@ const PageContent = ({ data }) => {
                         link={'info'}
                         title={languages[lang]}
                     />
-                    <h2 className={styles.title}>{data?.title[lang] ?? 'Образование'}</h2>
+                    <h2 className={styles.title}>{data?.title[lang]?.title ?? 'Образование'}</h2>
 
                     <ul className={styles.education_list}>
                         {data_education && data_education.length > 0 ? (
@@ -72,7 +72,7 @@ const PageContent = ({ data }) => {
             <section className={`${styles.section} ${styles.section_custom}`}>
                 <div className="container">
                     <div className={styles.title_wrapper}>
-                        <h2 className={styles.title}> {data?.sections?.programs?.[0]?.content[lang] ?? 'Образовательные программы АНПОО «ДВЦНО»'}
+                        <h2 className={styles.title}> {data?.sections?.programs?.[0]?.content[lang]?.title ?? 'Образовательные программы АНПОО «ДВЦНО»'}
                         </h2>
 
                         <Image
@@ -121,7 +121,7 @@ const PageContent = ({ data }) => {
             <section className={`${styles.section} ${styles.back_gray}`}>
                 <div className="container">
                     <div className={styles.title_wrapper}>
-                        <h2 className={styles.title}>{data?.sections?.graph?.[0]?.content[lang] ?? 'Календарные учебные графики 2023-2024'}
+                        <h2 className={styles.title}>{data?.sections?.graph?.[0]?.content[lang]?.title ?? 'Календарные учебные графики 2023-2024'}
                         </h2>
 
                         <Image
@@ -148,7 +148,7 @@ const PageContent = ({ data }) => {
             <section className={styles.section}>
                 <div className="container">
                     <div className={styles.title_wrapper}>
-                        <h2 className={styles.title}>{data?.sections?.count?.[0]?.content[lang] ?? 'Численность обучающихся по программам'}
+                        <h2 className={styles.title}>{data?.sections?.count?.[0]?.content[lang]?.title ?? 'Численность обучающихся по программам'}
                         </h2>
 
                         <Image

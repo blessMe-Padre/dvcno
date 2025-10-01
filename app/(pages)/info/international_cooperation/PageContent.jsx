@@ -30,7 +30,7 @@ const PageContent = ({ data }) => {
                         title={languages[lang]}
                     />
 
-                    <h2 className={`title ${styles.title}`}>{data?.sections?.main?.[0]?.content[lang] ?? 'Международное сотрудничество.'}</h2>
+                    <h2 className={`title ${styles.title}`}>{data?.sections?.main?.[0]?.content[lang]?.title ?? 'Международное сотрудничество.'}</h2>
                     <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data?.sections?.main?.[1]?.content[lang] }}></div>
 
                     <ul className={styles.list}>

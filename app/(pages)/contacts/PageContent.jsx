@@ -23,7 +23,7 @@ const PageContent = ({ data }) => {
                         title={languages[lang]}
                     />
                     <AnimateElement element="h2" className={styles.title}>
-                        {data?.sections?.header?.[0]?.content[lang] ?? 'Контакты'}
+                        {data?.sections?.header?.[0]?.content[lang]?.title ?? 'Контакты'}
                     </AnimateElement>
                     <ContactsList data={data_contacts} />
                 </div>

@@ -24,7 +24,7 @@ export default function Page({ data }) {
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const worth = data?.sections?.worth;
 
-    const worthHeader = worth[0].content?.[lang]?.[0];
+    const worthHeader = worth[0].content?.[lang]?.[0]?.title;
     const worthList = worth[1].content?.[lang];
 
     const languages = {

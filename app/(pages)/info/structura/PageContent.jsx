@@ -38,7 +38,7 @@ const PageContent = ({ data }) => {
                 />
 
                 <AnimateElement element='h2' className={styles.title}>
-                    {data?.sections?.main?.[0]?.content[lang] ?? 'Структура и органы управления образовательной организацией'}
+                    {data?.sections?.main?.[0]?.content[lang]?.title ?? 'Структура и органы управления образовательной организацией'}
                 </AnimateElement>
 
                 <Image

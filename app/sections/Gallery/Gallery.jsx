@@ -55,7 +55,7 @@ function Gallery() {
             <div className="container">
                 <div className={styles.wrapper}>
                     <AnimateElement element="h2" className={styles.title}>
-                        {data?.[0]?.content?.[lang]}
+                        {data?.[0]?.content?.[lang]?.title}
                     </AnimateElement>
                     <div className='pswp-gallery' id='main-gallery'>
                         {data && data.length > 0 ? (

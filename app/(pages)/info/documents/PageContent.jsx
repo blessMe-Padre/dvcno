@@ -30,7 +30,7 @@ const PageContent = ({ data }) => {
                 <div className="container">
                     <Breadcrumbs title={"Документы"} link={'info'} slug={"Сведения об образовательной организации"} />
                     <div className={styles.title_wrapper}>
-                        <h2 className={styles.title}>{data?.sections?.documents?.[0]?.content[lang] ?? 'Документы'}</h2>
+                        <h2 className={styles.title}>{data?.sections?.documents?.[0]?.content[lang]?.title ?? 'Документы'}</h2>
                         <Image
                             src={decor1}
                             width={100}
@@ -53,7 +53,7 @@ const PageContent = ({ data }) => {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                        <h2 className={styles.title}>{data?.sections?.report?.[0]?.content[lang] ?? 'Отчет о результатах самообследования АНПОО "ДВЦНО" по годам'}
+                        <h2 className={styles.title}>{data?.sections?.report?.[0]?.content[lang]?.title ?? 'Отчет о результатах самообследования АНПОО "ДВЦНО" по годам'}
                         </h2>
 
                         <Image
@@ -80,7 +80,7 @@ const PageContent = ({ data }) => {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                        <h2 className={styles.title}>{data?.sections?.acts?.[0]?.content[lang] ?? 'Локально-нормативные акты АНПОО «ДВЦНО»'}
+                        <h2 className={styles.title}>{data?.sections?.acts?.[0]?.content[lang]?.title ?? 'Локально-нормативные акты АНПОО «ДВЦНО»'}
                         </h2>
 
                         <Image
@@ -113,7 +113,7 @@ const PageContent = ({ data }) => {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                        <h2 className={styles.title}>{data?.sections?.data_proccess?.[0]?.content[lang] ?? 'Графики оценочных процедур'}
+                        <h2 className={styles.title}>{data?.sections?.data_proccess?.[0]?.content[lang]?.title ?? 'Графики оценочных процедур'}
                         </h2>
 
                         <Image
@@ -141,7 +141,7 @@ const PageContent = ({ data }) => {
                 <div className='container'>
                     <div className={styles.title_wrapper}>
 
-                        <h2 className={styles.title}>{data?.sections?.orders?.[0]?.content[lang] ?? 'Предписания и отчеты об их устранении'}
+                        <h2 className={styles.title}>{data?.sections?.orders?.[0]?.content[lang]?.title ?? 'Предписания и отчеты об их устранении'}
                         </h2>
 
                         <Image
