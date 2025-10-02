@@ -149,15 +149,22 @@ const PageContent = ({ data }) => {
                 <div className="container">
                     <div className={styles.title_wrapper}>
                         <h2 className={styles.title}>{data?.sections?.count?.[0]?.content[lang]?.title ?? 'Численность обучающихся по программам'}
-                        </h2>
 
-                        <Image
+                        {/* <Image
                             className={styles.date}
                             src={date}
                             width={300}
                             height={100}
                             alt=''
-                        />
+                        /> */}
+                        
+                            {data?.sections?.count?.[0]?.content[lang]?.subtitle && data?.sections?.count?.[0]?.content[lang]?.subtitle != '' ? (
+                                <span className={`${styles.sticker} ${styles.text_white}`}>
+                                    {data?.sections?.count?.[0]?.content[lang]?.subtitle}
+                                </span>
+                            ) : ('')}
+                        </h2>
+
                         <Image
                             className={styles.decor2}
                             src={decor}

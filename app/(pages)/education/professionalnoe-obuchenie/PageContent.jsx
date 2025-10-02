@@ -144,7 +144,7 @@ export default function Page({ data }) {
                 <div className="container">
                     <div className={styles.acceptance_title_wrapper}>
                         <h2 className="title">{docsStart[0]?.content?.[lang]?.title}</h2>
-                        <div className={styles.title_sticker}>{docsStart[1]?.content?.[lang]}</div>
+                        <div className={styles.title_sticker}>{docsStart[0]?.content?.[lang]?.subtitle}</div>
                     </div>
 
                     <ul className={styles.document_list}>

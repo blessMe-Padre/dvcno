@@ -93,14 +93,20 @@ const PageContent = ({ data }) => {
 
                                             <VideoComponent data={item} />
 
-                                            <Image
+                                            {item.subtitle && item.subtitle != '' ? (
+                                                <span className={`${styles.sticker} ${styles.text_white}`}>
+                                                    {item.subtitle}
+                                                </span>
+                                            ) : ('')}
+
+                                            {/* <Image
                                                 className={styles.img_year}
                                                 src={process.env.NEXT_PUBLIC_API_SERVER + item.image}
                                                 width={120}
                                                 height={40}
                                                 objectFit='contain'
                                                 alt=''
-                                            />
+                                            /> */}
                                         </li>
                                     ))
                                 ) : (<p>Данные не загружены</p>)
