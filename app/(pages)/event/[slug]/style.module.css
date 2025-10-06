@@ -68,13 +68,15 @@
 
 .content ul li {
     list-style-type: disc;
+    list-style-position:inside;
 }
 .content table {
     border-collapse: initial;
 }
+
 .content table td {
     border: 1px solid #757f99;
-    padding: 3px;
+    /* padding: 3px; */
 }
 .content a {
     text-decoration: underline;

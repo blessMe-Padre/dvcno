@@ -104,3 +104,9 @@
         padding: 0px 0;
     }
 }
+
+@media screen and (max-width: 1380px) {
+    .tabs_btn {
+        min-width: auto;
+    }
+}

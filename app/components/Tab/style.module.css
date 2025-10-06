@@ -1,15 +1,23 @@
 .tab_content {
     /* display: none; */
-    padding: 6px 12px;
+    padding: 0px 12px;
     border-top: none;
 }
 
 .tab_content iframe {
     border-radius: 30px;
+    width: 100%;
+    border: 3px solid #999;
+    height: 517px;
 }
 
 @media screen and (max-width: 480px) {
     .tab_content iframe {
-        width: 350px !important;
+        /* width: 350px !important; */
+        width: 100% !important;
     }
+
+    .tab_content {
+        padding: 20px 0px;
+    }  
 }

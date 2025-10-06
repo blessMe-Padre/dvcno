@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ALLOWED_TAGS = new Set([
-    'div', 'span', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'br', 'img',
+    'div', 'span', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'img',
     'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
 ]);
 
