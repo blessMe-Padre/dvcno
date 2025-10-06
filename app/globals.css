@@ -431,3 +431,7 @@ figure.image-style-align-right img {
   justify-content: center;
   margin-top: 20px;
 }
+
+figure.table {
+  overflow-x: auto;
+}
