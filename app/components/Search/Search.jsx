@@ -5,6 +5,7 @@ import styles from "./style.module.css";
 import Link from 'next/link';
 import useLangStore from '@/app/store/languageStore';
 
+
 import { useRouter } from 'next/navigation';
 
 //   const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/live_search?value=${encodeURIComponent(inputValue)}`;
@@ -103,6 +104,10 @@ export default function Search() {
         return () => clearTimeout(debounceTimeout.current)
     }, [inputValue])
 
+    const placeholder = lang === 'ru' ? 'Поиск' : 'Search';
+    const buttonText = lang === 'ru' ? 'Найти' : 'Search';
+    const continueText = lang === 'ru' ? 'Начните печатать' : 'Continue typing';
+
     return (
         <>
             <div className={styles.wrapper}>
@@ -114,7 +119,7 @@ export default function Search() {
                     onKeyUp={handleKeyUp}
                     onBlur={() => setTimeout(() => setIsFocused(false), 1000)} // задержка, чтобы кликнуть по элементу
                     className={styles.input}
-                    placeholder='Поиск'
+                    placeholder={placeholder}
                 />
 
                 <button
@@ -130,13 +135,13 @@ export default function Search() {
                 </button>
 
                 <button className={styles.submit} type="submit" onClick={handleSearchSubmit}>
-                    Найти
+                    {buttonText}
                 </button>
             </div>
             {
                 isFocused && (
                     <ul className={styles.list}>
-                        {inputValue.trim() === '' && <li>Начните печатать</li>}
+                        {inputValue.trim() === '' && <li>{continueText}</li>}
                         {loading && <span className="loader loader-search"></span>}
                         {!loading && dataList.length === 0 && inputValue.trim() !== '' && (
                             <li>Ничего не найдено</li>

@@ -1,6 +1,10 @@
 import Image from "next/image";
 import styles from "./location.module.css";
+import useLangStore from '@/app/store/languageStore';
 export default function City() {
+    const { lang } = useLangStore();
+
+    const cityText = lang === 'ru' ? 'Владивосток' : lang === 'en' ? 'Vladivostok' : 'Vladivostok';
     return (
         <div className={styles.location}>
             <Image
@@ -10,7 +14,7 @@ export default function City() {
                 width={16}
                 height={21}
             />
-            <p className={styles.city}>Владивосток</p>
+            <p className={styles.city}>{cityText}</p>
         </div>
     )
 }

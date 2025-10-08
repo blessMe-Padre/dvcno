@@ -3,12 +3,21 @@ import styles from './style.module.css';
 import { useState } from 'react';
 import { useId } from 'react';
 
-export const Form = ({ setActive }) => {
+export const Form = ({ setActive, lang = 'ru' }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState();
     const [sending, isSending] = useState(false);
     const id = useId();
+
+    const titleText = lang === 'ru' ? 'У вас есть вопросы?' : 'Do you have any questions?';
+    const subtitleText = lang === 'ru' ? 'Задайте их нашим специалистам' : 'Ask our specialists';
+    const nameText = lang === 'ru' ? 'ФИО' : 'Name';
+    const emailText = lang === 'ru' ? 'Электронная почта / номер телефона' : 'Email / Phone';
+    const descriptionText = lang === 'ru' ? 'Ваш запрос' : 'Your request';
+    const questionText = lang === 'ru' ? 'Задать вопрос' : 'Ask a question';
+    const policyText = lang === 'ru' ? 'Пользуясь нашими услугами, вы подтверждаете, что прочитали и полностью согласны с этим документом: ' : 'By using our services, you confirm that you have read and fully agree with this document:';
+    const policyLinkText = lang === 'ru' ? 'Пользовательское Соглашение' : 'User Agreement';
 
     const url = `${process.env.NEXT_PUBLIC_API_SERVER}/api/ajax/sendMail`;
 
@@ -51,10 +60,10 @@ export const Form = ({ setActive }) => {
             className={styles.form}
             onSubmit={handleSubmit(onSubmit)}
         >
-            <p className={styles.form__title}>У вас есть вопросы?</p>
-            <p className={styles.form__subtitle}>Задайте их нашим специалистам</p>
+            <p className={styles.form__title}>{titleText}</p>
+            <p className={styles.form__subtitle}>{subtitleText}</p>
 
-            <label className={styles.form__label}>ФИО</label>
+            <label className={styles.form__label}>{nameText}</label>
             <div className={styles.input_wrapper}>
                 <input
                     {...register('name', { required: { value: true, message: 'Заполните имя' } })}
@@ -65,7 +74,7 @@ export const Form = ({ setActive }) => {
                 <div className={styles.input_text_error}>{errors['name'] && errors['name'].message}</div>
             </div>
             <div className={styles.input_wrapper}>
-                <label className={styles.form__label}>Электронная почта / номер телефона</label>
+                <label className={styles.form__label}>{emailText}</label>
                 <input
                     {...register('contact-data', { required: { value: true, message: 'Заполните почту/телефон' } })}
                     error={errors.name}
@@ -75,7 +84,7 @@ export const Form = ({ setActive }) => {
                 <div className={styles.input_text_error}>{errors['contact-data'] && errors['contact-data'].message}</div>
             </div>
             <div className={styles.input_wrapper}>
-                <label className={styles.form__label}>Ваш запрос</label>
+                <label className={styles.form__label}>{descriptionText}</label>
                 <textarea
                     {...register('description', { required: { value: true, message: 'Напишите Ваш запрос' } })}
                     error={errors.name}
@@ -96,7 +105,7 @@ export const Form = ({ setActive }) => {
             }
 
             <button className={styles.form__btn__submit}>
-                <p>Задать вопрос</p>
+                <p>{questionText}</p>
 
 
                 {!sending &&
@@ -122,8 +131,7 @@ export const Form = ({ setActive }) => {
                     className={`${styles.label} ${errors['policy'] ? styles.error : ''}`}
                     htmlFor={id}>
                 </label>
-                <p className={styles.policy_text}>Пользуясь нашими услугами, вы подтверждаете, что прочитали
-                    и полностью согласны с этим документом: <a href="#"> Пользовательское Соглашение</a></p>
+                <p className={styles.policy_text}>{policyText} <a href="/processing-of-personal-data"> {policyLinkText}</a></p>
                 <div className={styles.policy_error}>{errors['policy'] && errors['policy'].message}</div>
             </div >
         </form>

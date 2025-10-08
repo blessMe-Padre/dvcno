@@ -1,11 +1,13 @@
+'use client'
 import React from "react";
 import styles from './style.module.css';
 import { Form } from "../Form/Form";
-
+import useLangStore from '@/app/store/languageStore';
 
 
 export default function Popup({ active, setActive }) {
 
+    const { lang } = useLangStore();
 
     // const [opened, setOpened] = useState();
 
@@ -14,19 +16,19 @@ export default function Popup({ active, setActive }) {
             setActive(false);
         }
     }
-  
+
     return (
 
-        <div 
+        <div
             className={`${styles.popup} ${active ? styles.popupActive : styles.popupNone}`}
             onClick={() => { setActive(false) }}
             onKeyDown={handleKeyDown}
             tabIndex={0}
         >
             <div className={styles.popup__body}>
-                
-                <div 
-                    className={styles.popup__content} 
+
+                <div
+                    className={styles.popup__content}
                     onClick={e => e.stopPropagation()}
                 >
 
@@ -41,7 +43,7 @@ export default function Popup({ active, setActive }) {
                         </svg>
                     </button>
 
-                    <Form setActive={setActive} />
+                    <Form setActive={setActive} lang={lang} />
                 </div>
             </div>
         </div>

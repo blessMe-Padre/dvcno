@@ -126,6 +126,13 @@ const Footer = () => {
         }
     })
 
+    const questionText = lang === 'ru' ? 'Задать вопрос' : 'Ask a question';
+    const contactsText = lang === 'ru' ? 'Контакты' : 'Contacts';
+    const addressText = lang === 'ru' ? 'г. Владивосток, ул. Гоголя, 41' : 'Vladivostok, Gogol Street, 41';
+    const addressLinkText = lang === 'ru' ? 'Посмореть на карте' : 'View on the map';
+    const policyText = lang === 'ru' ? 'Политика конфиденциальности' : 'Privacy policy';
+    const nameText = lang === 'ru' ? 'Дальневосточный центр непрерывного образования' : 'Far Eastern Center for Continuing Education';
+
     return (
         <footer className={styles.footer}>
             <div className={`${styles.footer_content} container`}>
@@ -144,7 +151,7 @@ const Footer = () => {
                         <button className={styles.modal_button}
                             onClick={() => setPopupActive(true)}
                         >
-                            Задать вопрос
+                            {questionText}
                         </button>
 
                         <Popup active={popupActive} setActive={setPopupActive} />
@@ -165,7 +172,7 @@ const Footer = () => {
 
                     <div className={styles.footer_contacts}>
                         <div>
-                            <p className={styles.info_title}>Контакты</p>
+                            <p className={styles.info_title}>{contactsText}</p>
                         </div>
                         <div>
                             <a className={styles.info} href="tel:+74232150005">8 423 215-00-05 </a>
@@ -174,25 +181,22 @@ const Footer = () => {
                             <a className={styles.info} href="mailto:dvcno-vl@dvcno.ru">dvcno-vl@dvcno.ru</a>
                         </div>
                         <div>
-                            <p>г. Владивосток, ул. Гоголя, 41,</p>
+                            <p>{addressText}</p>
                         </div>
                         <div>
-                            <a href="https://yandex.ru/maps/-/CHtVMW9f" target="_blank" style={{ color: '#FFB236', textDecoration: 'underline' }}>Посмореть на карте</a>
+                            <a href="https://yandex.ru/maps/-/CHtVMW9f" target="_blank" style={{ color: '#FFB236', textDecoration: 'underline' }}>{addressLinkText}</a>
                         </div>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
-                    <div>
-                        <p>
-                            Дальневосточный центр непрерывного образования 2012 — {new Date().getFullYear()}
-                        </p>
-                    </div>
-
+                    <p>
+                        {nameText} 2012 — {new Date().getFullYear()}
+                    </p>
 
                     <div className={styles.bottom_content}>
                         <Link href="/processing-of-personal-data">
-                            Политика конфиденциальности
+                            {policyText}
                         </Link>
 
                         {/* <Link href="/">
