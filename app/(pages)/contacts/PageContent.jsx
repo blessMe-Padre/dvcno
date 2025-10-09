@@ -10,7 +10,7 @@ const languages = {
     ch: '聯絡方式'
 };
 
-const PageContent = ({ data }) => {
+const PageContent = ({ data, dict }) => {
     const { lang } = useLangStore();
     const data_contacts = data?.sections?.header?.[1]?.content[lang];
 
@@ -25,14 +25,14 @@ const PageContent = ({ data }) => {
                     <AnimateElement element="h2" className={styles.title}>
                         {data?.sections?.header?.[0]?.content[lang]?.title ?? 'Контакты'}
                     </AnimateElement>
-                    <ContactsList data={data_contacts} />
+                    <ContactsList data={data_contacts} dict={dict} />
                 </div>
             </section>
 
             <section className={styles.section}>
                 <div className="container">
                     <h2 className={styles.title}>Схема проезда</h2>
-                    <ComponentMap />
+                    <ComponentMap data={data} />
                 </div>
             </section>
         </>

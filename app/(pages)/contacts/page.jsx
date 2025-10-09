@@ -9,8 +9,9 @@ export const metadata = {
 
 export default async function page() {
     const data = await fetchApiServerData('pages/contacts');
+    const dict = await fetchApiServerData('dictionaries/headers_pages');
 
     return (
-        <PageContent data={data.data} />
+        <PageContent data={data.data} dict={dict.data} />
     )
 }

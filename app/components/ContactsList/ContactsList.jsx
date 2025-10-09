@@ -8,11 +8,13 @@ import { AnimateElement } from "@/app/components";
 import Link from 'next/link';
 
 import styles from './style.module.css';
+import useLangStore from '@/app/store/languageStore';
 
 const backgrounds = ['purple', 'light_blue', 'green', 'violet', 'light_blue', 'yellow', 'green'];
 const checkBackground = (index) => backgrounds[index % backgrounds.length];
 
-const ContactsList = ({ data }) => {
+const ContactsList = ({ data, dict }) => {
+    const { lang } = useLangStore();
     const [activeLink, setActiveLink] = useState(null);
     const handleChange = (e) => {
         setActiveLink(e.target);
@@ -133,8 +135,6 @@ const ContactsList = ({ data }) => {
                                 break;
                         }
                     })
-
-                    console.log('linksRender', linksRender);
                     return (
                         < AnimateElement element="li" key={index} className={styles.contact_item} >
                             <div key={index} className={styles.contact_item} id={`contact-${index}`}>
@@ -159,7 +159,7 @@ const ContactsList = ({ data }) => {
                                                 </svg>
                                             </div>
                                             <div>
-                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>Сайт</p>
+                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>{dict?.site?.[lang]}</p>
                                                 <a href={item.site} target="_blank"><p style={{ fontWeight: '600' }}>{item.site}</p></a>
                                             </div>
                                         </div>
@@ -178,7 +178,7 @@ const ContactsList = ({ data }) => {
                                             </div>
 
                                             <div>
-                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>График работы:</p>
+                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>{dict?.shedule?.[lang]}:</p>
                                                 <p style={{ fontWeight: '600' }} dangerouslySetInnerHTML={{ __html: item.shedule }}></p>
                                             </div>
                                         </div>
@@ -196,7 +196,7 @@ const ContactsList = ({ data }) => {
                                             </div>
 
                                             <div>
-                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>Адрес</p>
+                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>{dict?.address?.[lang]}</p>
                                                 <p style={{ fontWeight: '600' }}>{item.address}</p>
                                             </div>
                                         </div>
@@ -220,7 +220,7 @@ const ContactsList = ({ data }) => {
                                                 </svg>
                                             </div>
                                             <div>
-                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>Tелефон</p>
+                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>{dict?.phones?.[lang]}</p>
                                                 <div dangerouslySetInnerHTML={{ __html: item.phones }} />
                                             </div>
                                         </div>
@@ -238,22 +238,23 @@ const ContactsList = ({ data }) => {
                                                 </svg>
                                             </div>
                                             <div>
-
-                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>Электронная почта</p>
+                                                <p style={{ marginBottom: '5px', color: '#757f99' }}>{dict?.emails?.[lang]}</p>
                                                 <div dangerouslySetInnerHTML={{ __html: item.emails }} />
                                             </div>
                                         </div>
                                     </li>
 
-                                    <li className={styles.info_item}>
-                                        <div className={styles.info_item_socials}>
-                                            <p style={{ fontWeight: '600', marginBottom: '5px' }}>Мы в социльных сетях</p>
+                                    {item.social && item.social.length > 0 && (
+                                        <li className={styles.info_item}>
+                                            <div className={styles.info_item_socials}>
+                                                <p style={{ fontWeight: '600', marginBottom: '5px' }}>{dict?.socials?.[lang]}</p>
 
-                                            <div className={`${styles.socials_btn} ${styles.wrapper_svg}`}>
-                                                {linksRender}
+                                                <div className={`${styles.socials_btn} ${styles.wrapper_svg}`}>
+                                                    {linksRender}
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    )}
                                 </ul>
                             </div>
                         </AnimateElement>

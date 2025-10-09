@@ -1,6 +1,7 @@
 .tabs_wrapper {
     display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 20px;
     margin-bottom: 40px;
 }
 

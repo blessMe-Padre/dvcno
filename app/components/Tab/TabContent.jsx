@@ -4,11 +4,8 @@ import Image from 'next/image';
 
 import placeholder from '../../../public/placeholder/placeholder.svg'
 
-const TabContent = ({ title, content, link, placeholder }) => (
-
-
+const TabContent = ({ link }) => (
   <div className={styles.tab_content}>
-
     {link && link.length > 0 ? (
       <iframe
         src={link}
