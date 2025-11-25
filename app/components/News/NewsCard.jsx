@@ -14,6 +14,8 @@ const NewsCard = ({ data, isSlide = true }) => {
     const { lang } = useLangStore();
     const paddingClass = isSlide ? '' : styles.padding_off;
 
+    console.log(data);
+
     return (
         <div className={`${styles.card} ${paddingClass} anim_hover_card`}>
             <div className={styles.card_img}>
@@ -31,17 +33,15 @@ const NewsCard = ({ data, isSlide = true }) => {
                         (
                             data?.images?.map((image, index) => (
                                 <SwiperSlide key={index}>
-                                    {image?.slide && (
-                                        <Image
-                                            src={image.slide ? process.env.NEXT_PUBLIC_API_SERVER + image.slide : '/placeholder/placeholder.svg'}
-                                            width={500}
-                                            height={300}
-                                            objectFit='contain'
-                                            className={`${styles.image} dsv-image`}
-                                            style={{ background: 'gray' }}
-                                            alt='news_img'
-                                        />
-                                    )}
+                                    <Image
+                                        src={image.slide !== null ? process.env.NEXT_PUBLIC_API_SERVER + image.slide : '/placeholder/placeholder.svg'}
+                                        width={500}
+                                        height={300}
+                                        objectFit='contain'
+                                        className={`${styles.image} dsv-image`}
+                                        style={{ background: 'gray' }}
+                                        alt='news_img'
+                                    />
                                 </SwiperSlide>
                             ))
                         )
@@ -55,7 +55,6 @@ const NewsCard = ({ data, isSlide = true }) => {
                             style={{ background: 'gray' }}
                             alt='news_img'
                         />)
-
                     }
 
                 </Swiper>

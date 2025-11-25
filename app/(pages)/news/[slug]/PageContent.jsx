@@ -25,7 +25,6 @@ const languages = {
 const PageContent = ({ page }) => {
     const { lang } = useLangStore();
 
-
     if (Array.isArray(page) && page.length === 0) {
         notFound();
     }
@@ -66,12 +65,12 @@ const PageContent = ({ page }) => {
                     className='rounded-30'
                     speed={1500}
                 >
-                    {imagesList && imagesList.length > 0 && imagesList[0]?.slide ? (
+                    {imagesList && imagesList.length > 0 ? (
                         imagesList?.map((item, index) => (
                             <SwiperSlide index={index} className="rounded-30">
                                 <div className={styles.image_wrapper}>
                                     <Image
-                                        src={process.env.NEXT_PUBLIC_API_SERVER + page?.images[0]?.slide}
+                                        src={item?.slide !== null ? process.env.NEXT_PUBLIC_API_SERVER + item?.slide : '/placeholder/placeholder.svg'}
                                         alt='image'
                                         width={1460}
                                         height={650}
