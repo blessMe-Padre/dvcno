@@ -4,12 +4,11 @@ import Link from "next/link";
 import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 export default function Card({ image, link = '#', description, }) {
-
     return (
         <div className={`${styles.card} anim_hover_card`}>
             <div className={styles.image_wrapper}>
                 <Image
-                    src={image ? process.env.NEXT_PUBLIC_API_SERVER + image : '/placeholder/placeholder.svg'}
+                    src={image ? process.env.NEXT_PUBLIC_API_SERVER + '/' + image : '/placeholder/placeholder.svg'}
                     alt="фото"
                     fill
                     sizes="100%"

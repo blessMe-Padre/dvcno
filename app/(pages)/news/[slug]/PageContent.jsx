@@ -15,6 +15,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+
 const languages = {
     ru: 'Новости',
     en: 'News',
@@ -23,6 +24,7 @@ const languages = {
 
 const PageContent = ({ page }) => {
     const { lang } = useLangStore();
+
 
     if (Array.isArray(page) && page.length === 0) {
         notFound();
@@ -64,12 +66,12 @@ const PageContent = ({ page }) => {
                     className='rounded-30'
                     speed={1500}
                 >
-                    {imagesList && imagesList.length > 0 ? (
+                    {imagesList && imagesList.length > 0 && imagesList[0]?.slide ? (
                         imagesList?.map((item, index) => (
                             <SwiperSlide index={index} className="rounded-30">
                                 <div className={styles.image_wrapper}>
                                     <Image
-                                        src={page?.images[0]?.slide ? process.env.NEXT_PUBLIC_API_SERVER + page?.images[0]?.slide : '/placeholder/placeholder.svg'}
+                                        src={process.env.NEXT_PUBLIC_API_SERVER + page?.images[0]?.slide}
                                         alt='image'
                                         width={1460}
                                         height={650}
@@ -78,8 +80,6 @@ const PageContent = ({ page }) => {
                                 </div>
                             </SwiperSlide>
                         ))
-                    ) : error ? (
-                        <p>Ошибка при загрузке данных</p>
                     ) : (
                         <p className="span-error-message">Загрузка...</p>
                     )}

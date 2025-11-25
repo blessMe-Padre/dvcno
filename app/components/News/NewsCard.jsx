@@ -42,7 +42,6 @@ const NewsCard = ({ data, isSlide = true }) => {
                                             alt='news_img'
                                         />
                                     )}
-                                    {!image.slide && <p>Image not available</p>}  { }
                                 </SwiperSlide>
                             ))
                         )
