@@ -34,7 +34,7 @@ const Footer = () => {
         fetchSocialLinks();
     }, []);
 
-    const linksRender = socialLinks.map((item) => {
+    const linksRender = socialLinks?.map((item) => {
         let name = item.name;
         let link = item.link;
 
