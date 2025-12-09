@@ -3,10 +3,10 @@ import styles from './style.module.css';
 import { Breadcrumbs, AnimateElement } from "@/app/components";
 import decor from '@/public/decor/image-1.png';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import decor2 from '@/public/info/svedenya/decor.svg';
 import decor3 from '@/public/info/decor_3.svg';
-
 import useLangStore from '@/app/store/languageStore';
 
 const languages = {
@@ -69,6 +69,34 @@ const PageContent = ({ data }) => {
     const bank_info = data?.sections?.bank?.[1]?.content[lang];
 
     const manager = data_svedenya.management_positions.split('<br />');
+
+    const bank_images = data?.sections?.bank?.[1]?.content[lang]?.images;
+    const bank_info_image_big = bank_images?.big;
+    const bank_info_image_medium = bank_images?.medium;
+    const bank_info_image_small = bank_images?.small;
+
+    console.log(bank_images);
+
+    const [isMobile, setIsMobile] = useState(false);
+    const [isTablet, setIsTablet] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            setIsMobile(width <= 768);
+            setIsTablet(width > 768 && width <= 1200);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const bankBackground = isMobile
+        ? (bank_info_image_small || bank_info_image_medium || bank_info_image_big)
+        : isTablet
+            ? (bank_info_image_medium || bank_info_image_big || bank_info_image_small)
+            : (bank_info_image_big || bank_info_image_medium || bank_info_image_small);
+
 
     return (
         <>
@@ -263,6 +291,7 @@ const PageContent = ({ data }) => {
                 </div>
             </section>
 
+
             <section className={styles.section}>
                 <div className='container relative'>
                     <h2 className={styles.title}>{data?.sections?.bank?.[0]?.content[lang]?.title ?? 'Банковские реквизиты АНПОО «ДВЦНО»'}</h2>
@@ -275,7 +304,15 @@ const PageContent = ({ data }) => {
                         alt=''
                     />
 
-                    <div className={styles.bank_info}>
+                    <div
+                        className={styles.bank_info}
+                        style={bankBackground ? {
+                            backgroundImage: `url(${process.env.NEXT_PUBLIC_API_SERVER}${bankBackground})`,
+                            backgroundSize: 'cover',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center'
+                        } : undefined}
+                    >
                         <p className={styles.bank_name} dangerouslySetInnerHTML={{ __html: bank_info?.title }} />
                         <div dangerouslySetInnerHTML={{ __html: bank_info?.content }}></div>
                     </div>

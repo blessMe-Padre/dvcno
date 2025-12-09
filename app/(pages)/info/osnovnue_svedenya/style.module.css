@@ -36,6 +36,20 @@
     gap: 20px;
 }
 
+@media screen and (max-width: 769px) {
+    .list_svedenya_four {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .list_svedenya_four {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 .svedenya_info_second {
     color: var(--black);
     margin-bottom: 20px;
@@ -70,10 +84,6 @@
 
 .bank_info {
     position: relative;
-    background-image: url(../../../../public/info/svedenya/bank_info_b.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-
     padding: 60px;
 
     min-height: 500px;
@@ -275,7 +285,7 @@
     }
 
     .bank_info {
-        padding: 15px 0;
+        padding: 15px;
         background-image: url(../../../../public/info/svedenya/bank_info_s.png);
         background-size: contain;
         height: 100vh;
