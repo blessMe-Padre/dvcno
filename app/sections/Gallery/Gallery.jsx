@@ -25,6 +25,8 @@ function Gallery() {
     const [data, setData] = useState();
     const [error, setError] = useState(false);
 
+    console.log(data);
+
     useEffect(() => {
         const fetchData = async () => {
             const result = await fetchApiServerData('pages/main');
@@ -75,26 +77,28 @@ function Gallery() {
                                 className="swiper-mobile"
                             >
                                 {data?.[1]?.content?.ru.map((image, index) => (
-                                    <SwiperSlide key={index}>
-                                        <a
-                                            href={process.env.NEXT_PUBLIC_API_SERVER + image.image}
-                                            data-pswp-width={708}
-                                            data-pswp-height={450}
-                                            key={'#main-gallery' + '-' + 1}
-                                            target='_blank'
-                                            rel="noreferrer"
-                                            className={`${styles.img_wrapper} dsv-image`}
-                                        >
-                                            {/* <img src={image.largeURL} alt="image" width={'100%'} height={'100%'} /> */}
-                                            <Image
-                                                className={styles.gallery_img}
-                                                src={process.env.NEXT_PUBLIC_API_SERVER + image.image}
-                                                alt="image"
-                                                width={708}
-                                                height={450}
-                                            />
-                                        </a>
-                                    </SwiperSlide>
+                                    image.image && (
+                                        <SwiperSlide key={index}>
+                                            <a
+                                                href={process.env.NEXT_PUBLIC_API_SERVER + image.image}
+                                                data-pswp-width={708}
+                                                data-pswp-height={450}
+                                                key={'#main-gallery' + '-' + 1}
+                                                target='_blank'
+                                                rel="noreferrer"
+                                                className={`${styles.img_wrapper} dsv-image`}
+                                            >
+                                                {/* <img src={image.largeURL} alt="image" width={'100%'} height={'100%'} /> */}
+                                                <Image
+                                                    className={styles.gallery_img}
+                                                    src={process.env.NEXT_PUBLIC_API_SERVER + image.image}
+                                                    alt="image"
+                                                    width={708}
+                                                    height={450}
+                                                />
+                                            </a>
+                                        </SwiperSlide>
+                                    )
                                 ))}
                                 <SwiperNavButtons addClass="swiper_nav_btns shadows_nav" />
                             </Swiper>
