@@ -14,8 +14,6 @@ const NewsCard = ({ data, isSlide = true }) => {
     const { lang } = useLangStore();
     const paddingClass = isSlide ? '' : styles.padding_off;
 
-    console.log(data);
-
     return (
         <div className={`${styles.card} ${paddingClass} anim_hover_card`}>
             <div className={styles.card_img}>

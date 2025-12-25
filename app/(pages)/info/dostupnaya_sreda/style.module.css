@@ -25,7 +25,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
-    margin-bottom: 120px;
+    margin-bottom: 40px;
 }
 
 .title_wrapper {
@@ -92,4 +92,29 @@
         grid-template-columns: 1fr;
         gap: 25px;
     }
+}
+
+.document_section_title {
+    margin-bottom: 20px;
+}
+
+.document_section_subtitle {
+    margin-bottom: 20px;
+}
+
+.document_item_sreda {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.document_item_sreda a {
+    font-weight: 700;
+    color: var(--violet);
+    text-decoration: underline;
+}
+
+.document_item_sreda span {
+    font-weight: 700;
+    color: var(--violet);
 }
