@@ -106,7 +106,7 @@ const PageContent = ({ data }) => {
                                 :
                                 <span>{item?.title}</span>}
 
-                            <a href={item?.document} download target="_blank">Паспорт доступности</a>
+                            <a href={process.env.NEXT_PUBLIC_API_SERVER + item?.document} download target="_blank">Паспорт доступности</a>
                         </li>
                     ))}
                 </ul>
