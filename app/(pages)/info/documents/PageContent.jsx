@@ -14,8 +14,6 @@ import useLangStore from '@/app/store/languageStore';
 
 const PageContent = ({ data }) => {
 
-    console.log('data', data);
-
     const { lang } = useLangStore();
 
     const data_docs = data?.sections?.documents?.[1]?.content[lang]?.list;

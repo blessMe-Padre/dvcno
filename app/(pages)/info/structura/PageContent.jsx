@@ -26,7 +26,6 @@ const PageContent = ({ data }) => {
     const data_director = data?.sections?.manager?.[1]?.content[lang];
     const data_division = data?.sections?.structure?.[1]?.content[lang];
     const data_manager = data?.sections?.departments?.[1]?.content[lang];
-    console.log(data_division);
 
     return (
         <section className={styles.section}>

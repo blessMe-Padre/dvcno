@@ -25,8 +25,6 @@ function Gallery() {
     const [data, setData] = useState();
     const [error, setError] = useState(false);
 
-    console.log(data);
-
     useEffect(() => {
         const fetchData = async () => {
             const result = await fetchApiServerData('pages/main');

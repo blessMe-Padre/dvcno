@@ -42,18 +42,12 @@ export default function Why() {
                     </li>
                     <li className={`${styles.item} anim_hover_card`}>
                         <Image
-                            src="/why/main-bg.png"
+                            src={`${process.env.NEXT_PUBLIC_API_SERVER}/${data?.[1]?.content?.[lang]?.[1]?.image}`}
                             alt="Компетентность педагогических кадров"
                             width={460}
                             height={550}
                             className={`${styles.main_img} dsv-image`}
-                        />
-                        <Image
-                            src="/why/main-bg-mobile.png"
-                            alt="Компетентность педагогических кадров"
-                            width={320}
-                            height={208}
-                            className={`${styles.main_img_mobile} dsv-image`}
+                            loading="lazy"
                         />
                     </li>
                     <li className={`${styles.item} anim_hover_card`}>

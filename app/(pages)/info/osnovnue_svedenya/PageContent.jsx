@@ -75,8 +75,6 @@ const PageContent = ({ data }) => {
     const bank_info_image_medium = bank_images?.medium;
     const bank_info_image_small = bank_images?.small;
 
-    console.log(bank_images);
-
     const [isMobile, setIsMobile] = useState(false);
     const [isTablet, setIsTablet] = useState(false);
 

@@ -18,7 +18,6 @@ const languages2 = {
 };
 
 const PageContent = ({ data }) => {
-    console.log(data);
     const { lang } = useLangStore();
     const educationPages = data?.sections?.section?.[0]?.content?.[lang];
     const electronic_libraries = data?.sections?.electronic_libraries;

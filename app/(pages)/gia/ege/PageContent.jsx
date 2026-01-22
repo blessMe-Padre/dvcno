@@ -26,8 +26,6 @@ export default function Page({ data }) {
         ch: '奧格'
     };
 
-    console.log(total_list_videos);
-
     return (
         <div className="container">
             <Breadcrumbs

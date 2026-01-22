@@ -8,7 +8,6 @@ import useLangStore from '@/app/store/languageStore';
 export default function Page({ data }) {
     const { lang } = useLangStore();
 
-    console.log(data);
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const main1_header = data?.sections?.main[0]?.content?.[lang]?.title;
     const list_links = data?.sections?.main[1]?.content?.[lang]?.list;
@@ -40,7 +39,7 @@ export default function Page({ data }) {
                 />
 
                 <section className={`${styles.hero} section-dsv`}>
-                    <h1 className={`title title-black`}><div dangerouslySetInnerHTML={{ __html: banner.title ?? "Педагогам"}}/></h1>
+                    <h1 className={`title title-black`}><div dangerouslySetInnerHTML={{ __html: banner.title ?? "Педагогам" }} /></h1>
 
                     <div className={styles.document_wrapper}>
                         <ul className={styles.banner_list}>

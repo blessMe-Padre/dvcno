@@ -54,10 +54,6 @@
     border-radius: 30px;
 }
 
-.main_img_mobile {
-    display: none !important;
-}
-
 .subtile {
     font-weight: 700;
     font-size: clamp(0.75em, 0.179em + 1.19vw, 1.25em);
@@ -152,10 +148,6 @@
     .item_img {
         top: 20px;
         right: 20px;
-    }
-
-    .main_img {
-        display: none;
     }
 
     .main_img_mobile {
