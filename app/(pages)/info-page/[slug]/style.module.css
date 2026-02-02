@@ -19,7 +19,6 @@
 .content p,
 .content li {
     margin: 10px 0;
-
 }
 
 .content table {
@@ -46,4 +45,14 @@
 .content th {
     font-weight: 600;
     color: #171717;
+}
+
+.content a {
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.content a:hover {
+    text-decoration: none;
+    color: var(--green);
 }
