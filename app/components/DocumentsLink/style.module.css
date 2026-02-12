@@ -23,6 +23,9 @@
     transition: fill var(--anim-function);
 }
 
+.background_white {
+    background-color: var(--white);
+}
 
 .document_link:hover svg path {
     fill: var(--white);

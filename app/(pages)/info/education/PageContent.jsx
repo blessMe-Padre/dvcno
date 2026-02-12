@@ -8,7 +8,7 @@ import Image from 'next/image';
 import decor from '@/public/info/education/decor_5.png';
 import decor_icon from '@/public/info/education/decor_icon.svg';
 
-import { Breadcrumbs, DocumentComponent } from '@/app/components';
+import { Breadcrumbs, DocumentLinkComponent, DocumentComponent } from '@/app/components';
 import date from '@/public/info/education/date.png';
 
 const languages = {
@@ -26,8 +26,10 @@ const PageContent = ({ data }) => {
     const { lang } = useLangStore();
     const data_education = data?.sections?.education?.[1]?.content[lang];
     const data_programs = data?.sections?.programs?.[1]?.content[lang];
-    const data_calendars = data?.sections?.graph?.[1]?.content[lang]?.list;
+    const data_calendars = data?.sections?.graph?.[1]?.content[lang];
     const data_amount = data?.sections?.count?.[2]?.content[lang]?.list;
+
+    console.log(data_programs);
 
     return (
         <>
@@ -91,7 +93,7 @@ const PageContent = ({ data }) => {
                                     <div>
                                         <Image
                                             className='dsv-image'
-                                            src={process.env.NEXT_PUBLIC_API_SERVER + item.image}
+                                            src={item.image ? process.env.NEXT_PUBLIC_API_SERVER + item.image : '/placeholder/placeholder.svg'}
                                             width={280}
                                             height={220}
                                             alt=''
@@ -136,7 +138,7 @@ const PageContent = ({ data }) => {
                     <div className={styles.documents_list}>
                         {data_calendars && data_calendars.length > 0 ? (
                             data_calendars.map((item, index) => (
-                                <DocumentComponent key={index} link={item.document} title={item.title} background={'white'} />
+                                <DocumentLinkComponent key={index} link={item.link} title={item.title} background={'white'} />
                             ))
                         ) :
                             (<p>Ошибка при получении данных</p>)
@@ -149,15 +151,6 @@ const PageContent = ({ data }) => {
                 <div className="container">
                     <div className={styles.title_wrapper}>
                         <h2 className={styles.title}>{data?.sections?.count?.[0]?.content[lang]?.title ?? 'Численность обучающихся по программам'}
-
-                        {/* <Image
-                            className={styles.date}
-                            src={date}
-                            width={300}
-                            height={100}
-                            alt=''
-                        /> */}
-                        
                             {data?.sections?.count?.[0]?.content[lang]?.subtitle && data?.sections?.count?.[0]?.content[lang]?.subtitle != '' ? (
                                 <span className={`${styles.sticker} ${styles.text_white}`}>
                                     {data?.sections?.count?.[0]?.content[lang]?.subtitle}

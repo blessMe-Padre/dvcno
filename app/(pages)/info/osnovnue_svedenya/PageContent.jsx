@@ -256,7 +256,8 @@ const PageContent = ({ data }) => {
                                 </div>
 
                                 <a
-                                    href={item.link ? item.link : '/'}
+                                    target='_blank'
+                                    href={item.link_to_place ? item.link_to_place : '/'}
                                     className={styles.link}
                                 >Посмотреть на карте</a>
                             </AnimateElement>

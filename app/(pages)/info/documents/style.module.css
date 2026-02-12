@@ -31,11 +31,6 @@
     padding: 100px 0 0px 0px;
 }
 
-.section_custom {
-    padding: 100px 0 100px 0 !important;
-}
-
-
 .bg_gray {
     background-color: var(--gray);
     border-radius: 30px;

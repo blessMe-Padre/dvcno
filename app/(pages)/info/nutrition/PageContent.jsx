@@ -21,7 +21,7 @@ const languages2 = {
 const PageContent = ({ data }) => {
     const { lang } = useLangStore();
     const educationPages = data?.sections?.main?.[1]?.content[lang];
-    const data_documents = data?.sections?.docs?.[1]?.content[lang]?.list;
+    // const data_documents = data?.sections?.docs?.[1]?.content[lang]?.list;
 
     return (
         <>
@@ -55,7 +55,7 @@ const PageContent = ({ data }) => {
                 </div>
             </section>
 
-            <section className={styles.section}>
+            {/* <section className={styles.section}>
                 <div className="container">
                     <h2 className={`title ${styles.title}`}>{data?.sections?.docs?.[0]?.content[lang]?.title ?? 'Документы'}</h2>
 
@@ -68,7 +68,7 @@ const PageContent = ({ data }) => {
                         ))}
                     </ul>
                 </div>
-            </section>
+            </section> */}
         </>
     )
 }
