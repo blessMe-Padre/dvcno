@@ -54,7 +54,7 @@
 }
 
 .section:last-of-type {
-    padding: 100px 0px;
+    /* padding: 100px 0px; */
 }
 
 .document_list {

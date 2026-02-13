@@ -36,7 +36,7 @@
 
 
 .section:not(:first-of-type) {
-    padding: 100px 0 0px 0px;
+    /* padding: 100px 0 0px 0px; */
 }
 
 .section_custom {
@@ -54,7 +54,7 @@
 }
 
 .section:last-of-type {
-    padding: 100px 0px;
+    /* padding: 100px 0px; */
 }
 
 .document_list {
