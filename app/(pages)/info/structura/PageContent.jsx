@@ -108,7 +108,16 @@ const PageContent = ({ data }) => {
 
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
 
-                                <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div>
+                                {
+                                    item.management_positions && item.management_positions.length > 0 && item.management_positions.map((item, index) => (
+                                        <div key={index} style={{ marginBottom: '10px' }}>
+                                            <p><strong>{item.position}:</strong></p>
+                                            <p>{item.name}:</p>
+                                        </div>
+                                    ))
+                                }
+
+
                                 <p><strong>Адрес:</strong></p>
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.address }}></div>
                                 <p><strong>Телефоны:</strong></p>
@@ -155,8 +164,15 @@ const PageContent = ({ data }) => {
                                 </div>
 
                                 <div className={styles.info}>
-                                    <p><strong>Начальник отдела:</strong></p>
-                                    <div dangerouslySetInnerHTML={{ __html: item.management_positions }} />
+                                    {
+                                        item.management_positions && item.management_positions.length > 0 && item.management_positions.map((item, index) => (
+                                            <div key={index} style={{ marginBottom: '10px' }}>
+                                                <p><strong>{item.position}:</strong></p>
+                                                <p>{item.name}:</p>
+                                            </div>
+                                        ))
+                                    }
+
                                     <p><strong>Адрес:</strong></p>
                                     <div dangerouslySetInnerHTML={{ __html: item.address }} />
                                     <p><strong>Телефон:</strong></p>

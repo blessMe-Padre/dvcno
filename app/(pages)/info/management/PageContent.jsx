@@ -21,10 +21,8 @@ const languages2 = {
     ch: '教育機構資訊'
 };
 
-
-const PageContent = ({ data }) => {
+const PageContent = ({ data, dictionary }) => {
     const { lang } = useLangStore();
-
     const data_director = data?.sections?.personal?.[1]?.content[lang];
     const data_division = data?.sections?.structure?.[1]?.content[lang];
     return (
@@ -67,7 +65,7 @@ const PageContent = ({ data }) => {
                                     <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.content }}></div>
 
                                     <a href={`mailto:${item.link}`} className={styles.link}>
-                                        <p style={{ color: '#fff' }}>Написать</p>
+                                        <p style={{ color: '#fff' }}>{dictionary?.buttons_pages?.write_to[lang]}</p>
                                         <Image src={arrow} width={15} height={15} alt='' />
                                     </a>
 
@@ -110,18 +108,26 @@ const PageContent = ({ data }) => {
                                         />
                                     </div>
 
-                                    <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.management_positions }}></div></p>
-                                    <p><strong>Адрес:</strong></p>
+                                    {
+                                        item.management_positions && item.management_positions.length > 0 && item.management_positions.map((item, index) => (
+                                            <div key={index} style={{ marginBottom: '10px' }}>
+                                                <p><strong>{item.position}:</strong></p>
+                                                <p>{item.name}:</p>
+                                            </div>
+                                        ))
+                                    }
+
+                                    <p><strong>{dictionary?.headers_pages?.address[lang]}:</strong></p>
                                     <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.address }}></div></p>
-                                    <p><strong>Телефоны:</strong></p>
+                                    <p><strong>{dictionary?.headers_pages?.phones[lang]}:</strong></p>
                                     <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.phones }}></div></p>
-                                    <p><strong>Email:</strong></p>
+                                    <p><strong>{dictionary?.headers_pages?.emails[lang]}:</strong></p>
                                     <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.emails }}></div></p>
-                                    <p><strong>Сайт:</strong></p>
+                                    <p><strong>{dictionary?.headers_pages?.site[lang]}:</strong></p>
                                     <p><div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.site }}></div></p>
 
                                     <a href={item.site} className={styles.link}>
-                                        <p style={{ color: '#fff' }}>Перейти на сайт</p>
+                                        <p style={{ color: '#fff' }}>{dictionary?.buttons_pages?.go_to_website[lang]}</p>
                                         <Image src={arrow} width={15} height={15} alt='' />
                                     </a>
                                 </li>
