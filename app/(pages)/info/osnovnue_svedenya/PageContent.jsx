@@ -68,7 +68,9 @@ const PageContent = ({ data }) => {
     const documents_data = data?.sections?.docs?.[1]?.content[lang];
     const bank_info = data?.sections?.bank?.[1]?.content[lang];
 
-    const manager = data_svedenya.management_positions.split('<br />');
+    // const manager = data_svedenya.management_positions.split('<br />');
+
+    console.log(data);
 
     const bank_images = data?.sections?.bank?.[1]?.content[lang]?.images;
     const bank_info_image_big = bank_images?.big;
@@ -198,8 +200,12 @@ const PageContent = ({ data }) => {
                         </li>
                         <li className={`${styles.svedenya_item} anim_hover_card`}>
                             <div>
-                                <h3 className={styles.svedenya_item_name}>{tileLanguages[6][lang]}</h3>
-                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: manager[0] }}></div>
+                                <h3 className={styles.svedenya_item_name}>
+                                    {`${data_svedenya.management_positions?.[0]?.position + ':' ?? tileLanguages[6][lang]}`}
+                                </h3>
+                                <div className={styles.svedenya_item_desc}>
+                                    <p>{data_svedenya.management_positions?.[0]?.name}</p>
+                                </div>
                             </div>
                             <Image
                                 className={`${styles.decor_svg} dsv-image`}
@@ -211,8 +217,12 @@ const PageContent = ({ data }) => {
                         </li>
                         <li className={`${styles.svedenya_item} anim_hover_card`}>
                             <div>
-                                <h3 className={styles.svedenya_item_name}>{tileLanguages[7][lang]}</h3>
-                                <div className={styles.svedenya_item_desc} dangerouslySetInnerHTML={{ __html: manager[1] }}></div>
+                                <h3 className={styles.svedenya_item_name}>
+                                    {`${data_svedenya.management_positions?.[1]?.position ? data_svedenya.management_positions?.[1]?.position + ':' : tileLanguages[7][lang]}`}
+                                </h3>
+                                <div className={styles.svedenya_item_desc}>
+                                    <p>{data_svedenya.management_positions?.[1]?.name}</p>
+                                </div>
                             </div>
                             <Image
                                 className={`${styles.decor_svg} dsv-image`}
