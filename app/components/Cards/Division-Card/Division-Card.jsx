@@ -65,7 +65,7 @@ export default function DivisionCard({ divisionData, lang }) {
 
                 <div>
                     <div className={styles.link_wrapper}>
-                        <a href={`https://${divisionData.site}`} className={styles.link} target="_blank">
+                        <a href={`${divisionData.site}`} className={styles.link} target="_blank">
                             <div className={`${styles.icon_wrapper}`}>
                                 <Image
                                     src="/icons/wold.svg"
@@ -92,7 +92,7 @@ export default function DivisionCard({ divisionData, lang }) {
                     </div>
 
                     <div className={styles.link_button_wrapper}>
-                        <a href={`https://${divisionData.site}`} className={styles.link_button}>
+                        <a href={divisionData.site ? `${divisionData.site}` : '#'} className={styles.link_button}>
                             <span>{goto_site[lang]}</span>
                             <Image
                                 src="/icons/link-arrow-white.svg"

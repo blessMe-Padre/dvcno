@@ -20,12 +20,14 @@ const languages2 = {
     ch: '教育機構資訊'
 };
 
-const PageContent = ({ data }) => {
+const PageContent = ({ data, slovar }) => {
     const { lang } = useLangStore();
 
     const data_director = data?.sections?.manager?.[1]?.content[lang];
     const data_division = data?.sections?.structure?.[1]?.content[lang];
     const data_manager = data?.sections?.departments?.[1]?.content[lang];
+
+    console.log(slovar);
 
     return (
         <section className={styles.section}>
@@ -112,19 +114,18 @@ const PageContent = ({ data }) => {
                                     item.management_positions && item.management_positions.length > 0 && item.management_positions.map((item, index) => (
                                         <div key={index} style={{ marginBottom: '10px' }}>
                                             <p><strong>{item.position}:</strong></p>
-                                            <p>{item.name}:</p>
+                                            <p>{item.name}</p>
                                         </div>
                                     ))
                                 }
 
-
-                                <p><strong>Адрес:</strong></p>
+                                <p><strong>{slovar?.address?.[lang] ?? 'Адрес:'}:</strong></p>
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.address }}></div>
-                                <p><strong>Телефоны:</strong></p>
+                                <p><strong>{slovar?.phones?.[lang] ?? 'Телефоны:'}:</strong></p>
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.phones }}></div>
-                                <p><strong>Email:</strong></p>
+                                <p><strong>{slovar?.emails?.[lang] ?? 'Email:'}:</strong></p>
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.emails }}></div>
-                                <p><strong>Сайт:</strong></p>
+                                <p><strong>{slovar?.site?.[lang] ?? 'Сайт:'}:</strong></p>
                                 <div className={styles.info} dangerouslySetInnerHTML={{ __html: item?.site }}></div>
 
                                 {item.position &&
@@ -168,19 +169,19 @@ const PageContent = ({ data }) => {
                                         item.management_positions && item.management_positions.length > 0 && item.management_positions.map((item, index) => (
                                             <div key={index} style={{ marginBottom: '10px' }}>
                                                 <p><strong>{item.position}:</strong></p>
-                                                <p>{item.name}:</p>
+                                                <p>{item.name}</p>
                                             </div>
                                         ))
                                     }
 
-                                    <p><strong>Адрес:</strong></p>
+                                    <p><strong>{slovar?.address?.[lang] ?? 'Адрес:'}:</strong></p>
                                     <div dangerouslySetInnerHTML={{ __html: item.address }} />
-                                    <p><strong>Телефон:</strong></p>
+                                    <p><strong>{slovar?.phones?.[lang] ?? 'Телефон:'}:</strong></p>
                                     <div dangerouslySetInnerHTML={{ __html: item.phones }} />
-                                    <p><strong>E-mail:</strong></p>
+                                    <p><strong>{slovar?.emails?.[lang] ?? 'E-mail:'}:</strong></p>
                                     <div dangerouslySetInnerHTML={{ __html: item.emails }} />
-                                    <p><strong>Сайт:</strong></p>
-                                    <a href="https://dvcno.ru/">https://dvcno.ru/</a>
+                                    <p><strong>{slovar?.site?.[lang] ?? 'Сайт:'}:</strong></p>
+                                    <a href={item.site}>{item.site}</a>
                                 </div>
 
                                 {item.position &&

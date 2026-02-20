@@ -2,7 +2,7 @@ import styles from './style.module.css';
 import Link from 'next/link';
 
 
-const DocumentLinkComponent = ({ title = 'Название документа', link = 'https://example.com', background = 'gray' }) => {
+const DocumentLinkComponent = ({ title = 'Название документа', link = '#', background = 'gray' }) => {
     return (
         <a target="_blank" href={link} className={`${styles.document_link} ${background === 'white' ? styles.background_white : ''}`}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">

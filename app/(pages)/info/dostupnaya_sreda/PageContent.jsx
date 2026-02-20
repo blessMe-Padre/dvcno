@@ -17,12 +17,14 @@ const languages2 = {
     ch: '教學人員'
 };
 
-const PageContent = ({ data }) => {
+const PageContent = ({ data, slovar }) => {
     const { lang } = useLangStore();
     const educationPages = data?.sections?.section?.[0]?.content?.[lang];
     const electronic_libraries = data?.sections?.electronic_libraries;
     const accessible_environment = data?.sections?.accessible_environment;
     const agreement = data?.sections?.agreement;
+
+    console.log(slovar);
 
     return (
         <div className="container">
@@ -105,7 +107,11 @@ const PageContent = ({ data }) => {
                                 :
                                 <span>{item?.title}</span>}
 
-                            <a href={process.env.NEXT_PUBLIC_API_SERVER + item?.document} download target="_blank">Паспорт доступности</a>
+                            {item?.document &&
+                                <a href={process.env.NEXT_PUBLIC_API_SERVER + item?.document} download target="_blank">
+                                    {slovar?.accessibility_passport?.[lang] ?? 'Паспорт доступности'}
+                                </a>
+                            }
                         </li>
                     ))}
                 </ul>

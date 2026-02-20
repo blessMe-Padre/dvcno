@@ -13,7 +13,6 @@ export default function Page({ data }) {
 
     const banner = data?.sections?.banner[0]?.content?.[lang];
     const dop_program = data?.sections?.dop_program;
-
     const link2 = {
         ru: 'Дополнительное образование в ДВЦНО',
         en: 'Additional education in DVTSNO',
@@ -63,34 +62,40 @@ export default function Page({ data }) {
                 </section>
             </div>
 
-            <motion.div
-                onMouseMove={e => handleMouseMove(e)}
-                className="container">
-                <div className={styles.title_wrapper}>
-                    <h2 className={`title ${styles.half_title}`}>{dop_program[0]?.content?.[lang]?.title} </h2>
-                    <motion.img
-                        src="/education/decor-3.svg"
-                        alt="Изображение"
-                        width={283}
-                        height={219}
-                        className="dsv-image"
-                        animate={imgAnimation}
-                        transition={{ ease: "easeInOut", }}
-                    />
-                </div>
+            {(dop_program[1]?.content?.[lang]?.list || dop_program[2]?.content?.[lang]?.list) &&
+                <motion.div
+                    onMouseMove={e => handleMouseMove(e)}
+                    className="container">
+                    <div className={styles.title_wrapper}>
+                        <h2 className={`title ${styles.half_title}`}>{dop_program[0]?.content?.[lang]?.title} </h2>
+                        <motion.img
+                            src="/education/decor-3.svg"
+                            alt="Изображение"
+                            width={283}
+                            height={219}
+                            className="dsv-image"
+                            animate={imgAnimation}
+                            transition={{ ease: "easeInOut", }}
+                        />
+                    </div>
 
-                <Accordion
-                    color='#37a4da'
-                    title={dop_program[1]?.content?.[lang]?.title}
-                    accordionData={dop_program[1]?.content?.[lang]?.list}
-                />
+                    {dop_program[1]?.content?.[lang]?.list &&
+                        <Accordion
+                            color='#37a4da'
+                            title={dop_program[1]?.content?.[lang]?.title}
+                            accordionData={dop_program[1]?.content?.[lang]?.list}
+                        />
+                    }
 
-                <Accordion
-                    color='green'
-                    title={dop_program[1]?.content?.[lang]?.title}
-                    accordionData={dop_program[2]?.content?.[lang]?.list}
-                />
-            </motion.div>
+                    {dop_program[2]?.content?.[lang]?.list &&
+                        <Accordion
+                            color='green'
+                            title={dop_program[2]?.content?.[lang]?.title}
+                            accordionData={dop_program[2]?.content?.[lang]?.list}
+                        />
+                    }
+                </motion.div>
+            }
         </>
     )
 }
