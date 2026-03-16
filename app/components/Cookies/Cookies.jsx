@@ -45,19 +45,21 @@ export default function Cookies() {
                 {insertSafeContent(data?.cookie_message?.[lang])}
             </div>
 
-            <button
-                className={styles.button}
-                onClick={handleClick}
-            >
-                Принять
-            </button>
+            <div className={styles.button_wrapper}>
+                <button
+                    className={styles.button}
+                    onClick={handleClick}
+                >
+                    Принять
+                </button>
 
-            <button
-                className={`${styles.button} ${styles.button_reject}`}
-                onClick={handleClickReject}
-            >
-                Отклонить
-            </button>
+                <button
+                    className={`${styles.button} ${styles.button_reject}`}
+                    onClick={handleClickReject}
+                >
+                    Отклонить
+                </button>
+            </div>
         </div>
     )
 }

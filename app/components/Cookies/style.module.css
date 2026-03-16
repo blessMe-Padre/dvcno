@@ -9,11 +9,31 @@
     bottom: 50px;
     left: 100px;
     z-index: 100000;
+    max-width: 1000px;
 
     opacity: 0;
     visibility: hidden;
 }
 
+@media (max-width: 960px) {
+    .popup {
+        max-width: 100%;
+        left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 560px) {
+    .popup {
+        flex-direction: column;
+        max-width: 90%;
+    }
+}
 
 .popup_active {
     opacity: 1;
@@ -47,4 +67,24 @@
 .cookie_message a {
     font-weight: 700;
     text-decoration: underline;
+}
+
+.button_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 560px) {
+    .button_wrapper {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+    }
+
 }
