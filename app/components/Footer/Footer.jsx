@@ -7,6 +7,7 @@ import getMenu from '../../utils/getMenu';
 import Link from "next/link";
 import { useEffect, useState } from 'react';
 import useLangStore from '@/app/store/languageStore';
+import { normalizePhoneForTel } from '@/app/utils/normalizePhoneForTel';
 
 
 const Footer = () => {
@@ -14,6 +15,7 @@ const Footer = () => {
     const [popupActive, setPopupActive] = useState(false);
     const [menu, setMenu] = useState([]);
     const [socialLinks, setSocialLinks] = useState([]);
+    const [contacts, setContacts] = useState([]);
 
     // departments/82hpy5dfwda
 
@@ -33,6 +35,17 @@ const Footer = () => {
         };
         fetchSocialLinks();
     }, []);
+
+
+    useEffect(() => {
+        const fetchContacts = async () => {
+            const data = await fetchApiServerData('departments');
+            const contactData = data?.data?.find(item => item?.title?.[lang] === 'footer');
+            setContacts(contactData);
+        };
+        fetchContacts();
+    }, []);
+    console.log('contacts', contacts);
 
     const linksRender = socialLinks?.map((item) => {
         let name = item.name;
@@ -126,10 +139,13 @@ const Footer = () => {
         }
     })
 
+    // г. Владивосток, ул. Гоголя, 41
+    // Vladivostok, Gogol Street, 41
+
     const questionText = lang === 'ru' ? 'Задать вопрос' : 'Ask a question';
     const contactsText = lang === 'ru' ? 'Контакты' : 'Contacts';
-    const addressText = lang === 'ru' ? 'г. Владивосток, ул. Гоголя, 41' : 'Vladivostok, Gogol Street, 41';
     const addressLinkText = lang === 'ru' ? 'Посмореть на карте' : 'View on the map';
+
     const policyText = lang === 'ru' ? 'Политика конфиденциальности' : 'Privacy policy';
     const nameText = lang === 'ru' ? 'Дальневосточный центр непрерывного образования' : 'Far Eastern Center for Continuing Education';
 
@@ -175,16 +191,23 @@ const Footer = () => {
                             <p className={styles.info_title}>{contactsText}</p>
                         </div>
                         <div>
-                            <a className={styles.info} href="tel:+74232150005">8 423 215-00-05 </a>
+                            <a className={styles.info}
+                                href={`tel:${normalizePhoneForTel(contacts?.phones?.[0]?.phone ?? '')}`}>
+                                {contacts?.phones?.[0]?.phone ?? '8 423 215-00-05'}
+                            </a>
                         </div>
                         <div>
-                            <a className={styles.info} href="mailto:dvcno-vl@dvcno.ru">dvcno-vl@dvcno.ru</a>
+                            <a className={styles.info} href={`mailto:${contacts?.emails?.[0]?.email ?? ''}`}>
+                                {contacts?.emails?.[0]?.email ?? 'dvcno-vl@dvcno.ru'}
+                            </a>
                         </div>
                         <div>
-                            <p>{addressText}</p>
+                            <p>{contacts?.address?.[lang] ?? 'г. Владивосток, ул. Гоголя, 41'}</p>
                         </div>
                         <div>
-                            <a href="https://yandex.ru/maps/-/CHtVMW9f" target="_blank" style={{ color: '#FFB236', textDecoration: 'underline' }}>{addressLinkText}</a>
+                            <a href={contacts?.link_to_place ?? ''} target="_blank" style={{ color: '#FFB236', textDecoration: 'underline' }}>
+                                {contacts?.link_to_place ? addressLinkText : ''}
+                            </a>
                         </div>
                     </div>
                 </div>
