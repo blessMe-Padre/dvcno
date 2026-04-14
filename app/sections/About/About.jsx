@@ -60,7 +60,7 @@ export default function About() {
                                 <SwiperSlide key={index}>
                                     <Card
                                         image={item?.image}
-                                        description={item?.content}
+                                        description={item?.title}
                                         link={item?.link}
                                     />
                                 </SwiperSlide>

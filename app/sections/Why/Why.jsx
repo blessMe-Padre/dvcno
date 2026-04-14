@@ -12,6 +12,9 @@ export default function Why() {
     const { lang } = useLangStore();
     const [data, setData] = useState([]);
 
+    console.log('data', data?.[1]?.content?.[lang]?.[1]?.image);
+    // process.env.NEXT_PUBLIC_API_SERVER}/${data?.[1]?.content?.[lang]?.[1]?.image
+
     useEffect(() => {
         const fetchData = async () => {
             const result = await fetchApiServerData('pages/main');
@@ -42,7 +45,11 @@ export default function Why() {
                     </li>
                     <li className={`${styles.item} anim_hover_card`}>
                         <Image
-                            src={`${process.env.NEXT_PUBLIC_API_SERVER}/${data?.[1]?.content?.[lang]?.[1]?.image}`}
+                            src={
+                                data?.[1]?.content?.[lang]?.[1]?.image && process.env.NEXT_PUBLIC_API_SERVER
+                                    ? `${process.env.NEXT_PUBLIC_API_SERVER}/${data?.[1]?.content?.[lang]?.[1]?.image}`
+                                    : '/placeholder/placeholder.svg'
+                            }
                             alt="Компетентность педагогических кадров"
                             width={460}
                             height={550}

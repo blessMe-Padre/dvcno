@@ -4,6 +4,7 @@ import Link from "next/link";
 import { insertSafeContent } from "@/app/utils/insertSafeContent";
 
 export default function Card({ image, link = '#', description, }) {
+
     return (
         <div className={`${styles.card} anim_hover_card`}>
             <div className={styles.image_wrapper}>
