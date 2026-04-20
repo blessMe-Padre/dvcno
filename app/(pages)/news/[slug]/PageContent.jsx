@@ -50,7 +50,7 @@ const PageContent = ({ page }) => {
                         width={25}
                         height={25}
                     />
-                    <div className={styles.tag}>Время чтения: {page.time_to_read?.[lang] || '2 минуты'}</div>
+                    <div className={styles.tag}>{lang === 'ru' ? 'Время чтения:' : 'Reading time:'} {page.time_to_read?.[lang] || '2 minutes'}</div>
                 </div>
             </header>
 
