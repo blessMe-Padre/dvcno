@@ -12,7 +12,6 @@ export default function Why() {
     const { lang } = useLangStore();
     const [data, setData] = useState([]);
 
-    console.log('data', data?.[1]?.content?.[lang]?.[1]?.image);
     // process.env.NEXT_PUBLIC_API_SERVER}/${data?.[1]?.content?.[lang]?.[1]?.image
 
     useEffect(() => {

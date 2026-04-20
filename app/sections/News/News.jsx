@@ -86,9 +86,9 @@ const News = () => {
                                         </SwiperSlide>
                                     ))
                                 ) : error ? (
-                                    <p>Ошибка при загрузке данных</p>
+                                    <p>{lang === 'ru' ? 'Ошибка при загрузке данных' : 'Error loading data'}</p>
                                 ) : (
-                                    <p className="span-error-message">Загрузка...</p>
+                                    <p className="span-error-message">{lang === 'ru' ? 'Загрузка...' : 'Loading...'}</p>
                                 )}
                                 <SwiperNavButtons />
                             </Swiper>
@@ -96,7 +96,7 @@ const News = () => {
                     </div>
 
                 </div>
-                <Link className={styles.news_link} href="/news">Смотреть все новости</Link>
+                <Link className={styles.news_link} href="/news">{lang === 'ru' ? 'Смотреть все новости' : 'View all news'}</Link>
             </section>
         </div>
     )

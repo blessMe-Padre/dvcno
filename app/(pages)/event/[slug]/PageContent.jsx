@@ -5,6 +5,31 @@ import LinkButton from '@/app/components/Link/LinkButton';
 import styles from "./style.module.css";
 import useLangStore from '@/app/store/languageStore';
 
+const translatedDays = {
+    'пн': 'Monday',
+    'вт': 'Tuesday',
+    'ср': 'Wednesday',
+    'чт': 'Thursday',
+    'пт': 'Friday',
+    'сб': 'Saturday',
+    'вс': 'Sunday'
+}
+
+const translatedMonths = {
+    'января': 'January',
+    'февраля': 'February',
+    'марта': 'March',
+    'апреля': 'April',
+    'мая': 'May',
+    'июня': 'June',
+    'июля': 'July',
+    'августа': 'August',
+    'сентября': 'September',
+    'октября': 'October',
+    'ноября': 'November',
+    'декабря': 'December',
+}
+
 const PageContent = ({ page }) => {
     const { lang } = useLangStore();
     const sanitizedContent = page?.content?.[lang] || '';
@@ -26,8 +51,12 @@ const PageContent = ({ page }) => {
                     />
                     <div className={styles.day}>{page?.date_event?.day_d}</div>
                     <div>
-                        <p>{page?.date_event?.month_F[1]} {page?.date_event?.year_Y}</p>
-                        <p className={styles.week_day}>{page?.date_event?.day_D[0]}</p>
+                        <p>{
+                            lang === 'ru' ? `${page?.date_event?.month_F[1]} ${page?.date_event?.year_Y}` : `${translatedMonths[page?.date_event?.month_F[1]]} ${page?.date_event?.year_Y}`
+                        }</p>
+                        <p className={styles.week_day}>{
+                            lang === 'ru' ? page?.date_event?.day_D[0] : translatedDays[page?.date_event?.day_D[0]]
+                        }</p>
                     </div>
                 </div>
 
@@ -38,7 +67,7 @@ const PageContent = ({ page }) => {
                         width={25}
                         height={25}
                     />
-                    <div className={styles.tag}>Начало в {page?.date_event?.time_H}:{page?.date_event?.time_i}</div>
+                    <div className={styles.tag}>{lang === 'ru' ? 'Начало в' : 'Start at'} {page?.date_event?.time_H}:{page?.date_event?.time_i}</div>
                 </div>
 
                 <div className={styles.item}>
@@ -54,7 +83,7 @@ const PageContent = ({ page }) => {
                 <LinkButton
                     color={'green'}
                     href={page?.link_to_map ? page?.link_to_map : '#'}
-                    text={'Посмотреть на карте'}
+                    text={lang === 'ru' ? 'Посмотреть на карте' : 'View on map'}
                 />
             </header>
 

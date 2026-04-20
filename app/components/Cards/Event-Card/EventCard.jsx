@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./style.module.css";
+import useLangStore from "@/app/store/languageStore";
 
 export default function EventCard(
     {
@@ -11,9 +12,12 @@ export default function EventCard(
         year,
         week,
         hour,
-        minute
+        minute,
+        translatedDays,
+        translatedMonths
     }
 ) {
+    const { lang } = useLangStore();
     const domain = process.env.NEXT_PUBLIC_API_SERVER;
     const sanitizedContent = description || '';
 
@@ -23,12 +27,18 @@ export default function EventCard(
                 <div className="flex">
                     <div className={styles.day}>{date}</div>
                     <div>
-                        <p>{month} {year}</p>
-                        <p className={styles.week_day}>{week}</p>
+                        <p>
+                            {
+                                lang === 'ru' ? `${month} ${year}` : `${translatedMonths[month]} ${year}`
+                            }
+                        </p>
+                        <p className={styles.week_day}>{
+                            lang === 'ru' ? week : translatedDays[week]
+                        }</p>
                     </div>
                 </div>
 
-                <div className={styles.header_tag}>Начало в {hour}:{minute}</div>
+                <div className={styles.header_tag}>{lang === 'ru' ? 'Начало в' : 'Start at'} {hour}:{minute}</div>
             </header>
 
             <div className={styles.image_wrapper}>

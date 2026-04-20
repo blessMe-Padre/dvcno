@@ -70,8 +70,6 @@ const PageContent = ({ data }) => {
 
     // const manager = data_svedenya.management_positions.split('<br />');
 
-    console.log(data);
-
     const bank_images = data?.sections?.bank?.[1]?.content[lang]?.images;
     const bank_info_image_big = bank_images?.big;
     const bank_info_image_medium = bank_images?.medium;
@@ -261,7 +259,7 @@ const PageContent = ({ data }) => {
                                 </div>
 
                                 <div className={styles.field_wrapper}>
-                                    <b>Адрес:</b>
+                                    <b>{lang === 'ru' ? 'Адрес:' : 'Address:'}</b>
                                     <div className={styles.field_value} dangerouslySetInnerHTML={{ __html: item?.address }}></div>
                                 </div>
 
@@ -269,7 +267,7 @@ const PageContent = ({ data }) => {
                                     target='_blank'
                                     href={item.link_to_place ? item.link_to_place : '/'}
                                     className={styles.link}
-                                >Посмотреть на карте</a>
+                                >{lang === 'ru' ? 'Посмотреть на карте' : 'View on map'}</a>
                             </AnimateElement>
                         ))}
                     </ul>

@@ -45,7 +45,6 @@ const Footer = () => {
         };
         fetchContacts();
     }, []);
-    console.log('contacts', contacts);
 
     const linksRender = socialLinks?.map((item) => {
         let name = item.name;

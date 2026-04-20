@@ -16,6 +16,31 @@ import getEvents from "@/app/utils/getEvents";
 import Link from "next/link";
 import { AnimateElement } from "@/app/components";
 
+const translatedDays = {
+    'пн': 'Monday',
+    'вт': 'Tuesday',
+    'ср': 'Wednesday',
+    'чт': 'Thursday',
+    'пт': 'Friday',
+    'сб': 'Saturday',
+    'вс': 'Sunday'
+}
+
+const translatedMonths = {
+    'января': 'January',
+    'февраля': 'February',
+    'марта': 'March',
+    'апреля': 'April',
+    'мая': 'May',
+    'июня': 'June',
+    'июля': 'July',
+    'августа': 'August',
+    'сентября': 'September',
+    'октября': 'October',
+    'ноября': 'November',
+    'декабря': 'December',
+}
+
 export default function Events() {
     const { lang } = useLangStore();
     const [events, setEvents] = useState();
@@ -70,19 +95,21 @@ export default function Events() {
                                             week={item.date_event.day_D[0]}
                                             hour={item.date_event.time_H}
                                             minute={item.date_event.time_i}
+                                            translatedDays={translatedDays}
+                                            translatedMonths={translatedMonths}
                                         />
                                     </Link>
                                 </SwiperSlide>
                             ))
                         ) : (
-                            <p className="span-error-message">Данные отсутствуют.</p>
+                            <p className="span-error-message">{lang === 'ru' ? 'Данные отсутствуют.' : 'No data available.'}</p>
                         )}
 
                         <SwiperNavButtons addClass="swiper_nav_btns shadows_nav" />
                     </Swiper>
                 </div>
 
-                <Link className={styles.events_link} href={'/event'}>Показать еще</Link>
+                <Link className={styles.events_link} href={'/event'}>{lang === 'ru' ? 'Показать еще' : 'Show more'}</Link>
             </div>
         </section>
     )

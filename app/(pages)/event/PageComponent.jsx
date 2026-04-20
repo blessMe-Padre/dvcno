@@ -11,6 +11,31 @@ import { motion } from "framer-motion";
 
 const EVENTS_PER_PAGE = 2;
 
+const translatedDays = {
+    'пн': 'Monday',
+    'вт': 'Tuesday',
+    'ср': 'Wednesday',
+    'чт': 'Thursday',
+    'пт': 'Friday',
+    'сб': 'Saturday',
+    'вс': 'Sunday'
+}
+
+const translatedMonths = {
+    'января': 'January',
+    'февраля': 'February',
+    'марта': 'March',
+    'апреля': 'April',
+    'мая': 'May',
+    'июня': 'June',
+    'июля': 'July',
+    'августа': 'August',
+    'сентября': 'September',
+    'октября': 'October',
+    'ноября': 'November',
+    'декабря': 'December',
+}
+
 const PageComponent = ({ data }) => {
     const { lang } = useLangStore();
     const [visibleCount, setVisibleCount] = useState(EVENTS_PER_PAGE);
@@ -54,16 +79,18 @@ const PageComponent = ({ data }) => {
                                         week={item.date_event.day_D[0]}
                                         hour={item.date_event.time_H}
                                         minute={item.date_event.time_i}
+                                        translatedDays={translatedDays}
+                                        translatedMonths={translatedMonths}
                                     />
                                 </Link>
                             </motion.li>
                         ))
                     ) : (
-                        <p>События не загружены</p>
+                        <p>{lang === 'ru' ? 'События не загружены' : 'Events not loaded'}</p>
                     )}
                 </ul>
                 {visibleCount < data.length && (
-                    <button className={styles.events_link} onClick={handleLoadMore}>Загрузить ещё</button>
+                    <button className={styles.events_link} onClick={handleLoadMore}>{lang === 'ru' ? 'Загрузить ещё' : 'Load more'}</button>
                 )}
             </section >
 

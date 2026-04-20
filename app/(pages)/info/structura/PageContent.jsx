@@ -27,8 +27,6 @@ const PageContent = ({ data, slovar }) => {
     const data_division = data?.sections?.structure?.[1]?.content[lang];
     const data_manager = data?.sections?.departments?.[1]?.content[lang];
 
-    console.log(slovar);
-
     return (
         <section className={styles.section}>
             <div className='container relative'>

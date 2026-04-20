@@ -24,8 +24,6 @@ const PageContent = ({ data, slovar }) => {
     const accessible_environment = data?.sections?.accessible_environment;
     const agreement = data?.sections?.agreement;
 
-    console.log(slovar);
-
     return (
         <div className="container">
             <Breadcrumbs

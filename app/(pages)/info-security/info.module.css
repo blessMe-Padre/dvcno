@@ -383,7 +383,12 @@
 
 @media (max-width: 768px) {
     .help_list {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
+        display: block;
+    }
+
+    .help_item {
+        margin-bottom: 20px;
     }
 
     .help_item_bg {

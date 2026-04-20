@@ -29,8 +29,6 @@ const PageContent = ({ data }) => {
     const data_calendars = data?.sections?.graph?.[1]?.content[lang];
     const data_amount = data?.sections?.count?.[2]?.content[lang]?.list;
 
-    console.log(data_programs);
-
     return (
         <>
             <section className={styles.section}>
@@ -40,7 +38,7 @@ const PageContent = ({ data }) => {
                         link={'info'}
                         title={languages[lang]}
                     />
-                    <h2 className={styles.title}>{data?.title[lang]?.title ?? 'Образование'}</h2>
+                    <h2 className={styles.title}>{data?.sections?.education?.[0]?.content[lang]?.title ?? 'Образование'}</h2>
 
                     <ul className={styles.education_list}>
                         {data_education && data_education.length > 0 ? (
